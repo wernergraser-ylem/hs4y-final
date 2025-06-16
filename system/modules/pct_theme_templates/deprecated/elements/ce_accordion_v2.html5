@@ -1,0 +1,8 @@
+
+<section class="<?= $this->class ?> ce_accordion_v2 block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+
+  <button type="button" class="<?= $this->toggler ?>"<?php if ($this->headlineStyle): ?> style="<?= $this->headlineStyle ?>"<?php endif; ?>>
+    <?= $this->headline ?>
+  </button>
+
+  <div class="<?= $this->accordion ?>"><div>

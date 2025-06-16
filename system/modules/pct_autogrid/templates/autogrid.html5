@@ -1,0 +1,26 @@
+<?php
+// remove margin classes from content element
+if($this->AutoGrid->Margins->classes)
+{
+	if( preg_match('/class=\"(.*?)\"/',$this->html,$result) && strpos($this->html,$this->AutoGrid->Margins->classes) )
+	{
+		$classes = array_map('trim', array_filter( explode(' ', str_replace($this->AutoGrid->Margins->classes,'',$result[1]) ) ) );
+		$this->html = str_replace($result[1],implode(' ',$classes),$this->html);
+	}
+}
+?>
+
+<div class="column <?= $this->AutoGrid->classes; ?><?php if($this->AutoGrid->Margins->classes): ?> <?= $this->AutoGrid->Margins->classes; ?><?php endif; ?>">
+	<?php if($this->autogrid_addStyling && $this->AutoGrid->hasStyles): ?>
+	<div class="attributes<?php if($this->AutoGrid->Image && !$this->AutoGrid->hasContent): ?> has-image empty<?php endif; ?><?php if($this->autogrid_padding_css): ?> <?= $this->autogrid_padding_css; ?><?php endif; ?>" style="<?= implode(' ', $this->AutoGrid->styles); ?>">
+		<?php if($this->AutoGrid->Image && !$this->AutoGrid->hasContent): ?>
+		<figure class="image_container image_mob"><?php $this->insert('picture_default', $this->AutoGrid->Image->picture); ?></figure>
+		<?php endif; ?>
+	<?php endif; ?>
+
+	<?= $this->html; ?>
+
+	<?php if($this->autogrid_addStyling && $this->AutoGrid->hasStyles): ?>
+	</div>
+	<?php endif; ?>
+</div>

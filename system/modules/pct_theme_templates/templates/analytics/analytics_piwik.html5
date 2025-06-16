@@ -1,0 +1,58 @@
+<?php
+global $objPage;
+$objRoot = \Contao\PageModel::findByPk( $objPage->rootId );
+
+$matomo = \Contao\StringUtil::deserialize( $objRoot->analytics_matomo );
+
+// To use this script, please fill in your Piwik site ID and Piwik URL below
+$PiwikSite = $matomo[0] ?? '';
+$PiwikPath = $matomo[1] ?? '';
+?>
+
+<?php if( empty($PiwikSite) || empty($PiwikPath) ): ?>
+<p class="analytics_templates info error">{{iflng::en}}Piwik information missing in root page{{iflng}}{{iflng::de}}Piwik-Informationen fehlen in den Seiten-Einstellungen des "Startpunkt einer Webseite".{{iflng}}</p>
+<?php return ''; endif; ?>
+
+<?php
+// DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+if ($PiwikSite > 0 && '//www.example.com/piwik/' != $PiwikPath && !$this->hasAuthenticatedBackendUser()): ?>
+
+<script>
+
+function initPiwik()
+{
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u='<?= $PiwikPath ?>';
+    _paq.push(['setTrackerUrl', u+'js/']);
+    _paq.push(['setSiteId', <?= $PiwikSite ?>]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.defer=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+  })();
+}
+
+// Optin privacy setting token
+var token = localStorage.getItem('user_privacy_settings');
+if( token == undefined )
+{
+	token = '';
+}
+if(token.indexOf(3) >= 0)
+{
+	initPiwik();
+}
+
+// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(3) >= 0)
+	{
+		initPiwik();
+	}
+});
+
+</script>
+
+<?php endif; ?>

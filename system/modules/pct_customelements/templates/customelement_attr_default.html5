@@ -1,0 +1,9 @@
+<?php
+/**
+ * Custom elements default attribute template
+ */
+?>
+
+<?php if($this->value): ?>
+<div <?php echo $this->cssID; ?> <?php if($this->class): ?>class="<?php echo $this->class; ?>"<?php endif; ?>><?php echo $this->value; ?></div>
+<?php endif; ?>

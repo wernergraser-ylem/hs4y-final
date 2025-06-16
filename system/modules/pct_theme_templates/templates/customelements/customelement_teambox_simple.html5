@@ -1,0 +1,35 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_teambox_simple.css|static';
+?>
+<div class="<?=  $this->class; ?>" data-font-size="<?php echo $this->field('font_size')->value(); ?>"<?php echo $this->cssID; ?>>
+	<?php if($this->field('link')->value()): ?>
+	<div class="overlay_link"><?php echo $this->field('link')->html(); ?></div>
+	<?php endif; ?>
+	
+	<?php if($this->field('image')->value('')): ?>
+		<?php echo $this->field('image')->html(); ?>
+	<?php endif; ?>
+	
+	<?php if($this->field('job')->value()): ?>
+		<div class="job font_headline <?php echo $this->field('markup_job')->value(); ?>"><?php echo $this->field('job')->value(); ?></div>
+	<?php endif; ?>
+	
+	<?php if($this->field('name')->value()): ?>
+		<div class="name font_headline <?php echo $this->field('markup_name')->value(); ?>"><?php echo $this->field('name')->value(); ?></div>
+	<?php endif; ?>
+	
+	<?php if($this->field('description')->value()): ?>
+		<div class="description"><?php echo $this->field('description')->value(); ?></div>
+	<?php endif; ?>
+	
+	<?php if($this->field('link')->value()): ?>
+	<div class="link">
+	    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+	      <g fill="none" stroke="#000" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+	        <circle cx="16" cy="16" r="15.12"></circle>
+	        <path d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+	      </g>
+	    </svg>
+	</div>
+	<?php endif; ?>
+</div>

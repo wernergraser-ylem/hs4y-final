@@ -1,0 +1,133 @@
+/* =============================================================================
+ * mod_newslist
+ * ========================================================================== */
+
+.newslist {
+	margin-bottom: 50px;
+	overflow: hidden;
+	list-style: none;
+	position: relative;
+}
+
+.newslist .author {
+	color: rgb(155,155,155);
+	border-left: 1px solid rgb(230,230,230);
+	margin-left: 5px;
+	padding-left: 10px;
+}
+
+.newslist .news-date {
+	text-align: center;
+	color: rgb(155,155,155);
+}
+
+.newslist .teaser {
+	border-top: 1px solid rgb(230,230,230);
+	padding: 30px 0 10px 0;
+	margin-top: 20px;
+	font-size: 1.1rem;
+}
+
+.newslist .comments {
+	color: rgb(155,155,155);
+	border-left: 1px solid rgb(230,230,230);
+	margin-left: 5px;
+	padding-left: 10px;
+}
+
+.newslist .comments:before {
+	font-size: 1.067rem;
+}
+
+.newslist .image_container {
+	margin-bottom: 25px;
+}
+
+.newslist .news-content {
+	overflow: hidden;
+	margin-bottom: 35px;
+}
+
+.newslist .comments:before {
+	font-family:FontAwesome;
+	content: "\f075";
+	margin-right: 5px;
+}
+
+.newslist h2,
+.newslist .h2 {
+	border: 0;
+	margin: 0 0 20px 0;
+	padding: 0;
+	font-size: 1.6rem;
+	letter-spacing: 0;
+}
+
+.newslist h2,
+.newslist .h2,
+.newslist h2 a,
+.newslist .h2 a {
+	color: var(--accentColor);
+	margin-bottom: 10px;
+}
+
+.newslist h2 a:hover,
+.newslist .h2 a:hover {
+	text-decoration: underline;
+}
+
+.newslist .link {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.newslist .link:before {
+	font-family:FontAwesome;
+	content:"\f101";
+	margin-right: 5px;
+}
+
+.newslist .ce_hyperlink,
+.newslist .ce_hyperlink a {
+	margin-bottom: 0;
+}
+
+.mod_newslist.newslist_col2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.mod_newslist.newslist_col2 .pagination {
+	grid-column: span 2;
+}
+
+.mod_newslist.newslist_col3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.mod_newslist.newslist_col3 .pagination {
+	grid-column: span 2;
+}
+
+.newslist .news-left .news-date {
+	background: var(--accentColor);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+
+	.mod_newslist.newslist_col2,
+	.mod_newslist.newslist_col3 {
+		display: block;
+	}
+	
+	.newslist {
+		margin-bottom: 0;
+	}
+
+}

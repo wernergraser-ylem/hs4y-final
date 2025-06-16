@@ -1,0 +1,37 @@
+
+<div id="page_import">
+<div id="tl_buttons">
+<?php echo $this->back; ?>
+</div>
+
+<form action="<?php echo $this->action; ?>" method="post">
+<div class="body">
+	<h2 class="headline"><?php echo $GLOBALS['TL_LANG']['page_import']['headline']; ?></h2>
+	
+	<?php if($this->hasError): ?>
+	<p class="tl_red"><?php echo $this->error; ?></p>
+	<?php else: ?>
+		<?php if($this->imported): ?>
+			<p class="tl_green"><?php echo $GLOBALS['TL_LANG']['page_import']['headline_success']; ?></p>
+			<ul class="success">
+			<?php foreach($this->imported as $text): ?>
+			<li class="tl_green"><?php echo $text; ?></li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+	<?php endif; ?>
+	
+	<div class="formbody">
+		<div><?php echo $this->selectionMenu; ?></div>
+	</div>
+</div>
+
+<div class="tl_formbody_submit">
+<input type="hidden" name="REQUEST_TOKEN" value="<?php echo \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+	<div class="tl_submit_container">
+		<input id="run" type="submit" name="run_import" value="<?php echo $this->import_value; ?>">
+	</div>
+</div>
+</form>
+	
+</div>

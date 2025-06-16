@@ -1,0 +1,71 @@
+<fieldset id="ctrl_<?= $this->id ?>" class="checkbox_container<?php if ($this->class) echo ' ' . $this->class; ?>">
+
+
+<?php if($this->description):?>
+<div class="description">
+	<i class="fa fa-info"></i>
+	<div class="description-content">
+		<?= $this->description; ?>
+	</div>
+</div>
+<?php endif; ?>
+
+<input data-td_selector="<?= $this->selector; ?>" type="checkbox" name="<?= $this->name; ?>" id="ctrl_<?= $this->name; ?>" class="checkbox" value="<?= $this->value ?>" <?= $this->value ? 'checked' : ''; ?> <?= $this->getAttributes(); ?>>
+
+<script>
+/* <![CDATA[ */
+
+/**
+ * Add the ThemeDesigner.onSetValue event listener to react to changes by selectors etc.
+ */
+jQuery(document).ready(function()
+{
+	// catch onToggleSwitch event of the parent switch
+	jQuery('[data-init_switch="1"][data-name="<?= $this->switch; ?>"]').on('ThemeDesigner.onToggleSwitch',function(event,params)
+	{
+		var checkbox = jQuery('[data-td_selector="<?= $this->selector; ?>"]');
+		
+		if(params.status < 1)
+		{
+			 checkbox.prop('checked',false).val(0);
+		}
+		else
+		{
+			checkbox.prop('checked',true).val(1);
+		}
+
+		// send new value
+		ThemeDesigner.sendValue('<?= $this->selector; ?>',checkbox.val());
+
+		// trigger change
+		checkbox.trigger('change');
+	});
+	
+	jQuery('[data-td_selector="<?= $this->selector; ?>"]').on('ThemeDesigner.onSetValue',function(event,params)
+	{
+		var elem = jQuery(event.target);
+		
+		if(elem.length < 1)
+		{
+			return;
+		}
+
+		if(params.value < 1)
+		{
+		   elem.prop('checked',false).val(0);
+		}
+		else
+		{
+		   elem.prop('checked',true).val(1);
+		}
+
+		// send value
+		ThemeDesigner.sendValue(event.target.name,elem.val());
+
+		// trigger change
+		checkbox.trigger('change');
+	});
+});
+
+/* ]]> */
+</script>

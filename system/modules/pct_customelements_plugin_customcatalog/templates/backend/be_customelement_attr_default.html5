@@ -1,0 +1,7 @@
+<?php
+/**
+ * Backend template for rendering attribute values e.g. in list views etc.
+ */
+?>
+
+<span class="<?php echo $this->type; ?>"><?php echo $this->value; ?></span>

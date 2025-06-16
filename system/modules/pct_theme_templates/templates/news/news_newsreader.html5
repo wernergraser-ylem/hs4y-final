@@ -1,0 +1,35 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newsreader.css|static';
+?>
+<div class="newsreader block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+
+<?php $this->block('info'); ?>
+<div class="info"><?php if ($this->date): ?><div class="date" itemprop="datePublished"><?php echo $this->date; ?></div><?php endif; ?><?php if ($this->author): ?><div class="author"><?php echo $this->author; ?></div><?php endif; ?><?php if ($this->commentCount): ?><div class="comments"><?php echo $this->commentCount; ?></div><?php endif; ?></div>
+<?php $this->endblock(); ?>
+
+<?php if ($this->hasSubHeadline): ?>
+
+<?php endif; ?>
+<?php echo $this->text; ?>
+<?php if ($this->enclosure): ?>
+
+<div class="enclosure">
+<?php foreach ($this->enclosure as $enclosure): ?>
+<p><img src="<?php echo $enclosure['icon']; ?>" width="18" height="18" alt="<?php echo $enclosure['title']; ?>" class="mime_icon" /> <a href="<?php echo $enclosure['href']; ?>" title="<?php echo $enclosure['title']; ?>"><?php echo $enclosure['link']; ?> <span class="size">(<?php echo $enclosure['filesize']; ?>)</span></a></p>
+<?php endforeach; ?>
+</div>
+<?php endif; ?>
+</div>
+
+<?php
+$schemaOrg = $this->getSchemaOrgData();
+if( $this->addImage && $this->singleSRC )
+{
+	$schemaOrg['primaryImageOfPage']['contentUrl'] = $this->singleSRC;
+}
+if ($this->hasText) {
+	$schemaOrg['text'] = $this->rawHtmlToPlainText($this->text);
+}
+
+$this->addSchemaOrg($schemaOrg);
+?>

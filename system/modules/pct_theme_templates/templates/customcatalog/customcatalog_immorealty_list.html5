@@ -1,0 +1,44 @@
+<?php if(!$this->empty): ?>
+<div class="entries">
+<?php foreach($this->entries as $entry): ?>
+	<div class="block <?= $entry->class; ?> <?php if($entry->field('top_object')->value()): ?> top_object<?php endif; ?>" <?php echo $this->cssID; ?>>
+		
+		<div class="cc_immorealty_inside">
+			
+			<div class="cc_immorealty_top">
+				<?php if($entry->field('top_object')->value()): ?> <i class="top_object_icon fa fa-star"></i><?php endif; ?>
+				<h4><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h4>
+				<div class="place"><?php echo $entry->field('map')->option('city'); ?>, <?php echo $entry->field('map')->option('street'); ?></div>
+			</div>
+			
+			<div class="cc_immorealty_middle">
+				<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+				<ul class="property-meta">
+					<li><i class="fa fa-expand"></i><?php echo $entry->field('size')->value(); ?>m&sup2;</li>
+					<li><i class="fa fa-car"></i><?php echo $entry->field('parking')->value(); ?> Parkpl&auml;tze</li>
+					<li><i class="fa fa-tint"></i><?php echo $entry->field('bathroom')->value(); ?> Badezimmer</li>
+					<li><i class="fa fa-bed"></i><?php echo $entry->field('rooms')->html(); ?></li>
+				</ul>
+			</div>
+			
+			<div class="cc_immorealty_bottom">
+				<?php if($entry->field('purchase_price')->value() > 0): ?>
+				<div class="price">&euro; <?php echo $entry->field('purchase_price')->value(); ?></div>
+				<?php endif; ?>
+						
+				<?php if($entry->field('rent_price')->value() > 0): ?>
+				<div class="price">&euro; <?php echo $entry->field('rent_price')->value(); ?> <span>/ Monat</span></div>
+				<?php endif; ?>
+			
+				<?php echo $entry->field('notelist')->html(); ?>
+			</div>
+
+		</div>
+			
+	</div>
+<?php endforeach; ?>
+</div>
+
+<?php else: ?>
+<p class="info empty">Keine Objekte gefunden</p>
+<?php endif;?>

@@ -1,0 +1,9 @@
+<script>
+jQuery(document).ready(function() 
+{
+	// Clear all cookies and localstorage
+	PrivacyManager.clearAll();
+	// Opt-out and reload/redirect
+	PrivacyManager.optout('<?= $this->redirect; ?>');
+});
+</script>

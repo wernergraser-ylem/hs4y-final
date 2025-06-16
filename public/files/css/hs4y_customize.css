@@ -1,0 +1,112 @@
+body, p {font-size:0.9rem;}
+
+.ylemCustomNav .vlist.level_1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem; /* Abstand unter der Navigation */
+}
+
+.ylemCustomNav .vlist.level_1 li {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    height: 50px; /* Höhe des Menüs auf 50px festgelegt */
+}
+
+.ylemCustomNav .vlist.level_1 li a {
+    text-decoration: none;
+    padding: 0 15px; /* Kein vertikales Padding, um die Höhe nicht zu vergrößern */
+    line-height: 50px; /* Zentrierung der Schrift in der Höhe */
+    color: #333;
+    font-weight: 300; /* Font-Weight auf 300 */
+    background-color: rgba(255, 255, 255, 0.69); /* Transparent weiß mit 69% Opazität */
+    border-radius: 5px;
+}
+
+.ylemCustomNav .vlist.level_1 li a:hover {
+    background-color: rgba(255, 255, 255, 0.85); /* Etwas weniger transparent beim Hover */
+    border-radius: 5px;
+}
+
+.ylemCustomNav .vlist.level_1 li.float_right,
+.ylemCustomNav .vlist.level_1 li.float_left,
+.ylemCustomNav .vlist.level_1 li a.float_right,
+.ylemCustomNav .vlist.level_1 li a.float_left {
+    float: none;
+}
+
+.ylemCustomNav .vlist.level_1 li.active {
+    background-color: rgba(255, 255, 255, 0.85); /* Transparenz bei aktivem Link */
+    font-weight: 400; /* Etwas stärker beim aktiven Link */
+    border-radius: 8px; /* Abgerundete Ecken beim aktiven Link */
+}
+
+/* Klasse mod_navigation ausblenden, wenn ylemCustomNav aktiv ist */
+/* Zielspezifisch: Navigation innerhalb von ylemCustomNav */
+.ylemCustomNav .mod_navigation,
+nav.mod_navigation.mainmenu.block.edit-off,
+.ylemCustomNav nav.mod_navigation,
+.ylemCustomNav > nav.mod_navigation,
+.ylemCustomNav nav.mod_navigation.mainmenu.block.edit-off {
+    display: none !important;
+}
+
+.mod_login {border-radius:8px!important;}
+
+form.style5 input, form fieldset, form fieldset legend,form.style5 button.submit {border-radius:10px;}
+
+#hs4y-list .title, #hs4y-leser .title, #hs4y-leser .veroeffentlichen , #hs4y-leser .more {display:none;}
+
+#hs4y-leser .field.Vertragstext .label, #hs4y-leser .field.Titel_vorangestellt .label, #hs4y-leser .field.Vorname .label,
+#hs4y-leser .field.Familienname_Firma .label, #hs4y-leser .field.Titel_nachgestellt .label, #hs4y-leser .field.Strasse .label, #hs4y-leser .field.Hausnummer .label,
+#hs4y-leser .field.PLZ .label, #hs4y-leser .field.Wohnort .label, #hs4y-leser .field.E_Mail .label, #hs4y-leser .field.Handynummer .label, #hs4y-leser .field.IMEI_Nummer .label, 
+#hs4y-leser .field.IBAN .label, #hs4y-leser .field.BIC .label, #hs4y-leser .field.Handy_Hersteller .label, #hs4y-leser .field.Handytyp .label, #hs4y-leser .field.Vertrag .label,
+#hs4y-leser .field.Monatspraemie_Handy .label, #hs4y-leser .field.Kaufdatum_Handy .label, #hs4y-leser .field.Zusaetzliche_Vereinbarungen_Handy .label, #hs4y-leser .field.Vertrag_aktiv_Handy .label, #hs4y-leser .field.Vertrag_DATA .label, #hs4y-leser .field.Monatspraemie_DATA .label, #hs4y-leser .field.Router_Hersteller .label, #hs4y-leser .field.Vertrag_aktiv_DATA .label, #hs4y-leser .field.Kaufdatum_Router .label, #hs4y-leser .field.Zusaetzliche_Vereinbarungen_DATA .label, #hs4y-leser .field.Aktiv_Oeffentlichen .label , #hs4y-leser .field.Vertragstext_Unterschrift .label , #hs4y-leser .field.Verkaeufer .label {display: none;}
+
+#hs4y-list .field.Vorname .label, #hs4y-list .field.Familienname_Firma .label, #hs4y-list .field.Kaufdatum_Handy .label  {display:none;}
+
+#hs4y-list .entry {padding-top:0.25em; padding-left:0.79em; padding-bottom:0em;border-radius:8px;margin-bottom:0.25rem;}
+#hs4y-list .entry.odd {background-color:rgba(15,79,37,0.30);}
+#hs4y-list .entry.even {background-color:rgba(15,79,37,0.05);}
+#hs4y-list .pagination {margin-top:0.33em; padding-left:1em;padding-right:1em;}
+
+#hs4y-leser .vorname, #hs4y-leser .strasse, #hs4y-leser .plz  {float:left; margin-right:0.33em;}
+#hs4y-leser .familienname, #hs4y-leser .plz, #hs4y-leser .strasse {clear:left;}
+#hs4y-leser .titel_vorne::before {content: "Akademische Titel:"; font-weight: 300; padding-right:0.5em;color:grey;}
+#hs4y-leser .titel_nach::before {content: "Nachgestellten Titel:"; font-weight: 300; padding-right:0.5em;color:grey;}
+#hs4y-leser .aktiv_oeffentlichen {display:none;}
+
+#hs4y-leser .vorname::before {content: "Vorname:"; font-weight: 300; padding-right:0.5em;color:grey;}
+#hs4y-leser .familienname::before {content: "Familienname/Firma:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .strasse::before {content: "Straße/Nummer:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .plz::before {content: "PLZ/Ort:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .imei::before {content: "IMEI:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .email::before {content: "E-Mail:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .handy::before {content: "Tel.:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .iban::before {content: "IBAN:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .bic::before {content: "BIC:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .handy_hersteller::before {content: "Smartphone Hersteller:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .handytyp::before {content: "Smartphone Typenbezeichnung:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .router_hersteller::before {content: "Modem/Router Hersteller:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .kaufdatum_handy::before {content: "Kaufdatum:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .kaufdatum_router::before {content: "Kaufdatum:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .vertrag_aktiv_data {display:none;}
+#hs4y-leser .vertrag_aktiv_handy {display:none;}
+#hs4y-leser .vertrag_data::before {content: "Vertrag aktiv:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .vertrag::before {content: "Servicepaket:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .monatspraemie::before {content: "HS4Y Monatsprämie:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .monatspraemie_data::before {content: "DATA Monatsprämie:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .zusaetzliche_vereinbarungen_handy::before {content: "Zusätzliche Vereinbarungen:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .zusaetzliche_vereinbarungen_data::before {content: "Zusätzliche Vereinbarungen:"; font-weight: 300;padding-right:0.5em;color:grey;}
+/*#hs4y-leser .vertragstext::before {content: "Vertragstext:"; font-weight: 400;}*/
+#hs4y-leser .verkaeufer::before {content: "Sie wurden bedient von:"; font-weight: 300;padding-right:0.5em;color:grey;}
+#hs4y-leser .back {margin-top:1em; padding:1em;}
+#hs4y-leser .vorname,#hs4y-leser .familienname,#hs4y-leser .plz,#hs4y-leser .strasse,#hs4y-leser .hausnummer,#hs4y-leser .ort,#hs4y-leser .imei,#hs4y-leser .tel,#hs4y-leser .iban,#hs4y-leser .hersteller,#hs4y-leser .typenbezeichnung,#hs4y-leser .kaufdatum,#hs4y-leser .vertrag_aktiv,#hs4y-leser .vertrag,#hs4y-leser .monatspraemie,#hs4y-leser .bic,#hs4y-leser .email,#hs4y-leser .zusaetzliche_vereinbarungen {font-weight: 400;}
+#hs4y-leser .hersteller,#hs4y-leser .vertragstext{margin-top:0.69em;}
+#hs4y-leser .familienname,#hs4y-leser .ort,#hs4y-leser .tel {margin-bottom:0.69em;}
+#hs4y-leser .entry {line-height: 1.33rem!important;}
+.img-print {width:auto; height:70px;}

@@ -1,0 +1,14 @@
+<?php
+/**
+ * Hello, I'm an an customelement template file from your CustomElement: Slide-In [End]
+ */
+ 
+
+/** information **/
+$arrImport["info"]["CONTAO_VERSION"] = "5.3.3";
+$arrImport["info"]["CE_VERSION"] = "5.0.11";
+
+/** sql statements **/
+$arrImport["sql"] = 
+'INSERT INTO `tl_pct_customelement`(`id`,`tstamp`,`alias`,`title`,`isCTE`,`isFMD`,`template`,`protected`,`user_groups`,`cssID`,`isWrapper`) VALUES (`180`,`1727163788`,`slide_in_stop`,`Slide-In [End]`,`1`,``,`customelement_slide_in_stop`,``,``,`a:2:{i:0;s:0:"";i:1;s:0:"";}`,`stop`); 
+';

@@ -1,0 +1,102 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_teambox.css|static';
+?>
+<div class="<?php echo $this->class; ?> block <?php echo $this->field('schema')->value(); ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>	
+	
+	<?php if($this->field('schema')->value() != 'hover_image'): ?>
+	
+	<div class="teambox_inside">
+		<div class="image">
+			<?php if($this->field('email')->value()): ?>
+			<a href="mailto:<?= \Contao\System::getContainer()->get('contao.insert_tag.parser')->replace('{{email_url::'.$this->field('email')->value().'}}'); ?>">
+			<?php endif; ?>
+			
+			<?php echo $this->field('image')->html(); ?>
+			
+			<?php if($this->field('email')->value()): ?>
+			<span class="overlay"><i class="fa fa-envelope"></i></span>
+			</a>
+			<?php endif; ?>
+			
+		</div>
+		
+		<div class="teambox_content">
+			<?php if($this->field('name')->value()): ?>
+			<div class="name h5"><?php echo $this->field('name')->value(); ?></div>
+			<?php endif; ?>
+			
+			<?php if($this->field('function')->value()): ?>
+			<div class="function"><?php echo $this->field('function')->value(); ?></div>
+			<?php endif; ?>
+			
+			<?php if($this->field('description')->value()): ?>
+			<div class="description"><?php echo $this->field('description')->value(); ?></div>
+			<?php endif; ?>
+			
+			<?php if($this->field('phone')->value()): ?>
+			<div class="phone"><?php echo $this->field('phone')->value(); ?></div>
+			<?php endif; ?>
+				
+			<?php if($this->field('email')->value()): ?>
+			<div class="email">
+				<?= \Contao\System::getContainer()->get('contao.insert_tag.parser')->replace('{{email::'.$this->field('email')->value().'}}'); ?>
+			</div>
+			<?php endif; ?>
+		
+			<?php if( !empty($this->group('socials')) ): ?> 
+				<div class="socials <?php echo $this->field('social-schema')->value(); ?>">
+				<?php foreach($this->group('socials') as $i => $fields): ?>
+					<a href="<?php echo $this->field('link#'.$i)->value(); ?>" target="_blank"><i class="<?php echo $this->field('icon#'.$i)->value(); ?>"></i></a>
+				<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	
+	</div>
+	
+	<?php endif; ?>
+	
+	<?php if($this->field('schema')->value() == 'hover_image'): ?>
+	
+	<div class="team-content">
+		
+		<?php echo $this->field('image')->html(); ?>
+		
+		<div class="team-content-hover">
+			<div class="team-content-valign">
+				<?php if($this->field('name')->value()): ?>
+				<div class="name h5"><?php echo $this->field('name')->value(); ?></div>
+				<?php endif; ?>
+				
+				<?php if($this->field('function')->value()): ?>
+				<div class="function"><?php echo $this->field('function')->value(); ?></div>
+				<?php endif; ?>
+				
+				<?php if($this->field('description')->value()): ?>
+				<div class="description"><?php echo $this->field('description')->value(); ?></div>
+				<?php endif; ?>
+				
+				<?php if($this->field('phone')->value()): ?>
+				<div class="phone"><?php echo $this->field('phone')->value(); ?></div>
+				<?php endif; ?>
+					
+				<?php if($this->field('email')->value()): ?>
+				<div class="email">
+					<?= \Contao\System::getContainer()->get('contao.insert_tag.parser')->replace('{{email::'.$this->field('email')->value().'}}'); ?>	
+				</div>
+				<?php endif; ?>
+				
+				<?php if( !empty($this->group('socials')) ): ?> 
+					<div class="socials <?php echo $this->field('social-schema')->value(); ?>">
+					<?php foreach($this->group('socials') as $i => $fields): ?>
+						<a href="<?php echo $this->field('link#'.$i)->value(); ?>" target="_blank"><i class="<?php echo $this->field('icon#'.$i)->value(); ?>"></i></a>
+					<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	
+	<?php endif; ?>
+	
+</div>

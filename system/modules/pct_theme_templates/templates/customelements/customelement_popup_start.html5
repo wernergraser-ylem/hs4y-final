@@ -1,0 +1,38 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_popup.css|static';
+?>
+<div class="<?php echo $this->class; ?> ce_pop_up_<?= $this->id; ?>">
+	<div class="ce_popup_overlay"></div>
+	<div class="ce_popup_content" style="max-width: <?php echo $this->field('max_width')->value(); ?>px">
+		<i class="ti ti-close popup_close"></i>
+		<div class="checkbox">
+			<input type="checkbox" class="ce_popup_checkbox" id="ce_popup_checkbox">
+			<label for="ce_popup_checkbox"><?php echo $this->field('label')->value(); ?></label>
+		</div>
+		
+		<!-- SEO-SCRIPT-START -->
+		<script>
+		jQuery(document).ready(function()
+		{ 
+			var delay = <?= $this->field('delay')->value() ?: 2000; ?>;
+			
+			if ( localStorage.getItem('ce_popup_isClosed_<?= $this->id; ?>') == undefined || localStorage.getItem('ce_popup_isClosed_<?= $this->id; ?>') == null ) 
+			{
+				setTimeout(function()
+				{
+					jQuery('.ce_pop_up_<?= $this->id; ?>').addClass('popup_show');
+				},delay);
+			}
+			
+			jQuery('.ce_pop_up_<?= $this->id; ?> .popup_close').click(function()
+			{
+				jQuery('.ce_pop_up_<?= $this->id; ?> .ce_popup_overlay, .ce_pop_up_<?= $this->id; ?> .ce_popup_content').fadeOut('slow');
+				
+				if( jQuery('.ce_pop_up_<?= $this->id; ?> .ce_popup_checkbox').is(':checked') ) { 
+					localStorage.setItem('ce_popup_isClosed_<?= $this->id; ?>', 1);
+				}
+			});
+		});
+		</script>
+		<!-- SEO-SCRIPT-STOP -->
+

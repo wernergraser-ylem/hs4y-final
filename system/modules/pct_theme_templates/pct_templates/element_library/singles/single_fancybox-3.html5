@@ -1,0 +1,71 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_fancybox-3',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'fancybox',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126358,
+1 => 14769,
+2 => 640,
+3 => 1700055395,
+5 => 'fancybox',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:17:{s:15:"ulgandogq3tvxqb";s:36:"1ff87d14-83ba-11ee-88a1-ac4b725a6f1d";s:19:"ulgandogq3tvxqb_alt";s:0:"";s:21:"ulgandogq3tvxqb_title";s:0:"";s:20:"ulgandogq3tvxqb_size";a:3:{i:2;s:12:"proportional";i:0;s:2:"65";i:1;s:0:"";}s:14:"egfbs8eyxm2uih";a:2:{s:5:"value";s:23:"Strategy and Consulting";s:4:"unit";s:2:"h2";}s:15:"oaz1mm320m3hja1";s:198:"<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";s:15:"aajiqyere9o6qwa";s:36:"4ad3d36e-8228-11ee-8be5-a67969a4fc01";s:20:"aajiqyere9o6qwa_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:14:"kgljo0qbwdhfr3";s:1:"#";s:21:"kgljo0qbwdhfr3_target";s:0:"";s:23:"kgljo0qbwdhfr3_linkText";s:9:"Read more";s:24:"kgljo0qbwdhfr3_titleText";s:9:"Read more";s:23:"kgljo0qbwdhfr3_lightbox";s:0:"";s:13:"gkiz4498vo5wy";s:23:"fancy_box_color_default";s:14:"054ydo22bcrt8y";s:6:"style3";s:15:"xpd8bj45om4zu7w";s:3:"280";s:15:"06w0ztyngbqc8xq";s:15:"border-radius-0";}s:6:"groups";a:5:{i:0;a:4:{s:5:"ident";s:5:"418_0";s:8:"group_id";i:418;s:11:"group_alias";s:4:"icon";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"ulgandogq3tvxqb";s:2:"id";i:1954;s:5:"alias";s:4:"icon";}}}i:1;a:4:{s:5:"ident";s:5:"416_0";s:8:"group_id";i:416;s:11:"group_alias";s:4:"text";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:14:"egfbs8eyxm2uih";s:2:"id";i:1950;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:15:"oaz1mm320m3hja1";s:2:"id";i:1951;s:5:"alias";s:4:"text";}}}i:2;a:4:{s:5:"ident";s:5:"417_0";s:8:"group_id";i:417;s:11:"group_alias";s:5:"image";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"aajiqyere9o6qwa";s:2:"id";i:1953;s:5:"alias";s:8:"bg_image";}}}i:3;a:4:{s:5:"ident";s:5:"420_0";s:8:"group_id";i:420;s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"kgljo0qbwdhfr3";s:2:"id";i:1955;s:5:"alias";s:4:"link";}}}i:4;a:4:{s:5:"ident";s:5:"419_0";s:8:"group_id";i:419;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:13:"gkiz4498vo5wy";s:2:"id";i:1956;s:5:"alias";s:5:"color";}i:1;a:3:{s:4:"uuid";s:14:"054ydo22bcrt8y";s:2:"id";i:1957;s:5:"alias";s:5:"style";}i:2;a:3:{s:4:"uuid";s:15:"xpd8bj45om4zu7w";s:2:"id";i:1958;s:5:"alias";s:10:"min_height";}i:3;a:3:{s:4:"uuid";s:15:"06w0ztyngbqc8xq";s:2:"id";i:1959;s:5:"alias";s:13:"border_radius";}}}}s:6:"tstamp";i:1641892019;s:5:"alias";s:8:"fancybox";s:5:"uuids";a:9:{i:0;s:15:"ulgandogq3tvxqb";i:1;s:14:"egfbs8eyxm2uih";i:2;s:15:"oaz1mm320m3hja1";i:3;s:15:"aajiqyere9o6qwa";i:4;s:14:"kgljo0qbwdhfr3";i:5;s:13:"gkiz4498vo5wy";i:6;s:14:"054ydo22bcrt8y";i:7;s:15:"xpd8bj45om4zu7w";i:8;s:15:"06w0ztyngbqc8xq";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:149;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'1ff87d14-83ba-11ee-88a1-ac4b725a6f1d' => 'files/cto_layout/img/element_library/icon_1.svg',
+'4ad3d36e-8228-11ee-8be5-a67969a4fc01' => 'files/cto_layout/img/element_library/1000x560.png',
+),
+);

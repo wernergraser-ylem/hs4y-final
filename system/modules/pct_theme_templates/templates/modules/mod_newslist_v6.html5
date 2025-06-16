@@ -1,0 +1,37 @@
+<?php
+namespace Contao;	
+
+$arrModel = ModuleModel::findByPk($this->id)->originalRow();
+$arrCssID =  StringUtil::deserialize($arrModel['cssID']);
+
+$GLOBALS['SEO_SCRIPTS_FILE'][]  = 'files/cto_layout/scripts/isotope/jquery.isotope.min.js|static';
+$GLOBALS['SEO_SCRIPTS_FILE'][]  = 'files/cto_layout/scripts/isotope/isotope_plugin_masonry.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/isotope/isotope_styles.css|static';
+?>
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div id="mod_news_<?php echo $this->id; ?>" class="mod_newslist_v6 isotope <?= $arrCssID[1]; ?>">
+ <?php if (empty($this->articles)): ?>
+    <p class="empty"><?php echo $this->empty; ?></p>
+  <?php else: ?>
+    <?php echo implode('', $this->articles); ?>
+  <?php endif; ?>
+</div>
+<?php echo $this->pagination; ?>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(window).on('load', function() {
+  	var container = jQuery('#mod_news_<?php echo $this->id; ?>');
+	container.isotope({
+		itemSelector: '.item',
+		//layoutMode: 'masonryColumnShift',
+		resizable: true,
+		masonry: {}
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php $this->endblock(); ?>

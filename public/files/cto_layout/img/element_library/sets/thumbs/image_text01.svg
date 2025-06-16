@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="601px" height="385px" viewBox="0 0 601 385" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>image_text01</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="153.511706" y="1.00334448" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="307.023411" y="1.00334448" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="459.531773" y="1.00334448" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="153.511706" y="211.705686" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect id="path-9" x="1.00334448" y="211.705686" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="307.023411" y="211.705686" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+        <rect id="path-13" x="459.531773" y="211.705686" width="140.468227" height="93.3110368"></rect>
+        <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.468227" height="93.3110368" fill="white">
+            <use xlink:href="#path-13"></use>
+        </mask>
+    </defs>
+    <g id="Image/Text-Blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01" transform="translate(1.000000, 0.000000)">
+            <polyline id="Path-15" stroke="#979797" stroke-width="2" points="207.399684 55.7576291 218.769814 43.8962203 226.761559 52.3036293 231.442495 47.3792294 240.303339 56.7009403"></polyline>
+            <ellipse id="Oval-6" stroke="#979797" fill="#D8D8D8" cx="234.651023" cy="41.2771253" rx="1.67772356" ry="1.68001867"></ellipse>
+            <rect id="Rectangle-10" stroke="#979797" stroke-width="2" x="207.688963" y="36.1170569" width="32.1137124" height="22.0802676" rx="3"></rect>
+            <path d="M1.50501672,8.02675585 L71.7462968,8.02675585" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M2.5083612,25.083612 L72.7496413,25.083612" id="Line" stroke="#79797B" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M0.501672241,43.6454849 L11.7194046,43.6454849" id="Line" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M1.50501672,75.2508361 L130.932566,75.2508361" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,61.2040134 L130.932566,61.2040134" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,90.3010033 L130.932566,90.3010033" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,104.347826 L130.932566,104.347826" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,118.394649 L130.932566,118.394649" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,133.444816 L130.932566,133.444816" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,146.488294 L46.1651183,146.488294" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-2)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-1"></use>
+            <path d="M156.020067,118.394649 L218.259782,118.394649" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M154.013378,144.481605 L290.482982,144.481605" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M154.013378,158.026756 L290.482982,158.026756" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M154.013378,171.571906 L290.482982,171.571906" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-4)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-3"></use>
+            <path d="M309.531773,118.394649 L371.771488,118.394649" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M307.525084,144.481605 L443.994687,144.481605" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M307.525084,158.026756 L443.994687,158.026756" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M307.525084,171.571906 L443.994687,171.571906" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-6)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-5"></use>
+            <path d="M462.040134,118.394649 L524.279849,118.394649" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M460.033445,144.481605 L596.503049,144.481605" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M460.033445,158.026756 L596.503049,158.026756" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M460.033445,171.571906 L596.503049,171.571906" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-8)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-7"></use>
+            <path d="M156.020067,329.09699 L218.259782,329.09699" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M154.013378,355.183946 L290.482982,355.183946" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M154.013378,368.729097 L290.482982,368.729097" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M154.013378,382.274247 L290.482982,382.274247" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-10)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-9"></use>
+            <path d="M3.51170569,329.09699 L65.7514211,329.09699" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M1.50501672,355.183946 L137.97462,355.183946" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,368.729097 L137.97462,368.729097" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M1.50501672,382.274247 L137.97462,382.274247" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-12)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-11"></use>
+            <path d="M309.531773,329.09699 L371.771488,329.09699" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M307.525084,355.183946 L443.994687,355.183946" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M307.525084,368.729097 L443.994687,368.729097" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M307.525084,382.274247 L443.994687,382.274247" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <use id="Rectangle-9" stroke="#979797" mask="url(#mask-14)" stroke-width="2" fill="#F2F2F2" stroke-dasharray="4" xlink:href="#path-13"></use>
+            <path d="M462.040134,329.09699 L524.279849,329.09699" id="Line" stroke="#979797" stroke-width="6" stroke-linecap="square"></path>
+            <path d="M460.033445,355.183946 L596.503049,355.183946" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M460.033445,368.729097 L596.503049,368.729097" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M460.033445,382.274247 L596.503049,382.274247" id="Line" stroke="#D7D9D9" stroke-width="4" stroke-linecap="square"></path>
+            <polygon id="Path-2" fill="#4990E2" points="264.146112 0.88576505 278.118468 0.693718645 294.003421 17.5820159 293.48218 33.8393604"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,97 @@
+/* =============================================================================
+ * ce_hyperlink_lightbox_video
+ * ========================================================================== */
+
+.ce_hyperlink_lightbox_video.hyperlink_align_left {
+	text-align: left;
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_align_center {
+	text-align: center;
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_align_right {
+	text-align: right;
+}
+
+.ce_hyperlink_lightbox_video a {
+	display: inline-block;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-webkit-transform: scale(0.9,0.9);
+	transform: scale(0.9,0.9);
+}
+
+.ce_hyperlink_lightbox_video a:hover {
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+.ce_hyperlink_lightbox_video a.hidden {
+	display: none;
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_accent svg g {
+	fill: rgb(80,80,80);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_second svg g {
+	fill: rgb(180,180,180);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_white svg g {
+	fill: rgb(255,255,255);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_black svg g,
+.ce_hyperlink_lightbox_video.hyperlink_color_black svg polygon  {
+	fill: rgb(0,0,0);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_black svg circle {
+	stroke: rgb(0,0,0);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_lighgray svg g {
+	fill: rgb(247,247,247);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_darkgray svg g {
+	fill: rgb(69,69,69);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_accent svg polygon {
+	fill: var(--accentColor);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_accent svg circle {
+	stroke: var(--accentColor);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_second svg polygon  {
+	fill: var(--secondColor);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_second svg circle {
+	stroke: var(--secondColor);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_customColor1 svg polygon {
+	fill: var(--customColor1);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_customColor1 svg circle {
+	stroke: var(--customColor1);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_customColor2 svg polygon {
+	fill: var(--customColor2);
+}
+
+.ce_hyperlink_lightbox_video.hyperlink_color_customColor2 svg circle {
+	stroke: var(--customColor2);
+}
+
+.inlinevideocontent {
+	line-height: 0;
+}

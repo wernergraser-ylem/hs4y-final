@@ -1,0 +1,89 @@
+<?php
+use Contao\CoreBundle\Routing\ResponseContext\HtmlHeadBag\HtmlHeadBag;
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_tabs.css|static|'.\filemtime(\Contao\System::getContainer()->getParameter('kernel.project_dir').'/templates/changelog.txt') ?? '';
+?>
+<?php
+global $objPage;
+$objPage->pageTitle = $this->field('name')->value() ?? '';
+$objPage->description = $this->field('meta_description')->value() ?? ''; 
+
+$responseContext = \Contao\System::getContainer()->get('contao.routing.response_context_accessor')->getResponseContext();
+$htmlHeadBag = $responseContext->get(HtmlHeadBag::class);
+$htmlHeadBag->setTitle( $this->field('name')->value() ?? '' );
+$htmlHeadBag->setMetaDescription( $this->field('meta_description')->value() ?? '' );
+// cannonicals
+//$objPage->enableCanonical = true;
+//$htmlHeadBag->setCanonicalUri('http://www.google.de');
+?>
+
+<div class="single-top">
+	<div class="single-top-content">
+		<div class="single-leftside">
+			<?php echo $this->field('gallery')->html(); ?>
+		</div>
+		<div class="single-rightside">
+			<h1><?php echo $this->field('name')->value(); ?></h1>
+			<div class="single-subheadline"><?php echo $this->field('subheadline')->html(); ?></div>
+			<div class="single-rating"><?php echo $this->field('rating')->html(); ?><span class="single-rating-count"><?php echo $this->field('rating')->value(); ?></span></div>
+			<div class="single-price"><div class="single-price-new">&euro; <?php echo $this->field('price')->html(); ?></div> <?php if ($this->field('price_old')->value()): ?><div class="single-price-old">&euro; <?php echo $this->field('price_old')->value(); ?></div><?php endif;?></div>
+			<div class="single-metadata">
+				<div class="single-metadata-col1"><strong>ARTIKEL NR.</strong><div><?php echo $this->field('item_number')->html(); ?></div></div>
+				<div class="single-metadata-col2 "><strong>HERSTELLER NR.</strong><div><?php echo $this->field('producer_number')->html(); ?></div></div>
+				<div class="single-metadata-col3"><strong>MARKE</strong><div><?php echo $this->field('brand')->html(); ?></div></div>
+			</div>
+			<div class="single-technical-data"><?php echo $this->field('technical_data')->html(); ?></div>
+			<div class="single-mail"><a href="mailto:info@yourdomain.com?subject=<?php echo $this->field('name')->value(); ?>, Artikelnummer: <?php echo $this->field('item_number')->value(); ?>"><i class="fa fa-envelope"></i> Per E-Mail anfragen</a></div>
+			<div class="single-short-description"><?php echo $this->field('short_description')->html(); ?></div>
+			<div class="single-stock <?php echo $this->field('stock')->value(); ?>"><?php echo $this->field('stock')->html(); ?></div>
+			<h5>Datenblatt downloaden</h5>
+			<div class="single-datasheet"><?php echo $this->field('datasheet')->html(); ?></div>
+			<h5>Verfügbare Farben</h5>
+			<div class="single-color"><?php echo $this->field('color')->html(); ?></div>
+			<?php echo $this->field('notelist')->html(); ?>
+		</div>
+	</div>
+</div>
+
+<div class="single-bottom">
+	<div class="ce_tabs">
+		<div class="tabs classic tabs_<?php echo $this->id; ?>">
+			<ul>
+				<li><span>Besonderheiten</span></li>
+				<li><span>Beschreibung</span></li>
+				<li><span>Sonstiges</span></li>
+			</ul>
+		</div>
+		<div class="panes panes_<?php echo $this->id; ?>">
+			<div class="section active">
+				<h3>Features</h3>
+				<div class="single-features"><?php echo $this->field('features')->html(); ?></div>
+			</div>
+			<div class="section">
+				<h3>Beschreibung</h3>
+				<div class="single-desc"><?php echo $this->field('description')->html(); ?></div>
+			</div>
+			<div class="section">
+				<h3>Sonstiges</h3>
+				<div class="single-desc-add"><?php echo $this->field('additional_desc')->html(); ?></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	jQuery(".tabs_<?php echo $this->id; ?> li:first").addClass('active');
+    jQuery(".tabs_<?php echo $this->id; ?> li").click(function(e){
+        if (!jQuery(this).hasClass("active")) {
+            var tabNum = jQuery(this).index();
+            var nthChild = tabNum+1;
+            jQuery(".tabs_<?php echo $this->id; ?> li.active").removeClass("active");
+            jQuery(this).addClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div.active").removeClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

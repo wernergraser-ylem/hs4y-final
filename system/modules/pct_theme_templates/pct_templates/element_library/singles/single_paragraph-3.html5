@@ -1,0 +1,71 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_paragraph-3
+*/
+$arrImport = array (
+'tstamp' => '27.11.2023 08:46',
+'name' => 'single_paragraph-3',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'text',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+7 => 'text',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+111 => 'format_css',
+141 => 'privacy_level',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126629,
+1 => 14790,
+2 => 640,
+3 => 1701074195,
+5 => 'text',
+6 => 'a:2:{s:4:"unit";s:2:"h2";s:5:"value";s:0:"";}',
+7 => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida luctus dui eu placerat. Aliquam vitae tincidunt lorem. Nam ligula neque, laoreet ut rhoncus et, varius at mi. Morbi sit amet rutrum velit.</p>',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+111 => 'format-p-small',
+141 => 1,
+162 => 'sourceText',
+),
+),
+);

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600px" height="130px" viewBox="0 0 600 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>services10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Services" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="10">
+            <rect id="Rectangle-11" fill="#32414B" x="0" y="0" width="600" height="129.341317"></rect>
+            <path d="M79.491018,48.2586826 L145.066032,48.2586826" id="Line" stroke="#FFFFFF" stroke-width="7" stroke-linecap="square"></path>
+            <path d="M78.5928144,67.1209581 L174.704796,67.1209581" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M78.5928144,75.2047904 L174.704796,75.2047904" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M78.5928144,83.2886228 L142.390566,83.2886228" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M270.359281,48.2586826 L335.934296,48.2586826" id="Line" stroke="#FFFFFF" stroke-width="7" stroke-linecap="square"></path>
+            <path d="M269.461078,67.1209581 L365.573059,67.1209581" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M269.461078,75.2047904 L365.573059,75.2047904" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M269.461078,83.2886228 L333.258829,83.2886228" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M461.227545,49.1568862 L526.802559,49.1568862" id="Line" stroke="#FFFFFF" stroke-width="7" stroke-linecap="square"></path>
+            <path d="M460.329341,68.0191617 L556.441323,68.0191617" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M460.329341,76.102994 L556.441323,76.102994" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M460.329341,84.1868263 L524.127093,84.1868263" id="Line" stroke-opacity="0.683338995" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            <g id="icon_1_white" transform="translate(38.622754, 42.215569)" stroke="#FFFFFF">
+                <polygon id="Path-2" points="18.1287575 0.587747073 23.9835394 8.22250847 12.4112349 21.0371254 0.0813717126 8.32015819 6.50422143 0.528675021"></polygon>
+                <polyline id="Path-3" points="6.65119831 0.698657866 6.65119831 8.66572377 18.2997296 8.66572377 18.2997296 0.81385903"></polyline>
+                <polygon id="Path-4" points="12.1237594 1.33559122 6.50138716 8.27153425 12.4857356 21.0632457 18.6429741 8.60868699"></polygon>
+                <path d="M0.816548722,8.50929719 L22.5367447,8.50929719" id="Line" stroke-linecap="square"></path>
+            </g>
+            <g id="icon_2_white" transform="translate(227.245509, 42.215569)" stroke="#FFFFFF">
+                <rect id="Rectangle-5" x="0.449101796" y="0.449101796" width="26.4830763" height="22.6958557"></rect>
+                <polygon id="Triangle" transform="translate(13.690640, 9.909505) rotate(90.000000) translate(-13.690640, -9.909505) " points="13.69064 6.60633632 17.9394593 13.2126729 9.44182075 13.2126729"></polygon>
+                <path d="M26.9091888,19.3471286 L8.02554755,19.3471286" id="Line" stroke-linecap="square"></path>
+                <path d="M7.08136549,18.4033663 L7.08136549,20.2908911" id="Line" stroke-linecap="square"></path>
+                <path d="M5.19300136,19.3471286 L0.47209103,19.3471286" id="Line" stroke-linecap="square"></path>
+            </g>
+            <g id="icon_3_white" transform="translate(419.461078, 42.215569)">
+                <rect id="Rectangle-3" stroke="#FFFFFF" x="0.449101796" y="0.449101796" width="24.5947122" height="17.9770439" rx="2"></rect>
+                <path d="M0.47209103,14.6283168 L25.0208247,14.6283168" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M9.91391165,18.4033663 L9.91391165,21.2346534" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M15.579004,18.4033663 L15.579004,21.2346534" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <g id="Rectangle-4" transform="translate(7.185629, 21.556886)">
+                    <g id="path-1-link" fill="#D8D8D8">
+                        <rect id="path-1" x="0.367827781" y="0.149648353" width="10.3860027" height="1" rx="0.5"></rect>
+                    </g>
+                    <rect id="Rectangle-path" stroke="#FFFFFF" x="0.816929578" y="0.59875015" width="9.4877991" height="1" rx="0.5"></rect>
+                </g>
+                <circle id="Oval" stroke="#FFFFFF" fill="#D8D8D8" fill-rule="nonzero" cx="12.7464578" cy="16.5158415" r="1"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

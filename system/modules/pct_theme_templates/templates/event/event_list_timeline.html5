@@ -1,0 +1,38 @@
+<div class="timeline_item" data-timeline_date="<?php echo \Contao\Date::parse("d/m/Y",$this->begin); ?>" itemscope itemtype="http://schema.org/Event">
+	<div class="event block<?php if($this->class): ?> <?= $this->class ?><?php endif; ?>">
+		<div class="event-content">
+			
+			<div class="h3"><?= $this->title ?></div>
+			
+			<div class="info">
+				<time datetime="<?= $this->date ?>"><?= $this->date ?><?php if ($this->time): ?>, <?= $this->time ?><?php endif; ?></time>
+				<?php if ($this->location): ?>
+				<div class="location"><?= $this->locationLabel ?>: <?= $this->location ?></div>
+				<?php endif; ?>
+			</div>
+	
+			<div class="ce_text block" itemprop="description">
+				<?php if($this->teaser): ?><?= $this->teaser ?><?php endif; ?>
+			</div>
+			
+			<?php if ($this->enclosure): ?>
+		    <div class="enclosure">
+		      <?php foreach ($this->enclosure as $enclosure): ?>
+		        <p><?= \Contao\Image::getHtml($enclosure['icon'], '', 'class="mime_icon"') ?> <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a></p>
+		      <?php endforeach; ?>
+		    </div>
+		  <?php endif; ?>
+			
+			<?php if ($this->hasDetails): ?>
+	   		 <div class="more"><a href="<?= $this->href ?>" title="<?= $this->readMore ?>"<?= $this->target ?> itemprop="url"><?= $this->more ?></a></div>
+			<?php endif; ?>
+			
+		</div>
+		
+		<?php if ($this->addImage): ?>
+		<div class="image_container">
+			<?php $this->insert('picture_default', $this->picture); ?>
+		</div>
+		<?php endif; ?>
+	</div>	
+</div>

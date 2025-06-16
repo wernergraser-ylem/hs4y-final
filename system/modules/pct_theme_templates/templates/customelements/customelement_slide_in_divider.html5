@@ -1,0 +1,4 @@
+
+</div></div>
+<div class="slide_in_content" data-bgcolor="<?php echo $this->field('slide_in_bg_color')->value(); ?>">
+	<div class="content"<?php if($this->field('padding')->value()): ?> style="padding:<?php echo $this->field('padding')->value(); ?>"<?php endif; ?>>

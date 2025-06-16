@@ -1,0 +1,22 @@
+/* =============================================================================
+ * ce_youtube-background (scripts/jquery.mb.YTPlayer/)
+ * ========================================================================== */
+
+.ce_youtube_background .mbYTP_wrapper {
+	opacity: 1!important;
+}
+
+.ce_youtube_background.overlay .YTPOverlay {
+	background-color: var(--accentColor);
+	opacity: 0.8;
+}
+
+.ce_youtube_background.overlay .mbYTP_wrapper.fullscreen .YTPOverlay {
+	display: none;
+}
+
+.ce_youtube_background {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}

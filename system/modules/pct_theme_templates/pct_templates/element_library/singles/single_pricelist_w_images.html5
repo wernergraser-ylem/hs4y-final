@@ -1,0 +1,71 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_pricelist_w_images
+*/
+$arrImport = array (
+'tstamp' => '16.08.2024 10:49',
+'name' => 'single_pricelist_w_images',
+'category' => 'tables_lists',
+'thumb' => '',
+'elements' => 'pricelist_image',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+60 => 'com_template',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 126092,
+1 => 14748,
+2 => 128,
+3 => 1699882704,
+5 => 'pricelist_image',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+60 => 'com_default',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_6',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+96 => '14',
+98 => '0.5',
+156 => 'a:8:{s:6:"values";a:28:{s:15:"gqmauxqzwgspsli";s:17:"Lightyear Offroad";s:15:"boa9ib66khzf3zf";s:14:"€ 120 /piece";s:15:"2qs9x1addd6kwj6";s:51:"Lorem ipsum dolor sit amet, consectetuer adipiscing";s:15:"93861g2wrd1h9fn";s:36:"dd6bef6c-8229-11ee-8be5-a67969a4fc01";s:16:"95ohvnobrpyyhypv";s:18:"Lightyear Speester";s:16:"mcs8jo8o47c2pszc";s:14:"€ 145 /piece";s:16:"h5j732b7p6ynfd86";s:51:"Lorem ipsum dolor sit amet, consectetuer adipiscing";s:16:"2quq85kaj3eln0t8";s:36:"dd6bef6c-8229-11ee-8be5-a67969a4fc01";s:16:"ivty4q4l7mfqaibi";s:12:"GCM Roadstar";s:16:"plp26hfgeeuofzxd";s:13:"€ 99 /piece";s:16:"80c04vn8cwuqggwj";s:51:"Lorem ipsum dolor sit amet, consectetuer adipiscing";s:16:"gvxhet8i8vnkogx7";s:36:"dd6bef6c-8229-11ee-8be5-a67969a4fc01";s:16:"1c6t9w8l77q2v52x";s:9:"BWZ Sport";s:16:"d8b11bxhmb333sxj";s:14:"€ 110 /piece";s:16:"oaabuh54xdan2wzw";s:51:"Lorem ipsum dolor sit amet, consectetuer adipiscing";s:16:"pm1o6quc2l1qftcz";s:36:"dd6bef6c-8229-11ee-8be5-a67969a4fc01";s:19:"93861g2wrd1h9fn_alt";s:0:"";s:21:"93861g2wrd1h9fn_title";s:0:"";s:15:"qybw3t7toc143z4";N;s:15:"dfdhkdilfmw7fnx";N;s:14:"4kjclfvaedzbia";N;s:15:"drot4xe04c5w4u7";N;s:20:"pm1o6quc2l1qftcz_alt";s:0:"";s:22:"pm1o6quc2l1qftcz_title";s:0:"";s:20:"gvxhet8i8vnkogx7_alt";s:0:"";s:22:"gvxhet8i8vnkogx7_title";s:0:"";s:20:"2quq85kaj3eln0t8_alt";s:0:"";s:22:"2quq85kaj3eln0t8_title";s:0:"";}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:5:"154_0";s:8:"group_id";i:154;s:11:"group_alias";s:4:"item";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"gqmauxqzwgspsli";s:2:"id";i:985;s:5:"alias";s:5:"label";}i:1;a:3:{s:4:"uuid";s:15:"2qs9x1addd6kwj6";s:2:"id";i:987;s:5:"alias";s:7:"subline";}i:2;a:3:{s:4:"uuid";s:15:"boa9ib66khzf3zf";s:2:"id";i:986;s:5:"alias";s:5:"price";}i:3;a:3:{s:4:"uuid";s:15:"93861g2wrd1h9fn";s:2:"id";i:988;s:5:"alias";s:5:"image";}}}i:1;a:7:{s:5:"ident";s:5:"154_1";s:8:"group_id";i:154;s:11:"group_alias";s:4:"item";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"1c6t9w8l77q2v52x";s:2:"id";i:985;s:5:"alias";s:7:"label#1";}i:1;a:3:{s:4:"uuid";s:16:"oaabuh54xdan2wzw";s:2:"id";i:987;s:5:"alias";s:9:"subline#1";}i:2;a:3:{s:4:"uuid";s:16:"d8b11bxhmb333sxj";s:2:"id";i:986;s:5:"alias";s:7:"price#1";}i:3;a:3:{s:4:"uuid";s:16:"pm1o6quc2l1qftcz";s:2:"id";i:988;s:5:"alias";s:7:"image#1";}}s:6:"isCopy";i:1;s:6:"pgroup";s:3:"154";s:7:"numCopy";i:1;}i:2;a:7:{s:5:"ident";s:5:"154_2";s:8:"group_id";i:154;s:11:"group_alias";s:4:"item";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"ivty4q4l7mfqaibi";s:2:"id";i:985;s:5:"alias";s:7:"label#2";}i:1;a:3:{s:4:"uuid";s:16:"80c04vn8cwuqggwj";s:2:"id";i:987;s:5:"alias";s:9:"subline#2";}i:2;a:3:{s:4:"uuid";s:16:"plp26hfgeeuofzxd";s:2:"id";i:986;s:5:"alias";s:7:"price#2";}i:3;a:3:{s:4:"uuid";s:16:"gvxhet8i8vnkogx7";s:2:"id";i:988;s:5:"alias";s:7:"image#2";}}s:6:"isCopy";i:1;s:6:"pgroup";s:3:"154";s:7:"numCopy";i:2;}i:3;a:7:{s:5:"ident";s:5:"154_3";s:8:"group_id";i:154;s:11:"group_alias";s:4:"item";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"95ohvnobrpyyhypv";s:2:"id";i:985;s:5:"alias";s:7:"label#3";}i:1;a:3:{s:4:"uuid";s:16:"h5j732b7p6ynfd86";s:2:"id";i:987;s:5:"alias";s:9:"subline#3";}i:2;a:3:{s:4:"uuid";s:16:"mcs8jo8o47c2pszc";s:2:"id";i:986;s:5:"alias";s:7:"price#3";}i:3;a:3:{s:4:"uuid";s:16:"2quq85kaj3eln0t8";s:2:"id";i:988;s:5:"alias";s:7:"image#3";}}s:6:"isCopy";i:1;s:6:"pgroup";s:3:"154";s:7:"numCopy";i:3;}}s:6:"clones";a:4:{i:985;a:3:{i:1;s:16:"1c6t9w8l77q2v52x";i:2;s:16:"ivty4q4l7mfqaibi";i:3;s:16:"95ohvnobrpyyhypv";}i:986;a:3:{i:1;s:16:"d8b11bxhmb333sxj";i:2;s:16:"plp26hfgeeuofzxd";i:3;s:16:"mcs8jo8o47c2pszc";}i:987;a:3:{i:1;s:16:"oaabuh54xdan2wzw";i:2;s:16:"80c04vn8cwuqggwj";i:3;s:16:"h5j732b7p6ynfd86";}i:988;a:3:{i:1;s:16:"pm1o6quc2l1qftcz";i:2;s:16:"gvxhet8i8vnkogx7";i:3;s:16:"2quq85kaj3eln0t8";}}s:6:"tstamp";i:1567424835;s:5:"alias";s:15:"pricelist_image";s:5:"uuids";a:16:{i:0;s:15:"gqmauxqzwgspsli";i:1;s:15:"2qs9x1addd6kwj6";i:2;s:15:"boa9ib66khzf3zf";i:3;s:15:"93861g2wrd1h9fn";i:4;s:16:"1c6t9w8l77q2v52x";i:5;s:16:"ivty4q4l7mfqaibi";i:6;s:16:"95ohvnobrpyyhypv";i:7;s:16:"d8b11bxhmb333sxj";i:8;s:16:"plp26hfgeeuofzxd";i:9;s:16:"mcs8jo8o47c2pszc";i:10;s:16:"oaabuh54xdan2wzw";i:11;s:16:"80c04vn8cwuqggwj";i:12;s:16:"h5j732b7p6ynfd86";i:13;s:16:"pm1o6quc2l1qftcz";i:14;s:16:"gvxhet8i8vnkogx7";i:15;s:16:"2quq85kaj3eln0t8";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:93;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+'tl_files' =>
+array (
+'dd6bef6c-8229-11ee-8be5-a67969a4fc01' => 'files/cto_layout/img/element_library/60x60.png',
+),
+);

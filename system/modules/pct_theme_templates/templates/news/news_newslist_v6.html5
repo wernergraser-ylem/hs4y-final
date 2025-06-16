@@ -1,0 +1,40 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newslist_v6.css|static';
+$hasText = $this->hasText;
+?>
+
+<div class="newslist-v6 isotope-item item block <?php echo $this->class; ?><?php if (!$this->addImage): ?> no_image<?php endif; ?>" itemscope itemtype="http://schema.org/Article">
+	
+	<?php if ($this->addImage): ?>
+	<div class="news-image" style="background-image: url(<?php echo $this->src; ?>);"></div>
+	<?php endif; ?>
+	
+	<div class="news-content">
+		
+		<div class="h5"><?php echo $hasText ? $this->linkHeadline : $this->newsHeadline; ?></div>
+		
+		<div class="teaser" itemprop="description">
+		<?php echo $this->teaser; ?>
+		</div>
+		
+		<?php if ($hasText): ?>
+			<div class="button-more"><?php echo $this->more; ?></div>
+		<?php endif; ?>
+		
+		<div class="news-info">
+			<?php if ($this->author): ?>
+			<span class="news-author"><?php echo $this->author; ?></span>
+			<?php endif; ?>
+			
+			<?php if ($this->date): ?>
+			<span class="news-date" itemprop="datePublished"><?= \Contao\Date::parse("d", $this->timestamp);?>. <?= \Contao\Date::parse("M", $this->timestamp);?>, <?= \Contao\Date::parse("Y", $this->timestamp);?></span>
+			<?php endif; ?>
+				
+			<?php if ($this->commentCount): ?>
+			<span class="news-comments"><?php echo $this->numberOfComments; ?></span>
+			<?php endif; ?>
+		</div>
+		
+	</div>
+	
+</div>

@@ -1,0 +1,43 @@
+<?php
+/**
+ * IconPicker Widget template file
+ */
+?>
+
+<?php
+$intCols = 5;
+?>
+
+<?php if(!empty($this->files) && !empty($this->styles)): ?>
+<?php // add css files to page to display the font icons
+foreach($this->files as $file)
+{
+	$GLOBALS['TL_CSS'][] = $file;
+}
+?>
+
+<div id="<?= $this->strId; ?>" class="iconpicker">
+
+<form action="<?php echo $this->action; ?>" method="post">
+
+<?php foreach($this->styles as $file => $styles): ?>	
+<h2><?php echo basename($file); ?></h2>
+<ul>
+	<?php foreach($styles as $i => $element): ?>
+	<li>
+		<div class="iconbox">
+			<div class="icon <?php echo $element['class']; ?>"></div>
+			<div class="name"><?php echo $element['label']; ?></div>	
+			<div class="radio_container">
+			<input type="radio" name="icon" id="icon_<?= $element['class']; ?>" value="<?= $element['class']; ?>" <?php if($this->value == $element['class']): ?>checked<?php endif;?>>
+			</div>
+		</div>
+	</li>
+	<?php endforeach; ?>
+</ul>
+<?php endforeach; ?>
+</form>
+</div>
+<?php else: ?>
+<p class="info"><?php echo $this->empty; ?></p>
+<?php endif; ?>

@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_googlemaps
+*/
+$arrImport = array (
+'tstamp' => '17.11.2023 10:05',
+'name' => 'single_googlemaps',
+'category' => 'maps',
+'thumb' => '',
+'elements' => 'google_map',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126388,
+1 => 14773,
+2 => 128,
+3 => 1700215471,
+5 => 'google_map',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:16:{s:15:"sk3xf4tyqidjbrq";s:7:"Germany";s:15:"505wre7gfqdtbyh";s:5:"10115";s:15:"wnop6k6daeeehfx";s:6:"Berlin";s:15:"zioyvnbwy5y0z22";s:0:"";s:14:"ytrsu295op5vag";N;s:13:"lrbl4h8ie1q69";N;s:15:"my7lsg6mboa38dv";s:2:"12";s:15:"d0w4txs2v99rrda";s:3:"550";s:13:"pa7yhdj9wltl7";s:7:"ROADMAP";s:14:"1zi2rsbppboq5z";s:0:"";s:15:"7h8dpf7tx07qe5u";s:0:"";s:15:"yampnz5dzqgnnib";s:1:"1";s:15:"owzus34693ydw9s";s:1:"1";s:14:"12skgqxjpha729";s:1:"1";s:14:"b5ka248gdhd3j5";s:3:"0.1";s:15:"214z013839i6mbf";s:0:"";}s:6:"groups";a:3:{i:0;a:4:{s:5:"ident";s:3:"5_0";s:8:"group_id";i:5;s:11:"group_alias";s:7:"adresse";s:10:"attributes";a:6:{i:0;a:3:{s:4:"uuid";s:15:"sk3xf4tyqidjbrq";s:2:"id";i:10;s:5:"alias";s:7:"country";}i:1;a:3:{s:4:"uuid";s:15:"505wre7gfqdtbyh";s:2:"id";i:11;s:5:"alias";s:7:"zipcode";}i:2;a:3:{s:4:"uuid";s:15:"wnop6k6daeeehfx";s:2:"id";i:12;s:5:"alias";s:5:"place";}i:3;a:3:{s:4:"uuid";s:15:"zioyvnbwy5y0z22";s:2:"id";i:13;s:5:"alias";s:6:"street";}i:4;a:3:{s:4:"uuid";s:14:"ytrsu295op5vag";s:2:"id";i:748;s:5:"alias";s:11:"description";}i:5;a:3:{s:4:"uuid";s:13:"lrbl4h8ie1q69";s:2:"id";i:759;s:5:"alias";s:4:"icon";}}}i:1;a:4:{s:5:"ident";s:3:"6_0";s:8:"group_id";i:6;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"my7lsg6mboa38dv";s:2:"id";i:14;s:5:"alias";s:4:"zoom";}i:1;a:3:{s:4:"uuid";s:15:"d0w4txs2v99rrda";s:2:"id";i:16;s:5:"alias";s:6:"height";}i:2;a:3:{s:4:"uuid";s:13:"pa7yhdj9wltl7";s:2:"id";i:758;s:5:"alias";s:8:"map_type";}i:3;a:3:{s:4:"uuid";s:14:"1zi2rsbppboq5z";s:2:"id";i:15;s:5:"alias";s:9:"grayscale";}}}i:2;a:4:{s:5:"ident";s:5:"332_0";s:8:"group_id";i:332;s:11:"group_alias";s:17:"extended_settings";s:10:"attributes";a:6:{i:0;a:3:{s:4:"uuid";s:15:"7h8dpf7tx07qe5u";s:2:"id";i:752;s:5:"alias";s:3:"hue";}i:1;a:3:{s:4:"uuid";s:15:"yampnz5dzqgnnib";s:2:"id";i:753;s:5:"alias";s:10:"saturation";}i:2;a:3:{s:4:"uuid";s:15:"owzus34693ydw9s";s:2:"id";i:754;s:5:"alias";s:5:"gamma";}i:3;a:3:{s:4:"uuid";s:14:"12skgqxjpha729";s:2:"id";i:755;s:5:"alias";s:9:"lightness";}i:4;a:3:{s:4:"uuid";s:14:"b5ka248gdhd3j5";s:2:"id";i:756;s:5:"alias";s:6:"weight";}i:5;a:3:{s:4:"uuid";s:15:"214z013839i6mbf";s:2:"id";i:757;s:5:"alias";s:16:"invert_lightness";}}}}s:6:"tstamp";i:1567424245;s:5:"alias";s:10:"google_map";s:5:"uuids";a:16:{i:0;s:15:"sk3xf4tyqidjbrq";i:1;s:15:"505wre7gfqdtbyh";i:2;s:15:"wnop6k6daeeehfx";i:3;s:15:"zioyvnbwy5y0z22";i:4;s:14:"ytrsu295op5vag";i:5;s:13:"lrbl4h8ie1q69";i:6;s:15:"my7lsg6mboa38dv";i:7;s:15:"d0w4txs2v99rrda";i:8;s:13:"pa7yhdj9wltl7";i:9;s:14:"1zi2rsbppboq5z";i:10;s:15:"7h8dpf7tx07qe5u";i:11;s:15:"yampnz5dzqgnnib";i:12;s:15:"owzus34693ydw9s";i:13;s:14:"12skgqxjpha729";i:14;s:14:"b5ka248gdhd3j5";i:15;s:15:"214z013839i6mbf";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:5;}',
+162 => 'sourceText',
+),
+),
+);

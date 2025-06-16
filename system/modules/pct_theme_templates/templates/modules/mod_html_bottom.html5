@@ -1,0 +1,3 @@
+<div {{FRONTEND_QUICKEDIT}}>
+	<?php echo $this->html; ?>
+</div>

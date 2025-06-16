@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 38.2 31.9" version="1.1" viewBox="0 0 38.2 31.9" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FCFCFC;stroke:url(#a);stroke-width:3;stroke-miterlimit:10;}
+</style>
+<linearGradient id="a" x2="38.166" y1="15.94" y2="15.94" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#EABC79" offset="0"/>
+	<stop stop-color="#D260A2" offset="1"/>
+</linearGradient>
+<path class="st0" d="m21.4 29c-1.2 1.8-3.6 1.8-5 0l-14.8-23c-0.5-2 0.6-4.5 2.6-4.5h29.5c2.4 0 3.8 2.6 2.5 4.5l-14.8 23z"/>
+</svg>

@@ -1,0 +1,7 @@
+
+/** autocomplete widget and results box **/
+.autocomplete_widget {position: relative;}
+.autocomplete_results {background: #f2f2f2; border: 1px solid silver;}
+.autocomplete_results > .block {border-bottom: 1px solid silver;}
+.autocomplete_results ul {list-style: none;}
+.autocomplete_results ul li {display: block; cursor: pointer;}

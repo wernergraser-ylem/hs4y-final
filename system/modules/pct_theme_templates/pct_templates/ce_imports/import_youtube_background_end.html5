@@ -1,0 +1,16 @@
+<?php
+/**
+ * Hello, I'm an an customelement template file from your CustomElement: Hintergrund-Video YouTube [End]
+ */
+ 
+
+/** information **/
+$arrImport["info"]["CONTAO_VERSION"] = "5.3.3";
+$arrImport["info"]["CE_VERSION"] = "5.0.11";
+
+/** sql statements **/
+$arrImport["sql"] = 
+'INSERT INTO `tl_pct_customelement`(`id`,`tstamp`,`alias`,`title`,`isCTE`,`isFMD`,`template`,`protected`,`user_groups`,`cssID`,`isWrapper`) VALUES (`15`,`1560937629`,`youtube_background_end`,`Hintergrund-Video YouTube [End]`,`1`,``,`customelement_youtube_end`,``,``,`a:2:{i:0;s:0:"";i:1;s:0:"";}`,`stop`); 
+INSERT INTO `tl_pct_customelement_group`(`id`,`pid`,`tstamp`,`sorting`,`alias`,`title`,`allowCopy`,`allowCut`,`hidden`,`legend_hide`,`protected`,`user_groups`,`cssID`,`published`) VALUES (`24`,`15`,`1428904826`,`128`,`background_video`,`Background-Video`,``,``,``,``,``,``,`a:2:{i:0;s:0:"";i:1;s:0:"";}`,`1`); 
+INSERT INTO `tl_pct_customelement_attribute`(`id`,`pid`,`sorting`,`tstamp`,`uuid`,`alias`,`type`,`title`,`description`,`template`,`protected`,`user_groups`,`cssID`,`published`,`options`,`hidden`,`defaultValue`,`eval_mandatory`,`eval_rgxp`,`eval_rowscols`,`eval_multiple`,`eval_size`,`eval_rte`,`eval_submitOnChange`,`eval_allowHtml`,`eval_files`,`eval_filesOnly`,`eval_extensions`,`eval_path`,`eval_attributeType`,`eval_includeBlankOption`,`eval_datepicker`,`eval_pagepicker`,`eval_tl_style`,`eval_minlength`,`eval_maxlength`,`eval_tl_class_w50`,`eval_tl_class_clr`,`eval_tl_class_m12`,`eval_tl_class_long`,`be_visible`,`isDownload`,`sortBy`,`tinyTpl`,`isRadio`,`size`,`include_type`,`include_item`,`date_format`,`date_rgxp`,`min_value`,`max_value`,`number_format`,`aliasSource`,`selectdb_table`,`selectdb_key`,`selectdb_value`,`selectdb_sorting`,`selectdb_translations`,`selectdb_where`,`rateit_counter`,`isSelector`,`subpalettes`,`be_filter`,`be_search`,`be_sorting`,`isToggler`,`icon`,`icon_off`,`eval_unique`,`galleryTpl`,`tag_roots`,`tag_custom`,`tag_table`,`tag_key`,`tag_value`,`tag_sorting`,`tag_where`,`tag_translations`,`allowNotelistVariants`,`notelistVariants`,`inline`) VALUES (`133`,`24`,`128`,`1428904826`,`pjh87ugwwg8a77`,`background-video`,`backend_explanation`,`Background-Video`,`End-Element`,`customelement_attr_default`,``,``,`a:2:{i:0;s:0:"";i:1;s:0:"";}`,`1`,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,`0`,`0`,``,``,``,``,``,``,``,``,``,``,``,`0`,``,`datetime`,``,``,``,`0`,``,``,``,``,``,``,`0`,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``,``); 
+';

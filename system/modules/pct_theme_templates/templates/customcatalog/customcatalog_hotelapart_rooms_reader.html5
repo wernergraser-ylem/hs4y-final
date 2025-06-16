@@ -1,0 +1,195 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_tabs.css|static';
+?>
+<?php 
+	// insert season labels/times from ressources page
+	$season_a_label = "{{insert_content::77037}}";
+	$season_a_value = "{{insert_content::77031}}";
+	$season_b_label = "{{insert_content::77038}}";
+	$season_b_value = "{{insert_content::77032}}";
+	$season_c_label = "{{insert_content::77039}}";
+	$season_c_value = "{{insert_content::77033}}";
+	$season_d_label = "{{insert_content::77040}}";
+	$season_d_value = "{{insert_content::77041}}";
+	$season_e_label = "{{insert_content::77042}}";
+	$season_e_value = "{{insert_content::77043}}";
+	$season_f_label = "{{insert_content::77044}}";
+	$season_f_value = "{{insert_content::77045}}";
+	
+	// insert bookinginfo + hotel services from ressources page
+	$booking_infos = "{{insert_article::10763}}";
+	$hotel_services = "{{insert_article::10764}}";
+?>
+
+<div class="item-wrap autogrid_wrapper">
+
+	<div class="leftside autogrid one_fourth block">
+		<div class="leftside-inside">
+			<h5><?php echo $this->field('name')->value(); ?></h5>
+			<div class="single-price-left-wrap">
+				<div class="single-price-left-label">Preis</div>
+				<div class="single-price-left">ab &euro; <?php echo $this->field('price')->html(); ?></div>
+			</div>
+			<div class="single-price-info">Preis pro Person und Nacht</div>
+			<div class="single-short-description"><?php echo $this->field('short_description')->html(); ?></div>
+			<div class="ce_hyperlink"><a href="#" class="scrollToBooking">Anfragen & Buchen</a></div>
+		</div>
+	</div>
+	
+	<div class="rightside autogrid three_fourth block">
+	
+		<div class="single-top">
+			<div class="single-top-content">
+				<div class="single-image">
+					<?php echo $this->field('gallery')->html(); ?>
+					<div class="single-price"><strong class="bg-accent">ab &euro; <?php echo $this->field('price')->html(); ?></strong></div>
+				</div>
+				<h1><?php echo $this->field('name')->value(); ?></h1>
+				<div class="single-desc"><?php echo $this->field('description')->html(); ?></div>
+			</div>
+
+		<div class="single-bottom">
+			<div class="ce_tabs">
+				<div class="tabs classic tabs_<?php echo $this->id; ?>">
+					<ul>
+						<li><span>Ausstattung</span></li>
+						<li><span>Kostenlose Hotelleistungen</span></li>
+						<li><span>Preise</span></li>
+						<li><span>Preisinformationen</span></li>
+					</ul>
+				</div>
+				<div class="panes panes_<?php echo $this->id; ?>">
+					<div class="section active">
+						<div class="single-services"><?php echo $this->field('features')->html(); ?></div>
+					</div>
+					<div class="section">
+						<div class="single-hotel-services"><?php echo $hotel_services; ?></div>
+					</div>
+					<div class="section">
+						<div class="single-pricing">
+							<div class="ce_table clean">
+								<table>
+									<thead>
+										<tr>
+											<th>
+												<strong><?php echo $season_a_label; ?></strong>
+												<p><?php echo $season_a_value; ?></p>
+											</th>
+											<th>
+												<strong><?php echo $season_b_label; ?></strong>
+												<p><?php echo $season_b_value; ?></p>
+											</th>
+											<th>
+												<strong><?php echo $season_c_label; ?></strong>
+												<p><?php echo $season_c_value; ?></p>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span>&euro;</span><?php echo $this->field('pricing_season_a')->value(); ?></td>
+											<td><span>&euro;</span><?php echo $this->field('pricing_season_b')->value(); ?></td>
+											<td><span>&euro;</span><?php echo $this->field('pricing_season_c')->value(); ?></td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<table>
+									<thead>
+										<tr>
+											<th>
+												<strong><?php echo $season_d_label; ?></strong>
+												<p><?php echo $season_d_value; ?></p>
+											</th>
+											<th>
+												<strong><?php echo $season_e_label; ?></strong>
+												<p><?php echo $season_e_value; ?></p>
+											</th>
+											<th>
+												<strong><?php echo $season_f_label; ?></strong>
+												<p><?php echo $season_f_value; ?></p>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span>&euro;</span><?php echo $this->field('pricing_season_d')->value(); ?></td>
+											<td><span>&euro;</span><?php echo $this->field('pricing_season_e')->value(); ?></td>
+											<td><span>&euro;</span><?php echo $this->field('pricing_season_f')->value(); ?></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="single-bookinginfo"><?php echo $this->field('booking_info')->html(); ?></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="section"><?php echo $booking_infos; ?></div>
+					
+				</div>
+			</div>
+			
+		<div class="single-booking" id="booking-anchor">
+			<div class="ce_tabs">
+				<div class="tabs classic tabs_<?php echo $this->id; ?>_t2">
+						<ul>
+							<li><span>Unverbindlich anfragen</span></li>
+							<li><span>Mit Bestpreisgarantie buchen</span></li>
+						</ul>
+					</div>
+				<div class="panes panes_<?php echo $this->id; ?>_t2">
+						<div class="section active">
+							<div class="single-form">
+								<div class="single-form-wrapper">
+									{{insert_form::58}}
+								</div>
+							</div>
+						</div>
+						<div class="section">
+							<div class="single-booking-code"><?php echo $this->field('booking_code')->value(); ?></div>
+						</div>				
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	jQuery(".tabs_<?php echo $this->id; ?> li:first").addClass('active');
+    jQuery(".tabs_<?php echo $this->id; ?> li").click(function(e){
+        if (!jQuery(this).hasClass("active")) {
+            var tabNum = jQuery(this).index();
+            var nthChild = tabNum+1;
+            jQuery(".tabs_<?php echo $this->id; ?> li.active").removeClass("active");
+            jQuery(this).addClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div.active").removeClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+jQuery(document).ready(function(){
+	jQuery(".tabs_<?php echo $this->id; ?>_t2 li:first").addClass('active');
+    jQuery(".tabs_<?php echo $this->id; ?>_t2 li").click(function(e){
+        if (!jQuery(this).hasClass("active")) {
+            var tabNum = jQuery(this).index();
+            var nthChild = tabNum+1;
+            jQuery(".tabs_<?php echo $this->id; ?>_t2 li.active").removeClass("active");
+            jQuery(this).addClass("active");
+            jQuery(".panes_<?php echo $this->id; ?>_t2 div.active").removeClass("active");
+            jQuery(".panes_<?php echo $this->id; ?>_t2 div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+jQuery(document).ready(function(){
+	jQuery('a.scrollToBooking').click(function(e){
+    	e.preventDefault();
+    	jQuery("html, body").animate({scrollTop: jQuery('#booking-anchor').offset().top - 100}, 500);
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

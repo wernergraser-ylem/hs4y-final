@@ -1,0 +1,333 @@
+<?php
+global $objPage;
+$intRefPage = $objPage->rootId; // Reference page id
+
+$objContainer = \Contao\System::getContainer();
+$strRefPage = \Contao\PageModel::findByPk($intRefPage)->getFrontendUrl();
+$objFirst = \Contao\PageModel::findFirstPublishedByPid($objPage->rootId);
+
+$strBase = \Contao\Environment::get('request');
+$isBacklink = false;
+
+// not on root, has not the same url and is not the first page published inside root
+if($objPage->id != $objPage->rootId && \Contao\Environment::get('request') != $strRefPage && $objPage->id != $objFirst->id)
+{
+	$strBase = $strRefPage;
+	$isBacklink = true;
+	$objPage->cssClass .= ' is_regular_page';
+}
+
+$arrItems = array();
+foreach($this->group('menu_item') as $i => $fields)
+{
+	$isActive = false;
+	$href = $strBase.'#'.$this->field('anchor#'.$i)->value();
+	if(strlen(strpos($this->field('anchor#'.$i)->value(), '{{')) > 0)
+	{
+		$isBacklink = true;
+		$href = $objContainer->get('contao.insert_tag.parser')->replace( $this->field('anchor#'.$i)->value() );
+		$alias = ltrim( rtrim( str_replace('.html','',$href),'/'), '/');
+		$anchor = '';
+		$page = \Contao\PageModel::findOneByAlias($alias);
+		if( strlen(strpos($href, '#')) > 0)
+		{
+			$anchor = substr($alias, strpos($alias, '#'));
+			$alias = substr($alias, 0, strpos($alias, '#'));
+			$page = \Contao\PageModel::findOneByAlias($alias);
+		}
+		if( $page !== null )
+		{
+			$href = $page->getFrontendUrl().$anchor;
+		}
+		if( $page !== null && $page->id == $objPage->id)
+		{
+			$isActive = true;
+		}
+	}
+	
+	$arrItems[] = array
+	(
+		'class'			=> $this->field('cssclass#'.$i)->value() . ($isBacklink ? ' backlink':'') . ($isActive ? ' active': ''),
+		'href'			=> $href,
+		'pageTitle' 	=> $this->field('title#'.$i)->value(),
+		'title' 		=> $this->field('title#'.$i)->value(),
+		'link' 			=> $this->field('title#'.$i)->value(),
+		'id'			=> 'item_'.$i,
+		'target'		=> $this->field('anchor#'.$i)->option('target') ? 'target="_blank"' : '',
+		'type' 			=> 'regular',
+		'isActive'		=> $isActive,
+		'addFontIcon'	=> false,
+		'fontIcon'		=> '',
+		'accesskey'		=> '',
+		'ribbon'		=> false,
+		'nofollow'		=> '',
+		'visibility_css' => '',
+	);
+}
+?>
+
+<?php // render desktop version
+$objTemplate = new \Contao\FrontendTemplate('nav_mainmenu');
+$objTemplate->items = $arrItems;
+$objTemplate->level = 'level_1';
+?>
+<nav class="mod_navigation mainmenu onepagenav desktop hide_mobile block edit-off">
+	<?php echo $objTemplate->parse(); ?>
+</nav>
+
+<?php // render mobile version
+$objTemplate = new \Contao\FrontendTemplate('nav_onepage');
+$objTemplate->items = $arrItems;
+$objTemplate->level = 'level_1';
+?>
+<nav class="mod_navigation onepagenav mobile hide_desktop block">
+	<?php echo $objTemplate->parse(); ?>
+	
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{
+	jQuery('.onepagenav.mobile a').click(function() 
+	{
+		jQuery('body').removeClass('mmenu_open');
+		jQuery('body').removeClass('no_scroll');
+		jQuery('.mmenu_trigger .burger').removeClass('open');
+		jQuery('.mmenu_overlay').fadeOut('fast');
+	});
+});
+/* =============================================================================
+ * one-page-nav
+ * ========================================================================== */
+
+/**
+ * Add an item counter class to the body on one_page sites
+ */
+jQuery(document).ready(function() 
+{
+	if(jQuery('body').hasClass('onepage_page'))
+	{
+		// count articles in #slider
+		jQuery('body').addClass( 'onepage_items_' + jQuery('#slider .inside > .mod_article').length );
+	}
+});
+
+/* =============================================================================
+ * generate smartmenu on onepage_page
+ * ========================================================================== */
+jQuery(document).ready(function ()
+{	
+	if (jQuery('body').hasClass('onepage_page'))
+	{	
+		// delete menu of smartmenu
+		jQuery('.smartmenu-content ul.level_1').remove();
+			
+		// clone level_1 from mainmenu to empty smartmenu
+		jQuery('.smartmenu-content .smartmenu-table').append(jQuery(".header.original nav.mainmenu.desktop ul.level_1").clone().removeClass("mainmenu"));
+	}
+});	
+
+
+/**
+ * Initialize smooth scrolling to one page anchor links	
+ */
+jQuery(document).ready(function ()
+{	
+	if ( !jQuery('body').hasClass('onepage_page') )
+	{
+		return;
+	}
+
+	if(jQuery('body').hasClass('is_regular_page'))
+	{
+		jQuery('.smartmenu-content a').addClass('backlink');
+		jQuery('.onepage_page a').addClass('backlink');
+	}
+
+	// remove onepage cookies for body class "to_top"
+	if (jQuery('body').hasClass('to_top'))
+	{
+		localStorage.removeItem('onepage_active');
+		localStorage.removeItem('onepage_position');
+		localStorage.removeItem('onepage_animate');
+		jQuery("html, body").animate({ scrollTop: 0 },0);
+	}
+	
+	var links = jQuery(".mainmenu a:not(.backlink), #stickyheader .onepagenav a:not(.backlink), .smartmenu-content a:not(.backlink)");
+	var horizontalScroll = jQuery('body').hasClass('horizontal_scrolling');
+	// not on mobile devices because content is 100% 
+	if(horizontalScroll && jQuery('body').hasClass('mobile'))
+	{
+		horizontalScroll = false;
+	}
+	
+	var duration = 300;
+	var timeout = 200;
+	
+	// click event listener	
+	links.click(function(event,params) 
+	{ 
+		event.preventDefault();
+		
+		var hash = this.href.split("#");
+		if(!hash[1])
+		{
+			return true;
+		}
+		var anchor = hash[1].toString();
+		var target = jQuery("#"+anchor);
+		if(target.length < 1) 
+		{
+			return false;
+		}
+
+		// regular click
+		if( params == undefined )
+		{
+			links.removeClass('active');
+		}		
+		
+		jQuery(this).addClass('active');
+		jQuery('a[href*="'+anchor+'"]').addClass('active');
+		
+		
+		// store the current active anchor as cookie for further use
+		//localStorage.setItem('onepage_active', anchor);
+		
+		var offsetX = 0;
+		var offsetY = jQuery("#stickyheader").height();
+		var posX = target.offset().left - offsetX;
+		var posY = target.offset().top - offsetY;
+		var href = jQuery(this).attr('href');
+		
+		if (params != undefined)
+		{
+			posY = params.posY;
+			posX = params.posX;
+		}
+		
+		jQuery("html, body").animate({ scrollTop: posY, scrollLeft: posX }, 
+		{
+			duration	: duration,
+			start		: function()
+			{
+				localStorage.setItem('onepage_animate',1);
+			},
+			complete	: function()
+			{
+				// on complete: remove the flag
+				setTimeout(function()
+				{
+					localStorage.removeItem('onepage_animate');
+					
+					// do not close the smartmenu
+					if( !jQuery('body').hasClass('smartmenu_do-not-close') )
+					{
+						jQuery('.smartmenu-content').removeClass('open');
+						jQuery('body').removeClass('no_scroll');
+						jQuery('body').removeClass('smartmenu_open');
+					}
+			
+				}, timeout);
+			}
+		});
+	});
+
+	// anchor in url
+	if ( window.location.hash.toString().length > 0 )
+	{
+		setTimeout(function ()
+		{ 
+			var target = jQuery(window.location.hash.toString());
+			var offsetX = 0;
+			var offsetY = jQuery("#stickyheader").height();
+			var posX = target.offset().left - offsetX;
+			var posY = target.offset().top - offsetY;
+			jQuery.each(links, function (index, elem)
+			{
+				var hash = elem.href.split("#");
+				if (!hash[1])
+				{
+					return;
+				}
+				var anchor = '#' + hash[1].toString();
+				if (anchor == window.location.hash.toString())
+				{
+					jQuery(elem).trigger('click', { 'posY': posY });
+				}
+			});
+		}, timeout);
+	}
+});
+
+
+/**
+ * Set navi active on scroll
+ */
+jQuery(document).ready(function ()
+{
+	var links = jQuery(".onepage_page .mainmenu a:not(.backlink), .onepage_page .onepagenav a:not(.backlink), .page_navigation a");
+	var stickyheader = jQuery(".stickyheader");
+	var horizontalScroll = jQuery('body').hasClass('horizontal_scrolling');
+	// not on mobile devices because content is 100% 
+	if(horizontalScroll && jQuery('body').hasClass('mobile'))
+	{
+		horizontalScroll = false;
+	}
+	
+	jQuery(window).scroll(function() 
+	{
+		// escape when animation is running
+		if(localStorage.getItem('onepage_animate') > 0) 
+		{
+			return;
+		}
+		
+		// remove active class from all links
+		links.removeClass('active');
+		
+		var scrollX = jQuery(window).scrollLeft();
+		var scrollY = jQuery(window).scrollTop();
+		var offsetX = 10;
+		var offsetY = stickyheader.height();
+		
+		jQuery.each(links, function(index, elem) 
+		{
+			var hash = elem.href.split("#");
+			if(!hash[1]) 
+			{
+				return;
+			}
+			var anchor = hash[1].toString();
+			var target = jQuery("#"+anchor);
+			if(target.length < 1) 
+			{
+				return;
+			}
+			
+			// vertical scrolling
+			var posY = target.offset().top - offsetY;
+			var sizeY = posY + target.height();
+			if (posY <= scrollY && sizeY >= scrollY && !horizontalScroll) 
+			{
+	        	jQuery(elem).addClass("active");
+	        }
+	        
+	        // horizontal scolling
+	        var posX = target.offset().left - offsetX;
+			var sizeX = posX + target.width();
+			if (posX <= scrollX && sizeX >= scrollX && horizontalScroll) 
+			{
+	        	jQuery(elem).addClass("active");
+	        }
+	    });
+	});
+	
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+</nav>
+
+<?php 
+// store the ID of the onepage element
+$GLOBALS['ONEPAGE_NAVI'] = $this->id;
+?>

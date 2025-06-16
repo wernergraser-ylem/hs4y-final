@@ -1,0 +1,42 @@
+<div class="autogrid_wrapper block">
+	<div class="single-leftside autogrid two_third block">
+		<h1 class="color-accent"><?php echo $this->field('name')->value(); ?></h1>
+		<?php if($this->field('short_description')->value()): ?>
+			<div class="single-short-description font-size-xxs"><?php echo $this->field('short_description')->value(); ?></div>
+		<?php endif; ?>
+		<?php if($this->field('item_number')->value()): ?>
+			<div class="single-item-number bg-accent"><i class="fa fa-tag"></i><?php echo $this->field('item_number')->value(); ?></div>
+		<?php endif; ?>
+		<div class="single-box-one">
+			<div class="single-top-content">
+				<?php if($this->field('gallery')->value()): ?>	
+					<?php echo $this->field('gallery')->html(); ?>
+				<?php endif; ?>
+				
+				<?php if($this->field('description')->value()): ?>
+					<div class="single-description"><?php echo $this->field('description')->html(); ?></div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	
+	<div class="single-rightside autogrid one_third block">	
+		<div class="single-box-two">
+			<?php echo $this->field('geolocation')->html(); ?>
+			<div class="single-place"><?php echo $this->field('geolocation')->option('street'); ?><br><?php echo $this->field('geolocation')->option('zipcode'); ?> <?php echo $this->field('geolocation')->option('city'); ?><br><?php echo $this->field('geolocation')->option('country'); ?></div>
+			<div class="single-maps-directions"><i class="fa fa-long-arrow-right color-accent"></i><a href="https://maps.google.com/maps?daddr=<?php echo $this->field('geolocation')->value(); ?>" target="_blank" class="color-accent">Get directions</a></div>
+			<div class="ce_hyperlink"><a href="mailto:info@yourdomain.com?subject=<?php echo $this->field('name')->value(); ?>, Artikelnummer: <?php echo $this->field('item_number')->value(); ?>">Anfrage senden</a></div>
+		</div>
+		
+		<div class="single-box-three">
+			<?php if($this->field('price')->value()): ?>	
+				<div class="price font-size-s color-accent"><i class="fa fa-ticket"></i><?php echo $this->field('price')->html(); ?> &euro;</div>
+			<?php endif; ?>
+			<?php if($this->field('description_more')->value()): ?>
+				<div class="single-description-more"><?php echo $this->field('description_more')->html(); ?></div>
+			<?php endif; ?>
+			<div class="single-print"><a href="javascript:window.print();"><i class="fa fa-print"></i> Drucken</a></div>
+			<div class="single-mail"><a href="mailto:info@yourdomain.com?subject=<?php echo $this->field('name')->value(); ?>, Artikelnummer: <?php echo $this->field('item_number')->value(); ?>"><i class="fa fa-envelope"></i> Per E-Mail anfragen</a></div>
+		</div>
+	</div>
+</div>

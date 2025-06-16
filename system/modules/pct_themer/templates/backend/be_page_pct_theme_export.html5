@@ -1,0 +1,118 @@
+
+<?php
+$objPages = $this->pages;
+?>
+
+<div id="page_pct_theme_export">
+	<div id="tl_buttons">
+	<?= $this->back; ?>
+	</div>
+
+	<h2 class="headline sub_headline"><?= $this->headline; ?></h2>
+	
+	<div id="tl_rebuild_index">
+	
+	<?php if($this->hasGlobalError): ?>
+	<p class="tl_red"><?php echo $this->error; ?></p>
+	<?php else: ?>
+		
+		<?php if(\Contao\Input::get('status') == 'run'): ?>
+		<h2 class="headline"><?= $this->state_headline; ?></h2>
+		
+		<p id="index_loading"><?php echo $this->loading; ?></p>
+		<p id="index_complete" style="display:none"><?php echo $this->complete; ?></p>
+		<p style="margin-bottom:0"><?php echo $this->content; ?></p>
+			
+		<?php if($this->hasError): ?>
+			<p class="tl_red"><?php echo $this->error; ?></p>
+			<?php else: ?>
+			
+			<ul class="tl_listing">
+			<?php while($objPages->next()): ?>
+			<?php 
+			$page = $objPages;	
+			?>
+			<li class="theme_data tl_file" data-page_id="<?= $page->id; ?>">
+				<div class="tl_left"><?= $page->title; ?> (<?= $page->alias;?>)</div>
+				<div class="tl_right">id:<?= $page->id; ?></div>
+				<div style="clear:both"></div>
+			</li>
+			<?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+		<?php endif; ?>
+		
+		<?php if(\Contao\Input::get('status') == 'run'): ?>
+		<div id="forward_to_complete" style="margin-top: 10px;">
+			<a class="tl_submit" href="<?= $this->addToUrl('status=complete'); ?>"><?= $GLOBALS['TL_LANG']['pct_themer']['submit_complete']; ?></a>
+		</div>
+		<?php endif; ?>
+		<?php if(\Contao\Input::get('status') == 'complete'): ?>
+		
+		<p style="margin-bottom:0"><?php echo $this->content; ?></p>
+		
+		<div id="download" style="margin-top: 10px;">
+			<a class="tl_submit" href="<?= $this->addToUrl('download=1'); ?>"><?= $GLOBALS['TL_LANG']['pct_themer']['submit_download']; ?></a>
+		</div>
+		<?php endif; ?>
+	</div>
+	<?php endif; ?>
+</div>
+
+<?php if(\Contao\Input::get('status') == 'run'): ?>
+<script>
+/* <![CDATA[ */
+window.addEvent('domready', function() 
+{
+	var url_complete = '<?= \Contao\StringUtil::decodeEntities($this->addToUrl('status=complete')); ?>';
+	$('forward_to_complete').setStyle('display', 'none');
+	
+	var urls = $$('.theme_data');
+	var last = urls.length-1; 
+	
+	if(urls.length < 1)
+	{
+		return false;
+	}
+	
+	function runJob(i)
+	{
+		var el = urls[i];
+		
+		new Request(
+		{
+			'method': 'get',
+			'url': location.href,
+			'data': 'page_id='+el.getAttribute('data-page_id')+'&status=run',
+			onComplete: function() 
+			{
+				el.addClass('tl_green');
+				el.getChildren().addClass('tl_green');
+				if(i < last)
+				{
+					return runJob(i+1);
+				}
+				else
+				{
+					$('index_loading').setStyle('display', 'none');
+					$('index_complete').setStyle('display', 'block');
+					$('forward_to_complete').setStyle('display', 'block');
+				}
+			},
+			onFailure: function()
+			{
+				el.addClass('tl_red');
+				el.getChildren().addClass('tl_red');
+			},
+			onException: function()
+			{
+				el.addClass('tl_red');
+				el.getChildren().addClass('tl_red');
+			}
+		}).get();
+	}
+	runJob(0);
+});
+/* ]]> */	
+</script>
+<?php endif; ?>

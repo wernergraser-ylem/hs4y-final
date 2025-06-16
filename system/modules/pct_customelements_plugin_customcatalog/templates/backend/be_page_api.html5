@@ -1,0 +1,92 @@
+
+<?php 
+$objLang = (object)$GLOBALS['TL_LANG']['tl_pct_customcatalog_api']['be_page_api'];
+?>
+
+
+<?php 
+/**
+ * Page has errors
+ */ 
+if($this->error) : ?>
+
+<div id="page_api" class="tl_listing_container">
+	<div id="tl_buttons">
+	<?= $this->back; ?>
+	</div>
+	
+	<h2 class="headline sub_headline"><?= $this->headline; ?></h2>
+	
+	<div id="tl_rebuild_index">	
+	<div class="tl_error"><?php echo $this->error; ?></div>
+	</div>
+</div>
+	
+<?php return; endif; ?>
+
+<div id="page_api" class="tl_listing_container">
+	<div id="tl_buttons">
+	<?= $this->back; ?>
+	</div>
+
+	<h2 class="headline sub_headline"><?= $this->headline; ?></h2>
+
+<?php
+/**
+ * Pre-run waiting page
+ */
+if(\Contao\Input::get('key') == 'ready'): ?>
+
+<div id="tl_rebuild_index">	
+	<p class="info"><?php echo sprintf($objLang->ready_info,$this->objApi->id,$this->countJobs); ?></p>
+	
+	<?php if($this->backup): ?>
+	<div>
+	<strong><?php echo $objLang->headline_backup; ?></strong>
+	<p class="tl_green"><?php echo sprintf($objLang->backupCreated,$this->table,$this->backup); ?></p>
+	</div>
+	<?php endif; ?>
+	
+	<?php if($this->purgeTable): ?>
+	<div>
+	<strong><?php echo $objLang->headline_purgeTable; ?></strong>
+	<p class="tl_green"><?php echo sprintf($objLang->purgedTable,$this->table); ?></p>
+	</div>
+	<?php endif; ?>
+	
+	<?php if(!$this->backup && !$this->purgeTable): ?>
+	<p class="tl_green"><?php echo $objLang->readyToRock; ?></p>
+	<?php endif; ?>
+	
+</div>
+
+
+<form action="<?php echo $this->action; ?>" method="get">
+	<input type="hidden" name="do" value="<?php echo \Contao\Input::get('do'); ?>">
+	<input type="hidden" name="table" value="<?php echo \Contao\Input::get('table'); ?>">
+	<input type="hidden" name="id" value="<?php echo \Contao\Input::get('id'); ?>">
+	<input type="hidden" name="rt" value="<?php echo \Contao\Input::get('rt'); ?>">
+	<input type="hidden" name="key" value="run">
+
+	<div class="tl_formbody_submit">
+		<div class="tl_submit_container">
+			<input type="submit" class="tl_submit" value="<?php echo $this->runLabel; ?>">
+		</div>
+	</div>
+</form>
+
+<?php 
+/**
+ * Run or summary
+ */	
+elseif( in_array(\Contao\Input::get('key'), array('summary','run')) ): ?>
+
+<?php if(strlen($this->main) > 0): ?>
+<?php echo $this->main; ?>
+<?php endif; ?>
+
+<?php else: ?>
+
+<?php $this->redirect($this->getReferer()); ?>
+
+<?php endif; ?>

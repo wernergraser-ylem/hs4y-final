@@ -1,0 +1,384 @@
+<div class="field_wrapper <?= $this->selector; ?>">
+<?php 
+// include chosen script: https://harvesthq.github.io/chosen/
+\Contao\ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array(PCT_THEMER_PATH.'/assets/js/chosen/chosen.min.css'));
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_THEMER_PATH.'/assets/js/chosen/chosen.jquery.min.js'; 	
+?>
+
+<?php 
+$objTD = new \PCT\ThemeDesigner;
+
+// get the field definition
+$arrField = $objTD->findByName($this->selector);
+$arrData = $objTD->getData();
+$strCurrFont = $arrField['default'];
+$strDefaultStyle = $arrField['default_style'] ?? '';
+$strCurrStyle = '';
+$strCurrWeight = '';
+if(strlen($strDefaultStyle) > 0)
+{
+	$tmp = explode(':',$arrField['default_style']);
+	$strCurrStyle = $tmp[0];
+	$strCurrWeight = $tmp[1];
+	unset($tmp);
+}
+
+$strStyleIdent = $GLOBALS['PCT_THEMEDESIGNER']['fontPickerStyleIdent'];
+$strWeightIdent = $GLOBALS['PCT_THEMEDESIGNER']['fontPickerWeightIdent'];
+$arrBlankOption = array('label'=>'-','value'=>'');
+
+
+// font is selected
+if(isset($arrData[$this->selector]))
+{
+	$strCurrFont = $arrData[$this->selector];
+}
+
+$arrFont = $objTD->getFonts( $strCurrFont );
+$strFontFamily = $strCurrFont;
+if( isset($arrFont['family']) && !empty($arrFont['family']) )
+{
+	$strFontFamily = $arrFont['family'];
+}
+
+?>
+
+
+<?php if ($this->label): ?>
+<label for="ctrl_<?= $this->id ?>"<?php if ($this->class): ?> class="<?= $this->class ?> fontpicker"<?php endif; ?>></label>
+<?php endif; ?>
+
+<?php if($this->description):?>
+<div class="description">
+	<i class="fa fa-info"></i>
+	<div class="description-content">
+		<?= $this->description; ?>
+	</div>
+</div>
+<?php endif; ?>
+
+<div id="font_preview_<?= $this->selector; ?>" class="font_preview">
+	<span>Beautify the Web</span>
+</div>
+
+<div class="font_select">
+<?php // select menu ?>
+<select data-td_selector="<?= $this->selector; ?>" data-placeholder="Choose a font..." name="<?= $this->name ?>" id="ctrl_<?= $this->id ?>" class="<?= $this->class ?> chosen-select"<?= $this->getAttributes() ?>>
+<?php foreach ($this->getOptions() as $option): ?>
+  <?php if ($option['type'] == 'group_start'): ?>
+    <optgroup label="<?= $option['label'] ?>">
+  <?php endif; ?>
+
+  <?php if ($option['type'] == 'option'): ?>
+    <?php // use chosen placeholder
+    if($option['label'] == '-')
+    {
+  	      $option['label'] = '';
+    }
+    ?>
+    <option value="<?= $option['value'] ?>"<?= $option['selected'] ?>><?= $option['label'] ?></option>
+  <?php endif; ?>
+
+  <?php if ($option['type'] == 'group_end'): ?>
+    </optgroup>
+  <?php endif; ?>
+<?php endforeach; ?>
+</select>
+</div>
+
+<?php // style select ?>
+
+<?php // find options
+$arrStyles = array();
+if(strlen($strCurrFont) > 0)
+{
+	$arrFont = $objTD->getFonts( $strCurrFont );
+	if(is_array($arrFont['styles']))
+	{
+		foreach($arrFont['styles'] as $v)
+		{
+			$s = explode(':', $v);
+			
+			$tmp = array('label' => $s[0].' ('.$s[1].')', 'value' => $v);
+			
+			if($v == $arrData[$this->selector.$strStyleIdent].':'.$arrData[$this->selector.$strWeightIdent])
+			{
+				$tmp['selected'] = true;
+				$strCurrStyle = $arrData[$this->selector.$strStyleIdent];
+				$strCurrWeight = $arrData[$this->selector.$strWeightIdent];
+			}
+			else if($v == $strDefaultStyle)
+			{
+				$tmp['selected'] = true;
+			}
+			$arrStyles[$v] = $tmp;
+		}	
+	}
+	
+	\Contao\ArrayUtil::arrayInsert($arrStyles,0,array( $arrBlankOption ));
+}	
+?>
+
+<div class="font_style_select">
+<select data-td_selector="<?= $this->selector.$strStyleIdent; ?>" data-placeholder="Choose a style..." name="<?= $this->name.$strStyleIdent; ?>" id="ctrl_<?= $this->id.$strStyleIdent; ?>" class="<?= $this->class ?> font_style_select chosen-select chosen-font-weight">
+<?php if(count($arrStyles) > 0): ?>
+<?php foreach($arrStyles as $option): ?>
+<option value="<?= $option['value']; ?>"<?php if(isset($option['selected']) && $option['selected']): ?> selected<?php endif;?>><?= $option['label']; ?></option>
+<?php endforeach; ?>
+<?php endif; ?>
+</select>
+</div>
+
+<?php // apply button ?>
+<div id="fontpicker_apply_<?= $this->selector; ?>" class="fontpicker_apply"><?= $GLOBALS['TL_LANG']['pct_themedesigner']['apply_label']; ?></div>
+
+<script>
+/* <![CDATA[ */
+
+jQuery(document).ready(function() 
+{
+	// get all fonts
+	var objFonts = <?= json_encode($GLOBALS['PCT_THEMEDESIGNER']['fonts'],JSON_FORCE_OBJECT); ?>;
+		
+	var objFontSelect = jQuery('select[data-td_selector="<?= $this->selector; ?>"].chosen-select');
+	objFontSelect.chosen(
+	{
+		no_results_text: "Nothing found!"
+	});
+	
+	var objFontStyleSelect = jQuery('select[data-td_selector="<?= $this->selector.$strStyleIdent; ?>"].chosen-select');
+	objFontStyleSelect.chosen(
+	{
+		no_results_text: "No styles found!"
+	});
+	
+	//
+	jQuery('#font_preview_<?= $this->selector; ?>').css(
+	{
+		'font-family': '<?= $strFontFamily; ?>',
+		'font-weight': '<?= $strCurrWeight; ?>'
+	});
+	
+	// apply
+	jQuery('#fontpicker_apply_<?= $this->selector; ?>').click(function()
+	{
+		var value = jQuery(objFontSelect).val();
+		
+		if(value == undefined || value == null || !value)
+		{
+			return;
+		}
+		
+		value += ':400';
+		
+		// send value
+		ThemeDesigner.sendValue('<?= $this->selector; ?>',jQuery(objFontSelect).val() );
+		
+		if(jQuery(objFontStyleSelect).val())
+		{
+			var style = jQuery(objFontStyleSelect).val().split(':');
+			
+			// send style 
+			ThemeDesigner.sendValue('<?= $this->selector.$strStyleIdent; ?>',style[0] );
+			
+			// send weight
+			ThemeDesigner.sendValue('<?= $this->selector.$strWeightIdent; ?>',style[1] );
+			
+			// append style
+			if(style[1] != '400')
+			{
+				value += ','+style[1];
+			}
+		}
+		
+		// remove last font
+		jQuery('link#fontpicker_<?= $this->selector; ?>').remove();
+		// load the font from google
+		jQuery('head').append('<link id="fontpicker_<?= $this->selector; ?>" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family='+value+'">');
+		
+		// remove the last style in iframe
+		jQuery('#themedesigner_iframe').contents().find('link#fontpicker_<?= $this->selector; ?>').remove();
+		// include new style in iframe
+		jQuery('#themedesigner_iframe').contents().find('head').append('<link id="fontpicker_<?= $this->selector; ?>" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family='+value+'">');
+	});
+	
+	var objFontSelectOptions = {};
+	<?php foreach($this->getOptions() as $i => $option): ?>
+	objFontSelectOptions[<?= $i; ?>] = '<?= $option['value']; ?>';
+	<?php endforeach; ?>
+	
+	var objStyleOptions = {};
+	
+	<?php $i = 0; foreach($arrStyles as $option): ?>
+	objStyleOptions[<?= $i; ?>] = '<?= $option['value']; ?>';
+	<?php $i++; endforeach; ?>
+	
+	// trigger change event
+	objFontSelect.change(function(event,params)
+	{
+		var value = event.target.value;
+		if(params.selected)
+		{
+			value = params.selected;
+		}
+		
+		if(value == undefined || value == null || !value)
+		{
+			return;
+		}
+
+
+		var s = value.split(':');
+		value = s[0];
+		
+		var strFamily = value;
+		var objFont = objFonts[value];
+		
+		if(objFont.family)
+		{
+			strFamily = objFont.family;
+		}
+
+		jQuery('link#fontpicker_<?= $this->selector; ?>').remove();
+		jQuery('style#fontpicker_<?= $this->selector; ?>').remove();
+		
+		// load the font from google
+		jQuery('head').append
+		(
+			'<link id="fontpicker_<?= $this->selector; ?>" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family='+value+'">'
+		);
+		
+		// update preview
+		jQuery('#font_preview_<?= $this->selector; ?>').css('font-family',strFamily);
+		
+		// load style options
+		if(objFont.styles)
+		{
+			// show style select menu
+			jQuery(objFontStyleSelect).removeClass('hidden');
+			jQuery(objFontStyleSelect).next('.chosen-container').removeClass('hidden');
+			
+			var options = {};
+			
+			// remove the current options
+			objFontStyleSelect.find('option').remove();
+			
+			// append new options
+			jQuery.each(objFont.styles, function(i,v)
+			{
+				var s = v.split(':');
+				objFontStyleSelect.append('<option value="'+v+'">'+s[0]+' ('+s[1]+')</option>');
+				
+				// update the style options array
+				objStyleOptions[i] = v;
+			});
+		
+			// update the chosen select
+			objFontStyleSelect.trigger('chosen:updated');
+		}
+		else
+		{
+			// hide style select menu
+			jQuery(objFontStyleSelect).addClass('hidden');
+			jQuery(objFontStyleSelect).next('.chosen-container').addClass('hidden');
+		}
+		
+	});
+	
+	// trigger change event on hover
+	objFontSelect.next('.chosen-container').on('mouseenter', 'li.active-result', function(event) 
+	{
+		var index = jQuery(event.target).data('option-array-index');
+		var value = objFontSelectOptions[index];
+		
+		// trigger change event
+		objFontSelect.trigger('change',{'selected':value});
+	});
+	
+	// trigger change event on key up/down
+	objFontSelect.next('.chosen-container').on('keyup',function(event)
+	{
+		if(event.which == 38 || event.which == 40)
+		{
+			var index = objFontSelect.next('.chosen-container').find('li.highlighted').data('option-array-index');
+			var value = objFontSelectOptions[index];
+		
+			// trigger change event
+			objFontSelect.trigger('change',{'selected':value});
+		}
+	});
+	
+	// Style select
+	// trigger change event
+	objFontStyleSelect.change(function(event,params)
+	{
+		var value = event.target.value;
+		if(params.selected)
+		{
+			value = params.selected;
+		}
+
+		var s = value.split(':');
+		
+		// update preview
+		jQuery('#font_preview_<?= $this->selector; ?>').css('font-weight',s[1]);
+	});
+	
+	// trigger change event on hover
+	objFontStyleSelect.next('.chosen-container').on('mouseenter', 'li.active-result', function(event) 
+	{
+		var index = jQuery(event.target).data('option-array-index');
+		var value = objStyleOptions[index];
+		
+		// trigger change event
+		objFontStyleSelect.trigger('change',{'selected':value});
+	});
+	
+	
+	/**
+	 * Catch Switch event
+	 */
+	jQuery('[data-name="<?= $this->switch; ?>"]').on('ThemeDesigner.onToggleSwitch',function(event,params)
+	{
+		if(params.status < 1)
+		{
+			 // remove last font
+			jQuery('link#fontpicker_<?= $this->selector; ?>').remove();
+			
+			// remove the last style in iframe
+			jQuery('#themedesigner_iframe').contents().find('link#fontpicker_<?= $this->selector; ?>').remove();
+			 
+			 ThemeDesigner.sendValue('<?= $this->selector; ?>',null);
+		}
+		else
+		{
+			jQuery('#fontpicker_apply_<?= $this->selector; ?>').trigger('click');
+		}
+	});
+
+
+	/**
+	 * Eventlistener: ThemeDesigner.onSelector
+	 * triggered when the ThemeDesigner triggers a selector
+	 * @param object	The jquery event object
+	 * @param object	The parameter object
+	 * 
+	 * objParams:
+	 * {name,value}
+	 */
+	objFontSelect.on('ThemeDesigner.onSelector',function(event,objParams)
+	{
+		var value = objParams.value;
+		var s = value.split(':');
+		objFontSelect.val(s[0]);
+		// update chosen
+		objFontSelect.trigger('chosen:updated');
+		objFontSelect.trigger('change',{'selected':value});
+		objFontStyleSelect.trigger('change',{'selected':value});
+	});
+	
+});
+
+/* ]]> */
+</script>
+<br class="clear"></div>

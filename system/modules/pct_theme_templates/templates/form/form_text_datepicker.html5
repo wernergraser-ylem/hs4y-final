@@ -1,0 +1,45 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/moment/moment.min.js'.(\PCT\SEO::getProtocol() == 'http2' ? '' : '|static');
+?>
+
+<?php $this->extend('form_row'); ?>
+
+<?php $this->block('label'); ?>
+  <?php if ($this->label): ?>
+    <label for="ctrl_<?= $this->id ?>"<?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?>>
+      <?php if ($this->mandatory): ?>
+        <span class="invisible"><?= $this->mandatoryField ?></span> <?= $this->label ?><span class="mandatory">*</span>
+      <?php else: ?>
+        <?= $this->label ?>
+      <?php endif; ?>
+    </label>
+  <?php endif; ?>
+<?php $this->endblock(); ?>
+
+<?php $this->block('field'); ?>
+  <?php if ($this->hasErrors()): ?>
+    <p class="error"><?= $this->getErrorAsString() ?></p>
+  <?php endif; ?>
+  
+  <input type="date" name="<?= $this->name ?>_input"id="ctrl_<?= $this->id ?>" class="datepicker text" value="<?= \Contao\StringUtil::specialchars($this->value ?: \Contao\Date::parse('Y-m-d') ) ?>"<?= $this->getAttributes() ?><?php if($this->rgxp == 'date' && \Contao\FormModel::findByPk($this->pid)->novalidate): ?> pattern="<?= \Contao\Date::getRegexp(\Contao\Date::getNumericDateFormat()); ?>" <?php endif; ?>>
+  <input type="hidden" name="<?= $this->name ?>" id="ctrl_<?= $this->id ?>_hidden" class="hidden" value="<?= \Contao\StringUtil::specialchars($this->value ?: \Contao\Date::parse( \Contao\Config::get('dateFormat') ) ) ?>">
+  <!-- SEO-SCRIPT-START -->
+  <script>
+  jQuery('input[name="<?= $this->name ?>_input"]').on('change',function() 
+  {
+      var format = 'DD.MM.YYYY';
+      <?php if( (\Contao\Config::get('dateFormat') == 'Y-m-d' && \Contao\FormModel::findByPk($this->pid)->novalidate) || $this->rgxp == 'date' ): ?>
+      var format = 'YYYY-MM-DD';
+      <?php endif; ?>
+      jQuery('input[name="<?= $this->name ?>"').val( moment(this.value, "YYYY-MM-DD").format(format) );
+  });
+  </script>
+  <!-- SEO-SCRIPT-STOP -->
+  <?php if ($this->addSubmit): ?>
+    <input type="submit" id="ctrl_<?= $this->id ?>_submit" class="submit" value="<?= $this->slabel ?>">
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
+
+
+

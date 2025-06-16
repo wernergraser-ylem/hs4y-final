@@ -1,0 +1,99 @@
+<?php 
+// templates/form_wrapper_custom.html5
+$this->extend('form_wrapper');
+?>
+
+<?php $this->block('content'); ?>
+
+<?php if ($this->hasError): ?>
+    <!-- Fehlerfall: Zeige Fehlermeldung oben im Formular -->
+    <div class="form-error-container">
+        <div class="error-message">
+            <strong>⚠️ Fehler:</strong>
+            <?= $this->errorMessage ?>
+        </div>
+    </div>
+    
+    <style>
+    .form-error-container {
+        margin-bottom: 2rem;
+    }
+    
+    .error-message {
+        background: #f5c6cb;
+        color: #721c24;
+        padding: 1rem;
+        border-radius: 0.375rem;
+        border: 1px solid #f1b0b7;
+        border-left: 4px solid #dc3545;
+    }
+    </style>
+    
+    <!-- Formular wird normal angezeigt - Daten bleiben erhalten -->
+    <?php $this->parent(); ?>
+
+<?php else: ?>
+    <!-- Erfolgsfall: Zeige Standard-Erfolgsmeldung -->
+    <div class="form-success-container">
+        <h2>✅ Vertrag erfolgreich angelegt</h2>
+        <p>Kunde und Vertrag wurden erfolgreich in der Datenbank gespeichert!</p>
+        
+        <div class="success-actions">
+            <a href="/vertraege" class="btn btn-primary">
+                📋 Alle Verträge anzeigen
+            </a>
+            <a href="<?= \Contao\Environment::get('requestUri') ?>" class="btn btn-secondary">
+                ➕ Neuen Vertrag anlegen
+            </a>
+        </div>
+    </div>
+    
+    <style>
+    .form-success-container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: #d1e7dd;
+        border-left: 4px solid #0f5132;
+        border-radius: 0.375rem;
+        color: #0f5132;
+    }
+    
+    .success-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.375rem;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 500;
+        display: inline-block;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    
+    .btn-secondary {
+        background: #6c757d;
+        color: white;
+    }
+    
+    .btn-primary {
+        background: #0d6efd;
+        color: white;
+    }
+    
+    .btn:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+    </style>
+
+<?php endif; ?>
+
+<?php $this->endblock(); ?>

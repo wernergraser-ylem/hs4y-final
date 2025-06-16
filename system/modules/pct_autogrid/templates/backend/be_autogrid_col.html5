@@ -1,0 +1,32 @@
+
+<?php if(isset($this->AutoGrid->start)): ?>
+
+<?php // flex_col
+$arrClass = explode(' ', $this->autogrid_css ?? '');
+$arrClass[] = 'column'; 
+if( isset($GLOBALS['PCT_AUTOGRID']['autogridRowStarted']) && $GLOBALS['PCT_AUTOGRID']['autogridRowStarted'] )
+{
+	#$arrClass['_column_'] = 'flex_col';
+}
+// grid_col
+if( isset($GLOBALS['PCT_AUTOGRID']['autogridGridStarted']) && $GLOBALS['PCT_AUTOGRID']['autogridGridStarted'] )
+{
+	#$arrClass['_column_'] = 'grid_col';
+}
+if( isset($this->autogrid_sticky) && $this->autogrid_sticky )
+{
+	$arrClass[] = 'sticky';
+}
+$strClass = implode(' ',$arrClass);
+
+// viewport classes
+$autogrid_tablet = str_replace('_t','',$this->autogrid_tablet ?: $this->autogrid_css);
+$autogrid_mobile = str_replace('_m','',$this->autogrid_mobile ?: 'col_12');
+?>
+<div class="<?= $strClass; ?> hasViewport <?php if(empty($objModel->autogrid_tablet)):?>no_tablet_grid<?php endif; ?>" data-id="<?= $this->id; ?>" data-desktop="<?= $this->autogrid_css; ?>" data-tablet="<?= $autogrid_tablet; ?>" data-mobile="<?= $autogrid_mobile; ?>">
+<div class="placeholder" data-id="<?= $this->id; ?>"></div>
+<?php endif; ?>
+<?php if(isset($this->AutoGrid->stop)): ?>
+<div class="placeholder" data-id="<?= $this->id; ?>"></div>
+</div>
+<?php endif;?>

@@ -1,0 +1,15 @@
+<?php
+/**
+ * Custom elements tags as unsorted lsit
+ */
+?>
+
+<div <?php echo $this->cssID; ?> <?php if($this->class): ?>class="<?php echo $this->class; ?>"<?php endif; ?>>
+<?php if($this->value): ?>
+	<ul class="tagslist">
+	<?php foreach(explode(',',$this->value) as $value): ?>
+	<li class="value value_<?= \Contao\StringUtil::standardize($value); ?>"><i class="fa fa-check"></i><?php echo $value; ?></li>
+	<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
+</div>

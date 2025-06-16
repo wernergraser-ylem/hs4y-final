@@ -1,0 +1,108 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_wrap.css|static';
+
+if( $this->field('bg_position')->value() == "parallax" )
+{
+	$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/parallax/jquery.stellar.min.js|static';
+}
+
+if ($this->field('css_code')->value()) {
+	$GLOBALS['TL_HEAD'][] = "<style>.ce_wrap_" . $this->id  . "{" . $this->field('css_code')->value() . "}</style>";
+}
+
+if ($this->field('css_code_mobile')->value()) {
+	$GLOBALS['TL_HEAD'][] = "<style>@media only screen and (max-width: 767px) {.ce_wrap_" . $this->id  . "{" . $this->field('css_code_mobile')->value() . "}}</style>";
+}
+
+?>
+
+<?php // responsive images
+$objFile = \Contao\FilesModel::findByPk( $this->field('image')->value() );
+$size = \Contao\StringUtil::deserialize( $this->field('image')->option('size') );
+	
+if( $objFile !== null && is_array($size) )
+{
+	$container = \Contao\System::getContainer();
+	$projectDir = $container->getParameter('kernel.project_dir');
+	$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+	$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+	$img = $objPicture->getImg($projectDir, $staticUrl);
+	$sources = $objPicture->getSources($projectDir, $staticUrl);
+					
+	#$objPicture = \Contao\Picture::create($objFile->path,\Contao\StringUtil::deserialize( $this->field('image')->option('size') ) );
+	
+	$arrMediaQueries = array();
+	if( $objPicture !== null && !empty($sources) )
+	{
+		foreach($sources ?: array() as $data)
+		{
+			if( !isset($data['media']) || strlen($data['media']) < 1 )
+			{
+				continue;
+			}
+			$arrMediaQueries[] = '@media '.$data['media'].' { .ce_wrap_'.$this->id.' { background-image:url('.$data['src'].') !important; } }';
+		}
+	}
+	if( count($arrMediaQueries) > 0 )
+	{
+		$GLOBALS['TL_HEAD'][] = '<style>'.implode("\n",$arrMediaQueries).'</style>';
+	}
+}
+// lightbox
+$lightbox = $this->field('link')->option('lightbox');
+if( $this->field('link')->option('lightbox') )
+{
+	if( strpos($lightbox, 'data-lightbox') !== false )
+	{
+		$lightbox = str_replace('data-', '',$lightbox);	
+	}	
+	$lightbox = ' data-lightbox="'.$lightbox.'"';
+}
+
+// link
+$link = '<a href="'.$this->field('link')->value().'"'.($this->field('link')->option('target') && empty($lightbox) ? ' target="_blank"':'').($this->field('link')->option('titleText') ? ' title="'.$this->field('link')->option('titleText').'"':'').( !empty($lightbox) ? $lightbox : '' ).' class="wrap-link">&nbsp;</a>';
+
+// classes
+$arrCSS = array
+(
+	$this->field('bg_color_class')->value(),
+	$this->field('padding_class')->value(),
+	$this->field('bg_position')->value(),
+	$this->field('bg_repeat')->value(),
+	$this->field('bg_color_hover')->value(),
+	$this->field('hover_color')->value(),
+	$this->field('hover_shadow')->value(),
+	$this->field('shadow')->value(),
+	$this->field('border_radius')->value()
+);
+if( $this->field('bg_position')->value() == "parallax" )
+{
+	$arrCSS[] = 'parallax';
+}
+$classes = implode(' ',array_filter(array_unique($arrCSS)) );
+
+// styles
+$arrStyles = array();
+$arrStyles['background-position'] = $this->field('bg_position_custom')->value();
+$arrStyles['background-size'] = $this->field('bg_size')->value();
+$arrStyles['padding'] = $this->field('padding')->value();
+if( $this->field('bg_color')->value() )
+{
+	// compile color
+	$color = $this->field('bg_color')->attribute()->compileColor( $this->field('bg_color')->value() );
+	$arrStyles['background-color'] = $color->rgba;
+}
+if( $this->field('image')->value() )
+{
+	$arrStyles['background-image'] = 'url('.$this->field('image')->generate().')';
+}
+
+$styles = '';
+foreach(array_filter($arrStyles) as $k => $v) 
+{
+	$styles .= $k.':'.$v.';';
+}
+?>
+<div class="<?=  $this->class; ?> ce_wrap_<?php echo $this->id; ?><?php if( !empty($classes) ): ?> <?= $classes; ?><?php endif; ?>" <?php if($this->field('bg_position')->value() == "parallax"): ?> data-stellar-background-ratio="0.1" data-stellar-offset-parent="true"<?php endif; ?><?=  $this->cssID; ?> style="<?= $styles; ?>">
+<?php if($this->field('link')->value()): ?> <?=  $link; ?><?php endif; ?>
+	<div class="inside">

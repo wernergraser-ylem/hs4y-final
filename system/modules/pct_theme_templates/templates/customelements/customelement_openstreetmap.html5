@@ -1,0 +1,233 @@
+
+
+<!-- SEO-SCRIPT-START -->
+<script>
+// show privacy information if nessessary
+jQuery(document).ready(function() 
+{
+	var token = localStorage.getItem('user_privacy_settings');
+	if( token == undefined )
+	{
+		token = '';
+	}
+	if(token.indexOf(2) < 0)
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/leaflet/leaflet.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/leaflet/leaflet.css|static';
+?>
+
+<div id="leaflet_map_<?= $this->id; ?>" class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<!-- indexer::stop -->
+	<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von OpenStreetMap wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}OpenStreetMap has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+	<!-- indexer::continue -->
+	<div class="ce_leaflet_map_inside" id="gmap_<?php echo $this->id; ?>" style="height: <?php echo $this->field('height')->value(); ?>px;"></div>
+</div>
+
+<?php 
+$arrLocations = array();
+if( !empty($this->group('adresse')) )
+{
+	foreach($this->group('adresse') as $i => $fields)
+	{
+		$arrLocations[$i] = array
+		(
+			'country'	=> $this->field('country#'.$i)->value(),
+			'street' 	=> $this->field('street#'.$i)->value(),
+			'zipcode'	=> $this->field('zipcode#'.$i)->value(),
+			'city'		=> $this->field('place#'.$i)->value(),
+			'infotext'	=> \Contao\StringUtil::substrHtml($this->field('description#'.$i)->value(),strlen($this->field('description#'.$i)->value())),
+			#'latitude'	=> '',
+			#'longitude'=> '',
+			'markerTitle' => 'Location: '.$i,
+			'name' => 'Location: '.$i,
+		);
+	}
+}
+?>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+/**
+ * Initialize the map
+ */
+function initializeMap_<?php echo $this->id; ?>() 
+{
+	var center = {};
+	var centers_lat = [];
+	var centers_lng = [];
+	
+	var mapOptions = 
+	{
+		zoom: <?php echo $this->field('zoom')->value(); ?>
+	};
+	
+	// init leaflet
+	var map = L.map('leaflet_map_<?= $this->id; ?>');
+	
+	var layerPreset = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	
+	L.tileLayer(layerPreset, {
+		maxZoom: 18,
+		zoom: mapOptions.zoom,
+		attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+		id: 'mapbox.streets'
+	}).addTo(map);
+	
+	map.scrollWheelZoom.disable();
+	
+	// build locations array
+	var locations = [];
+	<?php foreach($arrLocations as $i => $location): ?>
+		var location = {};
+		<?php foreach($location as $k => $v): ?>
+			location.<?php echo $k; ?> = '<?php echo $v; ?>';
+		<?php endforeach; ?>
+		locations.push(location);
+	<?php endforeach; ?>
+	
+	var markers = new Array();				
+	var neededGeocoder = false;
+	var search = ['Ã„','Ã¤','Ã–','Ã¶','Ãœ','Ã¼','ÃŸ',"&Auml;","&auml;","&Ouml;","&ouml;","&Uuml;","&uuml;","&szlig;"];
+	var replace = ['Ä','ä','Ö','ö','Ü','ü','ß','Ä','ä','Ö','ö','Ü','ü','ß'];
+		           
+	// place markers
+	for(var i = 0; i < locations.length; i++)
+	{
+		(function(location) // must encapsule to avoid wrong index in geocoder callback
+		{
+            var address = [locations[i].street,locations[i].zipcode,locations[i].city,locations[i].country];
+			//var address = [locations[i].street,locations[i].zipcode,locations[i].city,locations[i].country];
+			// array_filter
+			address = jQuery.grep(address, function(v) {return v.length > 0;});
+			// need the geocoder to find coordinates
+			if(location.latitude == undefined || location.longitude == undefined)
+            {
+	            jQuery.ajax(
+	            {
+		            url: 'https://nominatim.openstreetmap.org/search',
+		            method: 'get',
+		            data: {'q':address.join('+'),'format':'json','addressdetails':1},
+		            async: false,
+		            beforeSend: function(xhr,settings)
+		            {
+			            // unescape string and convert to utf-8
+			            var url = unescape( decodeURIComponent(settings.url) );
+						jQuery.each(search, function(i,v)
+			           	{
+				        	url = url.replace(v, replace[i]);
+				        });
+			           	this.url = url;
+			        },
+		            success:function(results) 
+		            {
+			            if(typeof(results) == 'object' && results.length > 0)
+			            {
+			                var lat = Number(results[0].lat);
+			                var lon = Number(results[0].lon);
+			                var marker = L.marker([lat, lon]);
+			                marker.bindPopup( location.infotext ).openPopup();
+			                marker.addTo(map);
+			                
+			                centers_lat.push(lat);
+							centers_lng.push(lon);
+						}
+		            },
+	            });
+	        }
+            // location has coordinates.
+            else
+            {
+				var lat = location.latitude;
+				var lon = location.longitude;
+				var marker = L.marker([lat, lon]);
+				
+				marker.bindPopup( location.infotext ).openPopup();
+				marker.addTo(map);
+				
+				centers_lat.push(lat);
+				centers_lng.push(lon);
+            }
+        })(locations[i]);  //closure passing in variables from loop	
+	}
+	
+	// find average coordinate as map center
+	if(locations.length > 0)
+	{
+		var avg_lat = 0,avg_lng = 0;
+		var c = centers_lat.length;
+		for(var i = 0; i < c; i++)
+		{
+			avg_lat += Number(centers_lat[i]);
+			avg_lng += Number(centers_lng[i]);
+		}
+			
+		var center = 
+		{
+			lat: avg_lat/c,
+			lng: avg_lng/c
+		};
+		
+		setTimeout(function() 
+		{
+			map.setView( center, mapOptions.zoom );
+		}, 1000);
+	}
+	// fallback to default center
+	else
+	{
+		center.lat = 51.1958685;
+		center.lng = 10.4809570;
+
+		map.setView( center, mapOptions.zoom );
+	}
+}
+
+// Optin privacy setting token
+var token = localStorage.getItem('user_privacy_settings');
+if( token == undefined )
+{
+	token = '';
+}
+if(token.indexOf(2) >= 0)
+{
+	// kickstarter: flag if map has been initialized already
+	var mapInitialized_<?= $this->id; ?> = false;	
+	setTimeout(function() 
+	{	
+		// if map has not been initialized yet, do so
+		if(mapInitialized_<?= $this->id; ?> == false)
+		{
+			initializeMap_<?php echo $this->id; ?>();
+		}
+	}, 1000);
+}
+
+// listen to Eclipse.user_privacy Event
+jQuery(document).on('Eclipse.user_privacy',function(event,params)
+{
+	if(params.level.indexOf(2) >= 0)
+	{
+		// kickstarter: flag if map has been initialized already
+		var mapInitialized_<?= $this->id; ?> = false;
+
+		jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+		setTimeout(function() 
+		{	
+			// if map has not been initialized yet, do so
+			if(mapInitialized_<?= $this->id; ?> == false)
+			{
+				initializeMap_<?php echo $this->id; ?>();
+			}
+		}, 1000);
+	}
+});
+ 
+
+</script>
+<!-- SEO-SCRIPT-STOP -->

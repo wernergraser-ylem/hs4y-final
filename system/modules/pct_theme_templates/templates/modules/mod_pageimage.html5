@@ -1,0 +1,21 @@
+<?php if( isset($this->Page->addImage) && $this->Page->addImage ): ?>
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/modules/mod_pageimage.css|static';
+// add media queries to page
+if($this->hasMediaQueries)
+{
+    $GLOBALS['TL_HEAD'][] = '<style>'.$this->mediaqueries.'</style>';
+}
+?>
+<?php $this->extend('block_unsearchable'); ?>
+<?php $this->block('content'); ?>
+<div class="inside<?php if($this->Page->style_css): ?> <?= $this->Page->style_css; ?><?php endif; ?><?php if($this->Page->height_css): ?> <?= $this->Page->height_css; ?><?php endif; ?><?php if($this->Page->color_css): ?> <?= $this->Page->color_css; ?><?php endif; ?><?php if($this->bgposition): ?> <?= $this->bgposition; ?><?php endif; ?><?php if($this->Page->bgcolor_css): ?> <?= $this->Page->bgcolor_css; ?><?php endif; ?>"<?php if(isset($this->image)): ?> style="background-image: url('<?= $this->image['src']; ?>')"<?php endif; ?>>
+  <div class="container">
+    <div class="content">
+      <?php if($this->Page->imgHeadline): ?><div class="headline"><?= $this->Page->imgHeadline; ?></div><?php endif; ?>
+      <?php if($this->Page->imgSubheadline): ?><div class="subheadline"><?= $this->Page->imgSubheadline; ?></div><?php endif; ?>
+    </div>
+  </div>
+</div>
+<?php $this->endblock(); ?>
+<?php endif; ?>

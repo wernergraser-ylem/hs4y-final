@@ -1,0 +1,49 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden eines iframes wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}An iframe has been restricted due to <a href="{{env::request}}?clear_privacy_settings=1">privacy settings</a>{{iflng}}</p>
+<script>
+// show privacy information if nessessary
+jQuery(document).ready(function() 
+{
+	var token = localStorage.getItem('user_privacy_settings');
+	if( token == undefined )
+	{
+		token = '';
+	}
+	if(token.indexOf(<?= $this->privacy; ?>) < 0)
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+	}
+});
+</script>
+
+<iframe id="privacy_iframe_<?= $this->id; ?>" width='<?= $this->width; ?>' height='<?= $this->height; ?>' frameborder='0' seamless></iframe>
+
+<script>
+jQuery(document).ready(function() 
+{
+	var token = localStorage.getItem('user_privacy_settings');
+	if( token == undefined )
+	{
+		token = '';
+	}
+	if(token.indexOf(<?= $this->privacy; ?>) >= 0)
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').hide();
+		jQuery('#privacy_iframe_<?= $this->id; ?>').attr('src','<?= $this->privacy_url; ?>');
+	}
+});
+// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(<?= $this->privacy; ?>) >= 0)
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+		jQuery('#privacy_iframe_<?= $this->id; ?>').attr('src','<?= $this->privacy_url; ?>');
+	}
+});	
+</script>
+
+<?php $this->endblock(); ?>

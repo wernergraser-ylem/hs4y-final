@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_openstreetmap
+*/
+$arrImport = array (
+'tstamp' => '17.11.2023 10:08',
+'name' => 'single_openstreetmap',
+'category' => 'maps',
+'thumb' => '',
+'elements' => 'openstreetmap',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126389,
+1 => 14774,
+2 => 128,
+3 => 1700215664,
+5 => 'openstreetmap',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:7:{s:15:"zvqawbpvfl5knio";s:7:"Germany";s:15:"o9u7ybu11xdn2c4";s:5:"10115";s:15:"eyrjhufkokol9p8";s:6:"Berlin";s:15:"nflkvjt0mkbkwgc";s:0:"";s:15:"0isyv8dqwqfpcdo";N;s:14:"vb0r7q4h5k1nua";s:2:"12";s:13:"jvo207eovbr42";s:3:"550";}s:6:"groups";a:2:{i:0;a:4:{s:5:"ident";s:5:"321_0";s:8:"group_id";i:321;s:11:"group_alias";s:7:"adresse";s:10:"attributes";a:5:{i:0;a:3:{s:4:"uuid";s:15:"zvqawbpvfl5knio";s:2:"id";i:1818;s:5:"alias";s:7:"country";}i:1;a:3:{s:4:"uuid";s:15:"o9u7ybu11xdn2c4";s:2:"id";i:1819;s:5:"alias";s:7:"zipcode";}i:2;a:3:{s:4:"uuid";s:15:"eyrjhufkokol9p8";s:2:"id";i:1820;s:5:"alias";s:5:"place";}i:3;a:3:{s:4:"uuid";s:15:"nflkvjt0mkbkwgc";s:2:"id";i:1821;s:5:"alias";s:6:"street";}i:4;a:3:{s:4:"uuid";s:15:"0isyv8dqwqfpcdo";s:2:"id";i:1822;s:5:"alias";s:11:"description";}}}i:1;a:4:{s:5:"ident";s:5:"322_0";s:8:"group_id";i:322;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:14:"vb0r7q4h5k1nua";s:2:"id";i:1824;s:5:"alias";s:4:"zoom";}i:1;a:3:{s:4:"uuid";s:13:"jvo207eovbr42";s:2:"id";i:1825;s:5:"alias";s:6:"height";}}}}s:6:"tstamp";i:1567424703;s:5:"alias";s:13:"openstreetmap";s:5:"uuids";a:7:{i:0;s:15:"zvqawbpvfl5knio";i:1;s:15:"o9u7ybu11xdn2c4";i:2;s:15:"eyrjhufkokol9p8";i:3;s:15:"nflkvjt0mkbkwgc";i:4;s:15:"0isyv8dqwqfpcdo";i:5;s:14:"vb0r7q4h5k1nua";i:6;s:13:"jvo207eovbr42";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:144;}',
+162 => 'sourceText',
+),
+),
+);

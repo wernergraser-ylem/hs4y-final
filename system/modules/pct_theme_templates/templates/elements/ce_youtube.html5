@@ -1,0 +1,86 @@
+	
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<!-- indexer::stop -->
+<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von YouTube wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}YouTube has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+<!-- indexer::continue -->
+<!-- SEO-SCRIPT-START -->
+<script>
+// show privacy information if nessessary
+jQuery(document).ready(function() 
+{
+	if( !PrivacyManager.hasAccess(2) )
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<div class="ce_youtube_inner">
+
+<?php 
+if( strpos($this->src,'autoplay') )
+{
+	$this->src .= '&mute=1';
+}
+$iframe = '<iframe '.$this->size.' title="'.$this->playerCaption.'" src="'.$this->src.'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+?>
+<figure class="video_container">
+	<div class="responsive ratio-<?= $this->aspect ?: '169' ?>">
+    <?php if ($this->splashImage): ?>
+	<div class="image_container">
+	<a id="splashImage_<?= $this->id ?>" href="<?= $this->src ?>" target="_blank" class="hidden">
+		<?php $this->insert('picture_default', $this->splashImage->picture); ?>
+	</a>
+	</div>
+	<?php endif; ?>
+	<div id="youtube_iframe_<?= $this->id; ?>"></div>
+	</div>
+	<?php if ($this->caption): ?>
+      <figcaption class="caption"><?= $this->caption ?></figcaption>
+    <?php endif; ?>
+</figure>
+
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+// inject iframe html when privacy setting allows it
+jQuery(document).ready(function() 
+{
+	if( PrivacyManager.hasAccess(2) )
+	{
+		<?php if ($this->splashImage): ?>
+		jQuery('#splashImage_<?= $this->id ?>').removeClass('hidden');
+		jQuery('#splashImage_<?= $this->id ?>').click(function(e) 
+		{
+			e.preventDefault();
+			jQuery('#youtube_iframe_<?= $this->id; ?>').html('<?= $iframe; ?>');
+		});
+		<?php else: ?>
+		jQuery('#youtube_iframe_<?= $this->id; ?>').html('<?= $iframe; ?>');
+		<?php endif; ?>
+	}
+});
+	// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(  PrivacyManager.hasAccess(2) )
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+		
+		<?php if ($this->splashImage): ?>
+		jQuery('#splashImage_<?= $this->id ?>').removeClass('hidden');
+		jQuery('#splashImage_<?= $this->id ?>').click(function(e) 
+		{
+			e.preventDefault();
+			jQuery('#youtube_iframe_<?= $this->id; ?>').html('<?= $iframe; ?>');
+		});
+		<?php else: ?>
+		jQuery('#youtube_iframe_<?= $this->id; ?>').html('<?= $iframe; ?>');
+		<?php endif; ?>
+	}
+});	
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php $this->endblock(); ?>

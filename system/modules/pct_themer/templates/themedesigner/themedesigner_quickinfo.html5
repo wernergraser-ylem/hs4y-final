@@ -1,0 +1,73 @@
+<?php 
+/**
+ * ThemeDesigner Quickinfo
+ */
+?>
+
+<!-- indexer::stop -->
+
+<div id="themedesigner_quickinfo" class="themedesigner_quickinfo">
+<a class="trigger" title="<?= $GLOBALS['TL_LANG']['pct_themedesigner']['quickinfo_title']; ?>"></a>
+<div class="content">
+<div class="content_inside">
+<div class="theme"><?= $this->theme; ?></div>
+
+<?php if(count($this->elements) > 0): ?>
+<ul class="elements">
+	<?php foreach($this->elements as $selector => $arrElement): ?>
+	<li data-td_selector="<?= $selector; ?>" class="sibling <?= $arrElement['class']; ?>">
+		<span class="label"><?= $arrElement['label']; ?></span>
+		<span class="seperator">:</span>
+		<span class="value"><?= $arrElement['value']; ?></span>
+	</li>
+	<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+</div>
+</div>
+</div>
+
+<?php if(count($this->elements) > 0): ?>
+<script>
+/* <![CDATA[ */
+jQuery(document).ready(function()
+{
+	<?php foreach($this->elements as $selector => $arrElement): ?>
+	var objSwitch = jQuery('[data-switch="<?= $arrElement['switch']; ?>"]');
+	if(objSwitch)
+	{
+		objSwitch.on('ThemeDesigner.onToggleSwitch',function(event,params)
+		{
+			var objQuickinfoElement = jQuery('#themedesigner_quickinfo li[data-td_selector="<?= $selector; ?>"]');
+			if(params.status < 1)
+			{
+				// hide
+				objQuickinfoElement.addClass('hidden');
+				// remove the value
+				objQuickinfoElement.find('.value').html('');
+			}
+			else
+			{
+				// show
+				objQuickinfoElement.removeClass('hidden');
+			}	
+		});
+	}
+	
+	jQuery(document).on('ThemeDesigner.onValue',function(event,params)
+	{
+		var objQuickinfoElement = jQuery('#themedesigner_quickinfo li[data-td_selector="<?= $selector; ?>"]');
+		if(params.name == '<?= $selector; ?>')
+		{
+			objQuickinfoElement.find('.value').html(params.value);
+		}
+	});
+	
+	
+	<?php endforeach; ?>
+});
+/* ]]> */
+</script>
+<?php endif; ?>
+<!-- indexer::continue -->

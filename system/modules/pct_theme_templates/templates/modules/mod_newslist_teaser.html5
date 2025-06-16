@@ -1,0 +1,14 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if (empty($this->articles)): ?>
+    <p class="empty"><?php echo $this->empty; ?></p>
+  <?php else: ?>
+  	<div class="autogrid_wrapper block">
+    <?php echo implode('', $this->articles); ?>
+  	</div>
+    <?php echo $this->pagination; ?>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>

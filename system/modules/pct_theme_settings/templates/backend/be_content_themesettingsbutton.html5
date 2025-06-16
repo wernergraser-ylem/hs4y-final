@@ -1,0 +1,149 @@
+<?php 
+$objLang = (object)$GLOBALS['TL_LANG']['quicksettings'];
+?>
+<div id="theme_settings_<?= $this->id; ?>" class="content_quicksettings theme_settings">
+	<div class="section_one">
+		<div class="content_quicksettings_inside">
+			<div class="field_container margin_top_classes margin_t">
+				<label><?= $objLang->margin_top ?? 'Margin top'; ?></label>
+				<ul>
+					<li class="mt-xxl clickable<?php if($this->margin_t == 'mt-xxl'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-xxl">XXL</li>
+					<li class="mt-xl clickable<?php if($this->margin_t == 'mt-xl'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-xl">XL</li>
+					<li class="mt-l clickable<?php if($this->margin_t == 'mt-l'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-l">L</li>
+					<li class="mt-m clickable<?php if($this->margin_t == 'mt-m'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-m">M</li>
+					<li class="mt-s clickable<?php if($this->margin_t == 'mt-s'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-s">S</li>
+					<li class="mt-xs clickable<?php if($this->margin_t == 'mt-xs'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-xs">XS</li>
+					<li class="mt-xxs clickable<?php if($this->margin_t == 'mt-xxs'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-xxs">XXS</li>
+					<li class="mt-0 clickable<?php if($this->margin_t == 'mt-0'): ?> active<?php endif; ?>" data-field="margin_t" data-value="mt-0">0</li>
+				</ul>
+			</div>
+
+			<div class="field_container margin_bottom_classes margin_b">
+				<label><?= $objLang->margin_bottom ?? 'Margin bottom'; ?></label>
+				<ul>
+					<li class="mb-xxl clickable<?php if($this->margin_b == 'mb-xxl'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-xxl">XXL</li>
+					<li class="mb-xl clickable<?php if($this->margin_b == 'mb-xl'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-xl">XL</li>
+					<li class="mb-l clickable<?php if($this->margin_b == 'mb-l'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-l">L</li>
+					<li class="mb-m clickable<?php if($this->margin_b == 'mb-m'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-m">M</li>
+					<li class="mb-s clickable<?php if($this->margin_b == 'mb-s'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-s">S</li>
+					<li class="mb-xs clickable<?php if($this->margin_b == 'mb-xs'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-xs">XS</li>
+					<li class="mb-xxs clickable<?php if($this->margin_b == 'mb-xxs'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-xxs">XXS</li>
+					<li class="mb-0 clickable<?php if($this->margin_b == 'mb-0'): ?> active<?php endif; ?>" data-field="margin_b" data-value="mb-0">0</li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+	
+	<div class="section_two">
+		<div class="content_quicksettings_inside">
+			<div class="field_container margin_top_m_classes margin_t_m">
+				<label><?= $objLang->margin_top_mobile ?? 'Mobile: Margin top'; ?></label>
+				<ul>
+					<li class="mt-xxl clickable<?php if($this->margin_t_m == 'mt-xxl-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-xxl-m">XXL</li>
+					<li class="mt-xl clickable<?php if($this->margin_t_m == 'mt-xl-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-xl-m">XL</li>
+					<li class="mt-l clickable<?php if($this->margin_t_m == 'mt-l-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-l-m">L</li>
+					<li class="mt-m clickable<?php if($this->margin_t_m == 'mt-m-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-m-m">M</li>
+					<li class="mt-s clickable<?php if($this->margin_t_m == 'mt-s-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-s-m">S</li>
+					<li class="mt-xs clickable<?php if($this->margin_t_m == 'mt-xs-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-xs-m">XS</li>
+					<li class="mt-xxs clickable<?php if($this->margin_t_m == 'mt-xxs-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-xxs-m">XXS</li>
+					<li class="mt-0 clickable<?php if($this->margin_t_m == 'mt-0-m'): ?> active<?php endif; ?>" data-field="margin_t_m" data-value="mt-0-m">0</li>
+				</ul>
+			</div>
+
+			<div class="field_container margin_bottom_m_classes margin_b_m">
+				<label><?= $objLang->margin_bottom_mobile ?? 'Mobile: Margin top'; ?></label>
+				<ul>
+					<li class="mb-xxl clickable<?php if($this->margin_b_m == 'mb-xxl-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-xxl-m">XXL</li>
+					<li class="mb-xl clickable<?php if($this->margin_b_m == 'mb-xl-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-xl-m">XL</li>
+					<li class="mb-l clickable<?php if($this->margin_b_m == 'mb-l-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-l-m">L</li>
+					<li class="mb-m clickable<?php if($this->margin_b_m == 'mb-m-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-m-m">M</li>
+					<li class="mb-s clickable<?php if($this->margin_b_m == 'mb-s-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-s-m">S</li>
+					<li class="mb-xs clickable<?php if($this->margin_b_m == 'mb-xs-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-xs-m">XS</li>
+					<li class="mb-xxs clickable<?php if($this->margin_b_m == 'mb-xxs-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-xxs-m">XXS</li>
+					<li class="mb-0 clickable<?php if($this->margin_b_m == 'mb-0-m'): ?> active<?php endif; ?>" data-field="margin_b_m" data-value="mb-0-m">0</li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+
+	
+</div>
+<script>
+/**
+ * Toggle theme settings container open/close
+ */
+// !-- toggle: open close
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#theme_settings_<?= $this->id; ?>').parent('a.theme_settings');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	var objElements = jQuery('a.theme_settings');
+
+	objElement.click(function(e)
+	{
+		e.preventDefault();
+		// close any open other container
+		objElements.not(this).removeClass('active');
+		objElements.parents('li').removeClass('active');
+		// toggle active the current one
+		jQuery(this).toggleClass('active');
+		jQuery('#li_<?= $this->id; ?>').toggleClass('active');	
+	});
+
+	jQuery('#main').click(function(e)
+	{
+		objElements.removeClass('active');
+		jQuery('#li_<?= $this->id; ?>').removeClass('active');	
+	});
+});
+
+
+/**
+ * Button interaction
+ */
+// !-- field toggler
+jQuery(document).ready(function() 
+{
+	var objElements = jQuery('#theme_settings_<?= $this->id; ?> .clickable');
+	if(objElements.length < 1)
+	{
+		return;
+	}
+	
+	objElements.click(function(e)
+	{
+		e.stopPropagation();
+		e.preventDefault();
+		
+		var _this = jQuery(this);
+		var strField = _this.attr('data-field');
+		var varValue = _this.attr('data-value');
+		
+		// set active
+		_this.toggleClass('active');
+		
+		// remove sibling active 
+		_this.siblings('li').removeClass('active');
+
+		if( _this.hasClass('active') === false )
+		{
+			varValue = '';
+		}
+
+		// send event
+		jQuery(document).trigger('THEME_SETTINGS.'+strField,{'elem':<?= $this->id; ?>,'value':varValue});
+
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'POST',
+			data: {'action':'toggleThemeSettingsFieldValue','elem':<?= $this->id; ?>,'state':varValue,'field':strField}
+		});		
+	});
+});
+</script>

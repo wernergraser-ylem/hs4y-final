@@ -1,0 +1,364 @@
+/* =============================================================================
+ * ce_headline_w_buttons
+ * ========================================================================== */
+
+.ce_headline_w_buttons .ce_headline_w_buttons_inside {
+	background: rgb(248,248,248);
+	min-height: 25px;
+	padding: 15px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	display: table;
+	vertical-align: middle;
+}
+
+.ce_headline_w_buttons .buttons {
+	text-align: right;
+	display: table-cell;
+	vertical-align: middle;
+	min-width: 300px;
+}
+
+.ce_headline_w_buttons div.ce_headline {
+	display: table-cell;
+}
+
+
+.ce_headline_w_buttons .buttons > div {
+	display: inline-block;
+}
+
+.ce_headline_w_buttons .buttons a {
+	display: inline-block;
+	padding:  5px 10px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	min-width: 120px;
+	text-align: center;
+}
+
+.ce_headline_w_buttons .buttons a.button_two {
+	margin-left: 5px;
+}
+
+.ce_headline_w_buttons .buttons i {
+	margin-right: 7px;
+}
+
+.ce_headline_w_buttons .ce_headline {
+	margin-bottom: 0;
+}
+
+/* style1 */
+
+.ce_headline_w_buttons.style1 .buttons a {
+	border-radius: 5px;
+	background: rgb(255,255,255);
+	color: rgb(153, 153, 153);
+}
+
+.ce_headline_w_buttons.style1 .buttons a:hover {
+	color: rgb(255,255,255);
+	background: var(--accentColor);
+}
+
+.color-white .ce_headline_w_buttons.style1 .ce_headline_w_buttons_inside {
+	background: rgba(255,255,255,0.2);
+}
+
+.color-white .ce_headline_w_buttons.style1 .buttons a {
+	background: rgba(255,255,255,0.2);
+}
+
+/* style2 */
+
+.ce_headline_w_buttons.style2 .buttons a.button_one {
+	color: var(--accentColor);
+	border: 2px solid var(--accentColor);
+}
+
+.ce_headline_w_buttons.style2 .buttons a.button_one:hover {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style2 .buttons a.button_two {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	border: 2px solid var(--accentColor);
+}
+
+.ce_headline_w_buttons.style2 .buttons a.button_two:hover {
+	opacity: 0.9;
+}
+
+.color-white .ce_headline_w_buttons.style2 .ce_headline_w_buttons_inside {
+	background: rgba(255,255,255,0.2);
+}
+
+/* style3 */
+
+.ce_headline_w_buttons.style3 .ce_headline_w_buttons_inside {
+	background: none;
+	border-bottom: 1px solid rgb(225,225,225);
+	padding: 0 0 20px 0;
+}
+
+.ce_headline_w_buttons.style3 .buttons a.button_one {
+	color: var(--accentColor);
+	border: 2px solid var(--accentColor);
+}
+
+.ce_headline_w_buttons.style3 .buttons a.button_one:hover {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style3 .buttons a.button_two {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	border: 2px solid var(--accentColor);
+}
+
+.ce_headline_w_buttons.style3 .buttons a.button_two:hover {
+	opacity: 0.9;
+}
+
+.color-white .ce_headline_w_buttons.style3 .ce_headline_w_buttons_inside {
+	border-color: rgba(255,255,255,0.4);
+}
+
+/* style4 */
+
+.ce_headline_w_buttons.style4 .buttons a span {
+	position: relative;
+}
+
+.ce_headline_w_buttons.style4 .buttons a span:after {
+	content: '';
+	height: 1px;
+	background: rgb(100,100,100);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_headline_w_buttons.style4 .buttons a:hover span:after {
+	width: 100%;
+}
+
+.color-white .ce_headline_w_buttons.style4 .ce_headline_w_buttons_inside {
+	background: rgba(255,255,255,0.2);
+}
+
+.color-white .ce_headline_w_buttons.style4 .buttons a span:after {
+	background: rgba(255,255,255,0.9);
+}
+
+/* style5 */
+
+.ce_headline_w_buttons.style5 .ce_headline_w_buttons_inside {
+	background: none;
+	padding: 0;
+}
+
+.ce_headline_w_buttons.style5 .buttons a.button_one {
+	color: var(--accentColor);
+	border: 2px solid var(--accentColor);
+}
+
+.ce_headline_w_buttons.style5 .buttons a.button_one:hover {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style5 .buttons a.button_two {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	border: 2px solid var(--accentColor);
+}
+
+.ce_headline_w_buttons.style5 .buttons a.button_two:hover {
+	opacity: 0.9;
+}
+
+/* style6 */
+
+.ce_headline_w_buttons.style6 .buttons a.button_one {
+	color: var(--accentColor);
+	border: 2px solid var(--accentColor);
+	border-radius: 5px;
+}
+
+.ce_headline_w_buttons.style6 .buttons a.button_one:hover {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style6 .buttons a.button_two {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	border: 2px solid var(--accentColor);
+	border-radius: 5px;
+}
+
+.ce_headline_w_buttons.style6 .buttons a.button_two:hover {
+	opacity: 0.9;
+}
+
+.color-white .ce_headline_w_buttons.style6 .ce_headline_w_buttons_inside {
+	background: rgba(255,255,255,0.2);
+}
+
+/* style7 */
+
+.ce_headline_w_buttons.style7 .buttons a.button_one {
+	color: rgb(0,0,0);
+	border: 2px solid rgb(0,0,0);
+}
+
+.ce_headline_w_buttons.style7 .buttons a.button_one:hover {
+	background: rgb(0,0,0);
+	color: rgb(255,255,255);
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style7 .buttons a.button_two {
+	background: rgb(0,0,0);
+	color: rgb(255,255,255);
+	border: 2px solid rgb(0,0,0);
+}
+
+.ce_headline_w_buttons.style7 .buttons a.button_two:hover {
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style7 .ce_headline_w_buttons_inside {
+	background: none;
+	border-bottom: 1px solid rgb(225,225,225);
+	padding: 0 0 20px 0;
+}
+
+.color-white .ce_headline_w_buttons.style7 .ce_headline_w_buttons_inside {
+	border-color: rgba(255,255,255,0.4);
+}
+
+/* style8 */
+
+.ce_headline_w_buttons.style8 .buttons a.button_one {
+	color: rgb(189, 189, 189);
+	border: 2px solid rgb(189, 189, 189);
+}
+
+.ce_headline_w_buttons.style8 .buttons a.button_one:hover {
+	background: rgb(189, 189, 189);
+	color: rgb(255,255,255);
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style8 .buttons a.button_two {
+	background: rgb(189, 189, 189);
+	color: rgb(255,255,255);
+	border: 2px solid rgb(189, 189, 189);
+}
+
+.ce_headline_w_buttons.style8 .buttons a.button_two:hover {
+	opacity: 0.9;
+}
+
+.ce_headline_w_buttons.style8 .ce_headline_w_buttons_inside {
+	background: none;
+	border-bottom: 1px solid rgb(225,225,225);
+	padding: 0 0 20px 0;
+}
+
+.color-white .ce_headline_w_buttons.style8 .ce_headline_w_buttons_inside {
+	border-color: rgba(255,255,255,0.4);
+}
+
+/* style9 */
+
+.ce_headline_w_buttons.style9 .buttons a span {
+	position: relative;
+}
+
+.ce_headline_w_buttons.style9 .buttons a span:after {
+	content: '';
+	height: 1px;
+	background: rgb(100,100,100);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_headline_w_buttons.style9 .buttons a:hover span:after {
+	width: 100%;
+}
+
+.ce_headline_w_buttons.style9 .ce_headline_w_buttons_inside {
+	background: none;
+	padding: 0;
+}
+
+.color-white .ce_headline_w_buttons.style9 .buttons a span:after {
+	background: rgba(255,255,255,0.9);
+}
+
+/* style10 */
+
+.ce_headline_w_buttons.style10 .buttons a {
+	background: rgb(255,255,255);
+	color: rgb(153, 153, 153);
+}
+
+.ce_headline_w_buttons.style10 .buttons a:hover {
+	color: rgb(255,255,255);
+	background: var(--accentColor);
+}
+
+.color-white .ce_headline_w_buttons.style10 .ce_headline_w_buttons_inside {
+	background: rgba(255,255,255,0.2);
+}
+
+.color-white .ce_headline_w_buttons.style10 .buttons a {
+	background: rgba(255,255,255,0.2);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_headline_w_buttons .ce_headline_w_buttons_inside,
+	.ce_headline_w_buttons div.ce_headline,
+	.ce_headline_w_buttons .buttons {
+		display: block;
+	}
+	
+	.ce_headline_w_buttons .buttons {
+		text-align: left;
+	}
+	
+	.ce_headline_w_buttons .ce_headline {
+		margin-bottom: 1.3rem;
+	}
+	
+	.ce_headline_w_buttons .buttons a {
+		display: block;
+		margin-bottom: 3px;
+	}
+	
+	.ce_headline_w_buttons .buttons a.button_two {
+		margin-left: 0;
+	}
+}

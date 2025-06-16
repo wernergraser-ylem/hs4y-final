@@ -1,0 +1,21 @@
+<?php
+use Contao\CustomCatalog;
+use Contao\StringUtil;
+
+$arrValues = StringUtil::deserialize( $this->rawValue );
+$objFilter = new \PCT\CustomElements\Filters\SimpleFilter($arrValues);
+$objCC = CustomCatalog::findByTableName( $this->selectdb_table );
+?>
+<?php if( $objCC === null ): ?>
+<p>CustomCatalog not found: <?= $this->tag_table; ?>
+<?php else: ?>
+<?php
+$objCC->setOrigin( $this->CustomCatalog->getModule() );
+$objCC->setFilter( $objFilter ); // applys the simple filter to the selected elements
+$objCC->setLayoutTemplate('customcatalog_default'); // set the layout template
+?>
+<?php endif; ?>
+<div <?= $this->cssID; ?> <?php if($this->class): ?>class="<?= $this->class; ?>"<?php endif; ?>>
+<?php // render the catalog to the template
+echo $objCC->render(); ?>
+</div>

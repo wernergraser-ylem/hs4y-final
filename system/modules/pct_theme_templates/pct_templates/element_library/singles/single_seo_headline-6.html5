@@ -1,0 +1,59 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_seo_headline-6
+*/
+$arrImport = array (
+'tstamp' => '27.11.2023 08:15',
+'name' => 'single_seo_headline-6',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'headline',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+7 => 'text',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+113 => 'seo',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126622,
+1 => 14715,
+2 => 1344,
+3 => 1701072828,
+5 => 'headline',
+6 => 'a:2:{s:4:"unit";s:2:"h6";s:5:"value";s:15:"SEO Headline H6";}',
+7 => '<p>The SEO headline is an ideal tool for manually determining where an H1 tag is generated. This headline is output as [lt]div class&#61;&#34;h1&#34;[gt], preserving the styling attributes of an H1 heading.</p>',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+102 => '0.5',
+113 => '1',
+162 => 'sourceText',
+),
+),
+);

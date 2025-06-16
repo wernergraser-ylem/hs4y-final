@@ -1,0 +1,75 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_iconbox_vertical
+*/
+$arrImport = array (
+'tstamp' => '14.01.2025 09:52',
+'name' => 'single_iconbox_vertical',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'iconbox_vertical',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+91 => 'revolutionslider_videoType',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+137 => 'privacy_level',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 132314,
+1 => 15224,
+2 => 288,
+3 => 1736759874,
+5 => 'iconbox_vertical',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_12',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+91 => 'local',
+96 => '14',
+98 => '0.5',
+137 => 1,
+156 => 'a:7:{s:6:"values";a:50:{s:15:"ou0qpkkal4s16pv";a:2:{s:5:"value";s:23:"Comprehensive solutions";s:4:"unit";s:3:".h3";}s:14:"104yvhe7z0gyod";s:212:"<p>Essential tools for personal wellness management. Essential tools for personal wellness management.&nbsp; Essential tools for personal wellness management. Essential tools for personal wellness management.</p>";s:15:"tqk8ql7ndtybodk";s:7:"default";s:15:"1xqe7ibu4zr36ln";s:36:"c6eb7ace-b242-11ef-9c9c-b42e99cc5aa5";s:19:"1xqe7ibu4zr36ln_alt";s:0:"";s:21:"1xqe7ibu4zr36ln_title";s:0:"";s:20:"1xqe7ibu4zr36ln_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:24:"1xqe7ibu4zr36ln_imageUrl";s:0:"";s:24:"1xqe7ibu4zr36ln_fullsize";s:0:"";s:15:"6epdhj88giov3nx";s:5:"&#35;";s:25:"6epdhj88giov3nx_titleText";s:9:"Read more";s:22:"6epdhj88giov3nx_target";s:0:"";s:24:"6epdhj88giov3nx_lightbox";s:0:"";s:15:"ulgandogq3tvxqb";N;s:19:"ulgandogq3tvxqb_alt";s:0:"";s:21:"ulgandogq3tvxqb_title";s:0:"";s:20:"ulgandogq3tvxqb_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:14:"egfbs8eyxm2uih";a:2:{s:5:"value";s:15:"Essential tools";s:4:"unit";s:3:".h3";}s:15:"oaz1mm320m3hja1";s:212:"<p>Essential tools for personal wellness management. Essential tools for personal wellness management.&nbsp; Essential tools for personal wellness management. Essential tools for personal wellness management.</p>";s:15:"aajiqyere9o6qwa";s:36:"c6eb7ace-b242-11ef-9c9c-b42e99cc5aa5";s:20:"aajiqyere9o6qwa_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:14:"kgljo0qbwdhfr3";s:5:"&#35;";s:21:"kgljo0qbwdhfr3_target";s:0:"";s:23:"kgljo0qbwdhfr3_linkText";s:9:"READ MORE";s:24:"kgljo0qbwdhfr3_titleText";s:9:"READ MORE";s:23:"kgljo0qbwdhfr3_lightbox";s:0:"";s:13:"gkiz4498vo5wy";s:23:"fancy_box_color_default";s:14:"054ydo22bcrt8y";s:6:"style2";s:15:"xpd8bj45om4zu7w";s:0:"";s:15:"qdm6m7m8w4r9xtu";s:2:"px";s:15:"06w0ztyngbqc8xq";s:15:"border-radius-0";s:15:"crep6uuqj3hlq0w";s:9:"ti-unlock";s:15:"cmuj83jrjeewrv8";s:0:"";s:14:"jzh2vuydon7op5";N;s:18:"jzh2vuydon7op5_alt";s:0:"";s:20:"jzh2vuydon7op5_title";s:0:"";s:19:"jzh2vuydon7op5_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"dzi3tgd53xkdzb2";a:2:{s:5:"value";s:7:"Sign Up";s:4:"unit";s:3:".h3";}s:15:"nkhtvmzb7ruag6c";s:182:"<p>We start by understanding your goals, challenges, and vision. This step allows us to gather insights, define objectives, and set the foundation for a successful collaboration.</p>";s:15:"vcyl2znrhvyqu9a";s:5:"&#35;";s:22:"vcyl2znrhvyqu9a_target";s:0:"";s:24:"vcyl2znrhvyqu9a_linkText";s:15:"Book Onboarding";s:25:"vcyl2znrhvyqu9a_titleText";s:15:"Book Onboarding";s:24:"vcyl2znrhvyqu9a_lightbox";s:0:"";s:14:"l7brd9dj4hgn58";s:6:"style1";s:15:"ni36vfvnhnd3ev3";s:5:"large";s:14:"hkxsiwe6gpf01w";s:6:"medium";s:14:"vp2yglf4lis5ri";s:6:"medium";s:15:"finzvl2rfnocwlm";s:2:"on";s:15:"5w0cl3ltekumyfh";s:7:"delay_0";}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:5:"512_0";s:8:"group_id";i:512;s:11:"group_alias";s:4:"icon";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"crep6uuqj3hlq0w";s:2:"id";i:2218;s:5:"alias";s:9:"font_icon";}i:1;a:3:{s:4:"uuid";s:15:"cmuj83jrjeewrv8";s:2:"id";i:2220;s:5:"alias";s:9:"text_icon";}i:2;a:3:{s:4:"uuid";s:14:"jzh2vuydon7op5";s:2:"id";i:2219;s:5:"alias";s:10:"image_icon";}}}i:1;a:4:{s:5:"ident";s:5:"513_0";s:8:"group_id";i:513;s:11:"group_alias";s:4:"text";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"dzi3tgd53xkdzb2";s:2:"id";i:2221;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:15:"nkhtvmzb7ruag6c";s:2:"id";i:2222;s:5:"alias";s:4:"text";}}}i:2;a:4:{s:5:"ident";s:5:"514_0";s:8:"group_id";i:514;s:11:"group_alias";s:4:"link";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"vcyl2znrhvyqu9a";s:2:"id";i:2223;s:5:"alias";s:4:"link";}}}i:3;a:4:{s:5:"ident";s:5:"515_0";s:8:"group_id";i:515;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:6:{i:0;a:3:{s:4:"uuid";s:14:"l7brd9dj4hgn58";s:2:"id";i:2224;s:5:"alias";s:5:"style";}i:1;a:3:{s:4:"uuid";s:15:"ni36vfvnhnd3ev3";s:2:"id";i:2227;s:5:"alias";s:14:"padding_bottom";}i:2;a:3:{s:4:"uuid";s:14:"hkxsiwe6gpf01w";s:2:"id";i:2225;s:5:"alias";s:4:"size";}i:3;a:3:{s:4:"uuid";s:14:"vp2yglf4lis5ri";s:2:"id";i:2330;s:5:"alias";s:9:"font_size";}i:4;a:3:{s:4:"uuid";s:15:"finzvl2rfnocwlm";s:2:"id";i:2226;s:5:"alias";s:9:"animation";}i:5;a:3:{s:4:"uuid";s:15:"5w0cl3ltekumyfh";s:2:"id";i:2228;s:5:"alias";s:5:"delay";}}}}s:6:"tstamp";i:1736252778;s:5:"alias";s:16:"iconbox_vertical";s:5:"uuids";a:27:{i:0;s:15:"ou0qpkkal4s16pv";i:1;s:14:"104yvhe7z0gyod";i:2;s:15:"tqk8ql7ndtybodk";i:3;s:15:"1xqe7ibu4zr36ln";i:4;s:15:"6epdhj88giov3nx";i:5;s:15:"ulgandogq3tvxqb";i:6;s:14:"egfbs8eyxm2uih";i:7;s:15:"oaz1mm320m3hja1";i:8;s:15:"aajiqyere9o6qwa";i:9;s:14:"kgljo0qbwdhfr3";i:10;s:13:"gkiz4498vo5wy";i:11;s:14:"054ydo22bcrt8y";i:12;s:15:"xpd8bj45om4zu7w";i:13;s:15:"qdm6m7m8w4r9xtu";i:14;s:15:"06w0ztyngbqc8xq";i:15;s:15:"crep6uuqj3hlq0w";i:16;s:15:"cmuj83jrjeewrv8";i:17;s:14:"jzh2vuydon7op5";i:18;s:15:"dzi3tgd53xkdzb2";i:19;s:15:"nkhtvmzb7ruag6c";i:20;s:15:"vcyl2znrhvyqu9a";i:21;s:14:"l7brd9dj4hgn58";i:22;s:15:"ni36vfvnhnd3ev3";i:23;s:14:"hkxsiwe6gpf01w";i:24;s:14:"vp2yglf4lis5ri";i:25;s:15:"finzvl2rfnocwlm";i:26;s:15:"5w0cl3ltekumyfh";}s:7:"version";s:6:"5.0.11";s:13:"customelement";i:171;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+'tl_files' =>
+array (
+'c6eb7ace-b242-11ef-9c9c-b42e99cc5aa5' => 'files/cto_layout/img/delete_this/demo_lambda/pic4.webp',
+),
+);

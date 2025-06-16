@@ -1,0 +1,19 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_pricelist_image.css|static';
+?>
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+			
+	<?php foreach($this->group('item') as $i => $fields): ?>
+	<div class="item">
+		<div class="item-inside">
+			<?php if($this->field('image#'.$i)->value()): ?><?php echo $this->field('image#'.$i)->html(); ?><?php endif; ?>
+			<div class="item-content">
+				<h4><?php echo $this->field('label#'.$i)->value(); ?></h4>
+				<span class="price color-accent"><?php echo $this->field('price#'.$i)->value(); ?></span>
+			</div>
+			<?php if($this->field('subline#'.$i)->value()): ?><div class="subline"><?php echo $this->field('subline#'.$i)->value(); ?></div><?php endif; ?>
+		</div>
+	</div>
+	<?php endforeach; ?>
+		
+</div>

@@ -1,0 +1,5 @@
+.main_headline {font-size: 10px !important;}
+#header.down {-webkit-transform: translateY(0px); transform:translateY: 0px)}
+body.firefox #left {display: none;}
+body.firefox.show-navigation #left {display: block;}
+.w50 {min-height: 0;}

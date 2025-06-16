@@ -1,0 +1,33 @@
+
+<div id="tl_maintenance_index" class="maintenance_<?php echo $this->isActive ? 'active' : 'inactive'; ?>">
+
+  <div id="tl_rebuild_index">
+    <h2 class=""><?php echo $this->headline; ?></h2>
+
+
+
+  <p><?php echo $this->content; ?></p>
+  </div>
+
+    <form action="<?php echo $this->action; ?>" class="tl_form" method="get">
+     	<input type="hidden" name="do" value="maintenance">
+        <input type="hidden" name="key" value="<?php echo \Contao\Input::get('key'); ?>">
+        <input type="hidden" name="rt" value="<?php echo \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+        
+      <div class="tl_submit_container">
+        
+        <input type="submit" name="back" id="index" class="tl_submit" value="<?php echo $this->backLabel; ?>">
+      
+
+        <?php if(\Contao\Input::get('key') == 'removeAttributeDataFromVault'):?>
+		 <input type="submit" name="removeAttributeDataFromVault" class="tl_submit" value="<?php echo $this->runLabel; ?>">
+		<?php endif; ?>
+      
+        		
+      
+      </div>
+    </form>
+	
+</div>
+
+

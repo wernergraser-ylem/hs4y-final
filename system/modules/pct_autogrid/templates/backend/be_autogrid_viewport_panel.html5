@@ -1,0 +1,7 @@
+<div id="autogrid_viewport_panel">
+	<ul class="buttons">
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_viewport_panel']['desktop']; ?>" class="desktop button clickable"data-viewport="desktop"><i></i><span><?= $GLOBALS['TL_LANG']['autogrid_viewport_panel']['desktop']; ?></span></li>
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_viewport_panel']['tablet']; ?>" class="tablet button clickable" data-viewport="tablet"><i></i><span><?= $GLOBALS['TL_LANG']['autogrid_viewport_panel']['tablet']; ?></span></li>
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_viewport_panel']['mobile']; ?>" class="mobile button clickable" data-viewport="mobile"><i></i><span><?= $GLOBALS['TL_LANG']['autogrid_viewport_panel']['mobile']; ?></span></li>
+	</ul>
+</div>

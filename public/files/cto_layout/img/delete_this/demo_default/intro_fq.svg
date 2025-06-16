@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 313 148.5" style="enable-background:new 0 0 313 148.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#299ACF;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#299ACF;stroke-miterlimit:10;stroke-dasharray:5.9417,2.9709;}
+	.st2{fill:none;stroke:#299ACF;stroke-miterlimit:10;stroke-dasharray:6.1358,3.0679;}
+	.st3{fill:#299ACF;}
+	.st4{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<polyline class="st0" points="0.5,145 0.5,148 3.5,148 		"/>
+		<line class="st1" x1="6.5" y1="148" x2="308" y2="148"/>
+		<polyline class="st0" points="309.5,148 312.5,148 312.5,145 		"/>
+		<line class="st2" x1="312.5" y1="141.9" x2="312.5" y2="33"/>
+		<polyline class="st0" points="312.5,31.5 312.5,28.5 309.5,28.5 		"/>
+		<line class="st1" x1="306.5" y1="28.5" x2="5" y2="28.5"/>
+		<polyline class="st0" points="3.5,28.5 0.5,28.5 0.5,31.5 		"/>
+		<line class="st2" x1="0.5" y1="34.6" x2="0.5" y2="143.5"/>
+	</g>
+</g>
+<rect x="284" class="st3" width="29" height="29"/>
+<path class="st3" d="M174.8,29.1H0v-26c0-1.7,1.3-3,3-3h168.8c1.7,0,3,1.3,3,3V29.1z"/>
+<path class="st4" d="M292.2,22c-0.3,0-0.5-0.2-0.5-0.5c0,0,0,0,0-0.1l0.6-4.2c0-0.1,0.1-0.2,0.1-0.3l9.4-9.4c0.7-0.7,1.8-0.7,2.5,0
+	c0,0,0,0,0,0l1.8,1.8c0.7,0.7,0.7,1.8,0,2.5c0,0,0,0,0,0l-9.4,9.4c-0.1,0.1-0.2,0.1-0.3,0.1L292.2,22L292.2,22z M296.5,20.9
+	L296.5,20.9z M293.3,17.5l-0.4,3.2l3.2-0.4l9.3-9.3c0.3-0.3,0.3-0.8,0-1.1l-1.8-1.8c-0.3-0.3-0.8-0.3-1.1,0L293.3,17.5z"/>
+<path class="st4" d="M304.7,13.2c-0.1,0-0.3-0.1-0.3-0.1l-3.6-3.6c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0l3.6,3.6
+	c0.2,0.2,0.2,0.5,0,0.7C304.9,13.1,304.8,13.1,304.7,13.2z"/>
+<rect x="295.5" y="14.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 76.8834 215.601)" class="st4" width="6.3" height="1"/>
+<polygon class="st4" points="293.1,18.6 295.2,20.7 292.8,20.9 "/>
+</svg>

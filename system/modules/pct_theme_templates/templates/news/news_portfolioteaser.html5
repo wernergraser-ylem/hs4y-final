@@ -1,0 +1,27 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/portfolio/news_portfoliolist.css|static';
+?>
+<div class="item swiper-slide block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+	<figure class="image_container">
+
+		<a href="<?php echo $this->href ? $this->href : $this->link; ?>">
+			<div class="image_container_inside">
+				<?php $this->insert('picture_default', $this->picture); ?>
+				<div class="overflow-layer"></div>
+			</div>
+			<div class="info">
+				<div class="title h5"><?php echo $this->newsHeadline; ?></div>
+				<div class="subline"><?php echo $this->subHeadline; ?></div>
+			</div>
+		</a>
+
+		<div class="linkbar">
+			<a href="<?php echo $this->singleSRC; ?>" <?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" data-lightbox="portfolio" class="zoom">
+				<i class="fa fa-search"></i>
+			</a>
+			<a href="<?php echo $this->href ? $this->href : $this->link; ?>"<?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>>
+				<i class="fa fa-share"></i>
+			</a>
+		</div>
+	</figure>
+</div>

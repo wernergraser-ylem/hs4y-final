@@ -1,0 +1,18 @@
+/** hyperlinks **/
+.ce_revolutionslider .ce_revolutionslider_hyperlink {display: block}
+
+/** fix - pause button **/
+.videoisplaying .tp-revstop {margin-left: 16px!important;}
+
+.ce_revolutionslider .privacy {background: red; color: #fff; padding: 10px; height: 100vh; text-align: center; padding: 500px 0;}
+.ce_revolutionslider .privacy a {color: #fff; text-decoration: underline;}
+
+/** fix - flickering while page loads **/
+.ce_revolutionslider .tp-banner:not(.revslider-initialised) {visibility: hidden;}
+
+/** fix - arrows not visible **/
+.ce_revolutionslider .tp-bannertimer {visibility: visible!important;}
+.ce_revolutionslider .tparrows {visibility: visible!important;}
+
+.ce_revolutionslider .ce_revolutionslider_video .tp-video-play-button {display: none;}
+.ce_revolutionslider .ce_revolutionslider_video[data-videocontrols="controls"] .tp-video-play-button {display: block;}

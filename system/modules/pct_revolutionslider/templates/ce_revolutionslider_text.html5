@@ -1,0 +1,3 @@
+<div <?php if($this->cssID):?><?= $this->cssID; ?><?php endif; ?> class="<?= $this->class; ?> block" <?php if($this->styles): ?>style="<?= $this->styles; ?>"<?php endif; ?>>
+<?= $this->text; ?>
+</div>

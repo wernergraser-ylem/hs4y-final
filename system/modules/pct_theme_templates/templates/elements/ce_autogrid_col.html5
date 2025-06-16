@@ -1,0 +1,34 @@
+<?php if(isset($this->AutoGrid->start)): ?>
+<?php // sticky offset 
+if( $this->AutoGrid->sticky && isset($this->autogrid_sticky_offset) && !empty($this->autogrid_sticky_offset) )
+{
+	$this->AutoGrid->styles[] = 'top:'.$this->autogrid_sticky_offset.';';
+}
+// theme related
+$classes = explode(' ', $this->class ?? '');
+if( isset($this->color_css) )
+{
+	$classes[] = $this->color_css;
+}
+if( isset($this->bgcolor_css) )
+{
+	$classes[] = $this->bgcolor_css;
+}
+$this->class = implode(' ', \array_filter($classes) );
+?>
+<div <?= $this->cssID ?> class="column<?php if($this->class): ?> <?= $this->class; ?><?php endif; ?><?php if($this->AutoGrid->classes): ?> <?= $this->AutoGrid->classes; ?><?php endif; ?>"<?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+	<div class="attributes<?php if($this->AutoGrid->Image && !$this->AutoGrid->hasContent): ?> has-image empty<?php endif; ?><?php if($this->autogrid_padding_css): ?> <?= $this->autogrid_padding_css; ?><?php endif; ?>"<?php if($this->AutoGrid->styles): ?> style="<?= implode(' ', $this->AutoGrid->styles); ?>"<?php endif; ?><?= $this->AutoGrid->attributes; ?>>
+		<?php if(isset($this->AutoGrid->shstart) && $this->AutoGrid->shstart === true): ?>
+			<div class="same-height-wrap">
+		<?php endif; ?>
+	<?php if($this->AutoGrid->Image && !$this->AutoGrid->hasContent): ?>
+		<figure class="image_container image_mob"><?php $this->insert('picture_default', $this->AutoGrid->Image->picture); ?></figure>
+	<?php endif; ?>
+<?php endif; ?>
+<?php if(isset($this->AutoGrid->stop)): ?>
+	</div>
+	<?php if(isset($this->AutoGrid->shstop) && $this->AutoGrid->shstop === true): ?>
+		</div>
+	<?php endif; ?>
+</div>
+<?php endif;?>

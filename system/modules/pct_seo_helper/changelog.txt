@@ -1,0 +1,51 @@
+### 2.1.0
+New: Combine SEO_SCRIPT inline scripts in a single js-file (/assets/cto_layout/scripts/seo_scripts.js) (#38)
+Fixed: Codes updates related to filesize and filetime parameter (#39)
+Update: Put SEO_SCRIPT, SEO_SCRIPT_FILES related logic in public methods (#40)
+
+### 2.0.1
+Fixed: Pass SEO_SCRIPT_FILEs coming from templates, loaded before fe_page template, to the combiner routine in the fe_page template (#2088)
+Update: Added versioning flag, based on filesize, to files coming from SEO_SCRIPT_FILEs (#35)
+
+### 2.0.0
+Fixed: CSS, JS where not combined correctly under Contao 5 in http1 mode (#33)
+Fixed: Support SEO_SCRIPT_FILEs in combination with inserttags (#30)
+Fixed: JSON news, events reader: mainEntityOfPage > @id should be the static page url (#31)
+Update: General Contao 5 compatibility (#32)
+Removed: Contao 4.9 compatibility (#32)
+
+### 1.4.0
+New: Block script sections (#26)
+Update: Added version number constant (#27)
+
+### 1.3.0
+New: Support for Contao 4.13
+Fixed: Check that TL_CSS and TL_JAVASCRIPT are defined as arrays (#22)
+Update: General PHP8 update (#23)
+
+### 1.2.3
+Fixed: Rebuild generatePage callbacks to parseTemplate callbacks due to BC break in Contao 4.9.24 (#20)
+
+### 1.2.2
+Update: Check for loading= only instead of loading=" 
+
+### 1.2.1
+Fixed: Unclosed <script> element of the structured data (#16)
+
+### 1.2.0
+Added: Generate Google JSON-LD structured data for news or event records (#13)
+
+### 1.1.0
+Update: Refractor classes to Contao namespace (#11)
+Update: Contao 4.9 LTS compatibility
+
+### 1.0.2
+Fixed: Missspelling of fe_page variable (#9)
+
+### 1.0.1
+Fixed: Return value of ::getProtocol should be a readable string e.g. http1 or http2 (#7)
+
+### 1.0.0
+New: HTTP1/HTTP2 support
+New: Image <img> loading lazy support
+New: Rich snipped support in pages

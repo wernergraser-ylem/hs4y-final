@@ -1,0 +1,46 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newsteaser.css|static';
+$hasText = $this->hasText;
+$teaserMaxLength = 180;
+$teaser = \Contao\StringUtil::substrHtml($this->teaser,$teaserMaxLength);
+if( strlen($teaser) != strlen($this->teaser) )
+{
+	$teaser = rtrim($teaser,'</p>').' ...</p>';
+}
+?>
+
+<div class="newsteaser block autogrid one_third item <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+	<div class="newsteaser-inside">
+		<div class="image_container<?php echo $this->floatClass; ?>"<?php if ($this->margin || $this->float): ?> style="<?php echo trim($this->margin . $this->float); ?>"<?php endif; ?>>
+			<?php if ($hasText): ?><a href="<?php echo $this->link; ?>" <?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>><?php endif; ?>
+				<?php if ($this->picture): ?><?php $this->insert('picture_default', $this->picture); ?><?php endif; ?>
+				<span class="news-overlay"><i class="fa fa-plus"></i></span>
+			<?php if ($hasText): ?></a><?php endif; ?>
+			<?php if ($this->date): ?>
+			<div class="date bg-accent" itemprop="datePublished">
+				<span class="day"><?= \Contao\Date::parse("d", $this->timestamp);?></span>
+				<span class="month"><?= \Contao\Date::parse("M", $this->timestamp);?></span>
+				<span class="year"><?= \Contao\Date::parse("Y", $this->timestamp);?></span>
+			</div>
+			<?php endif; ?>
+		</div>
+	
+		<div class="content">		
+			<div class="h6"><?php echo $hasText ? $this->linkHeadline : $this->newsHeadline; ?></div>
+			<div class="teaser" itemprop="description"><?= $teaser; ?></div>
+			<div class="info-v3"><?php if ($this->date): ?><div class="date-v3" itemprop="datePublished"><?php echo $this->date; ?></div><?php endif; ?><?php if ($this->author): ?><div class="author-v3"><?php echo $this->author; ?></div><?php endif; ?><?php if ($this->commentCount): ?><div class="comments-v3"><?php echo $this->commentCount; ?></div><?php endif; ?></div>
+			<?php if ($hasText): ?>
+				<p class="link"><?php echo $this->more; ?></p>
+			<?php endif; ?>
+			<div class="info">
+				<?php if ($this->author): ?>
+				<span class="author"><?php echo $this->author; ?></span>
+				<?php endif; ?>
+				<?php if ($this->commentCount): ?>
+				<span class="comments"><?php echo $this->numberOfComments; ?></span>
+				<?php endif; ?>
+			</div>	
+		</div>
+	</div>
+</div>
+

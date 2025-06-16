@@ -1,0 +1,63 @@
+/* =============================================================================
+ * ce_customfont
+ * ========================================================================== */
+
+.ce_customfont a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.ce_customfont[data-align="left"] {
+	text-align: left;
+}
+
+.ce_customfont[data-align="center"] {
+	text-align: center;
+}
+
+.ce_customfont[data-align="right"] {
+	text-align: right;
+}
+
+.ce_customfont[data-color="accent-color"] {
+	color: var(--accentColor);
+}
+
+.ce_customfont[data-color="second-color"] {
+	color: var(--socondColor);
+}
+
+.ce_customfont[data-color="white"] {
+	color: #ffffff;
+}
+
+.ce_customfont[data-color="black"] {
+	color: #000000;
+}
+
+.ce_customfont[data-color="light-gray"] {
+	color: #b4b4b4;
+}
+
+.ce_customfont[data-color="dark-gray"] {
+	color: #7f7f7f;
+}
+
+.ce_customfont[data-color="custom1"] {
+	color: var(--customColor1);
+}
+
+.ce_customfont[data-color="custom2"] {
+	color: var(--customColor2);
+}
+
+.ce_customfont[data-font="customFont1"] {
+	font-family: var(--customFont1);
+	font-weight: var(--customFont1Weight);
+}
+
+.ce_customfont[data-font="customFont2"] {
+	font-family: var(--customFont2);
+	font-weight: var(--customFont2Weight);
+}
+

@@ -1,0 +1,11 @@
+
+<?php if(isset($this->AutoGrid->start)): ?>
+<div class="grid_preview">
+<div class="placeholder" data-id="<?= $this->id; ?>"></div>
+<div class="autogrid_row<?php if($this->autogrid_gutter):?> <?= $this->autogrid_gutter; ?><?php endif; ?><?php if($this->autogrid_sameheight):?> same_height<?php endif; ?>">
+<?php endif; ?>
+<?php if(isset($this->AutoGrid->stop)): ?>
+</div>
+<div class="placeholder" data-id="<?= $this->id; ?>"></div>
+</div>
+<?php endif;?>

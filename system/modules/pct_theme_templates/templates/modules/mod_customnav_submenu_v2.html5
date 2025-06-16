@@ -1,0 +1,10 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/modules/mod_navigation_submenu_v2.css|static';
+?>
+<!-- indexer::stop -->
+<div class="fullwidth boxed-content submenu_v2" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<div class="contentwrap">
+		<?= $this->items ?>
+	</div>
+</div>
+<!-- indexer::continue -->

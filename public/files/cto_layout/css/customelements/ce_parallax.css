@@ -1,0 +1,19 @@
+/* =============================================================================
+ * ce_parallax
+ * ========================================================================== */
+
+.ce_parallax {
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+}
+
+.ce_parallax .parallax-inside {
+	overflow: hidden;
+}
+
+body.ios .ce_parallax,
+body.android .ce_parallax {
+	background-attachment: scroll;
+	background-position: center center!important;
+}

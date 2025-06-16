@@ -1,0 +1,1056 @@
+### 5.1.0
+Fixed: Attibute files: Unnecessary ContentText wrapper when not "is download" just to print the raw path values (#830)
+Fixed: Check if image file exists in wildcard (#837)
+Fixed: Multi edit mode must use raw post values (#833)
+Fixed: Widget palettes did not close and open correctly (#834)
+Fixed: Flatten the cache logic and make it stricter to avoid wrong attribute look ups (#838) 
+Update: Darkmode support (#836)
+Update: Removed toggle function in tl_pct_customelement_groups list view (#835)
+Update: Replaced hasAccess with core permissions (#826)
+Update: General PHP8 updates (#832)
+
+### 5.0.17
+Update: Removed last deprecated parts of CEs plugin management (#825)
+Removed: PluginModel class (deprecated since version 5.0.0 (#741) ) (#825)
+Update: Minor code updates (#827)
+
+### 5.0.16
+Fixed: Save and edit in tl_pct_customemenet tables did not work correctly under Contao 5.3 (#823)
+Update: Removed the deprecated elementset parts (#822)
+
+### 5.0.15
+Update: Remove vault migration maintenance job if tl_pct_customelement_vault table does not exist anymore (#819)
+Update: Minor code updates (#820)
+
+### 5.0.14
+Update: Removed persistent vault-migration backend message (#817)
+
+### 5.0.13
+Fixed: PHP Error "There is no class for table "" registered in $GLOBALS['TL_MODELS']" when multi editing pages (#810) 
+Fixed: Toggling CE palettes did not work correctly after duplication a group (#813)
+Fixed: Wrong path to delete.svg in duplicated group (#815)
+Update: Updated operation buttons for Contao 5 (#811)
+Update: General PHP8 updates (#810)
+
+### 5.0.12
+Fixed: Sortable feature: gallery, files attributes (#807)
+Update: QueryBuilder: Resolve open / lose ends when building the where clause for sql queries (#808)
+
+### 5.0.11
+Fixed: Backend description attribute should not create a field description / tool-tip (#805)
+Update: Decode entities in values (#803)
+Update: Minor code updates (#804)
+
+### 5.0.10
+Fixed: Missing table name information in Contao\ContaoModel class when used as CustomCatalog CustomElement widget attribute (#799)
+Fixed: CustomElement widget overlapped Contao sticky footer (#800)
+Update: Minor code updates (#801)
+
+### 5.0.9
+Fixed: Export plugin: Codes updates (#796)
+Update: General PHP8 updates (#797)
+
+### 5.0.8
+Fixed: Url attribute: tl_content::pagePicker is deprecated (#791)
+Fixed: Files attribute: Overwrite link title did not work correctly (#793)
+Fixed: tinymce did not load the tinymce.css styles correctly when shipped with EclipseX (#794)
+Update: General PHP8 updates (#792)
+
+### 5.0.7
+Fixed: Toggle feature under Contao 4.13 did not work correctly (#787)
+Fixed: IncludeElement requires __construct methode (#788)
+Update: Minor code updates (#789)
+
+### 5.0.6
+Fixed: IncludeElement: replaced the deprecated tl_content related methods (#784)
+Fixed: Missing operations buttons in CE widget (#785)
+
+### 5.0.5
+Update: Minor codes updates for deprecated vault-related classes (#782)
+
+### 5.0.4
+Fixed: Removed deprecated references to the contentelementsets backend class for news and calendars (#779)
+Fixed: PHP Warnings (#777)
+Update: Removed unnecessary icons and updated the other ones to svg (#778)
+Update: Support Contao darkmode (#780)
+
+### 5.0.3
+Fixed: Missing method addToUrl in Controller (#775)
+Fixed: SQL out of bounds error in Vault class (#774)
+
+### 5.0.2
+Update: Do not replace inserttags for attribute template variable "rawValue" (#771)
+Update: General PHP8 updates (#772)
+
+### 5.0.1
+Fixed: Missing backend fields in attribute settings (#769)
+
+### 5.0.0
+Fixed: Missing ce_TYPE class in wrapper output (#744)
+Fixed: SEO headline output was missing (#743)
+Fixed: Do not render missing images in wildcard (#767)
+Fixed: Missing page picker in url-attribute (#766)
+Fixed: Textarea: Decode/Encode contao entities (#765, #764)
+Fixed: RGXP in number fields when using CustomCatalog (#749)
+Fixed: TemplateAttribute::generated did not create the image correctly (#751)
+Fixed: Checkbox: Default value did not reset on save (#739)
+Update: General Contao 5 compatibility (#668)
+Update: Load attribute related DCA files in onload_callback (#762)
+Update: Support Contaos new toggle feature (#757)
+Update: Improved backend layout (#750)
+Update: (CustomCatalog) Changed field type of checkboxes to char(1) (#747)
+Update: (CustomCatalog) Changed field type of checkboxMenu to blob (#746)
+Update: General PHP8 updates (#740)
+Update: Select attribute: Print label instead of value in wildcards (#742)
+Update: Improved template import and removed the path_to_import global (#763)
+Update: Support Contao dark theme (#759)
+Removed: Plugin management (#741)
+Removed: Content element sets (#731)
+Removed: Group and field counter in list view (#733)
+Removed: Contao 4.9 compatibility (#668)
+Removed: Fontawesome selection from system settings (#745)
+
+### 4.5.13
+Fixed: Controller->setter methode did not set all values correctly (#736)
+Fixed: tl_module.customTpl did not show the full template selection anymore (#737)
+Update: Added cache_suffix block in tinymce template (#735)
+
+### 4.5.12
+Fixed: Missing node label in element type selection (#730)
+Update: MariaDB sill uses length in integer fields (#728)
+
+### 4.5.11
+Fixed: Revert changes made in #724 (#726)
+
+### 4.5.10
+Update: Integer fields sql without length definition under mysql8 (#1174)
+Update: Do not show Module name in list labels in wrapper elements (#724)
+Update: General code updates (#723)
+
+### 4.5.9
+Fixed: Using multiple pickers did not work correctly due to missing dca session information (#720)
+Fixed: Coexisting field names to Contaos default field names should be cleared before passing the active record to the content element classes (affects CustomcCtalog only) (#718) 
+Update: Minor contao namespace and coding updates (#719)
+
+### 4.5.8
+Fixed: be_page_export template not found (#710)
+Fixed: Elementsets did not registrister correctly in news and calendar bundle (#711)
+Fixed: Gallery: Rendering the wildcard did not work (#714)
+Fixed: Gallery: Deleting single images did not work (#714) 
+Update: Image: Prepared to be used by CustomCatalog for image processing (#716)
+
+### 4.5.7
+Fixed: Image attribute: Default image size field was not selectable anymore (#703)
+Fixed: Generate ContentElementsSets like regular content elements (#706)
+Update: Cleared the ce_pct_contentelementset.html5 template. CES should not have a real html output (#706)
+Update: PHP Warnings and improvements (#704)
+
+### 4.5.6
+Update: PHP Warnings (#700)
+
+### 4.5.5
+Fixed: Import/export: getSession() method does not exist (#698)
+Update: PHP Warnings (#697)
+
+### 4.5.4
+Fixed: Empty headline attribute did return Array (#695)
+
+### 4.5.3
+Fixed: Missing delete button in duplicate groups (#692)
+Update: Use SVG delete icon when cloning a group via javascript (#693)
+
+### 4.5.2
+Fixed: PHP error: Serialization of PDO is not allowed (#689)
+Fixed: Missing delete button in tl_pct_customelement (#688)
+Update: General PHP8 updates (#690)
+
+### 4.5.1
+Fixed: Missing maintenance jobs (#686)
+
+### 4.5.0
+New: Added "SEO" headline options to render a headline as div with a related css class like: .h1, .h2 (#619)
+Added: Files attribute: Send to browser (#681)
+Fixed: Missing title tag in image attribute (#672)
+Fixed: Include form logged user out of Contao (#673)
+Update: General PHP8 updates (#676)
+Update: Return DcaHelper->initializeBackend when not in backend (#680)
+
+### 4.4.14
+Fixed: Missing translated labels (#669)
+Fixed: Load tinymce.css only in theme environment (#670)
+
+### 4.4.13
+Update: Changed default export path to /templates (#665)
+Update: Use DCA reference feature for translations in attributes  (#666)
+
+### 4.4.12
+Fixed: Missing values in backend wildcards (#662)
+Update: Increase the performance of the wildcard processing by using cached attribute objects (#662)
+
+### 4.4.11
+Fixed: Return value of translatedValue Hook is now a string and should be checked via empty method (#661)
+
+### 4.4.10
+Fixed: PHP syntax issue in ->label() method (#659)
+Update: General PHP8 updates (#658)
+
+### 4.4.9
+Fixed: Higher secure eval_path against invalid or revised binary information to avoid invalid path information (#652) 
+Fixed: Image attribute: ActiveRecord must be type of ContentModel (#653)
+Update: Replace deprecated Contao methods (#655)
+Update: General PHP8 updates (#654)
+
+### 4.4.8
+Fixed: Model windows did not open correctly after duplicating (#647)
+Fixed: Image attribute: Validate root path (#649)
+Update: Textarea attribute: Allow to choose any be_ template as tinyMCE template (#648)
+
+### 4.4.7
+Fixed: Changes made in QueryBuilder duo to issue (#640) had negative impact on the SQL-query array and combined both arrays wrong (#645) 
+
+### 4.4.6
+Fixed: Image attributes: Meta data from file structure has been ignored due to overwriteMeta setting (#639)
+Update: Minor PHP8 updates (#640)
+
+### 4.4.5
+Fixed: Some individual attribute settings did not load correctly due to type error in variable $strTyp(e) (#635)
+Fixed: tinymce: Pickers did not open under Contao 4.9 (#637)
+Fixed: tinymce: Missing language reference (#637)
+
+### 4.4.4
+Fixed: Image attribute: overwriting meta data (like fullscreen, caption etc.) did not work correctly under Contao 4.13 (#631)
+
+### 4.4.3
+Fixed: Reworked the multi-edit mode (#626)
+Update: Minor namespace updates (#627)
+Update: Code optimization for PHP8 (#629)
+
+### 4.4.2
+Fixed: Elementset export tried to fetch data from deprecated table tl_pct_customelement_vault (#624)
+
+### 4.4.1
+Fixed: Removed the unknown option "Hallo" in import template selection (#617)
+Fixed: Wildcards were rendered in uppercase since Contao 4.13 (#620)
+Added: be_ce_wildcard.html5 template (#620)
+Update: Clearified the meaning of the path_to_import, path_to_export global (#618)
+Update: Check if user object is not null before calling to authenticate (#616)
+Update: tinymce.html5: Missing picker link in TinyMCE (#622)
+
+### 4.4.0
+New: Support for Contao 4.13
+Change: Changed .alias fields to varchar(255) BINARY NOT NULL default '' (#609)
+Fixed: "activeRecord" objects should now be type of ContentModel (#571)
+Added: tl_content.pct_customelement, tl_module.pct_customelement (#583)
+Added: System maintenance to migrate vault (#583, #604)
+Update: Removed the Vault (tl_pct_customelement_vault) (#583, #603)
+Update: tinyMCE support for Contao 4.13 (#597)
+Update: ContentElementSets: Custom sets are now listed on first position (#601)
+Update: General PHP8 updates (#602)
+Update: Removed deprecated code, updated deprecated Contao methods (#603, #590)
+Update: Improved session handling and resolve session data when leaving the edit mode (#607, #588)
+Update: Improved the multi-edit labels (#605)
+
+### 4.3.12
+Fixed: Wrong lightbox title when editing an attribute in the group list view (#599) 
+Fixed: Wildcards displayed contao default fields like headline (#598)
+Update: Checkbox: Included mandatory option in attribute settings (#595)
+
+### 4.3.11
+Fixed: Removed the reviseTable Hook for purging the vault (#557) to allow template imports feature again (#593) 
+
+### 4.3.10
+Fixed: Changed the TL_DCA manipulation (made in #585) to CE_DCA array key to avoid interferences with Contaos core fields (#591) 
+
+### 4.3.9
+Fixed: Colorpicker sql definition (#586)
+Fixed: Duplicated elements had wrong field name after reload (#587)
+Update: Allow field manipulations via dcaconfig.php (#585)
+Update: Store "clones" array only when not empty
+
+### 4.3.8
+Update: Load DCA information to versions popop (#582)
+Update: Store uuids as an unique array
+
+### 4.3.7
+Fixed: Avoid rendering the tl_content.headline field in attributes (#580)
+
+### 4.3.6
+Fixed: Missing content when duplicating tl_article, tl_news, tl_calendar_events (#576)
+Update: Optimize labels in multiple edit modes (#575)
+Update: Store single values in version to enable version comparing (#577)
+Update: Clear the pct_customelements session on daily cronjob
+
+### 4.3.5
+Fixed: Config getActiveModules should not be called static (#569)
+Fixed: Missing content when duplicating a page (#572)
+Update: Input parameter for deleting, copying, moving groups is now more strict (#568)
+Update: tinymce.html5 template (#570)
+
+### 4.3.4
+Fixed: Multiple download elements ended in 404 due to cid-parameter under Contao 4.9 (#565)
+Fixed: Backend keys for element set page did not register properly under Contao 4.9 (#566)
+
+### 4.3.3
+Fixed: Initialize loadAssets methode only in backend to avoid wrong user object in frontend to avoid a user login issue under Contao 4.9 (#561)
+Update: Minor backwards compatibility updates (#560)
+
+### 4.3.2
+Fixed: Purge duplicate vault entries via reviseTable Hook (#557)
+Fixed: Attribute rendering: Set autogrid to 0 to avoid any unwanted autogrid manipulations and flag activeRecord information (#558)
+
+### 4.3.1
+Fixed: Missing id information in active record after cloning (#553)
+Update: Minor compatibility updates
+
+### 4.3.0
+Added: Support linkText, linkTitle options in files attributes (#550)
+Fixed: Wrong Model class in TableModule loads wrong activeRecord (#549)
+Fixed: Missing field values in news reader when using a custom attribute template and when element has been rendered twice (#551)
+Update: Minor updates on namespaces
+
+### 4.2.7
+Fixed: Check if the customelement is really enabled for being a contentelement or module in tl_content or tl_module (#545)
+Fixed: Wrong variable name "strGenericAttribute" in Vault class
+Update: Set the attr_id of genericAttributes when resaving a widget (#544)
+Removed: Deprecated the xlabel callback in list attributes (#547)
+
+### 4.2.6
+Update: Support Contaos (>= 4.9.3) "no blank option" philosophy in customTpl field and the limitation to the element type (#542)
+Update: Improved the versioning logic to ease out the session load (#539)
+Removed: System maintenance jobs (#540)
+
+### 4.2.5
+Fixed: An issue with the contao version having old wizard data (#537)
+Update: Remove BackendUser, FrontendUser instantiation from config.php. It might cause trouble with other extensions (#536)
+
+### 4.2.4
+Fixed: Wrong default content element selected by default. SQL definition of tl_content.type should be an array under Contao 4.9 (#534)
+
+### 4.2.3
+Update: config.php: Check if news, calendar modules are active (#532)
+
+### 4.2.2
+Fixed: Image attribute: Check imageUrl field for overwriting meta information (#530)
+
+### 4.2.1
+Fixed: Textarea: getTemplateGroup error in backend on tinymce template selection field (#526)
+Update: Remove block templates (contentelementsets) from being TL_WRAPPERS (#528)
+
+### 4.2.0
+Update: Call the parseWidgetCallback, renderCallback via call_user_func_array (#524)
+Update: Contao 4.9 LTS compatibility
+Update: Rebuild on strict Contao namespace classes (#523)
+Update: Check if ContaoToken class still exists in the Contao environment
+Update: Gallery attribute: Use varchar field type instead of smallint in optional gallery fields because we had some issues under Contao 4.9 with smallint
+
+### 4.1.2
+Fixed: Optional fields did not find their value correctly in CustomElement attribute (#518,#519)
+Fixed: Removed debugger call
+Update: Create a new token under Contao 4.4 in ajax requests from file pickers (#519)
+Update: Minor code updates
+Update: Widget: Store uuids unique
+Update: Rename "Inhaltselement-Set" to "Block-Vorlagen" (#521)
+
+### 4.1.1
+Fixed: Multiple CEs had an issue loading the correct DCA information under Contao 4.4 (#515)
+Update: Minor coding updates
+
+### 4.1.0
+New: Attribute: Gallery is now core attribute (#506)
+Fixed: Missing child/optional fields in multi-edit modes (#510)
+Fixed: Minor php fix in core classes
+Fixed: Attribute hyperlink: Show picker icon only when pagepicker is selected as option (#512)
+Update: Added new paste icon for paste-on-position mode (#509)
+Update: Added new svg icons for Contao 4 (#509)
+Update: Compatibility update for next Contao LTS (#511)
+Update: More efficient use of models in DcaHelper class
+Update: Improved the select all (multi-edit modes) list view (#513)
+
+### 4.0.2
+Fixed: Colorpicker: Wrong path to assets folder under Contao 4.4 (#505)
+Fixed: PHP error "field is not set or not a callable" in image attribute when custom template is set for the contao content element (#507)
+
+### 4.0.1
+Fixed: Missing duplicated groups in existing widgets (#502)
+Fixed: Colorpicker had no value in frontend (#503)
+
+### 4.0.0
+New: Attribute: Colorpicker (#494)
+New: Select if CE is a wrapper element, tl_pct_customelement.isWrapper (#495,#500)
+Fixed: Reordering groups had no effect on existing elements (#499)
+Fixed: Missing title attribute in images under Contao 4
+Fixed: A programming error in CustomElement::hasAccess
+Update: Change tl_pct_customelement_vault.data_blob to longblob (#491)
+Update: Image title field had wrong label. Use tl_content.imageTitle DCA as reference under Contao 4 (#498)
+Removed: tl_pct_customelement.template_mod, .template_ce (deprecated since CE 1.2) (#496)
+
+### 3.3.1
+Fixed: Due to an internal caching error CustomElement widgets appeared to be uneditable after duplicating a large amount of pages (#489)
+
+### 3.3.0
+Update: Support ContentElement sets in News and Events (and dynamic ptables defined by tl_content DCA in general) (#487)
+ 
+### 3.2.15
+Fixed: Losing data oncopy for elements in child pages (#485)
+
+### 3.2.14
+Fixed: Image selections did not find new image in duplicated groups under Contao 4 (400 Bad request from Ajax) (#483)
+
+### 3.2.13
+Fixed: Image attribute: Respect meta data from file management under Contao 4 (#481)
+
+### 3.2.12
+Fixed: Avoid multiple manual sorting fields in latest Contao versions (#475)
+Fixed: Load assets via initializeSystem hook to have fontawesome loaded correctly
+Update: Add request token to operation buttons
+Update: Use regular SQL request as fallback for Contao Models
+
+### 3.2.11
+Fixed: Clear widget when restoring a version returns empty widget data (#473)
+Update: Added .widget css class to backend description fields
+
+### 3.2.10
+Update: Do not authenticate user in config.php
+
+### 3.2.9
+Fixed: tinymce.html5 locate tinymce.css without TL_PATH as base (#466)
+Fixed: Resolved references to pct_themer module in content element set export (#468)
+Fixed: Controller::isModified should not test on array values
+Fixed: Include module CEs did not show their name in wildcard anymore
+Fixed: Remove loadCustomElementField session only on real form submit (#470)
+Update: PHP 7.2 strictness update (#467)
+Update: Evaluate scripts on ajax request (just like Contaos ajax requests)
+
+### 3.2.8
+Fixed: In some systems the individual order did not work in combination with CustomCatalog (#455)
+Fixed: Duplicate field tl_pct_customelement_attribute.be_visible in backend palette for attribute table
+Fixed: In some cases the attribute in the front end template has not been fetched correctly by its uuids due to duplicate uuids for identical attribute types in the system (#240)
+Fixed: Lost track of copy data due to changes in the Contao session under Contao 4.4 (#463)
+Fixed: Files attribute: Render the wildcard as readable files url list or downloadable link list (#459)
+Update: Language files
+Update: Put constants in quotations for php 7.2
+
+### 3.2.7
+Update: Remove var_dump call in DcaHelper.php
+
+### 3.2.6
+Fixed: Popup switches did not load DCA correctly in duplicated groups (#452)
+Update: Show CustomElement title in include module wildcards (#451)
+Update: Controller::isModfied check for array values
+
+### 3.2.5
+Fixed: Contao4: Missing wizards in optional fields (#448)
+Fixed: Contao4: Image attribute: Optional links did not process (#447)
+Update: Added class "clr" to wrapper div in be_widget_customelement.html5
+Update: Added "includeBlankOption" for default image size in image attribute settings
+
+### 3.2.4
+Fixed: Missing alt and title tag in method picture() (#445)
+
+### 3.2.3
+Update: Language files (#640)
+Update: Minor changes in Contao 4 backend styling
+
+### 3.2.2
+Fixed: PHP validation error in headline attributes in multiedit mode
+
+### 3.2.1
+Fixed: Do not validate attributes that has been parsed by their own parseWidgetCallback method
+Update: Minimize the session load
+
+### 3.2.0
+Fixed: Missing version number in Contao 4 backend
+Fixed: Permission related fields must be blob (#436)
+Fixed: Added tl_class clr for tl_user,tl_user_group to avoid overlapping fields in Contao 4. 
+Fixed: Do not set Post variable for validator in editAll, overrideAll mode automatically (#437)
+Removed: tl_user...,tl_user_group.protect_pct_customelement_plugins (#436)
+Removed: tl_user...,tl_user_group.pct_customelement_plugins (#436)
+Removed: tl_user...,tl_user_group.pct_customelement_pluginsp (#436)
+Added: BackendIntegration::injectVersionnumberInBackendPage for parseTemplate Hook
+Changed: BackendIntegration::injectJavascriptInBackendPage for parseTemplate Hook
+Removed: be_main template from extension folder
+
+### 3.1.1
+Fixed: Datepicker did not open in Contao 4
+Fixed: PHP error in multi edit mode in Contao 4. CE fields did not load correctly due to new Contao session (#433)
+Update: Support file pickers in child attributes
+Remove: Permissions on $GLOBALS['TL_PERMISSIONS'][] = 'protect_pct_customelement_plugins'
+
+### 3.1.0
+Fixed: TinyMCE did not append formats (#430)
+Update: Fontaweseome 4.7
+
+### 3.0.2
+Fixed: Observing Contaos clipboard session failed under Contao 4.4 because Contao uses different Session instances (#427)
+Update: Attribute Image: Add the tl_class .wizard to link picker child attribute
+Update: Attribute Table: Show all backend options in attribute settings (in regard of CC) 
+
+### 3.0.1
+Fixed: Overlapping elements duo to w50 floating class
+
+### 3.0.0
+New: Content-element-sets (#403)
+New: Attribute: OptionWizard (#411)
+New: Inserttag: {{customelement::SOURCE::PID::ATTRIBUTE#COUNTER::(GENERICATTRIBUTE-ID)}} (#413)
+Update: Respect published settings in groups (#412)
+Update: Contao 4.4 ready (#414)
+Removed: Deprecated templates ce_customelement, mod_customelement, customelement_layout_simple, customelement_layout_grouped
+
+### 2.2.13
+Fixed: Support multiple CustomElements in CustomCatalogs or in any other table (#410)
+Fixed: Wrong class name: VaultModel
+Added: VaultModel::findByPidAndSource
+
+### 2.2.12
+Fixed: Missing argument 2 and 3 in Files attribute renderCallback() (#402)
+Fixed: Do not convert binary data before the validator (#405)
+Update: Load DCA fields in generic attributes. Changes made due to CustomElements attribute in CustomCatalog (#405)
+Update: Added translated operation button labels in widget (#401)
+
+### 2.2.11
+Fixed: Check if $arrOptions is really an array in Attribute->loadOptionValue() to prevent empty string coming from \Contao\StringUtil::deserialize after CE template imports
+
+### 2.2.10
+Update: Check if $arrSize is really an array in TemplateAttribute->generate()
+
+### 2.2.9
+Update: Transifex language files
+
+### 2.2.8 (based on 2.2.5)
+Fixed: Wrong version number
+Fixed: Optional fields lose data on moving groups in the customelement widget (#394)
+Update: Added 'tl_calendar','tl_calendar_events','tl_revolutionslider_slides','tl_revolutionslider' because it seems that contao does not fire oncopy for child tables anymore (#393)
+
+### 2.2.7
+Fixed: Correct the $_POST data changes of 2.2.6 and pass data to validator correctly (#390)
+Update: Timestamp Attribute: Use system date format as default date format (#389)
+
+### 2.2.6
+Fixed: Wrong version number
+Update: Store the number of the copy in the attribute object: $objAttribute->numCopy
+Update: Attribute Text: Allow minlength, maxlength setting
+Update: Check for $_POST data before calling the widget validation
+
+### 2.2.5
+Fixed: Prevent Contao from overriding back end related constants in front end
+
+### 2.2.4
+Fixed: Language translation files not loaded correctly in back end due to caching
+Fixed: Attribute headline: Do not validate on ajax requests
+
+### 2.2.3
+Fixed: Load language php files with require_once to allow overriding (#382)
+Update: Maintenance Wizard updater: Locate attribute by uuid not id, update duplicated groups
+
+### 2.2.2
+Fixed: A SQL missing field error in page/file picker popups in table tl_module (#380)
+
+### 2.2.1
+Fixed: Bring fallback to CE data from versions lower than 1.4 (coming from installation templates from pct themes)
+
+### 2.2.0
+Fixed: Generate new attribute unique ids (uuid) when a CE has been copied (#372)
+Added: The template method html() now allows a custom template as string parameter e.g. $this->field(’myField’)->html(’myCustomTpl“) (#373)
+Update: Added more css classes to the group information in the templates and updated the customelement_grouped template with cssID output (#374)
+
+### 2.1.2
+Fixed: Overlapping div from .chosen select css class blocks mouse interaction
+
+### 2.1.1
+Fixed: Remove .customelement_widget {overflow: hidden} to avoid problems with chosen selects (#367)
+Fixed: Added missing wizard class for imageUrl field in Image Attributes (#368)
+
+### 2.1.0
+Fixed: Older or existing CE data that has not been saved again might not be visible in front end due to revised group ids
+Update: Use caching more effective in GroupFactory
+Update: Use static constructor instead of self in instance classes
+Update: Removed the group slide script and updated CEs backend widget template and tl_customelement_group list view templates
+Update: CSS Styling of the widget
+
+### 2.0.2
+Fixed: Do not validate widgets on ajax requests (#354)
+Fixed: Wrong indexing of duplicated groups (#358)
+
+### 2.0.1
+Update: PHP 5.4 fallback support (#352)
+
+### 2.0.0
+Requirements: >= Contao 3.5
+New: Support versioning (#336)
+Fixed: Clone objects before return from cache
+Fixed: Convert binary data to uuids before validating the widget (#346)
+Added: \PCT\CustomElements\Models\AttributeModel 
+Added: \PCT\CustomElements\Models\CustomElementModel 
+Added: \PCT\CustomElements\Models\GroupModel 
+Added: \PCT\CustomElements\Models\PluginModel 
+Added: \PCT\CustomElements\Models\VaultModel 
+Added: \PCT\CustomElements\Interfaces\Attribute (#337)
+Added: onFactoryCreate Hook: $GLOBALS['CUSTOMELEMENTS_HOOKS']['onFactoryCreate']($objElement,$objModel) trigged when a Factory creates an element
+Update: Do not generate the widget html output in popups
+Update: Use Models to fetch the active records instead of a new database query
+Update: Show tl_content wildcard for modules elements (#334)
+Update: QueryBuilder class is now more object orientated and not class orientated (static) and must be instantiated e.g. QueryBuilder::getInstance()->count($arrOptions);
+Update: Remove the $strTable Parameter in Hooks::getInstance()
+Update: Files attribute: Remove the parseWidgetCallback method
+Update: IncludeElement attr.: Enable chosen select
+Update: FontAwesome 4.6.3
+Update: Order CEs by title in Contaos content element / module selection (#348)
+Change: \PCT\CustomElements\Core\AttributeFactory::fetchMultipleById(...) now returns \Model\Collection
+Change: \PCT\CustomElements\Core\CustomElementFactory->setOrigin( $objOrigin ) now expects a Origin object
+Change: Creating a new group object with data array will not generate all attributes anymore by __construct(). Use $objGroup->setAttributes() before
+Change: \PCT\CustomElements\Core\Group::getAttributes will not generate the attributes by default anymore. Use $objGroup->setAttributes() before
+Change: \PCT\CustomElements\Core\Attribute now implements \PCT\CustomElements\Interfaces\Attribute (#337)
+Change: \PCT\CustomElements\Core\Attribute not extends \PCT\CustomElements\Core\AttributeFactory anymore
+Change: \PCT\CustomElements\Core\Group not extends \PCT\CustomElements\Core\GroupFactory anymore
+Change: \PCT\CustomElements\Core\CustomElement not extends \PCT\CustomElements\Core\CustomElementFactory
+Change: \PCT\CustomElements\Core\Origin will not extend \Controller anymore
+Remove: (deprecated or never used) \PCT\CustomElements\Core\PluginFactory::hasAccessToTable(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\CustomElementFactory::fetchByAttributeId(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\CustomElementFactory::hasChanged(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\CustomElementFactory::byWizard(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\AttributeFactory::fetchMultiplePublishedById(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\AttributeFactory::deleteCopy(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\AttributeFactory::addCopy(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\AttributeFactory::countCopies(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\AttributeFactory::getAttributeIdByUuid(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\AttributeFactory::findPublishedByUuid(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\GroupFactory::rawById(...) without fallback use GroupFactory::findById($intId)
+Remove: (deprecated or never used) \PCT\CustomElements\Core\GroupFactory::generate(...) without fallback
+Remove: (deprecated or never used) \PCT\CustomElements\Core\GroupFactory::findPublishedByAliasAndCustomElement(...) without fallback
+Remove: \PCT\CustomElements\Core\CustomElement->getPublishedAttributeByAlias($strAlias) without fallback: use \PCT\CustomElements\Core\AttributeFactory::findByAliasAndCustomElement($strAlias,$intCE)
+Remove: \PCT\CustomElements\Core\Group->getAttributeByAlias($strAlias) without fallback: use \PCT\CustomElements\Core\AttributeFactory::findByAliasAndPid($strAlias,$intPid)
+
+### 1.7.8
+Fixed: Wildcard values won't be procssed correctly when internal cache is active. This has direct influence on customcatalog wildcards as well  (#331)
+Fixed: Added array_filter to avoid empty single length arrays in Files Attribute (#342)
+Added: A version_compare as fallback to Contao 3.2 in autoload.php to find the default be_main Template via \TemplateLoader::getPath('be_main','html5')
+Added: eval_tl_class_m12 option for attributes: Files
+Update: Use Contao models if active records in DataContainer objects are missing
+Update: Use wizard data for check if an attribute exists in a CE widget record
+Update: Do not read array directly after explode method. It might cause trouble in some server settings. (#343)
+
+### 1.7.7
+Fixed: Losing data of cloned attributes when checking the integrity of the CE widget (#325)
+Fixed: Load tl_content DataContainer in List, Table, Url Attributes to gain access to the tl_content class (#324)
+Fixed: Do not convert binary data when looking up data from the vault (#327)
+Added: Added optional fields in editAll, overrideAll mode (#321)
+Update: IncludeElement attribute: Do not run tl_content related methods in Contaos Installation tool
+Update: Check if a data container is loaded by checking the [config] key (#323)
+
+### 1.7.6
+Fixed: Palette selector must remain dynamic to inject the custom element widget
+
+### 1.7.5
+Fixed: Updated the query string in CustomElementFactory::findByAttributeId, fetchByAttributeId
+Added: Support importing new CE templates without losing data
+Update: Removed the tl_pct_customelement.ondelete_callback::removeFromVault
+Update: Always store values in widget data
+Update: Load field DCA information in popup with switch
+Update: Update the wizard data on the fly when catching an old value that is supposed to be a binary value
+Update: Use the DataContainerHelper class instead of the strict DC_Table class when working with data containers
+Update: Moved the hasAccess() checks from the factory class to the object classes
+Update: General minor updates
+
+### 1.7.4
+Fixed: Image attributes do not show preview image in backend or Contaos "update database" hint in the front end due to cached wizard values (#308)
+
+### 1.7.3
+Fixed: Store custom orders correctly
+Added: Maintenance: Remove all attribute related data from the vault
+Added: Cache limit for wizard data (#304)
+Update: Do not \Contao\StringUtil::deserialize the wizard data when adding to the cache. (#304)
+Update: Fetch the attribute values directly from the wizard data
+Update: Include Element: Load tl_content DCA only if not loaded before
+
+### 1.7.2
+Added: Support tl_news, tl_news_archive
+Update: DcaHelper::loadFields return if DCA is unknown or not loaded correctly
+Update: Support multiple selects
+
+### 1.7.1
+Added: Hide the groups and field count next to the CustomElement title in list via tl_settings.pct_customelements_hideGroupAndFieldCount
+Added: English tl_settings language file
+Added: More english translations for attributes
+Update: Remove loadDataContainer call in Table,List Attributes::getFieldDefinition method (might cause a DataContainer loading error)
+Update: Table attribute: check if value is empty before rendering
+Update: Add new CustomElements to cache when they were created by the factory
+Update: Add plugin excludes to cache (#297)
+
+### 1.7.0
+Fixed: Load data container error triggered in IncludeElement attribute (#289)
+Fixed: Load field DCA only if call comes from a valid CE field (#290)
+Update: Call the storeValueHook when storing values in the widget data (#288)
+Update: PHP7 ready
+Update: Use the backend template (be_main) instead of DOMDocument to write the version number
+
+### 1.6.6
+Fixed: A backend user rights issue when using popup fields in tables outside the default customelement tables
+Added: Timestamp Attribute: processWildcardValue Hook (#285)
+Added: Check if table and field exists in import chain. (#286)
+Update: Support the data-state attribute in toggle visibility fields
+Update: Fontaweseome to 4.5.0
+Update: "customelement_attr_default" is now default value for tl_pct_customelement_attribute.template 
+
+### 1.6.5
+Fixed: Do not rewrite the table GET parameter in filetree attributes
+Fixed: Do not save the wizard data in the customelement object
+Added: Caching for wizard data
+Update: Filter values in Files attribute renderCallback
+
+### 1.6.4
+Fixed: Load the DataContainer object in editAll,overrideAll mode
+Fixed: A php error when no CustomElements are selected in user rights
+Update: Check if table tl_pct_customelements exists in SystemIntegration
+Update: The IncludeElement renderCallback method recreates an unnecessary front end template object 
+Update: Do not overwrite the field labels for contao default fields in editAll,overrideAll mode
+Update: Store option fields in wizard data
+Update: Update the WizardUpdater to store the optional field values
+
+### 1.6.3
+Fixed: Use a regular string replacing if DOMDocument fails to inject the sortable feature for attributes 
+Update: Trigger the load_callback for attributes
+
+### 1.6.2
+Fixed: An issue in the save_callback when toggling the visibility of a group or an attribute
+
+### 1.6.1
+Fixed: An issue with missing attributes in attribute lists (#271)
+Update: Do not add object to the cache on the fly in Factory::find/fetch methods
+
+### 1.6.0
+Added: Performance kit: Caching and minimizing sql queries
+
+### 1.5.3
+Fixed: An issue when loading popup windows in tl_module (#269)
+Fixed: Do not reset the global language when looking for translations
+Update: Load generic fields in data container more precisely
+
+### 1.5.2
+Fixed: Recognize Table attribute head and foot setting
+Fixed: Find attribute value translations in the front end with underscore
+Update: Set eval[decodeEntities=true] for Text attributes
+Update: Performance update: Minimize the queries in loadDataContainer hook (#266)
+
+### 1.5.1
+Fixed: An issue when editing multiple entries outside of CE
+Fixed: Create a new DataContainer object only when CustomElements needs it
+
+### 1.5.0
+Fixed: Avoid unwanted permission checks in from tl_content/tl_module (#261)
+Fixed: Load duplicated / cloned attributes correctly
+Fixed: Do not set the selection field to "type" for a known table
+Fixed: Set selection field in the CE-Widget by default attributes correctly 
+Added: TemplateAttribute->generate() generates an image and returns path to the file as string (#260)
+Update: Remove [switchToEdit] in tl_pct_customelement_attribute DCA
+Update: Font-Awesome to 4.4.0
+Update: Set tl_content.type, tl_content.module to varchar(128) to allow longer content element / module alias
+Update: Load generic fields to the DCA on any ajax request
+Update: Make CE less strict (#192)
+
+### 1.4.5
+Added: Support translations for groups/palettes (#257)
+Update: New translations structure. (#257)
+
+### 1.4.4
+Fixed: Wrong user permissions due to wrong dataContainer loading in contao default dca popup fields
+Fixed: Pass the correct template data to the deprecated layout template
+
+### 1.4.3
+Fixed: Correct reference to original id for backend wildcard in multiple included elements (#251)
+Update: Avoid breaking the initialize chain: Change the order in config.php to load user objects before any database objects
+
+### 1.4.2
+Fixed: The active record object should not contain the customTpl value to avoid overriding the default template for contao elements (#249)
+Added: TemplateAttribute->picture() to use like $this->field('myImage')->picture('picture_default'); (#248)
+
+### 1.4.1
+Update: Support Contao image sizes in tl_pct_customelement_attribute.size
+Update: Do not check if Export plugin runs in config.php. Avoids a php error (blank page) in the install tool
+
+### 1.4.0
+Fixed: Handle contaos default fields in editAll and overrideAll mode correctly in combination with CE fields (#244)
+Added: Export plugin in core
+Update: Import is based on templates now
+Update: Show the blank Option checkbox for IncludeElement Attributes
+
+### 1.3.4
+Fixed: number_format field must be \Contao\StringUtil::deserialized in Number attribute
+Fixed: Display values in wildcard for include elements (#235)
+Fixed: Bypass the contao methods in the Include Element Attribute if include item is null or 0 to avoid a foreach error in tl_content class
+Update: $GLOBALS['PCT_CUSTOMELEMENTS']['fieldnamesSharedWithContao'] to avoid unwanted overwrites with contao fields
+Update: Show tl_pct_customelement_attribute.eval_tl_class_m12 in Checkbox attributes
+
+### 1.3.3
+Fixed: Duplicating a root page including its child pages causes php error (#229)
+Fixed: Double check if an entry already exists in the vault before setting the default value (#230)
+Update: Store the processed field uuids only when the widget is being processed
+
+### 1.3.2
+Fixed: Check return value of processWildcardValue hook before overwriting current value (#227)
+Fixed: Register the initializeSystem Hook for loading assets not for the install tool
+
+### 1.3.1
+Fixed: Return the attribute value if it has beed marked as modified
+Added: Optional rgxp for url Attributes
+Update: Remove the hardcoded rgxp for url Attributes
+
+### 1.3.0
+Fixed: Do not return the value modified from outside for option values (#210)
+Fixed: Contao standard fields do not show up in editAll mode (#212)
+Fixed: Attribute Image: use default image size when size option field is empty
+Fixed: Reordering groups had no effect on the widget (#215)
+Fixed: New attributes in duplicated groups had same field name as parent attribute (#219)
+Added: The default contao headline field in tl_content and tl_module
+Added: Support the customTpl field in contao 3.4
+Added: CustomElementFactory::fetch, fetchById(), fetchByAlias()
+Added: Translate labels and descriptions via langconfig or dcaconfig (#213)
+Added: [loadValue] Hook
+Added: Support for translated option values (#218)
+Update: Removed the separation between ce_ and mod_ templates to use a global layout template (#204)
+Update: Allow custom templates in CustomElement::render($objTemplate) method
+Update: Generate the alias with underscores (#211)
+Update: Attribute Headline: Check if field has a readable value
+Update: Improved the DCA handling, CE should be loaded on first position always
+Removed: Default headline field (#217)
+
+### 1.2.9
+Fixed: Php foreach error when a just created CE-widget contains a group with no attributes or no attributes published (#202)
+Fixed: Authenticate the current user in the config.php before initializing
+Fixed: Support Included CustomElements via ContentAlias ContentElement (#204)
+Fixed: Wrong option for the lightbox attribute in Attribute Url
+Added: prepareRendering Hook as an alternative way to render any attribute
+Added: Supscript text in attribute listview with information about the contao class (w50 clr long) (#205)
+Added: fetchByAlias() in AttributeFactory class
+Added: Create an origin object for the backend wildcard callback
+Added: ImportChain Hook to add tables to the general import array
+Update: Changed the input type for tl_pct_customelement_attribute.option to checkboxWizard
+Update: Improved the modified handling in Attributes class (#203)
+Update: Added the element ID and table to the processWildcard Hook
+Update: tl_pct_customelement_attribute.template has now chosen=true
+Update: Handle generic wizards and make the widget more accessible
+Update: Use the loadOptionValues method in Attribute Url
+Update: Use the placeholer ###CUSTOMELEMENT_WIDGET### in the palette string to inject the widget at any position
+Update: Validate timestamp attributes
+Update: Attribute templates now use the Core\FrontendTemplate class
+Update: Provide more helpful template functions for the attribute templates
+Update: Removed the error logs in AttributeFactory
+
+### 1.2.8
+Fixed: New value from processWildcardValue HOOK kept unrecognized (#200)
+
+### 1.2.7
+Fixed: [options] field in AttributeTimestamp must be \Contao\StringUtil::deserialized
+Fixed: Solved an issue when calling the PluginsLoader via the initializeSystem hook
+Fixed: TinyMCE did not load custom formats under Contao 3.4 (#194)
+Fixed: Avoid wrong palette builds by just appending the default palette
+Added: tl_templates, tl_theme, tl_style_sheet ,tl_layout, tl_image_size to restricted tables
+Added: Backend descriptions for attributes (#196)
+Added: More function in DcaHelper to handle palettes
+Added: Display a backend hint if plugin requires a higher/differenz CustomElements Version
+Added: AttributeFactory::fetchMultipleById, fetchMultiplePublishedById
+Added: Full support for customelements in revolutionsliders: create copies in vault and so on...
+Added: Select in systemsettings to load font-awesome from local space or cdn (#197)
+Added: DcaHelper->removePalette([string]), DcaHelper->removePalettes([array])
+Added: Origin::getTable()
+Update: Natural order for attribute type list
+Update: Empty values will not be processed in the wildcard
+Update: Load fontawesome via CDN (#197)
+Update: New language arrays for the attribute labels (#198)
+Update: Support the tinyMCE in Contao 3.3
+Update: DcaHelper generatePalettes does not need an array anymore
+
+### 1.2.6
+Fixed: Load value again from vault if image value is not a valid binary type (#190)
+Fixed: processWildcardHook triggers an php error when value is empty (#182)
+Fixed: getImage in AttributeImage::processWildcardValue expects a valid path string
+Fixed: Load and save correct values in editAll mode
+Added: Models classes for contao 3.4 (#180)
+Update: Pass origin object to the attribute being rendered
+Update: Load the dca in popups only for the field requested by the user when field name is given
+Update: Convert binary data to uuids in values() method in TemplateAttribute class
+
+### 1.2.5
+Fixed: Fields rendered to often in editAll mode (#177)
+Fixed: Fallback for image attribute values, using the old contao 2 SRC Format (#178)
+Fixed: Creating copies in tl_calendar_events (#179)
+Update: Contao 3.4 compatibility updates
+
+### 1.2.4
+Fixed: Return the base attribute in template when calling an alias with a zero counter e.g. $this->field('fax#0') returns $this->field('fax') (#172)
+Fixed: Generate a new uuid for new attributes in duplicated groups to make them unique (#171)
+Fixed: Handle copies from root pages (#174)
+Added: setOptionValues method for Attributes to allow manipulations on the generic options fields from outside
+
+### 1.2.3
+Fix: Rendering images in backend wildcard (#165)
+Added: editAll and overrideAll mode for CustomElement fields (#167)
+Added: $GLOBALS['PCT_CUSTOMELEMENTS']['saveValuesInWizard'] (true/false) to toggle whether to store the attribute values in the wizard data or not
+Added: Maintenance section and update job
+Added: WizardUpdater job to update wizard datas to latest structure
+Added: AttributeUpdater job to update / convert vault data from one vault column to the default or a custom data column
+Update: FE Performance Kit #3, minimize sql queries (#162)
+Update: Remove arrFieldDef parameter from renderAttribute Callbacks
+Update: Values and arrData values will not be pre-\Contao\StringUtil::deserialized (#166)
+ 
+### 1.2.2
+Fixed: Merge with existing DCA arrays in addFields method, check if dca array has been created
+Fixed: Store lists (AttributeList) as blob (#161)
+Added: Minlength, maxlength evaluation (#155)
+Added: Handle load_ and save_callbacks for attributes (#156)
+Added: AttributeNumber for numeric values (#157)
+Update: Font-Awesome 4.2
+Update: Remove __construct method in attributes that do not overwrite default settings (#158)
+Update: More performance and general updates
+
+### 1.2.1
+Fixed: Wrong variable name in DcaHelper->addSubpalette() and create selector array if it does not exist
+Fixed: Load options values correctly in AttributeUrl
+Fixed: Missing values in duplicated attributes (#153)
+Added: addFields(), addField() method in DcaHelper class
+
+### 1.2.0
+Fixed: AttributeFactory::findMultipleByCustomElement returns array of attribute objects
+Added: TemplateAttribute class for more convenient and oop-based template structure (#137)
+Added: Handle options from attributes: added ::optionvalue, ::option method to retrieve option values from attributes (#139)
+Added: Updater Helper class for managing all methods related to updating CE data (#147)
+Added: PluginsLoader class
+Update: Do not create an attribute object in the vault for fetching data. Use the options array instead (#138)
+Update: storeValueHook: Pass the attribute id to the hook and generate the attribute only when accessing the hook
+Update: Updated customelement_layout_xxx templates to object structure
+Update: Store the customelement version with the wizard/widget data
+Update: Store processed values in TemplateAttribute class for futher use (#140)
+Update: More performance updates and bug fixes
+Update: Write log only when displaying errors is enabled (#144)
+Update: Use initializeSystem Hook for loading attributes and plugins instead of loading from the config.php file (#148)
+Update: Load dca files in ::loadAll method when tables has been asigned to the attribute or plugin (#149)
+
+### 1.1.10.1
+Fixed: GroupFactory::byWizard method moved to CustomElementFactory class
+Update: Handle LIKE queries and percentage values in query strings with sprintf (#132)
+
+### 1.1.10
+Fixed: Fatal error when deleting files from tl_files (#127)
+Fixed: Avoid parseBackendTemplate Hook in contao installation
+Added: Store processed CustomElements in a cache array
+Added: Debug mode and processing time measurement and inserttags for the output
+Update: Reuse once created CE objects in ContentCustomElement, ModuleCustomElement class
+Update: Do not generate the attribute template before the renderCallback (might lead to double generation)
+Update: Attribute::renderCallback is an alternative to the normal template->parse()
+Update: Removed the strBuffer parameter from the renderCallback
+Update: Build the associated field array without a new foreach loop (#126)
+Update: Remove firephp call in CustomElements.php
+Update: Increase internal counter on custom where clauses in QueryBuilder
+Update: Add missing optional query options array to functions in AttributeFactory
+
+### 1.1.9.1
+Fixed: Do not call parseBackendTemplate when running the install tool (#123)
+Update: Use require instead of require_once in AttributeLoader class (#122)
+
+### 1.1.9
+Added: English language files (#116)
+Added: 'loadCustomElementFields' ajax/post flag to force CE to load the fields in the current DCA (#114)
+Added: General toggle visibility method for any table (#112)
+Update: Merge field definition array with attributes from dca array (#113)
+Update: Build DCA from arrays (#96)
+Update: Use ajax to toggle the visibilty of attributes in group view (#112)
+Update: Reverse #113: Do not merge attributes field def. array (#120)
+
+### 1.1.8
+Update: Move import files to cto_layout/ce_templates (#108)
+Update: Natural sorting by title for import options (#110)
+
+### 1.1.7.1
+Fixed: Toggle groups correctly when session is empty
+
+### 1.1.7
+Fixed: Filter empty values from query parts before building the where clause in QueryBuilder
+Fixed: Wrong variable name in QueryBuilder (#90)
+Fixed: Use CE title as fallback in list view (#93) (hotfix)
+Fixed: The groups closed by default option didn't work (#103)
+Fixed: Added parent id (pid) parameter for locating attributes in vault. fixes unwanted removals from source element (#104)
+Added: Default value for text attributes (#81)
+Added: Support FIND_IN_SET operations in QueryBuilder ()
+Added: Font-Awesome library GPL (http://fortawesome.github.io/Font-Awesome/license/)
+Added: Backend-Icon support (#70)
+Added: Plugins can be excluded from customelements (#92)
+Added: Versionnumber in list view (#94)
+Added: Contao ajax loading box (#99)
+Update: Remove the doNotCopy flag to keep the published setting for groups and attributes on copy (#79)
+Update: Create pseudo activeRecord object via boolean parameter in Attribute::getActiveRecord(true) (#83)
+Update: Allow to chose the include element in CE not just in the attribute settings (#82)
+Update: Do not process empty values in sql statements (#87)
+Update: Allow custom where conditions and empty value query arrays in QueryBuilder (#88)
+Update: Combine sql query arrays correctly in QueryBuilder::combine
+
+### 1.1.6.2
+Update: Return on empty attribute.id values (#84)
+
+### 1.1.6.1
+Fixed: Do not fetch sorting column in tl_module
+
+### 1.1.6
+Fixed: Duplicating groups without saving might cause wrong group indexes and uplicate attribute uuids (#62)
+Fixed: Duplicating/copying elements with CEs now use unique keys for the clipboard array (#64)
+Fixed: Save field values only when contao backend form has been submitted (#74)
+Added: Full support for News module (#64)
+Added: Full support for Calendar module (#66)
+Added: New Class Callbacks (contains all custom methods called by hooks)
+Added: New hooks: createCopyInVault, observeClipboard, removeFromVault (see Core\Hooks.php)
+Added: Handle sortable field types e.g. the Files attribute (#54)
+Added: Migration from old wizard data to new wizard data when old data has been found
+Update: Groups now have a unique identifyer in the widget to avoid interferences between existing groups and groups just created
+Update: Attributes clones (uuids of the generic copies) now stored in the widget data in the database
+Update: Improved approach and performance enhancements when dublicating elements (#64)
+Update: New widget template with data-id, data-count, data-copy information for each group
+Update: CustomElements.js supports new data-XXX structure in groups
+Update: Write Copy number next group title in widget (#67)
+Update: Associated arrays now use the fix copy number as the alias index (#75)
+Update: Associated arrays back to indexes based on sorting (#76)
+
+### Version 1.1.5
+Fixed: Validating mandatory fields did not show error in backend (#32)
+Fixed: Load tl_content clas via loadDataContainer in AttributeInclude\TableCustomElementAttribte (#40)
+Fixed: Duplicating articles without admin rights resolves in an error message (#43)
+Fixed: Rendercallback bypasses attribute templates. (#50)
+Fixed: Default size in AttributeImage has been ignored when at least one option value was set (#51)
+Fixed: Correct dca handling for shared fields like (tl_pct_customelement_attribute.options)
+Fixed: Wildcard rendering for AttributeTable
+Added: Rgxp for attribute [text] (#31)
+Added: AttributeTimestamp
+Added: AttributeTable
+Added: AllowHtml Option for attributes (text,headline) (#41)
+Update: Forcing to load the dca fields only in popup or for filetree widgets (#35)
+Update: Create a registry array with field definitions when generating each Attribute (widget) (#35)
+Update: Pass more variables to _attr template (#49)
+Update: DatePicker compatibility for Contao 3.3 (#52)
+Update: AttributeList (#46)
+Update: processWildcardValue Hook (#57)
+Update: Minor bug fixes
+
+### Version 1.1.4 (2014-05-23)
+Fixed: A javascript issue with the TinyMCE 4 in Contao 3.3
+
+### Version 1.1.3 (2014-05-13)
+Fixed: Wrong class name in AttributeInclude/dca/tl_pct_customelement_attribute
+Added: Support for new TinyMCE4 in Contao 3.3
+Update: General bug fixes and enhancements
+
+### Version 1.1.2 (2014-04-26)
+Update: More flexible code structure in QueryBuilder class and added count method
+
+### Version 1.1.1 (2014-04-24)
+Fixed: Added missing dca files in attribute folders
+
+### Version 1.1 (2014-04-24)
+Update: Mayor update. CE is now ready for plugin CustomCatalog (CC)
+Update: Introduced QueryBuilder Class to manage database operations
+Update: All Factory Class use the QueryBuilder to do their database operations
+Update: More stability updates and fixes
+
+### Version 1.0.1 (2014-04-24)
+Fixed: Using static methods to load language files in dca files (#16)
+Fixed: CE missing palettes or displaying wrong palettes when internal cache is active (#16)
+Fixed: Switching palettes to select might cause php error for inputType OptionWizard (#17)
+Fixed: AttributeIncluded missing in autoload.php
+Update: Added changelog.txt file
+Update: Minor changes

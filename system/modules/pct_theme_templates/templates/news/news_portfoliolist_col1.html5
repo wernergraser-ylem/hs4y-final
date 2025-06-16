@@ -1,0 +1,34 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/portfolio/news_portfoliolist.css|static';
+
+// handle multiple filter values by commata seperated lists
+$arrFilterClasses = array();
+foreach(explode(',', $this->subHeadline) as $v)
+{
+	$arrFilterClasses[] = 'filter_'.str_replace(array('ä','ü','ö','ß'),array('ae','ue','oe','ss'),\Contao\StringUtil::standardize($v));
+}
+// filter field in use
+if( isset($this->filters) && !empty($this->filters) )
+{
+	$arrFilterClasses = array();
+	foreach( \Contao\StringUtil::deserialize($this->filters) as $v)
+	{
+		$arrFilterClasses[] = 'filter_'.str_replace(array('ä','ü','ö','ß'),array('ae','ue','oe','ss'),\Contao\StringUtil::standardize($v));
+	}
+}
+$hasText = $this->hasText;
+?>
+
+<div class="item block <?php echo $this->class; ?> <?php echo implode(' ', $arrFilterClasses) ?>" itemscope itemtype="http://schema.org/Article">
+	<div class="portfolio-col1-inside">
+		<div class="content">
+			<div class="h5"><?php echo $hasText ? $this->linkHeadline : $this->newsHeadline; ?></div>
+			<?php if ($this->hasTeaser): ?><div class="teaser" itemprop="description"><?php echo $this->teaser; ?></div><?php endif; ?>
+		</div>		
+		<div class="image_container">
+			<?php if ($hasText): ?><a href="<?php echo $this->href ? $this->href : $this->link; ?>" <?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank"<?php endif; ?>><?php endif; ?>
+			<?php $this->insert('picture_default', $this->picture); ?>
+			<?php if ($hasText): ?></a><?php endif; ?>	
+		</div>
+	</div>
+</div>

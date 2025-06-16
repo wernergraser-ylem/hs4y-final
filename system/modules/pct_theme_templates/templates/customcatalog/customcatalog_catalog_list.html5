@@ -1,0 +1,29 @@
+<?php $sum = 0; ?>
+<?php if(!$this->empty): ?>
+<div class="item-wrapper">
+<?php foreach($this->entries as $entry): ?>
+	<div class="block <?= $entry->class; ?> <?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+		
+		<div class="item-inside">
+			<?php if($entry->field('highlight')->value()): ?> <i class="item-highlight-icon fa fa-star"></i><?php endif; ?>
+			<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+			<h6><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h6>
+			<div class="brand"><?php echo $entry->field('brand')->html(); ?></div>
+			<div class="price color-accent">&euro;<?php echo $entry->field('price')->value(); ?><?php if($entry->field('price_old')->value()): ?><span> &euro;<?php echo $entry->field('price_old')->value(); ?></span><?php endif; ?></div>
+			<div class="more-buttom"><a href="<?php echo $entry->links('detail')->url; ?>">DETAILS</a></div>
+		</div>
+			
+	</div>
+	
+<?php $sum += $entry->field('price')->value(); ?>
+
+<?php endforeach; ?>
+</div>		
+<?php else: ?>
+<p class="info empty">Keine Artikel gefunden</p>
+<?php endif;?>
+
+<div class="notelist-sum bg-accent">
+	<div class="headline">Gesamtsumme: </div>
+	<span>&euro; <?php echo $sum; ?></span>
+</div>

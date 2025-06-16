@@ -1,0 +1,228 @@
+### 2.1.1
+Fixed: Missing changelog for 2.1.0 (#310)
+
+### 2.1.0
+Fixed: Out of bounds error in TableArticle (#308)
+Update: Added new helper classes: a11y (#305)
+Update: Changed matamo fields label (#303)
+Update: Minor while label updates (#302)
+Update: Added tl_page.article_top field (#301)
+Update: Added tl_news.filters for the other news types (#307)
+Update: Added tl_module.alias to finally support alias in frontend modules (#299)
+Update: Added new fields (icon position, animations) for Hyperlink elements (#286)
+Update: Added shadow select for Image elements (#285)
+Update: Added helper classes: mainmenu (#285)
+Update: Added helper classes: line-height (#285)
+Update: Added animations classes: imageZomIn, imageZoomOut, imageRotateInfinite (#278)
+Update: Added Hyperlink Border-Radius 50/100 (#267)
+Update: Added Text foramt-p-medium (#270)
+Update: Added customStyle1/2 selection (#271, #276)
+Update: Removed forms from element library (#309)
+
+### 2.0.10
+Fixed: Missing field labels related to tl_styles (#290)
+Fixed: PageModel out of bounds error in TablePage (#291)
+
+### 2.0.9
+Fixed: Ajax listener "toggleThemeSettingsFieldValue" should check the action post parameter (#279) 
+Update: Make contentelementset page more accessible for other extensions (#287)
+Updated: Added the contentelementset content elements from pct_customelements (#287)
+
+### 2.0.8
+Update: Added parallax-speed classes to helper_css (#283)
+Update: English language files (#283)
+
+### 2.0.7
+Fixed: Too many fields in multi edit mode (#272)
+Fixed: Export: Non-existent service "session" (#269)
+
+### 2.0.6
+Fixed: Table: styles_css needs tl_class clr (#265)
+
+### 2.0.5
+Update: License logic (#263)
+
+### 2.0.4
+Update: License logic (#261)
+
+### 2.0.3
+Fixed: Support element library in news, event content (#258)
+Update: Do not allow element library in revolutionslider content (#259)
+Update: Support Contao dark mode (#257)
+Update: Updated labels (#256)
+
+### 2.0.2
+Fixed: Element import: Wrong interpretation auf "0"-value field values (#254)
+
+### 2.0.1
+Fixed: Element import: Wrong interpretation auf "0"-value field values (#252)
+
+### 2.0.0
+New: Content element library (#187)
+New: Quick edit feature (#188)
+New: Helper CSS field in content elements, pages (tl_content/tl_page.helper_css) #197)
+New: Animations CSS fields in content elements, articles (tl_content/tl_page.animation_type,speed,delay) (#220)
+New: Interactive viewport feature (#185)
+New: Background-color CSS select for pages (tl_page.bgcolor_css) (#211)
+Fixed: Support CustomElements 4.0 standard in export-/ and import of content element sets (#248)
+Fixed: Render page image module when background color is sected only (#212)
+Fixed: News manual order did not work correctly (#233)
+Update: Renamed "SEO headline" to "DIV headline" (#246)
+Update: Support EclipseX 5.0 features
+Update: Renamed "Page image" to "Header" (#215)
+Update: Moved "module" related templates to "modules" folder (#210)
+Update: Do not create wrapper elements for content sets (#201)
+Update: General update (#196)
+Update: General Contao 5 compatibility (#200)
+Update: Support pct_host file for 2 character host informations string (#196)
+Removed: Contao 4.9 compatibility (#200)
+
+### 1.9.2
+Update: License backend message (#184)
+
+### 1.9.1
+Fixed: Fields showed up twice in multi-edit modes (#181)
+Update: License logic (#182)
+
+### 1.9.0
+Fixed: Newslists: Manual sorting did not work with other news lists on the same page (#177)
+Update: License logic (#178)
+
+### 1.8.0
+Added: System setting to provide custom domain resolutions for double domain suffix environments (#172)
+Fixed: Check if files exists before reading content (#174)
+Fixed: Theme settings fields were missing in multi edit modes (#173)
+
+### 1.7.7
+Fixed: Missing sort options in newslist modules (#169)
+Update: PHP Warnings (#170)
+
+### 1.7.6
+Fixed: Page image was still active even when checkbox was inactive (#167)
+
+### 1.7.5
+Update: Send mail to admin email when locked via hourly cronjob (#164)
+Update: Write timestamp in pct_license_locked (#162)
+Update: Send host information to license api (#161)
+Update: Optimize license request (#163)
+
+### 1.7.4
+Update: More convenient license validation on localhosts (#157)
+Update: License violation logic (#156)
+
+### 1.7.3
+Update: More convenient logging (#153)
+Update: Catch curl_errors and bypass validation at this moment (#153)
+Update: Write pct_validation_log file to protocoll requests (#152)
+Update: Send only TLD to API to minimize playload on the license server (#151)
+Update: Clear pct_validation on POST validation (#154)
+
+### 1.7.2
+Fixed: visibilty_css was missing in multi edit mode (#143)
+Update: Support multi-domain validations to minimize requests on the license server (#141)
+Update: PHP8 updates (#145)
+Update: License violation logic (#147)
+
+### 1.7.1
+Fixed: Request token issue under Contao 4.9 (#138)
+
+### 1.7.0
+Update: Higher secure the product against license violations (#127,#128,#129,#130,#134)
+Update: Minor PHP8 updates (#131)
+
+### 1.6.0
+Added: Analytics fields in root pages (#122)
+
+### 1.5.2
+Fixed: Dynamic field values did load wrong in content elements (#123)
+
+### 1.5.1
+Fixed: Missing label for tl_article.size under Contao 4.13 (#120)
+Fixed: Added fields to editAll, overrideAll mode (#119)
+
+### 1.5.0
+New: Support for Contao 4.13
+New: Device visibility CSS-class select field (#103)
+Added: thimify-icons (#111)
+Added: Show indicator label when a page has a page-image or a page-article selected (#113)
+Added: English language files
+Update: Support new MegaMenu feature (#110)
+Update: Translate custom layout section (#112)
+Update: General PHP8 update (#114)
+Removed: Module: portfoliolist, portfolioreader, portfoliofilter
+
+### 1.4.4
+Update: Use a license file instead of a md5 hash. It is just more convenient (#108)
+
+### 1.4.3
+Fixed: Removed loadFormField Hook from furture version (#106)
+
+### 1.4.2
+Update: License validation on weekly cron (#104)
+
+### 1.4.1
+Fixed: Wrong palette replace in tl_article, tl_news lead to php error under php8 (#101)
+
+### 1.4.0
+Fixed: Missing closing bracket in responsive image markup (#94)
+Fixed: Missing background-color select in flex columns (#90)
+Fixed: Missing theme settings in root page, fallback (#96)
+Update: Support RevolutionSlider 5.0.0 module (#65)
+Update: Rename "Page article" to "Footer" (#91)
+
+### 1.3.2
+Fixed: Sorting in newslist did not apply under Contao 4.9 (#86)
+
+### 1.3.1
+Fixed: Missing legend translation
+Update: Added user rights selection (#83)
+
+### 1.3.0
+Added: Support responsive images Contao feature in article background image and page image module (#78)
+Update: Compatibility to new PrivacyManager module (#76)
+
+### 1.2.5
+Fixed: Restrict the manual sorting feature to tl_news (#73)
+
+### 1.2.4
+Fixed: SQL error due to new Contao news_order under Contao 4.9 (#70)
+Fixed: tl_module.news_order twice in palettes (#70)
+Update: Better compatibility to other extensions also using the newslistFetchItems hook (#70)
+
+### 1.2.3
+Fixed: Restrict loadDataContainer script to backend only and removed backend user related stuff that might cause a backend login
+
+### 1.2.2
+Fixed: Must use a normal database select on tl_news_archive to avoid missing fields selected during installation. Error occured due to changes made in #62
+
+### 1.2.1
+Update: Enable manual sorting in tl_news via loadDataContainer (#62)
+Update: Add images to file system if they are not synced yet
+
+### 1.2.0
+Update: Contao 4.9 LTS compatibility
+Update: Refractor classes to Contao namespace (#58)
+
+### 1.1.2
+Update: Added load and save callbacks to store background image selections as uuid value instead of real paths (#59)
+
+### 1.1.1
+Update: tl_module.privacy_url_1,_2 are now picker fields (#56)
+
+### 1.1.0
+Fixed: SQL error when creating a new news or module entry due to wrong field definition (#53)
+Change: tl_news.filters blob NULL (#53)
+Change: tl_module.news_filters blob NULL (#53)
+
+### 1.0.1
+Fixed: Wrong DCA for page type 403, 404 (#50)
+Removed: mod_privacy_medium, _slim, _no_optin_cookiebar (#51)
+
+### 1.0.0
+New: DSGVO-module
+New: Page image module
+New: Page article module
+New: "Portfolio" filter module (newslist filter)
+New: Styling palette for articles
+New: Styling palette for content elements
+New: Styling palette for pages

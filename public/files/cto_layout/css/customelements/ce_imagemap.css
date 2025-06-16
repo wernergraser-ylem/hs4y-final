@@ -1,0 +1,275 @@
+/* =============================================================================
+ * ce_imagemap
+ * ========================================================================== */
+
+.ce_imagemap.block {
+	overflow: visible;
+}
+
+.ce_imagemap .imagemap_inside {
+	position: relative;
+}
+
+.ce_imagemap .image_container img {
+	width: 100%;
+}
+
+.ce_imagemap .hotspot_content {
+	display: none; 
+	background: rgba(255,255,255,1); 
+	padding: 20px; 
+	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3); 
+	position: absolute; 
+	z-index: 2000; 
+	min-width: 250px; 
+	text-align: left;
+}
+
+.ce_imagemap .hotspot_content p:last-of-type {
+	margin-bottom: 0;
+}
+
+.ce_imagemap .hotspot_content.left {
+	left: auto; 
+	right: 100%; 
+	margin-right: -14px; 
+	top: -15px; 
+	border-radius: 8px 0 8px 8px;
+}
+
+.ce_imagemap .hotspot_content.center {
+	left: 0; 
+	top: 8px; 
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	text-align: center;
+	opacity: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;	
+	margin-left: 11px;
+	padding: 10px;
+}
+
+.ce_imagemap .hotspot.active .hotspot_content.center {
+	opacity: 1;
+}
+
+.ce_imagemap .hotspot_content.center:before {
+	content: '';
+	top:  0;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -11px;
+	-webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    z-index: 100;
+    background: rgb(255,255,255);
+}
+
+.ce_imagemap .hotspot_content.left {
+	-webkit-animation: fadeInLeft 500ms ease; 
+	-moz-animation: fadeInLeft 500ms ease; 
+	-ms-animation: fadeInLeft 500ms ease; 
+	animation: fadeInLeft 500ms ease;
+}
+	
+.ce_imagemap .hotspot_content.right {
+	left: 16px; 
+	top: -13px; 
+	border-radius: 0px 8px 8px 8px;
+}
+
+.ce_imagemap .hotspot_content.right {
+	-webkit-animation: fadeInRight 500ms ease; 
+	-moz-animation: fadeInRight 500ms ease; 
+	-ms-animation: fadeInRight 500ms ease; 
+	animation: fadeInRight 500ms ease;
+}
+
+.ce_imagemap .hotspot {
+	position: absolute; 
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.ce_imagemap .hotspot div {
+	position: absolute;
+}
+
+.ce_imagemap .hotspot:before {
+	z-index: 10;
+	font-family: "FontAwesome";	
+	content: "+"; 
+	text-indent: 0; 
+	display: inline-block; 
+	position: relative; 
+	top: 0; 
+	left: 0; 
+	font-size: 22px; 
+	height: 20px; 
+	width: 20px; 
+	line-height: 20px; 
+	text-align: center; 
+	color: rgb(0,0,0);
+	font-weight: bold;
+}
+
+.ce_imagemap .hotspot.active {
+	z-index: 2100;
+}
+
+.ce_imagemap .hotspot.active .hotspot_content {
+	display: block;
+}
+
+.ce_imagemap .hotspot.active .circle {
+	opacity: 20;
+}
+
+.ce_imagemap .image {
+	position: relative; 
+	z-index: 100;
+}
+
+.ce_imagemap .imagemap_inside.center {
+	margin: 0 auto;
+}
+
+.ce_imagemap .circle {
+	border-radius: 100%; 
+	width: 36px; 
+	height: 36px; 
+	border: 2px solid rgba(255,255,255,0.5); 
+	position: absolute; 
+	left: 50%; 
+	top: 50%; 
+	margin-left: -18px; 
+	margin-top: -18px; 
+	display: block; 
+	background: rgba(255,255,255,0.5); 
+	animation: pulseImageMap 2s infinite;
+	box-shadow: 0 0 0 4px var(--accentColor);
+}
+
+/* animation */
+@-webkit-keyframes pulseImageMap {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+  }
+}
+@keyframes pulseImageMap {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(0,0,0, 0.4);
+    box-shadow: 0 0 0 0 rgba(0,0,0, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(0,0,0, 0);
+      box-shadow: 0 0 0 10px rgba(0,0,0, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+      box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+  }
+}
+
+/* small */
+.ce_imagemap .hotspot.small:before {
+	padding: 5px;
+	font-size: 15px;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	z-index: 10;
+}
+
+.ce_imagemap .hotspot.small .hotspot_content.left {
+	margin-right: -14px;
+	top: -14px;
+}
+
+.ce_imagemap .hotspot.small .hotspot_content.right {
+	left: 16px;
+	top: -14px;
+}
+
+.ce_imagemap .hotspot.small .circle {
+	border-radius: 100%;
+	width: 22px;
+	height: 22px;
+	border: 1px solid rgba(255,255,255,0.5);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -11px;
+	margin-top: -10px;
+	display: block;
+	background: rgba(255,255,255,0.6);
+	box-shadow: 0 0 0 5px var(--accentColor);
+}
+
+.ce_imagemap .hotspot.small:before {
+	top: 0;
+}
+
+/* pointer small */
+.ce_imagemap .hotspot.pointer_small:before {
+	content: "\f041";
+}
+
+.ce_imagemap .hotspot.pointer_small .circle {
+	display: none;
+}
+
+.ce_imagemap .hotspot.pointer_small .hotspot_content.left {
+	top: 0;
+	right: 100%;
+	margin: 0 -15px 0 0;
+}
+
+.ce_imagemap .hotspot.pointer_small .hotspot_content.right {
+	top: 0;
+	left: 15px;
+	margin: 0;
+}
+
+.ce_imagemap .hotspot.pointer_small .hotspot_content.center {
+	top: 28px;
+}
+
+/* pointer large */
+.ce_imagemap .hotspot.pointer_large:before {
+	content: "\f041";
+	font-size: 40px;
+}
+
+.ce_imagemap .hotspot.pointer_large .circle {
+	display: none;
+}
+
+.ce_imagemap .hotspot.pointer_large .hotspot_content.left {
+	top: 0;
+	right: 100%;
+	margin: 0 -15px 0 0;
+}
+
+.ce_imagemap .hotspot.pointer_large .hotspot_content.right {
+	top: 0;
+	left: 15px;
+	margin: 0;
+}
+
+.ce_imagemap .hotspot.pointer_large .hotspot_content.center {
+	top: 28px;
+	min-width: 180px;
+	font-size: 0.9rem;
+	background: rgb(255,255,255);
+}

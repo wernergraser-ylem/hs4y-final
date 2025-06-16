@@ -1,0 +1,11 @@
+<?php if(empty($this->panels)) {return;} ?>
+
+<form action="<?php echo $this->action; ?>" class="tl_form" method="post">
+<div class="tl_formbody">
+<input type="hidden" value="tl_filters" name="FORM_SUBMIT">
+<input type="hidden" value="<?php echo $this->token; ?>" name="REQUEST_TOKEN">
+<?php foreach($this->panels as $panel): ?>
+<div class="tl_panel"><?php echo $panel; ?></div>
+<?php endforeach; ?>
+</div>
+</form>

@@ -1,0 +1,15 @@
+<div class="timeline-item<?php if($this->field('icon')->value()): ?> timeline-w-icon<?php endif; ?>">	
+	<i <?php if($this->field('icon')->value()): ?>class="timeline-icon <?php echo $this->field('icon')->value(); ?>"<?php endif; ?>></i>
+	
+		<?php if($this->field('title')->value()): ?>
+		<div class="timeline-item-title"><?php echo $this->field('title')->value(); ?></div>
+		<?php endif; ?>
+		
+		<?php if($this->field('text')->value()): ?>
+		<div class="timeline-item-text"><?php echo $this->field('text')->html(); ?></div>
+		<?php endif; ?>
+		
+		<?php if($this->field('image')->value()): ?>
+		<div class="timeline-item-image"><?php echo $this->field('image')->html(); ?></div>
+		<?php endif; ?>		
+</div>	

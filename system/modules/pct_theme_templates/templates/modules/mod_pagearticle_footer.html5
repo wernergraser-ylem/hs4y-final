@@ -1,0 +1,3 @@
+<?php if($this->hasArticle_footer): ?>
+{{insert_article::<?= $this->article; ?>}}
+<?php endif; ?>

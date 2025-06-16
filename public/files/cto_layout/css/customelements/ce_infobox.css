@@ -1,0 +1,127 @@
+/* =============================================================================
+ * ce_infobox_alert
+ * ========================================================================== */
+
+.ce_infobox_alert {
+	background: #ce4f4b;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.ce_infobox_alert .headline {
+	font-weight: bold;
+	color: #a02622;
+	margin-right: 5px;
+}
+
+.ce_infobox_alert i {
+	color: #a02622;
+	margin: 0 10px;
+	font-size: 1.667rem;
+	line-height: 25px;
+	float: left;
+	width: 1em;
+}
+
+.ce_infobox_alert p {
+	display: inline;
+	margin: 0;
+}
+
+/* =============================================================================
+ * ce_infobox_warning
+ * ========================================================================== */
+
+.ce_infobox_warning {
+	background: #f0ad4e;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.ce_infobox_warning .headline {
+	font-weight: bold;
+	color: #b7843b;
+	margin-right: 5px;
+}
+
+.ce_infobox_warning i {
+	color: #b7843b;
+	margin: 0 10px;
+	font-size: 1.667rem;
+	line-height: 25px;
+	float: left;
+	width: 1em;
+}
+
+.ce_infobox_warning p {
+	display: inline;
+	margin: 0;
+}
+
+/* =============================================================================
+ * ce_infobox_info
+ * ========================================================================== */
+
+.ce_infobox_info {
+	background: #5ebbd7;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.ce_infobox_info .headline {
+	font-weight: bold;
+	color: #3f7f92;
+	margin-right: 5px;
+}
+
+.ce_infobox_info i {
+	color: #3f7f92;
+	margin: 0 10px;
+	font-size: 1.667rem;
+	line-height: 25px;
+	float: left;
+	width: 1em;
+}
+
+.ce_infobox_info p {
+	display: inline;
+	margin: 0;
+}
+
+/* =============================================================================
+ * ce_infobox_success
+ * ========================================================================== */
+
+.ce_infobox_success {
+	background: #52ac52;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.ce_infobox_success .headline {
+	font-weight: bold;
+	color: #337033;
+	margin-right: 5px;
+}
+
+.ce_infobox_success i {
+	color: #337033;
+	margin: 0 10px;
+	font-size: 1.667rem;
+	line-height: 25px;
+	float: left;
+	width: 1em;
+}
+
+.ce_infobox_success p {
+	display: inline;
+	margin: 0;
+}

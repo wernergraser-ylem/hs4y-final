@@ -1,0 +1,20 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/portfolio/news_portfolioteaser_v2.css|static';
+?>
+<div class="item swiper-slide block <?php echo $this->class; ?> port_overlay filter_<?= \Contao\StringUtil::standardize($this->subHeadline); ?>" itemscope itemtype="http://schema.org/Article">
+	
+	<div class="content">
+		<div class="info">
+			<div class="title h5"><?php echo $this->newsHeadline; ?></div>
+			<div class="subline"><?php echo $this->subHeadline; ?></div>
+		</div>
+		<div class="teaser"><?php echo $this->teaser; ?></div>
+		<div class="hyperlink"><?php echo $this->more ?></div>
+	</div>
+
+	<figure class="image_container">
+		<a href="<?php echo $this->href ? $this->href : $this->link; ?>"<?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>>
+			<?php $this->insert('picture_default', $this->picture); ?>
+		</a>
+	</figure>
+</div>

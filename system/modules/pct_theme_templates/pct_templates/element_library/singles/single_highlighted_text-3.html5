@@ -1,0 +1,73 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_highlighted_text-3
+*/
+$arrImport = array (
+'tstamp' => '14.01.2025 09:46',
+'name' => 'single_highlighted_text-3',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'highlighted_text',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+91 => 'revolutionslider_videoType',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+128 => 'margin_b',
+137 => 'privacy_level',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 132225,
+1 => 15219,
+2 => 1632,
+3 => 1736776465,
+5 => 'highlighted_text',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_12',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+91 => 'local',
+96 => '14',
+98 => '0.5',
+128 => 'mb-xs',
+137 => 1,
+156 => 'a:8:{s:6:"values";a:25:{s:14:"nflt7i0gkd0tt4";s:16:"Unlock your full";s:15:"bcukd5poqs0kyhz";s:9:"potential";s:14:"vz3gyrgn8bzf39";s:6:"style3";s:14:"alrp3cnj7om81i";s:2:"h1";s:15:"5gyfwvnm68q54c0";s:4:"left";s:15:"0vepu0x7xuuus5s";s:7:"default";s:15:"rhqwkkfqwwiw2in";s:12:"accent-color";s:15:"8eeqmqjqdnwmyip";s:0:"";s:15:"2yysjgpwfi8zbvb";s:0:"";s:14:"vk0s4ftm83wfvs";s:0:"";s:13:"xka9tacn3xfxk";s:0:"";s:15:"ia0yq92uwjafqbx";s:21:"My goal is to deliver";s:15:"fwapjj27sjrv0sy";s:9:"solutions";s:15:"2m7j486n1x6fqht";s:12:".customFont2";s:15:"5g9ttrhhwai9amm";s:6:"center";s:14:"t9ajhgjbgwue6k";s:11:"ani-default";s:14:"lpk0rblbpkvifp";s:7:"default";s:15:"96zkgg1oz67ewvb";s:7:"default";s:15:"cdv7ppyeal9aepg";s:7:"custom1";s:16:"u3v3zz186o3zgd0d";s:51:"and elegance. With a deep passion for design and a ";s:16:"9fr96kynkii796ag";s:11:"commitment ";s:16:"t5z41zn4banjpvgy";s:38:"to user-friendly experiences, I bring ";s:16:"2gy0h46ebpnhjxhd";s:24:"ideas to life digitally.";s:16:"3pws3k4d5ouvwkh0";s:24:"ideas to life digitally.";s:16:"nurjkzs87cvrpxkj";s:0:"";}s:6:"groups";a:3:{i:0;a:4:{s:5:"ident";s:5:"497_0";s:8:"group_id";i:497;s:11:"group_alias";s:4:"text";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"ia0yq92uwjafqbx";s:2:"id";i:2155;s:5:"alias";s:4:"text";}i:1;a:3:{s:4:"uuid";s:15:"fwapjj27sjrv0sy";s:2:"id";i:2162;s:5:"alias";s:16:"highlighted_text";}}}i:1;a:4:{s:5:"ident";s:5:"494_0";s:8:"group_id";i:494;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"2m7j486n1x6fqht";s:2:"id";i:2154;s:5:"alias";s:6:"markup";}i:1;a:3:{s:4:"uuid";s:15:"5g9ttrhhwai9amm";s:2:"id";i:2156;s:5:"alias";s:5:"align";}i:2;a:3:{s:4:"uuid";s:14:"t9ajhgjbgwue6k";s:2:"id";i:2165;s:5:"alias";s:5:"speed";}}}i:2;a:4:{s:5:"ident";s:5:"498_0";s:8:"group_id";i:498;s:11:"group_alias";s:14:"color_settings";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:14:"lpk0rblbpkvifp";s:2:"id";i:2157;s:5:"alias";s:5:"color";}i:1;a:3:{s:4:"uuid";s:15:"96zkgg1oz67ewvb";s:2:"id";i:2163;s:5:"alias";s:17:"color_highlighted";}i:2;a:3:{s:4:"uuid";s:15:"cdv7ppyeal9aepg";s:2:"id";i:2164;s:5:"alias";s:14:"highlighted_bg";}}}}s:6:"clones";a:2:{i:2155;a:0:{}i:2162;a:0:{}}s:6:"tstamp";i:1736247685;s:5:"alias";s:16:"highlighted_text";s:5:"uuids";a:25:{i:0;s:14:"nflt7i0gkd0tt4";i:1;s:15:"bcukd5poqs0kyhz";i:2;s:14:"vz3gyrgn8bzf39";i:3;s:14:"alrp3cnj7om81i";i:4;s:15:"5gyfwvnm68q54c0";i:5;s:15:"0vepu0x7xuuus5s";i:6;s:15:"rhqwkkfqwwiw2in";i:7;s:15:"8eeqmqjqdnwmyip";i:8;s:15:"2yysjgpwfi8zbvb";i:9;s:14:"vk0s4ftm83wfvs";i:10;s:13:"xka9tacn3xfxk";i:11;s:15:"ia0yq92uwjafqbx";i:12;s:15:"fwapjj27sjrv0sy";i:13;s:15:"2m7j486n1x6fqht";i:14;s:15:"5g9ttrhhwai9amm";i:15;s:14:"t9ajhgjbgwue6k";i:16;s:14:"lpk0rblbpkvifp";i:17;s:15:"96zkgg1oz67ewvb";i:18;s:15:"cdv7ppyeal9aepg";i:21;s:16:"u3v3zz186o3zgd0d";i:22;s:16:"9fr96kynkii796ag";i:27;s:16:"t5z41zn4banjpvgy";i:28;s:16:"2gy0h46ebpnhjxhd";i:35;s:16:"3pws3k4d5ouvwkh0";i:36;s:16:"nurjkzs87cvrpxkj";}s:7:"version";s:6:"5.0.11";s:13:"customelement";i:167;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+);

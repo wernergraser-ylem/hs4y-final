@@ -1,0 +1,23 @@
+
+<?php if($this->value): ?>
+<div <?php echo $this->cssID; ?> <?php if($this->class): ?>class="<?php echo $this->class; ?>"<?php endif; ?>>
+<ul>
+<?php foreach($this->options as $option): ?>
+	<li class="<?= $option['class']; ?>">
+		<?php if($option['group']): ?>
+		<div class="group">
+		<?php endif; ?>
+		
+		<span class="value"><?= $option['value']; ?></span><span class="label"><?= $option['label']; ?></span>
+		
+		<?php if($option['group']): ?>
+		</div>
+		<?php endif; ?>
+	</li>
+<?php endforeach; ?>
+</ul>
+</div>
+
+
+
+<?php endif; ?>

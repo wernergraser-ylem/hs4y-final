@@ -1,0 +1,28 @@
+
+<div class="mod_customcatalog_megamenu cc_booklibrary block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<?= $this->CustomCatalog->render(); ?>
+
+<?php if ($this->allowComments): ?>
+<div class="ce_comments block">
+  <<?php echo $this->hlc; ?>><?php echo $this->addComment; ?></<?php echo $this->hlc; ?>>
+  <?php echo implode('', $this->comments); ?>
+  <?php echo $this->commentsPagination; ?>
+  <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+</div>
+<?php endif; ?>
+
+<?php if($this->pagination):?>
+<?php echo $this->pagination; ?>
+<?php endif; ?>
+
+<?php if($this->back): ?>
+<!-- indexer::stop -->
+<p class="back"><a href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a></p>
+<!-- indexer::continue -->
+<?php endif; ?>
+
+</div>

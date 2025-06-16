@@ -1,0 +1,76 @@
+
+<?php // strip fontawesome from input class
+$class = $this->class;
+if($this->addFontIcon)
+{
+	$class = str_replace(array($this->fontIcon,'fa'),array('',''),$class);
+}
+?>
+
+<?php $this->extend('form_row'); ?>
+
+<?php $this->block('label'); ?>
+  <?php if ($this->label): ?>
+    <label for="ctrl_<?php echo $this->id ?>"<?php if ($this->class): ?> class="<?php echo $class ?>"<?php endif; ?>>
+      <?php if ($this->mandatory): ?>
+        <span class="invisible"><?php echo $this->mandatoryField ?> </span><?php echo $this->label ?><span class="mandatory">*</span>
+      <?php else: ?>
+        <?= $this->label ?>
+      <?php endif; ?>
+    </label>
+  <?php endif; ?>
+<?php $this->endblock(); ?>
+
+<?php $this->block('field'); ?>
+  <?php if ($this->hasErrors()): ?>
+    <p class="error"><?= $this->getErrorAsString() ?></p>
+  <?php endif; ?>
+
+  <?php if ($this->addFontIcon): ?>
+  <div class="formicon-wrapper">
+  <span class="input-group-addon"><i class="<?php echo $this->fontIcon; ?>"></i></span>
+  <?php endif; ?>
+  
+  <?php if($this->placeholder): ?>
+  <div class="placeholderlabel"><?= $this->placeholder; ?></div>
+  <?php endif; ?>
+  
+  <input type="<?= $this->type ?>" name="<?= $this->name ?>" id="ctrl_<?= $this->id ?>" class="text floatlabel<?php if ($this->hideInput) echo ' password'; ?><?php if ($class) echo ' ' . $class; ?>" value="<?= \Contao\StringUtil::specialchars($this->value) ?>"<?= $this->getAttributes() ?>>
+
+  <?php if ($this->addSubmit): ?>
+    <input type="submit" id="ctrl_<?= $this->id ?>_submit" class="submit" value="<?= $this->slabel ?>">
+  <?php endif; ?>
+
+  <?php if ($this->addFontIcon): ?>
+  </div>
+  <?php endif; ?>
+
+  <?php if($this->placeholder): ?>
+  <script>
+  
+  
+  jQuery(document).ready(function() 
+  {
+	var placeholder = '<?= $this->placeholder; ?>';
+  	jQuery('#ctrl_<?= $this->id ?>').focus(function(e)
+  	{
+	  	jQuery(this).prev('.placeholderlabel').addClass('active');
+	  	jQuery(this).attr('placeholder','');
+  	});
+  	jQuery('#ctrl_<?= $this->id ?>').focusout(function(e)
+  	{
+	  	jQuery(this).prev('.placeholderlabel').removeClass('active');
+	  	jQuery(this).attr('placeholder',placeholder);
+  	});
+    jQuery('#ctrl_<?= $this->id ?>').siblings('.placeholderlabel').click(function()
+    {
+      jQuery('#ctrl_<?= $this->id ?>').trigger('focus');
+    });
+  });
+  
+  
+  </script>
+  <?php endif; ?>
+ 
+
+<?php $this->endblock(); ?>

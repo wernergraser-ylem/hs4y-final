@@ -1,0 +1,15 @@
+<?php
+/**
+ * Hello, I'm an an customelement template file from your CustomElement: Popup [End]
+ */
+ 
+
+/** information **/
+$arrImport["info"]["CONTAO_VERSION"] = "5.3.3";
+$arrImport["info"]["CE_VERSION"] = "5.0.11";
+
+/** sql statements **/
+$arrImport["sql"] = 
+'INSERT INTO `tl_pct_customelement`(`id`,`tstamp`,`alias`,`title`,`isCTE`,`isFMD`,`template`,`protected`,`user_groups`,`cssID`,`isWrapper`) VALUES (`106`,`1560937629`,`popup_end`,`Popup [End]`,`1`,``,`customelement_popup_end`,``,``,`a:2:{i:0;s:0:"";i:1;s:0:"";}`,`stop`); 
+INSERT INTO `tl_pct_customelement_group`(`id`,`pid`,`tstamp`,`sorting`,`alias`,`title`,`allowCopy`,`allowCut`,`hidden`,`legend_hide`,`protected`,`user_groups`,`cssID`,`published`) VALUES (`169`,`106`,`1464165690`,`128`,`popup_end`,`Popup [End]`,``,``,``,``,``,``,`a:2:{i:0;s:0:"";i:1;s:0:"";}`,`1`); 
+';

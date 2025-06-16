@@ -1,0 +1,44 @@
+<div class="event layout_full block<?php if($this->class): ?> <?= $this->class ?><?php endif; ?>" itemscope itemtype="http://schema.org/Event">
+
+  <div class="title h1"><?= $this->title ?></div>
+  <div class="info">
+  	<time datetime="<?= $this->datetime ?>" itemprop="startDate"><?= $this->date ?><?php if ($this->time): ?>, <?= $this->time ?><?php endif; ?></time>
+  	<?php if ($this->location): ?>
+    	<p class="location"><?= $this->locationLabel ?>: <?= $this->location ?></p>
+	<?php endif; ?>
+  </div>
+  <div class="clear"></div>
+  <?php if ($this->recurring): ?>
+    <p class="recurring"><?= $this->recurring ?><?php if ($this->until) echo ' ' . $this->until; ?>.</p>
+  <?php endif; ?>
+
+  <?php if ($this->hasDetails): ?>
+    <?= $this->details ?>
+  <?php else: ?>
+    <div class="ce_text block" itemprop="description">
+      <?= $this->teaser ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($this->enclosure): ?>
+    <div class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <p><?= \Contao\Image::getHtml($enclosure['icon'], '', 'class="mime_icon"') ?> <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>" itemprop="url"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a></p>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
+</div>
+
+<?php
+$schemaOrg = $this->getSchemaOrgData();
+if( $this->addImage && $this->singleSRC )
+{
+	$schemaOrg['primaryImageOfPage']['contentUrl'] = $this->singleSRC;
+}
+
+if ($this->hasDetails) {
+  $schemaOrg['description'] = $this->rawHtmlToPlainText($this->details);
+}
+
+$this->addSchemaOrg($schemaOrg);
+?>

@@ -1,0 +1,58 @@
+<?php
+global $objPage;
+$objRoot = \Contao\PageModel::findByPk( $objPage->rootId );
+
+$GoogleAnalyticsId = $objRoot->analytics_google ?? '';
+?>
+
+<?php if( empty($GoogleAnalyticsId) ): ?>
+<p class="analytics_templates info error">{{iflng::en}}Analytics-ID is missing in root page{{iflng}}{{iflng::de}}Die Analytics-ID fehlt in den Seiten-Einstellungen des "Startpunkt einer Webseite".{{iflng}}</p>
+<?php return ''; endif; ?>
+
+<?php 
+/**
+ * DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+ */
+if ($GoogleAnalyticsId != 'UA-XXXXX-X' && !$this->hasAuthenticatedBackendUser()): ?>
+
+<script id="analytics_<?= $GoogleAnalyticsId ?>"></script> 
+<script>
+function initGoogleAnalytics()
+{
+	document.getElementById('analytics_<?= $GoogleAnalyticsId ?>').src = 'https://www.googletagmanager.com/gtag/js?id=<?= $GoogleAnalyticsId ?>';
+	window.dataLayer = window.dataLayer || []; 
+	function gtag(){dataLayer.push(arguments);} 
+	gtag("consent", "default", 
+	{
+		ad_user_data: "denied",
+		ad_personalization: "denied",
+		ad_storage: "denied",
+		analytics_storage: "denied",
+		wait_for_update: 2000 // milliseconds to wait for update
+	});
+	// Enable ads data redaction by default [optional]
+	gtag("set", "ads_data_redaction", true);
+	gtag('js', new Date()); 
+	gtag('config', '<?= $GoogleAnalyticsId ?>',{'anonymize_ip': true});
+}		
+// Optin privacy setting token
+var token = localStorage.getItem('user_privacy_settings');
+if( token == undefined )
+{
+	token = '';
+}
+if(token.indexOf(3) >= 0)
+{
+  	initGoogleAnalytics();
+}
+
+// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(3) >= 0)
+	{
+		initGoogleAnalytics();
+	}
+});
+</script>
+<?php endif; ?>

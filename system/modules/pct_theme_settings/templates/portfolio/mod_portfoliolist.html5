@@ -1,0 +1,19 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div id="<?= $this->portfolioID; ?>" class="portfolio block">
+
+  <?php if (empty($this->articles)): ?>
+    <p class="empty"><?= $this->empty ?></p>
+  <?php else: ?>
+    <?= implode('', $this->articles) ?>
+    <?php if ($this->pagination): ?>
+    <div class="pagination">
+    <?= $this->pagination ?>
+    </div>
+    <?php endif; ?>
+  <?php endif; ?>
+</div>
+
+<?php $this->endblock(); ?>

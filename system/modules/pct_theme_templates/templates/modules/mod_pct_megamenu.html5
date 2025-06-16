@@ -1,0 +1,167 @@
+<!-- indexer::stop -->
+<div class="<?= $this->class ?> block megamenu_<?= $this->id; ?>"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?> itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+<?php if ($this->headline): ?>
+  <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+<?php endif; ?>
+
+<?php foreach($this->items as $item): ?>
+<div class="<?= $item['class']; ?>" data-page="<?= $item['id']; ?>">
+<?php foreach($item['articles'] as $article): ?>
+<?= \Contao\System::getContainer()->get('contao.insert_tag.parser')->replace('{{insert_article::'.$article->id.'}}'); ?>
+<?php endforeach; ?>
+</div>
+<?php endforeach; ?>
+
+<?php if( $this->items ): ?>
+<script>
+jQuery(document).ready(function() 
+{
+	var element = jQuery('.megamenu_<?= $this->id; ?>');
+	
+	// sticky
+	var top = jQuery('#top-wrapper').height();
+	if( jQuery('body').hasClass('fixed-header') )
+	{
+		top = jQuery('#stickyheader').height();
+	}
+	element.css('top', top);
+	
+	var toggler = null;
+	
+	var items = jQuery(".megamenu_<?= $this->id; ?> [data-page!=''][data-page]");
+	jQuery.each(items, function(i,elem)
+	{
+		elem = jQuery(elem);
+		
+		// .page_PAGE-ID
+		// .megamenu_page_PAGE-ID
+		var togglers = ['.mainmenu a.page_'+elem.data('page'),'.megamenu_page_'+elem.data('page')];
+		jQuery(togglers.join(',')).on('click',function(e)
+		{
+			e.preventDefault();
+			e.stopPropagation();
+			
+			// all but the current one
+			items.not( togglers.join(',') ).removeClass('active');
+			// set toggler class
+			jQuery(this).toggleClass('active');
+			jQuery(this).parents().find('a.pct_megamenu.active').not(this).removeClass('active');
+			// set menu item class
+			elem.toggleClass('active');
+			
+			// add open class
+			element.addClass('active');
+			// if the toggler closes the menu, remove active class
+			if( !jQuery(this).hasClass('active') )
+			{
+				element.removeClass('active');
+			}
+						
+			// update current toggler
+			toggler = this;
+			
+			// send event
+			jQuery(document).trigger('MegaMenu.change',{'selector':'.megamenu_<?= $this->id; ?>','id':'<?= $this->id; ?>','active':element.hasClass('active'),'target':element,'item':elem,'toggler':this});			
+		});
+	});
+	
+	//--- toggle menu on scroll
+	jQuery(document).scroll(function()
+	{
+		jQuery(document).trigger('MegaMenu.scroll',{'selector':'.megamenu_<?= $this->id; ?>','id':'<?= $this->id; ?>','active':element.hasClass('active'),'target':element,'items':items,'toggler':toggler});			
+	});
+});
+
+/* =============================================================================
+ * megamenu
+ * ========================================================================== */
+jQuery(document).ready(function(){
+	jQuery('.mainmenu li.megamenu .level_2').wrap('<div class="megamenu-wrapper"></div>');
+	jQuery('li.megamenu.remove-link a.a-level_2').removeAttr("href");
+});
+	
+function megamenuWidth() {
+	var elWidth = jQuery(".header .inside").width();
+	jQuery(".header .mainmenu ul .megamenu-wrapper").css('width', elWidth);
+};
+	
+jQuery(window).on("resize", function(){ 
+	megamenuWidth(); 
+});
+
+jQuery(document).ready(function(){ 
+	megamenuWidth();
+});
+
+/* =============================================================================
+ * MegaMenu interactions
+ * ========================================================================== */
+// adjust megamenu container position on click
+jQuery(document).on('MegaMenu.change',function(e,params)
+{
+	var element = jQuery(params.selector);
+	// regular header
+	var top = jQuery('#top-wrapper').height();
+	element.removeClass('sticky');
+	// stickyheader
+	if( jQuery('body').hasClass('fixed-header') )
+	{
+		top = jQuery('#stickyheader').height();
+		element.addClass('sticky');
+	}
+	element.css('top', top);
+});
+
+//  close active click_open menus on click
+jQuery(document).on('MegaMenu.change',function(e,params)
+{
+	jQuery('.mainmenu a.click_open.active').removeClass('active');
+	jQuery('.mainmenu a.click_open').siblings('.active').removeClass('active')
+});
+	
+// hide megamenu on scroll
+jQuery(document).on('MegaMenu.scroll',function(e,params)
+{	
+	var element = jQuery(params.selector);
+	var items = params.items
+	var toggler = params.toggler;
+	
+	// hide when sticky becomes visible and menu has not been called in sticky yet
+	if( jQuery('body').hasClass('fixed-header') && element.hasClass('active') && !element.hasClass('sticky') )
+	{
+		items.removeClass('active');
+		element.removeClass('active');
+		jQuery(toggler).removeClass('active');
+		jQuery(toggler).parents().find('a.pct_megamenu.active').not(toggler).removeClass('active');
+	}
+	// back on top
+	if( !jQuery('body').hasClass('fixed-header') && element.hasClass('active') && element.hasClass('sticky') )
+	{
+		items.removeClass('active');
+		element.removeClass('active');
+		element.removeClass('sticky');
+		jQuery(toggler).removeClass('active');
+		jQuery(toggler).parents().find('a.pct_megamenu.active').not(toggler).removeClass('active');
+	}	
+});
+
+// initialize sliders in MegaMenu
+jQuery(document).on('MegaMenu.change',function(e,params)
+{
+	var element = jQuery(params.selector);
+	// @var Swiper
+	jQuery.each( element.find('.swiper-container'), function(i,elem)
+	{
+		if( jQuery(elem)[0].swiper != undefined )
+		{
+			jQuery(elem)[0].swiper.update();
+		}
+	});
+});
+
+</script>
+<?php endif; ?>
+
+</div>
+<!-- indexer::continue -->

@@ -1,0 +1,50 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_iconbox_vertical.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/eclipsex/fx/core.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/eclipsex/fx/waypoint/js/scripts.js';
+?>
+
+<div class="<?=  $this->class; ?> ce_iconbox_vertical_<?= $this->id; ?>" data-style="<?= $this->field('style')->value(); ?>" data-size="<?= $this->field('size')->value(); ?>" data-font-size="<?= $this->field('font_size')->value(); ?>" data-animation="<?= $this->field('animation')->value(); ?>" data-animation-delay="<?= $this->field('delay')->value(); ?>" data-padding="<?= $this->field('padding_bottom')->value(); ?>"<?= $this->cssID; ?>>
+	<div class="icon">
+		<div class="icon_inside">
+		<?php if($this->field('font_icon')->value()): ?>
+			<i class="<?= $this->field('font_icon')->value(); ?>"></i>
+		<?php endif; ?>
+		
+		<?php if($this->field('text_icon')->value()): ?>
+			<?= $this->field('text_icon')->value(); ?>
+		<?php endif; ?>
+	
+		<?php if($this->field('image_icon')->value()): ?>
+			<?= $this->field('image_icon')->html(); ?>
+		<?php endif; ?>
+		</div>
+	</div>
+	<div class="content">
+	<?php if($this->field('headline')->value()): ?>
+		<?= $this->field('headline')->html(); ?>
+	<?php endif; ?>
+	
+	<?php if($this->field('text')->value()): ?>
+		<?= $this->field('text')->html(); ?>
+	<?php endif; ?>
+	
+	<?php if($this->field('link')->value()): ?>
+		<?= $this->field('link')->html(); ?>
+	<?php endif; ?>
+	</div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{	
+	var element = jQuery('.ce_iconbox_vertical_<?= $this->id; ?>');
+	var waypoint = EX.fx.waypoint(element);
+	jQuery(element).on('intersecting',function(e,params)
+	{
+	    element.addClass('isInViewport');
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

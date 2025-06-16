@@ -1,0 +1,690 @@
+<?php
+namespace Contao;
+
+// temp. interface elements
+foreach($this->interfaces as $strSelector => $strInterface): ?>
+<?= $strInterface; ?>
+<?php endforeach; ?>
+
+<div id="pct_edit_live_mode"><a href="#" title="{{ifnlng::de}}Preview (Shortcut: CMD/STRG+SHIFT+1){{ifnlng}}{{iflng::de}}Vorschau (Shortcut: CMD/STRG+SHIFT+1){{iflng}}"><span title="Live-Mode" class="label">Live-Mode</span></a></div>
+<div id="pct_edit_window_container" class="size-s">
+	<div id="pct_edit_window_top">
+			<div id="pct_edit_window_closer"></div>
+			<div id="pct_edit_reload"><a href="#" title="{{ifnlng::de}}Reload{{ifnlng}}{{iflng::de}}Neuladen{{iflng}}" ><span class="icon"><?= Image::getHtml(\PCT_FRONTEND_QUICKEDIT_PATH.'/assets/img/icon_reload.svg'); ?></span><span title="{{ifnlng::de}}Reload{{ifnlng}}{{iflng::de}}Neuladen{{iflng}}" class="label">{{ifnlng::de}}Reload{{ifnlng}}{{iflng::de}}Neuladen{{iflng}}</span></a></div>
+			<div id="pct_edit_window_sizer" class="item"><span class="icon"><?= Image::getHtml(\PCT_FRONTEND_QUICKEDIT_PATH.'/assets/img/icon_scale.svg'); ?></span></div>
+			<div id="pct_edit_window_be_link" class="item"><a id="pct_edit_backend_link" href="" target="_backend" title="<?= $this->be_link['title']; ?>"><span class="icon"><?= Image::getHtml(\PCT_FRONTEND_QUICKEDIT_PATH.'/assets/img/icon_edit.svg'); ?></span><span title="{{ifnlng::de}}Open in backend{{ifnlng}}{{iflng::de}}Im Backend öffnen{{iflng}}" class="label">{{ifnlng::de}}Open in backend{{ifnlng}}{{iflng::de}}Im Backend öffnen{{iflng}}</span></a></div>
+			<?php foreach($this->be_buttons as $k => $button): ?>
+			<div id="pct_edit_window_be_<?= $k; ?>" class="item"><a href="<?= $button['href']; ?>" target="_iframe" title="<?= $button['title']; ?>"><span class="icon"><?= $button['icon']; ?></span><span class="label"><?= $button['link']; ?></span></a></div>
+			<?php endforeach; ?>
+			<div id="pct_edit_timer"><span class="minutes"></span>:<span class="seconds"></span></div>
+	</div>
+	<iframe id="pct_edit_iframe" src="" width="900px" height="600px" seamless loading="auto"></iframe>
+</div>
+<div id="pct_edit_window_overlay" <?php if(!$GLOBALS['PCT_FRONTEND_QUICKEDIT']['clickToEdit']): ?> class="notClickToEdit"<?php endif; ?>></div>
+
+<script>
+// Append editor interfaces to elements
+jQuery(document).ready(function() 
+{
+	<?php foreach($this->interfaces as $strSelector => $strInterface): ?>
+	<?php 
+	$objModel = $this->models[$strSelector] ?? null;
+	if( $objModel === null )
+	{
+		continue;
+	}
+	$strTable = $objModel->table;
+	$strType = $objModel->type;
+	?>
+	
+	var objElement = jQuery('.<?= $strSelector; ?>, [data-fq="<?= $strSelector; ?>"]');
+	var objInterface = jQuery('#<?= $strSelector; ?>_interface');
+	
+	// edit-off css class or disabled element
+	if( objElement.hasClass('edit-off') || objElement.length < 1 )
+	{
+		objElement.removeAttr('data-fq');
+		// remove the interface
+		objInterface.remove();
+	}
+	else
+	{
+		// coming from inserttag
+		if( objElement.attr('data-fq') != undefined && objElement.attr('data-fq_inserttag') == 'true' )
+		{
+			objElement.removeAttr('data-fq_inserttag');
+		}
+		
+		objElement.addClass('pct_edit_active');
+		objElement.attr('data-fq',"<?= $strSelector; ?>");
+		if( objInterface.data('clicktoedit') )
+		{
+			objElement.attr('data-clicktoedit',true);
+		}
+		// wrap output
+		objElement.addClass('pct_edit_container');
+		// prepend interface
+		objElement.prepend(objInterface);
+	
+		<?php if($strTable): ?>objElement.attr('data-table','<?= $strTable; ?>');<?php endif; ?>
+		<?php if($strType): ?>objElement.attr('data-type','<?= $strType; ?>');<?php endif; ?>
+		<?php if($objModel->id): ?>objElement.attr('data-id','<?= $objModel->id; ?>');<?php endif; ?>
+	}	
+	<?php endforeach; ?>
+});
+
+// Apply offset position to certain elements
+jQuery(document).ready(function() 
+{
+	jQuery('style#themedesigner_style').on('load change',function()
+	{
+		if( jQuery('#fix-wrapper').css('position') == 'absolute' )
+		{
+			var offset = jQuery('#fix-wrapper').height() + jQuery('#fix-wrapper').offset().top;
+			<?php foreach($GLOBALS['PCT_FRONTEND_QUICKEDIT']['OFFSET_ELEMENTS'] as $k): ?>
+			jQuery('<?= $k; ?>').css({'top':offset});
+			<?php endforeach; ?>
+		}	
+	});
+	
+	setTimeout(function()
+	{
+		if( jQuery('#fix-wrapper').css('position') == 'absolute' )
+		{
+			var offset = jQuery('#fix-wrapper').height() + jQuery('#fix-wrapper').offset().top;
+			<?php foreach($GLOBALS['PCT_FRONTEND_QUICKEDIT']['OFFSET_ELEMENTS'] as $k): ?>
+			jQuery('<?= $k; ?>').css({'top':offset});
+			<?php endforeach; ?>
+		}	
+	}, 800);	
+});
+</script>
+
+<script>
+/**
+ * FrontendQuickEdit
+ */
+// !--- FrontendQuickEdit class
+var FrontendQuickEdit = 
+{
+	TIMER_INTERVAL : 0,
+	/**
+	 * CSS size classes
+	 * @param array
+	 */
+	'sizes' : '<?= implode(',',$GLOBALS['PCT_FRONTEND_QUICKEDIT']['cssSizeClasses']); ?>'.split(','),
+	
+	/**
+	 * Set a size class by its class name or index
+	 * @param mixed
+	 */
+	'setSize' : function(varKey)
+	{
+		var arrSizes = FrontendQuickEdit.sizes;
+		var strSize = varKey;
+		
+		if( typeof( Number(varKey) ) == 'number' && isNaN( Number(varKey) ) === false )
+		{
+			 strSize = arrSizes[varKey];
+		}
+
+		if( strSize == undefined || strSize == '' )
+		{
+			strSize = 'size-s';
+		}
+
+		// store size class
+		localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['sizeClassKey']; ?>', strSize);
+		
+		jQuery('#pct_edit_window_container').removeClass( arrSizes.join(' ') );
+		jQuery('#pct_edit_window_container').addClass( strSize );
+	},
+	/**
+	 * Hide 
+	 */
+	'hide': function()
+	{
+		jQuery('#pct_edit_window_closer').click();
+	},
+
+	/**
+	 * Time in seconds
+	 * @var integer
+	 */
+	'timer' : <?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['timer'] ?: 300; ?>, // internal timer
+	
+	/**
+	 * Start the timer and update the timer element
+	 * @param integer
+	 */
+	'startTimer' : function(intTimer)
+	{
+		var objElement = jQuery('#pct_edit_timer');
+
+		// set a timer
+		if( intTimer !== undefined )
+		{
+			this.timer = intTimer;
+		}
+		
+		// clear the last interval
+		FrontendQuickEdit.clearTimer();
+		
+		var intTimer = this.timer; 
+		FrontendQuickEdit.TIMER_INTERVAL = setInterval(function () 
+		{
+			var minutes = parseInt(intTimer / 60, 10);
+			var seconds = parseInt(intTimer % 60, 10);
+			
+			if( minutes < 10 ){minutes = '0' + minutes;}
+			if( seconds < 10 ){seconds = '0' + seconds;}
+			
+			// time over
+			if (intTimer < 0) 
+			{
+				FrontendQuickEdit.clearTimer();
+				jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.timeover',{});
+			}
+
+			this.minutes = minutes;
+			this.seconds = seconds;
+
+			objElement.find('.minutes').text(minutes);
+			objElement.find('.seconds').text(seconds);
+
+			--intTimer;
+		}, 1000);
+	},
+	// clear the timer interval
+	'clearTimer': function()
+	{
+		clearInterval( FrontendQuickEdit.TIMER_INTERVAL );
+	},
+	// restart the timer
+	'refreshTimer': function()
+	{
+		// clear the old timeout
+		FrontendQuickEdit.clearTimer();
+		// restart
+		this.startTimer();
+	},
+	/**
+	 * Clear the localStorage
+	 */
+	'clearStorage': function(strKey)
+	{
+		if( strKey !== undefined )
+		{
+			localStorage.removeItem(strKey);
+			return;
+		}
+		// clear localStorage
+		localStorage.removeItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['scrollPositionKey']; ?>');
+		localStorage.removeItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>');
+		localStorage.removeItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['sizeClassKey']; ?>');
+	}
+}
+</script>
+
+<script>
+// !-- Iframe loaded
+jQuery('#pct_edit_iframe').on('load',function()
+{
+	jQuery(this).contents().find('body').addClass('iframe_loaded');
+});
+
+// !-- Editor windows size handler and close
+jQuery(document).ready(function() 
+{
+	// sizer
+	var i = 0;
+	// get last size class
+	if( localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['sizeClassKey']; ?>') )
+	{
+		var sizes = FrontendQuickEdit.sizes;
+		i = localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['sizeClassKey']; ?>');
+		if ( isNaN(i) && sizes.indexOf(i) >= 0 )
+		{
+			i = sizes.indexOf(i);
+		}
+		
+		FrontendQuickEdit.setSize(i);
+		i++;
+	}
+
+	jQuery('#pct_edit_window_sizer, #pct_edit_window_sizer a').click(function(e)
+	{
+		e.preventDefault();
+		FrontendQuickEdit.setSize(i);
+		
+		// store size class
+		localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['sizeClassKey']; ?>', i);
+		
+		i++;
+		if( i >= FrontendQuickEdit.sizes.length )
+		{
+			i = 0;
+		}
+	});
+
+	// closer
+	jQuery('#pct_edit_window_closer').click(function(e)
+	{
+		// trigger CLOSE
+		jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.close',{noReload:true});
+	});
+
+	// close on ESC
+	jQuery(document).keyup(function(e)
+	{
+		if( e.keyCode == 27 )
+		{
+			jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.close',{noReload:true});
+		}
+	});
+});
+
+// !-- Editor backend buttons
+jQuery(document).ready(function() 
+{
+	<?php foreach($this->be_buttons as $k => $button): ?>
+	jQuery('#pct_edit_window_be_<?= $k; ?> a[target="_iframe"]').click(function(e)
+	{
+		e.preventDefault();		
+		// trigger event
+		jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.open',{'src': jQuery(this).attr('href'),'size':1});
+	});
+	<?php endforeach; ?>
+});
+
+// !-- Reload button
+jQuery(document).ready(function() 
+{
+	jQuery('#pct_edit_reload, #pct_edit_reload a').click(function(e)
+	{
+		e.preventDefault();
+		e.stopPropagation();
+		
+		// cleanup
+		FrontendQuickEdit.clearStorage();
+
+		window.location.reload();
+	});
+});
+
+// !-- Live-mode button
+jQuery(document).ready(function() 
+{
+	jQuery('#pct_edit_live_mode').click(function(e)
+	{
+		e.preventDefault();
+		e.stopPropagation();
+		jQuery(this).toggleClass('active');
+		jQuery('body').toggleClass('pct_edit_live_mode');
+		// remember
+		localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['liveModeKey']; ?>',jQuery(this).hasClass('active'));
+	});
+	// reenable live mode
+	if( localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['liveModeKey']; ?>') !== undefined && localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['liveModeKey']; ?>') == 'true' )
+	{
+		jQuery('#pct_edit_live_mode').click();
+	}
+
+	var keySHIFT = false;
+	var keyCMD = false;
+	jQuery(window).on('keyup', function(e) 
+	{
+		// SHIFT released
+		if( event.shiftkey || event.which == 16 )
+		{
+			keySHIFT = false;
+		}
+		// CMD released
+		if( event.metaKey || event.which == 91 )
+		{
+			keyCMD = false;
+		}
+	});
+
+	jQuery(window).on('keydown',function(e)
+	{
+		// SHIFT
+		if( event.shiftkey || event.which == 16 )
+		{
+			keySHIFT = true;
+		}
+		// CMD
+		if( event.metaKey || event.which == 91 )
+		{
+			keyCMD = true;
+		}
+		
+		// CMD+SHIFT+1
+		if( event.which == 49 && keySHIFT == true && keyCMD == true )
+		{
+			// trigger preivew button
+			jQuery('#pct_edit_live_mode').click();
+		}
+	});
+
+});
+
+// !-- Buttons
+jQuery(document).ready(function() 
+{
+	jQuery('.pct_edit_interface .__buttons__ a').click(function(e)
+	{
+		e.preventDefault();
+		e.stopPropagation();
+		jQuery('.pct_edit_container').removeClass('hasFocus');
+
+		var _this = jQuery(this);
+		var interface = _this.parents('.pct_edit_interface');
+		var params = {};
+		params.table = interface.data('table');
+		params.id = interface.data('id');
+		params.selector = interface.data('selector');
+		params.css = _this.data('css');
+		params.size =  _this.data('size');
+		params.src = _this.attr('href');
+
+		// set focus on element
+		_this.closest('.pct_edit_container').addClass('hasFocus');
+
+		// store scollposition
+		localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['scrollPositionKey']; ?>', jQuery(document).scrollTop());
+
+		// trigger event
+		jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.open',params);
+	});
+	
+	// go to last scroll position
+	var scrollPosition = localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['scrollPositionKey']; ?>');
+	if( scrollPosition != undefined && jQuery(document).scrollTop() != scrollPosition )
+	{
+		jQuery("html, body").animate({scrollTop:  scrollPosition});
+	}
+	// remove from storage
+	localStorage.removeItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['scrollPositionKey']; ?>');
+});
+
+// !-- clickToEdit
+jQuery(document).ready(function() 
+{
+	jQuery('[data-clicktoedit="true"]').click(function(e)
+	{
+		var target = jQuery(e.target);
+		// bypass reader links
+		if( (target.attr('href') != '' && target.attr('href') != undefined)  || target.hasClass('more') )
+		{
+			return true;
+		}
+		// bypass linked images
+		if( target.attr('itemprop') == 'image' && target.parents('a').attr('href') != '' && target.attr('href') != undefined )
+		{
+			return true;
+		}
+		
+		e.preventDefault();
+		e.stopPropagation();
+		jQuery('.pct_edit_container').removeClass('hasFocus');
+		var _this = jQuery(this);
+		var interface = jQuery('#'+_this.attr('data-fq')+'_interface');
+		if( interface.length < 1 )
+		{
+			return;
+		}
+		
+		var params = {};
+		params.table = interface.data('table');
+		params.id = interface.data('id');
+		params.selector = interface.data('selector');
+		params.css = interface.data('css');
+		params.src = interface.find(' .__buttons__ a.edit').attr('href');
+		params.size = interface.find(' .__buttons__ a.edit').data('size');
+		
+		// set focus on element
+		jQuery(this).closest('.pct_edit_container').addClass('hasFocus');
+
+		// store scollposition
+		localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['scrollPositionKey']; ?>', jQuery(document).scrollTop());
+		
+		// trigger event
+		jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.open',params);
+	});
+});
+
+// !-- Autogrid Helper
+jQuery(document).ready(function() 
+{
+	// rebuild autogrid html construct
+	jQuery('[data-type="autogridColStart"]').each(function(i, elem)
+	{
+		elem = jQuery(elem);
+		var table = elem.data('table');
+		var id = elem.data('id');
+		var column = jQuery(elem).find('#pct-edit__'+table+'-'+id+'_content > .column');
+		if( column.length < 1 )
+		{
+			return;
+		}
+
+		var css = column.attr('class')
+		css = css.replace( column.data('id'),'' );
+		css = css.replace('pct_edit_active','');
+		jQuery(elem).addClass(css);	
+		// strip column classes
+		column.removeClass('column');
+		column.removeClass(function(index, className)
+		{
+			return (className.match (/(^|\s)col_\S+/g) || []).join(' ');
+		});
+	});
+});
+
+
+// !-- Anchor links Helper
+jQuery(document).ready(function() 
+{
+	// apply regular click from link elements when FE edit is in live mode
+	jQuery('#main a[href!=""]').click(function(e)
+	{
+		if( jQuery('body').hasClass('pct_edit_live_mode') )
+		{
+			e.preventDefault();
+			window.location.href = jQuery(this).attr('href');
+		}
+	});
+});
+
+// !-- Reopen editor
+jQuery(window).on('load',function() 
+{
+	// reopen editor
+	if( localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>') )
+	{
+		// trigger event
+		var src = localStorage.getItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>');
+		// trigger event
+		jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.open',{'src': src});
+	}
+});
+
+// !-- Timer: start/reset timer
+jQuery(window).on('load',function() 
+{	
+	FrontendQuickEdit.startTimer( <?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['timer']; ?> )
+});
+
+
+// !-- Initialize overlay and iframe interactions
+jQuery(document).ready(function() 
+{
+	// overlay
+	jQuery('#pct_edit_window_overlay').click(function(e)
+	{
+		// trigger CLOSE
+		jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.close',{});
+	});
+
+	
+	// !on CLOSE
+	jQuery(document).bind('PCT_FRONTEND_QUICKEDIT.close',function(event,params)
+	{
+		// remove loaded class
+		jQuery('#pct_edit_iframe').removeClass('loaded');
+
+		// clear localStorage
+		localStorage.removeItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>');
+		// avoid reload
+		if( Boolean(params.noReload) === true )
+		{
+			console.log('[CLOSE]');
+			jQuery('body').removeClass('pct_edit_window_open');
+			jQuery('#pct_edit_window_container').removeClass('open');
+			return;
+		}
+
+		console.log('[CLOSE] RELOAD PAGE...');
+		
+		// reload page
+		window.location.reload();	
+	});
+
+	// !on TIME-OVER
+	jQuery(document).bind('PCT_FRONTEND_QUICKEDIT.timeover',function(event,params)
+	{
+		console.log('[TIMEOVER] RELOAD PAGE...');
+		// cleanup
+		FrontendQuickEdit.clearStorage();
+		// reload page
+		window.location.reload();	
+	});
+
+	// trigger close on a new page
+	if( localStorage.getItem('PCT_FRONTEND_QUICKEDIT.page') > 0 && localStorage.getItem('PCT_FRONTEND_QUICKEDIT.page') != <?= $this->Page->id; ?>)
+	{
+		// clear localStorage
+		localStorage.removeItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>');
+		// remove body class
+		jQuery('body').removeClass('pct_edit_window_open');
+	}
+	localStorage.setItem('PCT_FRONTEND_QUICKEDIT.page',<?= $this->Page->id; ?>);	
+});
+
+// !on SUBMITTED
+jQuery(document).bind('PCT_FRONTEND_QUICKEDIT.submitted',function(event,params)
+{
+	//jQuery('body').removeClass('pct_edit_window_open');
+	console.log('[SUBMITTED] RELOAD PAGE...');
+	if( params.reload !== undefined && params.reload === false )
+	{
+		return;
+	}
+
+	// to not reload and clear the storage on simple submit
+	//if( params.action == 'save' )
+	//{	
+	//	return;
+	//}
+	
+	// hide editor on submit
+	FrontendQuickEdit.hide();
+
+	// cleanup
+	FrontendQuickEdit.clearStorage();
+
+	// reload page
+	window.location.reload();	
+});
+
+// !on OPEN: editor openend and iframe loads its new content
+jQuery(document).on('PCT_FRONTEND_QUICKEDIT.open',function(event,params)
+{
+	if( params.src == undefined || params.src == '' )
+	{
+		console.log('No iframe src');
+		return;
+	}
+
+	// reset timer
+	FrontendQuickEdit.refreshTimer();
+
+	// open editor
+	jQuery('body').addClass('pct_edit_window_open');
+	jQuery('#pct_edit_window_container').addClass('open');
+	// set individual css class
+	if( params.css )
+	{
+		jQuery('#pct_edit_window_container').addClass(params.css);
+	}
+	// set size class
+	if( params.size )
+	{
+		FrontendQuickEdit.setSize( params.size );
+	}
+
+	// update backend link
+	jQuery('#pct_edit_backend_link').attr('href',params.src);
+	
+	var src = params.src;
+	if( src.search('iframe=1') < 0 )
+	{
+		src = params.src+'&iframe=1';
+	}
+
+	jQuery('#pct_edit_iframe').removeClass('loaded');
+	
+	// update iframe src
+	jQuery('#pct_edit_iframe').attr('src', src);
+
+	// save open state
+	localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>',src);
+
+	var saved = false;
+	var reload = true;
+	var action = '';
+			
+	// attach load event
+	jQuery('#pct_edit_iframe').on('load',function(e)
+	{
+		jQuery(this).addClass('loaded');
+
+		//var submits = jQuery(this).contents().find('.tl_submit[name="save"], .tl_submit[name="saveNclose"]');
+		var submits = jQuery(this).contents().find('.tl_submit[name="save"],.tl_submit[name="saveNclose"],.tl_submit[name="saveNcreate"],.tl_submit[name="saveNduplicate"],.tl_submit[name="saveNback"]');
+		submits.click(function(e)
+		{
+			action = jQuery(this).attr('name');
+			saved = true;
+			reload = true;
+			if( jQuery(this).attr('name') == 'saveNcreate' )
+			{
+				reload = false;
+			}
+		});
+		
+		// delete triggered
+		var deletes = jQuery(this).contents().find('a.delete');
+		deletes.click(function(e)
+		{
+			action = 'delete';
+			saved = true;
+			reload = true;
+		});
+		
+		// get new iframe url
+		var _this = document.getElementById('pct_edit_iframe')
+		var _contentWindow  = _this.contentWindow ? _this.contentWindow : _this.contentDocument.defaultView;
+		// update src url
+		var src = _contentWindow.location.href;
+		localStorage.setItem('<?= $GLOBALS['PCT_FRONTEND_QUICKEDIT']['windowOpenKey']; ?>',src);
+
+		// attach event listener when contao has been submitted
+		if( saved === true )
+		{
+			jQuery(document).trigger('PCT_FRONTEND_QUICKEDIT.submitted',{'src': src,'reload':reload,'action':action});
+		}
+	});
+});
+
+</script>

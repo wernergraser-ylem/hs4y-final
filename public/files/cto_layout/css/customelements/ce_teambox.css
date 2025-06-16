@@ -1,0 +1,270 @@
+/* =============================================================================
+ * ce_team
+ * ========================================================================== */
+
+.ce_teambox.centered {
+	text-align: center;
+}
+
+.ce_teambox .name {
+	font-weight: bold;
+	margin: 15px 0 5px 0;
+}
+
+.ce_teambox .function {
+	color: var(--accentColor);
+	margin-bottom: 20px;
+}
+
+.ce_teambox.round_image .image_container img {
+	border-radius: 100%;
+	border: 4px solid rgba(0,0,0,0.1);
+}
+
+.ce_teambox.round_image .teambox_inside {
+	padding: 0 40px;
+}
+
+.ce_teambox .image {
+	text-align: center;
+}
+
+.ce_teambox .image a {
+	position: relative;
+	display: inline-block;
+	height: 100%;
+}
+
+.ce_teambox .image .overlay {
+	height: 100%;
+	width: 100%;
+	display: block;
+	-webkit-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+	background: var(--accentColor);
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.ce_teambox.round_image .image .overlay {
+	border-radius: 100%;
+}
+
+.ce_teambox .image_container {
+	margin: 0;
+}
+
+.ce_teambox .image i {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -1.333rem;
+	font-size: 2.667rem;
+	line-height: 2.667rem;
+	width: 100%;
+	color: #fff;
+}
+
+.ce_teambox .image:hover .overlay {
+	opacity: 1;
+}
+
+.ce_teambox .email a {
+	color: var(--accentColor);
+}
+
+.ce_teambox .socials {
+	margin-top: 25px;
+	font-size: 1.333rem;
+	overflow: hidden;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ce_teambox .socials a {
+	float: left;
+	padding: 0 3px;
+	text-align: center;
+}
+
+.ce_teambox .socials.color a {
+	border: 0;
+}
+
+.ce_teambox .socials a i {
+	width: 2rem;
+	line-height: 2rem;
+	background: rgb(136, 136, 136);
+	color: rgb(255,255,255);
+	border-radius: 100%;
+	font-size: 1rem;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_teambox .socials a:hover i {
+	opacity: 0.8;
+}
+
+.ce_teambox .socials.color i.fa-facebook {
+	background: rgb(67,96,152)!important;
+	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-twitter {
+	background: rgb(40,169,226)!important;
+	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-xing {
+ 	background: rgb(0,93,94)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-tumblr {
+ 	background: rgb(45,73,102)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-google-plus {
+ 	background: rgb(217,82,50)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-flickr {
+ 	background: rgb(250,29,132)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-linkedin {
+ 	background: rgb(2,116,179)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-instagram {
+ 	background: rgb(167,124,98)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-pinterest {
+ 	background: rgb(205,33,40)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-vimeo-square {
+ 	background: rgb(52,192,238)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox .socials.color i.fa-youtube {
+ 	background: rgb(220,33,48)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+.ce_teambox.hover_image .team-content {
+	position: relative;
+}
+
+.ce_teambox.hover_image .team-content-hover {
+	position: absolute;
+	top: 0%;
+	left: 0;
+	opacity: 0;
+	padding: 50px;
+	width: 100%;
+	height: 100%;
+	background: rgb(250,250,250);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_teambox.hover_image .team-content-valign {
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	position: relative;
+	top: 50%;
+}
+
+.ce_teambox.hover_image:hover .team-content-hover {
+	opacity: 1;
+}
+
+.ce_teambox.frame .teambox_inside {
+	border: 3px solid rgb(231,231,231);
+}
+
+.ce_teambox.frame .teambox_inside .name {
+	padding-top: 20px;
+}
+
+.ce_teambox.frame .teambox_inside p {
+	padding: 0 25px;
+}
+
+.ce_teambox.frame .teambox_inside .function {
+	font-style: normal;
+	font-weight: bold;
+}
+
+.ce_teambox.gray_bg .teambox_inside {
+	position: relative;
+	background: rgb(248, 248, 248);
+	max-width: 450px;
+	overflow: hidden;
+}
+
+.ce_teambox.gray_bg .teambox_content {
+	padding: 20px;
+}
+
+.ce_teambox.gray_bg .socials a {
+	border: 0;
+}
+
+.ce_teambox.gray_bg .function {
+	color: inherit!important;
+	font-style: normal;
+	font-size: 0.9rem;
+	padding-top: 0;
+}
+
+.ce_teambox.gray_bg .image .overlay {
+	opacity: 1;
+	height: auto;
+	width: 8rem;
+	transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+	color: rgb(255,255,255);
+	font-size: 0.8rem;
+	position: absolute;
+	left: -3rem;
+	top: -0.3333rem;
+	text-align: center;
+	z-index: 30;
+	padding: 0.8rem 0 0.3333rem 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_teambox.gray_bg .image:hover .overlay {
+	padding-top: 1.6rem;
+}
+
+.ce_teambox.gray_bg .image .overlay i {
+	font-size: 1.2rem;
+	position: static;
+	margin: 0;
+	line-height: 1;
+}
+
+/* same-height */
+.autogrid_row.same_height .ce_teambox.gray_bg,
+.autogrid_row.same_height .ce_teambox.gray_bg .teambox_inside {
+	height: 100%;
+}

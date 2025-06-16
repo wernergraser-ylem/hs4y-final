@@ -1,0 +1,75 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_video_w_teaser
+*/
+$arrImport = array (
+'tstamp' => '14.01.2025 09:56',
+'name' => 'single_video_w_teaser',
+'category' => 'gallery_videos',
+'thumb' => '',
+'elements' => 'video_w_teaser',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+91 => 'revolutionslider_videoType',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+137 => 'privacy_level',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 132486,
+1 => 15238,
+2 => 128,
+3 => 1736844984,
+5 => 'video_w_teaser',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_12',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+91 => 'local',
+96 => '14',
+98 => '0.5',
+137 => 1,
+156 => 'a:7:{s:6:"values";a:16:{s:13:"9ainkrcaoanue";s:36:"a04c8886-839a-11ee-8d10-16b7547d76db";s:15:"u1t2mcispcumv0a";s:0:"";s:15:"k4ixb3iq6b5i4vh";s:36:"a04c8886-839a-11ee-8d10-16b7547d76db";s:15:"upflzm5qug4oe1m";N;s:19:"upflzm5qug4oe1m_alt";s:0:"";s:21:"upflzm5qug4oe1m_title";s:0:"";s:20:"upflzm5qug4oe1m_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"jinino09jcha5e0";a:2:{s:5:"value";s:18:"Empower Your Brand";s:4:"unit";s:3:".h3";}s:15:"mctd2esvpdmtzaa";a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h1";}s:15:"dh7rwj7n1c3c8gi";s:13:"2:10 duration";s:15:"84aqoo5ctn3gham";s:5:"light";s:15:"qrqusr2869lzj2b";s:6:"style1";s:15:"l9ltremv45tboaz";s:18:"play_button_flying";s:15:"rsqhpdbsvz2jpex";s:0:"";s:15:"6m1n5ngzhn4kmrv";s:0:"";s:14:"6qen0849j2u25x";s:2:"on";}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:5:"508_0";s:8:"group_id";i:508;s:11:"group_alias";s:5:"video";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:13:"9ainkrcaoanue";s:2:"id";i:2201;s:5:"alias";s:5:"video";}}}i:1;a:4:{s:5:"ident";s:5:"511_0";s:8:"group_id";i:511;s:11:"group_alias";s:6:"teaser";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"u1t2mcispcumv0a";s:2:"id";i:2217;s:5:"alias";s:4:"info";}i:1;a:3:{s:4:"uuid";s:15:"k4ixb3iq6b5i4vh";s:2:"id";i:2211;s:5:"alias";s:12:"teaser_video";}i:2;a:3:{s:4:"uuid";s:15:"upflzm5qug4oe1m";s:2:"id";i:2212;s:5:"alias";s:8:"bg_image";}}}i:2;a:4:{s:5:"ident";s:5:"510_0";s:8:"group_id";i:510;s:11:"group_alias";s:4:"text";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"jinino09jcha5e0";s:2:"id";i:2205;s:5:"alias";s:5:"title";}i:1;a:3:{s:4:"uuid";s:15:"mctd2esvpdmtzaa";s:2:"id";i:2206;s:5:"alias";s:8:"subtitle";}i:2;a:3:{s:4:"uuid";s:15:"dh7rwj7n1c3c8gi";s:2:"id";i:2207;s:5:"alias";s:8:"duration";}i:3;a:3:{s:4:"uuid";s:15:"84aqoo5ctn3gham";s:2:"id";i:2215;s:5:"alias";s:5:"color";}}}i:3;a:4:{s:5:"ident";s:5:"507_0";s:8:"group_id";i:507;s:11:"group_alias";s:0:"";s:10:"attributes";a:5:{i:0;a:3:{s:4:"uuid";s:15:"qrqusr2869lzj2b";s:2:"id";i:2195;s:5:"alias";s:5:"style";}i:1;a:3:{s:4:"uuid";s:15:"l9ltremv45tboaz";s:2:"id";i:2214;s:5:"alias";s:11:"play_button";}i:2;a:3:{s:4:"uuid";s:15:"rsqhpdbsvz2jpex";s:2:"id";i:2197;s:5:"alias";s:6:"height";}i:3;a:3:{s:4:"uuid";s:15:"6m1n5ngzhn4kmrv";s:2:"id";i:2213;s:5:"alias";s:10:"height_mob";}i:4;a:3:{s:4:"uuid";s:14:"6qen0849j2u25x";s:2:"id";i:2216;s:5:"alias";s:9:"animation";}}}}s:6:"tstamp";i:1727695221;s:5:"alias";s:14:"video_w_teaser";s:5:"uuids";a:13:{i:0;s:13:"9ainkrcaoanue";i:1;s:15:"u1t2mcispcumv0a";i:2;s:15:"k4ixb3iq6b5i4vh";i:3;s:15:"upflzm5qug4oe1m";i:4;s:15:"jinino09jcha5e0";i:5;s:15:"mctd2esvpdmtzaa";i:6;s:15:"dh7rwj7n1c3c8gi";i:7;s:15:"84aqoo5ctn3gham";i:8;s:15:"qrqusr2869lzj2b";i:9;s:15:"l9ltremv45tboaz";i:10;s:15:"rsqhpdbsvz2jpex";i:11;s:15:"6m1n5ngzhn4kmrv";i:12;s:14:"6qen0849j2u25x";}s:7:"version";s:6:"5.0.11";s:13:"customelement";i:170;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+'tl_files' =>
+array (
+'a04c8886-839a-11ee-8d10-16b7547d76db' => 'files/cto_layout/img/element_library/video.mp4',
+),
+);

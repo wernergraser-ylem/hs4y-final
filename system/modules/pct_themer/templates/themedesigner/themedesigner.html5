@@ -1,0 +1,25 @@
+<?php 
+/**
+ * ThemeDesigner
+ *
+ * @var string "type"	'navigation'||'themedesigner||versions'
+ */
+?>
+
+<?php 
+global $objPage;
+if(!$objPage->hasJQuery)
+{	
+	// load jquery
+	$GLOBALS['TL_JAVASCRIPT'][] = PCT_THEMER_PATH.'/assets/js/jquery/jquery.min.js';
+}
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_THEMER_PATH.'/assets/js/jquery/ui/jquery-ui.min.js';
+$GLOBALS['TL_CSS'][] = PCT_THEMER_PATH.'/assets/js/jquery/ui/themes/base/jquery-ui.css';	
+?>
+
+<!-- indexer::stop -->
+
+<div class="pct_<?= $this->type; ?>">
+<?= $this->content; ?>
+</div>
+<!-- indexer::continue -->

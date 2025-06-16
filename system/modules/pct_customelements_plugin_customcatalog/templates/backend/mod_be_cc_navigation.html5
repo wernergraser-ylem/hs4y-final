@@ -1,0 +1,10 @@
+<div class="mod_be_cc_navigation block<?php if($this->class): ?> <?= $this->class; ?><?php endif; ?>">
+	<div class="section button edit_configs first"><?php echo $this->editConfigsButton; ?></div>
+	<div class="section configs_container"><?php echo $this->configItems; ?></div>
+	<?php if($this->hasGroups): ?>
+	<div class="section button edit_groups"><?php echo $this->editGroupsButton; ?></div>
+	<?php endif; ?>
+	<?php if($this->attributeItems): ?>
+	<div class="section attributes_container last"><?php echo $this->attributeItems; ?></div>
+	<?php endif; ?>
+</div>

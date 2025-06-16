@@ -1,0 +1,34 @@
+
+/* =============================================================================
+* submenu_v3
+* ========================================================================== */
+
+.submenu_v3 {
+   border: 8px solid rgb(220,220,220);
+   padding: 25px;
+   border-radius: 5px;
+}
+
+.submenu_v3 ul {
+   padding-left: 15px;
+}
+
+.submenu_v3 li {
+   list-style-type: square;
+   list-style-position: outside;
+}
+
+.submenu_v3 li a {
+   transition: All 0.3s ease;
+   -webkit-transition: All 0.3s ease;
+   margin-bottom: 3px;
+   display: block;
+}
+
+.submenu_v3 li a:hover {
+   opacity: 0.7;
+}
+
+.submenu_v3 li a.active {
+   text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+
+<?php if($this->AutoGrid->start): ?>
+<div class="column<?php if($this->class): ?> <?= $this->class; ?><?php endif; ?><?php if($this->AutoGrid->classes): ?> <?= $this->AutoGrid->classes; ?><?php endif; ?>" <?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+	<?php if(isset($this->AutoGrid->hasAttributes) && $this->AutoGrid->hasAttributes === true): ?>
+	<div class="attributes<?php if($this->AutoGrid->Image && !$this->AutoGrid->hasContent): ?> has-image empty<?php endif; ?><?php if($this->autogrid_padding_css): ?> <?= $this->autogrid_padding_css; ?><?php endif; ?>"<?php if($this->AutoGrid->styles): ?> style="<?= implode(' ', $this->AutoGrid->styles); ?>"<?php endif; ?>>
+		<?php if(isset($this->AutoGrid->shstart) && $this->AutoGrid->shstart === true): ?>
+			<div class="same-height-wrap">
+		<?php endif; ?>
+	<?php if($this->AutoGrid->Image && !$this->AutoGrid->hasContent): ?>
+		<figure class="image_container image_mob"><?php $this->insert('picture_default', $this->AutoGrid->Image->picture); ?></figure>
+	<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
+<?php if($this->AutoGrid->stop): ?>
+	<?php if(isset($this->AutoGrid->hasAttributes) && $this->AutoGrid->hasAttributes === true): ?>
+		</div>
+		<?php if(isset($this->AutoGrid->shstop) && $this->AutoGrid->shstop === true): ?>
+			</div>
+		<?php endif; ?>
+	<?php endif;?>
+</div>
+<?php endif;?>

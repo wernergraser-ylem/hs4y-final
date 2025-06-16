@@ -1,0 +1,26 @@
+/* =============================================================================
+ * acc_default_fonts
+ * ========================================================================== */
+
+html, 
+html *,
+body,
+body.acc_default_fonts h1,
+body.acc_default_fonts h2, 
+body.acc_default_fonts h3, 
+body.acc_default_fonts h4, 
+body.acc_default_fonts h5, 
+body.acc_default_fonts h6,
+body.acc_default_fonts .h1,
+body.acc_default_fonts .h2, 
+body.acc_default_fonts .h3, 
+body.acc_default_fonts .h4, 
+body.acc_default_fonts .h5, 
+body.acc_default_fonts .h6, 
+body.acc_default_fonts .ce_revolutionslider_text.bold, 
+body.acc_default_fonts .font_headline, 
+body.acc_default_fonts,
+body.acc_default_fonts .font_serif_2, 
+body.acc_default_fonts .font-serif-2 {
+	font-family: Arial, Verdana, sans-serif!important;
+}

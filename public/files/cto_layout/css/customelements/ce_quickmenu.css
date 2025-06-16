@@ -1,0 +1,106 @@
+/* =============================================================================
+ * mod_quickmenu
+ * ========================================================================== */
+
+.mod_quickmenu {
+	position: fixed;
+	bottom: 120px;
+	right: 18px;
+	z-index: 100;
+	padding-top: 100px;
+}
+
+.mod_quickmenu.quickmenu-align-top {
+	top: 120px;
+	bottom: auto;
+}
+
+.mod_quickmenu ul:hover li {
+	margin-top: 0;
+}
+
+.mod_quickmenu li {
+	display: block;
+	float: right;
+	clear: right;
+	transition-property: margin-top;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.mod_quickmenu.collapse li {
+	margin-top: -35px;
+}
+
+.mod_quickmenu li a {
+	display: block;
+	line-height: 40px;
+	width: 40px;
+	border: 1px solid rgb(100,100,100);
+	border-radius: 3px;
+	overflow: hidden;
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+	white-space: nowrap;
+	background: rgba(255,255,255,1);
+	margin-bottom: 3px;
+	font-size: 15px;
+}
+
+.mod_quickmenu li a i {
+	width: 40px;
+	text-align: center;
+	font-size: 19px;
+}
+
+.mod_quickmenu li a span {
+	margin-right: 10px;
+	font-size: 15px;
+}
+
+.mod_quickmenu li a:hover {
+	width: 140px;
+	color: #fff;
+	background-color: var(--accentColor);
+	border-color: var(--accentColor);
+}
+
+/* style 2 */
+
+.mod_quickmenu.style2 a {
+	border-color: var(--accentColor);
+	color: var(--accentColor);
+}
+
+/* style 3 */
+
+.mod_quickmenu.style3 li a {
+	width: 55px;
+	line-height: 55px;
+	border-radius: 50px;
+	border: 1px solid #fff;
+	margin-bottom: 10px;
+	box-shadow: 0 0 25px 0 rgba(0,0,0,0.04);
+}
+
+.mod_quickmenu.style3 li a i {
+	width: 53px;
+}
+
+.mod_quickmenu.style3 li a:hover {
+	width: 140px;
+	border-color: var(--accentColor);
+}
+
+.mod_quickmenu.style3 {
+	right: 10px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.mod_quickmenu {
+		display: none;
+	}
+}

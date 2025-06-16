@@ -1,0 +1,62 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_calltoaction.css|static';
+
+$container = \Contao\System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+	
+// responsive images
+$strImage = $this->field('image')->generate();
+
+$objFile = \Contao\FilesModel::findByPk( $this->field('image')->value() );
+$size = \Contao\StringUtil::deserialize( $this->field('image')->option('size') );
+if( $objFile !== null && is_array($size) )
+{
+	$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+	$sources = $objPicture->getSources($projectDir, $staticUrl);
+	
+	$arrMediaQueries = array();
+	if( $objPicture !== null && !empty($sources) )
+	{
+		foreach($sources ?: array() as $data)
+		{
+			if( !isset($data['media']) || strlen($data['media']) < 1 )
+			{
+				continue;
+			}
+			$arrMediaQueries[] = '@media '.$data['media'].' { .ce_calltoaction_v2_'.$this->id.' { background-image:url('.$data['src'].') !important; } }';
+		}
+
+		// look up prefered source image file (not media query)
+		foreach($sources ?: array() as $data)
+		{
+			if( (isset($data['src']) && $data['src']) != $strImage && (!isset($data['media']) || strlen($data['media']) < 1) )
+			{
+				$strImage = $data['src'];
+			}
+		}
+	}
+	if( count($arrMediaQueries) > 0 )
+	{
+		$GLOBALS['TL_HEAD'][] = '<style>'.implode("\n",$arrMediaQueries).'</style>';
+	}
+}
+
+$bg_color = '';
+if( $this->field('bg_color')->value() )
+{
+	// compile color
+	$color = $this->field('bg_color')->attribute()->compileColor( $this->field('bg_color')->value() );
+	$bg_color = $color->rgba;
+}
+?>
+
+<div class="<?php echo $this->class; ?> ce_calltoaction_v2 ce_calltoaction_v2_<?php echo $this->id; ?> block<?php if($this->field('invert')->value()): ?> color-white<?php endif; ?>" <?php echo $this->cssID; ?> style="<?php if($this->field('image')->value()): ?>background-image: url(<?= $strImage; ?>);<?php endif; ?><?php if($this->field('bg_color')->value()): ?>background-color:<?= $bg_color; ?>;<?php endif; ?><?php if ($this->style): ?><?php echo $this->style; ?><?php endif; ?>">
+	<div class="ce_calltoaction_inside">
+		<div class="ce_calltoaction_content">
+			<?php echo $this->field('headline')->html(); ?>
+			<?php echo $this->field('text')->html(); ?>
+			<div class="ce_hyperlink"><?php echo $this->field('link')->html(); ?></div>
+		</div>
+	</div>
+</div>

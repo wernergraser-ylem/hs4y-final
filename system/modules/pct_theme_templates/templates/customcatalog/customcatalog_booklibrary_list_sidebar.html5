@@ -1,0 +1,26 @@
+<?php if(!$this->empty): ?>
+<div class="item-wrapper catalog_<?php echo $this->id; ?>">
+<?php foreach($this->entries as $entry): ?>
+	<div class="block <?= $entry->class; ?> <?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+		
+		<div class="item-inside">
+			<div class="image">
+				<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+			</div>			
+			<div class="content">
+				<div class="content-inside">
+					<div class="headline"><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></div>
+					<?php if($entry->field('author')->value()): ?><div class="author"><?php echo $entry->field('author')->html(); ?></div><?php endif; ?>
+					<?php if($entry->field('price')->value()): ?><div class="price color-accent">&euro; <?php echo $entry->field('price')->html(); ?></div><?php endif; ?>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+
+<?php endforeach; ?>
+</div>		
+<?php else: ?>
+<p class="info empty">{{iflng::de}}Keine Artikel gefunden{{iflng}}{{iflng::en}}No items found{{iflng}}</p>
+<?php endif;?>
+

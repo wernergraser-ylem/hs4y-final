@@ -1,0 +1,14 @@
+
+<div class="item swiper-slide portfoliolist_onepage block <?php echo $this->class; ?> port_overlay filter_<?= \Contao\StringUtil::standardize($this->subHeadline); ?>" itemscope itemtype="http://schema.org/Article">
+	<a href="<?php echo $this->href ? $this->href : $this->link; ?>" data-lightbox="portfolio_<?= $this->pid; ?>" data-cbox-width="80%" data-cbox-height="100%" class="more" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>>
+	<figure class="image_container">
+		<div class="image_container_img"><?php $this->insert('picture_default', $this->picture); ?></div>
+		<div class="content">
+			<div class="info">
+				<div class="title h5"><?php echo $this->newsHeadline; ?></div>
+				<div class="subline"><?php echo $this->subHeadline; ?></div>
+			</div>
+		</div>
+	</figure>
+	</a>
+</div>

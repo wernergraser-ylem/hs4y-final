@@ -1,0 +1,91 @@
+<?php
+
+// Add the colorbox style sheet
+$GLOBALS['TL_CSS'][] = 'assets/colorbox/css/colorbox.min.css'.(\PCT\SEO::getProtocol() == 'http2' ? '' : '|static');
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'assets/colorbox/js/colorbox.min.js';
+?>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()  {
+    jQuery('a[data-lightbox]').map(function() 
+    {
+      jQuery(this).colorbox(
+      {
+        // Put custom options here
+        loop: false,
+        rel: jQuery(this).attr('data-lightbox'),
+        maxWidth: '95%',
+        maxHeight: '95%'
+      });
+   });
+
+    jQuery(document).bind('cbox_complete', function(e)
+    {
+        if( jQuery.colorbox == undefined )
+        {
+          return;
+        }
+        var text = jQuery.colorbox.element().next('.caption').text();
+        if( text )
+        {
+          var caption = jQuery('#cboxBottomLeft').append('<div id="cboxCaption">'+text+'</div>');
+          jQuery('#colorbox').height( jQuery('#colorbox').height() + caption.height()  );
+        }
+    });
+  });
+</script>
+<script>
+// iframe lightbox
+jQuery(document).ready(function()  
+{
+  jQuery('a[data-lightbox-iframe]').map(function() 
+  {
+    jQuery(this).colorbox(
+    {
+        iframe:true, 
+        innerWidth:"80%", 
+        innerHeight:"56%", 
+        maxWidth:"95%",
+        maxHeight:'95%',
+    });
+  });
+});
+
+// lightbox 50% 50%
+jQuery(document).ready(function() 
+{
+  jQuery('.lightbox50-50 a, a.lightbox50-50').colorbox(
+    {
+      // Put custom options here
+      loop: false,
+      rel: jQuery(this).attr('data-lightbox'),
+      width: '50%',
+      height: '50%'
+    });
+});
+// lightbox 60% 40%
+jQuery(document).ready(function() 
+{
+  jQuery('.lightbox60-40 a, a.lightbox60-40').colorbox(
+    {
+      // Put custom options here
+      loop: false,
+      rel: jQuery(this).attr('data-lightbox'),
+      width: '60%',
+      height: '40%'
+    });
+});
+// lightbox 960px 575px
+jQuery(document).ready(function() 
+{
+  jQuery('.lightbox960 a, a.lightbox960').colorbox(
+    {
+      // Put custom options here
+      loop: false,
+      rel: jQuery(this).attr('data-lightbox'),
+      width: '960px',
+      height: '575px'
+    });
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

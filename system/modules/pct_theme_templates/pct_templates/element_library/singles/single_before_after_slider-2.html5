@@ -1,0 +1,65 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_before_after_slider-2',
+'category' => 'slider',
+'thumb' => '',
+'elements' => 'before_after_slider',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 125350,
+1 => 14660,
+2 => 256,
+3 => 1699880224,
+5 => 'before_after_slider',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+100 => '14',
+102 => '0.5',
+160 => 'a:7:{s:6:"values";a:17:{s:15:"b7lnldd7bnnhnmt";s:36:"cd42b255-9764-11e5-b97e-fe350ea61578";s:19:"b7lnldd7bnnhnmt_alt";s:16:"alt before image";s:21:"b7lnldd7bnnhnmt_title";s:18:"title before image";s:20:"b7lnldd7bnnhnmt_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"gy9qpq2vnuwdfby";s:36:"5acd6b0a-9764-11e5-b97e-fe350ea61578";s:19:"gy9qpq2vnuwdfby_alt";s:15:"alt after image";s:21:"gy9qpq2vnuwdfby_title";s:17:"title after image";s:20:"gy9qpq2vnuwdfby_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:14:"geavoiev3wv5k8";s:6:"Before";s:13:"6binx7m36k8rt";s:5:"After";s:15:"f7vyuct238mrurq";s:3:"0.8";s:15:"wuxezjkzj3vymqf";s:0:"";s:14:"xfqz73t7e3t58f";s:8:"vertical";s:14:"ispmus6g8saqt6";s:0:"";s:15:"gdfxu5tgu7tli95";s:0:"";s:14:"1tmnd63kxcaqiu";s:0:"";s:15:"v92ocv571xri6wi";s:0:"";}s:6:"groups";a:3:{i:0;a:4:{s:5:"ident";s:5:"316_0";s:8:"group_id";i:316;s:11:"group_alias";s:6:"before";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"b7lnldd7bnnhnmt";s:2:"id";i:1767;s:5:"alias";s:12:"image_before";}}}i:1;a:4:{s:5:"ident";s:5:"408_0";s:8:"group_id";i:408;s:11:"group_alias";s:5:"after";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"gy9qpq2vnuwdfby";s:2:"id";i:1768;s:5:"alias";s:11:"image_after";}}}i:2;a:4:{s:5:"ident";s:5:"317_0";s:8:"group_id";i:317;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:5:{i:0;a:3:{s:4:"uuid";s:14:"geavoiev3wv5k8";s:2:"id";i:1769;s:5:"alias";s:12:"before_label";}i:1;a:3:{s:4:"uuid";s:13:"6binx7m36k8rt";s:2:"id";i:1770;s:5:"alias";s:11:"after_label";}i:2;a:3:{s:4:"uuid";s:14:"xfqz73t7e3t58f";s:2:"id";i:1773;s:5:"alias";s:11:"orientation";}i:3;a:3:{s:4:"uuid";s:15:"f7vyuct238mrurq";s:2:"id";i:1772;s:5:"alias";s:18:"default_offset_pct";}i:4;a:3:{s:4:"uuid";s:15:"wuxezjkzj3vymqf";s:2:"id";i:1771;s:5:"alias";s:10:"no_overlay";}}}}s:6:"tstamp";i:1567425447;s:5:"alias";s:19:"before_after_slider";s:5:"uuids";a:11:{i:0;s:15:"b7lnldd7bnnhnmt";i:1;s:15:"gy9qpq2vnuwdfby";i:2;s:14:"geavoiev3wv5k8";i:3;s:13:"6binx7m36k8rt";i:4;s:14:"xfqz73t7e3t58f";i:5;s:15:"f7vyuct238mrurq";i:6;s:15:"wuxezjkzj3vymqf";i:7;s:14:"ispmus6g8saqt6";i:8;s:15:"gdfxu5tgu7tli95";i:9;s:14:"1tmnd63kxcaqiu";i:10;s:15:"v92ocv571xri6wi";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:142;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'cd42b255-9764-11e5-b97e-fe350ea61578' => 'files/cto_layout/img/delete_this/demo_default/hoverimage2.jpg',
+'5acd6b0a-9764-11e5-b97e-fe350ea61578' => 'files/cto_layout/img/delete_this/demo_default/hoverimage_hover.jpg',
+),
+);

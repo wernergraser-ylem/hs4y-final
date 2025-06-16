@@ -1,0 +1,47 @@
+
+<?php 
+$rootDir = \Contao\System::getContainer()->getParameter('kernel.project_dir');
+$strToken = \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
+?>
+<div id="page_contentelementsets" class="contao-ht35">
+	<!-- category select -->
+	<form action="<?= $this->action; ?>" class="tl_form" method='post'>
+	<input type="hidden" name="FORM_SUBMIT" value="contentelementset_export">
+	<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+	
+	<div id="tl_buttons"><?= $this->back ?></div>
+	
+	<?php if($this->messages) :?>
+	<?= $this->messages; ?>
+	<?php else: ?>
+		
+	<div class="tl_formbody">
+	<div class="tl_panel categories">
+		<h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+	
+		<!-- ingredients -->
+		<div class="tl_box">
+			<strong><?= $this->headline_elements; ?></strong> <?= implode(', ', $this->elements); ?>
+		</div>
+		
+		<?php if($this->file && file_exists($rootDir.'/'.$this->file->path)): ?>
+		<div class="tl_box">
+			<strong>Download:</strong> <a href="<?= $this->file->path; ?>" download><?= $this->file->name; ?></a>
+		</div>
+		<?php endif; ?>
+		
+		<div class="tl_box">		
+			<h2>Export:</h2>
+			<div class="float_box"><?= $this->nameInput; ?></div>
+			<div class="float_box"><?= $this->categorySelect; ?></div>
+			<div class="clear"></div>
+		</div>
+		
+		<input type="submit" class="tl_submit" name="run_contentelementset_export" value="<?= $this->submitLabel; ?>">
+		
+	</div>
+	</div>
+	
+	<?php endif; ?>
+
+</div>

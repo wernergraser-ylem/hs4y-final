@@ -1,0 +1,94 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_text_image_bar.css|static';
+
+$container = \Contao\System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+
+$strImage = $this->field('image')->generate();
+
+// responsive images
+$objFile = \Contao\FilesModel::findByPk( $this->field('image')->value() );
+$size = \Contao\StringUtil::deserialize( $this->field('image')->option('size') );	
+if( $objFile !== null && is_array($size) )
+{
+	$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+	$sources = $objPicture->getSources($projectDir, $staticUrl);
+	
+	$arrMediaQueries = array();
+	if( $objPicture !== null && !empty($sources) )
+	{
+		foreach($sources as $data)
+		{
+			if( !isset($data['media']) || strlen($data['media']) < 1 )
+			{
+				continue;
+			}
+			$arrMediaQueries[] = '@media '.$data['media'].' { .ce_text_image_bar_'.$this->id.' .res-image { background-image:url('.$data['src'].') !important; } }';
+		}
+		
+		// look up prefered source image file (not media query)
+		foreach($sources ?: array() as $data)
+		{
+			if( (isset($data['src']) && $data['src']) != $strImage && (!isset($data['media']) || strlen($data['media']) < 1) )
+			{
+				$strImage = $data['src'];
+			}
+		}
+	}
+	if( count($arrMediaQueries) > 0 )
+	{
+		$GLOBALS['TL_HEAD'][] = '<style>'.implode("\n",$arrMediaQueries).'</style>';
+	}
+}
+
+$bg_color_own = '';
+if( $this->field('own_color')->value() )
+{
+	// compile color
+	$color = $this->field('own_color')->attribute()->compileColor( $this->field('own_color')->value() );
+	$bg_color_own = $color->rgba;
+}
+?>
+<div class="<?php echo $this->class; ?> ce_text_image_bar_<?php echo $this->id;?> <?php echo $this->field('schema')->value(); ?> <?php echo $this->field('bg_color')->value(); ?> <?php echo $this->field('color')->value(); ?> block<?php if($this->field('show_arrow')->value()): ?> show-arrow<?php endif; ?><?php if($this->field('mob_pos')->value()): ?> <?php echo $this->field('mob_pos')->value(); ?><?php endif; ?>"<?php echo $this->cssID; ?> style="<?php if($this->field('own_color')->value()): ?>background-color:<?= $bg_color_own; ?>;<?php endif; ?><?php if ($this->style): ?><?php echo $this->style; ?><?php endif; ?>">
+		<div class="inside">
+			<div class="textbox"<?php if($this->field('height')->value()): ?> style="height:<?php echo $this->field('height')->value(); ?>px"<?php endif; ?>>
+				<div class="text-table">
+					<div class="text-cell">
+						<?php if($this->field('subheadline')->value()): ?><div class="subheadline"><?php echo $this->field('subheadline')->value(); ?></div><?php endif; ?>
+						<?php if($this->field('headline')->value()): ?><?php echo $this->field('headline')->html(); ?><?php endif; ?>
+						<?php if($this->field('text')->value()): ?><?php echo $this->field('text')->html(); ?><?php endif; ?>
+						<?php if($this->field('link')->value()): ?><div class="ce_hyperlink"><?php echo $this->field('link')->html(); ?></div><?php endif; ?>
+					</div>
+				</div>
+			</div>
+			<div class="imagebox res-image" style="background-image: url(<?= $strImage; ?>);">
+			<?php if($this->field('show_arrow')->value()): ?><div class="arrow <?php echo $this->field('bg_color')->value(); ?>"<?php if($this->field('own_color')->value()): ?> style="background-color:<?= $bg_color_own; ?>"<?php endif; ?>></div><?php endif; ?>
+			</div>
+			<div class="mobile_image"><?php echo $this->field('image')->html(); ?></div>
+		</div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+function imagebarHeight() {
+	jQuery(".ce_text_image_bar").each(function() {
+		var fixHeight = jQuery(this).height();
+		var contentHeight = jQuery(this).find(".text-table").outerHeight();
+		if (contentHeight > fixHeight) {
+			jQuery(this).addClass("oversize");
+		} else {
+			jQuery(this).removeClass("oversize");
+		}
+	});
+};
+
+jQuery(document).ready(function(){
+	imagebarHeight();
+});
+
+jQuery(window).on("resize", function(){ 
+	imagebarHeight(); 
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

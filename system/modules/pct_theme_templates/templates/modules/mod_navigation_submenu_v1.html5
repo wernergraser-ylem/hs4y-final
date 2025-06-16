@@ -1,0 +1,5 @@
+<!-- indexer::stop -->
+<div class="submenu_v1 subnav <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<?= $this->items ?>
+</div>
+<!-- indexer::continue -->

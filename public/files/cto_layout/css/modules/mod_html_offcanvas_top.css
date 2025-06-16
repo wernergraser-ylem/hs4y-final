@@ -1,0 +1,153 @@
+/* =============================================================================
+ * offcanvas-top
+ * ========================================================================== */
+
+.offcanvas-trigger {
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	cursor: pointer;
+	height: 36px;
+	width: 36px;
+}
+
+.offcanvas-trigger:after {
+	position: absolute;
+	right: -25px;
+	top:-25px;
+	width: 50px;
+	content:'';
+	height: 50px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+	background-color: var(--accentColor);
+}
+
+.offcanvas-trigger .line1,
+.offcanvas-trigger .line2 {
+	position: absolute;
+	top: 50%;
+	background: #fff;
+	height: 2px;
+	width: 10px;
+	z-index: 10;
+	right: 5px;
+	margin-top: -7px;
+}
+
+.offcanvas-trigger .line2 {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+#offcanvas-top {
+	max-height: 0;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+	overflow: hidden;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	background: var(--accentColor);
+}
+
+#offcanvas-top,
+#offcanvas-top a {
+	color: rgba(255,255,255,0.8);
+}
+
+#offcanvas-top.offcanvas-top-open {
+	display: block;
+	max-height: 1000px;
+}
+
+.offcanvas-top-open.offcanvas-trigger .line2 {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+#offcanvas-top .offcanvas-top-inside {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	overflow: hidden;
+}
+
+#offcanvas-top .mod_login {
+	background: none;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+#offcanvas-top .mod_login input.submit,
+#offcanvas-top .mod_login button.submit {
+	width: auto;
+	background: rgba(0,0,0,0.1);
+}
+
+#offcanvas-top .autogrid.block {
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+#offcanvas-top .autogrid_wrapper {
+	margin-left: -2%;
+	margin-right: -2%;
+}
+
+#offcanvas-top h1,
+#offcanvas-top h2,
+#offcanvas-top h3,
+#offcanvas-top h4,
+#offcanvas-top h5,
+#offcanvas-top h6 {
+	color: rgb(255,255,255);
+	font-size: 1.6rem;
+}
+
+#offcanvas-top .mod_socials {
+	overflow: hidden;
+	display: inline-block;
+}
+
+#offcanvas-top .mod_socials a i {
+	padding: 0.6667rem;
+	margin-right: 1px;
+	background: rgba(255,255,255,0.05);
+	font-size: 1.333rem;
+	display: inline-block;
+	height: 2.667rem;
+	width: 2.667rem;
+	text-align: center;
+	float: left;
+	margin-bottom: 1px;
+}
+
+.offcanvas-top-inside .autogrid_wrapper,
+.offcanvas-top-inside .autogrid {
+	overflow: visible;
+}
+
+.offcanvas-top-inside .mod_login {
+	border-radius: 0;
+}
+
+#offcanvas-top .mod_login button {
+	padding: 0;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.offcanvas-trigger {
+		display: none;
+	}
+}
+
+

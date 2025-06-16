@@ -1,0 +1,4 @@
+</div></div>
+<div class="ce_bgimage_content_right">
+	<div class="bg_overlay <?php $GLOBALS['ce_bgimage_extended']['bg_color'] ?? ''; ?>"<?php if(isset($GLOBALS['ce_bgimage_extended']['bg_owncolor'])): ?> style="background-color:#<?php echo $GLOBALS['ce_bgimage_extended']['bg_owncolor'] ?? ''; ?>;"<?php endif; ?>></div>
+	<div class="ce_bgimage_content">	

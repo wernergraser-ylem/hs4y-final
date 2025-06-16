@@ -1,0 +1,98 @@
+<?php
+
+use PCT\AutoGrid\Controller;
+?>
+
+<div id="page_grid_presets" class="contao-ht35">
+	<!-- category select -->
+	<form action="<?= $this->action; ?>" class="tl_form" method='post'>
+	<input type="hidden" name="FORM_SUBMIT" value="tl_filter">
+	<input type="hidden" name="REQUEST_TOKEN" value="<?= Controller::request_token(); ?>">
+
+	<div class="tl_formbody">
+		<div class="tl_panel categories">
+		<div class="float_box"><?= $this->categoryWidget; ?></div>
+		<div class="float_box">
+			<?php
+			$img_reload = 'system/themes/flexible/icons/filter-apply.svg';
+			?>
+			<input type="image" name="filter" id="filter" src="<?= $img_reload; ?>" class="tl_img_submit" alt="ok">
+
+		</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+	</form>
+
+	<div id="tl_buttons"><?= $this->back ?></div>
+
+	<?php if($this->messages) :?>
+	<?= $this->messages; ?>
+	<?php endif; ?>
+
+	<div class="content_wrapper form_wrapper">
+
+		<div class="counter"><?= sprintf($GLOBALS['TL_LANG']['page_grid_preset']['counter'],count($this->elements)); ?></div>
+
+		<div class="inside grid_wrapper grid_size_<?= $this->columnCount; ?>">
+			<?php foreach($this->columns as $category => $arrColumns): ?>
+			<div class="category <?= $category; ?> block">
+				<h2><?= $GLOBALS['TL_LANG']['page_grid_preset']['categories'][$category] ?: $category; ?></h2>
+
+				<div class="items">
+					<?php foreach($arrColumns as $index => $arrElements): ?>
+					<div class="item item_<?= $index; ?> size_<?= $this->columnCount; ?>">
+						<?php foreach($arrElements as $i => $data): ?>
+						<div id="<?= $data['name']; ?>" class="<?= $data['class']; ?> block">
+							<div class="inside">
+								<?php 
+								$label = $data['label'];
+								if( $data['config']['grid']['desktop'] )
+								{
+									$label = $data['config']['grid']['desktop'];
+								}
+								if( $GLOBALS['TL_LANG']['autogrid_grid'][ $data['name'] ] )
+								{
+									$label = $GLOBALS['TL_LANG']['autogrid_grid'][ $data['name'] ];
+								}
+								?>
+								<div class="label"><?= $label; ?></div>
+
+								<!-- grid preview -->
+								<div class="grid_preview autogrid_grid <?= 'd_'.$data['name']; ?>">
+									<?php foreach(explode('_',$data['name']) as $i => $pct): ?>
+									<div class="column"><div class="attribute">&nbsp;</div></div>
+									<?php endforeach; ?>
+								</div>
+							</div>
+
+							<form action="<?= $this->action; ?>" id="form_<?= $data['name']; ?>" class="tl_form hidden" method='post'>
+							<input type="hidden" name="FORM_SUBMIT" value="GRID_PRESET">
+							<input type="hidden" name="REQUEST_TOKEN" value="<?= Controller::request_token(); ?>">
+							<input type="hidden" name="ELEMENT" value="<?= $data['name']; ?>">
+							</form>
+
+							<script>
+							// submit form
+							window.addEvent('domready', function()
+							{
+								$$('#<?= $data['name']; ?>').addEvent('click', function()
+								{
+									document.getElementById('form_<?= $data['name']; ?>').submit();
+								});
+							});
+							</script>
+						</div>
+						<?php endforeach; ?>
+					</div>
+					<?php endforeach; ?>
+				</div>
+
+
+				<div class="clear"></div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

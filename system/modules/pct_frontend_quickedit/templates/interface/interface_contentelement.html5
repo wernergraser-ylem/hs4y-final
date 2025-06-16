@@ -1,0 +1,17 @@
+<!-- indexer::stop -->
+<div id="<?= $this->selector; ?>_interface" class="pct_edit_interface <?= $this->Config->table; ?>" data-id="<?= $this->Config->id; ?>" data-table="<?= $this->Config->table; ?>" data-selector="<?= $this->selector; ?>"<?php if($this->clickToEdit): ?> data-clicktoedit="true"<?php endif; ?>>
+<div class="__info__ <?= $this->Config->type; ?> <?= $this->Config->table; ?>">
+<div>
+	<div><?= ($GLOBALS['TL_LANG']['CTE'][$this->Config->type][0] ?? $this->Config->type); ?></div>
+</div>
+</div>
+<div class="__buttons__ <?= $this->Config->table; ?> <?= $this->Config->type; ?>">
+	<?php if( isset($this->buttons['edit']) ): ?>
+	<?php $button = $this->buttons['edit']; ?>
+	<div class="edit __button__">
+	<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if($button['target']): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+	</div>
+	<?php endif;?>
+</div>
+</div>
+<!-- indexer::continue -->

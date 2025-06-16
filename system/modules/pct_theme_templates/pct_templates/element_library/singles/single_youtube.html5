@@ -1,0 +1,66 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_youtube',
+'category' => 'gallery_videos',
+'thumb' => '',
+'elements' => 'youtube',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+67 => 'youtube',
+68 => 'posterSRC',
+69 => 'playerSize',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+147 => 'youtubeOptions',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126253,
+1 => 14760,
+2 => 416,
+3 => 1700041014,
+5 => 'youtube',
+6 => 'a:2:{s:4:"unit";s:2:"h1";s:5:"value";s:0:"";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+67 => 'bU1QPtOZQZU',
+68 => '8c7e065a-4288-11e6-acef-a7c5e7344eed',
+69 => 'a:2:{i:0;s:3:"640";i:1;s:0:"";}',
+71 => 300,
+85 => '0.5',
+102 => '0.5',
+147 => 'a:1:{i:0;s:16:"youtube_autoplay";}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'8c7e065a-4288-11e6-acef-a7c5e7344eed' => 'files/cto_layout/img/delete_this/demo_default/background_image5.jpg',
+),
+);

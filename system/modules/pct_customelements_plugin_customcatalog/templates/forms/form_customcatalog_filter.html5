@@ -1,0 +1,44 @@
+<?php
+/**
+ * CustomCatalog filter formular template
+ */	
+?>
+
+<?php if($this->filters): ?>
+<!-- indexer::stop -->
+<div class="<?php echo $this->formClass; ?> <?php echo $this->tableless ? 'tableless' : 'tableform'; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <form<?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="<?php echo $this->formId; ?>" name="<?php echo $this->formName;?>" method="<?php echo $this->method; ?>" enctype="application/x-www-form-urlencoded" <?php echo $this->attributes; ?>>
+    <div class="formbody">
+      <?php if ($this->method != 'get'): ?>
+        <input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formSubmit; ?>">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+      <?php endif; ?>
+      <?php echo $this->hidden; ?>
+	  
+	  <?php foreach($this->filters as $name => $filter): ?>
+	  <?php echo $filter->html();?>
+	  <?php endforeach; ?>
+	  
+	  <?php if($this->hasSubmit): ?>
+      <div class="widget submit_container submit">
+      <?php echo $this->submit; ?>
+      </div>
+      <?php endif;?>
+      
+      <div class="widget submit_container clear_filters">
+      <?php echo $this->clear; ?>
+      </div>
+      
+      <div class="widget submit_container clearall clear_all_filters">
+      <?php echo $this->clearAll; ?>
+      </div>
+      
+    </div>
+  </form>
+
+</div>
+<!-- indexer::continue -->
+<?php else: ?>
+<p class="info empty"><?php echo $this->empty; ?></p>
+<?php endif; ?>

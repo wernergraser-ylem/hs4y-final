@@ -1,0 +1,17 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_pricecard.css|static';
+?>
+<div class="<?php echo $this->class; ?> block <?php echo $this->field('style')->value(); ?><?php if ($this->field('highlight')->value()): ?> highlight<?php endif; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_pricecard_inside">
+		<div class="pricecard_leftside block">
+			<?php echo $this->field('headline')->html(); ?>
+			<div class="price"><?php echo $this->field('price')->value(); ?></div>
+			<?php if ($this->field('link')->value()): ?>
+			<div class="ce_hyperlink"><?php echo $this->field('link')->html(); ?></div>
+			<?php endif; ?>
+		</div>
+		<div class="pricecard_rightside block">
+			<?php echo $this->field('description')->html(); ?>
+		</div>
+	</div>				
+</div>

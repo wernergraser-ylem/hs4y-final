@@ -1,0 +1,3 @@
+<div class="mod_mmenu_custom_nav {{FRONTEND_QUICKEDIT}}">
+	<?php echo $this->html; ?>
+</div>

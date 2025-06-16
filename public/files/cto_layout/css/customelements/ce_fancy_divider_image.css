@@ -1,0 +1,35 @@
+/* =============================================================================
+ * ce_fancy_divider_image
+ * ========================================================================== */
+
+.ce_fancy_divider_image .image_container img {
+	width: 100%;
+}
+
+.ce_fancy_divider_image.pos-absolute-top {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.ce_fancy_divider_image.pos-absolute-top svg {
+	vertical-align: top;
+}
+
+.ce_fancy_divider_image.pos-absolute-bottom {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -1px;
+	z-index: 10;
+}
+
+.ce_fancy_divider_image.pos-absolute-bottom svg {
+	vertical-align: bottom;
+}
+
+#slider .ce_fancy_divider_image.pos-absolute-bottom {
+	z-index: 100;
+}

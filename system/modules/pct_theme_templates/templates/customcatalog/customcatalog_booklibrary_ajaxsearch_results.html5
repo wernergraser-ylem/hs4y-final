@@ -1,0 +1,81 @@
+<?php $sum = 0; ?>
+<?php if(!$this->empty): ?>
+<div class="item-wrapper">
+	<ul>
+	<?php foreach($this->entries as $entry): ?>
+		<li class="item-inside">
+			<a href="<?php echo $entry->links('detail')->url; ?><?php if(!\Contao\Config::get('pct_themedesigner_hidden')): ?>?themedesigner_iframe=1<?php endif; ?>">
+				<div class="item-left">
+					<?php if($entry->field('image')->value()): ?><div class="image"><?php echo $entry->field('image')->html(); ?></div><?php endif; ?>
+				</div>
+				<div class="item-right">
+					<?php if($entry->field('name')->value()): ?><div class="name"><strong><?php echo $entry->field('name')->value(); ?></strong></div><?php endif; ?>
+					<?php if($entry->field('author')->value()): ?><div class="author"><?php echo $entry->field('author')->html(); ?></div><?php endif; ?>
+				</div>
+			</a>
+		</li>
+	<?php endforeach; ?>
+	</ul>
+</div>		
+<?php else: ?>
+<p class="info empty">Keine Artikel gefunden</p>
+<?php endif;?>
+
+<?php 
+/**
+ * Don't worry: The Javascript stuff will only be rendered when the ThemeDesigner is in edit mode
+ */	
+if(!\Contao\Config::get('pct_themedesigner_hidden')): ?>
+<?php $objThemeDesigner = new \PCT\ThemeDesigner; ?>
+
+<script>
+jQuery(document).ready(function() 
+{
+	jQuery('.item-wrapper a').click(function(event)
+	{
+		event.preventDefault();
+		
+		var strUrl = '<?= $GLOBALS['PCT_THEMEDESIGNER']['ajaxUrl']; ?>';
+		if(!strUrl)
+		{
+			strUrl = location.href;
+		}
+		
+		var url = jQuery(this).attr('href');
+		if(url === undefined || url == '')
+		{
+			return false;
+		}
+				
+		jQuery.ajax(
+		{
+			method	: "GET",
+			url		: strUrl,
+			data	: {'themedesigner':1,'action':'updateIframeUrl','url':url,'theme':'<?= $objThemeDesigner->getTheme(); ?>'},
+			success	: function(response)
+			{
+		   		if(url.indexOf('?') >= 0)
+		   		{
+			   		var tmp = url.split('?');
+			   		url = tmp[0];
+		   		}
+		   		
+		   		if(url.indexOf('?') >= 0)
+				{
+					url += '&themedesigner_iframe=1';
+				}
+				else
+				{
+					url +='?themedesigner_iframe=1';
+				}
+		   		
+		   		console.log('Redirect iframe to: '+url);
+		
+		   		jQuery('#themedesigner_iframe',parent.document).attr('src',url);
+		   }
+		});
+	});
+});
+</script>
+
+<?php endif; ?>

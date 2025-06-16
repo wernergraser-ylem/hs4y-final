@@ -1,0 +1,65 @@
+<div id="mod_login_top_opener_<?php echo $this->id; ?>" class="mod_login_top meta-nav"><i class="ti ti-lock"></i><?php if ($this->logout): ?><?php echo $GLOBALS['TL_LANG']['MSC']['logout'] ?><?php else: ?><?php echo $GLOBALS['TL_LANG']['MSC']['login'] ?><?php endif; ?></div>
+
+<div <?php echo $this->cssID; ?> class="<?php echo $this->class; ?> login top-login block"<?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div id="overlay_close_<?php echo $this->id; ?>" class="overlay_close"></div>
+	<form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> method="post">
+		<?php if ($this->headline): ?>
+		<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		<?php endif; ?>
+	    <div class="formbody">
+	    	<?php if ($this->message): ?>
+	        <p class="error"><?php echo $this->message; ?></p>
+			<?php endif; ?>
+			<input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId ?>">
+			<input type="hidden" name="REQUEST_TOKEN" value="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+			<input type="hidden" name="_target_path" value="<?= $this->targetPath ?>">
+			<input type="hidden" name="_always_use_target_path" value="<?= $this->forceTargetPath ?>">
+			<?php if ($this->logout): ?>
+			<p class="login_info"><?= $this->loggedInAs ?><br><?= $this->lastLogin ?></p>
+			 <?php else: ?>
+			<input type="text" name="username" class="text" value="<?php echo $this->value; ?>" placeholder="<?php echo $this->username; ?>">
+			<input type="password" name="password" class="text password" value="" placeholder="<?php echo $this->password; ?>">
+			<?php if ($this->autologin): ?>
+			<div class="autologin_container">
+				<input type="checkbox" name="autologin" value="1" class="checkbox" id="autologin_checkbox_<?php echo $this->id; ?>">
+				<label for="autologin_checkbox_<?php echo $this->id; ?>"><?php echo $this->autoLabel; ?></label>
+			</div>
+			<?php endif; ?>
+			<?php endif; ?>
+			<div class="submit_button">
+			   <input type="submit" class="submit" value="<?php echo $this->slabel; ?>">
+			</div>
+			<div class="link_reset_pwd">{{iflng::en}}<a href="#">Forgot your password?</a>{{iflng}}{{iflng::de}}<a href="#">Passwort vergessen?</a>{{iflng}}</div>
+			<div class="close" id="overlay_close_button_<?php echo $this->id; ?>"><i class="ti ti-close"></i></div>
+	    </div>
+	</form>
+
+<script>
+jQuery(document).ready(function()
+{
+	// show from on error
+	if( jQuery('.top-login .error').length > 0 )
+	{
+		jQuery(".top-login").addClass("show");
+	}
+	
+	jQuery("#mod_login_top_opener_<?php echo $this->id; ?>").click(function(e)
+	{
+    	e.preventDefault();
+    	jQuery(".top-login").addClass("show");
+	});
+	jQuery("#overlay_close_<?php echo $this->id; ?>").click(function(e){
+
+    	jQuery(".top-login").removeClass("show");
+	});
+	jQuery("#overlay_close_button_<?php echo $this->id; ?> i").click(function()
+	{
+    	jQuery(".top-login").removeClass("show");
+	});
+	jQuery(document).keyup(function(e) {
+		if (e.keyCode === 27) jQuery(".top-login").removeClass("show");
+	});
+});
+</script>
+
+</div>

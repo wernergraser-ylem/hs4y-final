@@ -1,0 +1,2 @@
+
+<input <?php echo $this->cssID ? $this->cssID : "id=ctrl_".$this->name; ?> <?php if($this->class): ?> class="<?php echo $this->class; ?>"<?php endif; ?> type="hidden" name="<?php echo $this->name; ?>" value="<?php echo $this->value; ?>">

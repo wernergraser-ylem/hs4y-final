@@ -1,0 +1,2 @@
+
+a.navigation.<?= $this->alias; ?>{background-image:url(<?= $this->icon; ?>); background-position: 11px center; background-repeat:no-repeat;}

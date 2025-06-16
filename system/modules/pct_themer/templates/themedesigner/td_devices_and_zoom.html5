@@ -1,0 +1,13 @@
+<div id="device_and_zoom">
+	<ul class="devices">
+		<li class="desktop<?php if($this->device == 'desktop'): ?> active <?php endif; ?>" data-value="desktop"></li>
+		<li class="tablet_portrait<?php if($this->device == 'tablet_portait'): ?> active <?php endif; ?>" data-value="tablet_portait"></li>
+		<li class="tablet_landscape<?php if($this->device == 'tablet_landscape'): ?> active <?php endif; ?>" data-value="tablet_landscape"></li>
+		<li class="mobile<?php if($this->device == 'mobile'): ?> active <?php endif; ?>" data-value="mobile"></li>
+	</ul>
+	<ul class="zoom">
+		<li class="z100<?php if($this->zoom == '100'): ?> active <?php endif; ?>" data-value="100">100%</li>
+		<li class="z75<?php if($this->zoom == '75'): ?> active <?php endif; ?>" data-value="75">75%</li>
+		<li class="z50<?php if($this->zoom == '50'): ?> active <?php endif; ?>" data-value="50">50%</li>
+	</ul>
+</div>

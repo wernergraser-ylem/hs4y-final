@@ -1,0 +1,70 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_productbox-2',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'productbox',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126538,
+1 => 14785,
+2 => 384,
+3 => 1700650725,
+5 => 'productbox',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:17:{s:15:"iwuvoha49kdze1k";a:2:{s:5:"value";s:18:"Productbox Style 2";s:4:"unit";s:2:"h3";}s:15:"0pl62zmat70jn1w";s:6:"UNISEX";s:15:"418jk3j8bllnf44";N;s:15:"vlm8c3pqrnf7fqa";s:9:"€ 19,90";s:15:"xg7s63lnckn1fe8";s:9:"€ 24,90";s:15:"vozzua92ys7w3c2";s:6:"/piece";s:15:"f3z44ki8o9issx2";s:5:"SALE!";s:15:"q06u4r7fgt9b6rq";s:36:"192145d2-8925-11ee-bdbf-5d443f6d67ba";s:19:"q06u4r7fgt9b6rq_alt";s:0:"";s:21:"q06u4r7fgt9b6rq_title";s:0:"";s:20:"q06u4r7fgt9b6rq_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"w9iycjbqvxcp7pt";N;s:20:"w9iycjbqvxcp7pt_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:14:"vd09cv3bi3phvg";s:0:"";s:21:"vd09cv3bi3phvg_target";s:0:"";s:23:"vd09cv3bi3phvg_linkText";s:0:"";s:14:"k22l2od3b4eag5";s:8:"version2";}s:6:"groups";a:5:{i:0;a:4:{s:5:"ident";s:5:"142_0";s:8:"group_id";i:142;s:11:"group_alias";s:4:"text";s:10:"attributes";a:7:{i:0;a:3:{s:4:"uuid";s:15:"iwuvoha49kdze1k";s:2:"id";i:881;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:15:"0pl62zmat70jn1w";s:2:"id";i:888;s:5:"alias";s:11:"subheadline";}i:2;a:3:{s:4:"uuid";s:15:"418jk3j8bllnf44";s:2:"id";i:882;s:5:"alias";s:4:"text";}i:3;a:3:{s:4:"uuid";s:15:"vlm8c3pqrnf7fqa";s:2:"id";i:890;s:5:"alias";s:5:"price";}i:4;a:3:{s:4:"uuid";s:15:"xg7s63lnckn1fe8";s:2:"id";i:1013;s:5:"alias";s:9:"price_old";}i:5;a:3:{s:4:"uuid";s:15:"vozzua92ys7w3c2";s:2:"id";i:891;s:5:"alias";s:9:"price_add";}i:6;a:3:{s:4:"uuid";s:15:"f3z44ki8o9issx2";s:2:"id";i:886;s:5:"alias";s:6:"banner";}}}i:1;a:4:{s:5:"ident";s:5:"402_0";s:8:"group_id";i:402;s:11:"group_alias";s:5:"image";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"q06u4r7fgt9b6rq";s:2:"id";i:880;s:5:"alias";s:5:"image";}}}i:2;a:4:{s:5:"ident";s:5:"334_0";s:8:"group_id";i:334;s:11:"group_alias";s:11:"hover_image";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"w9iycjbqvxcp7pt";s:2:"id";i:1012;s:5:"alias";s:11:"image_hover";}}}i:3;a:4:{s:5:"ident";s:5:"403_0";s:8:"group_id";i:403;s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"vd09cv3bi3phvg";s:2:"id";i:887;s:5:"alias";s:4:"link";}}}i:4;a:4:{s:5:"ident";s:5:"401_0";s:8:"group_id";i:401;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"k22l2od3b4eag5";s:2:"id";i:889;s:5:"alias";s:5:"style";}}}}s:6:"tstamp";i:1567424877;s:5:"alias";s:10:"productbox";s:5:"uuids";a:11:{i:0;s:15:"iwuvoha49kdze1k";i:1;s:15:"0pl62zmat70jn1w";i:2;s:15:"418jk3j8bllnf44";i:3;s:15:"vlm8c3pqrnf7fqa";i:4;s:15:"xg7s63lnckn1fe8";i:5;s:15:"vozzua92ys7w3c2";i:6;s:15:"f3z44ki8o9issx2";i:7;s:15:"q06u4r7fgt9b6rq";i:8;s:15:"w9iycjbqvxcp7pt";i:9;s:14:"vd09cv3bi3phvg";i:10;s:14:"k22l2od3b4eag5";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:86;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'192145d2-8925-11ee-bdbf-5d443f6d67ba' => 'files/cto_layout/img/element_library/product_1.jpg',
+),
+);

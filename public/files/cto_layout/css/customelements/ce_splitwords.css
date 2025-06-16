@@ -1,0 +1,75 @@
+/* =============================================================================
+ * ce_split_words
+ * ========================================================================== */
+
+.split-line-words {
+    overflow: hidden;
+}
+
+.ce_split_words .word_wrap {
+	overflow: hidden;
+	display: inline-flex;
+}
+
+.ce_split_words span.word {
+    display: inline-block;
+    transform: translateY(120%);
+}
+
+.ce_split_words a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.ce_split_words[data-align="left"] {
+  text-align: left;
+}
+
+.ce_split_words[data-align="center"] {
+  text-align: center;
+}
+
+.ce_split_words[data-align="right"] {
+  text-align: right;
+}
+
+/* data-color */
+.ce_split_words[data-color="accent-color"] {
+  color: var(--accentColor);
+}
+
+.ce_split_words[data-color="second-color"] {
+  color: var(--secondColor); /* korrigiert von var(--socondColor) */
+}
+
+.ce_split_words[data-color="white"] {
+  color: #ffffff;
+}
+
+.ce_split_words[data-color="black"] {
+  color: #000000;
+}
+
+.ce_split_words[data-color="light-gray"] {
+  color: #b4b4b4;
+}
+
+.ce_split_words[data-color="dark-gray"] {
+  color: #7f7f7f;
+}
+
+.ce_split_words[data-color="custom1"] {
+  color: var(--customColor1);
+}
+
+.ce_split_words[data-color="custom2"] {
+  color: var(--customColor2);
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+body.a11y-no-effects .ce_split_words span.word {transform: none;}

@@ -1,0 +1,32 @@
+
+<!-- SEO-SCRIPT-START -->
+<script>
+// create ThemeDesigner class object if not done yet
+if(typeof ThemeDesigner == undefined || typeof ThemeDesigner != 'object') {var ThemeDesigner = {};}
+// add ThemeDesigner getFonts method to return webfonts information
+ThemeDesigner.getFonts = function() 
+{
+	return '<?= $this->webfonts; ?>';
+}
+
+var token = localStorage.getItem('<?= $this->privacy_session_name; ?>');
+if( token == undefined )
+{
+	token = '';
+}
+// Opt-in
+if(token.indexOf(2) >= 0)
+{
+	jQuery('head').append('<link id="webfonts_optin" rel="stylesheet" href="https://fonts.googleapis.com/css?family=<?= $this->webfonts; ?>">');
+}
+
+// listen to Eclipse.user_privacy Event
+jQuery(document).on('Eclipse.user_privacy',function(event,params)
+{
+	if(params.level.indexOf(2) >= 0)
+	{
+		jQuery('head').append('<link id="webfonts_optin" rel="stylesheet" href="https://fonts.googleapis.com/css?family=<?= $this->webfonts; ?>">');
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

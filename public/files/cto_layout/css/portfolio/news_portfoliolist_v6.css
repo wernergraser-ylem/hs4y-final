@@ -1,0 +1,114 @@
+/* =============================================================================
+ * mod_portfoliolist_v6
+ * ========================================================================== */
+
+.mod_portfoliolist_v6.isotope {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+ .mod_portfoliolist_v6 .item {
+ 	overflow: hidden;
+ }
+
+.mod_portfoliolist_v6.portfolio-col2 .item {
+	width: 50%;
+}
+
+.mod_portfoliolist_v6.portfolio-col3 .item {
+	width: 33.33%;
+}
+
+.mod_portfoliolist_v6.portfolio-col4 .item {
+	width: 25%;
+}
+
+.mod_portfoliolist_v6.portfolio-col2 .item.wide {
+	width: 100%;
+}
+
+.mod_portfoliolist_v6.portfolio-col3 .item.wide {
+	width: 66.56%;
+}
+
+.mod_portfoliolist_v6.portfolio-col4 .item.wide {
+	width: 50%;
+}
+
+.mod_portfoliolist_v6 .item.tall {
+	height: 500px;
+}
+
+.mod_portfoliolist_v6 .item {
+	height: 250px;
+}
+
+.mod_portfoliolist_v6 .item a {
+	color: #fff;
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+.mod_portfoliolist_v6 .item .image {
+	background-position: center center;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.mod_portfoliolist_v6 .item .image:after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: rgba(0,0,0,0.8);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	-webkit-transition: opacity 0.3s ease;
+}
+
+.mod_portfoliolist_v6 .item:hover .image:after {
+	opacity: 1;
+}
+
+.mod_portfoliolist_v6 .item .info {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 25px;
+}
+
+.mod_portfoliolist_v6 .item .info .title {
+	color: rgb(255,255,255);
+	margin-left: -100%;
+	opacity: 0;
+	margin-bottom: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	font-weight: bold;
+}
+
+.mod_portfoliolist_v6 .item .info .subline {
+	color: rgb(255,255,255);
+	margin-left: -100%;
+	opacity: 0;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+}
+
+.mod_portfoliolist_v6 .item:hover .info .title,
+.mod_portfoliolist_v6 .item:hover .info .subline {
+	margin-left: 0;
+	opacity: 1;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.mod_portfoliolist_v6 .item {
+		width: 100%!important;
+		height: 350px!important;
+	}
+}

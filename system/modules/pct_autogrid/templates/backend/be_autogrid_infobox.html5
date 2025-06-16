@@ -1,0 +1,5 @@
+<?php if($this->autogrid): ?>
+<div class="infobox">
+<?= $this->autogrid_css; ?>
+</div>
+<?php endif; ?>

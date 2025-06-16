@@ -1,0 +1,23 @@
+<!-- indexer::stop -->
+<div id="<?= $this->selector; ?>_interface" class="pct_edit_interface <?= $this->Config->table; ?>" data-id="<?= $this->Config->id; ?>" data-table="<?= $this->Config->table; ?>" data-selector="<?= $this->selector; ?>"<?php if($this->clickEoEdit): ?> data-clicktoedit="true"<?php endif; ?>>
+<div class="__info__ <?= $this->Config->table; ?>">
+<div>
+	<div>{{ifnlng::de}}Article{{ifnlng}}{{iflng::de}}Artikel{{iflng}}</div>
+</div>
+</div>
+<div class="__buttons__ <?= $this->Config->table; ?>">
+	<?php $button = $this->buttons['edit']; ?>
+	<div class="edit __button__">
+	<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if($button['target']): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+	</div>
+	<?php $button = $this->buttons['edit_node']; ?>
+	<div class="edit_node __button__">
+	<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if($button['target']): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+	</div>
+	<?php $button = $this->buttons['editheader']; ?>
+	<div class="editheader __button__">
+	<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if($button['target']): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+	</div>
+</div>
+</div>
+<!-- indexer::continue -->

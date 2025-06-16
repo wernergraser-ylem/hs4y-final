@@ -1,0 +1,3 @@
+<div class="be_customelement_widget be_customelement_wildcard">
+<?= $this->value; ?>
+</div>

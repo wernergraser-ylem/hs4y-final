@@ -1,0 +1,67 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_pricelist
+*/
+$arrImport = array (
+'tstamp' => '16.08.2024 10:49',
+'name' => 'single_pricelist',
+'category' => 'tables_lists',
+'thumb' => '',
+'elements' => 'pricelist',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+60 => 'com_template',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 126093,
+1 => 14748,
+2 => 256,
+3 => 1699865434,
+5 => 'pricelist',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+60 => 'com_default',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_6',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+96 => '14',
+98 => '0.5',
+156 => 'a:8:{s:6:"values";a:19:{s:15:"gqmauxqzwgspsli";s:15:"Small Breakfast";s:15:"boa9ib66khzf3zf";s:4:"8.99";s:15:"2qs9x1addd6kwj6";s:54:"Lorem ipsum dolor sit amet, consectetuer adipiscing el";s:16:"dhclc7i56uconpch";s:13:"Big Breakfast";s:16:"lzhgvz4ytow3mln6";s:5:"14.98";s:16:"dip63qo627cl9wl1";s:26:"Lorem ipsum dolor sit amet";s:16:"k5uvzgk6ayoxkncl";s:8:"Dinner I";s:16:"2hpbteoeo8944z12";s:4:"9.99";s:16:"z9b1paymsvq4or87";s:54:"Lorem ipsum dolor sit amet, consectetuer adipiscing el";s:16:"ocr4zf8q2sxaz3br";s:9:"Dinner II";s:16:"loazombx15yig4zl";s:5:"12.99";s:16:"obw4d0ghlnz8ioul";s:40:"Lorem ipsum dolor sit amet, consectetuer";s:16:"d17tg1nymd7iq7wh";s:15:"Small Breakfast";s:15:"6h1p66xeutb70js";s:4:"8.99";s:16:"pmi8oitghutktocv";s:54:"Lorem ipsum dolor sit amet, consectetuer adipiscing el";s:15:"38rcrxbskl94x92";N;s:15:"e8dutwn6qk2vey4";N;s:15:"oo0dt3rehlas64c";N;s:15:"7ypz3sdfxgeerif";N;}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:5:"106_0";s:8:"group_id";i:106;s:11:"group_alias";s:4:"item";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:16:"d17tg1nymd7iq7wh";s:2:"id";i:595;s:5:"alias";s:5:"label";}i:1;a:3:{s:4:"uuid";s:16:"pmi8oitghutktocv";s:2:"id";i:597;s:5:"alias";s:7:"subline";}i:2;a:3:{s:4:"uuid";s:15:"6h1p66xeutb70js";s:2:"id";i:596;s:5:"alias";s:5:"price";}}}i:1;a:7:{s:5:"ident";s:5:"106_1";s:8:"group_id";i:106;s:11:"group_alias";s:4:"item";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:16:"ocr4zf8q2sxaz3br";s:2:"id";i:595;s:5:"alias";s:7:"label#1";}i:1;a:3:{s:4:"uuid";s:16:"obw4d0ghlnz8ioul";s:2:"id";i:597;s:5:"alias";s:9:"subline#1";}i:2;a:3:{s:4:"uuid";s:16:"loazombx15yig4zl";s:2:"id";i:596;s:5:"alias";s:7:"price#1";}}s:6:"isCopy";i:1;s:6:"pgroup";s:3:"106";s:7:"numCopy";i:1;}i:2;a:7:{s:5:"ident";s:5:"106_2";s:8:"group_id";i:106;s:11:"group_alias";s:4:"item";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:16:"k5uvzgk6ayoxkncl";s:2:"id";i:595;s:5:"alias";s:7:"label#2";}i:1;a:3:{s:4:"uuid";s:16:"z9b1paymsvq4or87";s:2:"id";i:597;s:5:"alias";s:9:"subline#2";}i:2;a:3:{s:4:"uuid";s:16:"2hpbteoeo8944z12";s:2:"id";i:596;s:5:"alias";s:7:"price#2";}}s:6:"isCopy";i:1;s:6:"pgroup";s:3:"106";s:7:"numCopy";i:2;}i:3;a:7:{s:5:"ident";s:5:"106_3";s:8:"group_id";i:106;s:11:"group_alias";s:4:"item";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:16:"dhclc7i56uconpch";s:2:"id";i:595;s:5:"alias";s:7:"label#3";}i:1;a:3:{s:4:"uuid";s:16:"dip63qo627cl9wl1";s:2:"id";i:597;s:5:"alias";s:9:"subline#3";}i:2;a:3:{s:4:"uuid";s:16:"lzhgvz4ytow3mln6";s:2:"id";i:596;s:5:"alias";s:7:"price#3";}}s:6:"isCopy";i:1;s:6:"pgroup";s:3:"106";s:7:"numCopy";i:3;}}s:6:"clones";a:3:{i:595;a:3:{i:1;s:16:"ocr4zf8q2sxaz3br";i:2;s:16:"k5uvzgk6ayoxkncl";i:3;s:16:"dhclc7i56uconpch";}i:596;a:3:{i:1;s:16:"loazombx15yig4zl";i:2;s:16:"2hpbteoeo8944z12";i:3;s:16:"lzhgvz4ytow3mln6";}i:597;a:3:{i:1;s:16:"obw4d0ghlnz8ioul";i:2;s:16:"z9b1paymsvq4or87";i:3;s:16:"dip63qo627cl9wl1";}}s:6:"tstamp";i:1567424822;s:5:"alias";s:9:"pricelist";s:5:"uuids";a:12:{i:0;s:16:"d17tg1nymd7iq7wh";i:1;s:16:"pmi8oitghutktocv";i:2;s:15:"6h1p66xeutb70js";i:3;s:16:"ocr4zf8q2sxaz3br";i:4;s:16:"k5uvzgk6ayoxkncl";i:5;s:16:"dhclc7i56uconpch";i:6;s:16:"loazombx15yig4zl";i:7;s:16:"2hpbteoeo8944z12";i:8;s:16:"lzhgvz4ytow3mln6";i:9;s:16:"obw4d0ghlnz8ioul";i:10;s:16:"z9b1paymsvq4or87";i:11;s:16:"dip63qo627cl9wl1";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:70;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+);

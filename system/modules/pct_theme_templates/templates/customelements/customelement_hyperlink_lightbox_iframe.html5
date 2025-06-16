@@ -1,0 +1,22 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_hyperlink-extended.css|static';
+$lightbox = $this->field('link')->option('lightbox');
+if( $this->field('link')->option('lightbox') )
+{
+	if( strpos($lightbox, 'data-lightbox') !== false )
+	{
+		$lightbox = str_replace('data-', '',$lightbox);	
+	}	
+	$lightbox = ' data-lightbox-iframe="'.$lightbox.'"';
+}
+$own_color = '';
+if( $this->field('own_color')->value() )
+{
+	// compile color
+	$color = $this->field('own_color')->attribute()->compileColor( $this->field('own_color')->value() );
+	$own_color = $color->rgba;
+}
+?>
+<div class="ce_hyperlink <?php echo $this->class; ?> block <?php echo $this->field('align')->value(); ?> <?php echo $this->field('border-radius')->value(); ?> <?php echo $this->field('size')->value(); ?><?php if($this->field('icon-animated')->value()): ?> btn-animated<?php endif; ?><?php if($this->field('expand')->value()): ?> expand<?php endif; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<a href="<?php echo $this->field('link')->value(); ?>" class="hyperlink_txt <?php echo $this->field('schema')->value(); ?>"<?php if($this->field('link')->option('titleText')): ?> title="<?php echo $this->field('link')->option('titleText'); ?>"<?php endif; ?><?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?php echo $lightbox; ?><?php endif; ?><?php if($this->field('own_color')->value()): ?> style="background:<?= $own_color; ?>;border-color:<?= $own_color; ?>;"<?php endif; ?>><?php if($this->field('icon')->value()): ?><i class="<?php echo $this->field('icon')->value(); ?>"></i><?php endif; ?><?php if($this->field('link')->option('linkText')): ?><?php echo $this->field('link')->option('linkText'); ?><?php else: ?>{{page::title}}<?php endif; ?></a>
+</div>

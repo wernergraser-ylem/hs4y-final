@@ -1,0 +1,3 @@
+<div class="mod_socials <?= $this->class ?>" {{FRONTEND_QUICKEDIT}}>
+	<?php echo $this->html; ?>
+</div>

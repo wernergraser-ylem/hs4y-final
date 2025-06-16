@@ -1,0 +1,25 @@
+
+
+<!-- SEO-SCRIPT-START -->
+<script>
+// Optin privacy setting token
+var token = localStorage.getItem('user_privacy_settings');
+if( token == undefined )
+{
+	token = '';
+}
+if(token.indexOf(2) >= 0)
+{
+	jQuery('head').append('<link id="webfonts_optin" rel="stylesheet" href="https://fonts.googleapis.com/css?family=<?= $this->webfonts; ?>">');
+}
+
+// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(2) >= 0)
+	{
+		jQuery('head').append('<link id="webfonts_optin" rel="stylesheet" href="https://fonts.googleapis.com/css?family=<?= $this->webfonts; ?>">');
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

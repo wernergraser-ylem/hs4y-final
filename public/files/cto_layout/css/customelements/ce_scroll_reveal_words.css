@@ -1,0 +1,62 @@
+/* =============================================================================
+ * ce_scroll_reveal_words
+ * ========================================================================== */
+
+.ce_scroll_reveal_words a span {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.ce_scroll_reveal_words[data-visible-on-start="1"] span.word {
+  opacity: 0.2
+}
+
+.ce_scroll_reveal_words span.word {
+	opacity: 0;
+	white-space: nowrap;
+}
+
+.ce_scroll_reveal_words[data-align="left"] {
+  text-align: left;
+}
+
+.ce_scroll_reveal_words[data-align="center"] {
+  text-align: center;
+}
+
+.ce_scroll_reveal_words[data-align="right"] {
+  text-align: right;
+}
+
+/* data-color */
+.ce_scroll_reveal_words[data-color="accent-color"] {
+  color: var(--accentColor);
+}
+
+.ce_scroll_reveal_words[data-color="second-color"] {
+  color: var(--secondColor);
+}
+
+.ce_scroll_reveal_words[data-color="white"] {
+  color: #ffffff;
+}
+
+.ce_scroll_reveal_words[data-color="black"] {
+  color: #000000;
+}
+
+.ce_scroll_reveal_words[data-color="light-gray"] {
+  color: #b4b4b4;
+}
+
+.ce_scroll_reveal_words[data-color="dark-gray"] {
+  color: #7f7f7f;
+}
+
+.ce_scroll_reveal_words[data-color="custom1"] {
+  color: var(--customColor1);
+}
+
+.ce_scroll_reveal_words[data-color="custom2"] {
+  color: var(--customColor2);
+}

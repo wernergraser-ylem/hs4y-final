@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<xliff version="1.1">
+	<file datatype="php" original="system/modules/revolutionslider/languages/en/modules.php" source-language="en">
+		<body>
+			<!-- Back end modules -->
+			<trans-unit id="MOD.revolutionslider.0">
+				<target>Revolution Slider</target>
+			</trans-unit>
+			
+			<!-- Content elements -->
+			<trans-unit id="CTE.revolutionslider_node">
+				<target>Revolution Slider</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider.0">
+				<target>Revolution Slider</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider.1">
+				<target>Insert a RevolutionSlider element</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_video.0">
+				<target>Revolution Slider Video</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_video.1">
+				<target>Insert a RevolutionSlider video-element</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_text.0">
+				<target>Revolution Slider Text</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_text.1">
+				<target>Insert a RevolutionSlider text-element</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_image.0">
+				<target>Revolution Slider Bild</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_image.1">
+				<target>Ein RevolutionSlider Bild-Element einfügen</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_hyperlink.0">
+				<target>Revolution Slider Hyperlink</target>
+			</trans-unit>
+			<trans-unit id="CTE.revolutionslider_hyperlink.1">
+				<target>Insert a RevolutionSlider hyperlink-element</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

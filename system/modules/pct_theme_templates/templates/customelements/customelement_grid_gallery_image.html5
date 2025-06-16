@@ -1,0 +1,66 @@
+<?php 
+$container = \Contao\System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+
+$file = \Contao\FilesModel::findByPk( $this->field('image')->value() );
+$meta = array();
+
+$strImage = $this->field('image')->generate();
+if( $file !== null )
+{
+	$tmp = \Contao\StringUtil::deserialize( $file->meta );
+	if( isset($tmp[ $GLOBALS['TL_LANGUAGE'] ]) )
+	{
+		$meta = $tmp[ $GLOBALS['TL_LANGUAGE'] ];
+	}
+	unset($tmp);
+	
+	$size = \Contao\StringUtil::deserialize( $this->field('image')->option('size') );
+	if( is_array($size) )
+	{
+		$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $file->path, $size);
+		$sources = $objPicture->getSources($projectDir, $staticUrl);
+		if( $objPicture !== null && !empty($sources) )
+		{
+			// look up prefered source image file (not media query)
+			foreach($sources ?: array() as $data)
+			{
+				if( (isset($data['src']) && $data['src']) != $strImage && (!isset($data['media']) || strlen($data['media']) < 1) )
+				{
+					$strImage = $data['src'];
+				}
+			}
+		}
+	}
+}
+if( $this->field('image')->option('alt') )
+{
+	$meta['alt'] = $this->field('image')->option('alt');
+}
+if( $this->field('image')->option('title') )
+{
+	$meta['title'] = $this->field('image')->option('title');
+}
+?>
+<li <?= $this->cssID; ?> class="grid-item <?= $this->class; ?> <?php echo $this->field('style')->value(); ?><?php if($this->field('valign')->value()): ?> <?php echo $this->field('valign')->value(); ?><?php endif; ?><?php if($this->field('halign')->value()): ?> <?php echo $this->field('halign')->value(); ?><?php endif; ?><?php if($this->field('image_height')->value()): ?> <?php echo $this->field('image_height')->value(); ?><?php endif; ?><?php if($this->field('image_width')->value()): ?> <?php echo $this->field('image_width')->value(); ?><?php endif; ?><?php if($this->field('desc')->value()): ?> has-content<?php endif; ?><?php if($this->field('invert')->value()): ?> color-white<?php endif; ?><?php if($this->field('image')->value() ==''): ?> no-background-image<?php endif; ?>"<?php if($this->field('image')->value()): ?> style="background-image: url(<?= $strImage; ?>)"<?php endif; ?>>
+<?php if($this->field('lightbox')->value() && !$this->field('link')->value()): ?>
+<a href="<?= $file->path ?? ''; ?>" data-lightbox="grid-gallery_<?php echo $GLOBALS['grid_gallery_start_id']; ?>" class="lightbox-link"<?php if(isset($meta['title'])): ?> title="<?= $meta['title']; ?>"<?php endif; ?>>
+<?php endif; ?>
+<?php if($this->field('link')->value()): ?>
+<a href="<?php echo $this->field('link')->value(); ?>" class="lightbox-link"<?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?>>
+<?php endif; ?>
+<?php if($this->field('lightbox')->value() || $this->field('link')->value() || $this->field('title')->value() || $this->field('desc')->value()): ?>
+<div class="ce_grid_gallery_overlay">
+	<div class="ce_grid_gallery_overlay_inside">
+	<?php if($this->field('lightbox')->value() || $this->field('link')->value()): ?><i></i><?php endif; ?>
+<?php endif; ?>
+<?php if($this->field('title')->value()): ?><div class="title font_headline <?php if($this->field('title_size')->value()): ?><?php echo $this->field('title_size')->value(); ?><?php else: ?>font-size-s<?php endif; ?>"><?php echo $this->field('title')->html(); ?></div><?php endif; ?>
+<?php if($this->field('desc')->value()): ?><div class="desc <?php echo $this->field('text_size')->value(); ?>"><?php echo $this->field('desc')->html(); ?></div><?php endif; ?>
+<?php if($this->field('link')->option('linkText')): ?><div class="linktext <?php echo $this->field('text_size')->value(); ?>"><?php echo $this->field('link')->option('linkText'); ?></div><?php endif; ?>
+<?php if($this->field('lightbox')->value() || $this->field('link')->value() || $this->field('title')->value() || $this->field('desc')->value()): ?>
+	</div>
+</div>
+<?php endif; ?>
+<?php if($this->field('link')->value() || $this->field('lightbox')->value()): ?></a><?php endif; ?>
+</li>

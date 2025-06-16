@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_leadertext-2
+*/
+$arrImport = array (
+'tstamp' => '11.12.2023 08:19',
+'name' => 'single_leadertext-2',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'leadertext',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 127054,
+1 => 14823,
+2 => 384,
+3 => 1702282694,
+5 => 'leadertext',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:6:{s:15:"434nqkxq2rdu4ua";a:2:{s:5:"value";s:20:"Leadertext Version 2";s:4:"unit";s:2:"h1";}s:14:"s4mkuyq1320do0";s:11:"Subheadline";s:15:"ba4s18ce9pyle66";s:174:"<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>";s:14:"0ow1gsh5foqklh";s:8:"version1";s:15:"p2bi1x0dtze19cv";s:12:"align-center";s:13:"0kzllmkl3hzzc";s:6:"before";}s:6:"groups";a:2:{i:0;a:4:{s:5:"ident";s:4:"56_0";s:8:"group_id";i:56;s:11:"group_alias";s:4:"text";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"434nqkxq2rdu4ua";s:2:"id";i:317;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:14:"s4mkuyq1320do0";s:2:"id";i:352;s:5:"alias";s:11:"subheadline";}i:2;a:3:{s:4:"uuid";s:15:"ba4s18ce9pyle66";s:2:"id";i:318;s:5:"alias";s:4:"text";}}}i:1;a:4:{s:5:"ident";s:5:"354_0";s:8:"group_id";i:354;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:14:"0ow1gsh5foqklh";s:2:"id";i:316;s:5:"alias";s:6:"schema";}i:1;a:3:{s:4:"uuid";s:15:"p2bi1x0dtze19cv";s:2:"id";i:319;s:5:"alias";s:5:"align";}i:2;a:3:{s:4:"uuid";s:13:"0kzllmkl3hzzc";s:2:"id";i:353;s:5:"alias";s:20:"subheadline-position";}}}}s:6:"tstamp";i:1701956982;s:5:"alias";s:10:"leadertext";s:5:"uuids";a:6:{i:0;s:15:"434nqkxq2rdu4ua";i:1;s:14:"s4mkuyq1320do0";i:2;s:15:"ba4s18ce9pyle66";i:3;s:14:"0ow1gsh5foqklh";i:4;s:15:"p2bi1x0dtze19cv";i:5;s:13:"0kzllmkl3hzzc";}s:7:"version";s:5:"5.0.0";s:13:"customelement";i:33;}',
+162 => 'sourceText',
+),
+),
+);

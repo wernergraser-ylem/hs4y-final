@@ -1,0 +1,59 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_splitwords.css';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/eclipsex/fx/core.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/eclipsex/fx/waypoint/js/scripts.js';
+
+$objInserTag = \Contao\System::getContainer()->get('contao.insert_tag.parser');
+
+$element = $this->field('markup')->value() ?? 'div';
+if( strpos($element,'.') !== false )
+{
+    $element = 'div';
+}
+?>
+<<?= $element; ?> class="<?= $this->class; ?> <?= str_replace('.', '', $this->field('markup')->value()); ?> ce_split_words_<?= $this->id; ?>" data-align="<?= $this->field('align')->value(); ?>" data-color="<?= $this->field('color')->value(); ?>" data-speed="<?= $this->field('speed')->value(); ?>">
+<?php 
+// split text
+$arrChunks = \explode(' ', $this->field('text')->value() ?? array());
+$arrSpans = array();
+foreach ($arrChunks as $chunk) {
+    // replace inserttags
+    $chunk = \trim($objInserTag->replace($chunk) ?? '');
+    $chunk = \nl2br($chunk);
+	foreach (\explode('<br />', $chunk) as $index => $part) 
+	{
+		if ($index > 0) 
+		{
+            $arrSpans[] = '<br />';
+        }
+        $arrSpans[] = '<span class="word_wrap"><span class="word">'.$part.'</span></span>';
+    }
+}
+$text = \implode(' ', $arrSpans);
+?>
+<?= $text; ?>
+</<?= $element; ?>>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{
+	const speed = '1.2s';
+    const delay = '0.5s';
+	var selector = '.ce_split_words_<?= $this->id; ?>';
+	var element = jQuery(selector);
+	const spans = element.find('span.word_wrap span.word');
+	var waypoint = EX.fx.waypoint(selector);
+	jQuery(selector).on('intersecting',function(e,params)
+	{
+		setTimeout(() =>
+		{
+			jQuery.each(spans, function (index, elem)
+			{ 
+				jQuery(elem).css('animation', `slideUp ${speed} cubic-bezier(0.25,1,0.5,1) ${index * 0.1}s forwards`);
+			});
+		}, parseFloat(delay) * 1000);
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

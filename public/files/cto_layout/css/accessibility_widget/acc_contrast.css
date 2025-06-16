@@ -1,0 +1,932 @@
+/* =============================================================================
+ * css vars
+ * ========================================================================== */
+
+:root {
+	--highContrastColor: black;
+	--bgColorLightGray: #fff!important;
+	--bgColorGray: #fff!important;
+	--bgColorDarkGray: #000!important;
+	--accentColor: #000!important;
+	--footer-headline-color:#fff!important;
+	--headerBgColor: #000;
+	--headerTxtColor: #fff;
+	--accentColor: var(--highContrastColor)!important;
+	--secondColor: #1B1F3B!important;
+	--mainmenuActivColor: red;
+}
+
+/* =============================================================================
+ * a11y helper classes
+ * ========================================================================== */
+
+.mod_article.a11y-bg-dark {
+	background: #000!important;
+}
+
+.mod_article.a11y-bg-light {
+	background: #fff!important;
+}
+
+.a11y-force-bg-dark,
+.a11y-force-bg-dark * {
+	background: #000!important
+}
+
+.a11y-force-bg-light,
+.a11y-force-bg-light * {
+	background: #fff!important
+}
+
+.mod_article.a11y-bg-dark .article-overlay,
+.mod_article.a11y-bg-light .article-overlay {
+	display: none;
+}
+
+.ce_bgimage.a11y-bg-dark .ce_bgimage-image {
+	background: #000!important;
+}
+
+.ce_bgimage.a11y-bg-light .ce_bgimage-image {
+	background: #fff!important;
+}
+
+.a11y-txt-dark,
+.a11y-txt-dark * {
+	color: #000!important;
+}
+
+.a11y-txt-light,
+.a11y-txt-light * {
+	color: #fff!important;
+}
+
+.ce_hyperlink.a11y-btn-light a {
+	background: #fff!important;
+	color: #000!important;
+}
+
+.ce_hyperlink.a11y-btn-dark a {
+	background: #000!important;
+	color: #fff!important;
+}
+
+/* =============================================================================
+ * top / header / footer / bottom
+ * ========================================================================== */
+
+#top, 
+#top .inside {
+	background: var(--highContrastColor)!important;
+}
+
+#top, 
+#top *,
+#top .mod_top_mail a,
+#top .mod_socials a i {
+	color: #fff!important;
+}
+
+.header,
+.header .inside {
+	background: var(--headerBgColor)!important;
+}
+
+#footer {
+	background: var(--highContrastColor)!important;
+}
+
+#footer,
+#footer *,
+#footer a,
+#footer a:hover {
+	color: #fff!important;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+#footer .mod_socials a i {
+	background: #fff;
+	color: var(--highContrastColor)!important;
+}
+
+#bottom {
+	background: var(--highContrastColor)!important;
+}
+
+#bottom
+#bottom *,
+#bottom p,
+#bottom a,
+#bottom .inside,
+#bottom .inside a,
+#bottom h1,
+#bottom h2,
+#bottom h3,
+#bottom h4,
+#bottom h5,
+#bottom h6 {
+	color: #fff!important;
+}
+
+#bottom .inside a:hover {
+	color: #fff!important;
+}
+
+.newslist-timeline-both .newslist-timeline-date {
+	background: var(--highContrastColor)!important;
+	color: #fff!important;
+}
+
+/* =============================================================================
+ * menu
+ * ========================================================================== */
+
+.header .mainmenu ul li a, 
+.header .mainmenu ul li ul a.active, 
+.header .ce_search_label i, 
+.header .mod_langswitcher .mod_langswitcher_inside, 
+.header .header_metanavi a, 
+.header .mod_socials a {
+	color: var(--headerTxtColor)!important;
+}
+
+.header .mainmenu ul li a span {
+	background: none!important;
+}
+
+/* =============================================================================
+ * headlines
+ * ========================================================================== */
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+.h1,
+.h2, 
+.h3, 
+.h4, 
+.h5, 
+.h6, 
+.font_headline,
+body {
+	color: var(--highContrastColor);
+}
+
+/* =============================================================================
+ * elements
+ * ========================================================================== */
+
+/* black */
+.color-accent,
+.color-accent p,
+.color-accent i,
+.color-accent h1,
+.color-accent h2,
+.color-accent h3,
+.color-accent h4,
+.color-accent h5,
+.color-accent h6,
+.color-accent a:not(.link-white),
+.label-secondary,
+.label-info,
+a,
+p a,
+.mainmenu ul li a,
+.mainmenu ul li a.trail,
+.mainmenu ul li a.active,
+.mainmenu ul ul li a,
+.subnav a,
+.pagination li a:hover,
+blockquote a,
+.ce_revolutionslider_hyperlink.outline-dark,
+.ce_table table tfoot td,
+hr.divider_1,
+hr.divider_2,
+hr.divider_3,
+.ce_downloads a span.size,
+.ce_accordion .toggler:hover,
+.ce_accordion .toggler:before,
+.ce_accordion_v2 .toggler:not(.ui-state-active):hover,
+.ce_hyperlink a.link-white,
+a.btn.link-white,
+.ce_hyperlink a.link-white.outline:hover,
+a.btn.link-white.outline:hover,
+.ce_hyperlink a.outline,
+a.btn.outline,
+.ce_hyperlink a.secondary,
+a.btn.secondary,
+.ce_hyperlink a.info,
+a.btn.info,
+.mod_eventreader .info,
+.mod_eventlist_v2 .location,
+.mod_eventlist_v3 .meta-info,
+.mod_faqpage h3:before,
+.newslist .author,
+.newslist .news-dat,
+.newslist .comments,
+.newslist h2,
+.newslist h2 a,
+.subheadline-v2,
+.newslist-v2 .info,
+.newslist-v3 .subheadline,
+.newslist-v3 .info,
+.newslist-v3.news-cat-1 .subheadline,
+.newslist-v3.news-cat-2 .subheadline,
+.newslist-v3.news-cat-3 .subheadline,
+.newslist-v3.news-cat-4 .subheadline,
+.newslist-v4 .info,
+.newslist-v5 .subheadline,
+.newslist-v5 .news-date,
+.newslist-v6 .news-info,
+.newslist-timeline .info,
+.newslist-timeline-both .info div,
+.newsteaser .info,
+.newsteaser_v2 .author,
+.newsteaser_v2 .comments,
+.newsteaser_v3 .info,
+.newsteaser-v4 .subheadline,
+.newsteaser-v4 .info,
+.newsteaser-v4 .info,
+.newsteaser-v4.news-cat-1 .subheadline,
+.newsteaser-v4.news-cat-2 .subheadline,
+.newsteaser-v4.news-cat-3 .subheadline,
+.newsteaser-v4.news-cat-4 .subheadline,
+.newsteaser_v8 .date,
+.newsteaser_v8 .comments,
+.mod_portfoliolist .item .linkbar a:hover,
+.mod_portfoliolist_v7 .teaser,
+.mod_portfoliolist_v7 .item:hover .item-bottom a,
+.cd-horizontal-timeline .info,
+form span.mandatory,
+.newslist .news-date {
+	color: var(--highContrastColor);
+}
+
+/* black - important */
+.color-gray,
+.color-gray p,
+.color-gray i,
+.color-gray h1,
+.color-gray h2,
+.color-gray h3,
+.color-gray h4,
+.color-gray h5,
+.color-gray h6,
+.color-gray a:not(.link-white),
+.color-darkgray,
+.color-darkgray p,
+.color-darkgray i,
+.color-darkgray h1,
+.color-darkgray h2,
+.color-darkgray h3,
+.color-darkgray h4,
+.color-darkgray h5,
+.color-darkgray h6,
+.color-darkgray a:not(.link-white),
+code, pre, .txt-white pre,
+.color-lightgray,
+.color-lightgray p,
+.color-lightgray i,
+.color-lightgray h1,
+.color-lightgray h2,
+.color-lightgray h3,
+.color-lightgray h4,
+.color-lightgray h5,
+.color-lightgray h6,
+.color-lightgray a:not(.link-white) {
+	color: var(--highContrastColor)!important;
+}
+
+/* white */
+.ce_download a span.size {
+	color: #fff;
+}
+
+/* white - important */
+.color-white-trnp-50,
+.color-white-trnp-50 p,
+.color-white-trnp-50 i,
+.color-white-trnp-50 h1,
+.color-white-trnp-50 h2,
+.color-white-trnp-50 h3,
+.color-white-trnp-50 h4,
+.color-white-trnp-50 h5,
+.color-white-trnp-50 h6,
+.color-white-trnp-50 a:not(.link-white) {
+	color: #fff!important;
+}
+
+/* black */
+.header .header_metanavi a,
+.mod_cookiebar_optin .cookie_help_link,
+.mod_cookiebar_optin .cookie_help_close,
+.mod_cookiebar_optin .cookie_privacy_links a,
+.fixed .mainmenu ul li ul li a:not(.active):not(.trail),
+select,
+form.style6 select option {
+	color: var(--highContrastColor);
+}
+
+/* black - important */
+.header .header_metanavi li ul li a,
+#top .top_metanavi li ul li a,
+.mainmenu ul ul li a,
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+input:-moz-placeholder,
+textarea:-moz-placeholder,
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: var(--highContrastColor)!important;
+}
+
+/* white */
+#offcanvas-top,
+#offcanvas-top a,
+.smartmenu-content .subitems_trigger:before {
+	color: #fff;
+}
+
+/* black */
+.ce_pricetable .priceinfo,
+.ce_pricetable .rating,
+.ce_headertext p,
+.ce_text_image_bar .subheadline,
+.ce_chartbar.slim .chart_data span,
+.ce_chartbar.slim-x .chart_data span,
+.ce_featured_tab li .ce_headline .headline,
+.ce_testimonial_version6 .additional,
+.ce_testimonial_version6 i,
+.ce_iconbox_v2.style3 .content,
+.ce_iconbox_v3 .headline.headline-color-accent,
+.ce_iconbox_v3 .headline.headline-color-second ,
+.ce_iconbox_v3 .headline.headline-color-lightgray,
+.ce_iconbox_v3 .headline.headline-color-darkgray,
+.ce_iconbox_v3 .subheadline.subheadline-color-accent,
+.ce_iconbox_v3 .subheadline.subheadline-color-second,
+.ce_iconbox_v3 .subheadline.subheadline-color-lightgray,
+.ce_iconbox_v3 .subheadline.subheadline-color-darkgray,
+.ce_iconbox_v3 .fonticon.fonticon-color-accent,
+.ce_iconbox_v3 .fonticon.fonticon-color-second,
+.ce_iconbox_v3 .fonticon.fonticon-color-lightgray,
+.ce_iconbox_v3 .fonticon.fonticon-color-darkgray,
+.ce_linkbox h6,
+.ce_productbox.version1 .price span,
+.ce_productbox.version1 .subheadline,
+.ce_productbox.version2 .price span,
+.ce_productbox.version2 .subheadline,
+.ce_productbox.version3 .price span,
+.ce_productbox.version3 .subheadline,
+.ce_hyperlink-extended a.link-white,
+.ce_hyperlink-extended a.link-white.outline:hover,
+.ce_hyperlink-extended a.outline,
+.ce_hyperlink-extended a.secondary,
+.ce_hyperlink-extended a.info,
+.page_navigation .title,
+.ce_benefitbox .number,
+.ce_headline_w_buttons.style1 .buttons a,
+.ce_headline_w_buttons.style2 .buttons a.button_one,
+.ce_headline_w_buttons.style3 .buttons a.button_one,
+.ce_headline_w_buttons.style5 .buttons a.button_one,
+.ce_headline_w_buttons.style6 .buttons a.button_one,
+.ce_headline_w_buttons.style8 .buttons a.button_one,
+.ce_headline_w_buttons.style10 .buttons a,
+.ce_featurelist.style3 li span {
+	color: var(--highContrastColor);
+}
+
+/* black - important */
+.ce_testimonial_version3 .text p,
+.ce_testimonial_version7 .text p,
+.ce_iconbox_v3:hover.text-hover-accent i,
+.ce_iconbox_v3:hover.text-hover-accent .headline,
+.ce_iconbox_v3:hover.text-hover-accent .subheadline,
+.ce_iconbox_v3:hover.text-hover-second i,
+.ce_iconbox_v3:hover.text-hover-second .headline,
+.ce_iconbox_v3:hover.text-hover-second .subheadline,
+.ce_iconbox_v3:hover.text-hover-lightgray i,
+.ce_iconbox_v3:hover.text-hover-lightgray .headline,
+.ce_iconbox_v3:hover.text-hover-lightgray .subheadline,
+.ce_iconbox_v3:hover.text-hover-darkgray i,
+.ce_iconbox_v3:hover.text-hover-darkgray .headline,
+.ce_iconbox_v3:hover.text-hover-darkgray .subheadline,
+.ce_imagebox_v2 .content h1,
+.ce_imagebox_v2 .content h2,
+.ce_imagebox_v2 .content h3,
+.ce_imagebox_v2 .content h4,
+.ce_imagebox_v2 .content h5,
+.ce_imagebox_v2 .content h6,
+.ce_imagebox_v2 .content p,
+.ce_flipbox .ce_flipbox_backside.color-white .ce_flipbox_backside_inside > .ce_url.attribute a {
+	color: var(--highContrastColor)!important;
+}
+
+/* white */
+.ce_text_image_bar.color-white .subheadline,
+.swiper-button-next:after, 
+.swiper-button-prev:after,
+.ce_infobox_alert .headline,
+.ce_infobox_warning .headline,
+.ce_infobox_info .headline,
+.ce_infobox_success .headline,
+.ce_iconbox_v3 .headline,
+.ce_iconbox_v3 i,
+.ce_iconbox_v3 .ce_image.attribute,
+.color-white .ce_headline_w_buttons.style3 .ce_headline_w_buttons_inside,
+.ce_featurelist.style4 li a,
+.ce_featurelist.style4 li span,
+.ce_featurelist.style4 li .icon,
+.ce_featurelist.style5 li .icon {
+	color: #fff;
+}
+
+.ce_bgimage.color-white .ce_bgimage-image {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_calltoaction.color-white {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_revolutionslider_hyperlink.dark {
+	background: var(--highContrastColor);
+}
+
+.ce_iconbox_header a.color-accent {
+	color: #fff!important;
+}
+
+.ce_grid_gallery_start li.grid-item:hover .ce_grid_gallery_overlay {
+	background: #fff;
+}
+
+.ce_headline_w_buttons.style8 .buttons a.button_two,
+.ce_headline_w_buttons.style8 .buttons a.button_one:hover {
+	background: var(--highContrastColor);
+}
+
+.ce_sliderStart .slider-control .slider-menu b {
+	border: 2px solid var(--highContrastColor);
+}
+
+.ce_sliderStart .slider-control .slider-menu b.active {
+	background: var(--highContrastColor);
+}
+
+.ce_iconbox_v2.style3 .ce_iconbox_outside {
+	background: #fff;
+}
+
+.ce_headline_extended:not(.color-white) .color-accent {
+	color: var(--highContrastColor);
+}
+
+.ce_headline_extended.color-white .color-accent {
+	color: #fff;
+}
+
+.ce_text_image_bar.bg-second h1,
+.ce_text_image_bar.bg-second h2,
+.ce_text_image_bar.bg-second h3,
+.ce_text_image_bar.bg-second h4,
+.ce_text_image_bar.bg-second h5,
+.ce_text_image_bar.bg-second h6,
+.ce_text_image_bar.bg-second p,
+.ce_text_image_bar.bg-second .font_headline {
+	color: #fff;
+}
+
+.header .smartmenu .smartmenu-trigger .line, 
+.header .smartmenu .smartmenu-trigger .line:before, 
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: var(--highContrastColor);
+}
+
+.ce_text_imagebox.color-white .ce_text_imagebox_image {
+	background: var(--highContrastColor)!important;
+}
+
+.header.original .mainmenu ul li a.trail,
+.header.original .mainmenu ul li a.active,
+.header.cloned .mainmenu ul li a.trail,
+.header.cloned .mainmenu ul li a.active {
+	color: var(--mainmenuActivColor)!important;
+}
+
+#offcanvas-top .mod_login input.submit, 
+#offcanvas-top .mod_login button.submit {
+	color: var(--highContrastColor);
+	background: #fff;
+}
+
+.ce_table .table-striped-dark td, .ce_table.table-striped-dark td {
+	background: var(--highContrastColor)!important;
+	color: #fff!important;
+}
+
+.ce_table .table-striped td, .ce_table.table-striped td {
+	background: #fff;
+}
+
+.ce_text_image_bar {
+	background-color: #fff;
+}
+
+.ce_headline_extended .background-text {
+	display: none;
+}
+
+#wrapper .ce_iconbox:not(.version2) i {
+	color: var(--highContrastColor)!important;
+}
+
+#wrapper .ce_iconbox.padding .ce_iconbox_outside {
+	background: #fff!important;
+}
+
+#wrapper .ce_iconbox.padding .ce_iconbox_outside {
+	border: 3px solid var(--highContrastColor);
+}
+
+#wrapper .ce_iconbox .headline,
+#wrapper .ce_iconbox p {
+	color: var(--highContrastColor)!important;
+}
+
+#wrapper .ce_bgimage.color-white .ce_iconbox .headline,
+#wrapper .ce_bgimage.color-white .ce_iconbox p,
+#wrapper .ce_bgimage.color-white .ce_iconbox i {
+	color: #fff!important;
+}
+
+#wrapper .ce_iconbox .ce_iconbox_outside.padding .content {
+	opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+	background: var(--highContrastColor);
+}
+
+.swiper-pagination-bullet {
+	box-shadow: 0 0 0 2px var(--highContrastColor);
+	opacity: 1;
+}
+
+.ce_infobox {
+	background: var(--highContrastColor);
+}
+
+.ce_infobox i {
+	color: #fff;
+}
+
+.ce_download:not(.ce_download_small) {
+	background: var(--highContrastColor);
+}
+
+.ce_chartbar .chart_data {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_headerimage .content {
+	background: #fff!important;
+}
+
+.ce_headerimage .headline,
+.ce_headerimage .subline {
+	color: var(--highContrastColor)!important;
+}
+
+.ce_fancy_divider {
+	display: none;
+}
+
+.ce_flipbox .ce_flipbox_frontside,
+.ce_flipbox .ce_flipbox_backside {
+	background: var(--highContrastColor)!important;
+}
+
+.mod_eventteaser_v1 .event {
+	background: var(--highContrastColor)!important;
+	border-bottom: 5px solid #fff;
+}
+
+.mod_eventlist_v4 .event {
+	background: var(--highContrastColor);
+}
+
+.image_container .caption {
+	background: var(--highContrastColor);
+}
+
+code, pre, .txt-white pre {
+	background: none;
+}
+
+.ce_text_image_bar.bg-accent .ce_hyperlink a,
+.ce_text_image_bar.bg-second .ce_hyperlink a {
+	background: #fff;
+	color: var(--highContrastColor);
+}
+
+.ce_scroll_reveal_words span.word {
+	opacity: 1!important;
+}
+
+.ce_highlighted_text span[data-highlighted="true"] {
+	color: #fff!important;
+	background: var(--highContrastColor)!important;
+}
+
+.ce_price_column .hyperlink_txt {
+	color: #fff!important;
+	background: var(--highContrastColor)!important;
+}
+
+.ce_price_column[data-style="style1_light"] .hyperlink_txt {
+	background: #fff!important;
+	color: var(--highContrastColor)!important;
+}
+
+.ce_fancylink.style2 a:after {
+	border-color: var(--highContrastColor)!important;
+}
+
+.ce_swiper-slider-start.style3_dark .swiper-button-next, 
+.ce_swiper-slider-start.style3_dark .swiper-button-prev {
+	background: var(--highContrastColor);
+}
+
+.ce_video_w_teaser .video_teaser video, 
+.ce_video_w_teaser .teaser_image {
+	background: var(--highContrastColor);
+}
+
+.ce_authorbox_inside,
+.ce_authorbox.style2 .ce_authorbox_content {
+	background: #fff;
+}
+
+.ce_benefitbox li:nth-child(2n+1) {
+	background: #fff;
+}
+
+.ce_fancybox.style1 .overlay,
+.ce_fancybox.style2 .overlay,
+.ce_fancybox.style3 .inside,
+.ce_fancybox {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_iconbox_vertical[data-style="style2"] p {
+	color: #fff;
+}
+
+.ce_iconbox_vertical[data-style="style2"] .icon .icon_inside {
+	border-color: #fff;
+}
+
+.ce_text_imagebox.imagebox_version3 .inside {
+	opacity: 1;
+}
+
+.ce_linkbox .ce_linkbox_overlay {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_linkbox .ce_linkbox_overlay {
+	opacity: 1;
+}
+
+.ce_linkbox.version4 .content {
+	z-index: 100;
+}
+
+.ce_linkbox.version4 i {
+	display: none;
+}
+
+.ce_teambox.hover_image .team-content-hover {
+	opacity: 1;
+	background: #fff;
+}
+
+.ce_testimonial_version3 .text {
+	background: #fff;
+}
+
+.slider-control a.slider-next:after,
+.slider-control a.slider-prev:before {
+	color: #000;
+}
+
+.ce_testimonial_slider[data-style="style1"] .swiper-button-next, 
+.ce_testimonial_slider[data-style="style1"] .swiper-button-prev {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_downloads_box .ce_downloads_box_inside {
+	background: #fff;
+}
+
+.ce_imagemap .circle,
+.ce_imagemap .hotspot.small .circle {
+	background: #fff;
+}
+
+.ce_tabs .tabs.horizontal ul {
+	background: #fff;
+}
+
+.ce_tabs .tabs.horizontal ul li.active {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_tabs .tabs.horizontal ul li.active span {
+	color: #fff!important;
+}
+
+.ce_tabs .tabs.classic ul li {
+	background: #fff;
+}
+
+.ce_tabs .panes.classic {
+	background: #fff;
+}
+
+.ce_bgimage_content_start.invert_rightcol .ce_bgimage_content_right {
+	background: #fff!important;
+}
+
+.ce_video_background {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_video_background .video {
+	display: none;
+}
+
+.ce_headerimage.version3 .ce_headline .headline,
+.ce_headerimage.version3 .subline {
+	color: #fff!important;
+}
+
+.ce_slide_in .slide_in_content[data-bgcolor="light-gray"] {
+	background: #fff;
+}
+
+.ce_slide_in .slide_in_content[data-bgcolor="dark-gray"] {
+	background: var(--highContrastColor)!important;
+}
+
+.ce_video_w_teaser .play-button-static {
+	display: block;
+}
+
+.ce_revolutionslider_hyperlink {
+	border: 2px solid #fff;
+}
+
+.ce_wrap .inside {
+	z-index: 1000;
+}
+
+.ce_hyperlink.btn-accent a, .ce_revolutionslider_hyperlink.btn-accent {
+	border-color: #fff!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside {
+	background: var(--highContrastColor)!important;
+}
+
+/* =============================================================================
+ * forms
+ * ========================================================================== */
+
+input, textarea, select, form select, form fieldset {
+	border-color: var(--highContrastColor);
+}
+
+form.style5 input, form.style5 select, form.style5 textarea {
+	background: #fff;
+	border: 1px solid var(--highContrastColor);
+	color: var(--highContrastColor);
+}
+
+.ce_form form[class^="style"] input::placeholder,
+.ce_form form[class^="style"] textarea::placeholder,
+.ce_form form[class^="style"] input::-webkit-input-placeholder,
+.ce_form form[class^="style"] textarea::-webkit-input-placeholder,
+.ce_form form[class^="style"] input:-moz-placeholder,
+.ce_form form[class^="style"] textarea:-moz-placeholder,
+.ce_form form[class^="style"] input::-moz-placeholder,
+.ce_form form[class^="style"] textarea::-moz-placeholder,
+.ce_form form[class^="style"] input:-ms-input-placeholder,
+.ce_form form[class^="style"] textarea:-ms-input-placeholder {
+	color: var(--highContrastColor)!important;
+}
+
+::placeholder,
+input:-moz-placeholder,
+ textarea:-moz-placeholder {
+	 color: var(--highContrastColor)!important;
+ }
+ 
+ input::-moz-placeholder,
+ textarea::-moz-placeholder {
+	 color: var(--highContrastColor)!important;
+ }
+ 
+ input:-ms-input-placeholder,
+ textarea:-ms-input-placeholder {
+	 color: var(--highContrastColor)!important;
+ }
+ 
+ form.style4 input, form.style4 select, form.style4 textarea {
+	 background: #fff;
+ }
+ 
+ form.style6 input, form.style6 select, form.style6 textarea {
+	 background: var(--highContrastColor);
+ }
+
+
+/* =============================================================================
+ * mod_cookiebar_optin
+ * ========================================================================== */
+.mod_cookiebar_optin .submit.readonly, 
+.mod_cookiebar_optin .submit.readonly:hover, 
+.mod_cookiebar_optin .submit.readonly:focus {
+	color: var(--highContrastColor);
+}
+
+/* =============================================================================
+ * customcatalog.css
+ * ========================================================================== */
+
+/* black */
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_top .place,
+.mod_customcataloglist.cc_immorealty .entry .property-meta,
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_bottom .price,
+.mod_customcatalogreader.cc_cardealer .single-print a,
+.mod_customcatalogreader.cc_cardealer .single-mail a,
+.mod_customcatalogreader.cc_cardealer .single-print a:hover,
+.mod_customcatalogreader.cc_cardealer .single-mail a:hover,
+.mod_customcataloglist .notelist-sum .headline,
+.mod_customcataloglist.cc_catalog .brand,
+.mod_customcatalogreader.cc_catalog .single-subheadline,
+.mod_customcatalogreader.cc_catalog .single-print a,
+.mod_customcatalogreader.cc_catalog .single-mail a,
+.mod_customcatalogreader.cc_catalog .single-print a:hover,
+.mod_customcatalogreader.cc_catalog .single-mail a:hover,
+.mod_customcataloglist .notelist-sum .headline,
+.mod_customcataloglist.cc_accommodations .item-description,
+.mod_customcatalogteaser.cc_accommodations .destination,
+.mod_customcatalogreader.cc_accommodations .single-print a,
+.mod_customcatalogreader.cc_accommodations .single-mail a ,
+.mod_customcatalogreader.cc_accommodations .single-print a:hover,
+.mod_customcatalogreader.cc_accommodations .single-mail a:hover,
+.mod_customcataloglist.cc_directory .short_description,
+.mod_customcataloglist.cc_directory .content_bottom,
+.mod_view_switcher li a i,
+.mod_view_switcher li.active,
+.mod_view_switcher li:hover,
+.mod_customcatalogreader.cc_directory .single-short-description,
+.mod_customcatalogreader.cc_directory .single-print a,
+.mod_customcatalogreader.cc_directory .single-mail a,
+.mod_customcataloglist.cc_hotelapart_packages .item-description,
+.mod_customcatalogteaser.cc_hotelapart .item-description,
+.mod_customcatalogreader.cc_hotelapart_packages .single-price-info,
+.mod_customcataloglist.cc_hotelapart_rooms .item-description,
+.mod_customcataloglist.cc_hotelapart_rooms .item-price-add,
+.mod_customcataloglist.cc_hotelapart_rooms .item-persons,
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price-info,
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing td span,
+.mod_customcatalog_pricing .item-description,
+.mod_customcatalog_pricing .item-persons,
+.mod_customcatalog_pricing .pricing span,
+.mod_customcatalog_pricing .item-bookinginfo,
+.mod_customcataloglist.cc_product_catalog .swiper-button-next:after, 
+.mod_customcataloglist.cc_product_catalog .swiper-button-prev:after,
+.mod_customcataloglist.cc_product_catalog .brand,
+.mod_customcatalogreader.cc_product_catalog .single-subheadlin,
+.mod_customcatalogreader.cc_product_catalog .single-print a,
+.mod_customcatalogreader.cc_product_catalog .single-mail a,
+.mod_customcatalogreader.cc_product_catalog .single-print a:hover,
+.mod_customcatalogreader.cc_product_catalog .single-mail a:hover,
+.mod_customcatalogreader.cc_booklibrary .single-subheadline,
+.mod_customcatalogreader.cc_booklibrary .single-print a,
+.mod_customcatalogreader.cc_booklibrary .single-mail a,
+.mod_customcatalogreader.cc_booklibrary .single-print a:hover,
+.mod_customcatalogreader.cc_booklibrary .single-mail a:hover,
+.mod_customcatalog_list_sidebar .author,
+.mod_customcatalog_megamenu.cc_booklibrary .price_old {
+	color: var(--highContrastColor);
+}

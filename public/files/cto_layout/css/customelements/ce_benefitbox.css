@@ -1,0 +1,70 @@
+/* =============================================================================
+ * ce_benefitbox
+ * ========================================================================== */
+
+/* same-height */
+.autogrid_row.same_height .ce_benefitbox,
+.autogrid_row.same_height .ce_benefitbox .ce_benefitbox_inside {
+	height: 100%;
+}
+
+.ce_benefitbox .ce_benefitbox_inside {
+	background: rgb(255,255,255);
+	position: relative;
+	width: 100%;
+	border: 1px solid rgba(0,0,0,0.09);
+}
+
+.ce_benefitbox .number {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	color: rgba(0,0,0,0.06);
+	font-size: 5rem;
+	line-height: 5rem;
+}
+
+.ce_benefitbox li {
+	padding: 6px 20px 6px 55px;
+	position: relative;
+}
+
+.ce_benefitbox li:nth-child(2n+1) {
+	background: rgba(0,0,0,0.05);
+}
+
+.ce_benefitbox li:before {
+	position: absolute;
+	left: 20px;
+	font-family:FontAwesome;
+	content: "\f00c";
+	display: inline-block;
+}
+
+.ce_benefitbox .ce_hyperlink {
+	padding-top: 20px;
+	border-top: 1px solid rgb(240,240,240);
+	padding-left: 20px;
+}
+
+.ce_benefitbox .ce_hyperlink a {
+	margin-bottom: 20px;
+}
+
+.ce_benefitbox div.ce_headline {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.ce_benefitbox .image_container {
+	margin: 20px;
+}
+
+.ce_benefitbox .image_container img {
+	width: auto;
+}
+
+.ce_benefitbox i {
+	margin: 20px;
+	font-size: 3rem;
+}

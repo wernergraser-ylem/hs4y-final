@@ -1,0 +1,62 @@
+<?php
+/**
+ * Country Select/Radio-Button filter template
+ */
+?>
+
+<?php 
+$arrCountries = \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+
+$arrBlankOption = array();
+$arrOptions = $this->options;
+// blank option
+if( $this->includeReset )
+{
+	$arrBlankOption = array($arrOptions[0]);
+	unset($arrOptions[0]);
+}
+$tmp = array();
+foreach($arrOptions as $option)
+{
+	$search = array("Ä","ä","Ö","ö","Ü","ü","ß","-");
+	$replace = array("Ae","ae","Oe","oe","Ue","ue","ss"," ");
+	$k = \str_replace($search,$replace, \Contao\StringUtil::standardize( $arrCountries[$option['value']] ) );
+	$tmp[$k] = $option;
+}
+\ksort($tmp);
+$arrOptions = $tmp;
+unset($tmp);
+// insert blank option
+if( $this->includeReset )
+{
+	\Contao\ArrayUtil::arrayInsert($arrOptions,0,$arrBlankOption);
+}
+?>
+
+<?php if($this->radio): ?>
+<div <?php echo $this->cssID; ?> class="widget <?php echo $this->class; ?> block">
+<fieldset class="radio_container">
+	<?php if($this->label): ?><legend><?php echo $this->label; ?></legend><?php endif; ?>
+	<?php foreach($arrOptions  as $option): ?>
+	<div>
+		<input type="radio" id="opt_<?= $option['id']; ?>" class="radio" name="<?php echo $this->name; ?>" value="<?php echo $option['value']; ?>" <?php if($option['selected']):?>checked<?php endif;?> >
+		<label id="lbl_<?php echo $option['id']; ?>" for="opt_<?php echo $option['id']; ?>"><?= \Contao\StringUtil::specialchars($option['label']); ?><?php if($option['id']): ?>(<?php echo $this->countValue($option['value']); ?>)<?php endif; ?></label>
+	</div>
+	<?php endforeach; ?>
+	<?php if($this->description): ?><div class="description"><?php echo $this->description; ?></div><?php endif; ?>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?php echo $this->description; ?></div><?php endif; ?>	
+</div>
+<?php else: ?>
+<div <?php echo $this->cssID; ?> class="widget <?php echo $this->class; ?> block">
+<fieldset class="select_container">
+	<?php if($this->label): ?><legend><?php echo $this->label; ?></legend><?php endif; ?>
+	<select name="<?php echo $this->name; ?>">
+	<?php foreach($arrOptions as $option): ?>
+	<option value="<?php echo $option['value']; ?>"<?php if($option['selected']):?>selected<?php endif;?>><?php echo $arrCountries[ $option['value'] ] ?: \Contao\StringUtil::specialchars($option['label']); ?> <?php if($option['id']): ?>(<?php echo $this->countValue($option['value']); ?>)<?php endif; ?></option>
+	<?php endforeach; ?>
+	</select>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?php echo $this->description; ?></div><?php endif; ?>	
+</div>
+<?php endif; ?>

@@ -1,0 +1,21 @@
+<div class="ce_downloads_box block <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_downloads_box_inside">
+		<?php $this->block('content'); ?>
+
+		<?php if ($this->headline): ?><<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>><?php endif; ?>
+		<ul>
+			<?php foreach ($this->files ?? array() as $file): ?>
+			<li>
+			 <?php if ( isset($file['previews']) && $file['previews']): ?>
+	          <?php foreach ($file['previews'] as $preview): ?>
+	            <?php $this->insert('image', $preview->getLegacyTemplateData()) ?>
+	          <?php endforeach ?>
+	        <?php endif ?>
+			<?= \Contao\Image::getHtml($file['icon'], '', 'class="mime_icon"') ?> <a href="<?= $file['href'] ?>" title="<?= $file['title'] ?>"><?= $file['link'] ?> <span class="size">(<?= $file['filesize'] ?>)</span></a>
+			</li>
+			<?php endforeach; ?>
+		</ul>
+		
+	</div>
+</div>
+<?php $this->endblock(); ?>

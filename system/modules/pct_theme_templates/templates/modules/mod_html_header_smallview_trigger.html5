@@ -1,0 +1,37 @@
+<div class="sidebar_trigger" title="Toggle sidebar">
+	<div class="burger rotate">
+		<div class="burger_lines"></div>
+	</div>
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{
+	if( localStorage.getItem('Eclipse.sidebar_closed') == 1 )
+	{
+		jQuery('body').addClass('sidebar_closed');
+	}
+	
+	jQuery('.sidebar_trigger').click(function(e) 
+	{
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		
+		if( localStorage.getItem('Eclipse.sidebar_closed') == 1 )
+		{
+			localStorage.removeItem('Eclipse.sidebar_closed')
+		}
+		else
+		{
+			localStorage.setItem('Eclipse.sidebar_closed',1);
+		}
+		jQuery('body').toggleClass('sidebar_closed');
+		// fire resize event
+		setTimeout(function() 
+		{
+			jQuery(window).trigger('resize');
+		}, 400);
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

@@ -1,0 +1,23 @@
+<?php 
+$rootDir = \Contao\System::getContainer()->getParameter('kernel.project_dir');
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $this->language; ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+<head>
+<meta charset="<?php echo $this->charset; ?>">	
+<meta name="description" content="<?php echo $this->description; ?>">
+<meta name="keywords" content="<?php echo $this->keywords; ?>"> 
+<meta name="generator" content="Contao Open Source CMS">
+<meta name="robots" content="noindex, nofollow">
+<?php echo $this->stylesheets; ?>
+<?php if($this->pct_layout_css): ?>
+<link id="layout_css" rel="stylesheet preload" as="style" title="layout_css" type="text/css" href="<?php echo $this->pct_layout_css; ?>">
+<?php endif; ?>	
+<?php if(filesize($rootDir.'/files/cto_layout/css/customize.css') > 0): ?>
+<link rel="stylesheet preload" as="style" type="text/css" href="files/cto_layout/css/customize.css?v=<?= \filemtime($rootDir.'/files/cto_layout/css/customize.css'); ?>">
+<?php endif; ?>
+</head>
+<body>
+<?php echo $this->main; ?>
+</body>
+</html>

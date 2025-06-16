@@ -1,0 +1,85 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_featured_tab.css|static';
+?>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	jQuery(".tabs_<?= $this->id; ?> li:first").addClass('active');
+	jQuery(".tabs_<?= $this->id; ?> li:first span").attr('aria-selected',true);
+	
+	jQuery(".panes_<?= $this->id; ?> .section:first").addClass('active');
+    jQuery(".tabs_<?= $this->id; ?> li").click(function(e){
+        if (!jQuery(this).hasClass("active")) {
+            var tabNum = jQuery(this).index();
+            var nthChild = tabNum+1;
+            jQuery(".tabs_<?= $this->id; ?> li.active").removeClass("active").attr('aria-selected',false);
+            jQuery(this).addClass("active").attr('aria-selected',true);
+            jQuery(".panes_<?= $this->id; ?> div.active").removeClass("active");
+            jQuery(".panes_<?= $this->id; ?> div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+var el = jQuery("body");
+var animationClassesTabs = ["fadeIn", "zoomIn", "fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","rotateIn","zoomIn","slideInDown","slideInLeft","slideInRight","slideInUp","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp"];
+jQuery.each(animationClassesTabs, function(key, value){
+	el.find("." + value).each(function(){
+		jQuery(this).removeClass(value).attr("data-animate", value);
+		
+	});
+});
+	
+jQuery(document).ready(function() {
+	var animate_start_tab = function(element) {
+		element.find('.animate').each(function() {
+			var item = jQuery(this);
+		    var animation = item.data("animate");
+		    if(jQuery('body').hasClass('ios') || jQuery('body').hasClass('android')) {
+		    	item.removeClass('animate');
+		    	return true;
+		    } else {
+			    
+	            jQuery('.ce_featured_tab ul li a').click(function(){
+	    			item.removeClass('animate').addClass('animated '+animation).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+	    				item.removeClass(animation+' animated');
+	    			});
+	           });
+	        }
+		});
+	};
+	
+	jQuery('.ce_featured_tab').each(function() {
+		animate_start_tab( jQuery(this) );
+	});
+
+});
+	
+
+</script>
+<!-- SEO-SCRIPT-STOP -->	
+<div class="<?= $this->class; ?> block <?= $this->field('counts')->value(); ?> <?= $this->field('style')->value(); ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<div class="tabs tabs_<?= $this->id; ?>" aria-label="Featured tabs">
+		<ul role="tablist">
+		<?php foreach($this->group('tab') as $i => $fields): ?>
+			<li id="tab_<?= $this->id .'_'.$i; ?>" role="presentation">
+				<span role="tab" aria-selected="<?= $i == 0 ? 'true' : 'false'; ?>" aria-controls="panes_<?= $this->id .'_'.$i; ?>" tabindex="<?= $i; ?>">
+					<div class="tab_info">
+						<?php if($this->field('headline#'.$i)->value()): ?><?= $this->field('headline#'.$i)->html(); ?><?php endif; ?>
+						<?php if($this->field('text#'.$i)->value()): ?><?= $this->field('text#'.$i)->value(); ?><?php endif; ?>
+					</div>
+				</span>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+	</div>
+	<div id="panes_<?= $this->id; ?>" class="panes panes_<?= $this->id; ?> <?= $this->field('schema')->value(); ?>">
+		<?php foreach($this->group('tab') as $i => $fields): ?>
+		<div id="panes_<?= $this->id .'_'.$i; ?>" class="section" role="tabpanel" tabindex="<?= $i; ?>" aria-labelledby="tab_<?= $this->id .'_'.$i; ?>">
+			<div class="panes_image nowaypoint <?= $this->field('animation#'.$i)->value(); ?>">
+				<?= $this->field('image#'.$i)->html(); ?>
+			</div>
+		</div>
+		<?php endforeach; ?>
+	</div>
+</div>
+<div class="clear"></div>

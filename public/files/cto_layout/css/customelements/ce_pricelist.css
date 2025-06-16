@@ -1,0 +1,48 @@
+/* =============================================================================
+ * ce_pricelist
+ * ========================================================================== */
+
+.ce_pricelist .item {
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	border-bottom: 1px dotted rgba(0,0,0,0.5);
+}
+
+.ce_pricelist .item-inside {
+	position: relative;
+	overflow: hidden;
+}
+
+.ce_pricelist .label {
+	float: left;
+	padding-right: 10px;
+	font-size: 1.4em;
+}
+
+.ce_pricelist .price {
+	float: right;
+	padding-left: 10px;
+	font-size: 1.4em;
+}
+
+.ce_pricelist .subline {
+	clear: both;
+	font-size: 0.9em;
+}
+
+.ce_pricelist .bg-dotted {
+	border-bottom: 2px dotted rgba(0,0,0,0.8);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.color-white .ce_pricelist .bg-dotted {
+	border-color: rgba(255,255,255,0.8);
+}
+
+.color-white .ce_pricelist .item {
+	border-color: rgba(255,255,255,0.4);
+}

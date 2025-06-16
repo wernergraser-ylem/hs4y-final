@@ -1,0 +1,173 @@
+
+<?php
+global $objPage;
+$objRoot = \Contao\PageModel::findByPk( $objPage->rootId );
+?>
+
+<!-- indexer::stop -->
+<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von Google Maps wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}Google Maps has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+// show privacy information if nessessary
+jQuery(document).ready(function() 
+{
+	if( !PrivacyManager.hasAccess(2) )
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+	}
+});
+// listen to Eclipse.user_privacy Event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if( PrivacyManager.hasAccess(2) )
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php if($this->empty): ?>
+<p class="info empty"><?php echo $this->empty; ?></p>
+<?php return; endif;?>
+
+
+<?php
+/**
+ * To use google maps, please fill in your Google Maps API Key below
+ */
+$GoogleMapsApiKey = $objRoot->google_maps;
+
+
+/**
+ * DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+ */
+if(strlen($GoogleMapsApiKey) < 1)
+{
+	echo ($GLOBALS['TL_LANGUAGE'] == 'de' ? 'Google Maps API Schlüssel benötigt. Bitte tragen Sie den API Schlüssel im Template '.basename(__FILE__).' ein' : 'Google Maps requires a valid API Key!');	
+	return '';
+}
+?>
+
+<?php
+$GLOBALS['TL_HEAD'][] = 
+'<script id="googleapis_maps"></script>
+<script>
+// Optin privacy setting token
+var token = localStorage.getItem("user_privacy_settings");
+if( token == undefined )
+{
+	token = "";
+}
+if(token.indexOf(2) >= 0)
+{
+  	document.getElementById("googleapis_maps").src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key='.$GoogleMapsApiKey.'&loading=async&callback=initializeMap_'.$this->id.'";
+}
+
+// listen to Eclipse.user_privacy Event
+jQuery(document).on("Eclipse.user_privacy",function(event,params)
+{
+	if(params.level.indexOf(2) >= 0)
+	{
+ 	 	document.getElementById("googleapis_maps").src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key='.$GoogleMapsApiKey.'&loading=async&callback=initializeMap_'.$this->id.'";
+	}
+});
+</script>';
+?>
+
+<?php
+$arrLocations = array();	
+foreach($this->entries as $entry)
+{
+	if($entry->field('geolocation')->value())
+	{
+		$strThumb = '<img '.(\Contao\Config::get('pct_seo_image_loading') ? 'loading=\"'.\Contao\Config::get('pct_seo_image_loading').'\"' : '').' src=\"'.$entry->field('image')->generate(array(120,50)).'\">';
+		$strInfo = '<p>'.$entry->field('name')->value().'</p>'.
+		'<p class=\"thumb\">'.$strThumb.'</p>'.
+		'<p class=\"more\"><a href=\"'.$entry->links('detail')->url.'\">'.$GLOBALS['TL_LANG']['MSC']['more'].'</a></p>';
+
+		$coords = explode(',', $entry->field('geolocation')->value());
+		$tmp = array
+		(
+			'coords' 	=> $entry->field('geolocation')->value(),
+			'latitude'	=> $coords[0],
+			'longitude' => $coords[1],
+			'city'		=> $entry->field('geolocation')->option('city'),
+			'street'	=> $entry->field('geolocation')->option('street'),
+			'country'	=> $entry->field('geolocation')->option('country'),
+			'zipcode'	=> $entry->field('geolocation')->option('zipcode'),
+			'link'		=> $entry->links('detail')->url,
+			'infotext'	=> $strInfo,
+		);
+		$arrLocations[] = $tmp;		
+	}
+}
+
+$strLocations = json_encode($arrLocations,JSON_HEX_QUOT);
+?>
+
+<?php if(count($arrLocations) < 1): ?>
+<p class="info"><?php echo $this->empty; ?></p>
+<?php endif; ?>
+
+<div class="<?php echo $this->class; ?> block" <?php echo $this->cssID; ?>>
+	<div id="map_<?php echo $this->id; ?>" class="gmap"></div>
+
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	/**
+	 * Initialize the googlemap
+	 */
+	async function initializeMap_<?php echo $this->id; ?>() {
+		var map;
+		var center = {};
+		center.lat = 51.1958685;
+		center.lng = 10.4809570;
+		
+		var mapOptions = 
+		{
+			mapId: 'gmap_<?= $this->id; ?>',
+			zoom: 5,
+			center: new google.maps.LatLng(center.lat,center.lng),
+			scrollwheel: false,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		
+		var map = new google.maps.Map(document.getElementById('map_<?php echo $this->id; ?>'),mapOptions);
+		
+		var infowindow = new google.maps.InfoWindow();
+		var marker = await google.maps.importLibrary("marker");
+		var i;
+		
+		var json = '<?php echo $strLocations; ?>';
+		<?php if( \Contao\Config::get('pct_seo_image_loading')  ): ?>
+		json = json.replace('loading="<?= \Contao\Config::get('pct_seo_image_loading'); ?>"', '');
+		<?php endif; ?>
+		
+		var locations = jQuery.parseJSON(json);
+				
+		for(i = 0; i < locations.length; i++)
+		{
+			var location = locations[i];
+			var pos = new google.maps.LatLng(location.latitude, location.longitude)
+			marker = new google.maps.marker.AdvancedMarkerElement(
+			{
+				position: pos,
+				map: map,
+				title: ''
+			});
+			
+			marker.addListener('gmp-click', function(marker,i)
+			{
+				map.panTo(marker.position);
+				map.setZoom(10);
+				infowindow.setContent(locations[i].infotext);
+				infowindow.open(map, marker);
+	      	});
+		}
+		
+	}	
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+</div>

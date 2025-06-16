@@ -1,0 +1,303 @@
+<?php
+global $objPage;
+// include PrivacyManager styles
+$GLOBALS['TL_CSS'][] = 'system/modules/pct_privacy_manager/assets/css/styles.min.css|static';
+
+$objInsertTag = \Contao\System::getContainer()->get('contao.insert_tag.parser');
+$objLayout = \Contao\LayoutModel::findByPk( $objPage->layout );
+$arrJquery = \Contao\StringUtil::deserialize( $objLayout->jquery ) ?? array();
+
+$scriptMissing = false;
+if( !in_array('j_privacymanager',$arrJquery) || !$objPage->hasJQuery )
+{
+	$scriptMissing = true;
+}
+?>
+
+<?php if( $scriptMissing ): ?>
+<p class="privacy_optin info error">{{iflng::en}}j_privacymanager script is missing in page layout{{iflng}}{{iflng::de}}j_privacymanager Template benötigt. Bitte fügen Sie jQuery und das j_privacymanager Template über die Seitenlayouts hinzu.{{iflng}}</p>
+<?php return ''; endif; ?>
+
+<!-- indexer::stop -->
+<div id="privacy_optout_link"><span title="{{iflng::en}}Reset Data Privacy Settings{{iflng}}{{iflng::de}}Datenschutzeinstellungen neu wählen{{iflng}}"></span></div>
+<div id="privacy_optin_<?= $this->id; ?>" class="mod_privacy_optin">
+	<div class="privacy_overlay"></div>
+	<div class="privacy_popup">
+		<div class="privacy_content">
+			<div class="privacy_settings">
+				<!-- info text after ajax -->
+				<div id="ajax_info_<?= $this->id; ?>" class="ajax_info">{{iflng::en}}Settings saved{{iflng}}{{iflng::de}}Einstellungen gespeichert{{iflng}}</div>
+				<?php if ($this->headline): ?>
+					<div class="headline"><?= $this->headline ?></div>
+				<?php endif; ?>
+				<div class="privacy_text"><?= $this->privacy_text; ?></div>
+				<form id="<?= $this->session_name.'_'.$this->id; ?>" name="<?= $this->session_name; ?>" method="post">
+					<input type="hidden" name="FORM_SUBMIT" value="<?= $this->session_name; ?>">
+					<input type="hidden" name="REQUEST_TOKEN" value="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+					<?php if($this->label_1): ?>
+					<div class="privacy_item<?php if(isset($this->preselected[1])): ?> active<?php endif; ?>">
+						<label class="privacy_label" for="cookiebar_privacy_1" id="label_cookiebar_privacy_1"><strong><?= $this->label_1; ?></strong>
+							<input type="checkbox" required autofocus class="checkbox mandatory" name="privacy" id="cookiebar_privacy_1" value="1"<?php if(isset($this->preselected[1])):?> checked<?php endif; ?>>
+							<span class="privacy_checkmark focus" id="privacy_checkmark_privacy_1" tabindex="1"></span>
+							<span class="privacy_option_info"><?= $this->description_1; ?></span>
+						</label>
+					</div>
+					<?php endif; ?>
+					<?php if($this->label_2): ?>
+					<div class="privacy_item<?php if(isset($this->preselected[2])): ?> active<?php endif; ?>">
+						<label class="privacy_label" for="cookiebar_privacy_2"><strong><?= $this->label_2; ?></strong>
+							<input type="checkbox" class="checkbox" name="privacy" id="cookiebar_privacy_2" value="2"<?php if(isset($this->preselected[2])):?> checked<?php endif; ?>>
+							<span class="privacy_checkmark" tabindex="2"></span>
+							<span class="privacy_option_info"><?= $this->description_2; ?></span>
+						</label>
+						
+					</div>
+					<?php endif; ?>
+					<?php if($this->label_3): ?>
+					<div class="privacy_item<?php if(isset($this->preselected[3])): ?> active<?php endif; ?>">
+						<label class="privacy_label" for="cookiebar_privacy_3"><strong><?= $this->label_3; ?></strong>
+							<input type="checkbox" class="checkbox" name="privacy" id="cookiebar_privacy_3" value="3"<?php if(isset($this->preselected[3])):?> checked<?php endif; ?>>
+							<span class="privacy_checkmark" tabindex="3"></span>
+							<span class="privacy_option_info"><?= $this->description_3; ?></span>
+						</label>
+					</div>
+					<?php endif; ?>
+					<div class="privacy_buttons">
+						<input type="submit" name="save_all_settings" tabindex="4" class="submit all" value="{{iflng::en}}Allow all{{iflng}}{{iflng::de}}Alle akzeptieren{{iflng}}">
+						<input type="submit" name="save_tech_settings" tabindex="5" class="submit tech" value="{{iflng::en}}Allow necessary cookies only{{iflng}}{{iflng::de}}Nur erforderliche Cookies erlauben{{iflng}}">
+						<input type="submit" name="save_settings" tabindex="6" class="submit <?php if(empty($this->preselected)): ?>readonly<?php endif; ?>" <?php if(empty($this->preselected)): ?>disabled<?php endif; ?> value="{{iflng::en}}Save selection to continue{{iflng}}{{iflng::de}}Auswahl akzeptieren{{iflng}}">
+					</div>
+				</form>
+				<div class="privacy_links">
+					<?= preg_replace('/(<a\b[^>]*)(>)/', '$1 tabindex="7"$2', $objInsertTag->replace($this->link_1)); ?>
+					<?= preg_replace('/(<a\b[^>]*)(>)/', '$1 tabindex="8"$2', $objInsertTag->replace($this->link_2)); ?>
+
+					<?php if($this->html): ?>
+					<a href="#" class="privacy_help_link" tabindex="9">{{iflng::en}}Cookie-Details{{iflng}}{{iflng::de}}Cookie-Details{{iflng}}</a>
+					<?php endif; ?>
+				</div>
+			</div>
+			<?php if($this->html): ?>
+			<div class="privacy_help">
+				<div><?= $this->html; ?></div>
+				<div class="privacy_help_link" tabindex="10">{{iflng::en}}Close{{iflng}}{{iflng::de}}Schließen{{iflng}}</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	// add hide_optin body class when on imprint or privacy page
+	<?php if( isset($this->hide_optin) ): ?>
+	jQuery('body').addClass('hide_optin');
+	<?php endif; ?>
+	
+	//--- opt out remove token
+	jQuery('#privacy_optout_link').click(function(e)
+	{
+		e.preventDefault();
+		PrivacyManager.optout(document.location.origin+document.location.pathname);
+	});
+	
+	if(window.location.search.indexOf('clear_privacy_settings') >= 0)
+	{
+		PrivacyManager.optout(document.location.origin+document.location.pathname);
+	}
+	//--
+	
+	var privacy = localStorage.getItem('<?= $this->session_name; ?>');
+	var expires = Number( localStorage.getItem('<?= $this->session_name; ?>_expires') );
+	// check lease time
+	var now = new Date().setDate(new Date().getDate());
+	if( now >= expires )
+	{
+		expires = 0;
+	}
+	
+	if(privacy == undefined || privacy == '' || expires <= 0 )
+	{
+		jQuery('#privacy_optin_<?= $this->id; ?>').addClass('open');
+		// set privacy level to 0
+		privacy = '0';
+	}
+
+	// set a body class
+	jQuery('body').addClass('privacy_setting_'+privacy.toString().split(',').join('-'));
+	
+	// hide the info
+	jQuery('#ajax_info_<?= $this->id; ?>').hide();
+
+	var form = jQuery('#<?= $this->session_name.'_'.$this->id; ?>');
+	var isValid = false;
+	
+	// set focus to autofocus input
+	form.find('input[autofocus]').focus(function(e)
+	{
+		console.log(this);
+		jQuery(this).addClass('focus');
+	});
+
+	// remove readonly from submit when user changes its selection
+	form.find('input[type="checkbox"]').change(function(e)
+	{
+		isValid = false;
+		// required field changed
+		if( form.find('input[required].mandatory').is(':checked') === true )
+		{
+			isValid = true;
+		}
+
+		form.find('input[name="save_settings"]').addClass('readonly');
+		form.find('input[name="save_settings"]').prop('disabled', true);
+		
+		if( isValid === true )
+		{
+			form.find('input[name="save_settings"]').removeClass('readonly');
+			form.find('input[name="save_settings"]').prop('disabled', false);
+		}
+	});
+
+	// allow all
+	form.find('input[name="save_all_settings"]').click(function(e) 
+	{
+		e.preventDefault();
+		// check all checkboxes for user feedback
+		form.find('input[type="checkbox"]').prop('checked',true);
+		// all good
+		isValid = true;
+		// fire save
+		form.find('input[name="save_settings"]').trigger('click');
+	});
+
+	// tech only all
+	form.find('input[name="save_tech_settings"]').click(function(e) 
+	{
+		e.preventDefault();
+		// check required checkbox for user feedback
+		form.find('#cookiebar_privacy_1').prop('checked',true);
+		// all good
+		isValid = true;
+		// fire save
+		form.find('input[name="save_settings"]').trigger('click');
+	});
+
+	<?php if(empty($this->preselected) === false): ?>
+	// preselections make it valid
+	isValid = true;
+	<?php endif; ?>
+	
+	form.find('input[name="save_settings"]').click(function(e)
+	{
+		e.preventDefault();
+
+		// check if a required field is still not set
+		if( isValid === false )
+		{
+			return false;
+		}
+
+		// show ajax info
+		jQuery('#ajax_info_<?= $this->id; ?>').fadeIn(50);
+		
+		// get the user selection
+		var privacy = PrivacyManager.getUserSelectionFromFormData( form.serializeArray() ).join(',');
+		
+		// set local storage
+		localStorage.setItem('<?= $this->session_name; ?>',privacy);
+		// set lease time
+		var expires = new Date().setDate(new Date().getDate() + <?= (int)$this->privacy_cookie_expires; ?>);
+		localStorage.setItem('<?= $this->session_name; ?>_expires',expires);
+		// set a body class
+		jQuery('body').addClass('privacy_setting_'+privacy.toString().split(',').join('-'));
+		// remove negative body class
+		jQuery('body').removeClass('privacy_setting_0');
+		setTimeout(function()
+		{
+			// fire JS event
+			jQuery(document).trigger('Privacy.changed',{'level':privacy});
+
+			// fire form as usal to catch it via php
+			//form.submit();
+		}, 500);
+
+	});
+
+	// help info
+	jQuery(document).ready(function () {
+    let privacyHelpLink = jQuery('#privacy_optin_<?= $this->id; ?> .privacy_help_link');
+    let privacyPopup = jQuery('#privacy_optin_<?= $this->id; ?> .privacy_popup');
+
+    // Klick-Event für das Öffnen/Schließen der Hilfe-Popup
+    privacyHelpLink.click(function () {
+        privacyPopup.toggleClass('view_help');
+    });
+
+    // Fokus + Enter oder Leertaste toggelt ebenfalls die Hilfe-Popup
+    privacyHelpLink.on('keydown', function (event) {
+        if ((event.key === "Enter" || event.key === " ") && jQuery(this).is(':focus')) {
+            privacyPopup.toggleClass('view_help');
+            event.preventDefault(); // Verhindert Standardverhalten (z. B. Scrollen bei Leertaste)
+        }
+    });
+});
+
+
+	// help - scrollToTop
+	jQuery('#privacy_optin_<?= $this->id; ?> .privacy_help_link').click(function()
+	{
+		jQuery("html, body").animate({ scrollTop: 0 });
+		return false;
+	});
+
+});
+
+// listen to Privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if( PrivacyManager.hasAccess(params.level) )
+	{
+		jQuery('#privacy_optin_<?= $this->id; ?>').removeClass('open');
+		// send ajax for log file
+		jQuery.ajax(
+		{
+			url:location.href,
+			data:{'user_privacy_settings':params.level,'tstamp':Math.round(new Date().getTime()/1000)}
+		});
+	}
+});
+
+// Opt-out listener
+jQuery(document).ready(function()
+{
+	jQuery('.privacy_optout_click, .privacy_optout_link').click(function()
+	{
+		PrivacyManager.optout();
+	});
+});
+
+// accessbility focus
+jQuery(document).ready(function() {
+       jQuery("#privacy_checkmark_privacy_1").focus();
+});
+
+// accessbility tab-navigation
+jQuery(document).ready(function () {
+    jQuery(document).keydown(function (event) {
+        if (event.key === "Enter" || event.key === " ") { // Enter oder Leertaste
+            jQuery(".privacy_checkmark:focus").each(function () {
+                let checkbox = jQuery(this).siblings("input[type='checkbox']");
+                checkbox.prop("checked", !checkbox.prop("checked"));
+                event.preventDefault(); // Verhindert unerwünschtes Verhalten (z. B. Scrollen bei Space)
+            });
+        }
+    });
+});
+
+
+</script>
+<!-- SEO-SCRIPT-STOP -->

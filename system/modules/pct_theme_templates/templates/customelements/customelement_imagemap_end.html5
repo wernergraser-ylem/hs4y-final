@@ -1,0 +1,3 @@
+		<div class="image"><?php echo $this->field('image')->html(); ?></div>		
+	</div>
+</div>

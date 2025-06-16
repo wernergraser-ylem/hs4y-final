@@ -1,0 +1,27 @@
+<?php if(!$this->empty): ?>
+<div class="autogrid_wrapper block">
+<?php foreach($this->entries as $entry): ?>
+<div class="item-wrapper autogrid one_third block">
+	<div class="block entry<?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+		<div class="item-inside block">
+			
+			<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+			<?php if($entry->field('highlight')->value()): ?> <i class="item-highlight-icon fa fa-star bg-accent"></i><?php endif; ?>
+			<div class="item-content">
+				<div class="item-leftside">
+					<div class="destination"><i class="fa fa-neuter"></i><?php echo $entry->field('destination')->html(); ?></div>
+					<h5><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h5>	
+				</div>
+				<div class="item-rightside">
+					<div class="item-stay"><?php echo $entry->field('stay')->value(); ?> TAGE</div>	
+					<div class="item-price"><?php echo $entry->field('price')->value(); ?> &euro;</div>
+				</div>
+			</div>
+		</div>		
+	</div>	
+</div>	
+<?php endforeach; ?>
+</div>
+<?php else: ?>
+<p class="info empty">Kein Package gefunden</p>
+<?php endif;?>

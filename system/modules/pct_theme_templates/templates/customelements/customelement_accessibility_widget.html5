@@ -1,0 +1,414 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/accessibility_widget/acc_widget.css|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/accessibility_widget/acc_tabmenu.css|static';
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/eclipsex/accessibility_widget/accessibility_widget.js';
+
+$objParser = \Contao\System::getContainer()->get('contao.insert_tag.parser');
+// load jquery
+global $objPage;global $objPage;
+
+if($this->field('highcontrast_header_skin')->value() == "header_dark")
+{
+	$GLOBALS['TL_HEAD'][] = "
+	<style>
+	@media only screen and (min-width: 768px) {
+		:root {
+			--headerBgColor: #000!important;
+			--headerTxtColor: #fff!important;
+		}
+	}
+	</style>";
+}
+
+if($this->field('highcontrast_header_skin')->value() == "header_light")
+{
+	$GLOBALS['TL_HEAD'][] = "
+	<style>
+	@media only screen and (min-width: 768px) {
+		:root {
+			--headerBgColor: #fff!important;
+			--headerTxtColor: #000!important;
+		}
+	}
+	</style>";
+}
+
+?>
+<div id="accessibility_tabmenu <?= $this->class; ?>">
+	<?php foreach($this->group('tabmenu') as $i => $fields): ?>
+	<a href="<?php echo $this->field('tab_link#'.$i)->value(); ?>" title="<?php echo $this->field('tab_title#'.$i)->value(); ?>" tabindex="<?php echo $this->field('tab_index#'.$i)->value(); ?>"><?php echo $this->field('tab_title#'.$i)->value(); ?></a>
+	<?php endforeach; ?>
+	<?php if($this->field('tab_acc_open_title')->value()): ?><a href="{{env::request}}" class="open_acc_widget" title="<?php echo $this->field('tab_acc_open_title')->value(); ?>" tabindex="<?php echo $this->field('tab_acc_open_tabindex')->value(); ?>"><?php echo $this->field('tab_acc_open_title')->value(); ?></a><?php endif; ?>
+</div>
+<div class="accessibility_widget_trigger <?= $this->class; ?>">
+	<i></i>
+	<span class="shortcut">Shift+Alt+A</span>
+	<span class="close">ESC to Close</span>
+</div>
+<div id="accessibility_widget" class="accessibility_widget <?= $this->class; ?> block">
+<div class="h5"><?php if($this->field('headline_accessibility_widget')->value()): ?><?php echo $this->field('headline_accessibility_widget')->value(); ?><?php endif; ?></div>
+<?php if($this->field('font_size')->value()): ?>
+<!-- fontsize -->
+<div id="fontsize_widget" class="fontsize_widget widget">
+	<label for="fontsize"><i class="fa fa-text-height"></i><?php echo $this->field('font_size_label')->value(); ?></label>
+	<div class="checkbox-container">
+		<input name="fontsize" id="fontsize" type="number" class="input" min="0" max="5" step="1" value="0" tabindex="20">
+	</div>
+	<script>
+	jQuery(document).ready(function() 
+	{
+		var value = Number( localStorage.getItem('accessibility_fontsize') );
+		var elem = jQuery('#accessibility_widget input[name="fontsize"]');
+		var body_class = 'acc_fontsize_';
+		// set value
+		elem.val(value);
+		// set body class
+		jQuery('html,body').addClass(body_class+value);
+		// event listener
+		elem.change(function() 
+		{
+			// remove current body class
+			jQuery('html,body').removeClass(body_class+value);
+			// get new value
+			value = jQuery(this).val();
+			// update localStorage
+			localStorage.setItem('accessibility_fontsize',value);
+			// update body class
+			jQuery('html,body').addClass(body_class+value);
+			// log in console
+			console.log('Accessibility: Fontsize: '+value);
+		});
+	});
+	</script>
+</div>
+<?php endif; ?>
+<?php if($this->field('high_contrast')->value()): ?>
+<!-- !high constrast -->
+<div id="contrast_widget" class="contrast_widget widget">
+	<label for="contrast"><i class="fa fa-adjust"></i><?php echo $this->field('high_contrast_label')->value(); ?></label>
+	<div class="checkbox-container">
+		<input name="contrast" id="contrast" type="checkbox" class="checkbox" value="0" tabindex="21">
+	</div>
+	<script>
+	jQuery(document).ready(function() 
+	{
+		var value = Number( localStorage.getItem('accessibility_contrast') );
+		var elem = jQuery('#accessibility_widget input[name="contrast"]');
+		var body_class = 'acc_contrast';
+		var css_file = '<link id="css_acc_contrast" rel="stylesheet" type="text/css" href="files/cto_layout/css/accessibility_widget/acc_contrast.css">';
+		if(value > 0)
+		{
+			// set value and mark as checked
+			elem.val(1);
+			elem.attr('checked',true);
+			// set body class
+			jQuery('html,body').addClass(body_class);
+			// include css file
+			jQuery('head').append(css_file);
+		}
+		// event listener
+		elem.change(function() 
+		{
+			// remove current body class
+			jQuery('html,body').removeClass(body_class);
+			// remove css file
+			jQuery('link#css_acc_contrast').remove();
+			
+			if(value == 0)
+			{
+				value = 1;
+				// update body class
+				jQuery('html,body').addClass(body_class);
+				// include css file
+				jQuery('head').append(css_file)
+			} 
+			else
+			{
+				value = 0;
+			}
+			// set new value
+			elem.val( value );
+			// update localStorage
+			localStorage.setItem('accessibility_contrast',value);
+			// log in console
+			console.log('Accessibility: Contrast: '+value);
+		});
+	});
+	</script>
+</div>
+<?php endif; ?>
+<?php if($this->field('default_fonts')->value()): ?>
+<!-- !default fonts -->
+<div id="default_fonts_widget" class="default_fonts widget"> 
+	<label for="default_fonts"><i class="fa fa-font"></i><?php echo $this->field('default_fonts_label')->value(); ?></label>
+	<div class="checkbox-container">
+		<input name="default_fonts" id="default_fonts" type="checkbox" class="checkbox" value="0" tabindex="22">
+	</div>
+	
+	<script>
+	jQuery(document).ready(function() 
+	{
+		var value = Number( localStorage.getItem('accessibility_default_fonts') );
+		var elem = jQuery('#accessibility_widget input[name="default_fonts"]');
+		var body_class = 'acc_default_fonts';
+		var css_file = '<link id="css_acc_default_fonts" rel="stylesheet" type="text/css" href="files/cto_layout/css/accessibility_widget/acc_default_fonts.css">';
+		if(value > 0)
+		{
+			// set value and mark as checked
+			elem.val(1);
+			elem.attr('checked',true);
+			// set body class
+			jQuery('html,body').addClass(body_class);
+		}
+		// event listener
+		elem.change(function() 
+		{
+			// remove current body class
+			jQuery('html,body').removeClass(body_class);
+			// remove css file
+			jQuery('link#css_acc_default_fonts').remove();
+			
+			if(value == 0)
+			{
+				value = 1;
+				// update body class
+				jQuery('html,body').addClass(body_class);
+				jQuery('head').append(css_file);
+			} 
+			else
+			{
+				value = 0;
+			}
+			// set new value
+			elem.val( value );
+			// update localStorage
+			localStorage.setItem('accessibility_default_fonts',value);
+			// log in console
+			console.log('Accessibility: Default fonts: '+value);
+		});
+	});
+	</script>
+</div>
+<?php endif; ?>
+<?php if($this->field('bold_face')->value()): ?>
+<!-- !boldface -->
+<div id="boldface_widget" class="boldface_widget widget">
+	<label for="boldface"><i class="fa fa-bold"></i><?php echo $this->field('bold_face_label')->value(); ?></label>
+	<div class="checkbox-container">
+		<input name="boldface" id="boldface" type="checkbox" class="checkbox" value="0" tabindex="23">
+	</div>
+	<script>
+	jQuery(document).ready(function() 
+	{
+		var value = Number( localStorage.getItem('accessibility_boldface') );
+		var elem = jQuery('#accessibility_widget input[name="boldface"]');
+		var body_class = 'acc_boldface';
+		var css_file = '<link id="css_acc_boldface" rel="stylesheet" type="text/css" href="files/cto_layout/css/accessibility_widget/acc_boldface.css">';
+		if(value > 0)
+		{
+			// set value and mark as checked
+			elem.val(1);
+			elem.attr('checked',true);
+			// set body class
+			jQuery('html,body').addClass(body_class);
+		}
+		// event listener
+		elem.change(function() 
+		{
+			// remove current body class
+			jQuery('html,body').removeClass(body_class);
+			// remove css file
+			jQuery('link#css_acc_boldface').remove();
+			
+			if(value == 0)
+			{
+				value = 1;
+				// update body class
+				jQuery('html,body').addClass(body_class);
+				jQuery('head').append(css_file);
+			} 
+			else
+			{
+				value = 0;
+			}
+			// set new value
+			elem.val( value );
+			// update localStorage
+			localStorage.setItem('accessibility_boldface',value);
+			// log in console
+			console.log('Accessibility: Boldface: '+value);
+		});
+	});
+	</script>
+</div>
+<?php endif; ?>
+
+<?php if($this->field('disable_animations')->value()): ?>
+<!-- !disable_animations -->
+<div id="disable_animations_widget" class="disable_animations_widget widget">
+	<label for="disable_animations"><i class="fa fa-pause"></i><?php echo $this->field('disable_animations_label')->value(); ?></label>
+	<div class="checkbox-container">
+		<input name="disable_animations" id="disable_animations" type="checkbox" class="checkbox" value="0" tabindex="24">
+	</div>
+	<script>
+	jQuery(document).ready(function() 
+	{
+		var value = Number( localStorage.getItem('accessibility_disable_animations') );
+		var elem = jQuery('#accessibility_widget input[name="disable_animations"]');
+		var body_class = 'acc_disable_animations';
+		var css_file = '<link id="css_acc_disable_animations" rel="stylesheet" type="text/css" href="files/cto_layout/css/accessibility_widget/acc_disable_animations.css">';
+		if(value > 0)
+		{
+			// set value and mark as checked
+			elem.val(1);
+			elem.attr('checked',true);
+			// set body class
+			jQuery('html,body').addClass(body_class);
+		}
+		// event listener
+		elem.change(function() 
+		{
+			// remove current body class
+			jQuery('html,body').removeClass(body_class);
+			// remove css file
+			jQuery('link#css_acc_disable_animations').remove();
+			
+			if(value == 0)
+			{
+				value = 1;
+				// update body class
+				jQuery('html,body').addClass(body_class);
+				jQuery('head').append(css_file);
+			} 
+			else
+			{
+				value = 0;
+			}
+			// set new value
+			elem.val( value );
+			// update localStorage
+			localStorage.setItem('accessibility_disable_animations',value);
+			// log in console
+			console.log('Accessibility: disable_animations: '+value);
+			// reload
+			location.reload();
+		});
+	});
+	</script>
+</div>
+<?php endif; ?>
+
+
+		
+<div class="shortcuts">
+	<?php if($this->field('headline_shortcuts')->value()): ?><div class="h6"><?php echo $this->field('headline_shortcuts')->value(); ?></div><?php endif; ?>
+	
+	<?php if($this->field('shortcut_mainmenu')->value()): ?>
+	<div class="item">
+		<div class="label"><a href="<?php echo $this->field('shortcut_mainmenu_link')->value(); ?>" title="<?php echo $this->field('shortcut_mainmenu_title')->value(); ?>" tabindex="<?php echo $this->field('shortcut_mainmenu_tabindex')->value(); ?>"><?php echo $this->field('shortcut_mainmenu_title')->value(); ?></a></div>
+		<div class="shortcut">Shift + Alt + <?php echo $this->field('shortcut_mainmenu_key')->value(); ?></div>
+	</div>
+	<script>
+	jQuery(document).ready(function() {
+	    jQuery(document).keydown(function(event) {
+	        if (event.altKey && event.shiftKey && event.code === 'Key<?php echo $this->field('shortcut_mainmenu_key')->value(); ?>') {
+	            event.preventDefault(); 
+	            window.location.href = '<?php echo $this->field('shortcut_mainmenu_link')->value(); ?>';
+	        }
+    	});
+	});
+	</script>
+	<?php endif; ?>
+	
+	<?php if($this->field('shortcut_content')->value()): ?>
+	<div class="item">
+		<div class="label"><a href="<?php echo $this->field('shortcut_content_link')->value(); ?>" title="<?php echo $this->field('shortcut_content_title')->value(); ?>" tabindex="<?php echo $this->field('shortcut_content_tabindex')->value(); ?>"><?php echo $this->field('shortcut_content_title')->value(); ?></a></div>
+		<div class="shortcut">Shift + Alt + <?php echo $this->field('shortcut_content_key')->value(); ?></div>
+	</div>
+	<script>
+	jQuery(document).ready(function() {
+	    jQuery(document).keydown(function(event) {
+	        if (event.altKey && event.shiftKey && event.code === 'Key<?php echo $this->field('shortcut_content_key')->value(); ?>') {
+	            event.preventDefault(); 
+	            window.location.href = '<?php echo $this->field('shortcut_content_link')->value(); ?>';
+	        }
+    	});
+	});
+	</script>
+	<?php endif; ?>
+	
+	<?php if($this->field('shortcut_sitemap')->value()): ?>
+	<div class="item">
+		<div class="label"><a href="<?php echo $this->field('shortcut_sitemap_link')->value(); ?>" title="<?php echo $this->field('shortcut_sitemap_title')->value(); ?>" tabindex="<?php echo $this->field('shortcut_sitemap_tabindex')->value(); ?>"><?php echo $this->field('shortcut_sitemap_title')->value(); ?></a></div>
+		<div class="shortcut">Shift + Alt + <?php echo $this->field('shortcut_sitemap_key')->value(); ?></div>
+	</div>
+	<script>
+	jQuery(document).ready(function() {
+	    jQuery(document).keydown(function(event) {
+	        if (event.altKey && event.shiftKey && event.code === 'Key<?php echo $this->field('shortcut_sitemap_key')->value(); ?>') {
+	            event.preventDefault(); 
+	            window.location.href = '<?php echo $this->field('shortcut_sitemap_link')->value(); ?>';
+	        }
+    	});
+	});
+	</script>
+	<?php endif; ?>	
+	
+	<?php foreach($this->group('custom_shortcut') as $i => $fields): ?>
+	<div class="item">
+		<div class="label"><a href="<?php echo $this->field('custom_shortcut_link#'.$i)->value(); ?>" title="<?php echo $this->field('custom_shortcut_title#'.$i)->value(); ?>" tabindex="<?php echo $this->field('custom_shortcut_tabindex#'.$i)->value(); ?>"><?php echo $this->field('custom_shortcut_title#'.$i)->value(); ?></a></div>
+		<div class="shortcut">Shift + Alt + <?php echo $this->field('custom_shortcut_key#'.$i)->value(); ?></div>
+	</div>
+	<script>
+	jQuery(document).ready(function() {
+	    jQuery(document).keydown(function(event) {
+	        if (event.altKey && event.shiftKey && event.code === 'Key<?php echo $this->field('custom_shortcut_key#'.$i)->value(); ?>') {
+	            event.preventDefault(); 
+	            window.location.href = '<?php echo $this->field('custom_shortcut_link#'.$i)->value(); ?>';
+	        }
+    	});
+	});
+	</script>
+	<?php endforeach; ?>	
+</div>
+</div>
+<script>
+jQuery(document).ready(function() {
+    jQuery(document).keydown(function(event) {
+        if (event.altKey && event.shiftKey && event.code === 'KeyA') { 
+            jQuery('body').toggleClass('acc_show');
+            jQuery('#fontsize').focus();
+        }
+    });
+});
+
+jQuery(document).ready(function() {
+    jQuery('.accessibility_widget_trigger').click(function() {
+        jQuery('body').toggleClass('acc_show');
+    });
+});
+
+jQuery(document).ready(function() {
+    jQuery(document).keydown(function(event) {
+        if (event.key === 'Escape') { 
+            jQuery('body').removeClass('acc_show');
+        }
+    });
+});
+
+jQuery(document).ready(function () {
+    jQuery(".open_acc_widget").on("click", function (e) {
+        e.preventDefault();
+        jQuery("body").toggleClass("acc_show");
+
+        // Fokus auf das Font-Size-Widget setzen
+        let fontSizeWidget = jQuery("#fontsize_widget");
+        if (fontSizeWidget.length) {
+            setTimeout(() => {
+                fontSizeWidget.attr("tabindex", "-1").focus(); // Setzt Fokus für Barrierefreiheit
+            }, 100); // Kleine Verzögerung, um sicherzustellen, dass das Widget sichtbar ist
+        }
+    });
+});
+
+</script>

@@ -1,0 +1,202 @@
+<?php
+$arrFilters = \deserialize($this->news_filters) ?: array();
+// multiple filtering
+$isMultiple = (boolean)$this->news_filter_multiple; // true|false
+?>
+<div id="portfoliofilter_<?= $this->id; ?>">
+<div class="trigger_mobile">
+	<i class="fa fa-filter"></i>
+</div>
+<ul>
+<li class="all"><a href="#" class="all<?php if( \Contao\Input::get('filter') == ''): ?> active <?php endif; ?>" data-filter="*" title="{{iflng::de}}Alle{{iflng}}{{iflng::en}}All{{iflng}}">{{iflng::de}}Alle{{iflng}}{{iflng::en}}All{{iflng}}</a></li>
+<?php foreach($arrFilters as $data): ?>
+<li class="filter_<?= $data['value']; ?>">
+<a href="#" class="filter_<?= $data['value']; ?>" title="Filter: <?= $data['label']; ?>" data-filter=".filter_<?= $data['value']; ?>"><?= $data['label']; ?></a>
+</li>
+<?php endforeach; ?>
+</ul>
+</div>
+
+<script>
+/* <![CDATA[ */
+
+jQuery(window).load(function()
+{
+	var container = jQuery('#<?= $this->portfolioID; ?>');
+	var allowEmpty = false; // if set to true, the list will be empty on no results
+	var buttons = jQuery('#portfoliofilter_<?= $this->id; ?>').find('a');
+	var buttonAll = jQuery('#portfoliofilter_<?= $this->id; ?> a.all');
+	var filters = [];
+	var urlParam = 'filter'; // the GET parameter containing the filter values
+	var classPrefix = '.filter_';
+	var filter_all = '*'; // is not a filter
+	var isStrict = false; // strict filtering
+	var singleAction = <?php if($isMultiple): ?>false;<?php else: ?>true;<?php endif; ?> // only one category active at a time
+	var overwriteLinks = true; // append the filter params to the details links
+	var addToUrl = true; // append selected filters to the url
+	var links = jQuery('#portfoliofilter_<?= $this->id; ?>').find('.item a');
+
+	// check url for predefined filters via GET parameters
+	<?php if(\Contao\Input::get('filter') != ''): ?>
+
+	<?php foreach(explode(',',\Contao\Input::get('filter')) as $filter): ?>
+	filters.push(classPrefix+'<?= $filter; ?>');
+	<?php endforeach; ?>
+
+	// apply filters
+	if(filters.length > 0)
+	{
+		if(isStrict)
+		{
+			container.isotope({ filter: filters.join('.') });
+		}
+		else
+		{
+			container.isotope({ filter: filters.join(',') });
+		}
+
+		// illiterate through the buttons and filters
+		jQuery.each(buttons, function(index,elem)
+		{
+			jQuery.each(filters, function(i,f)
+			{
+				if(jQuery(elem).attr('data-filter') == f)
+				{
+					jQuery(elem).addClass('active');
+				}
+			});
+		});
+	}
+
+	// append the current filter values to the details links in the newslist
+	if(filters.length > 0 && overwriteLinks)
+	{
+		// push the new GET parameters to the url
+		var arrGet = new Array();
+		jQuery.each(filters, function(i,f)
+		{
+			if(f != filter_all)
+			{
+				arrGet.push( f.replace(classPrefix, '') );
+			}
+		});
+
+		jQuery.each(links, function(index, elem)
+		{
+			var href = jQuery(elem).attr('href').split('?');
+			jQuery(elem).attr('href',href[0]+'?'+urlParam+'='+arrGet.join(','));
+		});
+	}
+	<?php endif; ?>
+
+
+	buttons.click(function(e)
+	{
+		e.preventDefault
+		var _this = jQuery(this);
+		var value = _this.attr('data-filter');
+
+		// reset
+		if(value == filter_all)
+		{
+			buttons.removeClass('active');
+			buttonAll.addClass('active');
+			filters = [];
+			if(allowEmpty)
+			{
+				container.isotope({ filter: '.thereShallBeNoEntry' });
+			}
+			else
+			{
+				container.isotope({filter:'*'});
+			}
+
+			// remove the filter GET parameter
+			if(addToUrl)
+			{
+				window.history.pushState('Object', 'Title', document.location.origin+document.location.pathname);
+			}
+
+			return false;
+		}
+
+		if(singleAction)
+		{
+			buttons.removeClass('active');
+			filters = [];
+		}
+
+		if(_this.hasClass('active'))
+		{
+			_this.removeClass('active');
+			filters.splice(filters.indexOf(value),1);
+		}
+		else
+		{
+			_this.addClass('active');
+			filters.push(value);
+		}
+
+		// set an "impossible" filter value if empty results are allowed
+		if(allowEmpty && filters.length < 1)
+		{
+			container.isotope({ filter: '.thereShallBeNoEntry' });
+			return false;
+		}
+
+		if(isStrict)
+		{
+			container.isotope({ filter: filters.join('.') });
+		}
+		else
+		{
+			container.isotope({ filter: filters.join(',') });
+		}
+
+		var arrGet = new Array();
+		jQuery.each(filters, function(i,f)
+		{
+			 if(f != filter_all)
+			 {
+			 	arrGet.push( f.replace(classPrefix, '') );
+			 }
+		});
+
+		// remove current GET
+		if(addToUrl)
+		{
+			window.history.pushState('Object', 'Title', document.location.origin+document.location.pathname);
+		}
+
+		// push the new GET parameters to the url
+		if(addToUrl && arrGet.length > 0)
+		{
+			window.history.pushState('Object', 'Title', document.location.origin+document.location.pathname+'?'+urlParam+'='+arrGet.join(','));
+		}
+
+		// append the current filter values to the details links in the newslist
+		if(overwriteLinks && arrGet.length > 0)
+		{
+			jQuery.each(links, function(index, elem)
+			{
+				var href = jQuery(elem).attr('href').split('?');
+				jQuery(elem).attr('href',href[0]+'?'+urlParam+'='+arrGet.join(','));
+			});
+		}
+
+		return false;
+	});
+});
+
+// toggle trigger mobile
+jQuery(document).ready(function(){
+	jQuery('.mod_portfoliofilter .trigger_mobile i').click(function(){
+		jQuery('.mod_portfoliofilter').toggleClass('show');
+	});
+	jQuery('.mod_portfoliofilter a').click(function(){
+		jQuery('.mod_portfoliofilter').toggleClass('show');
+	});
+});
+
+/* ]]> */
+</script>

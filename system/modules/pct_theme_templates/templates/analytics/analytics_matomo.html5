@@ -1,0 +1,60 @@
+<?php
+global $objPage;
+$objRoot = \Contao\PageModel::findByPk( $objPage->rootId );
+
+$matomo = \Contao\StringUtil::deserialize( $objRoot->analytics_matomo );
+
+// To use this script, please fill in your Matomo site ID and Matomo URL below
+$MatomoSite = $matomo[0] ?? '';
+$MatomoPath = $matomo[1] ?? '';
+?>
+
+<?php if( empty($MatomoSite) || empty($MatomoPath) ): ?>
+<p class="analytics_templates info error">{{iflng::en}}Matomo information missing in root page{{iflng}}{{iflng::de}}Matomo-Informationen fehlen in den Seiten-Einstellungen des "Startpunkt einer Webseite".{{iflng}}</p>
+<?php return ''; endif; ?>
+
+<?php
+/**
+ * DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+ */
+if ($MatomoSite > 0 && '//www.example.com/matomo/' != $MatomoPath && !$this->hasAuthenticatedBackendUser()): ?>
+
+<script>
+
+function initMatomo()
+{
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u='<?= $MatomoPath ?>';
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', <?= $MatomoSite ?>]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+}
+
+// Optin privacy setting token
+var token = localStorage.getItem('user_privacy_settings');
+if( token == undefined )
+{
+	token = '';
+}
+if(token.indexOf(3) >= 0)
+{
+	initMatomo();
+}
+
+// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(3) >= 0)
+	{
+		initMatomo();
+	}
+});
+
+</script>
+
+<?php endif; ?>

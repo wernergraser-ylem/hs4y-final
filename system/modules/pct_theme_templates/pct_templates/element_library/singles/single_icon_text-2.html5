@@ -1,0 +1,71 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_icon_text-2
+*/
+$arrImport = array (
+'tstamp' => '14.01.2025 09:49',
+'name' => 'single_icon_text-2',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'icon_text',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+91 => 'revolutionslider_videoType',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+137 => 'privacy_level',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 132282,
+1 => 15221,
+2 => 1216,
+3 => 1736759346,
+5 => 'icon_text',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_12',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+91 => 'local',
+96 => '14',
+98 => '0.5',
+137 => 1,
+156 => 'a:7:{s:6:"values";a:18:{s:15:"8umx5jyzfvym0nc";s:11:"fa-plane fa";s:15:"d62aawidteasmcq";s:4:"30px";s:15:"ruq0qe3v9uqi6si";N;s:19:"ruq0qe3v9uqi6si_alt";s:0:"";s:21:"ruq0qe3v9uqi6si_title";s:0:"";s:20:"ruq0qe3v9uqi6si_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"mya7olz2edivn9m";s:3:".h3";s:15:"cu34620fd5zc6dw";s:26:"<p>Font-Icon with Text</p>";s:15:"q9orvli2629tkqs";s:4:"left";s:15:"kun1w0re2a43f2v";s:7:"default";s:15:"1rlrz0qigt5mty0";s:0:"";s:22:"1rlrz0qigt5mty0_target";s:0:"";s:25:"1rlrz0qigt5mty0_titleText";s:0:"";s:24:"1rlrz0qigt5mty0_lightbox";s:0:"";s:15:"d24foy4eeclxy54";s:5:"after";s:15:"j58pideu1tz8nuw";s:0:"";s:15:"nyf4ydgkbox6wpa";s:0:"";s:15:"8djbz1yp88wsvk0";s:0:"";}s:6:"groups";a:6:{i:0;a:4:{s:5:"ident";s:5:"490_0";s:8:"group_id";i:490;s:11:"group_alias";s:9:"font_icon";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"8umx5jyzfvym0nc";s:2:"id";i:2147;s:5:"alias";s:9:"font_icon";}i:1;a:3:{s:4:"uuid";s:15:"d62aawidteasmcq";s:2:"id";i:2148;s:5:"alias";s:14:"font_icon_size";}}}i:1;a:4:{s:5:"ident";s:5:"485_0";s:8:"group_id";i:485;s:11:"group_alias";s:10:"image_icon";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"ruq0qe3v9uqi6si";s:2:"id";i:2132;s:5:"alias";s:10:"image_icon";}}}i:2;a:4:{s:5:"ident";s:5:"486_0";s:8:"group_id";i:486;s:11:"group_alias";s:4:"text";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"mya7olz2edivn9m";s:2:"id";i:2134;s:5:"alias";s:6:"markup";}i:1;a:3:{s:4:"uuid";s:15:"cu34620fd5zc6dw";s:2:"id";i:2135;s:5:"alias";s:4:"text";}i:2;a:3:{s:4:"uuid";s:15:"q9orvli2629tkqs";s:2:"id";i:2136;s:5:"alias";s:5:"align";}i:3;a:3:{s:4:"uuid";s:15:"kun1w0re2a43f2v";s:2:"id";i:2137;s:5:"alias";s:5:"color";}}}i:3;a:4:{s:5:"ident";s:5:"492_0";s:8:"group_id";i:492;s:11:"group_alias";s:4:"link";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"1rlrz0qigt5mty0";s:2:"id";i:2149;s:5:"alias";s:4:"link";}}}i:4;a:4:{s:5:"ident";s:5:"488_0";s:8:"group_id";i:488;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"d24foy4eeclxy54";s:2:"id";i:2140;s:5:"alias";s:8:"icon_pos";}i:1;a:3:{s:4:"uuid";s:15:"j58pideu1tz8nuw";s:2:"id";i:2141;s:5:"alias";s:12:"icon_margins";}}}i:5;a:4:{s:5:"ident";s:5:"491_0";s:8:"group_id";i:491;s:11:"group_alias";s:12:"settings_mob";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"nyf4ydgkbox6wpa";s:2:"id";i:2146;s:5:"alias";s:13:"icon_size_mob";}i:1;a:3:{s:4:"uuid";s:15:"8djbz1yp88wsvk0";s:2:"id";i:2150;s:5:"alias";s:16:"icon_margins_mob";}}}}s:6:"tstamp";i:1736247817;s:5:"alias";s:9:"icon_text";s:5:"uuids";a:12:{i:0;s:15:"8umx5jyzfvym0nc";i:1;s:15:"d62aawidteasmcq";i:2;s:15:"ruq0qe3v9uqi6si";i:3;s:15:"mya7olz2edivn9m";i:4;s:15:"cu34620fd5zc6dw";i:5;s:15:"q9orvli2629tkqs";i:6;s:15:"kun1w0re2a43f2v";i:7;s:15:"1rlrz0qigt5mty0";i:8;s:15:"d24foy4eeclxy54";i:9;s:15:"j58pideu1tz8nuw";i:10;s:15:"nyf4ydgkbox6wpa";i:11;s:15:"8djbz1yp88wsvk0";}s:7:"version";s:6:"5.0.11";s:13:"customelement";i:166;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+);

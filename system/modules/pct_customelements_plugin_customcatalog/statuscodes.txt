@@ -1,0 +1,27 @@
+Introduction
+------------
+
+Activate logging
+$GLOBALS['PCT_CUSTOMCATALOG']['debug'] = true;
+
+### Filter logs
+
+Log: MY-TABLE.id=-1000
+Type: SQL query
+Status: List has no active filter and is supposed to display an empty result due to list module settings
+
+Log: MY-TABLE.id=-1
+Type: SQL query
+Status: A filter returns a negative result to display an empty list
+
+Log: MY-TABLE.id=-500
+Type: SQL query
+Status: A protection filter clears the list because no frontend user is logged in and list setting is show all entries is false
+
+Log: MY-TABLE.id=-[FILTER-ID]
+Type: SQL query
+Status: A strict filter returns a negative result to display an empty list or impossible result
+
+Log: MY-TABLE.id=-100
+Type: SQL query
+Status: The "filter active language" (list module option) filter returns a negative result to display an empty list or impossible result

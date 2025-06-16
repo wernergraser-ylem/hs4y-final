@@ -1,0 +1,97 @@
+<?php if(!$this->empty): ?>
+
+<?php 
+	// insert season labels/times from ressources page
+	$season_a_label = "{{insert_content::77037}}";
+	$season_a_value = "{{insert_content::77031}}";
+	$season_b_label = "{{insert_content::77038}}";
+	$season_b_value = "{{insert_content::77032}}";
+	$season_c_label = "{{insert_content::77039}}";
+	$season_c_value = "{{insert_content::77033}}";
+?>
+
+<div class="item-wrapper block">
+	<div class="seasons hide-mobile">
+		<div class="autogrid_wrapper block">
+			<div class="autogrid one_half block">&nbsp;</div>
+			<div class="autogrid one_half block">
+				<div class="autogrid_wrapper block">
+					<div class="autogrid one_third block">
+						<strong><?php echo $season_a_label; ?></strong>
+						<p><?php echo $season_a_value; ?></p>
+					</div>
+					<div class="autogrid one_third block">
+						<strong><?php echo $season_b_label; ?></strong>
+						<p><?php echo $season_b_value; ?></p>
+					</div>
+					<div class="autogrid one_third block">
+						<strong><?php echo $season_c_label; ?></strong>
+						<p><?php echo $season_c_value; ?></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<?php foreach($this->entries as $entry): ?>
+	<div class="block <?= $entry->class; ?>" <?php echo $this->cssID; ?>>
+		<div class="item-inside autogrid_wrapper block">
+			<div class="autogrid block one_half">
+				<div class="autogrid_wrapper block">
+					<div class="item-image autogrid two_fifth block">
+						<?php echo $entry->field('image')->html(); ?>
+					</div>
+					<div class="item-info autogrid three_fifth block">
+						<h5><?php echo $entry->field('name')->value(); ?></h5>
+						<div class="item-persons">
+							Gr&ouml;sse: <?php echo $entry->field('size')->value(); ?>m², f&uuml;r <?php echo $entry->field('persons')->value(); ?>
+						</div>
+						<div class="item-features">
+							<ul>
+								<?php if ($entry->field('list_wifi')->value()): ?><li><i class="fa fa-wifi bg-accent"></i></li><?php endif;?>
+								<?php if ($entry->field('list_accessibility')->value()): ?><li><i class="fa fa-wheelchair bg-accent"></i></li><?php endif;?>
+								<?php if ($entry->field('list_restaurant')->value()): ?><li><i class="fa fa-cutlery bg-accent"></i></li><?php endif;?>
+								<?php if ($entry->field('list_cabel_tv')->value()): ?><li><i class="fa fa-desktop bg-accent"></i></li><?php endif;?>
+							</ul>
+						</div>
+						<div class="item-buttons">
+							<div class="ce_hyperlink ce_hyperlink-extended small align-inline"><a href="<?php echo $entry->links('detail')->url; ?>" class="hyperlink_txt outline">Details</a></div>
+							<div class="ce_hyperlink ce_hyperlink-extended small align-inline not-anchor"><a href="<?php echo $entry->links('detail')->url; ?>#booking-anchor" class="hyperlink_txt">Anfragen & Buchen</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="autogrid block one_half">
+				<div class="autogrid_wrapper block">
+					<div class="autogrid one_third block pricing">
+						<div class="only_mobile">
+							<strong><?php echo $season_a_label; ?></strong>
+							<p><?php echo $season_a_value; ?></p>
+						</div>
+						<span>&euro;</span><?php echo $entry->field('pricing_season_a')->value(); ?>
+					</div>
+					<div class="autogrid one_third block pricing">
+						<div class="only_mobile">
+							<strong><?php echo $season_b_label; ?></strong>
+							<p><?php echo $season_b_value; ?></p>
+						</div>
+						<span>&euro;</span><?php echo $entry->field('pricing_season_b')->value(); ?>
+					</div>
+					<div class="autogrid one_third block pricing">
+						<div class="only_mobile">
+							<strong><?php echo $season_c_label; ?></strong>
+							<p><?php echo $season_c_value; ?></p>
+						</div>
+						<span>&euro;</span><?php echo $entry->field('pricing_season_c')->value(); ?>
+					</div>
+				</div>
+				<div class="item-bookinginfo"><?php echo $entry->field('booking_info')->html(); ?></div>
+			</div>
+		</div>
+	</div>	
+
+<?php endforeach; ?>
+</div>		
+<?php else: ?>
+<p class="info empty">Keine Zimmer gefunden</p>
+<?php endif;?>

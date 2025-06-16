@@ -1,0 +1,90 @@
+/* =============================================================================
+ * mod_eventlist_v3
+ * ========================================================================== */
+
+.mod_eventlist_v3 {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.mod_eventlist_v3 .item {
+	margin-bottom: 25px;
+	width: 33%;
+}
+
+.mod_eventlist_v3 .item-inside {
+	padding: 15px;
+	border: 2px solid rgb(242,242,242);
+	background: rgba(255,255,255,0.95);
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+	position: relative;
+}
+
+.mod_eventlist_v3 .item:hover .item-inside {
+	border-color: rgb(142,142,142);
+}
+
+.mod_eventlist_v3 .image_container {
+	margin-bottom: 15px;
+	min-height: 110px;
+}
+
+.mod_eventlist_v3 .date {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	line-height: 1.3;
+}
+
+.mod_eventlist_v3 .date .day {
+	font-size: 1.733rem;
+	line-height: 1.733rem;
+}
+
+.mod_eventlist_v3 .date .month {
+	display: block;
+	text-transform: uppercase;
+	font-size: 0.7333rem;
+}
+
+.mod_eventlist_v3 .date .year {
+	display: block;
+	font-size: 0.7333rem;
+}
+
+.mod_eventlist_v3 i {
+	margin-right: 8px;
+	opacity: 0.5;
+	transition: All 0.5s ease;
+	-webkit-transition: All 0.5s ease;
+}
+
+.mod_eventlist_v3 .item:hover i {
+	opacity: 1;
+}
+
+.mod_eventlist_v3 .meta-info {
+	border-top: 1px dotted rgb(220,220,220);
+	padding-top: 15px;
+	color: rgb(140,140,140);
+}
+
+.mod_eventlist_v3 .meta-info i {
+	color: var(--accentColor);
+}
+
+.mod_eventlist_v3 .h4,
+.mod_eventlist_v3 h4 {
+	margin-bottom: 15px;
+}
+
+.mod_eventlist_v3 h4,
+.mod_eventlist_v3 .h4,
+.mod_eventlist_v3 h4 a,
+.mod_eventlist_v3 .h4 a {
+	color: var(--accentColor);
+}

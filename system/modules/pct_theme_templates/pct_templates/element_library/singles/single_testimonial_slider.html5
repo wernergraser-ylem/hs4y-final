@@ -1,0 +1,75 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_testimonial_slider
+*/
+$arrImport = array (
+'tstamp' => '14.01.2025 09:54',
+'name' => 'single_testimonial_slider',
+'category' => 'infographics',
+'thumb' => '',
+'elements' => 'testimonial_slider',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+91 => 'revolutionslider_videoType',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+137 => 'privacy_level',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+162 => 'animation_speed',
+163 => 'animation_type',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 132343,
+1 => 15226,
+2 => 1152,
+3 => 1736760159,
+5 => 'testimonial_slider',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_12',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+91 => 'local',
+96 => '14',
+98 => '0.5',
+137 => 1,
+156 => 'a:8:{s:6:"values";a:34:{s:15:"nyjfowl44o1qpa3";s:7:"Alex M.";s:14:"50qn0lmsa4tegk";s:17:"CEO, InnovateTech";s:15:"ugysp8566cdwysk";s:152:"Thanks to their strategic approach, our brand has reached new audiences and achieved results we hadn’t thought possible. Their expertise is unmatched!";s:15:"1xracdbtv15kp7z";N;s:19:"1xracdbtv15kp7z_alt";s:0:"";s:21:"1xracdbtv15kp7z_title";s:0:"";s:15:"fvle1imo6lzuzh7";s:6:"style1";s:15:"fb5p2acpyoq8j3y";s:6:"medium";s:15:"bnmynri96hx2uks";s:1:"1";s:14:"tl1q8m3dh2e7z4";s:1:"1";s:16:"pu88lbjy6xzhskbs";s:8:"Sarah L.";s:16:"a8187lx1ox5auclf";s:30:"Founder, Pure Essence Skincare";s:16:"1btejqhssug5ae76";s:148:"They truly understood our vision and turned it into a powerful brand story. We’re seeing stronger customer engagement and brand loyalty every day!";s:16:"q74e3f2ppqjts820";N;s:20:"q74e3f2ppqjts820_alt";s:0:"";s:22:"q74e3f2ppqjts820_title";s:0:"";s:16:"hshbmqpe554qbgox";s:5:"Tom R";s:16:"7gz8nvyw9duiftps";s:30:"Marketing Director, BrightWave";s:16:"6jtcsgy22etekpo1";s:141:"Working with them was a game-changer. Our sales increased by over 50% in just a few months, and our brand now stands out in a crowded market.";s:16:"6qo9s10o2w89fbjr";N;s:20:"6qo9s10o2w89fbjr_alt";s:0:"";s:22:"6qo9s10o2w89fbjr_title";s:0:"";s:16:"xiijpm4evffjil0i";s:6:"Lena G";s:16:"9r4wcgsqsytioetz";s:21:"Co-Founder, GreenPath";s:16:"b90li0wcwz7noak6";s:162:"Their team is creative, insightful, and dedicated. They helped us create a brand presence that’s not only impactful but also deeply resonant with our customers.";s:16:"k2h5g7erboatws9i";N;s:20:"k2h5g7erboatws9i_alt";s:0:"";s:22:"k2h5g7erboatws9i_title";s:0:"";s:16:"f4dwrch5bjhnbycy";s:9:"Michael D";s:16:"gv6cjrb6ctto61p3";s:28:"Managing Partner, UrbanStyle";s:16:"lrcu2ygufc52bic0";s:163:"They don’t just provide services; they become a part of your vision. Their targeted strategies brought measurable results, and our brand has never been stronger.";s:16:"bqy5l8ct5nvi4u6z";N;s:20:"bqy5l8ct5nvi4u6z_alt";s:0:"";s:22:"bqy5l8ct5nvi4u6z_title";s:0:"";}s:6:"groups";a:6:{i:0;a:4:{s:5:"ident";s:5:"474_0";s:8:"group_id";i:474;s:11:"group_alias";s:7:"content";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"nyjfowl44o1qpa3";s:2:"id";i:2107;s:5:"alias";s:4:"name";}i:1;a:3:{s:4:"uuid";s:14:"50qn0lmsa4tegk";s:2:"id";i:2108;s:5:"alias";s:4:"info";}i:2;a:3:{s:4:"uuid";s:15:"ugysp8566cdwysk";s:2:"id";i:2110;s:5:"alias";s:4:"text";}i:3;a:3:{s:4:"uuid";s:15:"1xracdbtv15kp7z";s:2:"id";i:2111;s:5:"alias";s:5:"image";}}}i:1;a:7:{s:5:"ident";s:5:"474_1";s:8:"group_id";i:474;s:11:"group_alias";s:7:"content";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"f4dwrch5bjhnbycy";s:2:"id";i:2107;s:5:"alias";s:6:"name#1";}i:1;a:3:{s:4:"uuid";s:16:"gv6cjrb6ctto61p3";s:2:"id";i:2108;s:5:"alias";s:6:"info#1";}i:2;a:3:{s:4:"uuid";s:16:"lrcu2ygufc52bic0";s:2:"id";i:2110;s:5:"alias";s:6:"text#1";}i:3;a:3:{s:4:"uuid";s:16:"bqy5l8ct5nvi4u6z";s:2:"id";i:2111;s:5:"alias";s:7:"image#1";}}s:6:"isCopy";i:1;s:6:"pgroup";i:474;s:7:"numCopy";i:1;}i:2;a:7:{s:5:"ident";s:5:"474_2";s:8:"group_id";i:474;s:11:"group_alias";s:7:"content";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"xiijpm4evffjil0i";s:2:"id";i:2107;s:5:"alias";s:6:"name#2";}i:1;a:3:{s:4:"uuid";s:16:"9r4wcgsqsytioetz";s:2:"id";i:2108;s:5:"alias";s:6:"info#2";}i:2;a:3:{s:4:"uuid";s:16:"b90li0wcwz7noak6";s:2:"id";i:2110;s:5:"alias";s:6:"text#2";}i:3;a:3:{s:4:"uuid";s:16:"k2h5g7erboatws9i";s:2:"id";i:2111;s:5:"alias";s:7:"image#2";}}s:6:"isCopy";i:1;s:6:"pgroup";i:474;s:7:"numCopy";i:2;}i:3;a:7:{s:5:"ident";s:5:"474_3";s:8:"group_id";i:474;s:11:"group_alias";s:7:"content";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"hshbmqpe554qbgox";s:2:"id";i:2107;s:5:"alias";s:6:"name#3";}i:1;a:3:{s:4:"uuid";s:16:"7gz8nvyw9duiftps";s:2:"id";i:2108;s:5:"alias";s:6:"info#3";}i:2;a:3:{s:4:"uuid";s:16:"6jtcsgy22etekpo1";s:2:"id";i:2110;s:5:"alias";s:6:"text#3";}i:3;a:3:{s:4:"uuid";s:16:"6qo9s10o2w89fbjr";s:2:"id";i:2111;s:5:"alias";s:7:"image#3";}}s:6:"isCopy";i:1;s:6:"pgroup";i:474;s:7:"numCopy";i:3;}i:4;a:7:{s:5:"ident";s:5:"474_4";s:8:"group_id";i:474;s:11:"group_alias";s:7:"content";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"pu88lbjy6xzhskbs";s:2:"id";i:2107;s:5:"alias";s:6:"name#4";}i:1;a:3:{s:4:"uuid";s:16:"a8187lx1ox5auclf";s:2:"id";i:2108;s:5:"alias";s:6:"info#4";}i:2;a:3:{s:4:"uuid";s:16:"1btejqhssug5ae76";s:2:"id";i:2110;s:5:"alias";s:6:"text#4";}i:3;a:3:{s:4:"uuid";s:16:"q74e3f2ppqjts820";s:2:"id";i:2111;s:5:"alias";s:7:"image#4";}}s:6:"isCopy";i:1;s:6:"pgroup";i:474;s:7:"numCopy";i:4;}i:5;a:4:{s:5:"ident";s:5:"478_0";s:8:"group_id";i:478;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"fvle1imo6lzuzh7";s:2:"id";i:2114;s:5:"alias";s:5:"style";}i:1;a:3:{s:4:"uuid";s:15:"fb5p2acpyoq8j3y";s:2:"id";i:2115;s:5:"alias";s:4:"size";}i:2;a:3:{s:4:"uuid";s:15:"bnmynri96hx2uks";s:2:"id";i:2116;s:5:"alias";s:10:"pagination";}i:3;a:3:{s:4:"uuid";s:14:"tl1q8m3dh2e7z4";s:2:"id";i:2117;s:5:"alias";s:10:"navigation";}}}}s:6:"clones";a:4:{i:2107;a:4:{i:1;s:16:"f4dwrch5bjhnbycy";i:2;s:16:"xiijpm4evffjil0i";i:3;s:16:"hshbmqpe554qbgox";i:4;s:16:"pu88lbjy6xzhskbs";}i:2108;a:4:{i:1;s:16:"gv6cjrb6ctto61p3";i:2;s:16:"9r4wcgsqsytioetz";i:3;s:16:"7gz8nvyw9duiftps";i:4;s:16:"a8187lx1ox5auclf";}i:2110;a:4:{i:1;s:16:"lrcu2ygufc52bic0";i:2;s:16:"b90li0wcwz7noak6";i:3;s:16:"6jtcsgy22etekpo1";i:4;s:16:"1btejqhssug5ae76";}i:2111;a:4:{i:1;s:16:"bqy5l8ct5nvi4u6z";i:2;s:16:"k2h5g7erboatws9i";i:3;s:16:"6qo9s10o2w89fbjr";i:4;s:16:"q74e3f2ppqjts820";}}s:6:"tstamp";i:1736248382;s:5:"alias";s:18:"testimonial_slider";s:5:"uuids";a:24:{i:0;s:15:"nyjfowl44o1qpa3";i:1;s:14:"50qn0lmsa4tegk";i:2;s:15:"ugysp8566cdwysk";i:3;s:15:"1xracdbtv15kp7z";i:4;s:15:"fvle1imo6lzuzh7";i:5;s:15:"fb5p2acpyoq8j3y";i:6;s:15:"bnmynri96hx2uks";i:7;s:14:"tl1q8m3dh2e7z4";i:12;s:16:"f4dwrch5bjhnbycy";i:13;s:16:"gv6cjrb6ctto61p3";i:14;s:16:"lrcu2ygufc52bic0";i:15;s:16:"bqy5l8ct5nvi4u6z";i:20;s:16:"xiijpm4evffjil0i";i:21;s:16:"9r4wcgsqsytioetz";i:22;s:16:"b90li0wcwz7noak6";i:23;s:16:"k2h5g7erboatws9i";i:28;s:16:"hshbmqpe554qbgox";i:29;s:16:"7gz8nvyw9duiftps";i:30;s:16:"6jtcsgy22etekpo1";i:31;s:16:"6qo9s10o2w89fbjr";i:36;s:16:"pu88lbjy6xzhskbs";i:37;s:16:"a8187lx1ox5auclf";i:38;s:16:"1btejqhssug5ae76";i:39;s:16:"q74e3f2ppqjts820";}s:7:"version";s:6:"5.0.11";s:13:"customelement";i:163;}',
+158 => 'sourceText',
+162 => 'animate_slow',
+163 => 'fadeInUp animate',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+);

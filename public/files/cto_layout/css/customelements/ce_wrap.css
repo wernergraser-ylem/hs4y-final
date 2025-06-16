@@ -1,0 +1,255 @@
+/* =============================================================================
+ * ce_wrap
+ * ========================================================================== */
+
+ .ce_wrap {
+ 	background-position: center;
+ 	background-size: cover;
+	background-repeat: no-repeat;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	overflow: hidden;
+	position: relative;
+ }
+
+.ce_wrap a.wrap-link {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+}
+
+.ce_wrap.hover-white * {
+	transition: color 0.3s ease, border-color 0.3s ease;
+	-webkit-transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.same_height .same-height-wrap > .ce_wrap {
+	height: 100%;;
+}
+
+/* colors hover */
+.ce_wrap.hover-white:hover,
+.ce_wrap.hover-white:hover * {
+	color: rgb(255,255,255)!important;
+	border-color: rgb(255,255,255)!important;
+}
+
+/* bg hover colors */
+.ce_wrap.bg-hover-gray:hover {
+	background-color: rgb(248,248,248)!important;
+}
+
+.ce_wrap.bg-hover-white:hover {
+	background-color: rgb(255,255,255)!important;
+}
+
+.ce_wrap.bg-hover-black:hover {
+	background-color: rgb(0,0,0)!important;
+}
+
+.ce_wrap.bg-hover-accent:hover {
+	background-color: var(--accentColor)!important;
+}
+
+.ce_wrap.bg-hover-second:hover {
+	background-color: var(--secondColor)!important;
+}
+
+/* bg positions */
+.ce_wrap.bg-center-top {
+	background-position: center top;
+}
+
+.ce_wrap.bg-center-center {
+	background-position: center center;
+}
+
+.ce_wrap.bg-center-bottom {
+	background-position: center bottom;
+}
+
+.ce_wrap.bg-left-top {
+	background-position: left top;
+}
+
+.ce_wrap.bg-left-center {
+	background-position: left center;
+}
+
+.ce_wrap.bg-left-bottom{
+	background-position: left bottom;
+}
+
+.ce_wrap.bg-right-top {
+	background-position: right top
+}
+
+.ce_wrap.bg-right-center {
+	background-position: right center;
+}
+
+.ce_wrap.bg-right-bottom {
+	background-position: right bottom;
+}
+
+.ce_wrap.no-repeat {
+	background-repeat: no-repeat;
+}
+
+.ce_wrap.bg-repeat {
+	background-repeat: repeat;
+}
+
+.ce_wrap.bg-repeat-x {
+	background-repeat: repeat-x;
+}
+
+.ce_wrap.bg-repeat-y {
+	background-repeat: repeat-y;
+}
+
+/* padding classes */
+.ce_wrap.pd-xl {
+	padding: 200px 40px;
+}
+
+.ce_wrap.pd-l {
+	padding: 160px 40px;
+}
+
+.ce_wrap.pd-m {
+	padding: 120px 40px;
+}
+
+.ce_wrap.pd-s {
+	padding: 80px 40px;
+}
+
+.ce_wrap.pd-xs {
+	padding: 40px;
+}
+
+/* shadow classes */
+
+.ce_wrap.shadow-1 {
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.shadow-2 {
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.shadow-3 {
+	box-shadow: 0 0 10px 10px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.shadow-4 {
+	box-shadow: 0 0 15px 15px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.shadow-5 {
+	box-shadow: 0 0 20px 20px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.hover-shadow-1:hover {
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.hover-shadow-2:hover {
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.hover-shadow-3:hover {
+	box-shadow: 0 0 10px 10px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.hover-shadow-4:hover {
+	box-shadow: 0 0 15px 15px rgba(0,0,0,0.05);
+}
+
+.ce_wrap.hover-shadow-5:hover {
+	box-shadow: 0 0 20px 20px rgba(0,0,0,0.05);
+}
+
+/* border classes */
+
+.ce_wrap.border-radius-3 {
+   border-radius: 3px;
+}
+
+.ce_wrap.border-radius-5 {
+   border-radius: 5px;
+}
+
+.ce_wrap.border-radius-10 {
+   border-radius: 10px;
+}
+
+.ce_wrap.border-radius-15 {
+   border-radius: 15px;
+}
+
+.ce_wrap.border-radius-20 {
+   border-radius: 20px;
+}
+
+.ce_wrap.border-radius-30 {
+   border-radius: 30px;
+}
+
+.ce_wrap.border-radius-40 {
+   border-radius: 40px;
+}
+
+.ce_wrap.border-radius-50 {
+   border-radius: 50px;
+}
+
+.ce_wrap.border-radius-60 {
+   border-radius: 60px;
+}
+
+.ce_wrap.border-radius-70 {
+   border-radius: 70px;
+}
+
+.ce_wrap.border-radius-80 {
+   border-radius: 80px;
+}
+
+.ce_wrap.border-radius-90 {
+   border-radius: 90px;
+}
+
+.ce_wrap.border-radius-100 {
+   border-radius: 100px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_wrap.pd-xl {
+		padding: 100px 20px;
+	}
+	
+	.ce_wrap.pd-l {
+		padding: 80px 20px;
+	}
+	
+	.ce_wrap.pd-m {
+		padding: 60px 20px;
+	}
+	
+	.ce_wrap.pd-s {
+		padding: 40px 20px;
+	}
+	
+	.ce_wrap.pd-xs {
+		padding: 20px 20px;
+	}
+}

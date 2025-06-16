@@ -1,0 +1,28 @@
+
+<div class="<?= $this->class; ?> block"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+<?php endif; ?>
+
+<?= $this->CustomCatalog->render(); ?>
+
+<?php if ($this->allowComments): ?>
+<div class="ce_comments block">
+  <<?= $this->hlc; ?>><?= $this->addComment; ?></<?= $this->hlc; ?>>
+  <?= implode('', $this->comments); ?>
+  <?= $this->commentsPagination; ?>
+  <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+</div>
+<?php endif; ?>
+
+<?php if($this->pagination):?>
+<?= $this->pagination; ?>
+<?php endif; ?>
+
+<?php if($this->back): ?>
+<!-- indexer::stop -->
+<p class="back"><a href="<?= $this->referer; ?>" title="<?= $this->back; ?>"><?= $this->back; ?></a></p>
+<!-- indexer::continue -->
+<?php endif; ?>
+
+</div>

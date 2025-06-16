@@ -1,0 +1,68 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_iconbox.css|static';
+$bgcolor = '';
+if( $this->field('bgcolor')->value() )
+{
+	// compile color
+	$color = $this->field('bgcolor')->attribute()->compileColor( $this->field('bgcolor')->value() );
+	$bgcolor = $color->rgba;
+}
+$color = '';
+if( $this->field('color')->value() )
+{
+	// compile color
+	$color = $this->field('color')->attribute()->compileColor( $this->field('color')->value() );
+	$color = $color->rgba;
+}
+$lightbox = $this->field('link')->option('lightbox');
+if( $this->field('link')->option('lightbox') )
+{
+	if( strpos($this->field('link')->option('lightbox'), 'data-lightbox') !== false )
+	{
+		$lightbox = $this->field('link')->option('lightbox');
+		$lightbox = str_replace('data-', '',$lightbox);	
+		$lightbox = ' data-lightbox="'.$lightbox.'"';
+	}	
+	if( strpos($this->field('link')->option('lightbox'), 'data-lightbox-iframe') !== false )
+	{
+		$lightbox = $this->field('link')->option('lightbox');
+		$lightbox = str_replace('data-', '',$lightbox);	
+		$lightbox = ' data-lightbox-iframe="'.$lightbox.'"';
+	}
+}
+?>
+<div class="<?php echo $this->class; ?> block <?php echo $this->field('schema')->value(); ?><?php if($this->field('padding')->value()): ?> padding<?php endif; ?><?php if($this->field('border-radius')->value()): ?> border-radius<?php endif; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_iconbox_outside<?php if($this->field('padding')->value()): ?> padding<?php endif; ?>" style="<?php if($bgcolor): ?>background-color:<?= $bgcolor; ?>;<?php endif; ?><?php if($this->field('height')->value()): ?> min-height:<?php echo $this->field('height')->value(); ?>px;<?php endif; ?>">
+		<div class="ce_iconbox_inside">
+			<div class="ce_iconbox_icon">
+				<?php if($this->field('link')->value()): ?>
+				<a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?= $lightbox; ?><?php endif; ?>>
+				<?php endif; ?>
+				<?php if($this->field('image-icon')->value()): ?>
+				<?php echo $this->field('image-icon')->html(); ?>
+				<?php endif; ?>
+				<?php if($this->field('icon')->value()): ?>
+				<i class="<?php echo $this->field('icon')->value(); ?>"<?php if($color): ?> style="color:<?= $color; ?>"<?php endif; ?>></i>
+				<?php endif; ?>
+				<?php if($this->field('link')->value()): ?></a><?php endif; ?>
+			</div>
+			<?php if($this->field('headline')->value() || $this->field('link')->value() || $this->field('text')->value() ): ?>
+			<div class="ce_iconbox_cwrapper"<?php if($color): ?> style="color:<?= $color; ?>"<?php endif; ?>>
+			<?php endif; ?>
+			<?php if($this->field('headline')->value()): ?>
+			<?php if($this->field('link')->value()): ?><a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?= $lightbox; ?><?php endif; ?>><?php endif; ?>
+			<<?php if($this->field('headline_typ')->value()): ?><?php echo $this->field('headline_typ')->value(); ?><?php else: ?>h3<?php endif; ?> class="headline"<?php if($color): ?> style="color:<?= $color; ?>"<?php endif; ?>><?php echo $this->field('headline')->value(); ?></<?php if($this->field('headline_typ')->value()): ?><?php echo $this->field('headline_typ')->value(); ?><?php else: ?>h3<?php endif; ?>>
+			<?php if($this->field('link')->value()): ?></a><?php endif; ?>
+			<?php endif; ?>
+			<?php if($this->field('text')->value()): ?>
+			<div class="content"><?php echo $this->field('text')->value(); ?></div>
+			<?php endif; ?>
+			<?php if($this->field('linktext')->value()): ?>
+			<a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?> class="link"<?php if($color): ?> style="color:<?= $color; ?>"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?= $lightbox; ?><?php endif; ?>><?php echo $this->field('linktext')->value(); ?></a>
+			<?php endif; ?>
+			<?php if($this->field('headline')->value() || $this->field('link')->value() || $this->field('text')->value() ): ?>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>

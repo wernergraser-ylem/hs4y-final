@@ -1,0 +1,11 @@
+
+<div class="mod_newslist_wiki"> 
+  <?php if (empty($this->articles)): ?>
+    <p class="empty"><?php echo $this->empty; ?></p>
+  <?php else: ?>
+  <ul> 
+    <?php echo implode('', $this->articles); ?>
+    <?php echo $this->pagination; ?>
+   </ul>
+  <?php endif; ?>
+</div>

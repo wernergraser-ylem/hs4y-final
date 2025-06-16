@@ -1,0 +1,4 @@
+<?php 
+// use base records as fallback on reader pages
+$GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['READER']['baseRecordIsFallback'] = true; 
+?>

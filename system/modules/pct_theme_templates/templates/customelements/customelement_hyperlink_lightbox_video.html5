@@ -1,0 +1,142 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_hyperlink_lightbox_video.css|static';
+?>
+<div class="<?php echo $this->class; ?> block <?php echo $this->field('color')->value(); ?> <?php echo $this->field('align')->value(); ?><?php if($this->field('margin_top')->value()): ?> <?php echo $this->field('margin_top')->value(); ?><?php endif; ?><?php if($this->field('margin_bottom')->value()): ?> <?php echo $this->field('margin_bottom')->value(); ?><?php endif; ?><?php if($this->field('margin_top_mobile')->value()): ?> <?php echo $this->field('margin_top_mobile')->value(); ?><?php endif; ?><?php if($this->field('margin_bottom_mobile')->value()): ?> <?php echo $this->field('margin_bottom_mobile')->value(); ?><?php endif; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+	<?php if($this->field('video_typ')->value() == 'video_local'): ?>
+	<a class="hyperlink_<?php echo $this->id; ?>" href="">
+	<?php if($this->field('style')->value() == 'style1'): ?>
+		<svg height="<?php echo $this->field('size')->value(); ?>px" width="<?php echo $this->field('size')->value(); ?>px" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 95.325 95.324" enable-background="new 0 0 95.325 95.324" xml:space="preserve">
+			<polygon fill="#FFFFFF" points="40.093,35.458 61.232,47.662 40.093,59.866 "/>
+			<circle fill="none" stroke="#FFFFFF" stroke-width="7" stroke-miterlimit="10" cx="47.662" cy="47.662" r="44.162"/>
+		</svg>
+	
+		<?php endif; ?>
+		
+		<?php if($this->field('style')->value() == 'style2'): ?>
+		<svg height="<?php echo $this->field('size')->value(); ?>px" width="<?php echo $this->field('size')->value(); ?>px" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98.991 98.99" enable-background="new 0 0 98.991 98.99" xml:space="preserve">
+			<polygon fill="#FFFFFF" points="41.926,37.291 63.065,49.495 41.926,61.699 "/>
+			<circle fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="49.495" cy="49.495" r="48.495"/>
+		</svg>	
+		<?php endif; ?>	
+	</a>
+	
+	<div style='display:none'>
+	    <div id="inlinevideocontent_<?php echo $this->id; ?>" class="inlinevideocontent">
+	        <video id="video_<?= $this->id; ?>" class="video" controls autoplay>
+				<?php foreach(array( 'video_mp4'=>'video/mp4','video_ogg'=>'video/ogg','video_webm'=>'video/webm' ) as $field => $type ): ?>
+				<?php $file = Contao\FilesModel::findByPk( $this->field($field)->value() ); ?>
+				<?php if( $file !== null ): ?>
+				<source src="<?= $file->path; ?>" type="<?= $type; ?>">
+				<?php endif; ?>
+				<?php endforeach; ?>
+				</video>
+	    </div>
+	</div>
+	
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	jQuery(document).ready(function()
+	{
+		var video =  document.getElementById("video_<?php echo $this->id; ?>");
+		if( jQuery(video).attr('autoplay') )
+		{
+			video.muted = true;
+		}
+		jQuery(".hyperlink_<?php echo $this->id; ?>").colorbox(
+		{
+			inline:true, width:"80%", height:"auto", maxWidth:"900px", href:"#inlinevideocontent_<?= $this->id; ?>",
+			onOpen: function()
+			{
+				if( jQuery(video).attr('autoplay') )
+				{
+					video.muted = true;
+					video.play();
+				}
+			},
+			onClosed: function()
+			{
+				video.pause();
+			}
+		});
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+
+	<?php else: ?>
+	
+	<!-- indexer::stop -->
+	<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von externen Quellen wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}External resources has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+	<!-- indexer::continue -->
+
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	// show privacy information if nessessary
+	jQuery(document).ready(function() 
+	{
+		if( !PrivacyManager.hasAccess(2) )
+		{
+			jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+		}
+	});
+
+	jQuery(document).on('Privacy.changed',function(event,params)
+	{
+		if( PrivacyManager.hasAccess(2) )
+		{
+			jQuery('#privacy_info_<?= $this->id; ?>').addClass('hidden');
+		}
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+
+	<a id="hyperlink_<?php echo $this->id; ?>" href="<?php echo $this->field('embed_code')->value(); ?>">
+		<?php if($this->field('style')->value() == 'style1'): ?>
+		<svg height="<?php echo $this->field('size')->value(); ?>px" width="<?php echo $this->field('size')->value(); ?>px" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 95.325 95.324" enable-background="new 0 0 95.325 95.324" xml:space="preserve">
+			<polygon fill="#FFFFFF" points="40.093,35.458 61.232,47.662 40.093,59.866 "/>
+			<circle fill="none" stroke="#FFFFFF" stroke-width="7" stroke-miterlimit="10" cx="47.662" cy="47.662" r="44.162"/>
+		</svg>
+	
+		<?php endif; ?>
+		
+		<?php if($this->field('style')->value() == 'style2'): ?>
+		<svg height="<?php echo $this->field('size')->value(); ?>px" width="<?php echo $this->field('size')->value(); ?>px" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98.991 98.99" enable-background="new 0 0 98.991 98.99" xml:space="preserve">
+			<polygon fill="#FFFFFF" points="41.926,37.291 63.065,49.495 41.926,61.699 "/>
+			<circle fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="49.495" cy="49.495" r="48.495"/>
+		</svg>	
+		<?php endif; ?>		
+	</a>
+		
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	jQuery(document).ready(function()
+	{
+		var element = jQuery("#hyperlink_<?php echo $this->id; ?>");
+		var href = '<?= $this->field('embed_code')->value(); ?>';
+		element.addClass('hidden');
+
+		// Optin privacy setting token
+		if( PrivacyManager.hasAccess(2) )
+		{
+			element.removeClass('hidden');
+			element.attr('href',href);
+			element.colorbox({iframe:true, innerWidth:"80%", innerHeight:"56%", maxWidth:"900px"});
+		}
+
+		// listen to Eclipse.user_privacy Event
+		jQuery(document).on('Privacy.changed',function(event,params)
+		{
+			if( PrivacyManager.hasAccess(2) )
+			{
+				element.removeClass('hidden');
+				element.attr('href',href);
+				element.colorbox({iframe:true, innerWidth:"80%", innerHeight:"56%", maxWidth:"900px"});
+			}
+		});
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+
+	<?php endif; ?>
+
+</div>

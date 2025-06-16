@@ -1,0 +1,19 @@
+
+<input type="hidden" name="<?= $this->name; ?>" value="<?= $this->value; ?>">
+<div class="pct_sizes_wizard select_container">
+  <?php foreach($this->selects as $k => $select): ?>
+  <div class="select_container select_<?= $k; ?>">
+    <?php if($select['label']): ?><legend><?= $select['label']; ?></legend><?php endif; ?>
+    <select name="<?= $select['name']; ?>" id="ctrl_<?= $select['name']; ?>" class="tl_select" onfocus="Backend.getScrollOffset()">
+    <?php foreach($select['options'] as $option): ?>
+    <option value="<?php echo $option['value']; ?>"<?php if($option['selected']):?>selected<?php endif;?>><?php echo $option['label']; ?></option>
+    <?php endforeach; ?>
+    </select>
+    </div>
+  <?php endforeach; ?>
+</div>
+
+<style>
+.pct_sizes_wizard .select_container {margin-bottom: 5px;}
+.pct_sizes_wizard .select_container:first-child {margin-top: 10px;}
+</style>

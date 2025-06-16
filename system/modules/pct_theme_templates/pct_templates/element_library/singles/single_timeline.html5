@@ -1,0 +1,70 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_timeline',
+'category' => 'infographics',
+'thumb' => '',
+'elements' => 'timeline',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126487,
+1 => 14781,
+2 => 128,
+3 => 1700558161,
+5 => 'timeline',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:8:{s:6:"values";a:18:{s:15:"75ejftthtrnjufy";s:4:"2010";s:15:"8rsjhrq2h1w8vue";s:13:"ti-blackboard";s:15:"u2qzzgfe0z5i3ti";s:98:"<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>";s:15:"k4mv6mfw8cya3cx";s:36:"4ad3d36e-8228-11ee-8be5-a67969a4fc01";s:19:"k4mv6mfw8cya3cx_alt";s:0:"";s:21:"k4mv6mfw8cya3cx_title";s:0:"";s:20:"k4mv6mfw8cya3cx_size";a:3:{i:2;s:1:"6";i:0;s:0:"";i:1;s:0:"";}s:24:"k4mv6mfw8cya3cx_imageUrl";s:0:"";s:24:"k4mv6mfw8cya3cx_fullsize";s:0:"";s:16:"nrrsoe7qrwqp9mp1";s:4:"2005";s:16:"ivacugq8ezehdhd8";s:13:"ti-blackboard";s:16:"ujgv0pne2r0g94cl";s:82:"<p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>";s:16:"zgt8ppqrcx7m8d4s";s:36:"4ad3d36e-8228-11ee-8be5-a67969a4fc01";s:20:"zgt8ppqrcx7m8d4s_alt";s:0:"";s:22:"zgt8ppqrcx7m8d4s_title";s:0:"";s:21:"zgt8ppqrcx7m8d4s_size";a:3:{i:2;s:1:"6";i:0;s:0:"";i:1;s:0:"";}s:25:"zgt8ppqrcx7m8d4s_imageUrl";s:0:"";s:25:"zgt8ppqrcx7m8d4s_fullsize";s:0:"";}s:6:"groups";a:2:{i:0;a:4:{s:5:"ident";s:4:"69_0";s:8:"group_id";i:69;s:11:"group_alias";s:7:"section";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"75ejftthtrnjufy";s:2:"id";i:376;s:5:"alias";s:5:"title";}i:1;a:3:{s:4:"uuid";s:15:"8rsjhrq2h1w8vue";s:2:"id";i:379;s:5:"alias";s:4:"icon";}i:2;a:3:{s:4:"uuid";s:15:"u2qzzgfe0z5i3ti";s:2:"id";i:377;s:5:"alias";s:4:"text";}i:3;a:3:{s:4:"uuid";s:15:"k4mv6mfw8cya3cx";s:2:"id";i:378;s:5:"alias";s:5:"image";}}}i:1;a:7:{s:5:"ident";s:4:"69_1";s:8:"group_id";i:69;s:11:"group_alias";s:7:"section";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"nrrsoe7qrwqp9mp1";s:2:"id";i:376;s:5:"alias";s:7:"title#1";}i:1;a:3:{s:4:"uuid";s:16:"ivacugq8ezehdhd8";s:2:"id";i:379;s:5:"alias";s:6:"icon#1";}i:2;a:3:{s:4:"uuid";s:16:"ujgv0pne2r0g94cl";s:2:"id";i:377;s:5:"alias";s:6:"text#1";}i:3;a:3:{s:4:"uuid";s:16:"zgt8ppqrcx7m8d4s";s:2:"id";i:378;s:5:"alias";s:7:"image#1";}}s:6:"isCopy";i:1;s:6:"pgroup";i:69;s:7:"numCopy";i:1;}}s:6:"clones";a:4:{i:376;a:1:{i:1;s:16:"nrrsoe7qrwqp9mp1";}i:379;a:1:{i:1;s:16:"ivacugq8ezehdhd8";}i:377;a:1:{i:1;s:16:"ujgv0pne2r0g94cl";}i:378;a:1:{i:1;s:16:"zgt8ppqrcx7m8d4s";}}s:6:"tstamp";i:1567425493;s:5:"alias";s:8:"timeline";s:5:"uuids";a:8:{i:0;s:15:"75ejftthtrnjufy";i:1;s:15:"8rsjhrq2h1w8vue";i:2;s:15:"u2qzzgfe0z5i3ti";i:3;s:15:"k4mv6mfw8cya3cx";i:8;s:16:"nrrsoe7qrwqp9mp1";i:9;s:16:"ivacugq8ezehdhd8";i:10;s:16:"ujgv0pne2r0g94cl";i:11;s:16:"zgt8ppqrcx7m8d4s";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:41;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'4ad3d36e-8228-11ee-8be5-a67969a4fc01' => 'files/cto_layout/img/element_library/1000x560.png',
+),
+);

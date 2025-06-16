@@ -1,0 +1,19 @@
+.header,
+#top,
+#footer,
+#bottom,
+.mod_breadcrumb {
+	display: none!important;
+}
+
+.ce_bgimage.vertical_centered .ce_bgimage-outer {
+	height: 100%!important;
+}
+
+.ce_hyperlink a.link-white, a.btn.link-white {
+	color: #dd5588;
+}
+
+.ce_hyperlink a.link-white:hover, a.btn.link-white:hover {
+	background: #dd5588;
+}

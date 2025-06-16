@@ -1,0 +1,69 @@
+<?php
+namespace Contao;
+
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/twentytwenty/js/jquery.event.move.js|static';
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/twentytwenty/js/jquery.twentytwenty.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/twentytwenty/css/twentytwenty.css|static';	
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_before_after_slider.css|static';
+
+$container = System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+	
+$arrImages = array();
+foreach(array('image_before','image_after') as $name)
+{
+	$arrImages[ $name ] = $this->field($name)->generate();
+	$objFile = FilesModel::findByPk( $this->field($name)->value() );
+	$size = StringUtil::deserialize( $this->field($name)->option('size') );
+	if( $objFile !== null && \is_array($size) )
+	{
+		$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+		if( $objPicture !== null )
+		{
+			$sources = $objPicture->getSources($projectDir, $staticUrl);
+			// look up prefered source image file (not media query)
+			foreach($sources ?: array() as $data)
+			{
+				if( (isset($data['src']) && $data['src']) != $strImage && (!isset($data['media']) || strlen($data['media']) < 1) )
+				{
+					$arrImages[ $name ] = $data['src'];
+				}
+			}
+		}
+	}
+}
+?>
+
+
+<div class="<?php echo $this->class; ?> block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div id="ce_before_after_slider_<?php echo $this->id; ?>">
+		<img src="<?= $arrImages['image_before']; ?>"<?php if($this->field('image_before')->option('title')): ?> title="<?php echo $this->field('image_before')->option('title'); ?>"<?php endif; ?><?php if($this->field('image_before')->option('alt')): ?> alt="<?php echo $this->field('image_before')->option('alt'); ?>"<?php endif; ?>>
+		<img src="<?= $arrImages['image_after']; ?>"<?php if($this->field('image_after')->option('title')): ?> title="<?php echo $this->field('image_after')->option('title'); ?>"<?php endif; ?><?php if($this->field('image_after')->option('alt')): ?> alt="<?php echo $this->field('image_after')->option('alt'); ?>"<?php endif; ?>>
+	</div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{	
+	setTimeout(function()
+	{
+		jQuery("#ce_before_after_slider_<?php echo $this->id; ?>").twentytwenty(
+		{
+			default_offset_pct: <?php echo $this->field('default_offset_pct')->value(); ?>, // How much of the before image is visible when the page loads
+			orientation: '<?php echo $this->field('orientation')->value(); ?>', // Orientation of the before and after images ('horizontal' or 'vertical')
+			before_label: '<?php echo $this->field('before_label')->value(); ?>', // Set a custom before label
+			after_label: '<?php echo $this->field('after_label')->value(); ?>', // Set a custom after label
+			no_overlay: <?php if($this->field('no_overlay')->value()): ?> true<?php else: ?>false<?php endif; ?>, //Do not show the overlay with before and after
+			move_slider_on_hover: false, // Move slider on mouse hover?
+			move_with_handle_only: false, // Allow a user to swipe anywhere on the image to control slider movement. 
+			click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+		});
+
+		// fire resize event
+		jQuery(window).trigger('resize');
+	}, 800);
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

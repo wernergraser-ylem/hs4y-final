@@ -1,0 +1,135 @@
+<?php if($this->description):?>
+<div class="description">
+	<i class="fa fa-info"></i>
+	<div class="description-content">
+		<?= $this->description; ?>
+	</div>
+</div>
+<?php endif; ?>
+
+<div class="field_wrapper">
+<?php 
+// include dropzone script: http://www.dropzonejs.com/
+\Contao\ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array(PCT_THEMER_PATH.'/assets/js/dropzone/dist/min/basic.min.css'));
+\Contao\ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array(PCT_THEMER_PATH.'/assets/js/dropzone/dist/min/dropzone.min.css')); 
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_THEMER_PATH.'/assets/js/dropzone/dist/min/dropzone.min.js'; 
+
+// config
+$maxFileSize = $GLOBALS['PCT_THEMEDESIGNER']['maxFileSize'];
+	
+?>
+
+<form action="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>" class="dropzone dz-clickable" name="form_<?= $this->name ?>" id="form_<?= $this->id ?>" method="post" enctype="multipart/form-data">
+<input type="hidden" name="FORM_SUBMIT" value="<?= $this->name ?>">
+<input type="hidden" name="REQUEST_TOKEN" value="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+<input type="hidden" name="MAX_FILE_SIZE" value="<?= $GLOBALS['PCT_THEMEDESIGNER']['maxFileSize'] ?>">
+<input type="hidden" name="themedesigner" value="1">
+<input type="hidden" name="field" value="<?= $this->selector; ?>">
+<input type="hidden" name="action" value="upload">
+
+<div class="dz-default dz-message">
+<span>Drag file here</span>
+</div>
+
+<div class="fallback">
+<input data-td_selector="<?= $this->selector; ?>" type="file" name="<?= $this->name ?>" id="ctrl_<?= $this->id ?>" class="dz-hidden-input hidden"<?= $this->getAttributes() ?>>
+<!--
+<input type="submit" value="submit"></div>
+-->
+</div>
+
+</form>
+
+<script>
+/* <![CDATA[ */
+
+Dropzone.autoDiscover = false;
+	
+jQuery(document).ready(function()
+{
+	var strBase = '<?= \Contao\Environment::get('base'); ?>';
+	var strUploadPath = '<?= $GLOBALS['PCT_THEMEDESIGNER']['uploadFolder']; ?>';
+	
+	var last_file = undefined;
+	
+	if(jQuery('body').hasClass('edge'))
+	{
+		strUploadPath = strBase + strUploadPath;
+	}
+	
+	var uploader = new Dropzone('#form_<?= $this->id ?>',
+	{
+	   url: location.href,
+	   paramName: "<?= $this->name ?>",
+	   acceptedFiles: 'image/*',
+	   thumbnailWidth: '170',
+	   thumbnailHeight: '90',
+	   maxFilesize: '<?= $maxFileSize / 1000000 ; ?>', // MB
+
+	   //maxFiles: 1,
+	   init: function(file) 
+	   {
+	       this.removeAllFiles();
+	       //this.on("addedfile", function(file) { alert(file.name + ' added'); });
+		},
+	   drop: function(event)
+	   {
+		   // remove all previous files on drop
+	   		this.removeAllFiles();
+	   },
+	   // completed
+	   complete : function(file)
+	   {
+		   if(file.status == 'success')
+		   {
+	   			var strName = file.name.replace(/\s/g,'_');
+	   			
+	   			var objValue = {};
+	   			objValue.file = strUploadPath + "/"+ strName+ '?'+Date.now();
+	   			objValue.mime = file.type;
+	   			objValue.name = strName + '?'+Date.now();
+	   			
+	   				   			
+	   			ThemeDesigner.sendValue('<?= $this->name ?>',JSON.stringify(objValue));
+	   			
+	   			if(last_file !== undefined)
+	   			{
+	   			 	this.removeFile(last_file);
+	   			}
+	   			
+	   			last_file = file;
+	   			//ThemeDesigner.apply();
+	   			//jQuery(document).trigger('ThemeDesigner.onValue',{'name':'<?= $this->name ?>','value':JSON.stringify(objValue)});
+	   		}
+		}
+	});
+	
+	
+	/**
+	 * Catch Switch event
+	 */
+	jQuery('[data-name="<?= $this->switch; ?>"]').on('ThemeDesigner.onToggleSwitch',function(event,params)
+	{
+		if(params.status < 1)
+		{
+			 // remove preview
+			 uploader.removeAllFiles();
+			 
+			 ThemeDesigner.sendValue('<?= $this->selector; ?>',null);
+		}
+	});
+});
+
+/* ]]> */
+</script>
+
+<?php
+// submit uploaded file to ThemeDesigner
+if(\Contao\Input::post('field') == $this->selector && $_FILES[$this->selector])
+{
+	$objThemeDesigner = new \PCT\ThemeDesigner;
+	$objThemeDesigner->addUpload($this->selector,$_FILES[$this->selector]);
+}
+
+?>
+<br class="clear"></div>

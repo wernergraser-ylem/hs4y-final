@@ -1,0 +1,58 @@
+/* =============================================================================
+ * ce_fancy_divider
+ * ========================================================================== */
+
+.ce_fancy_divider {
+	position: relative;
+	vertical-align: bottom;
+}
+
+.ce_fancy_divider svg {
+	vertical-align: bottom;
+	line-height: 0;
+	display: block;
+	overflow: hidden;
+	margin-bottom: -1px;
+}
+
+.ce_fancy_divider path {
+	stroke-width: 0;
+	line-height: 0;
+}
+
+.ce_fancy_divider.pos_absolute_top {
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	top: 0;
+}
+
+.ce_fancy_divider.pos_absolute_bottom {
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	bottom: 0;
+}
+
+.ce_fancy_divider.version11 svg {
+	margin-bottom: 0;
+}
+
+/* render bug */
+.firefox .ce_fancy_divider.version11.pos_absolute_bottom {
+	bottom: -1px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_fancy_divider.pos_absolute_top,
+	.ce_fancy_divider.pos_absolute_bottom {
+		display: none;
+	}
+
+	.ce_fancy_divider {
+		display: none;
+	}
+}

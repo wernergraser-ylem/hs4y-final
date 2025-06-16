@@ -1,0 +1,82 @@
+
+<!-- indexer::stop -->
+<nav <?= $this->cssID; ?> class="<?= $this->class ?> mobile_vertical block"<?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?> itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+  <?php if ($this->headline): ?>
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+  <?php endif; ?>
+
+  <?= $this->items ?>
+
+</nav>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{
+	jQuery('nav.mobile_vertical .trail').addClass('open');
+	jQuery('nav.mobile_vertical li.submenu > a').append('<span class="opener"></span>');
+	jQuery('nav.mobile_vertical a.submenu').not('.open').parent('li').children('ul').hide();
+	jQuery('nav.mobile_vertical li.submenu .opener, nav.mobile_vertical li.submenu a.forward:not(.click-default), nav.mobile_vertical li.submenu a.pct_megamenu').click(function(e)
+	{ 
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		
+		var _this = jQuery(this);
+		
+		// close open siblings
+		if( jQuery(this).parents('nav.mobile_vertical').hasClass('collapse') )
+		{
+			var siblings = _this.parents('li').siblings('li.open');
+			siblings.children('ul').slideUp(
+			{
+				duration:300,
+				complete: function()
+				{
+					siblings.removeClass('open');
+					siblings.children('a').removeClass('open');
+				}
+			});
+		}
+		
+		var parent = _this.parent('li');
+		
+		// opener div
+		var isOpener = _this.hasClass('opener');
+		if( isOpener )
+		{
+			var parent = _this.parent('a').parent('li');
+		}
+		
+		if(parent.hasClass('open') )
+		{
+			parent.children('ul').slideUp(
+			{
+				duration:300,
+				complete: function()
+				{
+					if( isOpener )
+					{
+						_this.siblings('a').removeClass('open');
+					}
+					_this.removeClass('open');
+					parent.removeClass('open');
+				}
+			});
+			
+		}
+		else
+		{
+			if( isOpener )
+			{
+				_this.siblings('a').toggleClass('open');	
+			}
+			_this.toggleClass('open');
+			parent.toggleClass('open');
+			parent.children('ul').slideToggle({duration:300});
+		}
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

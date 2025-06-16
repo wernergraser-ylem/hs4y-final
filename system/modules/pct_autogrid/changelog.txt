@@ -1,0 +1,425 @@
+### 4.1.3
+Fixed: Invalid minified CSS files (#468)
+Update: Removed the "no_content" logic because it did not work as intended (#469)
+
+### 4.1.2
+Fixed: Improved CSS to hide empty columns on mobile devices (#466)
+Update: Added "no_content" css class for AutogridColStart elements when there is no content inbetween (#466)
+
+### 4.1.1
+Update: Use Dbafs::addResource on background image save commands to make sure the image has been added to the file system (#463)
+Update: Minor code updates (#464)
+
+### 4.1.0
+Added: Sticky column feature (#413)
+Added: tl_content.autogrid_sticky, .autogrid_sticky_offset (#413)
+Update: Replaced hasAccess with core permissions (#455)
+Fixed: Wrong template variable in ce_autogrid_col when checking same-height feature (#460)
+
+### 4.0.9
+Fixed: Minor css syntax error in be_styles stylesheets (#458)
+
+### 4.0.8
+Fixed: Replaced language variables related to tl_style (#453)
+Fixed: Toggle visibility of the whole AG block did not work correctly under Contao 4.13 after changes made in (#428)
+
+### 4.0.7
+Fixed: Missing brackets column css defintion (#450)
+Fixed: Do not output .attributes, .same-height divs when not set and true (#449)
+Fixed: Remove white space from template output (#449)
+Update: Set empty columns to display none (#449)
+Update: Make grid-preset page more accessible for other extensions (#451)
+
+### 4.0.6
+Fixed: Missing visibility icons under Contao > 5.3.13 due to core changes (#444)
+
+### 4.0.5
+Fixed: tl_content array_keys error under Contao 5.3.13 when tl_content data container is missing (#441)
+Fixed: Minor backend CSS styling issues (#440)
+
+### 4.0.4
+Fixed: Implemented new logic for clearing the backend clipboard session and resetting the url (#437)
+Fixed: Missing body classes depending on current backend state (#436)
+
+### 4.0.3
+Fixed: Wrong return value in addCustomRegexp callback (#433)
+
+### 4.0.2
+Update: Support Contao dark mode (#431)
+
+### 4.0.1
+Fixed: Missing toggle visibility icon in grid start element (#429)
+Fixed: Toggle visibility of the whole AG block did not work correctly under Contao 5 (#428)
+
+### 4.0.0
+Fixed: Missing margin fields in multi edit modes (#407)
+Update: General Contao 5 compatibility (#386)
+Update: Improved backend layout (#406)
+Update: New icon for styling settings (#416)
+Removed: Contao 4.9 compatibility (#386)
+Removed: Margin fields moved to EclipseX theme settings module (#423)
+
+### 3.0.3
+Fixed: Missing backend fields in autogrid column start elements (#394)
+
+### 3.0.2
+Fixed: "Unknown option" in autogridColStart elements higher than first column (#391)
+Update: Show checkboxes in Contao select mode (#392)
+
+### 3.0.1
+Fixed: Alignment center center in grid presets did not work (#384)
+
+### 3.0.0
+New: Interactive viewport feature (#369)
+Fixed: Formular: Stop elements were not created (#379)
+Update: PHP Warnings (#380)
+
+### 2.3.11
+Fixed: Grid-Presets missing in news and calendar (#370)
+Update: Resolve getActiveModules method (#368)
+Update: PHP Warnings (#366)
+
+### 2.3.10
+Fixed: Hide plus/minus Buttons in grid preset columns (#364)
+Update: PHP Warnings (#363)
+
+### 2.3.9
+Fixed: Backend grid scaling did not work correctly (#360)
+Removed: Deprecated ce_autogrid_grid ->no_gutter (#361)
+
+### 2.3.8
+Update: General code improvements (#357)
+Update: PHP Warnings (#358)
+
+### 2.3.7
+Fixed: AutoGrid blocks did not copy correctly as blocks (#355)
+
+### 2.3.6
+Fixed: AG produced duplicate field selections in multi edit modes (#353)
+Update: General PHP8 updates (#351)
+
+### 2.3.5
+Fixed: Do not hide drag handles outside of grid preview containers (#347)
+Fixed: Clear tl_content.autogrid_bgimage (on save) when file has been removed (#348)
+Update: Minor code updates in namespaces (#349)
+
+### 2.3.4
+Fixed: toggleIcon did not work under Contao 4.9 anymore due to changes made in #342. Added version_compare for 4.13 only (#345)
+
+### 2.3.3
+Fixed: (Workaround) Toggle visibilty did not work under Contao 4.13 duo to a bug in the contao core toggleIcon method (#342)
+Update: tl_content.autogrid_bgimage handle files with special characters and spaces (#340)
+Update: Minor PHP8 updates (#338)
+Removed: tl_user.backend100 fullscreen backend hack. Not needed anymore since Contao 4.9 (#339)
+
+### 2.3.2
+Update: Updated english default.php language file (#334)
+Update: Code optimization for PHP8 (#336)
+
+### 2.3.1
+Fixed: Missing language file "default" in tl_content causes missing array key warning under PHP8 (#332)
+
+### 2.3.0
+New: Support for Contao 4.13
+Fixed: Load Contaos staticUrls in Controller class because in some cases TL_ASSETS_URL might be undefined (#328)
+Update: General PHP8 update (#329)
+
+### 2.2.1
+Fixed: $GLOBALS['PCT_AUTOGRID']['autogridGridPreview_ids'] might cause an in_array PHP error (#323)
+Update: Support RMS extension in tl_content.child_record_callback (#324)
+
+### 2.2.0
+New: Support flex columns in flex rows (#209)
+New: Add new flex grid feature (#285)
+New: 5-grid preset (#236)
+Update: PHP8 compatibility update (#294)
+Update: Misc. code improvements and updates
+
+### 2.1.12
+Fixed: Missing semicolon in be_js_autogrid (#284)
+Fixed: Config getActiveModules should not be called static (#294)
+
+### 2.1.11
+Fixed: Load assets only when logged on to the backend (#277)
+Fixed: Backend keys for element set page did not register properly under Contao 4.9 (#282)
+Update: Provide minified versions of grid.css, presets.css (#280)
+Update: Added more backwards compatibility classes to AG1
+
+### 2.1.10
+Fixed: Missing AG checkbox for form fields (#275)
+Update: Remove block feature for tl_form_field to make AG always accessible (#275)
+
+### 2.1.9
+Update: Support Contaos (>= 4.9.3) "no blank option" philosophy in customTpl field and the limitation to the element type (#268)
+Update: Minor code updates
+
+### 2.1.8
+Fixed: Non-admin backend users did not have the right to delete full AG blocks (deleteAll right required) (#266)
+
+### 2.1.7
+Fixed: Rendering bug in older Edge browsers (before Chromium) (#263)
+
+### 2.1.6
+Fixed: Missing autogrid_class values in template (#259)
+Update: config.php: Check if news, calendar modules are active (#257)
+
+### 2.1.5
+Fixed: Toggle back the visibility of a whole AG block did not work properly (#251)
+Update: Add images to file system if they are not synced yet (#253)
+Update: Remove the backend user check in initializeSystem Hook before loading the assets
+
+### 2.1.4
+Fixed: Missing img src in background image element due to changes made in #238 (#249)
+
+### 2.1.3
+Fixed: Use an individual css selector for custom grids to avoid css overwrites (#246)
+
+### 2.1.2
+Fixed: Backend assets did not load under Contao 4.4 due to backend user object not being authenticated from Contao (#244)
+
+### 2.1.1
+Fixed: Used wrong Model class in TableFormField lead to php error (#242)
+
+### 2.1.0
+Update: Contao 4.9 LTS compatibility
+Update: Refractor strict Contao namespace classes (#523)
+
+### 2.0.8
+Update: Added load and save callbacks to store background image selections as uuid value instead of real paths (#238)
+Update: Margin fields can now be appended by adding more values to their GLOBALS (#237)
+
+### 2.0.7
+Fixed: Missing language file in tl_module
+
+### 2.0.6
+Fixed: Rgxp for Grid-CSS-field did not fire (#229)
+Fixed: Rgxp did not recognice the invalid grid format when a last character is not a percentage value (#229)
+Update: Support custom grid preview in backend (#232)
+
+### 2.0.5
+Fixed: In some backend pages (without triggering the loadDataContainer hook) jQuery was missing (#225)
+Fixed: An issue where the plus/minus buttons did not work correctly (#227)
+Update: Use the initializeSystem Hook to load the assets (#225)
+Update: Use Contao 4 session instance (#226)
+
+### 2.0.4
+Fixed: Deactivate AG only when not in a flex row system (#221)
+
+### 2.0.3
+Fixed: Resolve the dependency to CustomElements in grid presets page (#217)
+Fixed: Missing pid check in FormFieldModel (#219)
+
+### 2.0.2
+Fixed: AutoGrid activated itself when not being inbetween rows in tl_form_field (#215)
+
+### 2.0.1
+Fixed: Wrong class name "FromFieldModel" must be "FormFieldModel" "Wechselstabenverbuchtelt" (#211)
+
+### 2.0.0
+New: Rebuild grid css engine based on CSS flex and CSS grid
+New: Added grid column elements
+New: Added grid row elements
+New: Database structure
+Update: Simplefy backend masks, dca files and language files
+Remove: Adjust mobile function
+Remove: Blockgrid options
+Remove: Displacer function
+Remove: Border function
+Remove: Spacer content element
+Removed: Wrapper content elements
+Removed: Grid-feature for Contao articles (tl_article)
+Removed: Grid-feature for CustomElement attributes (tl_pct_customelement_attribute)
+Removed: Grid-feature for News entries (tl_news)
+Removed: PCT\AutoGrid\DcaHelper::saceCssInformation
+Removed: PCT\AutoGrid\DcaHelper::loadCssInformation
+Removed: PCT\AutoGrid\DcaHelper::getGridClassesWithIcons
+Removed: Class: PCT\AutoGrid\TableArticle
+Removed: Class: PCT\Autogrid\ContentAutoGridWrapper
+Removed: Class: PCT\Autogrid\FormfieldAutoGridWrapper
+
+### 1.9.6
+Fixed: Removed the bypass condition for the token GET parameter (reverse #110) (#126)
+
+### 1.9.5
+Update: Add the .autogrid CSS class for the Article Wrapper Start element (ce_autogridwrapper.html5) only when a grid class is selected (#124)
+
+### 1.9.4
+Update: Easier support for same-height feature using a single AG-wrapper element with same-height option set
+
+### 1.9.3
+Update: Include grid.css in generatePage Hook to minimize the TL_CSS globals references 
+
+### 1.9.2
+Update: Secure AG from inconstant data from outside when executing the tl_news onload_callback for manual sorting
+
+### 1.9.1
+Fixed: "Same-height" feature did not fire for manual grids (#117)
+
+### 1.9.0
+Added: No gutter feature (#114)
+Update: Put constants in quotations for php 7.2
+
+### 1.8.4
+Fixed: Newsletter module shows invalid token. Bypass Autogrid features for include content elements when processing the site with the token GET parameter (#110)
+Fixed: Disable same height feature in manual mode (#111)
+
+### 1.8.3
+Fixed: Removed var_dump in line 1300
+
+### 1.8.2
+Fixed: AG Wrappers not firing for form fields under Contao 4.4 due to required parse() method (#105)
+Fixed: AG directly for news entries did not respect the manual sorting (#107)
+
+### 1.8.1
+Fixed: AG not firing for form fields under Contao 4.4 due to missing tableless option in forms under Contao 4.4
+Fixed: Wrong version number
+
+### 1.8.0
+Update: Contao 4.4 ready (#101)
+
+### 1.7.4
+Fixed: Subpalettes loaded twice: use tid GET parameter as indicator
+
+### 1.7.3
+Fixed: Compatibility update to the toggle visibility button when [ce-access] is running (#97)
+
+### 1.7.2
+Fixed: PCT\Autogrid\DcaLoader extends \Controller to prevent loading Backend classes when called via loadDataContainer Hook
+
+### 1.7.1
+Fixed: Authenticate the backend user in initializeSystem Hook if it has not been before
+
+### 1.7.0
+Fixed: Wrong backend view for admins in manual sorting mode (#91)
+Fixed: A connection resource error duo to initializeSystem Hook
+Fixed: An issue with the same-height option duo to css styling (#90)
+Added: Choose the sorting logic in newslist module (#92)
+
+### 1.6.5
+Added: tl_news.sorting to backend sorting option
+Update: Bypass permission check on cut,cutAll actions to support manual sorting for non-admin (#87)
+Update: Moved all tl_news related DCA callbacks to \PCZ\AutoGrid\TableNews class
+Update: Wrong version number
+
+### 1.6.4
+Fixed: Respect limits in manually sorted archives (#84)
+Fixed: The static parameter should be called with only one dash in config.php
+
+### 1.6.3
+Fixed: Changed .same-height to display:flex (#82)
+
+### 1.6.2
+Fixed: Missing ptable check in AutoGrid::fetchSiblingContentElements() (#80)
+
+### 1.6.1
+Fixed: Remove debug call from ce_autogridspacer template
+
+### 1.6.0
+New: AutoGrid Spacer content element (#74)
+Fixed: Missing element default class e.g. mod_article in block grid start and block grid stop elements (#76)
+Fixed: In multiple edit modes AG added it's fields by the number of elements being edited at the moment
+
+### 1.5.1
+Fixed: A rights issue in articles, content, formfields to toggle the autogrid icon (#70)
+
+### 1.5.0
+Update: PHP7 ready
+
+### 1.4.0
+Update: Apply manual news sorting via 'newsListFetchItems' Hook available since Contao 3.5 to gain high compatibility to other extensions manipulating the NewsModel (#67) 
+
+### 1.3.3
+Fixed: Detect the end of autogrid elements correctly to avoid empty elements (#60)
+Fixed: Losing autogrid class on copy,copyAll (#61)
+Fixed: Add missing fields in editAll, overrideAll mode (#64)
+Added: New line feature in Autogrid Wrapper elements (#63)
+Update: Support the i18nl10n extension
+Update: Rename the autogridWrapper Elements (#59)
+Update: Remove the AutoGrid icon for Wrapper Elements
+
+### 1.3.2
+Fixed: Missing class in include elements when AG is turned off (#55)
+Fixed: Missing autogrid_wrapper around articles
+Update: The AutogridWrapper contentelements now work just like the block grid feature
+
+### 1.3.1
+Fixed: Missing subpalette in editAll and overrideAll mode (#53)
+
+### 1.3.0
+Added: Support include elements with fallback to original element settings (#48)
+Added: News support (#24)
+Added: Manual sorting for news entries (#49)
+
+### 1.2.4
+Fixed: Check if a real margin value has been set for the ContentAutoGridWrapper (#45)
+Update: Grid class should be applied on wrapper div (#46)
+
+### 1.2.3
+Fixed: Load the assets via loadDataContainer to resolve losing the session
+
+### 1.2.2
+Added: -webkit-flex for Safari and webkit-based browsers
+
+### 1.2.1
+Fixed: Register the initializeSystem Hook not for the install tool
+
+### 1.2.0
+Added: Autogrid Wrapper Start/Stop
+Added: Autogrid Wrapper Start/Stop formfields
+Added: No gutter feature (#32)
+Added: Adjust mobile feature (#35)
+Added: Displacement feature (#33)
+Update: Improved the same-height rendering using display:flex
+Update: Apply same-height only on wrappers
+Update: More efficient html structure and more classes to use
+Update: General performance updates
+Update: Better DCA handling
+
+### 1.1.11
+Added: More media queries
+Added: More classes for the autogrid_wrapper element
+Added: The first element opening the wrapper inherits its classes to the wrapper class
+Update: Chosen for select fields
+Update: include the css with ||static parameter (#25)
+
+### 1.1.10
+Update: Calculate the grid based on paddings (#22)
+
+### 1.1.9
+Added: English language files (#20)
+Update: Replace the tl_article.space field for palette injection
+Update: Minor bug fixes
+
+### 1.1.8
+Fixed: Identify the element type to open and close wrappers only when the correct element type has been processed
+
+### 1.1.7
+Changed: Reset autogrid_wrapper for phones
+
+### Version 1.1.6
+Fixed: New line breaks auto mode sibling count (#11)
+Fixed: .autogrid selector overwrites all paddings (#13)
+Changed: Removed .block class for .autogrid selector (#12)
+
+### Version 1.1.5 (2014-06-02)
+Fixed: Wrong return value in ::fetchSiblingContentElements
+
+### Version 1.1.4 (2014-05-27)
+Fixed: Using globals to store sibling data for fix losing the siblings when the class is being reinitiated (#9) 
+
+### Version 1.1.3 (2014-05-13)
+Fixed: Fixed an issue with the autogrid_wrapper with nested autogrid elements in auto_mode
+
+### Version 1.1.2 (2014-05-07)
+Added: Block-grid feature for manuell grid mode
+Added: New backend icons (operation button)
+Update: Wrapper style view in mode 4 elements when running blockgrid mode (#5)
+
+### Version 1.1.1 (2014-04-30)
+Fixed: Wrong calculation of sibling elements from one element in auto mode to the next in manuell mode
+
+### Version 1.1 (2014-04-30)
+Fixed: No wrapping of formfields in auto mode (#2)
+Added: Changelog.txt and Version constant: PCT_AUTOGRID_VERSION
+
+### Version 1.0 (< 2014-04-30)

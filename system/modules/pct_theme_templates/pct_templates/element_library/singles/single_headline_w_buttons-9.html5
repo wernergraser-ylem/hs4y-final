@@ -1,0 +1,65 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_headline_w_buttons-9
+*/
+$arrImport = array (
+'tstamp' => '28.09.2023 09:06',
+'name' => 'single_headline_w_buttons-9',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'headline_w_buttons',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+132 => 'margin_b',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => '125785',
+1 => '14680',
+2 => '1664',
+3 => '1694423546',
+5 => 'headline_w_buttons',
+17 => 'above',
+28 => 'ascending',
+42 => '4',
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => '300',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+100 => '14',
+102 => '0.5',
+132 => 'mb-s',
+160 => 'a:8:{s:6:"values";a:28:{s:13:"5q0zey27zpobv";s:6:"style9";s:15:"koi913jk0xz6tb1";a:2:{s:5:"value";s:29:"Headline with Buttons Style 9";s:4:"unit";s:2:"h2";}s:15:"k0brp0yhi5solgx";s:18:"{{link_url::2249}}";s:22:"k0brp0yhi5solgx_target";s:0:"";s:24:"k0brp0yhi5solgx_linkText";s:9:"Read more";s:25:"k0brp0yhi5solgx_titleText";s:9:"Read more";s:24:"k0brp0yhi5solgx_lightbox";s:0:"";s:14:"uhh7jocs44kxvw";s:18:"{{link_url::2249}}";s:21:"uhh7jocs44kxvw_target";s:0:"";s:23:"uhh7jocs44kxvw_linkText";s:10:"Contact us";s:24:"uhh7jocs44kxvw_titleText";s:10:"Contact us";s:23:"uhh7jocs44kxvw_lightbox";s:0:"";s:15:"c8ieyoiombxn1w3";s:0:"";s:12:"x3nhxw3uck2x";s:4:"mb-s";s:15:"kaaf2r65qzu01pz";s:0:"";s:15:"f81n3nf10e3xhh9";s:0:"";s:14:"15l0unq7y9hz2h";s:17:"fa-angle-right fa";s:15:"etcbeqfv07g461o";s:16:"fa-envelope-o fa";s:18:"koi913jk0xz6tb1_h1";N;s:18:"koi913jk0xz6tb1_h2";N;s:18:"koi913jk0xz6tb1_h3";N;s:18:"koi913jk0xz6tb1_h4";N;s:18:"koi913jk0xz6tb1_h5";N;s:18:"koi913jk0xz6tb1_h6";N;s:26:"k0brp0yhi5solgx_pagepicker";N;s:25:"uhh7jocs44kxvw_pagepicker";N;s:25:"15l0unq7y9hz2h_iconpicker";N;s:26:"etcbeqfv07g461o_iconpicker";N;}s:6:"groups";a:6:{i:0;a:4:{s:5:"ident";s:5:"297_0";s:8:"group_id";s:3:"297";s:11:"group_alias";s:8:"headline";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"koi913jk0xz6tb1";s:2:"id";s:4:"1687";s:5:"alias";s:8:"headline";}}}i:1;a:4:{s:5:"ident";s:5:"359_0";s:8:"group_id";s:3:"359";s:11:"group_alias";s:8:"button_1";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"k0brp0yhi5solgx";s:2:"id";s:4:"1688";s:5:"alias";s:10:"button_one";}}}i:2;a:4:{s:5:"ident";s:5:"360_0";s:8:"group_id";s:3:"360";s:11:"group_alias";s:8:"button_2";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"uhh7jocs44kxvw";s:2:"id";s:4:"1689";s:5:"alias";s:10:"button_two";}}}i:3;a:4:{s:5:"ident";s:5:"300_0";s:8:"group_id";s:3:"300";s:11:"group_alias";s:5:"icons";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:14:"15l0unq7y9hz2h";s:2:"id";s:4:"1699";s:5:"alias";s:15:"button_one_icon";}i:1;a:3:{s:4:"uuid";s:15:"etcbeqfv07g461o";s:2:"id";s:4:"1700";s:5:"alias";s:15:"button_two_icon";}}}i:4;a:4:{s:5:"ident";s:5:"407_0";s:8:"group_id";s:3:"407";s:11:"group_alias";s:8:"settings";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:13:"5q0zey27zpobv";s:2:"id";s:4:"1690";s:5:"alias";s:5:"style";}}}i:5;a:4:{s:5:"ident";s:5:"299_0";s:8:"group_id";s:3:"299";s:11:"group_alias";s:0:"";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"c8ieyoiombxn1w3";s:2:"id";s:4:"1695";s:5:"alias";s:10:"margin_top";}i:1;a:3:{s:4:"uuid";s:12:"x3nhxw3uck2x";s:2:"id";s:4:"1696";s:5:"alias";s:13:"margin_bottom";}i:2;a:3:{s:4:"uuid";s:15:"kaaf2r65qzu01pz";s:2:"id";s:4:"1697";s:5:"alias";s:17:"margin_top_mobile";}i:3;a:3:{s:4:"uuid";s:15:"f81n3nf10e3xhh9";s:2:"id";s:4:"1698";s:5:"alias";s:20:"margin_bottom_mobile";}}}}s:6:"clones";a:0:{}s:6:"tstamp";s:10:"1562332589";s:5:"alias";s:18:"headline_w_buttons";s:5:"uuids";a:10:{i:0;s:15:"koi913jk0xz6tb1";i:1;s:15:"k0brp0yhi5solgx";i:2;s:14:"uhh7jocs44kxvw";i:3;s:14:"15l0unq7y9hz2h";i:4;s:15:"etcbeqfv07g461o";i:5;s:13:"5q0zey27zpobv";i:6;s:15:"c8ieyoiombxn1w3";i:7;s:12:"x3nhxw3uck2x";i:8;s:15:"kaaf2r65qzu01pz";i:9;s:15:"f81n3nf10e3xhh9";}s:7:"version";s:5:"4.0.1";s:13:"customelement";s:3:"136";}',
+162 => 'sourceText',
+),
+),
+);

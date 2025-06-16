@@ -1,0 +1,9 @@
+
+<div <?php echo $this->cssID; ?> class="widget <?php echo $this->class; ?> block">
+<fieldset class="checkbox_container">
+<?php if($this->label): ?><legend><?php echo $this->label; ?></legend><?php endif; ?>
+<label for="<?= $this->name; ?>"><?= $this->label; ?> (<?php echo $this->countValue(1); ?>)</label>
+<input type="checkbox" class="checkbox"  name="<?= $this->name; ?>" value="1"<?php if($this->checked): ?> checked<?php endif; ?>>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?php echo $this->description; ?></div><?php endif; ?>	
+</div>

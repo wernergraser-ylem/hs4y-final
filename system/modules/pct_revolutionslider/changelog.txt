@@ -1,0 +1,359 @@
+### 6.0.6
+Update: PHP8 Warnings (#339)
+
+### 6.0.5
+Update: Updated operation buttons for Contao 5 (#337)
+
+### 6.0.4
+Fixed: Missing preview image in backend wildcard (#331)
+Fixed: Increased field (tl_content.revolutionslider_data_animation_start) size to varchar(32) (#335)
+Update: Minor code updates (#333)
+
+### 6.0.3
+Fixed: Toggle feature under Contao 4.13 did not work correctly (#329)
+
+### 6.0.2
+Update: Backend icons (#325)
+Update: Remove deprecated methods related to rights management (#325)
+Update: Support Contaos new toggle feature (#326)
+
+### 6.0.1
+Fixed: Deprecated ->log call in TableRevolutionSliderSlides (#323)
+
+### 6.0.0
+Fixed: RS script related inserttags where not compatible to Contaos inserttags (#320)
+Fixed: Cumulative layout shift (#321)
+Fixed: Overwrite meta only when link address is selected (#308)
+Fixed: Wrong backend url to quick edit in content elements (#312)
+Fixed: Missing alt tag in transparent.png (#310)
+Update: General PHP8 updates (#311,#318,#317)
+Update: Support contaos debug mode (#319)
+Update: General Contao 5 compatibility (#147)
+Update: RevolutionSliderImage: overwriteMeta when imageUrl is set (#308)
+Removed: Contao 4.9 compatibility (#147)
+Removed: Rights management (#297)
+Removed: tl_content.revolutionslider_data_linktoslide, feature is deprecated (#307)
+
+### 5.1.4
+Update: tl_revolutionslider_slides.size label was missing under 4.13 and improved image options (#303)
+Update: tl_revolutionslider refer to DC_Table::class (#305)
+Update: PHP8 Warnings (#304)
+
+### 5.1.3
+Fixed: Do not include tabs by default (#301)
+
+### 5.1.2
+Fixed: Missing "cut" backend rights in tl_user (#296)
+Fixed: Wrong Session object used in Backend classes (#298)
+Update: PHP Warnings (#294)
+
+### 5.1.1
+Fixed: Missing imageTitle field in revolution slider image element (#287)
+Fixed: Missing meta data in revolution slider image element (#288)
+Update: RevolutionSliderImage now extends ContentImage (#288)
+Update: RevolutionSliderHyperlink now extends ContentHyperlink (#289)
+Update: Pass video parameters to the template and append data-videoattributes (#286)
+
+### 5.1.0
+New: Support for Contao 4.13
+Added: Parallax setting for RS content elements (#273)
+Fixed: Generate MediaQuery without additional brackets (#272)
+
+### 5.0.6
+Fixed: Support "youtube-nocookie" as valid Youtube source (#281)
+Fixed: Missing tl_pct_revolutionslidereditHeader button for users with create rights (#282)
+Fixed: A PHP error on the Session class in editAll/overrideAll mode (#282)
+Fixed: tl_pct_revolutionslider_slides permissions (#282)
+Update: Deprecated contao classes (#282)
+Update: Changed tl_content.revolutionslider_text_fontsize field label and description (#280)
+Update: Trigger JS event "RevolutionSlider.loaded" for each slider instance (#277)
+
+### 5.0.5
+Fixed: Stop on hover did not work correctly (#278)
+Update: Deprecated contao classes (#275)
+
+### 5.0.4
+Fixed: tl_pct_revolutionslider.navigationSize must be an array (#274)
+
+### 5.0.3
+Fixed: "LinkToContent" button was not visible (#267)
+Fixed: "Stop on hover" did not work correctly (#269)
+Update: The RS script now fires a global resize event when the slider has been loaded to trigger other scripts that might need the final slider size for calculations (#268)
+
+### 5.0.2
+Fixed: Navigation elements were not visible (#265)
+Fixed: Minor syntax changes js_revoslider_default (#264)
+
+### 5.0.1
+Update: Changed field sizes for tl_content.revolutionslider_ fields (#261)
+Update: Reduce content element type selection to RS elements only (#262)
+
+### 5.0.0
+New: RevolutionSlider script update to version 5.4
+New: Slide: Background video option (#231, #234, #239)
+Added: New fields: tl_revolutionslider.sliderBreakPoint (#175)
+Added: Support Contaos responsive images for slide backgrounds
+Added: $GLOBALS['REVOLUTIONSLIDER']['scriptPath'] to define path to RS script (#180)
+Added: tl_content[revolutionslider_data_frames_in,revolutionslider_data_frames_out] for custom animations based on data-frames attribute (#195)
+Added: tl_pct_revolutionslider_slides.parallax (#187)
+Added: tl_pct_revolutionslider.sliderStyle (#185)
+Added: tl_content.revolutionslider_visibility (#205)
+Added: Edit button next to slider selection in content element (#227)
+Update: RevolutionSlider script version 5.4.0
+Update: Refurbished the backend layouts and fixed a layout issue with the RS video content element (#176, #180)
+Update: General code updates and next Contao LTS updates (#178)
+Update: Rebuild navigation settings in slider settings (#196)
+Update: Random slide option is now php array based in revoslider_default template (#249)
+Update: Overlay is now a css class (#241)
+Update: Refurbished the RevolutionSlider video element (#229)
+Removed: SlideFactory::findByIds (never used) (#179)
+Removed: Factory::getAllSliders (never used) (#179)
+Removed: Hooks class (#179)
+Removed: tl_content[revolutionslider_data_frames,revolutionslider_data_rotation,revolutionslider_data_scale,revolutionslider_data_skew,revolutionslider_data_perspective,revolutionslider_data_origin,revolutionslider_data_opacity,revolutionslider_data_split,revolutionslider_data_delay] (#195)
+Removed: tl_content[revolutionslider_data_position_OUT,revolutionslider_data_rotation_OUT,revolutionslider_data_scale_OUT,revolutionslider_data_skew_OUT,revolutionslider_data_perspective_OUT,revolutionslider_data_origin_OUT,revolutionslider_data_opacity_OUT,revolutionslider_data_split_OUT,revolutionslider_data_delay_OUT] (#195)
+Removed: tl_pct_revolutionslider_slides.slotamount (#187)
+Removed: tl_content.revolutionslider_text_invertcolor (#244)
+Removed: tl_content[addThumbs,addNavigation,addArrows] (#196)
+Removed: tl_content.revolutionslider_hideMobile (#205)
+Remove: Standalone video element (#251)
+Change: tl_content.revolutionslider_text_fontsize to varchar(255) and multisize field (#175)
+
+### 4.1.1
+Update: Revert changes in js_revoslider_default issue #164 (#169)
+
+### 4.1.0
+Update: js_revoslider_default: Initialize slider with mobile screen width on mobile devices (default: 767px) (#164)
+
+### 4.0.0
+Added: tl_content.useSVG and handle SVG images in RS Image element (#161)
+Fixed: Wrong variable name in PCT\RevolutionSlider\SlideFactory
+Update: Loading of resources have been moved to revoslider_default template (#156)
+Update: Load resources in ce_revolutionslider_video only when it is a standalone video content element
+Update: Set tl_revolutionslider.jsTemplate default "js_revoslider_default";
+Update: tl_revolutionslider.overlay tl_class w50 (#158)
+Update: Compatibility update for next Contao LTS (#157)
+Update: tl_revolutionslider_slides.singleSRC is now mandatory
+Removed: config.php: $GLOBALS['REVOLUTIONSLIDER']['scripts'], $GLOBALS['REVOLUTIONSLIDER']['scripts'], $GLOBALS['REVOLUTIONSLIDER']['rs_plugin'], $GLOBALS['REVOLUTIONSLIDER']['rs_css'], $GLOBALS['REVOLUTIONSLIDER']['css']
+Update: General code updates and improvements
+Removed: Support for Contao < 3.5 (#159)
+Removed: Runeonce.php
+
+### 3.2.0
+Update: ce_revolutionslider_video: HTML5 attribute "muted" will be added to <video> element when video is set to autoplay (#154)
+Update: js_revoslider_default: Removed the "z-index workaround" (#152)
+Update: Removed m12 DCA class from tl_content.revolutionslider_text_italic (#153)
+
+### 3.1.4
+Update: Remove deprecated text/javascript tags from html5 templates (#149)
+
+### 3.1.3
+Update: PHP 7.2 compatibility (#147)
+Update: Put constants in quotations for php 7.2
+
+### 3.1.2
+Fixed: Wrong class name for \RevolutionSlider\Models\Slides
+
+### 3.1.1
+Fixed: New sliders, slides where not added to user, user_group rights (#140)
+Fixed: Right fields need tl_class clr (#141)
+Fixed: tl_pct_revolutionslider_slides.bgposition needs tl_class w50 under Contao 4
+
+### 3.1.0
+Update: Contao 4.4 ready (no changes) (#137)
+
+### 3.0.1
+Update: Transifex language files
+
+### 3.0.0
+Fixed: Respect content element CSS ID as individual slider identifier
+Fixed: Use "revolutionslider_data_start_OUT" as data-end value to allow timed outgoing animations
+Update: Minor changes on default effect values
+Update: Use models (#130)
+Update: Added rgxp for numeric fields 
+Remove: RevolutionSlider\Core\Factory::byId
+Remove: RevolutionSlider\Core\SlideFactory::byId
+
+### 2.5.5
+Fixed: Hide RS content elements in regular articles only
+Update: Enable the relative position feature for any content element using $GLOBALS['REVOLUTIONSLIDER']['alwaysShowPos9Grid'] = true;
+
+### 2.5.4
+Update: Added styling to avoid "blinking" when slider loads (#126)
+Update: Sort slider select alphabetically (#128)
+
+### 2.5.3
+Change: Backend label ce_revolutionslider_text.bold
+
+### 2.5.2
+Fixed: Outgoing animations will not start (#122)
+Update: ce_revolutionslider_image to use the picture feature
+Update: js_revoslider_default (#123)
+
+### 2.5.1
+Update: Bring fallback to \String class when \StringUtil does not exist in the environment
+
+### 2.5.0
+New: The RevolutionSlider Video content element can now be used standalone (#118)
+Update: Include iframe parameter "allowfullscreen" when external video is checked for fullscreen
+
+### 2.4.0
+Fixed: A permission issue when duplicating existing sliders or slides (#113)
+Added: Invisible legend in RevolutionSlider content element
+Added: Support data-state for toggle fields
+Added: PHP7 support
+Update: forceFullWidth:"off" in js_revoslider_default template
+
+### 2.3.8
+Update: Remove the loadDataContainer call from tl_revolutionslider_slides.php
+
+### 2.3.7
+Fixed: Wrong jquery selector in js_revoslider_default Template
+Fixed: Use the Slider ID instead of a timestamp to create an individual selector 
+
+### 2.3.6
+Fixed: ContentElements not showing in Frontend when Contao Debug mode is active
+Update: Place the javascript on the body end using $GLOBALS['TL_JQUERY']
+
+### 2.3.5
+Fixed: Start outgoing animations correctly (#107)
+Update: Change fieldtypes from integer to varchar for decimal values (#108)
+Update: Use the meta-information title as alt attribute and title attribute in slide background image (#106)
+
+### 2.3.4
+Added: Workaround bugfix for z-index issue in slider javascript (#104)
+
+### 2.3.3
+Fixed: Missing semicolon in styles.css (#102)
+Fixed: Removed the second class="" attribute in ce_revolutionslider_hyperlink.html5 (#101)
+Update: Hide revolutionslider_ fields also in overrideAll mode when outside the module (#98)
+Update: Nicer html structure (#100)
+
+### 2.3.2
+Update: Support for responsive images in Contao (#95)
+Update: Slider selection in tl_content is now a select field
+Update: Load jquery from CDN if not added via page layout
+
+### 2.3.1
+Update: Show all sliders when user has rights to create and no specific slider is selected (#92)
+Update: Show all slides when user has rights to create and no specific slide is selected (#92)
+Update: Added permission check for action "show" in slides (#92)
+
+### 2.3.0
+Added: tl_revolutionslider.stopAtSlide, tl_revolutionslider.stopAfterLoops in Slider settings
+Added: tl_revolutionslider.startWithSlide (support with rs-plugin 4.6.4)
+Update: Themepunch revolution slider script to 4.6.4
+Update: Hide the singleSRC (preview image) field when video source is external
+
+### 2.2.11
+Fixed: The linktoslide value must be index of the slide not the contao id
+Added: Show 9-grid-relative position field for RS elements (#89)
+Added: Image size field in slide settings (#88)
+
+### 2.2.10
+Fixed: Missing object instance in TableContent.php
+
+### 2.2.9
+Added: RevolutionSlider Text Element (#80)
+Added: tl_content.customTpl support für Contao 3.4 (#80)
+Added: RevolutionSlider Image Element (#80)
+Added: tl_content.revolutionslider_text_italic
+Added: RevolutionSlider Hyperlink Element (#84)
+Update: tl_revolutionslider field definitions (#83)
+Update: tl_revolutionslider_slide field definitions (#80)
+Update: tl_content field defintions (#79)
+Removed: tl_revolutionslider.pid,.source (#80)
+
+### 2.2.8
+Fixed: Added models classes (Contao expects for any custom table definition a single models class file) (#74)
+Fixed: Outgoing animations have no effect or wrong effect (#76)
+
+### 2.2.7
+Fixed: An issue with two or more identical sliders on one page (#72)
+
+### 2.2.6
+Added: Add tp-resizeme class to nested elements (#70) 
+Update: Update the style.css (#69)
+
+### 2.2.5
+Update: Remove tp-resizeme class (#67)
+
+### 2.2.4
+Fixed: Wrong field name in dca/tl_user for revolutionslidersp rights field
+Update: Allow editing sliders when user has right to create (#61)
+Added: English language files (#64)
+
+### 2.2.3
+Added: Fullscreen video option in video element (#59)
+Fixed: Fullscreen video options (#58)
+
+### 2.2.2
+Fixed: ContentRevolutionSliderVideo compiled twice (#53)
+Fixed: Apply split text only when customin/customout option is set
+Added: API param to video url to make the player accessible for js (#49)
+Added: Boxed mode for videos (#52)
+Update: Removed xhtml templates (#50)
+Update: Do not force full width in repsonsive mode (#51)
+Update: More structured video palettes in backend
+Update: Remove restrictions like content elements to chose from due to bundled version
+Update: Set default value to 0 for skew options (#56)
+
+### Version 2.2.1
+Fixed: Wrong/old path to editHeader icon (#42)
+Fixed: Wrong variable name for ken burns scaling
+Added: Documentation and expamples (#43)
+Added: Noise effect as overlay (#46)
+Added: Controls Checkbox in rs video elements to enable html5 controls (#45)
+Added: Loop attribute in videos as checkbox option (#46)
+Added: Error message when browser does not support html5 video tag
+Update: <track> Element in _video templates is now optional
+
+### Version 2.2.0
+Update: Update rs-plugin to 4.6 (#37)
+
+### Version 2.1.1
+Added: REVOLTIONSLIDER_PATH constant
+Update: Changed paths to be build with constant
+
+### Version 2.1.0
+Update: Rename extension to pct_revolutionslider (#30)
+
+### Version 2.0.1
+Fixed: Fallback transition in slides when no individual transition is set in the slide
+Fixed: Wrong value used for data-masterspeed
+
+### Version 2.0.0
+Fixed: Autoplay for videos (#8)
+Fixed: Missing effect palettes in rs video element (#11)
+Fixed: Fixed a right issue when editing the content of a slide (#14)
+Fixed: Hide rs fields in editAll mode when not in the backend module (#15)
+Fixed: Handle data-elementdelay correctly (#16)
+Fixed: Fullscreen support in video templates (#17)
+Fixed: Missing alt tag in transparent.png img element (#22)
+Fixed: Invalid html when using percentage values in video element (#24)
+Fixed: Invalid html poster tag should not be empty (#25)
+Fixed: Missing content elements when duplicating slides or sliders (#27)
+Added: fullScreenOffsetContainer in slider settings when slider is in fullscreen mode (#12)
+Added: More background options in slide settings (image,colored,transparent)
+Added: Overlay grafic in slider settings
+Added: New animation options: z-translation, rotation, perspective, opacity, skew, split (texteffects)
+Added: Kens Burns effect in selection
+Added: Define outgoing animations separably
+Added: Shuffle option in slider settings
+Added: Real boxed mode (#19)
+Added: preload="true" attribute in video templates (#22)
+Added: documentation and example files (#18)
+Added: Workaround to fix a script bug that created an unwanted duplicate of a split text element when using compressed markup
+Update: New, cleaner interface in tl_content palette
+Update: Allow all slider format options, not just responsive (#9)
+Update: Allow only local videos when slider runs in fullscreen mode (#12)
+Update: Js-Plugin Version: 4.5.2
+Update: More minor bugfixes and template updates
+
+### Version 1.2
+Fixed: Missing content elements when duplicating slides or sliders (#27)
+
+### Version 1.1 (2014-04-29)
+Added: Support for new revolutionslider plugin script (#7)
+Update: The GLOBALS array for the main rs script sources is now a multisize array: $GLOBALS['REVOLUTIONSLIDER']['scripts']
+
+### Version 1.0 (< 2014-04-29)

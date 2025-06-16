@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_vertical_spacer_px
+*/
+$arrImport = array (
+'tstamp' => '15.11.2023 14:26',
+'name' => 'single_vertical_spacer_px',
+'category' => 'dividers',
+'thumb' => '',
+'elements' => 'vertical_spacer_px',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126379,
+1 => 14771,
+2 => 1920,
+3 => 1700058229,
+5 => 'vertical_spacer_px',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:5:{s:14:"bx8vy6ks3zckkf";s:5:"sp-xl";s:15:"d54q36utz1drwdf";s:0:"";s:13:"tr239atleh6xp";s:3:"100";s:14:"sx69ipe1lld9cu";s:0:"";s:14:"e576wi3jgk4txc";s:0:"";}s:6:"groups";a:1:{i:0;a:4:{s:5:"ident";s:5:"325_0";s:8:"group_id";i:325;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:13:"tr239atleh6xp";s:2:"id";i:1842;s:5:"alias";s:6:"height";}i:1;a:3:{s:4:"uuid";s:14:"sx69ipe1lld9cu";s:2:"id";i:1843;s:5:"alias";s:13:"height_mobile";}i:2;a:3:{s:4:"uuid";s:14:"e576wi3jgk4txc";s:2:"id";i:1841;s:5:"alias";s:11:"mobile_hide";}}}}s:6:"tstamp";i:1562332684;s:5:"alias";s:18:"vertical_spacer_px";s:5:"uuids";a:5:{i:0;s:14:"bx8vy6ks3zckkf";i:1;s:15:"d54q36utz1drwdf";i:2;s:13:"tr239atleh6xp";i:3;s:14:"sx69ipe1lld9cu";i:4;s:14:"e576wi3jgk4txc";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:146;}',
+162 => 'sourceText',
+),
+),
+);

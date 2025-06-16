@@ -1,0 +1,15 @@
+
+<div class="portfolioreader block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+<?php echo $this->text; ?>
+</div>
+
+<?php
+$schemaOrg = $this->getSchemaOrgData();
+$schemaOrg['primaryImageOfPage']['contentUrl'] = $this->singleSRC;
+
+if ($this->hasText) {
+	$schemaOrg['text'] = $this->rawHtmlToPlainText($this->text);
+}
+
+$this->addSchemaOrg($schemaOrg);
+?>

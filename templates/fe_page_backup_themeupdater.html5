@@ -1,0 +1,282 @@
+<?php 
+use Contao\ArrayUtil;
+use Contao\Combiner;
+use Contao\File;
+use Contao\PageModel;
+use Contao\System;
+use PCT\SEO;
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $this->language; ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+<head>
+<?php
+global $objPage;
+$objContainer = System::getContainer();
+$objRoot = PageModel::findWithDetails($objPage->rootId);
+$bundles = array_keys($objContainer->getParameter('kernel.bundles'));
+$rootDir = $objContainer->getParameter('kernel.project_dir');
+$objInsertTag = $objContainer->get('contao.insert_tag.parser');
+if( isset($objPage->customBodyClass) && !empty($objPage->customBodyClass) )
+{
+	$this->class .= $objPage->customBodyClass;
+}
+
+?>
+<?php $this->block('head'); ?>
+<meta charset="<?= $this->charset ?>">
+<title><?= $this->title ?></title>
+<base href="<?= $this->base ?>">
+<?php $this->block('meta'); ?>
+<meta name="robots" content="<?= $this->robots ?>">
+<meta name="description" content="<?= $this->description ?>">
+<meta name="generator" content="Contao Open Source CMS">
+<?php $this->endblock(); ?>
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<?php include $this->getTemplate($objRoot->favicon_tpl ?: 'favicons', 'html5'); ?>
+<?php if ( isset($this->canonical) && !empty($this->canonical) ): ?>
+<link rel="canonical" href="<?= $this->canonical ?>">
+<?php endif; ?>
+<?php
+ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array('files/cto_layout/css/animate.css'.($this->seo_protocol == 'http2' ? '' :'|static')) );
+ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array('files/cto_layout/scripts/isotope/isotope_styles.css'.($this->seo_protocol == 'http2' ? '' :'|static')) );
+ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array('files/cto_layout/css/font-awesome.min.css'.($this->seo_protocol == 'http2' ? '' :'|static')) );
+ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array('files/cto_layout/css/themify-icons.css'.($this->seo_protocol == 'http2' ? '' :'|static')) );
+if( \in_array('pct_customelements_plugin_customcatalog', $bundles) && \file_exists($rootDir.'/files/cto_layout/css/customcatalog.css') )
+{
+	ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array('files/cto_layout/css/customcatalog.css'.($this->seo_protocol == 'http2' ? '' :'|static')) );
+}
+ArrayUtil::arrayInsert($GLOBALS['TL_CSS'],0,array('files/cto_layout/css/styles.css'.($this->seo_protocol == 'http2' ? '' :'|static')) );
+?>	
+<link rel="stylesheet" href="files/cto_layout/css/print.css" media="print">
+<link rel="stylesheet" href="/files/css/add-print.css" media="print">
+<?php if(defined('PCT_FRONTEND_QUICKEDIT_ACTIVE')): ?>
+<?php if( PCT_FRONTEND_QUICKEDIT_ACTIVE ): ?>	
+<link rel="stylesheet" type="text/css" href="files/cto_layout/css/fq_styles.css">
+<?php endif; ?>
+<?php echo $this->stylesheets; ?>
+<?php endif; ?>
+<?php if($this->pct_layout_css): ?>
+<link id="layout_css" rel="stylesheet preload" as="style" title="layout_css" type="text/css" href="<?php echo $this->pct_layout_css; ?>">
+<?php endif; ?>
+<?php if( file_exists($rootDir.'/files/cto_layout/css/customize.css') && filesize($rootDir.'/files/cto_layout/css/customize.css') > 0): ?>
+<link rel="stylesheet preload" as="style" type="text/css" href="files/cto_layout/css/customize.css?v=<?= \filemtime($rootDir.'/files/cto_layout/css/customize.css'); ?>">
+<?php endif; ?>
+<?= $this->pct_structured_data; ?>
+<?php echo $this->head; ?>
+<?php $this->endblock(); ?>
+</head>
+<body class="<?php if ($this->class) echo ' ' . trim(preg_replace('/fa(?:-[-\w]+|\b)/','', $this->class)); ?> root_<?= $objPage->rootId; ?> page_<?= $objPage->id; ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?> itemscope itemtype="http://schema.org/WebPage">
+<?php if (!empty($this->sections['body_top'])): ?><div class="body_top"><?php echo $this->sections['body_top']; ?></div><?php endif; ?>
+<div class="body">
+<?php $this->block('body'); ?>
+	<div id="contentwrapper">
+		<div id="fix-wrapper">
+			<div id="top-wrapper">
+					<?php if (trim(System::getContainer()->get('contao.insert_tag.parser')->replace('{{module::topbar}}'))) : ?>
+					<?php $this->block('top_section'); ?>
+						<div id="top">
+							<div class="inside topbar">
+							<?= $objInsertTag->replace('{{module::topbar}}'); ?>
+								<hr class="clear">
+							</div>
+						</div>
+					<?php $this->endblock(); ?>
+					<?php endif; ?>
+					<?php $this->block('header'); ?>
+						<header id="header" class="header original" itemscope itemtype="http://schema.org/WPHeader">
+							<div class="inside">
+								<?= $objInsertTag->replace('{{module::logo}}'); ?>
+								<?= $objInsertTag->replace('{{module::langswitch}}'); ?>
+								<?= $objInsertTag->replace('{{module::socials}}'); ?>
+								<div class="mod_search"><div class="ce_search_label"><i class="ti ti-search"></i></div></div>
+								<?php echo $this->header; ?>					
+								<div class="mmenu_trigger" title="Open mobile navigation">
+									<div class="label">Menu</div>
+									<div class="burger transform">
+										<div class="burger_lines"></div>
+									</div>
+								</div>					
+								<?php if (!in_array('onepage_page', explode(' ', $this->class))): ?>
+								<?= $objInsertTag->replace('{{module::mainmenu}}'); ?>
+								<?php endif; ?>				
+								<div class="smartmenu">
+									<div class="smartmenu-trigger"><span class="line"></span></div>
+								</div>						
+							<div class="clear"></div>
+							</div>
+						</header>
+				<?php $this->endblock(); ?>
+			</div>
+		</div>
+		<?php $this->block('slider'); ?>
+			<div id="slider"<?php if(empty(trim( $this->sections['slider']))): ?> class="empty"<?php endif; ?>>
+				<?php if(!empty(trim( $this->sections['slider']))): ?>
+				<div class="inside">
+					<?php echo trim( $this->sections['slider'] ); ?>
+				</div>
+				<?php endif; ?>
+			</div>
+		<?php $this->endblock(); ?>
+			<?php $this->block('breadcrumb'); ?>
+				<div id="breadcrumb"><?= $objInsertTag->replace('{{module::breadcrumb}}'); ?></div>
+			<?php $this->endblock(); ?>
+		<?php $this->block('container'); ?>
+			<div id="wrapper">
+				<div id="container" tabindex="-1">
+					<?php $this->block('main'); ?>
+						<section id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+							<div class="inside">
+								<?php echo $this->main; ?>
+							</div>
+						</section>
+					<?php $this->endblock(); ?>
+					<?php $this->block('left'); ?>
+						<?php if ($this->left): ?>
+							<aside id="left">
+								<div class="inside">
+									<?php echo $this->left; ?>
+								</div>
+							</aside>
+						<?php endif; ?>
+					<?php $this->endblock(); ?>
+					<?php $this->block('right'); ?>
+						<?php if ($this->right): ?>
+							<aside id="right">
+								<div class="inside">
+									<?php echo $this->right; ?>
+								</div>
+							</aside>
+						<?php endif; ?>
+					<?php $this->endblock(); ?>
+				</div>
+			</div>
+		<?php $this->endblock(); ?>
+		
+		<?php if (trim( $objInsertTag->replace('{{module::footer}}')) ) : ?>
+		<?php $this->block('footer'); ?>
+			<footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
+				<div class="inside">
+					<?= $objInsertTag->replace('{{module::footer}}'); ?>
+				</div>
+			</footer>
+		<?php $this->endblock(); ?>
+		<?php endif; ?>
+		
+		<?php if (!empty($this->sections['bottom'])): ?>
+			<?php $this->block('bottom'); ?>
+				<div id="bottom">
+					<div class="inside">
+						<?php echo $this->sections['bottom']; ?>
+					</div>
+				</div>
+			<?php $this->endblock(); ?>
+		<?php endif; ?>
+	</div>
+</div>
+<div class="body_bottom">
+	<?= $objInsertTag->replace('{{module::smartmenu}}'); ?>
+	<?php echo $this->sections['body_bottom']; ?>
+</div>
+
+<div id="stickyheader" class="stickyheader Fixed">
+	<div class="header cloned">
+		<div class="inside">
+			<?= $objInsertTag->replace('{{module::logo}}'); ?>
+			<?= $objInsertTag->replace('{{module::langswitch}}'); ?>
+			<?= $objInsertTag->replace('{{module::socials}}'); ?>
+			<div class="mod_search"><div class="ce_search_label"><i class="ti ti-search"></i></div></div>
+			<?php echo $this->header; ?>					
+			<div class="mmenu_trigger" title="Open mobile navigation">
+				<div class="label">Menu</div>
+				<div class="burger transform">
+					<div class="burger_lines"></div>
+				</div>
+			</div>					
+								
+			<?php if (!in_array('onepage_page', explode(' ', $this->class))): ?>
+			<?= $objInsertTag->replace('{{module::mainmenu}}'); ?>
+			<?php endif; ?>
+			<div class="smartmenu">
+				<div class="smartmenu-trigger"><span class="line"></span></div>
+			</div>						
+		<div class="clear"></div>		</div>
+	</div>
+</div>
+
+<?php if (!empty($this->sections['body'])): ?><?php echo $this->sections['body']; ?><?php endif; ?>
+<div id="mmenu">
+	<div class="scrollable">
+		<div class="inside">
+			<div id="mmenu_middle" class="block">
+			<?php if (!in_array('onepage_page', explode(' ', $this->class))): ?>
+			<?= $objInsertTag->replace('{{module::mobile_menu}}'); ?>
+			<?php endif; ?>
+			<?php if(isset($GLOBALS['ONEPAGE_NAVI'])): ?><?= $objInsertTag->replace('{{insert_module::'.$GLOBALS['ONEPAGE_NAVI'].'}}'); ?><?php endif; ?>
+			</div>
+			<div id="mmenu_bottom" class="block">
+				<?= $objInsertTag->replace('{{module::langswitch}}'); ?>
+				<?= $objInsertTag->replace('{{module::socials}}'); ?>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mmenu_overlay"></div>
+<?= $objInsertTag->replace('{{megamenu}}'); ?>
+
+<div id="top_link" class="top-link">
+  <a href="{{env::request}}#contentwrapper" title="To Top">
+    <svg class="progress-ring" width="50" height="50">
+      <circle class="progress-ring__circle" stroke="orange" stroke-width="4" fill="transparent" r="22" cx="25" cy="25"/>
+    </svg>
+    <i class="ti ti-angle-up"></i>
+  </a>
+</div>
+<?= $this->jsonLdScripts ?? ''; ?>
+<script>jQuery.noConflict();</script>
+<?php echo $this->mooScripts; ?>
+<?php echo $this->framework; ?>
+<?php echo $this->mootools; ?>
+
+<?php // seo_scripts.js
+$arrSeoScripts = SEO::getSeoScripts();
+if( !empty($arrSeoScripts) )
+{
+	// write single assets script file
+	$objFile = new File( 'files/cto_layout/scripts/seo_scripts.js' );	
+	$objFile->write( implode(' ', $arrSeoScripts ) );
+	$objFile->close();
+}
+?>	
+<?php if( $this->seo_protocol == 'http2' ): ?>
+	<script src="files/cto_layout/scripts/doubletaptogo/doubletaptogo.js"></script>
+	<?php foreach($this->seo_scripts_files ?? array() as $file): ?>
+	<script src="<?= $file; ?>"></script>
+	<?php endforeach; ?>
+	<script src="files/cto_layout/scripts/scripts.js"></script>
+	<?php if( !empty($arrSeoScripts) ): ?>
+	<script data-name="seo_scripts" src="<?= $objFile->path; ?>?v=<?= $objFile->__get('size'); ?>"></script>
+	<?php endif; ?>		
+	
+<?php else: ?>
+	<script defer src="<?php
+	$objCombiner = new Combiner();
+	$objCombiner->add('files/cto_layout/scripts/doubletaptogo/doubletaptogo.js');
+	foreach( SEO::getSeoScriptFiles()  as $file)
+	{
+		$objCombiner->add($file);
+	}
+	$objCombiner->add('files/cto_layout/scripts/scripts.js');
+	if( !empty($arrSeoScripts) )
+	{
+		$objCombiner->add('files/cto_layout/scripts/seo_scripts.js');
+	}
+	$strFile = $objCombiner->getCombinedFile();
+	echo $strFile; ?>"></script>
+<?php endif; ?>
+
+<?php if( file_exists($rootDir.'/files/cto_layout/scripts/customize.js') && filesize($rootDir.'/files/cto_layout/scripts/customize.js') > 0): ?><script src="files/cto_layout/scripts/customize.js"></script><?php endif; ?>
+<?php $this->endblock(); ?>
+<div id="viewport-pixel"></div>
+<div id="outdated-browser">You are using an outdated browser. The website may not be displayed correctly.</div>
+</body>
+</html>

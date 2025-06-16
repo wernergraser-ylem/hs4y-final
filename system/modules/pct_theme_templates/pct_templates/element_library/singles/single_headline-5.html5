@@ -1,0 +1,57 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_headline-5
+*/
+$arrImport = array (
+'tstamp' => '27.11.2023 07:59',
+'name' => 'single_headline-5',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'headline',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+7 => 'text',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126610,
+1 => 14678,
+2 => 1152,
+3 => 1701071841,
+5 => 'headline',
+6 => 'a:2:{s:4:"unit";s:2:"h1";s:5:"value";s:11:"Headline H5";}',
+7 => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida luctus dui eu placerat. Aliquam vitae tincidunt lorem. Nam ligula neque, laoreet ut rhoncus et, varius at mi. Morbi sit amet rutrum velit.</p>',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+102 => '0.5',
+162 => 'sourceText',
+),
+),
+);

@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  App\:
+    resource: '../src/'
+    exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+  # EventListener für den Formular-Hook explizit konfigurieren
+  App\EventListener\ClientHubListener:
+    arguments:
+      - '@contao.framework'
+      - '@database_connection'
+      - '@contao.insert_tag.parser'
+      - '@request_stack'
+    public: true

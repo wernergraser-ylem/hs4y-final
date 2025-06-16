@@ -1,0 +1,103 @@
+<?php // load scripts and css
+global $objPage;
+$GLOBALS['SEO_SCRIPTS_FILE'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/js/jquery.themepunch.tools.min.js';
+$GLOBALS['SEO_SCRIPTS_FILE'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/js/jquery.themepunch.revolution.min.js';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/css/settings.css|static';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/css/layers.css|static';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/css/navigation.css|static';
+$GLOBALS['TL_CSS'][] = REVOLUTIONSLIDER_PATH.'/assets/css/styles.css|static';
+$GLOBALS['TL_JQUERY'][] = $this->javascript; // js_revoslider_xxx template
+if( isset($this->mediaqueries) && \is_array($this->mediaqueries) )
+{
+	$GLOBALS['TL_HEAD'][] = '<style>'.implode("\n",$this->mediaqueries).'</style>';; // responsive images media queries	
+}
+// set a max-width style when running in boxed mode
+if($this->sliderStyle == 'boxed')
+{
+	$GLOBALS['TL_HEAD'][] = '<style>'.$this->selector.'{max-width:'.$this->startWidth.'px;position:relative;}</style>'; 
+}
+$slides = $this->slides;
+if( $this->shuffle )
+{
+	shuffle($slides);
+}
+
+$height = $this->startHeight.'px';
+if( $this->sliderStyle == 'fullscreen' )
+{
+	$height = '100vh';
+}
+?>
+
+<?php if(!empty($slides)): ?>
+<div <?= $this->sliderID; ?> class="banner <?= $this->class; ?> block" data-version="5.0.7" style="height:<?= $height; ?>;">
+<ul>
+<?php foreach($slides as $i => $slide): ?>
+<li data-index="rs-<?= $i; ?>" <?= $slide['cssID']; ?> class="<?= $slide['class']; ?>" <?= $slide['attributes']; ?>>
+<?php if($slide['source'] == 'videomp4'): ?>
+<img src="<?= $slide['poster']; ?>" alt="" class="rev-slidebg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+<div class="rs-background-video-layer"
+	data-videomp4="<?= $slide['videomp4']; ?>"
+	data-videopreload="auto"
+	data-aspectratio="16:9"
+	data-volume="100"
+	data-forcerewind="on"
+	data-autoplay="on"
+	data-videocontrols="none"
+	<?php if($slide['nextslideatend']): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($slide['loop']): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+></div>
+<?php elseif($slide['source'] == 'youtube'): ?>
+<img src="<?= $slide['poster']; ?>" alt="" class="rev-slidebg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+<div class="rs-background-video-layer"
+	data-ytid="<?= $slide['videoId']; ?>"
+	data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&"
+	data-type='video'
+	data-aspectratio="16:9"
+	data-volume="100"
+	data-forcerewind="on"
+	data-autoplay="on"
+	data-videocontrols="none"
+	<?php if($slide['nextslideatend']): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($slide['loop']): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+></div>
+<?php elseif($slide['source'] == 'vimeo'): ?>
+<img src="<?= $slide['poster']; ?>" alt="" class="rev-slidebg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+<div class="rs-background-video-layer"
+	data-vimeoid="<?= $slide['videoId']; ?>" 
+	data-videoattributes="background=1&title=0&byline=0&portrait=0&api=1"
+	data-type='video'
+	data-aspectratio="16:9"
+	data-volume="100"
+	data-forcerewind="on"
+	data-autoplay="on"
+	data-videocontrols="none"
+	<?php if($slide['nextslideatend']): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($slide['loop']): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+></div>
+<?php // custom video source
+elseif( $slide['source'] == 'custom' ): ?>
+<img src="<?= $slide['poster']; ?>" alt="" class="rev-slidebg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+<div class="rs-background-video-layer custom responsive ratio-169"
+	data-type='video'
+	data-aspectratio="16:9"
+	data-volume="100"
+	data-forcerewind="on"
+	data-autoplay="on"
+	data-videocontrols="none"
+	<?php if($slide['nextslideatend']): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($slide['loop']): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+>
+<iframe src="<?= $slide['row']['videoURL']; ?>" width="100%" height="600" seamless allowfullscreen></iframe>
+</div>
+<?php endif; ?>
+<?= implode('',$slide['content']); ?>
+</li>
+<?php endforeach; ?>
+</ul>
+<a href="{{env::request}}#container" id="linkToContent" ><span class="wheel"></span></a>
+<div class="tp-bannertimer"></div>
+</div>
+<?php else: ?>
+<p class="info empty"><?php echo $this->emptyMsg; ?></p>
+<?php endif; ?>

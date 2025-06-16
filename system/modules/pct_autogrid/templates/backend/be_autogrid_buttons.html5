@@ -1,0 +1,4 @@
+ <div class="autogrid_buttons">
+	<span class="down button" data-action="down">down</span>
+	<span class="up button" data-action="up">up</span>
+</div>
