@@ -1,0 +1,289 @@
+/* =============================================================================
+ * ce_grid_gallery_start
+ * ========================================================================== */
+
+.ce_grid_gallery_start li.grid-item {
+	background-size: cover;
+	background-position: center center;
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.ce_grid_gallery_start .ce_grid_gallery_overlay {
+	height: 100%;
+	width: 100%;
+	transform: scale(0,0);
+	-webkit-transform: scale(0,0);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	position: relative;
+	padding: 30px;
+}
+
+.ce_grid_gallery_start .ce_grid_gallery_overlay .ce_grid_gallery_overlay_inside {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.ce_grid_gallery_start li.grid-item.valign_top a:not(.lightbox-link) .ce_grid_gallery_overlay .ce_grid_gallery_overlay_inside {
+	position: relative;
+	top: 0;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+
+.ce_grid_gallery_start li.grid-item.valign_bottom .ce_grid_gallery_overlay .ce_grid_gallery_overlay_inside {
+	position: absolute;
+	width: calc(100% - 60px);
+	bottom: 0;
+	top: auto;
+	margin-bottom: 30px;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+
+.ce_grid_gallery_start li.grid-item.halign_center {
+	text-align: center;
+}
+
+.ce_grid_gallery_start li.grid-item.halign_right {
+	text-align: right;
+}
+
+.ce_grid_gallery_start .title {
+	margin-bottom: 15px;
+	line-height: 1.2;
+}
+
+.ce_grid_gallery_start .linktext {
+	font-style: italic;
+	text-decoration: underline;
+	margin-top: 15px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_grid_gallery_start li:hover .linktext {
+	color: var(--accentColor);
+}
+
+.ce_grid_gallery_start li.grid-item:hover .ce_grid_gallery_overlay {
+	background: rgba(255,255,255,0.8);
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+.ce_grid_gallery_start li.grid-item.color-white:hover .ce_grid_gallery_overlay {
+	background: rgba(0,0,0,0.8);
+}
+
+.ce_grid_gallery_start li.grid-item:not(.has-content) a.lightbox-link i:before {
+	content: '';
+	height: 1px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -25px;
+	background: rgb(50,50,50);
+	opacity: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_grid_gallery_start li.grid-item:not(.has-content) a.lightbox-link i:after {
+	content: '';
+	height: 1px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -25px;
+	background: rgb(50,50,50);
+	opacity: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_grid_gallery_start li.grid-item:hover a.lightbox-link i:before  {
+	opacity: 1;
+}
+
+.ce_grid_gallery_start li.grid-item:hover a.lightbox-link i:after  {
+	opacity: 1;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.ce_grid_gallery_start li i {
+	position: absolute;
+	left: 50%;
+}
+
+.ce_grid_gallery_start li.style2 i {
+	display: none;
+}
+
+.ce_grid_gallery_start  a.lightbox-link {
+	display: block;
+	height: 100%;
+}
+
+.ce_grid_gallery_start.frame-gutter li.grid-item {
+	box-shadow: 0 0 0 4px rgb(255,255,255);
+}
+
+.ce_grid_gallery_start.frame-gutter.gutter-large li.grid-item {
+	box-shadow: 0 0 0 8px rgb(255,255,255);
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-100 {
+	width: 100%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-90 {
+	width: 90%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-80 {
+	width: 80%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-70 {
+	width: 70%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-60 {
+	width: 60%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-50 {
+	width: 50%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-40 {
+	width: 40%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-33 {
+	width: 33.333%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-30 {
+	width: 30%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-25 {
+	width: 25%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-20 {
+	width: 20%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-width-10 {
+	width: 10%;
+}
+
+.ce_grid_gallery_start li.grid-item.image-height-l {
+	height: 49.9vw;
+	max-height: 600px;
+}
+
+.ce_grid_gallery_start li.grid-item.image-height-s {
+	height: 25vw;
+	max-height: 300px;
+}
+
+.ce_grid_gallery_start.height-large li.grid-item.image-height-l {
+	height: 59.9vw;
+	max-height: 700px;
+}
+
+.ce_grid_gallery_start.height-large li.grid-item.image-height-s {
+	height: 30vw;
+	max-height: 350px;
+}
+
+.ce_grid_gallery_start li.grid-item.style2 .ce_grid_gallery_overlay {
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+.ce_grid_gallery_start li.grid-item.style2:hover .ce_grid_gallery_overlay {
+	background: none;
+}
+
+.ce_grid_gallery_start li.grid-item.style3 .ce_grid_gallery_overlay {
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+.ce_grid_gallery_start li.grid-item.style3:hover .ce_grid_gallery_overlay {
+	background: none;
+}
+
+.ce_grid_gallery_start li.color-white .title {
+	color: rgb(255,255,255);
+}
+
+/* grid-gallery in slider section */
+
+#slider .ce_grid_gallery_start {
+	margin: 8px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_grid_gallery_start li {
+		width: 100%!important;
+	}
+	
+	.ce_grid_gallery_start li.has-content {
+		height: auto!important;
+		max-height: none!important;
+		min-height: 400px;
+	}
+	
+	.ce_grid_gallery_start li.no-background-image {
+		min-height: 0;
+	}
+	
+	.ce_grid_gallery_start li.style1.has-content .ce_grid_gallery_overlay {
+		height: 100%!important;
+		max-height: none!important;
+		transform: none;
+		-webkit-transform: none;
+		background: rgba(255,255,255,0.8);
+		min-height: 400px;
+	}
+	
+	.ce_grid_gallery_start li.style1.has-content .ce_grid_gallery_overlay .ce_grid_gallery_overlay_inside {
+		position: static;
+		transform: none;
+		-webkit-transform: none;
+	}
+	
+	.ce_grid_gallery_start li.style2.has-content .ce_grid_gallery_overlay .ce_grid_gallery_overlay_inside {
+		position: static;
+		transform: none;
+		-webkit-transform: none;
+	}
+	
+	.ce_grid_gallery_start li.grid-item.image-height-s,
+	.ce_grid_gallery_start li.grid-item.image-height-m,
+	.ce_grid_gallery_start li.grid-item.image-height-l {
+		height: 50vh;
+		max-height: 400px;
+	}
+
+	.ce_grid_gallery_start.height-large li.grid-item.image-height-s {
+		height: 50vw;
+		max-height: none;
+	}
+}

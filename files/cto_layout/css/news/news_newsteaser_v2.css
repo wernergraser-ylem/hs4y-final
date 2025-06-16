@@ -1,0 +1,56 @@
+/* =============================================================================
+ * news_newsteaser_v2
+ * ========================================================================== */
+
+.newsteaser_v2 {
+	position: relative;
+	overflow: hidden;
+}
+
+.newsteaser_v2 .content_left {
+	float: left;
+	width: 20%;
+}
+
+.newsteaser_v2 .content_right {
+	float: left;
+	width: 80%;
+}
+
+.newsteaser_v2 .day {
+	display: block;
+	font-size: 1.467rem;
+	line-height: 1.467rem;
+	font-weight: bold;
+}
+
+.newsteaser_v2 .month {
+	display: block;
+}
+
+.newsteaser_v2 .h6,
+.newsteaser_v2 h6 {
+	margin: 0;
+}
+
+.newsteaser_v2 .author {
+	color: rgb(150,150,150);
+}
+
+.newsteaser_v2 .comments {
+	color: rgb(150,150,150);
+}
+
+.newsteaser_v2 .info {
+	margin: 3px 0;
+}
+
+/* =============================================================================
+ * mod_newsteaser_v2 in sidebar
+ * ========================================================================== */
+
+#left .newsteaser_v2,
+#right .newsteaser_v2 {
+	flex: 0 0 100%;
+	margin-bottom: 25px;
+}

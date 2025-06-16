@@ -1,0 +1,33 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newsteaser_v4.css|static';
+$hasText = $this->hasText;
+?>
+
+<div class="newsteaser-v4 autogrid one_third block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+	<div class="newsteaser-v4-inside">
+		
+		<?php if ($this->addImage): ?>
+		<div class="image_container<?php echo $this->floatClass; ?>"<?php if ($this->margin || $this->float): ?> style="<?php echo trim($this->margin . $this->float); ?>"<?php endif; ?>>
+			<?php if ($hasText): ?><a href="<?php echo $this->link; ?>" <?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>><?php endif; ?>
+				<?php $this->insert('picture_default', $this->picture); ?>
+				<span class="news-overlay"><i class="fa fa-plus"></i></span>
+			<?php if ($hasText): ?></a><?php endif; ?>		
+		</div>
+		<?php endif; ?>
+		
+		<div class="content">
+			 <?php if ($this->hasSubHeadline): ?><div class="subheadline"><?php echo $this->subHeadline; ?></div><?php endif; ?>
+			<div class="h6"><?php echo $hasText ? $this->linkHeadline : $this->newsHeadline; ?></div>
+			<div class="teaser" itemprop="description"><?php echo $this->teaser; ?></div>
+			<?php $this->block('info'); ?>
+			<div class="info">
+				 <?php if ($this->author): ?><div class="author"><?php echo $this->author; ?></div><?php endif; ?>
+				 <?php if ($this->date): ?><time datetime="<?php echo $this->datetime; ?>" itemprop="datePublished"><?php echo $this->date; ?></time><?php endif; ?>
+				 <?php if ($this->commentCount): ?><div class="comments"><?php echo $this->commentCount; ?></div><?php endif; ?>
+			</div>
+			<?php $this->endblock(); ?>
+		</div>
+		
+	</div>
+</div>
+

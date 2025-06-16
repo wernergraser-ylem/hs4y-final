@@ -1,0 +1,31 @@
+/* =============================================================================
+ * ce_hoverimage
+ * ========================================================================== */
+
+.ce_hoverimage .ce_hoverimage_inside {
+	position: relative;
+}
+
+.ce_hoverimage .orginal-image {
+	position: relative;
+	z-index: 10;
+	opacity: 1;
+	transition: opacity 0.5s ease;
+	-webkit-transition: opacity 0.5s ease;
+}
+
+.ce_hoverimage .hover-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	-webkit-transition: opacity 0.5s ease;
+}
+
+.ce_hoverimage:hover .hover-image {
+	opacity: 1;
+}

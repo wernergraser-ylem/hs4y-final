@@ -1,0 +1,70 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_teambox-4',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'teambox',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126548,
+1 => 14786,
+2 => 896,
+3 => 1700656224,
+5 => 'teambox',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:11:{s:14:"kvz933nyacsufn";s:14:"Max Mustermann";s:15:"en0nkj0z8vfzo20";s:3:"CEO";s:15:"6668q2ebn7m4ey4";s:19:"mail@yourdomain.com";s:14:"w62nx16ro1j22l";s:15:"+01 444 888 282";s:15:"sogivv218587zco";s:98:"<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>";s:15:"r9skt27vp1hot6h";s:36:"08459120-8932-11ee-bdbf-5d443f6d67ba";s:20:"r9skt27vp1hot6h_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:14:"4pb34wr3eit90y";s:12:"square_image";s:15:"pah6ui9ks5kf17x";s:4:"gray";s:15:"opoxzhyd3fo690y";s:0:"";s:14:"bgfh8568ml3acr";s:0:"";}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:5:"156_0";s:8:"group_id";i:156;s:11:"group_alias";s:4:"text";s:10:"attributes";a:5:{i:0;a:3:{s:4:"uuid";s:14:"kvz933nyacsufn";s:2:"id";i:997;s:5:"alias";s:4:"name";}i:1;a:3:{s:4:"uuid";s:15:"en0nkj0z8vfzo20";s:2:"id";i:998;s:5:"alias";s:8:"function";}i:2;a:3:{s:4:"uuid";s:15:"6668q2ebn7m4ey4";s:2:"id";i:1000;s:5:"alias";s:5:"email";}i:3;a:3:{s:4:"uuid";s:14:"w62nx16ro1j22l";s:2:"id";i:1003;s:5:"alias";s:5:"phone";}i:4;a:3:{s:4:"uuid";s:15:"sogivv218587zco";s:2:"id";i:999;s:5:"alias";s:11:"description";}}}i:1;a:4:{s:5:"ident";s:5:"404_0";s:8:"group_id";i:404;s:11:"group_alias";s:4:"bild";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"r9skt27vp1hot6h";s:2:"id";i:1001;s:5:"alias";s:5:"image";}}}i:2;a:4:{s:5:"ident";s:5:"355_0";s:8:"group_id";i:355;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:14:"4pb34wr3eit90y";s:2:"id";i:1002;s:5:"alias";s:6:"schema";}i:1;a:3:{s:4:"uuid";s:15:"pah6ui9ks5kf17x";s:2:"id";i:1004;s:5:"alias";s:13:"social-schema";}}}i:3;a:4:{s:5:"ident";s:5:"157_0";s:8:"group_id";i:157;s:11:"group_alias";s:7:"socials";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"opoxzhyd3fo690y";s:2:"id";i:1005;s:5:"alias";s:4:"icon";}i:1;a:3:{s:4:"uuid";s:14:"bgfh8568ml3acr";s:2:"id";i:1006;s:5:"alias";s:4:"link";}}}}s:6:"tstamp";i:1567425257;s:5:"alias";s:7:"teambox";s:5:"uuids";a:10:{i:0;s:14:"kvz933nyacsufn";i:1;s:15:"en0nkj0z8vfzo20";i:2;s:15:"6668q2ebn7m4ey4";i:3;s:14:"w62nx16ro1j22l";i:4;s:15:"sogivv218587zco";i:5;s:15:"r9skt27vp1hot6h";i:6;s:14:"4pb34wr3eit90y";i:7;s:15:"pah6ui9ks5kf17x";i:8;s:15:"opoxzhyd3fo690y";i:9;s:14:"bgfh8568ml3acr";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:95;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'08459120-8932-11ee-bdbf-5d443f6d67ba' => 'files/cto_layout/img/element_library/men.jpg',
+),
+);

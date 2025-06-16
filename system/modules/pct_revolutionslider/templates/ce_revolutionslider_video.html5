@@ -1,0 +1,77 @@
+<?php if($this->source == 'local'): ?>
+<div class="tp-caption tp-resizeme tp-videolayer videomp4 local<?php if($this->class):?> <?= $this->class; ?><?php endif; ?>" <?php if($this->styles): ?>style="<?= $this->styles; ?>"<?php endif; ?> 
+	###attributes###
+	data-videomp4="<?= $this->videomp4; ?>"
+	data-videoposter="<?= $this->poster; ?>"
+	data-aspectratio="16:9"
+	data-type="video"
+	data-volume="100"  
+	data-forcerewind="on"
+	data-forceCover="1"
+	data-videowidth="<?= $this->width ?: '100%'; ?>"
+	data-videoheight="<?= $this->height ?: '100%'; ?>"
+	data-noposteronmobile="off" 
+	data-videopreload="auto"
+	data-exitfullscreenonpause="off"
+	<?php if($this->autoplay): ?>data-autoplay="on"<?php else: ?>data-autoplay="off"<?php endif; ?>
+	<?php if($this->controls): ?>data-videocontrols="controls"<?php else: ?>data-videocontrols="none"<?php endif; ?>
+	<?php if($this->nextslideatend): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($this->loop): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+>
+</div>
+<?php elseif($this->source == 'youtube'): ?>
+<div class="tp-caption tp-resizeme tp-videolayer youtube external<?php if($this->class):?> <?= $this->class; ?><?php endif; ?>" <?php if($this->styles): ?>style="<?= $this->styles; ?>"<?php endif; ?> 
+	###attributes###
+	data-ytid="<?= $this->videoId; ?>" 
+	data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0<?php if($this->videoparameters): ?>&<?= $this->videoparameters; ?><?php endif; ?>"
+	data-aspectratio="<?= $this->aspectratio ?: '16:9'?>"
+	data-type="video"
+	data-volume="100"
+	data-forcerewind="true"
+	data-videowidth="<?= $this->width ?: '100%'; ?>"
+	data-videoheight="<?= $this->height ?: '100%'; ?>"
+	data-exitfullscreenonpause="off"
+	<?php if($this->forceFullWidth): ?>data-forceFullWidth="true"<?php endif; ?>
+	<?php if($this->autoplay): ?>data-autoplay="on"<?php else: ?>data-autoplay="off"<?php endif; ?>
+	<?php if($this->controls): ?>data-videocontrols="controls"<?php else: ?>data-videocontrols="none"<?php endif; ?>
+	<?php if($this->nextslideatend): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($this->loop): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+>
+<?php elseif($this->source == 'vimeo'): ?>
+<div class="tp-caption tp-resizeme tp-videolayer vimeo external<?php if($this->class):?> <?= $this->class; ?><?php endif; ?>" <?php if($this->styles): ?>style="<?= $this->styles; ?>"<?php endif; ?> 
+	###attributes###
+	data-vimeoid="<?= $this->videoId; ?>" 
+	data-videoattributes="background=1&title=0&byline=0&portrait=0&api=1<?php if($this->videoparameters): ?>&<?= $this->videoparameters; ?><?php endif; ?>"
+	data-aspectratio="<?= $this->aspectratio ?: '16:9'?>"
+	data-type="video"
+	data-volume="100"
+	data-forcerewind="true"
+	data-videowidth="<?= $this->width ?: '100%'; ?>"
+	data-videoheight="<?= $this->height ?: '100%'; ?>"
+	data-exitfullscreenonpause="off"
+	<?php if($this->autoplay): ?>data-autoplay="on"<?php endif; ?>
+	<?php if($this->controls): ?>data-videocontrols="controls"<?php endif; ?>
+	<?php if($this->nextslideatend): ?>data-nextslideatend="true"<?php endif; ?>
+	<?php if($this->loop): ?>data-videoloop="loop"<?php endif; ?>
+	<?php if($this->fullscreen): ?>data-forceCover="1"<?php endif; ?>
+>
+</div>
+<?php // custom source
+elseif( $this->source === 'custom' ): ?>
+<div class="tp-caption tp-resizeme tp-videolayer custom external<?php if($this->class):?> <?= $this->class; ?><?php endif; ?>" <?php if($this->styles): ?>style="<?= $this->styles; ?>"<?php endif; ?> 
+	###attributes###
+	data-aspectratio="<?= $this->aspectratio ?: '16:9'?>"
+	data-type="video"
+	data-volume="100"
+	data-forcerewind="true"
+	data-videowidth="<?= $this->width ?: '100%'; ?>"
+	data-videoheight="<?= $this->height ?: '100%'; ?>"
+	<?php if($this->autoplay): ?>data-autoplay="on"<?php else: ?>data-autoplay="off"<?php endif; ?>
+	<?php if($this->controls): ?>data-videocontrols="controls"<?php else: ?>data-videocontrols="none"<?php endif; ?>
+	<?php if($this->nextslideatend): ?>data-nextslideatend="true"<?php else: ?>data-nextslideatend="false"<?php endif; ?>
+	<?php if($this->loop): ?>data-videoloop="loop"<?php else: ?>data-videoloop="none"<?php endif; ?>
+	<?php if($this->fullscreen): ?>data-forceCover="1"<?php endif; ?>
+>
+<iframe src="<?= $this->url; ?>" width="<?= $this->width ?: '100%'; ?>" height="<?= $this->height ?: '100%'; ?>"></iframe>
+</div>
+<?php endif; ?>

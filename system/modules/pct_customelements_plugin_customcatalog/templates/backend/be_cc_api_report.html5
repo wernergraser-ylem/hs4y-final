@@ -1,0 +1,91 @@
+
+<?php 
+$arrLang = $GLOBALS['TL_LANG']['tl_pct_customcatalog_api']['api_report'];
+$arrReport = $this->report;
+?>
+
+<?php if(!empty($this->report)): ?>
+<strong><?php echo $arrLang['headline']; ?></strong>
+
+<div class="cc_api_report block">
+
+<?php foreach($arrReport as $index => $report): ?>
+<div class="report_block block_<?php echo $index; ?>">
+	<div data-index="<?php echo $index; ?>" class="row_title toggler"><strong><?php echo sprintf($arrLang['data_index'], $index); ?></strong></div>
+	<div data-index="<?php echo $index; ?>" class="report accordion">
+	<ul>
+		<?php foreach($report as $key => $value): ?>
+		<?php $isNested = (is_array($value)); ?>
+		
+		<?php 
+		// label
+		$label = (isset($arrLang[$key]['label']) && strlen($arrLang[$key]['label']) > 0 ) ? $arrLang[$key]['label'] : $key;
+		?>
+		
+		<?php if(!$isNested): ?>
+		<?php
+		// value
+		if( isset($arrLang[$key]['type']) && $arrLang[$key]['type'] == 'date' && $arrLang[$key]['format'])
+		{
+			$value = \Contao\Date::parse($arrLang[$key]['format'],$value);
+		}
+		
+		if( isset($arrLang[$key]['type']) && $arrLang[$key]['type'] == 'boolean')
+		{
+			$value = ((boolean)$value == true ? 'true' : 'false');
+		}
+		?>
+		<li class="tl_file row <?php echo $key; ?>"><span class="label"><?php echo $label; ?></span>: <span class="value"><?php echo $value; ?></span></li>
+		<?php else: ?>
+		
+		<?php if($key == 'result'): ?>
+		<!-- result block -->
+		<li class="tl_file row result">
+			<ul class="result_block">
+			<?php foreach($value as $k => $result): ?>
+			<?php if(!is_array($result)) {continue;} ?>
+			<div class="title"><strong><?php echo ucfirst(strtolower($k)); ?></strong></div>
+				<?php foreach($result as $k => $records): ?>
+				<?php
+				if( isset($records[$this->table]) )
+				{
+					$records = $records[$this->table];
+				}
+				?>
+				<li class="tl_file row"><span class="label"><?php echo $k.':'.$this->table; ?></span>: <span class="value"><?php echo implode(', ', $records); ?></span>
+				<?php endforeach; ?>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+		</li>
+		
+		<?php endif; ?>
+		
+		<?php endforeach; ?>
+	</ul>
+	</div>
+</div>
+<?php endforeach; ?>
+
+</div>
+<?php endif; ?>
+
+
+<script>
+window.addEvent('domready', function() 
+{
+	var togglers = $$('.report_block .toggler');
+	var sliders = $$('.report_block .accordion');
+	
+	if(togglers.length < 1 || sliders.length < 1)
+	{
+		return false;
+	}
+	
+	togglers.addEvent('click', function(event)
+	{
+		this.toggleClass('active');
+		this.getNext('.accordion').toggleClass('active');
+	});
+});
+</script>

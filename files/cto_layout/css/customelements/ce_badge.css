@@ -1,0 +1,29 @@
+/* =============================================================================
+ * ce_badge
+ * ========================================================================== */
+
+.ce_badge p {
+	margin: 0;
+}
+
+.ce_badge[data-style="style1"] .ce_badge_inside {
+	border: 2px solid var(--accentColor);
+	background: none;
+	border-radius: 100px;
+	display: inline-block;
+	padding: 0 10px;
+	color: var(--accentColor);
+	font-size: 0.9rem;
+	line-height: 1.6rem;
+}
+
+.ce_badge[data-style="style2"] .ce_badge_inside {
+	border: 2px solid transparent;
+	background: var(--accentColor);
+	border-radius: 100px;
+	display: inline-block;
+	padding: 0 10px;
+	color: #fff;
+	font-size: 0.9rem;
+	line-height: 1.6rem;
+}

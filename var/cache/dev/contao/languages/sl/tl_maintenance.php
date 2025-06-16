@@ -1,0 +1,44 @@
+<?php
+
+// vendor/contao/core-bundle/contao/languages/sl/tl_maintenance.xlf
+$GLOBALS['TL_LANG']['tl_maintenance']['cacheTables']['0'] = 'Počisti podatke';
+$GLOBALS['TL_LANG']['tl_maintenance']['cacheTables']['1'] = 'Prosimo, izberite podatke, ki jih želite počistiti.';
+$GLOBALS['TL_LANG']['tl_maintenance']['job'] = 'Opravilo';
+$GLOBALS['TL_LANG']['tl_maintenance']['description'] = 'Opis';
+$GLOBALS['TL_LANG']['tl_maintenance']['clearCache'] = 'Počisti podatke';
+$GLOBALS['TL_LANG']['tl_maintenance']['cacheCleared'] = 'Podatki so bili počiščeni';
+$GLOBALS['TL_LANG']['tl_maintenance']['updateHelp'] = 'Prosimo, vnesite tu vaš %s.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['index']['0'] = 'Sprazni indeks iskalnika';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['index']['1'] = 'Sprazni tabeli <code>tl_search</code>, <code>tl_search_index</code>in <code>tl_search_term</code>. Po tem morate ponovno ustvariti indeks iskalnika (glejte zgoraj).';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['undo']['0'] = 'Sprazni tabelo razveljavitev';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['undo']['1'] = 'Sprazne tabelo <code>tl_undo</code>, v kateri so shranjeni izbrisani elementi. Ti elementi bodo trajno izbrisani.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['versions']['0'] = 'Sprazni tabelo s prejšnjimi različicami elementov';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['versions']['1'] = 'Sprazne tabelo <code>tl_version</code>, v kateri so shranjene prejšnje različice elementov. Te različice bodo trajno izbrisane.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['log']['0'] = 'Sprazni sistemski dnevnik';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['log']['1'] = 'Sprazni tabelo <code>tl_log</code>, v kateri so shranjeni vsi vnosi v sistemski dnevnik. Vnosi bodo trajno izbrisani.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['crawl_queue']['0'] = 'Izprazni pajkovo (crawler) čakalno vrsto';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['images']['0'] = 'Sprazni slikovni predpomnilnik';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['images']['1'] = 'Odstrani samodejno ustvarjene slike in nato še sprazni deljeni predpomnilnik, s čimer se odstranijo povezave do odstranjenih slik.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['previews']['0'] = 'Izprazni predpomnilnik s predogledi';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['previews']['1'] = 'Odstrani samodejno ustvarjene slike predogledov in nato še sprazni deljeni predpomnilnik, s čimer se odstranijo povezave do odstranjenih slik.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['scripts']['0'] = 'Sprazni skriptni predpomnilnik';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['scripts']['1'] = 'Odstrani samodejno ustvarjene datoteke <code>.css</code>in <code>.js</code>ter nato izbriše še deljeni predpomnilnik, s čimer prepreči povezave do izbrisanih datotek.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['pages']['0'] = 'Sprazni deljeni predpomnilnik (shared cache)';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['pages']['1'] = 'Odstrani predpomnjene različice predstavitvenih (front end) strani.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['temp']['0'] = 'Sprazni začasno mapo';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['temp']['1'] = 'Izbriše začasne datoteke.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['xml']['0'] = 'Ponovno ustvari datoteke XML';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['symlinks']['0'] = 'Ponovno ustvari simbolične povezave - symlinks.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['symlinks']['1'] = 'Ponovno ustvari simbolične povezave v mapi public (document root).';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawler'] = 'Pajek - Crawler';
+$GLOBALS['TL_LANG']['tl_maintenance']['startCrawling'] = 'Poženi pajka - crawler';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscribers']['0'] = 'Omogočene funkcionalnosti';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscribers']['1'] = 'Pajek - crawler obišče vse povezave, ki jih najde. Tu se lahko odločite, kaj storiti z njegovimi rezultati.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlDepth']['0'] = 'Največja globina';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlMember']['0'] = 'Uporabnik spletnega mesta';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlMember']['1'] = 'Samodejno prijavi uporabnika za indeksiranje zaščitenih strani.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlWaitToBeFinished'] = 'Pajek je trenutno na delu. Prosimo, počakajte, da zaključi, nato pa si oglejte rezultate.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlDebugLogExplain'] = 'V primeru napak ali izvzetih strani si v dnevniku oglejte podrobnejše informacije.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlDownloadLog'] = 'Dnevnik prenosov';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscriberNames']['search-index'] = 'Posodobi indeks iskalnika';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscriberNames']['broken-link-checker'] = 'Poišči neobstoječe povezave';

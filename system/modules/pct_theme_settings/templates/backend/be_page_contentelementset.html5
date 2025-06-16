@@ -1,0 +1,713 @@
+<?php
+
+use Contao\File;
+use Contao\FilesModel;
+use Contao\System;
+
+$strThumbnailPath = 'system/modules/pct_theme_settings/assets/img/element_library';
+$strToken = System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
+
+?>
+
+<div id="page_contentelementsets">
+	<div id="tl_buttons"><?= $this->back ?></div>
+	<?php if($this->messages) :?>
+	<?= $this->messages; ?>
+	<?php endif; ?>
+   <div class="wrapper_sticky">
+   	<div id="categories" class="tl_panel block categories">
+   		<ul class="categories_wrapper">
+   		<?php foreach($this->categories as $k => $data): ?>
+   		<li class="<?= $k; ?>" data-value="<?= $k; ?>">
+   			<div class="icon"><i class="<?= $data['icon']; ?>"></i></div>
+   			<div class="label"><?= $data['label']; ?></div>
+   		</li>
+   		<?php endforeach; ?>
+   		</ul>
+   	</div>
+   	
+   	<div id="controlbar" class="tl_panel block">
+   		<ul id="library_switch">
+   			<li class="single" title="<?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['buttonSingles']; ?>" data-value="singles"><?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['buttonSingles']; ?></li>
+   			<li class="sets" title="<?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['buttonSets']; ?>" data-value="elementsets"><?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['buttonSets']; ?></li>
+   		</ul>
+   		<ul id="zoom">
+   			<li class="minus" data-value="minus"></li>
+   			<li class="plus" data-value="plus"></li>
+   		</ul>
+   		<div id="search" class="search">
+   			<input type="search" name="search" placeholder="<?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['inputSearchPlaceholder']; ?>">
+   		</div>
+   	</div>
+   </div>
+	
+	<!-- singles -->
+	<div id="singles_container" class="element_container inside" data-library="singles">
+		<?php foreach($this->singles as $category => $arrData): ?>
+			<div class="category <?= $category; ?> block" data-category="<?= $category; ?>">
+				<h2><?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['CATEGORIES'][$category] ?: $category; ?></h2>
+				<div class="inside">
+				<?php foreach($arrData['elements'] as $element): ?>
+					<?php 
+					$name = $element['name'];
+					?>
+					<div id="<?= $name; ?>_wrapper" class="item_container element_wrapper column<?= count($this->styles[$name]) > 1 ? ' has-styles': '' ?>" data-name="<?= $name; ?>">
+						<!-- styles pagination -->
+						<div class="pagination">
+						   <ul class="arrows">
+								<li class="arrow-left" data-value="left"><i class="ti-angle-left"></i></li>
+								<li class="arrow-right" data-value="right"><i class="ti-angle-right"></i></li>
+						   </ul>
+						   <?php 
+						   // order styles
+							$styles = array_keys( $this->styles[$name] );
+							\natcasesort($styles);
+							?>
+							<ul class="bullets" data-active="<?= $styles[0]; ?>" data-count="<?= count($styles); ?>" data-value="<?= implode(',', $styles); ?>">
+							   <?php foreach($styles as $i => $style): ?>
+								<li title="<?= $style; ?>" class="bullet" data-value="<?= $style; ?>"><i></i></li>
+								<?php endforeach; ?>
+						   </ul>
+						</div>
+						<div class="preview_container">
+						<?php foreach($this->styles[$name] as $data): ?>
+						<?php 
+						// keywords for javascript search
+						$keywords = array( \strtolower($data['name']??''), $category );
+						if( !empty($data['keywords']) )
+						{
+							$keywords = array_merge( $keywords, array_map('trim',explode(',',$data['keywords'])) );
+						}
+						$image = new File( $strThumbnailPath.'/'.$data['name'].'.webp' );
+						?>
+						<div id="<?= $data['name']; ?>" class="<?= $data['class']; ?> block" data-element="<?= $data['name']; ?>" data-keywords="<?= \strtolower( implode(',',$keywords) ); ?>">
+							<div class="info">
+								<div class="label"><?= $data['label']; ?></div>
+							</div>
+							<div class="info_extended">
+								<div class="style"><i class="ti ti-flag-alt"></i><span><?= $data['style']; ?></span></div>
+								<div class="lightbox"><a href="<?= $image->path; ?>" title="<?= $data['label']; ?>" data-title="<?= $data['label']; ?>: <?= $data['style']; ?>" data-lightbox="lb_<?= $name; ?>"></a></div>
+								<div class="favorite" data-value="<?= $data['name']; ?>"></div>
+							</div>
+							<div class="image_container">
+								<?= \Contao\Image::getHtml($image->path,$data['name'],'loading="lazy" title="'.$data['label'].'"'); ?>
+							</div>
+
+							<form id="form_<?= $data['name']; ?>" action="<?= $this->action; ?>" class="tl_form" method='post'>
+								<input type="hidden" name="FORM_SUBMIT" value="pct_contentelement_set">
+								<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+								<input type="hidden" name="ELEMENTSET" value="<?= $data['name']; ?>">
+								<div class="content">
+									<div class="label"><?= $data['label']; ?></div>
+									<div class="image_container">
+									<?= $data['img']; ?>
+									</div>
+									<div class="submit_container">
+										<div class="submit install"><input type="submit" class="tl_submit text" name="install" value="<?= $GLOBALS['TL_LANG']['pct_contentelementset']['submit_install'] ?: 'Insert'; ?>"></div>
+									</div>
+								</div>
+							</form>
+                     <div class="form_submit" data-value="form_<?= $data['name']; ?>"><i></i><span>EINFÜGEN</span></div>
+						</div>
+						<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+
+	<!-- sets -->
+	<div id="elementsets_container" class="element_container inside" data-library="elementsets">
+		<?php foreach($this->elements as $category => $arrData): ?>
+			<div class="category <?= $category; ?> block" data-category="<?= $category; ?>">
+				<h2><?= $GLOBALS['TL_LANG']['CONTENTELEMENTSETS']['CATEGORIES'][$category] ?: $category; ?></h2>
+				<div class="inside">
+				<?php foreach($arrData['elements'] as $element): ?>
+					<?php 
+					$name = $element['name'];
+					?>
+					<div id="<?= $name; ?>_wrapper" class="item_container element_wrapper column<?= count($this->styles[$name]) > 1 ? ' has-styles': '' ?>" data-name="<?= $name; ?>">
+						<!-- styles pagination -->
+						<ul class="pagination" data-active="0" data-count="<?= count($this->styles[$name]); ?>" data-value="<?= implode(',', array_keys($this->styles[$name])); ?>">
+							<li class="arrow-left" data-value="left"><i class="ti-angle-left"></i></li>
+							<li class="arrow-right" data-value="right"><i class="ti-angle-right"></i></li>
+							<?php foreach( array_keys($this->styles[$name]) as $i => $k_style): ?>
+							<li class="bullet" data-value="<?= $k_style; ?>" data-index="<?= $i; ?>"><i></i></li>
+							<?php endforeach; ?>
+						</ul>
+						<div class="preview_container">
+						<?php foreach($this->styles[$name] as $data): ?>
+						<?php 
+						// keywords for javascript search
+						$keywords = array( \strtolower($data['name'] ?? ''), $category );
+						if( !empty($data['keywords']) )
+						{
+							$keywords = array_merge( $keywords, array_map('trim',explode(',',$data['keywords'])) );
+						}
+						$image = new File( $strThumbnailPath.'/'.$data['name'].'.webp' );
+						?>
+						<div id="<?= $data['name']; ?>" class="<?= $data['class']; ?> block" data-element="<?= $data['name']; ?>" data-keywords="<?= \strtolower( implode(',',$keywords) ); ?>">
+							<div class="info">
+								<div class="label"><?= $data['label']; ?></div>
+							</div>
+							<div class="info_extended">
+								<div class="style"><i class="ti ti-flag-alt"></i><span><?= $data['style']; ?></span></div>
+								<div class="lightbox"><a href="<?= $image->path; ?>" title="<?= $data['label']; ?>" data-title="<?= $data['label']; ?>: <?= $data['style']; ?>" data-lightbox="lb_<?= $name; ?>"></a></div>
+								<div class="favorite" data-value="<?= $data['name']; ?>"></div>
+							</div>
+							<div class="image_container">
+								<?= \Contao\Image::getHtml($image->path,$data['name'],'loading="lazy" title="'.$data['label'].'"'); ?>
+							</div>
+
+							<form id="form_<?= $data['name']; ?>" action="<?= $this->action; ?>" class="tl_form" method='post'>
+								<input type="hidden" name="FORM_SUBMIT" value="pct_contentelement_set">
+								<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+								<input type="hidden" name="ELEMENTSET" value="<?= $data['name']; ?>">
+								<div class="content">
+									<div class="label"><?= $data['label']; ?></div>
+									<div class="image_container">
+									<?= $data['img']; ?>
+									</div>
+									<div class="submit_container">
+										<div class="submit install"><input type="submit" class="tl_submit text" name="install" value="<?= $GLOBALS['TL_LANG']['pct_contentelementset']['submit_install'] ?: 'Insert'; ?>"></div>
+									</div>
+								</div>
+							</form>
+                     <div class="form_submit" data-value="form_<?= $data['name']; ?>"><i></i><span>EINFÜGEN</span></div>
+						</div>
+						<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+
+</div>
+
+
+<script>
+// array_unique
+const array_unique = (value,index,self) => 
+{
+	return self.indexOf(value) === index;
+}
+
+//!-- body class
+jQuery(document).ready(function() 
+{
+	jQuery('body').addClass('page_contentelementsets');
+});
+	
+//!-- category
+jQuery(document).ready(function() 
+{
+	const localStorageKey = 'ContentElementSet.categories';
+	// get active categories from localstorage
+	var categories = [];
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined )
+	{
+		categories = localStorage.getItem(localStorageKey).split(',');
+		categories = categories.filter( array_unique );
+	}
+
+	//categories = ['favorites','favorites'];
+	//console.log( categories.filter( array_unique ) );
+	
+	jQuery('#categories li').click(function(e,params)
+	{
+		categories = categories.filter( array_unique );
+		
+		var elem = jQuery(this);
+		var val = jQuery(this).attr('data-value');
+		elem.toggleClass('active');
+		
+		if( elem.hasClass('active') )
+		{
+			categories.push( val );
+			jQuery('[data-category="'+val+'"]').addClass('active');
+		}
+		else
+		{
+			categories.splice( categories.indexOf(val) ,1);
+			jQuery('[data-category="'+val+'"]').removeClass('active');
+		}
+		
+		// update localstorage
+		localStorage.setItem(localStorageKey, categories.filter( array_unique ).join(','));
+
+		jQuery('.element_container').addClass('has_category_filter');
+		
+		// add category as class name
+		jQuery('#page_contentelementsets').removeAttr('class');
+		jQuery('#page_contentelementsets').addClass( categories.filter( array_unique ).join(' ') );
+
+		if( categories.length <= 0 )
+		{
+			jQuery('.element_container').removeClass('has_category_filter');
+			jQuery('#page_contentelementsets').removeAttr('class');
+			localStorage.removeItem(localStorageKey);
+		}
+		
+		// send event
+		jQuery(document).trigger('ContentElementSet.onCategoryChange',{'target':val,'categories':categories});
+	});
+	
+	if( categories.length > 0 )
+	{
+		jQuery('.element_container').addClass('has_category_filter');
+		jQuery.each(categories, function(i,k)
+		{
+			jQuery('#categories li[data-value="'+k+'"]').trigger('click',{});
+		});
+	}	
+	
+	jQuery('#categories .opener').click(function(e)
+	{
+		jQuery(this).toggleClass('active');
+		jQuery('#categories').toggleClass('open');
+	});
+});
+
+//!-- library switch
+jQuery(document).ready(function() 
+{
+	const localStorageKey = 'ContentElementSet.library';
+	
+	var val = 'singles'; // default value
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined )
+	{
+		val = localStorage.getItem(localStorageKey);
+		jQuery('.element_container[data-library='+val+']').addClass('active');
+	}
+	
+	jQuery('.element_container[data-library='+val+']').addClass('active');
+	jQuery('#library_switch li[data-value='+val+']').addClass('active');
+
+	jQuery('#library_switch li').click(function(e)
+	{
+		var elem = jQuery(this);
+		var val = elem.attr('data-value');
+		jQuery('#library_switch li').removeClass('active');
+		elem.toggleClass('active');	
+		
+		// toggle library container
+		jQuery('.element_container').removeClass('active');
+		jQuery('.element_container[data-library='+val+']').addClass('active');
+
+		// update localstorage
+		localStorage.setItem(localStorageKey, val);
+	});
+});
+
+//!-- search
+jQuery(document).ready(function() 
+{
+	// run through all data-keywords elements and look for the searchValue
+	const filterBySearch = function(searchValue)
+	{
+		if( searchValue === undefined || searchValue === null || typeof(searchValue) != 'string')
+		{
+			return;
+		}
+
+		searchValue = searchValue.toLowerCase();
+		var search = ['Ä','ä','Ö','ö','Ü','ü','ß'];
+		var replace = ['Ae','ae','Oe','oe','Ue','ue','ss'];
+		
+		if( search.indexOf(searchValue) )
+		{
+			jQuery.each(search, function(i,v)
+			{
+				searchValue = searchValue.replace(v, replace[i]);
+			});
+		}
+		
+		var elements = jQuery('[data-keywords]');
+		elements.removeClass('found');
+		elements.parents('.item_container').removeClass('has_search_results');
+		elements.parents('.category').removeClass('has_search_results');
+		elements.each(function(i,elem)
+		{
+			var keywords = jQuery(elem).attr('data-keywords');
+			if( keywords.indexOf(searchValue) >= 0 )
+			{
+				jQuery(elem).addClass('found');
+				jQuery(elem).parents('.item_container').addClass('has_search_results');
+				jQuery(elem).parents('.category').addClass('has_search_results');
+			}
+		});
+	}
+	
+	jQuery('input[name="search"]').on('keyup search', function(e)
+	{
+		var val = jQuery(this).val();
+		if( val.length <= 3 )
+		{
+			jQuery('.has_search_filter').removeClass('has_search_filter');
+			jQuery('.has_search_results').removeClass('has_search_results');
+			localStorage.removeItem(localStorageKey);
+			return;
+		}
+		
+		filterBySearch(val);
+		
+		jQuery('.element_container').addClass('has_search_filter');
+		
+		// update localstorage
+		localStorage.setItem(localStorageKey, val);
+	});
+
+	const localStorageKey = 'ContentElementSet.search';
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined && localStorage.getItem(localStorageKey).length > 3 )
+	{
+		var val = localStorage.getItem(localStorageKey);
+		
+		jQuery('input[name="search"]').val( val );
+		jQuery('.element_container').addClass('has_search_filter');
+		
+		filterBySearch(val);
+	}
+});
+
+//!-- zoom
+jQuery(document).ready(function() 
+{
+	const localStorageKey = 'ContentElementSet.zoom';
+	
+	var maxZoom = 3;
+	var numZoom = 1;
+
+	jQuery('#zoom').attr('data-zoom',numZoom);
+	jQuery('.element_container').attr('data-zoom',numZoom);
+	
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined )
+	{
+		numZoom = Number( localStorage.getItem(localStorageKey) );
+		jQuery('#zoom').attr('data-zoom',numZoom);
+		jQuery('.element_container').attr('data-zoom',numZoom);
+	}
+	
+	jQuery('#zoom li').click(function(e)
+	{
+		var elem = jQuery(this);
+		var val = elem.attr('data-value');
+		
+		if( val == 'minus' && numZoom > 0 )
+		{
+			numZoom -= 1;
+		}
+		
+		if( val == 'plus' && numZoom < maxZoom )
+		{
+			numZoom += 1;
+		}
+
+		jQuery('#zoom').attr('data-zoom',numZoom);
+		jQuery('.element_container').attr('data-zoom',numZoom);
+
+		// update localstorage
+		localStorage.setItem(localStorageKey, numZoom);
+	});
+});
+
+//!-- favorites
+jQuery(document).ready(function() 
+{
+	const localStorageKey = 'ContentElementSet.favorites';
+	
+	var favorites = [];
+	<?php if( $this->User->pct_element_library_favorites ): ?>
+	var tmp = JSON.parse('<?= \json_encode($this->User->pct_element_library_favorites,JSON_FORCE_OBJECT); ?>');
+	jQuery.each(tmp, function(i,k)
+	{
+		favorites.push(k);
+	});
+	// update localstorage
+	localStorage.setItem(localStorageKey, favorites.filter( array_unique ).join(','));
+	<?php endif; ?>
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined )
+	{
+		favorites = localStorage.getItem(localStorageKey).split(',');
+	}
+	
+	if( favorites.length > 0 )
+	{
+		jQuery.each(favorites, function(i,k)
+		{
+			jQuery('.favorite[data-value="'+k+'"]').addClass('active');
+		});
+	}
+	
+	jQuery('.favorite').click(function(e)
+	{
+		var elem = jQuery(this);
+		var val = elem.attr('data-value');
+		elem.toggleClass('active');
+		
+		if( elem.hasClass('active') )
+		{
+			favorites.push( val );
+		}
+		else
+		{
+			favorites.splice( favorites.indexOf(val) ,1);
+		}	
+			
+		// update localstorage
+		localStorage.setItem(localStorageKey, favorites.filter( array_unique ).join(','));
+
+		// send event
+		jQuery(document).trigger('ContentElementSet.onFavoriteChange',{'target':val,'active':elem.hasClass('active'),'favorites':favorites});
+	});
+});
+
+//!-- Events: Apply favorites onCategoryChange Event
+jQuery(document).on('ContentElementSet.onCategoryChange', function(e,params) 
+{
+	const localStorageKey = 'ContentElementSet.favorites';
+	var favorites = [];
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined )
+	{
+		favorites = localStorage.getItem(localStorageKey).split(',');
+	}
+
+	// no favorites at all
+	if( params.categories.indexOf('favorites') == -1 )
+	{
+		jQuery('.is_favorite').removeClass('is_favorite');
+		return;
+	}
+
+	jQuery.each(favorites, function(i,k)
+	{
+		var _elem = jQuery('.item[data-element="'+k+'"]');
+		_elem.addClass('is_favorite');
+		_elem.parents('.category').addClass('is_favorite');
+		_elem.parents('.item_container').addClass('is_favorite');
+		//jQuery('.item_container[data-name="'+k+'"]').addClass('is_favorite');
+		jQuery('.bullet[data-value="'+k+'"]').addClass('is_favorite');
+		//jQuery('#categories li[data-value="favorites"]').addClass('active');
+
+	});
+
+	// favorites clicked: clear all other categories
+	//if( params.target == 'favorites' )
+	//{
+	//	jQuery('#page_contentelementsets').removeAttr('class');
+	//	jQuery('#categories li').removeClass('active');
+	//	jQuery('[data-category]').removeClass('found');
+//
+	//	jQuery('#page_contentelementsets').addClass('favorites');
+	//	jQuery('#categories li[data-value="favorites"]').addClass('active');
+	//	
+	//	localStorage.setItem('ContentElementSet.categories','favorites');
+//
+	//	jQuery.each(favorites, function(i,k)
+	//	{
+	//		var _elem = jQuery('.item[data-element="'+k+'"]');
+	//		_elem.addClass('is_favorite');
+	//		_elem.parents('.category').addClass('is_favorite');
+	//	});
+	//}
+	//else
+	//{
+	//	jQuery('.is_favorite').removeClass('is_favorite');
+	//	jQuery('#page_contentelementsets').removeClass('favorites');
+	//	jQuery('#categories li[data-value="favorites"]').removeClass('active');
+	//}
+});
+
+//!-- Events: onFavoriteChange
+jQuery(document).on('ContentElementSet.onFavoriteChange', function(e,params) 
+{
+	// update favorites view if active
+	if( jQuery('#page_contentelementsets').hasClass('favorites') )
+	{
+		var _elem = jQuery('.item[data-element="'+params.target+'"]');
+		var name = _elem.attr('data-element');
+
+		_elem.removeClass('is_favorite');
+		
+		// bullets
+		jQuery('.bullet[data-value="'+name+'"]').removeClass('active is_favorite');
+		if( _elem.siblings('.is_favorite').length > 0 )
+		{
+			var k = jQuery( _elem.siblings('.is_favorite')[0] ).attr('data-element');
+			_elem.siblings('.is_favorite').first().addClass('active');
+			jQuery('.bullet[data-value="'+k+'"]').addClass('active');
+		}
+
+		if( _elem.parents('.category').find('.is_favorite').length < 1 )
+		{
+			_elem.parents('.category').removeClass('is_favorite');
+		}
+
+		if( _elem.parents('.item_container').find('.is_favorite').length < 1 )
+		{
+			_elem.parents('.item_container').removeClass('is_favorite');
+		}
+	}
+
+	// send ajax to update user field
+	jQuery.ajax(
+	{
+		method	: "GET",
+		url		: location.url,
+		data	: {'action':'updateFavorites','favorites':params.favorites}
+	});
+
+});
+
+//!-- lightbox per element
+jQuery(document).ready(function() 
+{
+	jQuery('#page_contentelementsets a[data-lightbox]').map(function() 
+    {
+		jQuery(this).colorbox(
+		{
+			// Put custom options here
+			loop: false,
+			rel: jQuery(this).attr('data-lightbox'),
+			maxWidth: '95%',
+			maxHeight: '95%',
+			title:function()
+			{
+				return jQuery(this).attr('data-title');
+			}
+		});
+   });
+});
+
+//!-- form submit button
+jQuery(document).ready(function() 
+{
+	jQuery('.form_submit[data-value]').click(function() 
+    {
+		var elem = jQuery(this);
+		var val = elem.attr('data-value');
+		jQuery('form#'+val+' input[type="submit"]').click();
+	});
+});
+
+//!-- pagination: styles, variations
+jQuery(document).ready(function() 
+{
+	const localStorageKey = 'ContentElementSet.activeElements';
+	// get active elements from localstorage
+	var activeElements = [];
+	if( localStorage.getItem(localStorageKey) !== null && localStorage.getItem(localStorageKey) !== undefined )
+	{
+		activeElements = localStorage.getItem(localStorageKey).split(',');
+		activeElements = activeElements.filter( array_unique );
+	}
+
+	jQuery('.item_container[data-name] .pagination .bullets li:first-child:not(.active)').addClass('active');
+
+	// bullets
+	jQuery('.item_container[data-name] .pagination .bullets li').click(function(e,params)
+	{
+		var elem = jQuery(this);
+		var parent = elem.parent('.pagination .bullets');
+		var list = parent.attr('data-value');
+		var val = elem.attr('data-value');
+		
+		// remove active class
+		elem.siblings().removeClass('active');
+		elem.parents('.item_container').find('[data-element]').removeClass('active');
+		// set active class
+		elem.addClass('active');
+		jQuery('[data-element="'+val+'"]').addClass('active');
+		// update index in pagination
+		//parent.attr('data-active',elem.attr('data-index'));
+		parent.attr('data-active',elem.attr('data-value'));
+
+		// clicked in load sequence, return here to avoid updating the localstorage
+		if( params !== undefined && params.onload !== undefined && params.onload == 1 )
+		{
+			return;
+		}
+		
+		// clear localstorage
+		var items = parent.attr('data-value').split(',');
+		jQuery.each(items, function(k,v)
+		{
+			if( activeElements.indexOf(v) >= 0 )
+			{
+				activeElements.splice( activeElements.indexOf(v) ,1);
+			}
+		});
+
+		// update localstorage
+		activeElements.push(val);
+		localStorage.setItem(localStorageKey, activeElements.filter( array_unique ).join(','));
+	});
+	
+	// left, right
+	jQuery('.item_container[data-name] .pagination .arrows li').click(function(e)
+	{
+		var elem = jQuery(this);
+		var parent = elem.parents('.item_container').find('.pagination .bullets');
+		var max = Number( parent.attr('data-count') );
+		//var curr = Number( parent.attr('data-active') );
+		var curr = parent.attr('data-active');
+		var val = elem.attr('data-value');
+		var list = parent.attr('data-value').split(',');
+		var i = list.indexOf( curr );
+		
+		if( val == 'left' && i > 0 )
+		{
+			i -= 1;
+		}
+		else if( val == 'right' && i < (max) )
+		{
+			i += 1;
+		}
+
+		if( i < 0 )
+		{
+			i = 0;
+		}
+		if( i > max )
+		{
+			i = max;
+		}
+
+		curr = list[i];
+
+		parent.attr('data-active',curr);
+
+		// trigger click on bullet button 
+		parent.find('.bullet[data-value="'+curr+'"]').trigger('click');
+	});
+
+	// all paginations with current index 0
+	jQuery('.item_container[data-name] .pagination .bullets[data-active="0"]').each(function(k,elem)
+	{
+		var elem = jQuery(elem);
+		elem.find('li[data-index="'+elem.attr('data-active')+'"]').trigger('click',{'onload':1});
+	});
+
+	jQuery.each(activeElements,function(k,val)
+	{
+		jQuery('.item_container[data-name] .pagination .bullets li[data-value="'+val+'"]').trigger('click',{'onload':1});
+	});
+});
+
+//!-- sticky header 
+jQuery(window).scroll(function(e)
+{
+	if( jQuery('#page_contentelementsets .wrapper_sticky').position().top > 35 )
+	{
+		jQuery('body').addClass('sticky');
+	}
+	else
+	{
+		jQuery('body').removeClass('sticky');
+	}
+});
+
+</script>

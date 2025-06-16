@@ -1,0 +1,9 @@
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php 
+unset($GLOBALS['CE_SLIDE_IN_START']);
+?>

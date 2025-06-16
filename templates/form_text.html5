@@ -1,0 +1,58 @@
+<?php $this->extend('form_row'); ?>
+
+<?php $this->block('label'); ?>
+  <?php if ($this->label): ?>
+    <label for="ctrl_<?= $this->id ?>"<?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?>>
+      <?php if ($this->mandatory): ?>
+        <span class="invisible"><?= $this->mandatoryField ?> </span><?= $this->label ?><span class="mandatory">*</span>
+      <?php else: ?>
+        <?= $this->label ?>
+      <?php endif; ?>
+    </label>
+  <?php endif; ?>
+<?php $this->endblock(); ?>
+
+<?php $this->block('field'); ?>
+  <?php if ($this->hasErrors()): ?>
+    <p class="error"><?= $this->getErrorAsString() ?></p>
+  <?php endif; ?>
+
+  <input type="<?= $this->type ?>" name="<?= $this->name ?>" id="ctrl_<?= $this->id ?>" class="text<?php if ($this->hideInput): ?> password<?php endif; ?><?php if ($this->class): ?> <?= $this->class ?><?php endif; ?>" value="<?= Contao\StringUtil::specialchars($this->convertDate($this->value)) ?>" maxlength="24" <?= $this->getAttributes() ?> >
+
+  <script>
+    // Füge Event Listener für IBAN-Feld hinzu
+    document.querySelectorAll('.iban').forEach(function(input) {
+      input.addEventListener('input', function (e) {
+          // Entferne alle Leerzeichen aus der Eingabe
+          var iban = e.target.value.replace(/\s/g, '');
+
+          // Füge Leerzeichen nach jedem vierten Zeichen ein, aber insgesamt maximal 24 Zeichen (inkl. Leerzeichen)
+          iban = iban.substring(0, 24).replace(/(.{4})(?=.)/g, '$1 ');
+
+          // Wandle die Eingabe in Großbuchstaben um, aber nur für IBAN
+          e.target.value = iban.toUpperCase();
+      });
+    });
+
+    // Füge Event Listener für Telefonnummern-Feld mit der Klasse "smartphone" hinzu
+    document.querySelectorAll('.smartphone').forEach(function(input) {
+      input.addEventListener('input', function (e) {
+          // Entferne alle nicht-numerischen Zeichen, damit nur Zahlen übrig bleiben
+          var phoneNumber = e.target.value.replace(/\D/g, '');
+
+          // Stelle sicher, dass der Input mit +43 beginnt (Österreich als Beispiel)
+          if (phoneNumber.startsWith('0')) {
+            phoneNumber = '43' + phoneNumber.substring(1);  // Ersetze die führende 0 durch 43
+          }
+
+          // Füge Leerzeichen hinzu, nach 3, 3, 2, 2 Stellen
+          phoneNumber = phoneNumber.substring(0, 17); // Maximal 17 Zeichen (inklusive +43 und Leerzeichen)
+          phoneNumber = phoneNumber.replace(/^(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4');
+
+          // Wandle die Eingabe in Großbuchstaben um (nicht zwingend notwendig für Telefonnummern, aber sicherheitshalber)
+          e.target.value = phoneNumber;
+      });
+    });
+  </script>
+
+<?php $this->endblock(); ?>

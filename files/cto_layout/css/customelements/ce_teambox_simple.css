@@ -1,0 +1,95 @@
+/* =============================================================================
+ * ce_teambox_simple
+ * ========================================================================== */
+
+.ce_teambox_simple {
+	position: relative;
+}
+
+.ce_teambox_simple .overlay_link a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	text-indent: -99999px;
+}
+
+.ce_teambox_simple .job {
+	margin-bottom: 5px;
+}
+
+.ce_teambox_simple .name {
+	margin-bottom: 5px;
+}
+	
+.ce_teambox_simple .job.default {
+	font-size: 1rem;
+}
+
+.ce_teambox_simple .name.default {
+	font-size: 1.4rem;
+}
+
+.ce_teambox_simple .image_container {
+	overflow: hidden;
+	margin-bottom: 20px;
+	transition: transform .8s cubic-bezier(.05,.2,.1,1);
+}
+
+.ce_teambox_simple:hover .image_container {
+	transform: scale(.95);
+}
+
+.ce_teambox_simple .image_container img {
+	transition: transform .8s cubic-bezier(.05,.2,.1,1);
+}
+
+.ce_teambox_simple:hover .image_container img {
+	transform: scale(1.15);
+}
+
+.ce_teambox_simple .description a {
+	text-decoration: underline;
+}
+
+.ce_teambox_simple .link {
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.ce_teambox_simple .link svg {
+  position: relative;
+  top: -1px;
+  transform: translateX(-5px);
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+.ce_teambox_simple .link circle {
+  transition: stroke-dashoffset 0.3s ease;
+  stroke-dasharray: 95;
+  stroke-dashoffset: 95;
+}
+
+.ce_teambox_simple:hover .link svg {
+  transform: translate3d(5px, 0, 0);
+}
+
+.ce_teambox_simple:hover .link circle {
+  stroke-dashoffset: 0;
+}
+
+.ce_teambox_simple[data-font-size="small"] .description {
+	font-size: var(--paragraph-small-font-size);
+}
+
+.ce_teambox_simple[data-font-size="medium"] .description {
+	font-size: var(--paragraph-medium-font-size);
+}
+
+.ce_teambox_simple[data-font-size="large"] .description {
+	font-size: var(--paragraph-large-font-size);
+}

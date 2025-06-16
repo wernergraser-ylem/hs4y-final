@@ -1,0 +1,23 @@
+
+<div id="page_import">
+<div id="tl_buttons">
+<?php echo $this->back; ?>
+</div>
+
+<form action="<?php echo $this->action; ?>" method="post">
+<div class="body">
+	<h2 class="headline"><?php echo $GLOBALS['TL_LANG']['page_export']['headline']; ?></h2>
+	
+	<?php if($this->hasError): ?>
+	<p class="tl_red"><?php echo $this->error; ?></p>
+	<?php else: ?>
+			<p class="tl_green"><?php echo $GLOBALS['TL_LANG']['page_export']['headline_success']; ?></p>
+			<ul class="success">
+			<li class="tl_green"><?php echo $this->success; ?></li>
+			</ul>
+			<p class="tl_green download"><?php echo $this->download; ?></p>
+	<?php endif; ?>
+	
+</div>
+	
+</div>

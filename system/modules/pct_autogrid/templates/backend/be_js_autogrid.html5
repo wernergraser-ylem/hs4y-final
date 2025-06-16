@@ -1,0 +1,603 @@
+
+<?php if($this->context == 'listElement'): ?>
+<script>
+
+/**
+ * Pass grid related information to list elements rows and build grid class toggler
+ */
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#li_<?= $this->id; ?>');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	<?php // return when AG is disabled
+	if(!$this->autogrid): ?>
+	return;
+	<?php endif; ?>
+	
+	var strType = '<?= $this->type; ?>';
+	objElement.addClass(strType);
+	// viewport
+	var strViewport = 'desktop';
+	if( localStorage.getItem('autogrid_viewport') );
+	{
+		strViewport = localStorage.getItem('autogrid_viewport');
+	}
+	
+	var blnShowButtons = Boolean(<?= $this->blnShowButtons; ?>);
+	objElement.attr('data-type',strType);
+	objElement.addClass('<?= $this->input_classes; ?>');
+
+	// build PLUS/MINUS toggler
+	if(blnShowButtons === true)
+	{
+		objElement.attr('data-grid','<?= $this->AutoGrid->desktop; ?>');
+		objElement.attr('data-tablet','<?= \str_replace(array('_m','_t'),'',$this->AutoGrid->tablet ?: $this->AutoGrid->desktop); ?>');
+		objElement.attr('data-mobile','<?= \str_replace(array('_m','_t'),'',$this->AutoGrid->mobile ?: 'col_12'); ?>');
+		// set value by viewport
+		if( strViewport != 'desktop' && strViewport.length > 0 )
+		{
+			objElement.attr('data-grid', objElement.attr('data-'+strViewport) );
+		}
+
+		objElement.addClass('hasButtons');
+		var arrClasses = JSON.parse('<?= json_encode( array_reverse($GLOBALS['PCT_AUTOGRID']['classes']) ); ?>');
+		
+		<?php 
+		$objButtons = new \Contao\BackendTemplate('be_autogrid_buttons');
+		$objButtons->setData($this->getData());
+		$strButtons = $objButtons->parse();
+		?>
+		var strButtons = '<?= \Contao\StringUtil::substrHtml($strButtons,strlen($strButtons)); ?>';
+		objElement.find('> div').prepend(strButtons);
+		
+		var objButtons = objElement.find('.autogrid_buttons .button');
+		var objRequest = null;
+		var intDelay = <?= $GLOBALS['PCT_AUTOGRID']['BACKEND']['ajaxInteractionDelay'] ?: 500; ?>;
+		var varTimeout = 0;
+
+		objButtons.click(function(e) 
+		{
+			var currClass = objElement.attr('data-grid');
+			var index = arrClasses.indexOf(currClass);
+			var action = jQuery(this).data('action');
+			// viewport
+			strViewport = 'desktop';
+			if( localStorage.getItem('autogrid_viewport') );
+			{
+				strViewport = localStorage.getItem('autogrid_viewport');
+			}
+			
+			// up
+			if(action == 'up' && index < arrClasses.length )
+			{
+				index++;
+			}
+			// down
+			else if(action == 'down' && index >= 0)
+			{
+				index--;
+			}
+			// index out of range
+			if(index >= arrClasses.length || index < 0)
+			{
+				return;
+			}
+			
+			// remove the old class
+			objElement.removeClass(arrClasses);
+			// new class
+			var newClass = arrClasses[index];
+			// apply new class
+			objElement.attr('data-grid',newClass);
+			objElement.parent('.column').attr('data-grid',newClass);
+			
+			// apply to parent div.columns
+			objElement.closest('.column').removeClass(currClass);
+			objElement.closest('.column').addClass(newClass);
+			
+			// update infobox
+			objElement.find('.autogrid .infobox').html(newClass);
+			
+			// cancel running timeouts
+			if( varTimeout > 0 )
+			{
+				clearTimeout(varTimeout);
+			}
+
+			// trigger immediate event
+			jQuery(document).trigger('AUTOGRID.grid_resize',{'id':<?= $this->id; ?>,'grid':newClass,'viewport':strViewport});
+			
+			varTimeout = setTimeout(function() 
+			{
+				// stop running request
+				if( objRequest !== null && objRequest != undefined )
+				{
+					objRequest.abort();
+				}
+
+				objRequest = jQuery.ajax(
+				{
+					url: location.href,
+					method:'GET',
+					data: {'autogrid':1,'elem':<?= $this->id; ?>,'class':newClass,'viewport':strViewport},
+					complete: function()
+					{
+						// trigger event after ajax
+						jQuery(document).trigger('AUTOGRID.grid_resize_complete',{'id':<?= $this->id; ?>,'grid':newClass,'viewport':strViewport});
+					}
+				});
+			}, intDelay);		
+		});
+	}
+});
+
+</script>
+<?php endif; ?>
+
+
+<?php if( in_array($this->type, $GLOBALS['PCT_AUTOGRID']['startElements']) ): ?>
+<script>
+	
+/**
+ * Toggle visibility for a whole AG block
+ */
+// !-- toogle: visibility
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#li_<?= $this->id; ?>');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	objElement.find('[data-class="toggle"]').addClass('toggle');
+	objElement.find('img[data-icon-disabled="invisible.svg"]').parent('a').addClass('toggle')
+	
+	objButton = objElement.find('.toggle');
+	
+	// remove contaos onclick Ajax
+	objButton.removeAttr('onclick');
+	//objButton.attr('onclick="Backend.getScrollOffset()"');
+
+	var arrElements = [objElement];
+	
+	<?php // find elements in block 
+	$objElements = \PCT\AutoGrid\Models\ContentModel::findAllByStartId( $this->id );
+	if( $objElements !== null ): ?>
+	<?php foreach( $objElements as $model ): ?>
+	arrElements.push( jQuery('#li_<?= $model->id; ?>') );
+	<?php endforeach; ?>
+	<?php endif; ?>
+	
+	jQuery.each(arrElements, function(i,elem)
+	{
+		elem.find('[data-class="toggle"]').addClass('toggle');
+		elem.find('img[data-icon-disabled="invisible.svg"]').parent('a').addClass('toggle');
+	});
+
+	var src_visible = window.Backend.themePath + 'icons/visible.svg';
+	var src_invisible = window.Backend.themePath+ 'icons/invisible.svg';
+
+	objButton.click(function(e)
+	{
+		e.preventDefault();
+		
+		var _this = jQuery(this);
+
+		// invoke the Backend methods
+		Backend.getScrollOffset();
+
+		var state = parseInt( _this.find('img').attr('data-state') );
+		
+		// toggle the img src and element state
+		if( state < 1 )
+		{
+			jQuery.each(arrElements, function(i,elem)
+			{
+				icon = elem.find('.toggle img');
+				icon.attr('src', src_visible);
+				icon.attr('data-state',1);
+				elem.find('.cte_type').removeClass('unpublished');
+				elem.find('.cte_type').addClass('published');
+			});
+		}
+		else
+		{
+			jQuery.each(arrElements, function(i,elem)
+			{
+				icon = elem.find('.toggle img');
+				icon.attr('src', src_invisible);
+				icon.attr('data-state',0);
+				elem.find('.cte_type').removeClass('published');
+				elem.find('.cte_type').addClass('unpublished');
+			});
+		}
+
+		
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'GET',
+			data: {'action':'toggleAutoGridBlockVisibility','elem':<?= $this->id; ?>,'state':state}
+		});
+	});
+});
+
+</script>
+
+<script>	
+/**
+ * Same height toggler
+ */
+// !-- toggle: same height
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#li_<?= $this->id; ?>');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+	
+	var strField = 'autogrid_sameheight';
+	var objButton = objElement.find('[data-field="'+strField+'"]');
+	
+	objButton.click(function(e)
+	{
+		e.stopPropagation();
+		e.preventDefault();
+
+		var varValue = jQuery(this).attr('data-value');
+
+		if( varValue == 1 )
+		{
+			jQuery(this).removeClass('active');
+			varValue = 0;
+		}
+		else if( varValue == 0 || varValue == undefined )
+		{
+			jQuery(this).addClass('active');
+			varValue = 1;
+		}
+
+		jQuery(this).attr('data-value',varValue);
+
+		// send event
+		jQuery(document).trigger('AUTOGRID.sameheight',{'elem':<?= $this->id; ?>,'value':varValue});
+
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'GET',
+			data: {'action':'toggleAutoGridFieldValue','elem':<?= $this->id; ?>,'state':varValue,'field':strField}
+		});
+			
+	});
+});
+
+/**
+ * Gutter toggler
+ */
+// !-- toggler: gutter
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#li_<?= $this->id; ?>');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+	
+	var strField = 'autogrid_gutter';
+	var objButton = objElement.find('[data-field="'+strField+'"]');
+	
+	objButton.click(function(e)
+	{
+		e.stopPropagation();
+		e.preventDefault();
+
+		objButton.not(this).removeClass('active');
+		var varValue = jQuery(this).attr('data-value');
+		
+		if( jQuery(this).hasClass('active') )
+		{
+			varValue = '';
+		}
+		
+		jQuery(this).toggleClass('active');
+		
+		// send event
+		jQuery(document).trigger('AUTOGRID.gutter',{'elem':<?= $this->id; ?>,'value':varValue});
+
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'GET',
+			data: {'action':'toggleAutoGridFieldValue','elem':<?= $this->id; ?>,'state':varValue,'field':strField}
+		});
+	});
+});
+</script>
+<?php endif; ?>
+	
+<?php if($this->context == 'body'): ?>
+<script>
+
+<?php if(isset($GLOBALS['PCT_AUTOGRID']['autogridGridPreviews']) && !empty($GLOBALS['PCT_AUTOGRID']['autogridGridPreviews']) ): ?>
+/**
+ * Build Grid [flex, grid] preview
+ */
+jQuery(document).ready(function() 
+{
+	<?php 
+	$arrProcessed = array();
+	?>
+	
+	<?php foreach($GLOBALS['PCT_AUTOGRID']['autogridGridPreviews'] as $data): ?>
+	var objStart = jQuery('#li_<?= $data['start']; ?>');
+	var objStop = jQuery('#li_<?= $data['stop']; ?>');
+	
+	var container = jQuery('<li class="grid_preview_li" data-start="<?= $data['start']; ?>" data-stop="<?= $data['stop']; ?>"><?= $data['html']; ?></li>').insertBefore(objStart);
+	var left = objStart.find('.tl_content .cte_type').wrap('<div class="left"></div>');
+	objStart.find('.tl_content .tl_content_right').wrap('<div class="right"></div>');
+	objStart.find('.autogrid_info').detach().insertAfter( left );
+	
+	<?php foreach($data['ids'] as $id): ?>
+	var placeholder = jQuery('.placeholder[data-id="<?= $id; ?>"]');
+	<?php 
+	// skip elements already processed before
+	if( in_array($id, $arrProcessed) )
+	{
+		continue;
+	}
+	?>
+	
+	var tl_content = jQuery('#li_<?= $id; ?>');
+	placeholder.replaceWith(tl_content);
+	<?php $arrProcessed[] = $id; endforeach; ?>
+	
+	<?php endforeach; ?>
+
+	<?php if( \version_compare($this->contao_version,'5.0','<=') ): ?>
+	// Create .inside wrapper in tl_content listings
+	jQuery('.grid_preview_li .tl_content').wrapInner('<div class="inside"></div>');
+	<?php endif; ?>
+	
+	// add body class
+	jQuery('body').addClass('grid_preview_active');
+});
+
+<?php if( isset($this->viewport_panel) && !empty($this->viewport_panel) ): ?>
+/**
+ * Create viewport button panel and apply viewport based classes
+ */
+jQuery(document).ready(function() 
+{
+	// localstorage
+	var strViewport = localStorage.getItem('autogrid_viewport');
+	if ( strViewport == null || strViewport == undefined )
+	{
+		strViewport = 'desktop';
+		localStorage.setItem('autogrid_viewport',strViewport);
+	}
+	// set body class
+	jQuery('body').addClass('viewport_'+strViewport);
+	// inject panel in contao listing
+	jQuery('#tl_listing .tl_header').after('<?= $this->viewport_panel; ?>');
+	// set button active
+	jQuery('#autogrid_viewport_panel .clickable.'+strViewport).addClass('active');
+	
+	jQuery('#autogrid_viewport_panel .clickable').click(function(e)
+	{
+		var strViewport = jQuery(this).data('viewport');
+		// toggle active
+		jQuery(this).siblings('.clickable').removeClass('active');
+		jQuery(this).addClass('active');
+		
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'POST',
+			data: {'action':'toggleAutoGridViewport','viewport':strViewport}
+		});
+		// remove body classes
+		jQuery('body').removeClass(['viewport_desktop','viewport_mobile','viewport_tablet']);
+		// set body class
+		jQuery('body').addClass('viewport_'+strViewport);
+		// store in localstorage
+		localStorage.setItem('autogrid_viewport',strViewport);
+		// trigger event
+		jQuery(document).trigger('AUTOGRID.viewport',{'viewport':strViewport});
+	});
+
+	//!-- apply viewport classes to hasViewport elements
+	var objElements = jQuery('.hasViewport');
+	// remove current grid classes
+	var arrClasses = JSON.parse('<?= json_encode( array_reverse($GLOBALS['PCT_AUTOGRID']['classes']) ); ?>');
+	objElements.removeClass(arrClasses);
+	// apply classes by viewport on page load
+	jQuery.each(objElements,function(i,elem)
+	{
+		elem = jQuery(elem);
+		var viewport_class = elem.attr('data-'+strViewport);
+		elem.addClass( viewport_class );
+
+		// flex row on content elements
+		if( elem.hasClass('cte') )
+		{
+			var objCte = elem.children('.hasButtons');
+			viewport_class = objCte.attr('data-'+strViewport);
+			elem.addClass( viewport_class );
+		}
+
+		var li = elem.children('.autogridColStart');
+		li.attr('data-grid',viewport_class);
+	});
+});
+
+//!-- Event listener: AUTOGRID.viewport
+jQuery(document).on('AUTOGRID.viewport',function(e,params)
+{
+	var objElements = jQuery('.hasViewport');
+	// remove current grid classes
+	var arrClasses = JSON.parse('<?= json_encode( array_reverse($GLOBALS['PCT_AUTOGRID']['classes']) ); ?>');
+	objElements.removeClass(arrClasses);
+	// apply classes by viewport
+	jQuery.each(objElements,function(i,elem)
+	{
+		elem = jQuery(elem);
+		var viewport_class = elem.attr('data-'+params.viewport);
+		elem.addClass( viewport_class );
+		elem.attr('data-grid',viewport_class);
+		elem.attr('data-'+params.viewport,viewport_class);
+		// flex row on content elements
+		if( elem.hasClass('cte') )
+		{
+			var objCte = elem.children('.hasButtons');
+			viewport_class = objCte.attr('data-'+params.viewport);
+			elem.addClass( viewport_class );
+		}
+		var li = elem.children('.autogridColStart, .hasButtons');
+		li.attr('data-grid',viewport_class);
+		li.attr('data-'+params.viewport,viewport_class);
+	});
+});
+//--
+
+//!-- Event listener: AUTOGRID.grid_resize
+jQuery(document).on('AUTOGRID.grid_resize',function(e,params)
+{
+	var arrClasses = JSON.parse('<?= json_encode( array_reverse($GLOBALS['PCT_AUTOGRID']['classes']) ); ?>');
+	
+	// AG columns
+	var objElement = jQuery('.hasViewport[data-id="'+params.id+'"]');
+	objElement.attr('data-grid',params.grid);
+	objElement.attr('data-'+params.viewport,params.grid);
+	
+	// user resized in tablet view
+	if(params.viewport == 'tablet')
+	{
+		objElement.removeClass('no_tablet_grid');
+	}
+
+	var inheritDesktop = false;
+	if( objElement.hasClass('no_tablet_grid') )
+	{
+		inheritDesktop = true;
+	}
+	
+	if( inheritDesktop )
+	{
+		objElement.attr('data-tablet', objElement.attr('data-desktop') );
+	}
+
+	// flex row on content elements
+	if( objElement.hasClass('cte') )
+	{
+		var objCte = objElement.children('.hasButtons');
+		viewport_class = objCte.attr('data-'+params.viewport);
+		if( inheritDesktop )
+		{
+			objCte.attr('data-tablet', objCte.attr('data-desktop') );
+		}
+		//objElement.addClass( viewport_class );
+	}
+	var li = jQuery('#li_'+params.id);
+	li.attr('data-grid',params.grid);
+	li.attr('data-'+params.viewport,params.grid);
+	if( inheritDesktop )
+	{
+		li.attr('data-tablet', objElement.attr('data-desktop') );
+	}
+
+});
+<?php endif; ?>
+
+
+/**
+ * Same height event listener
+ */
+// ! Event listener: same height toggler
+ jQuery(document).on('AUTOGRID.sameheight',function(e,params)
+{
+	var objElement = jQuery('#li_'+params.elem);
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	if( params.value == 1)
+	{
+		objElement.next('.autogrid_row, .autogrid_grid').addClass('same_height');
+	}
+	else if( params.value == 0)
+	{
+		objElement.next('.autogrid_row, .autogrid_grid').removeClass('same_height');
+	}
+});
+
+
+/**
+ * Gutter event listener
+ */
+// ! Event listener: gutter toggler
+jQuery(document).on('AUTOGRID.gutter',function(e,params)
+{
+	var objElement = jQuery('#li_'+params.elem);
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	var arrClasses = ['gutter_l','gutter_m','gutter_s','gutter_none'];
+	objElement.next('.autogrid_row, .autogrid_grid').removeClass(arrClasses).addClass(params.value);
+});
+
+<?php endif; ?>
+
+/**
+ * Add a body class with the current user action as class name
+ */
+jQuery(document).ready(function() 
+{
+	<?php 
+	$objSession = \Contao\System::getContainer()->get('request_stack')->getSession();
+	$arrClipboard = $objSession->get('CLIPBOARD');
+	$arrClass = array();
+	if( isset($arrClipboard[ \Contao\Input::get('table') ]['mode']) )
+	{
+		$mode = $arrClipboard[ \Contao\Input::get('table') ]['mode'];
+		$arrClass = array( $mode,'paste' );
+	}
+
+	$strAct = \Contao\Input::get('act') ?? '';
+	if( $strAct != '' )
+	{
+		$arrClass[] = $strAct;
+		if( in_array($strAct,array('copyAll','copy','cutAll','cut')) )
+		{
+			$arrClass[] = 'paste';
+		}
+	}
+	
+	if( \Contao\Input::get('mode') != '' )
+	{
+		$arrClass[] = \Contao\Input::get('mode');
+	}
+	
+	$arrClass = array_unique(array_filter($arrClass));
+	?>
+	
+	<?php if( empty($arrClass) === false ): ?>
+	jQuery('body').addClass('<?= \implode(' ', $arrClass); ?> ');
+	<?php endif; ?>
+});
+
+</script>
+<?php endif; ?>

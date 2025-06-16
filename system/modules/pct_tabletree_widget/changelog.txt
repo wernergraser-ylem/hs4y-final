@@ -1,0 +1,174 @@
+### 2.0.2
+Fixed: Changed deprecated log entries (#69)
+
+### 2.0.1
+Fixed: Contao 4.13: Call to a member function getChildRecords() on null because eleminateNestedPages does not instantiate the database class (#65)
+Update: General PHP8 updates (#67)
+
+### 2.0.0
+Update: General Contao 5 compatibility (#63)
+Removed: Contao 4.9 compatibility (#63)
+Removed: External php assets page (#63)
+
+### 1.7.4
+Update: General PHP8 updates (#61)
+
+### 1.7.3
+Update: General PHP8 updates (#59)
+
+### 1.7.2
+Fixed: Determine DataContainer class via DataContainer::getDriverForTable instead of DCA array (#57)
+
+### 1.7.1
+Update: Set @ini_set('display_errors', '0'); in PageTableTree.php (#55)
+
+### 1.7.0
+New: Support for Contao 4.13
+
+### 1.6.7
+Fixed: Multi-edit did not work (#50)
+Update: Replaced deprecated methods (#51)
+
+### 1.6.6
+Update: Support data-picker-value feature to merge values against preselected (#46)
+
+### 1.6.5
+Fixed: Return value did not apply in load_callback in reloadTableTree action (#47)
+
+### 1.6.4
+Fixed: Check if source table has a pid field in TableTree->getNodes() methode
+
+### 1.6.3
+Fixed: Check DCA array if field is multiple (#43)
+
+### 1.6.2
+Update: Removed conditions in ajax reloads (#40)
+Update: Support changed server-architecture (found on Strato) and print errors to screen when initialize.php has not been detected (#41)
+
+### 1.6.1
+Update: Respect tables with non-root pid fields like [mode] 4 #37
+
+### 1.6.0
+Update: Rebuild on Contao namespace classes (#34)
+Update: Pass the current url to the ModalWindow to prevent issues under Contao 4.9 RC-1
+Update: Contao 4.9 compatibility
+
+### 1.5.9
+Fixed: Tables with an unused pid field (like CC tables but not being actual child tables) did not show entries (#32) 
+
+### 1.5.8
+Update: PHP 7.2 compatibility (#30)
+
+### 1.5.7
+Fixed: Do not render entries with pid > 0 to avoid showing nested records in root view
+Update: Put constants in quotations for php 7.2
+
+### 1.5.6
+Fixed: In nested tables pid should be greater than 0 or equals 0 for the main query
+
+### 1.5.5
+Fixed: List view did not render nested entries correctly anymore (#22)
+Update: Backend styling (#23)
+Update: Changed label callback global to: $GLOBALS['PCT_TABLETREE_WIDGET'][--SOURCE--]['label_callback'] to avoid interference with Contaos DCA
+
+### 1.5.4
+Update: Support the DCA label_callback
+
+### 1.5.3
+Fixed: Define TL_SCRIPT with path to the external file (#16)
+Fixed: Roots did not apply after reloadTabetree ajax action (#17)
+Update: tabletree.js for the use with CC front edit for Contao 4
+
+### 1.5.2
+Fixed: Do not set a pid value as sql condition automatically in tables that contain a pid field (#14)
+
+### 1.5.1
+Update: Try to locate subfolder installations in PageTableTree.php (#12)
+
+### 1.5.0
+Update: Contao 4.4 ready (#11)
+Update: Use css instead of javascript Theme.hoverDiv in <li> elements (#11)
+
+### 1.4.4
+Fixed: Custom ordered fields could not store custom order correctly due to a wrong variable name
+
+### 1.4.3
+Fixed: Append missing AND when a custom condition is set before the FIND_IN_SET statement (#10)
+Update: Check if orderSRC field exists before validation
+Update: Added support for translation widgets based on metaWizard in Contao 3.2
+
+### 1.4.2
+Fixed: Filter roots array coming from session to avoid empty list views (#9)
+Update: Improved the custom conditions sql query structure
+
+### 1.4.1
+Fixed: Do not override a sorting field value in BackendPctTableTree class
+
+### 1.4.0
+Update: Remove the Theme.toggleSelect call and use the new toggle_select class
+Update: PHP7 ready
+
+### 1.3.5
+Added: Support custom order source fields. Set with ['eval']['orderField'] = 'myOrderSRC'
+Added: Missing data container array in TableTree class
+Added: Load the data container of the source table in TableTree class e.g. for permission checks
+
+### 1.3.4
+Fixed: Missing parameter in strpos methode
+
+### 1.3.3
+Update: Add more apache servers to be recognized
+
+### 1.3.2
+Fixed: Check if order field exists before executing the sql query
+Fixed: Use Contaos session to fetch root nodes
+
+### 1.3.1
+Fixed: An sql issue when toggling nodes
+Added: Support custom panels through $GLOBALS['PCT_TABLETREE_HOOKS']['getCustomPanel'] Hook
+Update: General minor updates
+
+### 1.3.0
+Added: Support custom conditions (#6)
+
+### 1.2.8
+Fixed: Load the current dataContainer array only when not loaded before
+
+### 1.2.7
+Added: Support custom order fields (#5)
+
+### 1.2.6
+Fixed: Store values for none multiple fields not as serialized array (#4)
+
+### 1.2.5
+Fixed: Show all nodes when no root nodes are selected even for non-admin users (#3)
+
+### 1.2.4
+Fixed: Support sorting fields correctly in backend popup
+Update: Rebuild with Contao namespace classes and autoload.php reference (#1)
+
+### 1.2.3
+Update: Handle dynamic translations through translations widgets
+
+### 1.2.2
+Fixed: Searching causes sql error
+Fixed: Pass the current ID to the popup url
+Update: General bug fixes and improvements
+
+### 1.2.1
+Fixed: Store values as arrays at anytime
+Fixed: An issue with root nodes
+Update: Handle dynamic root node fields through "rootsField" attribute
+
+### 1.2.0
+Fixed: Bad request when loading the new values in edit all mode
+
+### 1.1.0
+Fixed: Building the widget with key fields besides the id field
+Fixed: Handle non integer values in validator correctly
+
+### Version 1.0.0
+Added: Root nodes feature
+Added: English languages files
+Update: Merge field defintion with dca array because contao does not pass individual evaluation arrays to widgets
+Update: License agreement

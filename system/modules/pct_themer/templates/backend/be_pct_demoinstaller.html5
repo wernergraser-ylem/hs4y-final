@@ -1,0 +1,97 @@
+<?php 
+$strToken = \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
+?>
+
+<div id="pct_demoinstaller" class="contao-ht35">
+	<!-- category select -->
+	<form action="<?= $this->action; ?>" class="tl_form" method='post'>
+	<input type="hidden" name="FORM_SUBMIT" value="tl_filter">
+	<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+	
+	<div class="tl_formbody">
+		<div class="tl_panel categories">
+		<div class="float_box"><?= $this->categoryWidget; ?></div>
+		<div class="float_box">
+			<?php 
+			$img_reload = 'system/themes/flexible/icons/filter-apply.svg';
+			?>
+			<input type="image" name="filter" id="filter" src="<?= $img_reload; ?>" class="tl_img_submit" alt="ok">
+		</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+	</form>
+	
+	<div id="tl_buttons">
+	  <a href="<?= $this->href ?>" class="header_back" title="<?= $this->title ?>"><?= $this->button ?></a>
+	</div>
+	
+	<?php if($this->contaoThemeWidget): ?>
+	<form action="<?= $this->action; ?>" class="tl_form" method='post'>
+	<input type="hidden" name="FORM_SUBMIT" value="tl_filter">
+	<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+	<div id="contao_theme_select">
+		<?= $this->contaoThemeWidget; ?>
+	</div>
+	</form>
+	<?php endif;?>
+	
+	<?php if($this->messages) :?>
+	<?= $this->messages; ?>
+	<?php endif; ?>
+	
+	<div class="content_wrapper form_wrapper">
+		<div class="counter"><?= sprintf($GLOBALS['TL_LANG']['pct_demoinstaller']['counter'],count($this->themes)); ?></div>
+		
+		<div class="inside grid_wrapper">
+		<?php foreach($this->themes as $theme => $data): ?>
+		<div id="<?= $theme; ?>" class="<?= $data['class']; ?> block <?php if($data['installed']): ?> installed<?php endif; ?>">
+			<div class="inside">
+				<form action="<?= $this->action; ?>" class="tl_form" method='post'>
+				<input type="hidden" name="FORM_SUBMIT" value="pct_demoinstaller">
+				<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+				<input type="hidden" name="THEME" value="<?= $theme; ?>">
+				<div class="content<?php if($data['installed']): ?> demo_installed<?php endif; ?>">
+				<div class="label"><?= $data['label']; ?></div>
+					<div class="image_container">
+						<?php if($data['installed']): ?>
+						<a href="<?= $data['feRedirect']; ?>" target="_blank" title="<?= $GLOBALS['TL_LANG']['MSC']['target'][0]; ?>">
+						<?php endif; ?>
+						<?= $data['img']; ?>
+						<?php if($data['installed']): ?>
+						</a>
+						<?php endif; ?>
+					</div>
+					
+					<div class="submit_container">
+						<?php if(!$data['installed']): ?>
+						<div class="submit install"><input type="submit" class="di_submit text" name="install" value="<?= $GLOBALS['TL_LANG']['pct_demoinstaller']['submit_install'] ?: 'Install'; ?>"></div>
+						<?php else: ?>
+						<?php 
+						$label = $this->showLabel;
+						if($data['installed'] && (boolean)\Contao\Config::get('pct_themedesigner_hidden') === false)
+						{
+							$label = $this->customizeLabel;
+						}
+						?>
+						<div class="submit show"><a href="<?php if($data['installed']): ?><?= $data['feRedirect']; ?><?php endif; ?>" target="_blank" class="di_submit text" title="<?= $GLOBALS['TL_LANG']['MSC']['target'][0]; ?>"><?= $label; ?></a></div>
+						<?php endif; ?>
+						<div class="submit preview"><a href="<?= $data['link']; ?>" target="_blank" tile="Preview: <?= $data['label']; ?>"><?= $GLOBALS['TL_LANG']['pct_demoinstaller']['submit_preview']; ?></a></div>	
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		<?php endforeach; ?>
+		
+		<div class="clear">
+		</div>
+	</div>
+</div>
+
+<?php if( isset($this->latest_installed) && !empty($this->latest_installed)):?>
+<script>
+element = document.getElementById("<?= $this->latest_installed; ?>");
+element.scrollIntoView();
+</script>
+<?php endif; ?>

@@ -1,0 +1,112 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/swiper/swiper.jquery.min.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/swiper/swiper.min.css|static';	
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_swiper_slider_start.css|static';
+?>
+<?php 
+$GLOBALS['PCT_FRAMEWORK']['swiper_instance'] = $this->id; 
+
+if ($this->field('pagination_padding')->value()) {
+	$GLOBALS['TL_HEAD'][] = "<style>#swiper_" . $this->id  . " .swiper-pagination{transform: translateY(" . $this->field('pagination_padding')->value() . "px);}</style>";
+}
+
+?>
+<!-- SEO-SCRIPT-START -->
+<script>
+var swiper_<?php echo $this->id; ?> = null;
+jQuery(document).ready(function()
+{
+ 	swiper_<?php echo $this->id; ?> = new Swiper('#swiper_<?php echo $this->id; ?>', {
+	 	effect: '<?php echo $this->field('effect')->value(); ?>',
+	 	fadeEffect: {crossFade: true},
+	 	speed: <?php echo $this->field('speed')->value() ?: 3000; ?>,
+	 	grabCursor: true,
+	 	direction: 'horizontal',
+	 	<?php if($this->field('centered_slides')->value()): ?>centeredSlides: true,<?php endif; ?>
+	 	<?php if($this->field('autoplay')->value()): ?>
+	 	autoplay: {
+        	delay: <?php echo $this->field('autoplay')->value(); ?>,
+			disableOnInteraction: false,
+      	},
+	  	<?php endif; ?>
+	 	<?php if($this->field('loop')->value()): ?>loop: true,<?php endif; ?>
+	 	navigation: {
+        	nextEl: '#swiper-button-next_<?php echo $this->id; ?>',
+			prevEl: '#swiper-button-prev_<?php echo $this->id; ?>',
+		},
+		<?php if($this->field('pagination')->value()): ?>
+	 	pagination:	{
+        	el: '#swiper-pagination_<?php echo $this->id; ?>',
+			clickable: true,
+      	},
+      	<?php endif; ?>
+        breakpoints: {
+        10: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: <?php if($this->field('slides_per_view')->value()): ?><?php echo $this->field('slides_per_view')->value(); ?><?php else: ?>1<?php endif; ?>,
+          spaceBetween: <?php if($this->field('spaceBetween')->value()): ?><?php echo $this->field('spaceBetween')->value(); ?><?php else: ?>0<?php endif; ?>,
+        },
+      },
+	});
+	
+	
+	swiper_<?php echo $this->id; ?>.on('touchStart',function(elem,event)
+	{
+		jQuery('#swiper_<?php echo $this->id; ?>').addClass('mousedown');
+		console.log(event);
+	});
+	
+	swiper_<?php echo $this->id; ?>.on('touchEnd',function(elem,event)
+	{
+		jQuery('#swiper_<?php echo $this->id; ?>').removeClass('mousedown');
+	});
+	
+	jQuery('#swiper_<?= $this->id; ?> .swiper-wrapper').on('mouseover mouseout',function(event)
+	{
+		var _this = jQuery('#swiper_<?= $this->id; ?>');
+		if( event.type == 'mouseover' )
+		{
+			_this.addClass('mouseover');
+		}
+		else
+		{
+			_this.removeClass('mouseover');
+		}
+	});
+	
+	<?php if(!$this->field('mouse_cursor_hide')->value()): ?>
+	var circle = jQuery('#swiper_<?= $this->id; ?> .circle');
+	var eventStarted = false;
+	jQuery('#swiper_<?= $this->id; ?>').on('mouseover mouseout',function(event)
+	{
+		var _this = jQuery(this);
+		if( event.type == 'mouseover' && eventStarted === false )
+		{
+			eventStarted = true;
+			
+			jQuery(document).on('mousemove',function(e)
+			{
+				var x = e.pageX - _this.offset().left;
+				var y = e.pageY - _this.offset().top;
+				circle.css( { left: x, top: y } );
+			});	
+		}
+		else
+		{
+			jQuery(document).unbind('mousemove');
+			eventStarted = false;
+		}
+	});
+	<?php endif; ?>
+
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+
+<div class="<?php echo $this->class; ?> block<?php if($this->field('style')->value()): ?> <?php echo $this->field('style')->value(); ?><?php endif; ?> <?php echo $this->field('pagination_color')->value(); ?>"<?php echo $this->cssID; ?>>
+<div class="swiper-container<?php if($this->field('navigationhide')->value()): ?> hide-arrows<?php endif; ?><?php if($this->field('mouse_cursor_hide')->value()): ?> hide-cursor<?php endif; ?><?php if($this->field('pagination')->value()): ?> swip-pagination<?php endif; ?><?php if($this->field('pagination_align')->value()): ?> <?php echo $this->field('pagination_align')->value(); ?><?php endif; ?>" id="swiper_<?php echo $this->id; ?>">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">

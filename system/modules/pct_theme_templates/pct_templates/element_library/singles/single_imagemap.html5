@@ -1,0 +1,64 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_imagemap',
+'category' => 'image',
+'thumb' => '',
+'elements' => 'imagemap',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126994,
+1 => 14821,
+2 => 128,
+3 => 1701428230,
+5 => 'imagemap',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+100 => '14',
+102 => '0.5',
+160 => 'a:8:{s:6:"values";a:31:{s:14:"rs1nh9b480q8gz";s:36:"27177f60-8850-11ee-86b7-6c09e874884f";s:18:"rs1nh9b480q8gz_alt";s:0:"";s:15:"wta2h28w9lyn8bs";s:5:"large";s:15:"xcwp056lip9om37";s:0:"";s:15:"q1l2tr9laqmdeyj";s:6:"center";s:15:"1jodely7us0oi4n";s:0:"";s:15:"sfm61jcublitp6m";s:0:"";s:15:"99zgm66gpvv000e";s:2:"13";s:15:"ablzl6suk9iodz4";s:2:"14";s:15:"ny5go1n6idmiqo2";s:6:"center";s:15:"hk1k76yvtair19b";s:40:"<p><strong>Emma[nbsp]Tailor</strong></p>";s:16:"v9hlv8i4i4kk09bm";s:2:"31";s:16:"kmvzrepagx1jjugm";s:2:"12";s:16:"edbrxe997p86qa8d";s:6:"center";s:16:"dwn8razy2p9xqgtc";s:41:"<p><strong>Simone[nbsp]Weber</strong></p>";s:16:"agjmps4jpc64x9r2";s:2:"50";s:16:"ubt5w499wct21p5k";s:1:"7";s:16:"vekb2v18pfrv1ey0";s:6:"center";s:16:"ovq5wko2ip5cw153";s:35:"<p><strong>RENE SIMMER</strong></p>";s:16:"8ew0o7ysecnrpty1";s:2:"63";s:16:"6ogtsj4n4ro67svf";s:2:"12";s:16:"vvg0hva3espn0a9y";s:6:"center";s:16:"w5nhkg17b8g61png";s:35:"<p><strong>Sylvia Rene</strong></p>";s:16:"qyucmgh5w6fmvv4m";s:2:"78";s:16:"d4uabz664xd3zv8g";s:2:"33";s:16:"bf70y2bmvqm6s6po";s:6:"center";s:16:"avi930jb3ziad7ws";s:34:"<p><strong>Spike Moon</strong></p>";s:20:"rs1nh9b480q8gz_title";s:0:"";s:19:"rs1nh9b480q8gz_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"o9gwcrtcnylpzdh";N;s:13:"byv8pz3d6hu5b";N;}s:6:"groups";a:7:{i:0;a:4:{s:5:"ident";s:4:"77_0";s:8:"group_id";i:77;s:11:"group_alias";s:7:"hotspot";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"99zgm66gpvv000e";s:2:"id";i:415;s:5:"alias";s:9:"hposition";}i:1;a:3:{s:4:"uuid";s:15:"ablzl6suk9iodz4";s:2:"id";i:416;s:5:"alias";s:9:"vposition";}i:2;a:3:{s:4:"uuid";s:15:"ny5go1n6idmiqo2";s:2:"id";i:418;s:5:"alias";s:16:"content_position";}i:3;a:3:{s:4:"uuid";s:15:"hk1k76yvtair19b";s:2:"id";i:417;s:5:"alias";s:15:"hotspot_content";}}}i:1;a:7:{s:5:"ident";s:4:"77_1";s:8:"group_id";i:77;s:11:"group_alias";s:7:"hotspot";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"v9hlv8i4i4kk09bm";s:2:"id";i:415;s:5:"alias";s:11:"hposition#1";}i:1;a:3:{s:4:"uuid";s:16:"kmvzrepagx1jjugm";s:2:"id";i:416;s:5:"alias";s:11:"vposition#1";}i:2;a:3:{s:4:"uuid";s:16:"edbrxe997p86qa8d";s:2:"id";i:418;s:5:"alias";s:18:"content_position#1";}i:3;a:3:{s:4:"uuid";s:16:"dwn8razy2p9xqgtc";s:2:"id";i:417;s:5:"alias";s:17:"hotspot_content#1";}}s:6:"isCopy";i:1;s:6:"pgroup";s:2:"77";s:7:"numCopy";i:1;}i:2;a:7:{s:5:"ident";s:4:"77_2";s:8:"group_id";i:77;s:11:"group_alias";s:7:"hotspot";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"agjmps4jpc64x9r2";s:2:"id";i:415;s:5:"alias";s:11:"hposition#2";}i:1;a:3:{s:4:"uuid";s:16:"ubt5w499wct21p5k";s:2:"id";i:416;s:5:"alias";s:11:"vposition#2";}i:2;a:3:{s:4:"uuid";s:16:"vekb2v18pfrv1ey0";s:2:"id";i:418;s:5:"alias";s:18:"content_position#2";}i:3;a:3:{s:4:"uuid";s:16:"ovq5wko2ip5cw153";s:2:"id";i:417;s:5:"alias";s:17:"hotspot_content#2";}}s:6:"isCopy";i:1;s:6:"pgroup";s:2:"77";s:7:"numCopy";i:2;}i:3;a:7:{s:5:"ident";s:4:"77_3";s:8:"group_id";i:77;s:11:"group_alias";s:7:"hotspot";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"qyucmgh5w6fmvv4m";s:2:"id";i:415;s:5:"alias";s:11:"hposition#3";}i:1;a:3:{s:4:"uuid";s:16:"d4uabz664xd3zv8g";s:2:"id";i:416;s:5:"alias";s:11:"vposition#3";}i:2;a:3:{s:4:"uuid";s:16:"bf70y2bmvqm6s6po";s:2:"id";i:418;s:5:"alias";s:18:"content_position#3";}i:3;a:3:{s:4:"uuid";s:16:"avi930jb3ziad7ws";s:2:"id";i:417;s:5:"alias";s:17:"hotspot_content#3";}}s:6:"isCopy";i:1;s:6:"pgroup";s:2:"77";s:7:"numCopy";i:3;}i:4;a:7:{s:5:"ident";s:4:"77_4";s:8:"group_id";i:77;s:11:"group_alias";s:7:"hotspot";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:16:"8ew0o7ysecnrpty1";s:2:"id";i:415;s:5:"alias";s:11:"hposition#4";}i:1;a:3:{s:4:"uuid";s:16:"6ogtsj4n4ro67svf";s:2:"id";i:416;s:5:"alias";s:11:"vposition#4";}i:2;a:3:{s:4:"uuid";s:16:"vvg0hva3espn0a9y";s:2:"id";i:418;s:5:"alias";s:18:"content_position#4";}i:3;a:3:{s:4:"uuid";s:16:"w5nhkg17b8g61png";s:2:"id";i:417;s:5:"alias";s:17:"hotspot_content#4";}}s:6:"isCopy";i:1;s:6:"pgroup";s:2:"77";s:7:"numCopy";i:4;}i:5;a:4:{s:5:"ident";s:4:"76_0";s:8:"group_id";i:76;s:11:"group_alias";s:4:"bild";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"rs1nh9b480q8gz";s:2:"id";i:419;s:5:"alias";s:5:"image";}}}i:6;a:4:{s:5:"ident";s:5:"352_0";s:8:"group_id";i:352;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"wta2h28w9lyn8bs";s:2:"id";i:422;s:5:"alias";s:12:"hotspot-size";}i:1;a:3:{s:4:"uuid";s:15:"xcwp056lip9om37";s:2:"id";i:420;s:5:"alias";s:11:"image_width";}i:2;a:3:{s:4:"uuid";s:15:"q1l2tr9laqmdeyj";s:2:"id";i:421;s:5:"alias";s:5:"align";}}}}s:6:"clones";a:4:{i:415;a:4:{i:1;s:16:"v9hlv8i4i4kk09bm";i:2;s:16:"agjmps4jpc64x9r2";i:3;s:16:"qyucmgh5w6fmvv4m";i:4;s:16:"8ew0o7ysecnrpty1";}i:416;a:4:{i:1;s:16:"kmvzrepagx1jjugm";i:2;s:16:"ubt5w499wct21p5k";i:3;s:16:"d4uabz664xd3zv8g";i:4;s:16:"6ogtsj4n4ro67svf";}i:418;a:4:{i:1;s:16:"edbrxe997p86qa8d";i:2;s:16:"vekb2v18pfrv1ey0";i:3;s:16:"bf70y2bmvqm6s6po";i:4;s:16:"vvg0hva3espn0a9y";}i:417;a:4:{i:1;s:16:"dwn8razy2p9xqgtc";i:2;s:16:"ovq5wko2ip5cw153";i:3;s:16:"avi930jb3ziad7ws";i:4;s:16:"w5nhkg17b8g61png";}}s:6:"tstamp";i:1567424609;s:5:"alias";s:8:"imagemap";s:5:"uuids";a:24:{i:0;s:15:"99zgm66gpvv000e";i:1;s:15:"ablzl6suk9iodz4";i:2;s:15:"ny5go1n6idmiqo2";i:3;s:15:"hk1k76yvtair19b";i:4;s:14:"rs1nh9b480q8gz";i:5;s:15:"wta2h28w9lyn8bs";i:6;s:15:"xcwp056lip9om37";i:7;s:15:"q1l2tr9laqmdeyj";i:8;s:16:"v9hlv8i4i4kk09bm";i:9;s:16:"agjmps4jpc64x9r2";i:10;s:16:"qyucmgh5w6fmvv4m";i:11;s:16:"8ew0o7ysecnrpty1";i:12;s:16:"kmvzrepagx1jjugm";i:13;s:16:"ubt5w499wct21p5k";i:14;s:16:"d4uabz664xd3zv8g";i:15;s:16:"6ogtsj4n4ro67svf";i:16;s:16:"edbrxe997p86qa8d";i:17;s:16:"vekb2v18pfrv1ey0";i:18;s:16:"bf70y2bmvqm6s6po";i:19;s:16:"vvg0hva3espn0a9y";i:20;s:16:"dwn8razy2p9xqgtc";i:21;s:16:"ovq5wko2ip5cw153";i:22;s:16:"avi930jb3ziad7ws";i:23;s:16:"w5nhkg17b8g61png";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:45;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'27177f60-8850-11ee-86b7-6c09e874884f' => 'files/cto_layout/img/element_library/1000x560_w_icon.png',
+),
+);

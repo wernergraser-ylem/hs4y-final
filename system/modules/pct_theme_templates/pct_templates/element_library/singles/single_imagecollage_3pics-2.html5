@@ -1,0 +1,71 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_imagecollage_3pics-2',
+'category' => 'image',
+'thumb' => '',
+'elements' => 'image_collage_3pics',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 127196,
+1 => 14832,
+2 => 1280,
+3 => 1706789731,
+5 => 'image_collage_3pics',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:15:{s:15:"mndphti7sjbzpn8";s:36:"4ad3d36e-8228-11ee-8be5-a67969a4fc01";s:19:"mndphti7sjbzpn8_alt";s:0:"";s:21:"mndphti7sjbzpn8_title";s:0:"";s:20:"mndphti7sjbzpn8_size";a:3:{i:2;s:1:"6";i:0;s:0:"";i:1;s:0:"";}s:24:"mndphti7sjbzpn8_imageUrl";s:0:"";s:24:"mndphti7sjbzpn8_fullsize";s:0:"";s:14:"0yte05epys6tna";s:36:"80601e5c-8228-11ee-8be5-a67969a4fc01";s:18:"0yte05epys6tna_alt";s:0:"";s:20:"0yte05epys6tna_title";s:0:"";s:19:"0yte05epys6tna_size";a:3:{i:2;s:1:"6";i:0;s:0:"";i:1;s:0:"";}s:15:"roqtjfhap5bay44";s:36:"80601e5c-8228-11ee-8be5-a67969a4fc01";s:19:"roqtjfhap5bay44_alt";s:0:"";s:21:"roqtjfhap5bay44_title";s:0:"";s:20:"roqtjfhap5bay44_size";a:3:{i:2;s:1:"6";i:0;s:0:"";i:1;s:0:"";}s:15:"9cjgy769fjw88u6";s:6:"style2";}s:6:"groups";a:2:{i:0;a:4:{s:5:"ident";s:5:"434_0";s:8:"group_id";i:434;s:11:"group_alias";s:6:"images";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"mndphti7sjbzpn8";s:2:"id";i:1988;s:5:"alias";s:7:"image_1";}i:1;a:3:{s:4:"uuid";s:14:"0yte05epys6tna";s:2:"id";i:1989;s:5:"alias";s:7:"image_2";}i:2;a:3:{s:4:"uuid";s:15:"roqtjfhap5bay44";s:2:"id";i:1991;s:5:"alias";s:7:"image_3";}}}i:1;a:4:{s:5:"ident";s:5:"435_0";s:8:"group_id";i:435;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"9cjgy769fjw88u6";s:2:"id";i:1990;s:5:"alias";s:5:"style";}}}}s:6:"tstamp";i:1706520566;s:5:"alias";s:19:"image_collage_3pics";s:5:"uuids";a:4:{i:0;s:15:"mndphti7sjbzpn8";i:1;s:14:"0yte05epys6tna";i:2;s:15:"roqtjfhap5bay44";i:3;s:15:"9cjgy769fjw88u6";}s:7:"version";s:5:"5.0.0";s:13:"customelement";i:152;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'4ad3d36e-8228-11ee-8be5-a67969a4fc01' => 'files/cto_layout/img/element_library/1000x560.png',
+'80601e5c-8228-11ee-8be5-a67969a4fc01' => 'files/cto_layout/img/element_library/1000x560_v2.png',
+),
+);

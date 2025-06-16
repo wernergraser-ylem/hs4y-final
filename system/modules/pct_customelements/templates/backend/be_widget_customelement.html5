@@ -1,0 +1,29 @@
+<?php
+/**
+ * CustomElement Widget template file
+ */
+?>
+
+<?php if($this->empty): ?>
+<div class="customelement_widget empty"><p class="empty"><?php echo $this->empty; ?></p></div>
+<?php else: ?>
+<div class="customelement_widget contao-ht35 clr" data-id="<?php echo $this->customelement_raw->id; ?>"<?php if($this->genericAttribute): ?>data-attr_id="<?php echo $this->genericAttribute; ?>"<?php endif; ?>>
+<!-- clear clipboard button -->
+<?php if($this->clipboard): ?><div class="field clipboard right"><?php echo $this->clipboard; ?></div><?php endif;?>
+<?php foreach($this->groups as $i => $group): ?>
+<div <?php echo $group['cssID']; ?> class="<?php echo $group['class']; ?>" data-id="<?php echo $group['id']; ?>" data-count="<?php echo $group['count']; ?>" data-copy="<?php echo $group['numcopy']; ?>"<?php if($this->genericAttribute): ?>data-attr_id="<?php echo $this->genericAttribute; ?>"<?php endif; ?>>
+	<div class="head">
+		<div id="group_toggler_<?php echo $group['ident']; ?>" class="slide_toggler title hasChilds left <?php echo $group['legend_hide']; ?> <?php if($group['isActive']): ?>active<?php endif; ?>"><?php echo $group['title']; ?></div>
+		<div class="buttons right"><?php echo $group['buttons']; ?></div>
+		<div class="clear"></div>
+	</div>
+	<div id="slide_<?php echo $group['id'].'_'.$group['numcopy'] ?? 0; ?>" class="field_wrapper slide <?php if($group['isActive']): ?>active<?php endif; ?>">
+	<?php foreach($group['fields'] as $field): ?>
+	<?php echo $field['html']; ?>
+	<?php endforeach; ?>
+	</div>
+	<div class="clear"></div>
+</div>
+<?php endforeach; ?>
+</div>
+<?php endif; ?>

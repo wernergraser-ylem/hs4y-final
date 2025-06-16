@@ -1,0 +1,1 @@
+<div id="top_link" class="top-link"><a href="<?= \Contao\Environment::get('request'); ?>#contentwrapper" title="Top"><i class="ti ti-angle-up"></i></a></div>

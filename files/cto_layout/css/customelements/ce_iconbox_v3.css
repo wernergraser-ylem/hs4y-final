@@ -1,0 +1,345 @@
+/* =============================================================================
+ * ce_iconbox_v3
+ * ========================================================================== */
+
+/* same-height */
+.autogrid_row.same_height .ce_iconbox_v3,
+.autogrid_row.same_height .ce_iconbox_v3 .ce_iconbox_v3_inside  {
+	height: 100%;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside {
+	overflow: hidden;
+	position: relative;
+	background: rgb(50,50,50);
+	padding: 95px 30px 30px 30px;
+	width: 100%;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	display: flex;
+	align-items: center;
+}
+
+.ce_iconbox_v3.style1 .ce_iconbox_v3_inside {
+	padding: 30px;
+}
+
+.ce_iconbox_v3:hover {
+	position: relative;
+	z-index: 10;
+	transform: scale(1.1);
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside:hover {
+	background: rgb(100,100,100);
+}
+
+.ce_iconbox_v3 a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	text-indent: -9999px;
+}
+
+.ce_iconbox_v3 .headline {
+	color: rgba(255,255,255,0.6);
+	margin: 0;
+}
+
+.ce_iconbox_v3 .subheadline {
+	color: rgba(255,255,255,1);
+	margin: 0;
+}
+
+.ce_iconbox_v3 i,
+.ce_iconbox_v3 .headline,
+.ce_iconbox_v3 .subheadline {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_iconbox_v3.style1 i,
+.ce_iconbox_v3.style1 .image_container {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.ce_iconbox_v3.style2 i,
+.ce_iconbox_v3.style2 .image_container {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.ce_iconbox_v3.style3 i,
+.ce_iconbox_v3.style3 .image_container {
+	flex: 0 0 30%;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-accent {
+	background-color: var(--accentColor);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-second {
+	background-color: var(--secondColor);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-customColor1 {
+	background-color: var(--customColor1);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-customColor2 {
+	background-color: var(--customColor2);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-lightgray {
+	background-color: rgb(247,247,247);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-darkgray {
+	background-color: rgb(69,69,69);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-white {
+	background-color: rgb(255,255,255);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-black {
+	background-color: rgb(0,0,0);
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-accent:hover {
+	background-color: var(--accentColor)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-second:hover {
+	background-color: var(--secondColor)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-customColor1:hover {
+	background-color: var(--customColor1)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-customColor2:hover {
+	background-color: var(--customColor2)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-lightgray:hover {
+	background-color: rgb(247,247,247)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-darkgray:hover {
+	background-color: rgb(69,69,69)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-white:hover {
+	background-color: rgb(255,255,255)!important;
+}
+
+.ce_iconbox_v3 .ce_iconbox_v3_inside.bg-hover-black:hover {
+	background-color: rgb(0,0,0)!important;
+}
+
+.ce_iconbox_v3 .headline.headline-color-accent {
+	color: var(--accentColor);
+}
+
+.ce_iconbox_v3 .headline.headline-color-second {
+	color: var(--secondColor);
+}
+
+.ce_iconbox_v3 .headline.headline-color-customColor1 {
+	color: var(--customColor1);
+}
+
+.ce_iconbox_v3 .headline.headline-color-customColor2 {
+	color: var(--customColor2);
+}
+
+.ce_iconbox_v3 .headline.headline-color-lightgray {
+	color: rgb(247,247,247);
+}
+
+.ce_iconbox_v3 .headline.headline-color-darkgray {
+	color: rgb(69,69,69);
+}
+
+.ce_iconbox_v3 .headline.headline-color-white {
+	color: rgb(255,255,255);
+}
+
+.ce_iconbox_v3 .headline.headline-color-black {
+	color: rgb(0,0,0);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-accent {
+	color: var(--accentColor);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-second {
+	color: var(--secondColor);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-customColor1 {
+	color: var(--customColor1);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-customColor2 {
+	color: var(--customColor2);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-lightgray {
+	color: rgb(247,247,247);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-darkgray {
+	color: rgb(69,69,69);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-white {
+	color: rgb(255,255,255);
+}
+
+.ce_iconbox_v3 .subheadline.subheadline-color-black {
+	color: rgb(0,0,0);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-accent {
+	color: var(--accentColor);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-second {
+	color: var(--secondColor);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-customColor1 {
+	color: var(--customColor1);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-customColor2 {
+	color: var(--customColor2);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-lightgray {
+	color: rgb(247,247,247);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-darkgray {
+	color: rgb(69,69,69);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-white {
+	color: rgb(255,255,255);
+}
+
+.ce_iconbox_v3 .fonticon.fonticon-color-black {
+	color: rgb(0,0,0);
+}
+
+.ce_iconbox_v3:hover.text-hover-accent i,
+.ce_iconbox_v3:hover.text-hover-accent .headline,
+.ce_iconbox_v3:hover.text-hover-accent .subheadline,
+.ce_iconbox_v3:hover.text-hover-accent .backside {
+	color: var(--accentColor)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-second i,
+.ce_iconbox_v3:hover.text-hover-second .headline,
+.ce_iconbox_v3:hover.text-hover-second .subheadline,
+.ce_iconbox_v3:hover.text-hover-second .backside {
+	color: var(--secondColor)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-customColor1 i,
+.ce_iconbox_v3:hover.text-hover-customColor1 .headline,
+.ce_iconbox_v3:hover.text-hover-customColor1 .subheadline,
+.ce_iconbox_v3:hover.text-hover-customColor1 .backside {
+	color: var(--customColor1)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-customColor2 i,
+.ce_iconbox_v3:hover.text-hover-customColor2 .headline,
+.ce_iconbox_v3:hover.text-hover-customColor2 .subheadline,
+.ce_iconbox_v3:hover.text-hover-customColor2 .backside {
+	color: var(--customColor2)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-lightgray i,
+.ce_iconbox_v3:hover.text-hover-lightgray .headline,
+.ce_iconbox_v3:hover.text-hover-lightgray .subheadline,
+.ce_iconbox_v3:hover.text-hover-lightgray .backside {
+	color: rgb(247,247,247)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-darkgray i,
+.ce_iconbox_v3:hover.text-hover-darkgray .headline,
+.ce_iconbox_v3:hover.text-hover-darkgray .subheadline,
+.ce_iconbox_v3:hover.text-hover-darkgray .backside {
+	color: rgb(69,69,69)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-white i,
+.ce_iconbox_v3:hover.text-hover-white .headline,
+.ce_iconbox_v3:hover.text-hover-white .subheadline,
+.ce_iconbox_v3:hover.text-hover-white .backside {
+	color: rgb(255,255,255)!important;
+}
+
+.ce_iconbox_v3:hover.text-hover-black i,
+.ce_iconbox_v3:hover.text-hover-black .headline,
+.ce_iconbox_v3:hover.text-hover-black .subheadline,
+.ce_iconbox_v3:hover.text-hover-black .backside {
+	color: rgb(0,0,0)!important;
+}
+
+.ce_iconbox_v3.flip .ce_iconbox_v3_content {
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	margin-left: 0;
+}
+
+.ce_iconbox_v3.flip i,
+.ce_iconbox_v3.flip .image_container {
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+}
+
+.ce_iconbox_v3.style2 .ce_iconbox_v3_inside {
+	padding: 100px 30px 30px 30px;
+}
+
+.ce_iconbox_v3.style3 .ce_iconbox_v3_inside {
+	border-radius: 20px;
+	border: 1px solid rgb(200, 202, 206);
+	padding: 30px;
+}
+
+.ce_iconbox_v3.style3 .ce_iconbox_v3_content {
+	width: 70%;
+	float: left;
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+.ce_iconbox_v3.style3 i {
+	font-size: 8rem;
+}
+
+.ce_iconbox_v3.style3 .headline {
+	font-weight: 400;
+}
+
+.ce_iconbox_v3 ul {
+	padding-left: 4px;
+}
+
+.ce_iconbox_v3 ul li {
+	list-style-type: circle;
+	list-style-position: inside;
+}

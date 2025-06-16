@@ -1,0 +1,42 @@
+<?php 
+$date = new \Contao\Date($this->firstDate);
+$newtime = $date->tstamp ?: $this->startDate; 
+?>
+
+<div class="item block autogrid one_third isotope-item<?php if($this->class): ?> <?= $this->class ?><?php endif; ?>" itemscope itemtype="http://schema.org/Event">
+	<div class="item-inside">
+		<div class="image_container">
+			<?php if ($this->hasDetails): ?><a href="<?= $this->href; ?>" itemprop="url"><?php endif; ?>
+			<?php if ($this->addImage): ?><?php $this->insert('picture_default', $this->picture); ?><?php endif; ?>
+			<?php if ($this->hasDetails): ?></a><?php endif; ?>
+		</div>
+		
+		<?php if ($this->date): ?>
+		<div class="date bg-accent" itemprop="startDate">
+			<span class="day"><?php echo \Contao\Date::parse("d", $newtime); ?></span>
+			<span class="month"><?php echo \Contao\Date::parse("M", $newtime); ?></span>
+			<span class="year"><?php echo \Contao\Date::parse("Y", $newtime); ?></span>
+		</div>
+		<?php endif; ?>
+			
+		<?php if ($this->location): ?>
+	    <div class="location">
+	    	<i class="fa fa-location-arrow"></i><?= $this->locationLabel ?>: <?= $this->location ?>
+	    </div>
+		<?php endif; ?>
+			
+		<div class="content">
+			<div class="h4"><a href="<?= $this->href ?>" itemprop="url" title="<?= $this->title ?> (<?php if ($this->day) echo $this->day . ', '; ?><?= $this->date ?><?php if ($this->time) echo ', ' . $this->time; ?>)"<?= $this->target ?>><?= $this->link ?></a></div>
+			<div class="meta-info">
+				<i class="fa fa-calendar"></i><time datetime="<?= $this->datetime ?>"><?= $this->date ?><?php if ($this->time): ?>, <?= $this->time ?><?php endif; ?></time>
+				
+				<?php if ($this->recurring): ?>
+	   			 <div class="recurring"><?= $this->recurring ?><?php if ($this->until) echo ' ' . $this->until; ?>.</div>
+	  			<?php endif; ?>
+
+			</div>
+		</div>
+		
+	</div>
+</div>
+

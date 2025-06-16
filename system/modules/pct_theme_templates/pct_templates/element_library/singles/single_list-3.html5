@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_list-3
+*/
+$arrImport = array (
+'tstamp' => '13.11.2023 08:40',
+'name' => 'single_list-3',
+'category' => 'tables_lists',
+'thumb' => '',
+'elements' => 'list',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+19 => 'listtype',
+20 => 'listitems',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+78 => 'addFontIcon',
+79 => 'fontIcon',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+110 => 'style_css',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126091,
+1 => 14747,
+2 => 320,
+3 => 1699864795,
+5 => 'list',
+6 => 'a:2:{s:4:"unit";s:2:"h2";s:5:"value";s:0:"";}',
+17 => 'above',
+19 => 'unordered',
+20 => 'a:6:{i:0;s:17:"Lorem ipsum dolor";i:1;s:16:"Aenean vulputate";i:2;s:21:"Curabitur ullamcorper";i:3;s:15:"Maecenas tempus";i:4;s:13:"Donec sodales";i:5;s:13:"Sed consequat";}',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+78 => '1',
+79 => 'fa-check fa',
+81 => 'col_4',
+85 => '0.5',
+102 => '0.5',
+110 => 'style3',
+162 => 'sourceText',
+),
+),
+);

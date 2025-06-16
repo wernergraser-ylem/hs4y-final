@@ -1,0 +1,67 @@
+### 2.1.1
+Fixed: Interfaces did not render for non-admins (#175)
+
+### 2.1.0
+Fixed: Missing interface in HTML-modules (#171)
+Update: Styling updates related to live-mode (#173)
+Update: Styling updates related to .header .mod_langswitcher (#172)
+Update: Styling updates related to topbar (#170)
+Update: Do not include jquery from CDN when not loaded by Contao, jquery is a requirement now (#168)
+Update: Replaced hasAccess with core permissions (#167)
+Update: Replaced getFrontendUrl with url_generator (#166)
+
+### 2.0.4
+Fixed: Do not prevent regular link actions in live mode (#164)
+
+### 2.0.3
+Fixed: Missing interface in content elements for Contao >= 5.3.10 (#162)
+
+### 2.0.2
+Update: Added indexer::stop,continue in interface templates (#160)
+
+### 2.0.1
+Fixed: TL_MODE error in ModuleBackendLogin (#158)
+
+### 2.0.0
+Fixed: Misspelling in localstorage "FRONTEN(T)" (#152)
+Update: Do not close after "save" event (#154)
+Update: Clear localstorage and close FQ after events (#153)
+Update: General Contao 5 compatibility (#147)
+Update: General PHP8 updates (#148, #150, #151)
+Removed: Contao 4.9 compatibility (#147)
+Removed: Window size field in user settings (#149)
+
+### 1.2.3
+Added: Shortcut to toggle preview mode: CMD/STRG+SHIFT+1 (#138)
+Fixed: Open/close status has not been toggled on refresh correctly (#137)
+Fixed: Lightbox did not close when backend user logged out (#145)
+Update: Support tl_module::html modules (#132)
+Update: Preview mode should disable all interactions (#139)
+Update: Trigger refresh when an element has been deleted in the iframe (#135)
+Update: No not trigger refresh on submit and create (#134)
+Update: Remember state of the live mode (#133)
+
+### 1.2.2
+Fixed: "Invalid language file name" error (#129)
+
+### 1.2.1
+Update: General PHP8 update (#127)
+
+### 1.2.0
+New: Support for Contao 4.13
+New: Preview mode (#118)
+Fixed: mod_article.first is missing since 4.13 (#122)
+Update: General PHP8 update (#120)
+
+### 1.1.2
+Fixed: Link to themedesigner module must be generated without act,id parameter (#116)
+Update: Backend styling for .w50 elements (#115)
+
+### 1.1.1
+Fixed: System log: Unknown inserttag {{FRONTEND_QUICKEDIT}} when FQ is disabled (#111)
+
+### 1.1.0
+New: Module: Backend-Login. Creates a lightbox backend login to allow users to log on to the backend from the front end (#109)
+Fixed: Wrong url to theme designer backend module (#108)
+
+### 1.0.0

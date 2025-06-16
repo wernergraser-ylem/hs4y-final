@@ -1,0 +1,129 @@
+/* =============================================================================
+ * mod_portfoliolist_v3
+ * ========================================================================== */
+
+.mod_portfoliolist_v3 {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.mod_portfoliolist_v3 .item {
+	overflow: hidden;
+}
+
+.mod_portfoliolist_v3.portfolio-col4 {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+.mod_portfoliolist_v3 .item {
+	width: 33.333%;
+	border: 10px solid transparent;
+}
+
+.mod_portfoliolist_v3.portfolio-col2 .item {
+	width: calc(100% / 2);
+}
+
+.mod_portfoliolist_v3.portfolio-col3 .item {
+	width: calc(100% / 3);
+}
+
+.mod_portfoliolist_v3.portfolio-col4 .item {
+	width: calc(100% / 4);
+}
+
+.mod_portfoliolist_v3 .item .content {
+	position: absolute;
+	bottom: 15px;
+	margin: 0 15px;
+	background: rgb(255,255,255);
+	left: 0;
+	right: 0;
+}
+
+.mod_portfoliolist_v3.portfolio-col4 .item {
+	border-width: 5px;
+}
+
+.mod_portfoliolist_v3.portfolio-col4 .item .content {
+	margin: 0 5px;
+	bottom: 5px;
+}
+
+.mod_portfoliolist_v3 .item .title {
+	margin-bottom: 0;
+	float: left;
+	font-size: 1rem;
+	line-height: 1;
+	margin-right: 10px;
+	margin-bottom: 4px;
+	font-weight: bold;
+}
+
+.mod_portfoliolist_v3 .item .subline {
+	float: right;
+	font-size: 1rem;
+	line-height: 1;
+	padding-left: 10px;
+	border-left: 1px solid rgb(220,220,220);
+}
+
+.mod_portfoliolist_v3 .item .info {
+	overflow: hidden;
+	padding: 5%;
+}
+
+.mod_portfoliolist_v3.portfolio-col4 .item .h5,
+.mod_portfoliolist_v3.portfolio-col4 .item h5 {
+	float: none;
+	margin-bottom: 3px;
+}
+
+.mod_portfoliolist_v3.portfolio-col4 .item .subline {
+	float: none;
+	border: 0;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.mod_portfoliolist_v3 .item img {
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+}
+
+.mod_portfoliolist_v3 .item:hover img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	transform: scale(1.1,1.1);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+    .mod_portfoliolist_v3.portfolio-col2 .item {
+        width: 100%;
+    }
+    
+    .mod_portfoliolist_v3 .item .h5,
+    .mod_portfoliolist_v3 .item h5 {
+        float: none;
+        margin-bottom: 3px;
+    }
+    
+    .mod_portfoliolist_v3 .item .subline {
+        float: none;
+        border: 0;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    
+    .mod_portfoliolist_v3 .item .info {
+        padding: 15px;
+    }
+    
+    .mod_portfoliolist_v3 .item {
+        width: 100%!important;
+    }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/revolutionslider/languages/de/tl_user_group.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_user_group.revolutionslider_legend">
+        <source>RevolutionSlider permissions</source>
+        <target>RevolutionSlider-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionsliders.0">
+        <source>RevolutionSlider</source>
+        <target>RevolutionSlider</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionsliders.1">
+        <source>Select the sliders</source>
+        <target>Wählen Sie die Slider aus</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslidersp.0">
+        <source>RevolutionSlider rights</source>
+        <target>RevolutionSlider-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslidersp.1">
+        <source>Select the rights</source>
+        <target>Wählen Sie die Rechte aus</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslider_slides.0">
+        <source>Slides</source>
+        <target>Slides</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslider_slides.1">
+        <source>Select the slides</source>
+        <target>Wählen Sie die Slides aus</target>
+      </trans-unit>
+	  <trans-unit id="tl_user_group.revolutionslider_slidesp.0">
+        <source>Slides permissions</source>
+        <target>Slides-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslider_slidesp.create">
+        <source>Create</source>
+        <target>Anlegen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslider_slidesp.delete">
+        <source>Delete</source>
+        <target>Löschen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.revolutionslider_slidesp.cut">
+        <source>Cut and paste</source>
+        <target>Verschieben</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

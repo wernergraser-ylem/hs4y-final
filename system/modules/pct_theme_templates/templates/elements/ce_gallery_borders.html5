@@ -1,0 +1,11 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php echo $this->v2warning; ?>
+
+  <div class="border_gal"><?php echo $this->images; ?></div>
+
+  <?php echo $this->pagination; ?>
+
+<?php $this->endblock(); ?>

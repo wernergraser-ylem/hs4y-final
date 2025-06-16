@@ -1,0 +1,62 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/typed/js/typed.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_typed.css|static';
+?>
+<?php 
+$strings = '';
+foreach($this->group('headline') as $i => $fields) 
+{
+	$strings .=  "'" . str_replace(array('&'),array('&amp;'),$this->field('headline#'.$i)->value()) . "',";
+}
+$strings = substr($strings, 0, -1);
+?>
+
+<div class="<?= $this->class; ?> block <?= $this->field('schema')->value(); ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<<?= $this->field('type')->value() ?: 'h1'; ?>>
+		<span class="ce_typed_<?= $this->id; ?>">&nbsp;</span>
+	</<?= $this->field('type')->value(); ?>>	
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	function initObserver() 
+	{	
+		var objObserver = new IntersectionObserver( function(entries, observer)
+		{
+			entries.forEach(function(entry) 
+			{
+				if (entry.isIntersecting) 
+				{
+					if( !jQuery('body').hasClass('acc_disable_animations') )
+					{
+						jQuery(entry.target).typed({strings: [<?= $strings; ?>.replaceAll('&', '&amp;')],typeSpeed: <?= $this->field('typespeed')->value(); ?>});
+					}
+					else
+					{
+						jQuery(entry.target).html(<?= $strings; ?>);
+					}
+					// stop observing
+					objObserver.unobserve( entry.target );
+				}
+			});
+		}, {root: null,rootMargin: '0px',threshold: 0.25}  );
+		objObserver.observe( jQuery('.ce_typed_<?= $this->id; ?>')[0] );
+	}
+
+	// check if a revolutionslider exists in page
+	if (jQuery(document).revolution != undefined)
+	{
+		jQuery(document).on('RevolutionSlider.loaded', function (e, params)
+		{ 
+			initObserver();
+		});
+	}
+	else
+	{
+		initObserver();
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

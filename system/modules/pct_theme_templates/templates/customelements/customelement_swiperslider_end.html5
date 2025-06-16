@@ -1,0 +1,18 @@
+</div>
+</div>
+<div class="swiper-buttons">
+	<div id="swiper-button-prev_<?php echo $GLOBALS['PCT_FRAMEWORK']['swiper_instance']; ?>" class="swiper-button-prev"></div>
+	<div id="swiper-button-next_<?php echo $GLOBALS['PCT_FRAMEWORK']['swiper_instance']; ?>" class="swiper-button-next"></div>
+</div>
+<div id="swiper-pagination_<?php echo $GLOBALS['PCT_FRAMEWORK']['swiper_instance']; ?>" class="swiper-pagination"></div>
+	<div class="circle">
+		<div class="circle-bg"></div>
+		<span>
+			<i class="fa fa-angle-left"></i>
+			<i class="fa fa-angle-right last"></i>
+		</span>
+	</div>
+</div>
+</div>
+<?php unset($GLOBALS['PCT_FRAMEWORK']['swiper_instance']); ?>
+

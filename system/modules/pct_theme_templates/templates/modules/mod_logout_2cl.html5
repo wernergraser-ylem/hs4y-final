@@ -1,0 +1,45 @@
+<!-- indexer::stop -->
+<div id="mod_login_top_opener_<?php echo $this->id; ?>" class="mod_login_top meta-nav"><i class="fa fa-lock"></i><?php echo $GLOBALS['TL_LANG']['MSC']['logout'] ?></div>
+<div id="overlay_close_<?php echo $this->id; ?>" class="overlay_close"></div>
+<div <?php echo $this->cssID; ?> class="<?php echo $this->class; ?> login top-login block <?php if($this->message): ?>show<?php endif; ?>"<?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+  <?php endif; ?>
+
+  <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> id="tl_logout" method="post">
+    <div class="formbody">
+      <input type="hidden" name="FORM_SUBMIT" value="tl_logout">
+      <input type="hidden" name="REQUEST_TOKEN" value="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+      <table>
+        <tr class="row_0 row_first">
+          <td class="login_info"><?= $this->loggedInAs ?><br><?= $this->lastLogin ?></td>
+        </tr>
+        <tr class="row_1 row_last">
+          <td><div class="submit_container"><input type="submit" class="submit" value="<?= $this->slabel ?>"></div></td>
+        </tr>
+      </table>
+    </div>
+    <div id="mod_login_top_closer_<?php echo $this->id; ?>" class="close-window-login"><i class="fa fa-close"></i></div>
+  </form>
+
+
+	<script>
+	jQuery(document).ready(function(){
+		jQuery("#mod_login_top_opener_<?php echo $this->id; ?>").click(function(){
+	    	jQuery(".top-login").addClass("show");
+		});
+		jQuery("#mod_login_top_closer_<?php echo $this->id; ?>").click(function(){
+	    	jQuery(".top-login").removeClass("show");
+		});
+		jQuery("#overlay_close_<?php echo $this->id; ?>").click(function(){
+	    	jQuery(".top-login").removeClass("show");
+		});
+		jQuery(document).keyup(function(e) {
+			if (e.keyCode === 27) jQuery(".top-login").removeClass("show");
+		});
+	});
+	</script>
+
+</div>
+<!-- indexer::continue -->

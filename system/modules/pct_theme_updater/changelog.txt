@@ -1,0 +1,71 @@
+### 4.0.2
+Update: Added migration routine for replacing module templates in HTML-modules with inserttags related to deprecated /layout/ folder (Migration: EclipseX 4.0.0) (#104)
+Update: Added subdomain information in license notification (#105)
+
+### 4.0.1
+Fixed: legacy fe_page was copied in already uptodate installations due to miss-leading version comparing (#102)
+
+### 4.0.0
+Update: Ready for EclipseX6 (#97,#99)
+Update: Removed AjaxRequest.displayBox,.hideBox (#96)
+
+### 3.0.2
+Update: Manually point to a product in mixed-orders (#94)
+Update: Hide maintenance jobs when not needed anymore (#92)
+
+### 3.0.1
+Update: The update process can now be finished without checking the task checkboxes (#89)
+Update: Purge the whole /var/cache folder (#90)
+
+### 3.0.0
+New: Automatic migration scripts (#75,#76,#77#,78)
+Update: Migration: Rename deprecated /templates/layout folder to /templates/layout_backend (#77)
+Update: Migration: Rename deprecated be_tinyMCE template to be_tinyMCE_backup (#80)
+Update: Migration: Add .skip file to pct_theme_installer module in case it exists (#81)
+Update: Migration: Move deprecated set_, import_ in /templates folder to /templates/theme_updater_backup (#82)
+Update: Migration: Remove deprecated demo_ templates in /templates folder (#82) 
+Update: General styling updates (#76)
+Update: Removed strict version compare (#74)
+Update: Renamed to Theme-Updater Pro for internal usage
+Update: Language files (#72,#84,#85)
+
+### 2.0.2
+New: System-maintenance job: form_textfield_form_text to update deprecated text formfield template selections (#68)
+Fixed: Checkbox "all" in maintenance did not toggle correctly (#67)
+Update: Support Contao dark mode (#70)
+
+### 2.0.1
+Fixed: Purge the module folders completely to avoid deprecated files from older versions (#63)
+Fixed: TL_MODE error in InstallerHelper (#65)
+
+### 2.0.0
+New: Support for Contao 4.13, 5.3 (#53)
+New: Checkbox "Delete demo files" to removed demo_installer files and delete_this folders after update has been checked in (#51)
+Update: error_reporting(E_ERROR | E_PARSE | E_NOTICE) (#49)
+Update: General PHP8 updates (#48)
+Update: Added maintenance jobs to migrate database values (#56)
+Removed: Contao 4.9 support (#53)
+
+### 1.0.4
+Update: Removed commented out javascript code from be_js_pct_theme_updater.html5 template (#46)
+
+### 1.0.3
+Fixed: Namespace error in InstallationController class (#44)
+
+### 1.0.2
+Fixed: Missing file information in auto. validated theme license (#40)
+Fixed: Finishing the update did not remove the pct_theme_version file correctly (#42)
+
+### 1.0.1
+Update: Check min. client version compared to version installed (#25)
+Update: /favicon folder is now update save (#26)
+Update: Removed logging of API requests (#27)
+Update: Use local version of jquery (#34)
+Update: Added $GLOBALS['PCT_THEME_UPDATER']['debug'] to enable debug mode (#33)
+Update: Check current contao version against recommend update start version (#28)
+Update: Clear Symphony-Cache before coping files to force contao to load fresh config.php information (#29)
+Update: Display version number in backend (#35)
+Update: Remove "www." from domain request to prevend invalid domain validations (#37)
+Removed: Unused classes (#38)
+
+### 1.0.0

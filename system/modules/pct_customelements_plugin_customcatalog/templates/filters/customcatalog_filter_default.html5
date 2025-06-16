@@ -1,0 +1,36 @@
+<?php
+/**
+ * Default filter template
+ */
+?>
+
+<div <?php echo $this->cssID; ?> <?php if($this->class): ?>class="widget <?php echo $this->class; ?>"<?php endif; ?>>
+<fieldset class="default_container">
+	<?php if($this->label): ?><legend><?php echo $this->label; ?></legend><?php endif; ?>
+	<?php if($this->label): ?><?php echo $this->label; ?><?php endif; ?>
+	<?php echo $this->widget; ?>
+	
+	<?php if($this->getFilter()->getModule()->customcatalog_filter_submit && $this->type == 'text'): ?>
+	<?php 	
+	global $objPage;
+	if(!$objPage->hasJQuery)
+	{
+		$GLOBALS['TL_JAVASCRIPT'][] = '//code.jquery.com/jquery-1.10.2.js';
+	}	
+	?>
+	
+	<script>
+	jQuery(document).ready(function() 
+	{
+		// submit form on pressing enter
+		jQuery('#ctrl_<?php echo $this->name; ?>').keypress(function(event)
+		{
+			if(event.which == 13) { event.preventDefault(); jQuery(event.target).parents('form').submit(); }
+		});
+	});
+	</script>
+	<?php endif; ?>
+		
+</fieldset>
+<?php if($this->description): ?><div class="description"><?php echo $this->description; ?></div><?php endif; ?>
+</div>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/pct_iconpicker/languages/en/tl_pct_customelement_attribute.php" source-language="en">
+    <body>
+      <trans-unit id="tl_pct_customelement_attribute.fontIcon_legend">
+        <source>Font-Icon Settings</source>
+        <target>Font-Icon Einstellungen</target>
+      </trans-unit>
+      <trans-unit id="tl_pct_customelement_attribute.addFontIcon.0">
+        <source>Add font icon</source>
+        <target>Ein Font-Icon hinzufügen</target>
+      </trans-unit>
+      <trans-unit id="tl_pct_customelement_attribute.addFontIcon.1">
+        <source>Add a font icon to the element</source>
+        <target>Dem Attribut ein Font-Icon hinzufügen</target>
+      </trans-unit>
+      <trans-unit id="tl_pct_customelement_attribute.fontIcon.0">
+        <source>Font icon selection</source>
+        <target>Font-Icon-Auswahl</target>
+      </trans-unit>
+      <trans-unit id="tl_pct_customelement_attribute.fontIcon.1">
+        <source>Choose a font-icon directly or use the font-icon picker.</source>
+        <target>Wählen Sie ein Font-Icon mit dem Font-Icon-Picker oder tragen Sie die Klasse direkt ein.</target>
+      </trans-unit>
+      
+      <trans-unit id="tl_pct_customelement_attribute.options.iconpicker.0">
+        <source>Additional options</source>
+        <target>Wählen Sie weitere Optionen für dieses Feld</target>
+      </trans-unit>
+       <trans-unit id="tl_pct_customelement_attribute.options.iconpicker.1">
+        <source>Choose your additional options.</source>
+        <target>Hier können Sie bestimmen welche Zusätzlichen Optionen das Feld besitzt.</target>
+      </trans-unit>
+      <trans-unit id="tl_pct_customelement_attribute.options.iconpicker.iconpicker">
+        <source>Add icon picker widget to the field.</source>
+        <target>IconPicker Widget hinzufügen.</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

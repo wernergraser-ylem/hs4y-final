@@ -1,0 +1,8 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_bgimage_content_start.css|static';
+?>
+<div class="<?php echo $this->class; ?> ce_bgimage_extended boxed-content <?php echo $this->field('schema')->value(); ?> <?php echo $this->field('bg_color')->value(); ?> <?php echo $this->field('valign')->value(); ?><?php if($this->field('invert_leftcol')->value()): ?> invert_leftcol<?php endif; ?><?php if($this->field('invert_rightcol')->value()): ?> invert_rightcol<?php endif; ?>" style="background-image: url(<?php echo $this->field('image')->generate(); ?>);<?php if ($this->style): ?><?php echo $this->style; ?><?php endif; ?>"<?php echo $this->cssID; ?>>
+	<div class="ce_bgimage_extended_inside <?php echo $this->field('padding_top_class')->value(); ?> <?php echo $this->field('padding_bottom_class')->value(); ?>">
+		<div class="ce_bgimage_content_left">
+			<div class="bg_overlay"></div>
+			<div class="ce_bgimage_content">

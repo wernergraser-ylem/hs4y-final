@@ -1,0 +1,60 @@
+<?php if(!$this->empty): ?>
+<div class="item-wrapper">
+<?php 
+$sum = 0;
+?>
+<?php foreach($this->entries as $entry): ?>
+	<div class="block <?= $entry->class; ?> <?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+		
+		<div class="item-inside autogrid_wrapper block">
+			
+			<div class="item-col1 autogrid two_sixth block">
+				<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+				<?php if($entry->field('highlight')->value()): ?> <i class="item-highlight-icon fa fa-star bg-accent"></i><?php endif; ?>
+			</div>
+			
+			<div class="item-col2 autogrid three_sixth block">
+				
+				<div class="item-top-wrap">
+					<div class="item-headline">
+						<h5><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h5>
+						<div class="date"><i class="fa fa-calendar-o"></i><?php echo $entry->field('arrival')->html(); ?> - <?php echo $entry->field('departure')->html(); ?></div>
+					</div>
+					
+					<div class="item-features">
+						<ul>
+							<?php if ($entry->field('list_wifi')->value()): ?><li><i class="fa fa-wifi bg-accent"></i></li><?php endif;?>
+							<?php if ($entry->field('list_accessibility')->value()): ?><li><i class="fa fa-wheelchair bg-accent"></i></li><?php endif;?>
+							<?php if ($entry->field('list_restaurant')->value()): ?><li><i class="fa fa-cutlery bg-accent"></i></li><?php endif;?>
+							<?php if ($entry->field('list_cabel_tv')->value()): ?><li><i class="fa fa-desktop bg-accent"></i></li><?php endif;?>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="item-description">
+					<?php echo $entry->field('short_description')->value(); ?>
+					<?php echo $entry->field('rating')->html(); ?>
+				</div>
+				
+			</div>
+			
+			<div class="item-col3 autogrid one_sixth block">
+				<div class="item-price-wrap">
+					<div class="item-price-label">AB</div>
+					<div class="item-price color-accent"><?php echo $entry->field('price')->value(); ?> &euro;</div>
+					<div class="item-price-add"><?php echo $entry->field('stay')->value(); ?> TAGE</div>
+				</div>
+			</div>
+			
+			
+		</div>
+			
+	</div>
+	
+<?php 
+$sum += $entry->field('price')->value(); ?>
+<?php endforeach; ?>
+</div>		
+<?php else: ?>
+<p class="info empty">Keine Package gefunden</p>
+<?php endif;?>

@@ -1,0 +1,2017 @@
+<?php //contao.twig.template_hierarchy
+
+return [PHP_INT_MAX, [
+    [
+        'fe_page_backup_themeupdater' => [
+            'templates/fe_page_backup_themeupdater.html5' => '@Contao_Global/fe_page_backup_themeupdater.html5',
+        ],
+        'form_text' => [
+            'templates/form_text.html5' => '@Contao_Global/form_text.html5',
+            'system/modules/pct_theme_templates/templates/form/form_text.html5' => '@Contao_pct_theme_templates/form_text.html5',
+            'vendor/contao/core-bundle/contao/templates/forms/form_text.html5' => '@Contao_ContaoCoreBundle/form_text.html5',
+        ],
+        'form_wrapper_custom' => [
+            'templates/form_wrapper_custom.html5' => '@Contao_Global/form_wrapper_custom.html5',
+        ],
+        'mod_login' => [
+            'templates/mod_login.html5' => '@Contao_Global/mod_login.html5',
+            'vendor/contao/core-bundle/contao/templates/modules/mod_login.html5' => '@Contao_ContaoCoreBundle/mod_login.html5',
+        ],
+        'com_default' => [
+            'vendor/contao/comments-bundle/contao/templates/comments/com_default.html5' => '@Contao_ContaoCommentsBundle/com_default.html5',
+        ],
+        'ce_comments' => [
+            'vendor/contao/comments-bundle/contao/templates/elements/ce_comments.html5' => '@Contao_ContaoCommentsBundle/ce_comments.html5',
+        ],
+        'mod_comment_form' => [
+            'vendor/contao/comments-bundle/contao/templates/modules/mod_comment_form.html5' => '@Contao_ContaoCommentsBundle/mod_comment_form.html5',
+        ],
+        'mod_comments' => [
+            'vendor/contao/comments-bundle/contao/templates/modules/mod_comments.html5' => '@Contao_ContaoCommentsBundle/mod_comments.html5',
+        ],
+        'analytics_google' => [
+            'system/modules/pct_theme_templates/templates/analytics/analytics_google.html5' => '@Contao_pct_theme_templates/analytics_google.html5',
+            'vendor/contao/core-bundle/contao/templates/analytics/analytics_google.html5' => '@Contao_ContaoCoreBundle/analytics_google.html5',
+        ],
+        'analytics_googletagmanager' => [
+            'system/modules/pct_theme_templates/templates/analytics/analytics_googletagmanager.html5' => '@Contao_pct_theme_templates/analytics_googletagmanager.html5',
+        ],
+        'analytics_matomo' => [
+            'system/modules/pct_theme_templates/templates/analytics/analytics_matomo.html5' => '@Contao_pct_theme_templates/analytics_matomo.html5',
+            'vendor/contao/core-bundle/contao/templates/analytics/analytics_matomo.html5' => '@Contao_ContaoCoreBundle/analytics_matomo.html5',
+        ],
+        'analytics_piwik' => [
+            'system/modules/pct_theme_templates/templates/analytics/analytics_piwik.html5' => '@Contao_pct_theme_templates/analytics_piwik.html5',
+        ],
+        'be_tinyMCE' => [
+            'system/modules/pct_theme_templates/templates/backend/be_tinyMCE.html5' => '@Contao_pct_theme_templates/be_tinyMCE.html5',
+            'vendor/contao/core-bundle/contao/templates/backend/be_tinyMCE.html5' => '@Contao_ContaoCoreBundle/be_tinyMCE.html5',
+        ],
+        'customcatalog_accommodations_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_accommodations_list.html5' => '@Contao_pct_theme_templates/customcatalog_accommodations_list.html5',
+        ],
+        'customcatalog_accommodations_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_accommodations_reader.html5' => '@Contao_pct_theme_templates/customcatalog_accommodations_reader.html5',
+        ],
+        'customcatalog_accommodations_slider' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_accommodations_slider.html5' => '@Contao_pct_theme_templates/customcatalog_accommodations_slider.html5',
+        ],
+        'customcatalog_accommodations_teaser' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_accommodations_teaser.html5' => '@Contao_pct_theme_templates/customcatalog_accommodations_teaser.html5',
+        ],
+        'customcatalog_booklibrary_ajaxsearch_results' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_booklibrary_ajaxsearch_results.html5' => '@Contao_pct_theme_templates/customcatalog_booklibrary_ajaxsearch_results.html5',
+        ],
+        'customcatalog_booklibrary_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_booklibrary_list.html5' => '@Contao_pct_theme_templates/customcatalog_booklibrary_list.html5',
+        ],
+        'customcatalog_booklibrary_list_sidebar' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_booklibrary_list_sidebar.html5' => '@Contao_pct_theme_templates/customcatalog_booklibrary_list_sidebar.html5',
+        ],
+        'customcatalog_booklibrary_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_booklibrary_reader.html5' => '@Contao_pct_theme_templates/customcatalog_booklibrary_reader.html5',
+        ],
+        'customcatalog_booklibrary_related' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_booklibrary_related.html5' => '@Contao_pct_theme_templates/customcatalog_booklibrary_related.html5',
+        ],
+        'customcatalog_booklibrary_teaserslider' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_booklibrary_teaserslider.html5' => '@Contao_pct_theme_templates/customcatalog_booklibrary_teaserslider.html5',
+        ],
+        'customcatalog_cardealer_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_cardealer_list.html5' => '@Contao_pct_theme_templates/customcatalog_cardealer_list.html5',
+        ],
+        'customcatalog_cardealer_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_cardealer_reader.html5' => '@Contao_pct_theme_templates/customcatalog_cardealer_reader.html5',
+        ],
+        'customcatalog_cardealer_slider' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_cardealer_slider.html5' => '@Contao_pct_theme_templates/customcatalog_cardealer_slider.html5',
+        ],
+        'customcatalog_catalog_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_catalog_list.html5' => '@Contao_pct_theme_templates/customcatalog_catalog_list.html5',
+        ],
+        'customcatalog_catalog_megamenu_slider' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_catalog_megamenu_slider.html5' => '@Contao_pct_theme_templates/customcatalog_catalog_megamenu_slider.html5',
+        ],
+        'customcatalog_catalog_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_catalog_reader.html5' => '@Contao_pct_theme_templates/customcatalog_catalog_reader.html5',
+        ],
+        'customcatalog_catalog_slider' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_catalog_slider.html5' => '@Contao_pct_theme_templates/customcatalog_catalog_slider.html5',
+        ],
+        'customcatalog_directory_ajaxsearch_results' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_directory_ajaxsearch_results.html5' => '@Contao_pct_theme_templates/customcatalog_directory_ajaxsearch_results.html5',
+        ],
+        'customcatalog_directory_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_directory_list.html5' => '@Contao_pct_theme_templates/customcatalog_directory_list.html5',
+        ],
+        'customcatalog_directory_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_directory_reader.html5' => '@Contao_pct_theme_templates/customcatalog_directory_reader.html5',
+        ],
+        'customcatalog_filter_geosearch' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_filter_geosearch.html5' => '@Contao_pct_theme_templates/customcatalog_filter_geosearch.html5',
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_geosearch.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_geosearch.html5',
+        ],
+        'customcatalog_filter_select_nocount' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_filter_select_nocount.html5' => '@Contao_pct_theme_templates/customcatalog_filter_select_nocount.html5',
+        ],
+        'customcatalog_googlemap_markers' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_googlemap_markers.html5' => '@Contao_pct_theme_templates/customcatalog_googlemap_markers.html5',
+        ],
+        'customcatalog_hotelapart_packages_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_packages_list.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_packages_list.html5',
+        ],
+        'customcatalog_hotelapart_packages_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_packages_reader.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_packages_reader.html5',
+        ],
+        'customcatalog_hotelapart_packages_teaser' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_packages_teaser.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_packages_teaser.html5',
+        ],
+        'customcatalog_hotelapart_pricing_summer_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_pricing_summer_list.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_pricing_summer_list.html5',
+        ],
+        'customcatalog_hotelapart_pricing_winter_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_pricing_winter_list.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_pricing_winter_list.html5',
+        ],
+        'customcatalog_hotelapart_rooms_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_rooms_list.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_rooms_list.html5',
+        ],
+        'customcatalog_hotelapart_rooms_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_hotelapart_rooms_reader.html5' => '@Contao_pct_theme_templates/customcatalog_hotelapart_rooms_reader.html5',
+        ],
+        'customcatalog_immorealty_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_immorealty_list.html5' => '@Contao_pct_theme_templates/customcatalog_immorealty_list.html5',
+        ],
+        'customcatalog_immorealty_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_immorealty_reader.html5' => '@Contao_pct_theme_templates/customcatalog_immorealty_reader.html5',
+        ],
+        'customcatalog_immorealty_slider' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_immorealty_slider.html5' => '@Contao_pct_theme_templates/customcatalog_immorealty_slider.html5',
+        ],
+        'customcatalog_openstreetmap_markers' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_openstreetmap_markers.html5' => '@Contao_pct_theme_templates/customcatalog_openstreetmap_markers.html5',
+        ],
+        'customcatalog_productcatalog_googlemaps' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_productcatalog_googlemaps.html5' => '@Contao_pct_theme_templates/customcatalog_productcatalog_googlemaps.html5',
+        ],
+        'customcatalog_productcatalog_list' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_productcatalog_list.html5' => '@Contao_pct_theme_templates/customcatalog_productcatalog_list.html5',
+        ],
+        'customcatalog_productcatalog_reader' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_productcatalog_reader.html5' => '@Contao_pct_theme_templates/customcatalog_productcatalog_reader.html5',
+        ],
+        'customcatalog_productcatalog_related' => [
+            'system/modules/pct_theme_templates/templates/customcatalog/customcatalog_productcatalog_related.html5' => '@Contao_pct_theme_templates/customcatalog_productcatalog_related.html5',
+        ],
+        'customelement_accessibility_widget' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_accessibility_widget.html5' => '@Contao_pct_theme_templates/customelement_accessibility_widget.html5',
+        ],
+        'customelement_attr_googlemap' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_attr_googlemap.html5' => '@Contao_pct_theme_templates/customelement_attr_googlemap.html5',
+            'system/modules/pct_customelements_plugin_customcatalog/templates/attributes/customelement_attr_googlemap.html5' => '@Contao_pct_customelements_plugin_customcatalog/customelement_attr_googlemap.html5',
+        ],
+        'customelement_attr_openstreetmap' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_attr_openstreetmap.html5' => '@Contao_pct_theme_templates/customelement_attr_openstreetmap.html5',
+        ],
+        'customelement_attr_raw' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_attr_raw.html5' => '@Contao_pct_theme_templates/customelement_attr_raw.html5',
+        ],
+        'customelement_attr_tags' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_attr_tags.html5' => '@Contao_pct_theme_templates/customelement_attr_tags.html5',
+        ],
+        'customelement_authorbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_authorbox.html5' => '@Contao_pct_theme_templates/customelement_authorbox.html5',
+        ],
+        'customelement_background_video_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_background_video_end.html5' => '@Contao_pct_theme_templates/customelement_background_video_end.html5',
+        ],
+        'customelement_background_video_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_background_video_start.html5' => '@Contao_pct_theme_templates/customelement_background_video_start.html5',
+        ],
+        'customelement_badge' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_badge.html5' => '@Contao_pct_theme_templates/customelement_badge.html5',
+        ],
+        'customelement_before_after_slider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_before_after_slider.html5' => '@Contao_pct_theme_templates/customelement_before_after_slider.html5',
+        ],
+        'customelement_benefitbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_benefitbox.html5' => '@Contao_pct_theme_templates/customelement_benefitbox.html5',
+        ],
+        'customelement_bgimage_content_divider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_bgimage_content_divider.html5' => '@Contao_pct_theme_templates/customelement_bgimage_content_divider.html5',
+        ],
+        'customelement_bgimage_content_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_bgimage_content_end.html5' => '@Contao_pct_theme_templates/customelement_bgimage_content_end.html5',
+        ],
+        'customelement_bgimage_content_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_bgimage_content_start.html5' => '@Contao_pct_theme_templates/customelement_bgimage_content_start.html5',
+        ],
+        'customelement_bgimage_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_bgimage_end.html5' => '@Contao_pct_theme_templates/customelement_bgimage_end.html5',
+        ],
+        'customelement_bgimage_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_bgimage_start.html5' => '@Contao_pct_theme_templates/customelement_bgimage_start.html5',
+        ],
+        'customelement_calltoaction' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_calltoaction.html5' => '@Contao_pct_theme_templates/customelement_calltoaction.html5',
+        ],
+        'customelement_chartbar' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_chartbar.html5' => '@Contao_pct_theme_templates/customelement_chartbar.html5',
+        ],
+        'customelement_colorbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_colorbox.html5' => '@Contao_pct_theme_templates/customelement_colorbox.html5',
+        ],
+        'customelement_contentbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_contentbox.html5' => '@Contao_pct_theme_templates/customelement_contentbox.html5',
+        ],
+        'customelement_contentbox_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_contentbox_end.html5' => '@Contao_pct_theme_templates/customelement_contentbox_end.html5',
+        ],
+        'customelement_contentbox_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_contentbox_start.html5' => '@Contao_pct_theme_templates/customelement_contentbox_start.html5',
+        ],
+        'customelement_countdown' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_countdown.html5' => '@Contao_pct_theme_templates/customelement_countdown.html5',
+        ],
+        'customelement_countup' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_countup.html5' => '@Contao_pct_theme_templates/customelement_countup.html5',
+        ],
+        'customelement_customfont' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_customfont.html5' => '@Contao_pct_theme_templates/customelement_customfont.html5',
+        ],
+        'customelement_customlink' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_customlink.html5' => '@Contao_pct_theme_templates/customelement_customlink.html5',
+        ],
+        'customelement_divider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_divider.html5' => '@Contao_pct_theme_templates/customelement_divider.html5',
+        ],
+        'customelement_divider_image' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_divider_image.html5' => '@Contao_pct_theme_templates/customelement_divider_image.html5',
+        ],
+        'customelement_embed_code' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_embed_code.html5' => '@Contao_pct_theme_templates/customelement_embed_code.html5',
+        ],
+        'customelement_fancy_divider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_fancy_divider.html5' => '@Contao_pct_theme_templates/customelement_fancy_divider.html5',
+        ],
+        'customelement_fancy_divider_image' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_fancy_divider_image.html5' => '@Contao_pct_theme_templates/customelement_fancy_divider_image.html5',
+        ],
+        'customelement_fancybox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_fancybox.html5' => '@Contao_pct_theme_templates/customelement_fancybox.html5',
+        ],
+        'customelement_fancylink' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_fancylink.html5' => '@Contao_pct_theme_templates/customelement_fancylink.html5',
+        ],
+        'customelement_featurebox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_featurebox.html5' => '@Contao_pct_theme_templates/customelement_featurebox.html5',
+        ],
+        'customelement_featured_tab' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_featured_tab.html5' => '@Contao_pct_theme_templates/customelement_featured_tab.html5',
+        ],
+        'customelement_featurelist' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_featurelist.html5' => '@Contao_pct_theme_templates/customelement_featurelist.html5',
+        ],
+        'customelement_flipbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_flipbox.html5' => '@Contao_pct_theme_templates/customelement_flipbox.html5',
+        ],
+        'customelement_frame_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_frame_end.html5' => '@Contao_pct_theme_templates/customelement_frame_end.html5',
+        ],
+        'customelement_frame_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_frame_start.html5' => '@Contao_pct_theme_templates/customelement_frame_start.html5',
+        ],
+        'customelement_fullscreen_gallery' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_fullscreen_gallery.html5' => '@Contao_pct_theme_templates/customelement_fullscreen_gallery.html5',
+        ],
+        'customelement_gmap' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_gmap.html5' => '@Contao_pct_theme_templates/customelement_gmap.html5',
+        ],
+        'customelement_grid_gallery_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_grid_gallery_end.html5' => '@Contao_pct_theme_templates/customelement_grid_gallery_end.html5',
+        ],
+        'customelement_grid_gallery_image' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_grid_gallery_image.html5' => '@Contao_pct_theme_templates/customelement_grid_gallery_image.html5',
+        ],
+        'customelement_grid_gallery_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_grid_gallery_start.html5' => '@Contao_pct_theme_templates/customelement_grid_gallery_start.html5',
+        ],
+        'customelement_headerimage' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_headerimage.html5' => '@Contao_pct_theme_templates/customelement_headerimage.html5',
+        ],
+        'customelement_headline_buttons_bar' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_headline_buttons_bar.html5' => '@Contao_pct_theme_templates/customelement_headline_buttons_bar.html5',
+        ],
+        'customelement_headline_extended' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_headline_extended.html5' => '@Contao_pct_theme_templates/customelement_headline_extended.html5',
+        ],
+        'customelement_highlighted_text' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_highlighted_text.html5' => '@Contao_pct_theme_templates/customelement_highlighted_text.html5',
+        ],
+        'customelement_hover_image' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_hover_image.html5' => '@Contao_pct_theme_templates/customelement_hover_image.html5',
+        ],
+        'customelement_hyperlink' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_hyperlink.html5' => '@Contao_pct_theme_templates/customelement_hyperlink.html5',
+        ],
+        'customelement_hyperlink_lightbox_iframe' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_hyperlink_lightbox_iframe.html5' => '@Contao_pct_theme_templates/customelement_hyperlink_lightbox_iframe.html5',
+        ],
+        'customelement_hyperlink_lightbox_video' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_hyperlink_lightbox_video.html5' => '@Contao_pct_theme_templates/customelement_hyperlink_lightbox_video.html5',
+        ],
+        'customelement_icon_text' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_icon_text.html5' => '@Contao_pct_theme_templates/customelement_icon_text.html5',
+        ],
+        'customelement_iconbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_iconbox.html5' => '@Contao_pct_theme_templates/customelement_iconbox.html5',
+        ],
+        'customelement_iconbox_header' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_iconbox_header.html5' => '@Contao_pct_theme_templates/customelement_iconbox_header.html5',
+        ],
+        'customelement_iconbox_v2' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_iconbox_v2.html5' => '@Contao_pct_theme_templates/customelement_iconbox_v2.html5',
+        ],
+        'customelement_iconbox_v3' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_iconbox_v3.html5' => '@Contao_pct_theme_templates/customelement_iconbox_v3.html5',
+        ],
+        'customelement_iconbox_vertical' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_iconbox_vertical.html5' => '@Contao_pct_theme_templates/customelement_iconbox_vertical.html5',
+        ],
+        'customelement_image_collage_2pics' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_image_collage_2pics.html5' => '@Contao_pct_theme_templates/customelement_image_collage_2pics.html5',
+        ],
+        'customelement_image_collage_3pics' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_image_collage_3pics.html5' => '@Contao_pct_theme_templates/customelement_image_collage_3pics.html5',
+        ],
+        'customelement_image_extended' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_image_extended.html5' => '@Contao_pct_theme_templates/customelement_image_extended.html5',
+        ],
+        'customelement_image_text_box' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_image_text_box.html5' => '@Contao_pct_theme_templates/customelement_image_text_box.html5',
+        ],
+        'customelement_image_text_box_v2' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_image_text_box_v2.html5' => '@Contao_pct_theme_templates/customelement_image_text_box_v2.html5',
+        ],
+        'customelement_imagebox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_imagebox.html5' => '@Contao_pct_theme_templates/customelement_imagebox.html5',
+        ],
+        'customelement_imagemap' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_imagemap.html5' => '@Contao_pct_theme_templates/customelement_imagemap.html5',
+        ],
+        'customelement_imagemap_content' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_imagemap_content.html5' => '@Contao_pct_theme_templates/customelement_imagemap_content.html5',
+        ],
+        'customelement_imagemap_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_imagemap_end.html5' => '@Contao_pct_theme_templates/customelement_imagemap_end.html5',
+        ],
+        'customelement_imagemap_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_imagemap_start.html5' => '@Contao_pct_theme_templates/customelement_imagemap_start.html5',
+        ],
+        'customelement_infobox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_infobox.html5' => '@Contao_pct_theme_templates/customelement_infobox.html5',
+        ],
+        'customelement_leadertext' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_leadertext.html5' => '@Contao_pct_theme_templates/customelement_leadertext.html5',
+        ],
+        'customelement_linkbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_linkbox.html5' => '@Contao_pct_theme_templates/customelement_linkbox.html5',
+        ],
+        'customelement_onepage_navi' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_onepage_navi.html5' => '@Contao_pct_theme_templates/customelement_onepage_navi.html5',
+        ],
+        'customelement_openstreetmap' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_openstreetmap.html5' => '@Contao_pct_theme_templates/customelement_openstreetmap.html5',
+        ],
+        'customelement_page_navi' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_page_navi.html5' => '@Contao_pct_theme_templates/customelement_page_navi.html5',
+        ],
+        'customelement_piecharts' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_piecharts.html5' => '@Contao_pct_theme_templates/customelement_piecharts.html5',
+        ],
+        'customelement_popup_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_popup_end.html5' => '@Contao_pct_theme_templates/customelement_popup_end.html5',
+        ],
+        'customelement_popup_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_popup_start.html5' => '@Contao_pct_theme_templates/customelement_popup_start.html5',
+        ],
+        'customelement_portfoliofilter' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_portfoliofilter.html5' => '@Contao_pct_theme_templates/customelement_portfoliofilter.html5',
+        ],
+        'customelement_price_column' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_price_column.html5' => '@Contao_pct_theme_templates/customelement_price_column.html5',
+        ],
+        'customelement_pricecard' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_pricecard.html5' => '@Contao_pct_theme_templates/customelement_pricecard.html5',
+        ],
+        'customelement_pricelist' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_pricelist.html5' => '@Contao_pct_theme_templates/customelement_pricelist.html5',
+        ],
+        'customelement_pricelist_image' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_pricelist_image.html5' => '@Contao_pct_theme_templates/customelement_pricelist_image.html5',
+        ],
+        'customelement_pricetable3' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_pricetable3.html5' => '@Contao_pct_theme_templates/customelement_pricetable3.html5',
+        ],
+        'customelement_pricetable4' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_pricetable4.html5' => '@Contao_pct_theme_templates/customelement_pricetable4.html5',
+        ],
+        'customelement_productbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_productbox.html5' => '@Contao_pct_theme_templates/customelement_productbox.html5',
+        ],
+        'customelement_quickmenu' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_quickmenu.html5' => '@Contao_pct_theme_templates/customelement_quickmenu.html5',
+        ],
+        'customelement_rotatingwords' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_rotatingwords.html5' => '@Contao_pct_theme_templates/customelement_rotatingwords.html5',
+        ],
+        'customelement_scribble_animation' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_scribble_animation.html5' => '@Contao_pct_theme_templates/customelement_scribble_animation.html5',
+        ],
+        'customelement_scroll_reveal_words' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_scroll_reveal_words.html5' => '@Contao_pct_theme_templates/customelement_scroll_reveal_words.html5',
+        ],
+        'customelement_scrolling_text' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_scrolling_text.html5' => '@Contao_pct_theme_templates/customelement_scrolling_text.html5',
+        ],
+        'customelement_search_trigger' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_search_trigger.html5' => '@Contao_pct_theme_templates/customelement_search_trigger.html5',
+        ],
+        'customelement_shift_wrapper_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_shift_wrapper_end.html5' => '@Contao_pct_theme_templates/customelement_shift_wrapper_end.html5',
+        ],
+        'customelement_shift_wrapper_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_shift_wrapper_start.html5' => '@Contao_pct_theme_templates/customelement_shift_wrapper_start.html5',
+        ],
+        'customelement_slide_in_divider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_slide_in_divider.html5' => '@Contao_pct_theme_templates/customelement_slide_in_divider.html5',
+        ],
+        'customelement_slide_in_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_slide_in_start.html5' => '@Contao_pct_theme_templates/customelement_slide_in_start.html5',
+        ],
+        'customelement_slide_in_stop' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_slide_in_stop.html5' => '@Contao_pct_theme_templates/customelement_slide_in_stop.html5',
+        ],
+        'customelement_slide_in_toggler' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_slide_in_toggler.html5' => '@Contao_pct_theme_templates/customelement_slide_in_toggler.html5',
+        ],
+        'customelement_splitwords' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_splitwords.html5' => '@Contao_pct_theme_templates/customelement_splitwords.html5',
+        ],
+        'customelement_swiperslider_divider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_swiperslider_divider.html5' => '@Contao_pct_theme_templates/customelement_swiperslider_divider.html5',
+        ],
+        'customelement_swiperslider_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_swiperslider_end.html5' => '@Contao_pct_theme_templates/customelement_swiperslider_end.html5',
+        ],
+        'customelement_swiperslider_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_swiperslider_start.html5' => '@Contao_pct_theme_templates/customelement_swiperslider_start.html5',
+        ],
+        'customelement_tabs_divider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_tabs_divider.html5' => '@Contao_pct_theme_templates/customelement_tabs_divider.html5',
+        ],
+        'customelement_tabs_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_tabs_end.html5' => '@Contao_pct_theme_templates/customelement_tabs_end.html5',
+        ],
+        'customelement_tabs_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_tabs_start.html5' => '@Contao_pct_theme_templates/customelement_tabs_start.html5',
+        ],
+        'customelement_teambox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_teambox.html5' => '@Contao_pct_theme_templates/customelement_teambox.html5',
+        ],
+        'customelement_teambox_simple' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_teambox_simple.html5' => '@Contao_pct_theme_templates/customelement_teambox_simple.html5',
+        ],
+        'customelement_teaserbox' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_teaserbox.html5' => '@Contao_pct_theme_templates/customelement_teaserbox.html5',
+        ],
+        'customelement_testimonial' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_testimonial.html5' => '@Contao_pct_theme_templates/customelement_testimonial.html5',
+        ],
+        'customelement_testimonial_slider' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_testimonial_slider.html5' => '@Contao_pct_theme_templates/customelement_testimonial_slider.html5',
+        ],
+        'customelement_text_extented' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_text_extented.html5' => '@Contao_pct_theme_templates/customelement_text_extented.html5',
+        ],
+        'customelement_text_image_bar' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_text_image_bar.html5' => '@Contao_pct_theme_templates/customelement_text_image_bar.html5',
+        ],
+        'customelement_text_inline_images' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_text_inline_images.html5' => '@Contao_pct_theme_templates/customelement_text_inline_images.html5',
+        ],
+        'customelement_textlink' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_textlink.html5' => '@Contao_pct_theme_templates/customelement_textlink.html5',
+        ],
+        'customelement_timeline' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_timeline.html5' => '@Contao_pct_theme_templates/customelement_timeline.html5',
+        ],
+        'customelement_timeline_content' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_timeline_content.html5' => '@Contao_pct_theme_templates/customelement_timeline_content.html5',
+        ],
+        'customelement_timeline_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_timeline_end.html5' => '@Contao_pct_theme_templates/customelement_timeline_end.html5',
+        ],
+        'customelement_timeline_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_timeline_start.html5' => '@Contao_pct_theme_templates/customelement_timeline_start.html5',
+        ],
+        'customelement_typed' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_typed.html5' => '@Contao_pct_theme_templates/customelement_typed.html5',
+        ],
+        'customelement_vertical_spacer' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_vertical_spacer.html5' => '@Contao_pct_theme_templates/customelement_vertical_spacer.html5',
+        ],
+        'customelement_vertical_spacer_px' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_vertical_spacer_px.html5' => '@Contao_pct_theme_templates/customelement_vertical_spacer_px.html5',
+        ],
+        'customelement_video_w_teaser' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_video_w_teaser.html5' => '@Contao_pct_theme_templates/customelement_video_w_teaser.html5',
+        ],
+        'customelement_wrap_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_wrap_end.html5' => '@Contao_pct_theme_templates/customelement_wrap_end.html5',
+        ],
+        'customelement_wrap_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_wrap_start.html5' => '@Contao_pct_theme_templates/customelement_wrap_start.html5',
+        ],
+        'customelement_youtube_end' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_youtube_end.html5' => '@Contao_pct_theme_templates/customelement_youtube_end.html5',
+        ],
+        'customelement_youtube_start' => [
+            'system/modules/pct_theme_templates/templates/customelements/customelement_youtube_start.html5' => '@Contao_pct_theme_templates/customelement_youtube_start.html5',
+        ],
+        'ce_accordionSingle' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_accordionSingle.html5' => '@Contao_pct_theme_templates/ce_accordionSingle.html5',
+            'vendor/contao/core-bundle/contao/templates/elements/ce_accordionSingle.html5' => '@Contao_ContaoCoreBundle/ce_accordionSingle.html5',
+        ],
+        'ce_accordionSingle_v2' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_accordionSingle_v2.html5' => '@Contao_pct_theme_templates/ce_accordionSingle_v2.html5',
+        ],
+        'ce_accordionStart' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_accordionStart.html5' => '@Contao_pct_theme_templates/ce_accordionStart.html5',
+            'vendor/contao/core-bundle/contao/templates/elements/ce_accordionStart.html5' => '@Contao_ContaoCoreBundle/ce_accordionStart.html5',
+        ],
+        'ce_accordionStart_v2' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_accordionStart_v2.html5' => '@Contao_pct_theme_templates/ce_accordionStart_v2.html5',
+        ],
+        'ce_autogrid_col' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_autogrid_col.html5' => '@Contao_pct_theme_templates/ce_autogrid_col.html5',
+            'system/modules/pct_autogrid/templates/ce_autogrid_col.html5' => '@Contao_pct_autogrid/ce_autogrid_col.html5',
+        ],
+        'ce_download' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_download.html5' => '@Contao_pct_theme_templates/ce_download.html5',
+            'vendor/contao/core-bundle/contao/templates/elements/ce_download.html5' => '@Contao_ContaoCoreBundle/ce_download.html5',
+        ],
+        'ce_download_small' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_download_small.html5' => '@Contao_pct_theme_templates/ce_download_small.html5',
+        ],
+        'ce_downloads_box' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_downloads_box.html5' => '@Contao_pct_theme_templates/ce_downloads_box.html5',
+        ],
+        'ce_gallery_borders' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_gallery_borders.html5' => '@Contao_pct_theme_templates/ce_gallery_borders.html5',
+        ],
+        'ce_hyperlink_iframe_lightbox' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_hyperlink_iframe_lightbox.html5' => '@Contao_pct_theme_templates/ce_hyperlink_iframe_lightbox.html5',
+        ],
+        'ce_hyperlink_raw' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_hyperlink_raw.html5' => '@Contao_pct_theme_templates/ce_hyperlink_raw.html5',
+        ],
+        'ce_image_no_responsive' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_image_no_responsive.html5' => '@Contao_pct_theme_templates/ce_image_no_responsive.html5',
+        ],
+        'ce_image_raw' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_image_raw.html5' => '@Contao_pct_theme_templates/ce_image_raw.html5',
+        ],
+        'ce_player' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_player.html5' => '@Contao_pct_theme_templates/ce_player.html5',
+            'vendor/contao/core-bundle/contao/templates/elements/ce_player.html5' => '@Contao_ContaoCoreBundle/ce_player.html5',
+        ],
+        'ce_textarea_raw' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_textarea_raw.html5' => '@Contao_pct_theme_templates/ce_textarea_raw.html5',
+        ],
+        'ce_vimeo' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_vimeo.html5' => '@Contao_pct_theme_templates/ce_vimeo.html5',
+            'vendor/contao/core-bundle/contao/templates/elements/ce_vimeo.html5' => '@Contao_ContaoCoreBundle/ce_vimeo.html5',
+        ],
+        'ce_youtube' => [
+            'system/modules/pct_theme_templates/templates/elements/ce_youtube.html5' => '@Contao_pct_theme_templates/ce_youtube.html5',
+            'vendor/contao/core-bundle/contao/templates/elements/ce_youtube.html5' => '@Contao_ContaoCoreBundle/ce_youtube.html5',
+        ],
+        'event_full' => [
+            'system/modules/pct_theme_templates/templates/event/event_full.html5' => '@Contao_pct_theme_templates/event_full.html5',
+            'vendor/contao/calendar-bundle/contao/templates/events/event_full.html5' => '@Contao_ContaoCalendarBundle/event_full.html5',
+        ],
+        'event_list_timeline' => [
+            'system/modules/pct_theme_templates/templates/event/event_list_timeline.html5' => '@Contao_pct_theme_templates/event_list_timeline.html5',
+        ],
+        'event_list_v2' => [
+            'system/modules/pct_theme_templates/templates/event/event_list_v2.html5' => '@Contao_pct_theme_templates/event_list_v2.html5',
+        ],
+        'event_list_v3' => [
+            'system/modules/pct_theme_templates/templates/event/event_list_v3.html5' => '@Contao_pct_theme_templates/event_list_v3.html5',
+        ],
+        'event_list_v4' => [
+            'system/modules/pct_theme_templates/templates/event/event_list_v4.html5' => '@Contao_pct_theme_templates/event_list_v4.html5',
+        ],
+        'event_teaser_v1' => [
+            'system/modules/pct_theme_templates/templates/event/event_teaser_v1.html5' => '@Contao_pct_theme_templates/event_teaser_v1.html5',
+        ],
+        'mod_eventlist' => [
+            'system/modules/pct_theme_templates/templates/event/mod_eventlist.html5' => '@Contao_pct_theme_templates/mod_eventlist.html5',
+            'vendor/contao/calendar-bundle/contao/templates/modules/mod_eventlist.html5' => '@Contao_ContaoCalendarBundle/mod_eventlist.html5',
+        ],
+        'mod_eventreader' => [
+            'system/modules/pct_theme_templates/templates/event/mod_eventreader.html5' => '@Contao_pct_theme_templates/mod_eventreader.html5',
+            'vendor/contao/calendar-bundle/contao/templates/modules/mod_eventreader.html5' => '@Contao_ContaoCalendarBundle/mod_eventreader.html5',
+        ],
+        'form_checkbox_selector' => [
+            'system/modules/pct_theme_templates/templates/form/form_checkbox_selector.html5' => '@Contao_pct_theme_templates/form_checkbox_selector.html5',
+        ],
+        'form_customcatalog_filter' => [
+            'system/modules/pct_theme_templates/templates/form/form_customcatalog_filter.html5' => '@Contao_pct_theme_templates/form_customcatalog_filter.html5',
+            'system/modules/pct_customelements_plugin_customcatalog/templates/forms/form_customcatalog_filter.html5' => '@Contao_pct_customelements_plugin_customcatalog/form_customcatalog_filter.html5',
+        ],
+        'form_radio_selector' => [
+            'system/modules/pct_theme_templates/templates/form/form_radio_selector.html5' => '@Contao_pct_theme_templates/form_radio_selector.html5',
+        ],
+        'form_text_datepicker' => [
+            'system/modules/pct_theme_templates/templates/form/form_text_datepicker.html5' => '@Contao_pct_theme_templates/form_text_datepicker.html5',
+        ],
+        'form_text_datepicker_short' => [
+            'system/modules/pct_theme_templates/templates/form/form_text_datepicker_short.html5' => '@Contao_pct_theme_templates/form_text_datepicker_short.html5',
+        ],
+        'form_text_floatlabel' => [
+            'system/modules/pct_theme_templates/templates/form/form_text_floatlabel.html5' => '@Contao_pct_theme_templates/form_text_floatlabel.html5',
+        ],
+        'form_text_timepicker' => [
+            'system/modules/pct_theme_templates/templates/form/form_text_timepicker.html5' => '@Contao_pct_theme_templates/form_text_timepicker.html5',
+        ],
+        'gallery_default' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default.html5' => '@Contao_pct_theme_templates/gallery_default.html5',
+            'vendor/contao/core-bundle/contao/templates/gallery/gallery_default.html5' => '@Contao_ContaoCoreBundle/gallery_default.html5',
+        ],
+        'gallery_default_borders' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_borders.html5' => '@Contao_pct_theme_templates/gallery_default_borders.html5',
+        ],
+        'gallery_default_contao' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_contao.html5' => '@Contao_pct_theme_templates/gallery_default_contao.html5',
+        ],
+        'gallery_default_isotope' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_isotope.html5' => '@Contao_pct_theme_templates/gallery_default_isotope.html5',
+        ],
+        'gallery_default_isotope_margin' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_isotope_margin.html5' => '@Contao_pct_theme_templates/gallery_default_isotope_margin.html5',
+        ],
+        'gallery_default_margin' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_margin.html5' => '@Contao_pct_theme_templates/gallery_default_margin.html5',
+        ],
+        'gallery_default_slider' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_slider.html5' => '@Contao_pct_theme_templates/gallery_default_slider.html5',
+        ],
+        'gallery_default_slider_w_arrows' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_slider_w_arrows.html5' => '@Contao_pct_theme_templates/gallery_default_slider_w_arrows.html5',
+        ],
+        'gallery_default_video' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_default_video.html5' => '@Contao_pct_theme_templates/gallery_default_video.html5',
+        ],
+        'gallery_elevatezoom' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_elevatezoom.html5' => '@Contao_pct_theme_templates/gallery_elevatezoom.html5',
+        ],
+        'gallery_elevatezoom_nolens' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_elevatezoom_nolens.html5' => '@Contao_pct_theme_templates/gallery_elevatezoom_nolens.html5',
+        ],
+        'gallery_revoslider' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_revoslider.html5' => '@Contao_pct_theme_templates/gallery_revoslider.html5',
+        ],
+        'gallery_revoslider_fullscreen' => [
+            'system/modules/pct_theme_templates/templates/gallery/gallery_revoslider_fullscreen.html5' => '@Contao_pct_theme_templates/gallery_revoslider_fullscreen.html5',
+        ],
+        'mod_article' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_article.html5' => '@Contao_pct_theme_templates/mod_article.html5',
+            'system/modules/pct_theme_settings/templates/mod_article.html5' => '@Contao_pct_theme_settings/mod_article.html5',
+            'vendor/contao/core-bundle/contao/templates/modules/mod_article.html5' => '@Contao_ContaoCoreBundle/mod_article.html5',
+        ],
+        'mod_article_offset_top' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_article_offset_top.html5' => '@Contao_pct_theme_templates/mod_article_offset_top.html5',
+        ],
+        'mod_article_onepage_nav' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_article_onepage_nav.html5' => '@Contao_pct_theme_templates/mod_article_onepage_nav.html5',
+        ],
+        'mod_auto_optout' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_auto_optout.html5' => '@Contao_pct_theme_templates/mod_auto_optout.html5',
+            'system/modules/pct_privacy_manager/templates/modules/mod_auto_optout.html5' => '@Contao_pct_privacy_manager/mod_auto_optout.html5',
+        ],
+        'mod_breadcrumb' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_breadcrumb.html5' => '@Contao_pct_theme_templates/mod_breadcrumb.html5',
+            'vendor/contao/core-bundle/contao/templates/modules/mod_breadcrumb.html5' => '@Contao_ContaoCoreBundle/mod_breadcrumb.html5',
+        ],
+        'mod_customcatalog_ajaxsearch_results' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_ajaxsearch_results.html5' => '@Contao_pct_theme_templates/mod_customcatalog_ajaxsearch_results.html5',
+        ],
+        'mod_customcatalog_backlink_top_bottom' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_backlink_top_bottom.html5' => '@Contao_pct_theme_templates/mod_customcatalog_backlink_top_bottom.html5',
+        ],
+        'mod_customcatalog_booklibrary_fallback_config' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_booklibrary_fallback_config.html5' => '@Contao_pct_theme_templates/mod_customcatalog_booklibrary_fallback_config.html5',
+        ],
+        'mod_customcatalog_hotelapart_pricing' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_hotelapart_pricing.html5' => '@Contao_pct_theme_templates/mod_customcatalog_hotelapart_pricing.html5',
+        ],
+        'mod_customcatalog_list_megamenu_slider' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_list_megamenu_slider.html5' => '@Contao_pct_theme_templates/mod_customcatalog_list_megamenu_slider.html5',
+        ],
+        'mod_customcatalog_list_sidebar' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_list_sidebar.html5' => '@Contao_pct_theme_templates/mod_customcatalog_list_sidebar.html5',
+        ],
+        'mod_customcatalog_megamenu' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_megamenu.html5' => '@Contao_pct_theme_templates/mod_customcatalog_megamenu.html5',
+        ],
+        'mod_customcatalog_teaser' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_teaser.html5' => '@Contao_pct_theme_templates/mod_customcatalog_teaser.html5',
+        ],
+        'mod_customcatalog_teaserslider' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalog_teaserslider.html5' => '@Contao_pct_theme_templates/mod_customcatalog_teaserslider.html5',
+        ],
+        'mod_customcatalogfilter_horizontal' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalogfilter_horizontal.html5' => '@Contao_pct_theme_templates/mod_customcatalogfilter_horizontal.html5',
+        ],
+        'mod_customcatalogfilter_mobile_trigger' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalogfilter_mobile_trigger.html5' => '@Contao_pct_theme_templates/mod_customcatalogfilter_mobile_trigger.html5',
+        ],
+        'mod_customcatalogfilter_no_submits' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customcatalogfilter_no_submits.html5' => '@Contao_pct_theme_templates/mod_customcatalogfilter_no_submits.html5',
+        ],
+        'mod_customnav_section_slider' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customnav_section_slider.html5' => '@Contao_pct_theme_templates/mod_customnav_section_slider.html5',
+        ],
+        'mod_customnav_submenu_v2' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_customnav_submenu_v2.html5' => '@Contao_pct_theme_templates/mod_customnav_submenu_v2.html5',
+        ],
+        'mod_eventlist_teaser_v1' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_eventlist_teaser_v1.html5' => '@Contao_pct_theme_templates/mod_eventlist_teaser_v1.html5',
+        ],
+        'mod_eventlist_timeline' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_eventlist_timeline.html5' => '@Contao_pct_theme_templates/mod_eventlist_timeline.html5',
+        ],
+        'mod_eventlist_v2' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_eventlist_v2.html5' => '@Contao_pct_theme_templates/mod_eventlist_v2.html5',
+        ],
+        'mod_eventlist_v3' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_eventlist_v3.html5' => '@Contao_pct_theme_templates/mod_eventlist_v3.html5',
+        ],
+        'mod_eventlist_v4' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_eventlist_v4.html5' => '@Contao_pct_theme_templates/mod_eventlist_v4.html5',
+        ],
+        'mod_html_bottom' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_bottom.html5' => '@Contao_pct_theme_templates/mod_html_bottom.html5',
+        ],
+        'mod_html_customcatalog_view_switcher' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_customcatalog_view_switcher.html5' => '@Contao_pct_theme_templates/mod_html_customcatalog_view_switcher.html5',
+        ],
+        'mod_html_email' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_email.html5' => '@Contao_pct_theme_templates/mod_html_email.html5',
+        ],
+        'mod_html_frontend_quickedit' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_frontend_quickedit.html5' => '@Contao_pct_theme_templates/mod_html_frontend_quickedit.html5',
+        ],
+        'mod_html_header_smallview_trigger' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_header_smallview_trigger.html5' => '@Contao_pct_theme_templates/mod_html_header_smallview_trigger.html5',
+        ],
+        'mod_html_langswitcher' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_langswitcher.html5' => '@Contao_pct_theme_templates/mod_html_langswitcher.html5',
+        ],
+        'mod_html_mmenu_customnav' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_mmenu_customnav.html5' => '@Contao_pct_theme_templates/mod_html_mmenu_customnav.html5',
+        ],
+        'mod_html_mobilenav_trigger' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_mobilenav_trigger.html5' => '@Contao_pct_theme_templates/mod_html_mobilenav_trigger.html5',
+        ],
+        'mod_html_offcanvas_top' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_offcanvas_top.html5' => '@Contao_pct_theme_templates/mod_html_offcanvas_top.html5',
+        ],
+        'mod_html_offcanvas_top_trigger' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_offcanvas_top_trigger.html5' => '@Contao_pct_theme_templates/mod_html_offcanvas_top_trigger.html5',
+        ],
+        'mod_html_phone' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_phone.html5' => '@Contao_pct_theme_templates/mod_html_phone.html5',
+        ],
+        'mod_html_search_trigger' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_search_trigger.html5' => '@Contao_pct_theme_templates/mod_html_search_trigger.html5',
+        ],
+        'mod_html_smartmenu_trigger' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_smartmenu_trigger.html5' => '@Contao_pct_theme_templates/mod_html_smartmenu_trigger.html5',
+        ],
+        'mod_html_socials' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_socials.html5' => '@Contao_pct_theme_templates/mod_html_socials.html5',
+        ],
+        'mod_html_top_divider' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_top_divider.html5' => '@Contao_pct_theme_templates/mod_html_top_divider.html5',
+        ],
+        'mod_html_totop_link' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_html_totop_link.html5' => '@Contao_pct_theme_templates/mod_html_totop_link.html5',
+        ],
+        'mod_login_2cl' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_login_2cl.html5' => '@Contao_pct_theme_templates/mod_login_2cl.html5',
+        ],
+        'mod_logout_2cl' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_logout_2cl.html5' => '@Contao_pct_theme_templates/mod_logout_2cl.html5',
+        ],
+        'mod_navigation' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation.html5' => '@Contao_pct_theme_templates/mod_navigation.html5',
+            'vendor/contao/core-bundle/contao/templates/modules/mod_navigation.html5' => '@Contao_ContaoCoreBundle/mod_navigation.html5',
+        ],
+        'mod_navigation_mainmenu' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_mainmenu.html5' => '@Contao_pct_theme_templates/mod_navigation_mainmenu.html5',
+        ],
+        'mod_navigation_mobile_horizontal' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_mobile_horizontal.html5' => '@Contao_pct_theme_templates/mod_navigation_mobile_horizontal.html5',
+        ],
+        'mod_navigation_mobile_vertical' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_mobile_vertical.html5' => '@Contao_pct_theme_templates/mod_navigation_mobile_vertical.html5',
+        ],
+        'mod_navigation_smartmenu' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_smartmenu.html5' => '@Contao_pct_theme_templates/mod_navigation_smartmenu.html5',
+        ],
+        'mod_navigation_submenu_v1' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_submenu_v1.html5' => '@Contao_pct_theme_templates/mod_navigation_submenu_v1.html5',
+        ],
+        'mod_navigation_submenu_v2' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_submenu_v2.html5' => '@Contao_pct_theme_templates/mod_navigation_submenu_v2.html5',
+        ],
+        'mod_navigation_submenu_v3' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_submenu_v3.html5' => '@Contao_pct_theme_templates/mod_navigation_submenu_v3.html5',
+        ],
+        'mod_navigation_submenu_v4' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_submenu_v4.html5' => '@Contao_pct_theme_templates/mod_navigation_submenu_v4.html5',
+        ],
+        'mod_navigation_top' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_navigation_top.html5' => '@Contao_pct_theme_templates/mod_navigation_top.html5',
+        ],
+        'mod_newslist_portfolio' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio.html5',
+        ],
+        'mod_newslist_portfolio_demos' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_demos.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_demos.html5',
+        ],
+        'mod_newslist_portfolio_no_isotope' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_no_isotope.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_no_isotope.html5',
+        ],
+        'mod_newslist_portfolio_v3' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_v3.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_v3.html5',
+        ],
+        'mod_newslist_portfolio_v4' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_v4.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_v4.html5',
+        ],
+        'mod_newslist_portfolio_v5' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_v5.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_v5.html5',
+        ],
+        'mod_newslist_portfolio_v6' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_v6.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_v6.html5',
+        ],
+        'mod_newslist_portfolio_v7' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_v7.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_v7.html5',
+        ],
+        'mod_newslist_portfolio_v8' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolio_v8.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolio_v8.html5',
+        ],
+        'mod_newslist_portfolioteaser' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolioteaser.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolioteaser.html5',
+        ],
+        'mod_newslist_portfolioteaser_v2' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_portfolioteaser_v2.html5' => '@Contao_pct_theme_templates/mod_newslist_portfolioteaser_v2.html5',
+        ],
+        'mod_newslist_teaser' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_teaser.html5' => '@Contao_pct_theme_templates/mod_newslist_teaser.html5',
+        ],
+        'mod_newslist_teaser_v6' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_teaser_v6.html5' => '@Contao_pct_theme_templates/mod_newslist_teaser_v6.html5',
+        ],
+        'mod_newslist_v3' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_v3.html5' => '@Contao_pct_theme_templates/mod_newslist_v3.html5',
+        ],
+        'mod_newslist_v4' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_v4.html5' => '@Contao_pct_theme_templates/mod_newslist_v4.html5',
+        ],
+        'mod_newslist_v6' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_v6.html5' => '@Contao_pct_theme_templates/mod_newslist_v6.html5',
+        ],
+        'mod_newslist_wiki' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_newslist_wiki.html5' => '@Contao_pct_theme_templates/mod_newslist_wiki.html5',
+        ],
+        'mod_pagearticle_footer' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_pagearticle_footer.html5' => '@Contao_pct_theme_templates/mod_pagearticle_footer.html5',
+        ],
+        'mod_pagearticle_topbar' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_pagearticle_topbar.html5' => '@Contao_pct_theme_templates/mod_pagearticle_topbar.html5',
+        ],
+        'mod_pageimage' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_pageimage.html5' => '@Contao_pct_theme_templates/mod_pageimage.html5',
+            'system/modules/pct_theme_settings/templates/page/mod_pageimage.html5' => '@Contao_pct_theme_settings/mod_pageimage.html5',
+        ],
+        'mod_pct_megamenu' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_pct_megamenu.html5' => '@Contao_pct_theme_templates/mod_pct_megamenu.html5',
+            'system/modules/pct_megamenu/templates/mod_pct_megamenu.html5' => '@Contao_pct_megamenu/mod_pct_megamenu.html5',
+        ],
+        'mod_privacy_default' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_privacy_default.html5' => '@Contao_pct_theme_templates/mod_privacy_default.html5',
+            'system/modules/pct_privacy_manager/templates/modules/mod_privacy_default.html5' => '@Contao_pct_privacy_manager/mod_privacy_default.html5',
+        ],
+        'mod_privacy_medium' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_privacy_medium.html5' => '@Contao_pct_theme_templates/mod_privacy_medium.html5',
+        ],
+        'mod_privacy_no_optin_cookiebar' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_privacy_no_optin_cookiebar.html5' => '@Contao_pct_theme_templates/mod_privacy_no_optin_cookiebar.html5',
+        ],
+        'mod_privacy_slim' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_privacy_slim.html5' => '@Contao_pct_theme_templates/mod_privacy_slim.html5',
+        ],
+        'mod_search_header' => [
+            'system/modules/pct_theme_templates/templates/modules/mod_search_header.html5' => '@Contao_pct_theme_templates/mod_search_header.html5',
+        ],
+        'nav_custommenu' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_custommenu.html5' => '@Contao_pct_theme_templates/nav_custommenu.html5',
+        ],
+        'nav_default' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_default.html5' => '@Contao_pct_theme_templates/nav_default.html5',
+            'vendor/contao/core-bundle/contao/templates/navigation/nav_default.html5' => '@Contao_ContaoCoreBundle/nav_default.html5',
+        ],
+        'nav_mainmenu' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_mainmenu.html5' => '@Contao_pct_theme_templates/nav_mainmenu.html5',
+        ],
+        'nav_mobile' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_mobile.html5' => '@Contao_pct_theme_templates/nav_mobile.html5',
+        ],
+        'nav_onepage' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_onepage.html5' => '@Contao_pct_theme_templates/nav_onepage.html5',
+        ],
+        'nav_smartmenu' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_smartmenu.html5' => '@Contao_pct_theme_templates/nav_smartmenu.html5',
+        ],
+        'nav_submenu' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_submenu.html5' => '@Contao_pct_theme_templates/nav_submenu.html5',
+        ],
+        'nav_submenu_v1' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_submenu_v1.html5' => '@Contao_pct_theme_templates/nav_submenu_v1.html5',
+        ],
+        'nav_submenu_v2' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_submenu_v2.html5' => '@Contao_pct_theme_templates/nav_submenu_v2.html5',
+        ],
+        'nav_submenu_v3' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_submenu_v3.html5' => '@Contao_pct_theme_templates/nav_submenu_v3.html5',
+        ],
+        'nav_submenu_v4' => [
+            'system/modules/pct_theme_templates/templates/navigation/nav_submenu_v4.html5' => '@Contao_pct_theme_templates/nav_submenu_v4.html5',
+        ],
+        'news_newslist' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist.html5' => '@Contao_pct_theme_templates/news_newslist.html5',
+        ],
+        'news_newslist_timeline' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_timeline.html5' => '@Contao_pct_theme_templates/news_newslist_timeline.html5',
+        ],
+        'news_newslist_timeline_both' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_timeline_both.html5' => '@Contao_pct_theme_templates/news_newslist_timeline_both.html5',
+        ],
+        'news_newslist_timeline_oner' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_timeline_oner.html5' => '@Contao_pct_theme_templates/news_newslist_timeline_oner.html5',
+        ],
+        'news_newslist_v2' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_v2.html5' => '@Contao_pct_theme_templates/news_newslist_v2.html5',
+        ],
+        'news_newslist_v3' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_v3.html5' => '@Contao_pct_theme_templates/news_newslist_v3.html5',
+        ],
+        'news_newslist_v4' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_v4.html5' => '@Contao_pct_theme_templates/news_newslist_v4.html5',
+        ],
+        'news_newslist_v5' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_v5.html5' => '@Contao_pct_theme_templates/news_newslist_v5.html5',
+        ],
+        'news_newslist_v6' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_v6.html5' => '@Contao_pct_theme_templates/news_newslist_v6.html5',
+        ],
+        'news_newslist_wiki' => [
+            'system/modules/pct_theme_templates/templates/news/news_newslist_wiki.html5' => '@Contao_pct_theme_templates/news_newslist_wiki.html5',
+        ],
+        'news_newsreader' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsreader.html5' => '@Contao_pct_theme_templates/news_newsreader.html5',
+        ],
+        'news_newsteaser' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser.html5' => '@Contao_pct_theme_templates/news_newsteaser.html5',
+        ],
+        'news_newsteaser_oner' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_oner.html5' => '@Contao_pct_theme_templates/news_newsteaser_oner.html5',
+        ],
+        'news_newsteaser_v2' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v2.html5' => '@Contao_pct_theme_templates/news_newsteaser_v2.html5',
+        ],
+        'news_newsteaser_v3' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v3.html5' => '@Contao_pct_theme_templates/news_newsteaser_v3.html5',
+        ],
+        'news_newsteaser_v4' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v4.html5' => '@Contao_pct_theme_templates/news_newsteaser_v4.html5',
+        ],
+        'news_newsteaser_v5' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v5.html5' => '@Contao_pct_theme_templates/news_newsteaser_v5.html5',
+        ],
+        'news_newsteaser_v6' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v6.html5' => '@Contao_pct_theme_templates/news_newsteaser_v6.html5',
+        ],
+        'news_newsteaser_v7' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v7.html5' => '@Contao_pct_theme_templates/news_newsteaser_v7.html5',
+        ],
+        'news_newsteaser_v8' => [
+            'system/modules/pct_theme_templates/templates/news/news_newsteaser_v8.html5' => '@Contao_pct_theme_templates/news_newsteaser_v8.html5',
+        ],
+        'news_portfoliolist' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist.html5' => '@Contao_pct_theme_templates/news_portfoliolist.html5',
+        ],
+        'news_portfoliolist_col1' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_col1.html5' => '@Contao_pct_theme_templates/news_portfoliolist_col1.html5',
+        ],
+        'news_portfoliolist_demos' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_demos.html5' => '@Contao_pct_theme_templates/news_portfoliolist_demos.html5',
+        ],
+        'news_portfoliolist_demos_external_link' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_demos_external_link.html5' => '@Contao_pct_theme_templates/news_portfoliolist_demos_external_link.html5',
+        ],
+        'news_portfoliolist_oner' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_oner.html5' => '@Contao_pct_theme_templates/news_portfoliolist_oner.html5',
+        ],
+        'news_portfoliolist_v3' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_v3.html5' => '@Contao_pct_theme_templates/news_portfoliolist_v3.html5',
+        ],
+        'news_portfoliolist_v4' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_v4.html5' => '@Contao_pct_theme_templates/news_portfoliolist_v4.html5',
+        ],
+        'news_portfoliolist_v5' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_v5.html5' => '@Contao_pct_theme_templates/news_portfoliolist_v5.html5',
+        ],
+        'news_portfoliolist_v6' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_v6.html5' => '@Contao_pct_theme_templates/news_portfoliolist_v6.html5',
+        ],
+        'news_portfoliolist_v7' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_v7.html5' => '@Contao_pct_theme_templates/news_portfoliolist_v7.html5',
+        ],
+        'news_portfoliolist_v8' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfoliolist_v8.html5' => '@Contao_pct_theme_templates/news_portfoliolist_v8.html5',
+        ],
+        'news_portfolioreader' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfolioreader.html5' => '@Contao_pct_theme_templates/news_portfolioreader.html5',
+        ],
+        'news_portfolioteaser' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfolioteaser.html5' => '@Contao_pct_theme_templates/news_portfolioteaser.html5',
+        ],
+        'news_portfolioteaser_oner' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfolioteaser_oner.html5' => '@Contao_pct_theme_templates/news_portfolioteaser_oner.html5',
+        ],
+        'news_portfolioteaser_v2' => [
+            'system/modules/pct_theme_templates/templates/news/news_portfolioteaser_v2.html5' => '@Contao_pct_theme_templates/news_portfolioteaser_v2.html5',
+        ],
+        'favicons' => [
+            'system/modules/pct_theme_templates/templates/theme/favicons.html5' => '@Contao_pct_theme_templates/favicons.html5',
+        ],
+        'fe_page' => [
+            'system/modules/pct_theme_templates/templates/theme/fe_page.html5' => '@Contao_pct_theme_templates/fe_page.html5',
+            'vendor/contao/core-bundle/contao/templates/frontend/fe_page.html5' => '@Contao_ContaoCoreBundle/fe_page.html5',
+        ],
+        'fe_page_lightbox' => [
+            'system/modules/pct_theme_templates/templates/theme/fe_page_lightbox.html5' => '@Contao_pct_theme_templates/fe_page_lightbox.html5',
+        ],
+        'j_accordion' => [
+            'system/modules/pct_theme_templates/templates/theme/j_accordion.html5' => '@Contao_pct_theme_templates/j_accordion.html5',
+            'vendor/contao/core-bundle/contao/templates/jquery/j_accordion.html5' => '@Contao_ContaoCoreBundle/j_accordion.html5',
+        ],
+        'j_colorbox' => [
+            'system/modules/pct_theme_templates/templates/theme/j_colorbox.html5' => '@Contao_pct_theme_templates/j_colorbox.html5',
+            'vendor/contao/core-bundle/contao/templates/jquery/j_colorbox.html5' => '@Contao_ContaoCoreBundle/j_colorbox.html5',
+        ],
+        'j_tablesort' => [
+            'system/modules/pct_theme_templates/templates/theme/j_tablesort.html5' => '@Contao_pct_theme_templates/j_tablesort.html5',
+            'vendor/contao/core-bundle/contao/templates/jquery/j_tablesort.html5' => '@Contao_ContaoCoreBundle/j_tablesort.html5',
+        ],
+        'js_revoslider_default' => [
+            'system/modules/pct_theme_templates/templates/theme/js_revoslider_default.html5' => '@Contao_pct_theme_templates/js_revoslider_default.html5',
+            'system/modules/pct_revolutionslider/templates/js_revoslider_default.html5' => '@Contao_pct_revolutionslider/js_revoslider_default.html5',
+        ],
+        'js_revoslider_default_optin' => [
+            'system/modules/pct_theme_templates/templates/theme/js_revoslider_default_optin.html5' => '@Contao_pct_theme_templates/js_revoslider_default_optin.html5',
+        ],
+        'js_slider' => [
+            'system/modules/pct_theme_templates/templates/theme/js_slider.html5' => '@Contao_pct_theme_templates/js_slider.html5',
+            'vendor/contao/core-bundle/contao/templates/js/js_slider.html5' => '@Contao_ContaoCoreBundle/js_slider.html5',
+        ],
+        'js_themedesigner_webfonts_optin' => [
+            'system/modules/pct_theme_templates/templates/theme/js_themedesigner_webfonts_optin.html5' => '@Contao_pct_theme_templates/js_themedesigner_webfonts_optin.html5',
+            'system/modules/pct_themer/templates/themedesigner/js/js_themedesigner_webfonts_optin.html5' => '@Contao_pct_themer/js_themedesigner_webfonts_optin.html5',
+        ],
+        'nl_default' => [
+            'system/modules/pct_theme_templates/templates/theme/nl_default.html5' => '@Contao_pct_theme_templates/nl_default.html5',
+            'vendor/contao/newsletter-bundle/contao/templates/newsletter/nl_default.html5' => '@Contao_ContaoNewsletterBundle/nl_default.html5',
+        ],
+        'pagination' => [
+            'system/modules/pct_theme_templates/templates/theme/pagination.html5' => '@Contao_pct_theme_templates/pagination.html5',
+            'vendor/contao/core-bundle/contao/templates/pagination/pagination.html5' => '@Contao_ContaoCoreBundle/pagination.html5',
+        ],
+        'revoslider_default' => [
+            'system/modules/pct_theme_templates/templates/theme/revoslider_default.html5' => '@Contao_pct_theme_templates/revoslider_default.html5',
+            'system/modules/pct_revolutionslider/templates/revoslider_default.html5' => '@Contao_pct_revolutionslider/revoslider_default.html5',
+        ],
+        'revoslider_fullscreen_arrowdown' => [
+            'system/modules/pct_theme_templates/templates/theme/revoslider_fullscreen_arrowdown.html5' => '@Contao_pct_theme_templates/revoslider_fullscreen_arrowdown.html5',
+        ],
+        'revoslider_fullscreen_arrowdown_dark' => [
+            'system/modules/pct_theme_templates/templates/theme/revoslider_fullscreen_arrowdown_dark.html5' => '@Contao_pct_theme_templates/revoslider_fullscreen_arrowdown_dark.html5',
+        ],
+        'be_iconpicker' => [
+            'system/modules/pct_iconpicker/templates/be_iconpicker.html5' => '@Contao_pct_iconpicker/be_iconpicker.html5',
+        ],
+        'be_widget_iconpicker' => [
+            'system/modules/pct_iconpicker/templates/be_widget_iconpicker.html5' => '@Contao_pct_iconpicker/be_widget_iconpicker.html5',
+        ],
+        'customcatalog_default' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/customcatalog_default.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_default.html5',
+        ],
+        'customcatalog_grouped' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/customcatalog_grouped.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_grouped.html5',
+        ],
+        'customcatalog_item_default' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/customcatalog_item_default.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_item_default.html5',
+        ],
+        'mod_customcatalog' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/mod_customcatalog.html5' => '@Contao_pct_customelements_plugin_customcatalog/mod_customcatalog.html5',
+        ],
+        'mod_customcatalogapi' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/mod_customcatalogapi.html5' => '@Contao_pct_customelements_plugin_customcatalog/mod_customcatalogapi.html5',
+        ],
+        'mod_customcatalogfilter' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/mod_customcatalogfilter.html5' => '@Contao_pct_customelements_plugin_customcatalog/mod_customcatalogfilter.html5',
+        ],
+        'customelement_attr_rateit' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/attributes/customelement_attr_rateit.html5' => '@Contao_pct_customelements_plugin_customcatalog/customelement_attr_rateit.html5',
+        ],
+        'customelement_attr_select_include_catalog' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/attributes/customelement_attr_select_include_catalog.html5' => '@Contao_pct_customelements_plugin_customcatalog/customelement_attr_select_include_catalog.html5',
+        ],
+        'customelement_attr_tags_include_catalog' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/attributes/customelement_attr_tags_include_catalog.html5' => '@Contao_pct_customelements_plugin_customcatalog/customelement_attr_tags_include_catalog.html5',
+        ],
+        'be_cc_api_report' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_cc_api_report.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_cc_api_report.html5',
+        ],
+        'be_cc_languagepanel' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_cc_languagepanel.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_cc_languagepanel.html5',
+        ],
+        'be_cc_quickmenu' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_cc_quickmenu.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_cc_quickmenu.html5',
+        ],
+        'be_customelement_attr_default' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_customelement_attr_default.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_customelement_attr_default.html5',
+        ],
+        'be_customelement_simple' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_customelement_simple.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_customelement_simple.html5',
+        ],
+        'be_customelement_wildcard' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_customelement_wildcard.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_customelement_wildcard.html5',
+        ],
+        'be_module_icon_css' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_module_icon_css.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_module_icon_css.html5',
+        ],
+        'be_nav_default' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_nav_default.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_nav_default.html5',
+        ],
+        'be_page_api' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_page_api.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_page_api.html5',
+        ],
+        'be_page_api_export_run' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_page_api_export_run.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_page_api_export_run.html5',
+        ],
+        'be_page_api_export_summary' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_page_api_export_summary.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_page_api_export_summary.html5',
+        ],
+        'be_page_api_import_run' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_page_api_import_run.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_page_api_import_run.html5',
+        ],
+        'be_page_api_import_summary' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_page_api_import_summary.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_page_api_import_summary.html5',
+        ],
+        'be_page_db_update' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_page_db_update.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_page_db_update.html5',
+        ],
+        'be_scripts' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/be_scripts.html5' => '@Contao_pct_customelements_plugin_customcatalog/be_scripts.html5',
+        ],
+        'mod_be_cc_navigation' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/backend/mod_be_cc_navigation.html5' => '@Contao_pct_customelements_plugin_customcatalog/mod_be_cc_navigation.html5',
+        ],
+        'customcatalog_filter_checkbox' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_checkbox.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_checkbox.html5',
+        ],
+        'customcatalog_filter_countryselect' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_countryselect.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_countryselect.html5',
+        ],
+        'customcatalog_filter_datepicker' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_datepicker.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_datepicker.html5',
+        ],
+        'customcatalog_filter_default' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_default.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_default.html5',
+        ],
+        'customcatalog_filter_hidden' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_hidden.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_hidden.html5',
+        ],
+        'customcatalog_filter_linklist' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_linklist.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_linklist.html5',
+        ],
+        'customcatalog_filter_range' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_range.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_range.html5',
+        ],
+        'customcatalog_filter_select' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_select.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_select.html5',
+        ],
+        'customcatalog_filter_select_sorted' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_select_sorted.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_select_sorted.html5',
+        ],
+        'customcatalog_filter_text_autocomplete' => [
+            'system/modules/pct_customelements_plugin_customcatalog/templates/filters/customcatalog_filter_text_autocomplete.html5' => '@Contao_pct_customelements_plugin_customcatalog/customcatalog_filter_text_autocomplete.html5',
+        ],
+        'block_searchable_seo' => [
+            'system/modules/pct_theme_settings/templates/block_searchable_seo.html5' => '@Contao_pct_theme_settings/block_searchable_seo.html5',
+        ],
+        'ce_headline_seo' => [
+            'system/modules/pct_theme_settings/templates/ce_headline_seo.html5' => '@Contao_pct_theme_settings/ce_headline_seo.html5',
+        ],
+        'ce_pct_contentelementset' => [
+            'system/modules/pct_theme_settings/templates/ce_pct_contentelementset.html5' => '@Contao_pct_theme_settings/ce_pct_contentelementset.html5',
+        ],
+        'ce_text_seo' => [
+            'system/modules/pct_theme_settings/templates/ce_text_seo.html5' => '@Contao_pct_theme_settings/ce_text_seo.html5',
+        ],
+        'be_article_themesettingsbutton' => [
+            'system/modules/pct_theme_settings/templates/backend/be_article_themesettingsbutton.html5' => '@Contao_pct_theme_settings/be_article_themesettingsbutton.html5',
+        ],
+        'be_content_themesettingsbutton' => [
+            'system/modules/pct_theme_settings/templates/backend/be_content_themesettingsbutton.html5' => '@Contao_pct_theme_settings/be_content_themesettingsbutton.html5',
+        ],
+        'be_js_themesettings' => [
+            'system/modules/pct_theme_settings/templates/backend/be_js_themesettings.html5' => '@Contao_pct_theme_settings/be_js_themesettings.html5',
+        ],
+        'be_page_contentelementset' => [
+            'system/modules/pct_theme_settings/templates/backend/be_page_contentelementset.html5' => '@Contao_pct_theme_settings/be_page_contentelementset.html5',
+        ],
+        'be_page_contentelementset_export' => [
+            'system/modules/pct_theme_settings/templates/backend/be_page_contentelementset_export.html5' => '@Contao_pct_theme_settings/be_page_contentelementset_export.html5',
+        ],
+        'be_viewport_panel' => [
+            'system/modules/pct_theme_settings/templates/backend/be_viewport_panel.html5' => '@Contao_pct_theme_settings/be_viewport_panel.html5',
+        ],
+        'be_license_banner' => [
+            'system/modules/pct_theme_settings/templates/license/be_license_banner.html5' => '@Contao_pct_theme_settings/be_license_banner.html5',
+        ],
+        'fe_license_banner' => [
+            'system/modules/pct_theme_settings/templates/license/fe_license_banner.html5' => '@Contao_pct_theme_settings/fe_license_banner.html5',
+        ],
+        'mod_pagearticle' => [
+            'system/modules/pct_theme_settings/templates/page/mod_pagearticle.html5' => '@Contao_pct_theme_settings/mod_pagearticle.html5',
+        ],
+        'mod_pagearticle_top' => [
+            'system/modules/pct_theme_settings/templates/page/mod_pagearticle_top.html5' => '@Contao_pct_theme_settings/mod_pagearticle_top.html5',
+        ],
+        'mod_portfoliofilter' => [
+            'system/modules/pct_theme_settings/templates/portfolio/mod_portfoliofilter.html5' => '@Contao_pct_theme_settings/mod_portfoliofilter.html5',
+        ],
+        'mod_portfoliolist' => [
+            'system/modules/pct_theme_settings/templates/portfolio/mod_portfoliolist.html5' => '@Contao_pct_theme_settings/mod_portfoliolist.html5',
+        ],
+        'mod_portfolioreader' => [
+            'system/modules/pct_theme_settings/templates/portfolio/mod_portfolioreader.html5' => '@Contao_pct_theme_settings/mod_portfolioreader.html5',
+        ],
+        'portfolio_latest' => [
+            'system/modules/pct_theme_settings/templates/portfolio/portfolio_latest.html5' => '@Contao_pct_theme_settings/portfolio_latest.html5',
+        ],
+        'portfoliofilter_isotope' => [
+            'system/modules/pct_theme_settings/templates/portfolio/portfoliofilter_isotope.html5' => '@Contao_pct_theme_settings/portfoliofilter_isotope.html5',
+        ],
+        'portfoliofilter_php' => [
+            'system/modules/pct_theme_settings/templates/portfolio/portfoliofilter_php.html5' => '@Contao_pct_theme_settings/portfoliofilter_php.html5',
+        ],
+        'mod_newsletter' => [
+            'vendor/contao/newsletter-bundle/contao/templates/modules/mod_newsletter.html5' => '@Contao_ContaoNewsletterBundle/mod_newsletter.html5',
+        ],
+        'mod_newsletterlist' => [
+            'vendor/contao/newsletter-bundle/contao/templates/modules/mod_newsletterlist.html5' => '@Contao_ContaoNewsletterBundle/mod_newsletterlist.html5',
+        ],
+        'mod_newsletterreader' => [
+            'vendor/contao/newsletter-bundle/contao/templates/modules/mod_newsletterreader.html5' => '@Contao_ContaoNewsletterBundle/mod_newsletterreader.html5',
+        ],
+        'cal_default' => [
+            'vendor/contao/calendar-bundle/contao/templates/calendar/cal_default.html5' => '@Contao_ContaoCalendarBundle/cal_default.html5',
+        ],
+        'cal_mini' => [
+            'vendor/contao/calendar-bundle/contao/templates/calendar/cal_mini.html5' => '@Contao_ContaoCalendarBundle/cal_mini.html5',
+        ],
+        'event_list' => [
+            'vendor/contao/calendar-bundle/contao/templates/events/event_list.html5' => '@Contao_ContaoCalendarBundle/event_list.html5',
+        ],
+        'event_teaser' => [
+            'vendor/contao/calendar-bundle/contao/templates/events/event_teaser.html5' => '@Contao_ContaoCalendarBundle/event_teaser.html5',
+        ],
+        'event_upcoming' => [
+            'vendor/contao/calendar-bundle/contao/templates/events/event_upcoming.html5' => '@Contao_ContaoCalendarBundle/event_upcoming.html5',
+        ],
+        'mod_calendar' => [
+            'vendor/contao/calendar-bundle/contao/templates/modules/mod_calendar.html5' => '@Contao_ContaoCalendarBundle/mod_calendar.html5',
+        ],
+        'mod_eventmenu' => [
+            'vendor/contao/calendar-bundle/contao/templates/modules/mod_eventmenu.html5' => '@Contao_ContaoCalendarBundle/mod_eventmenu.html5',
+        ],
+        'privacy_webfonts' => [
+            'system/modules/pct_privacy_manager/templates/privacy_webfonts.html5' => '@Contao_pct_privacy_manager/privacy_webfonts.html5',
+        ],
+        'ce_hyperlink_optout' => [
+            'system/modules/pct_privacy_manager/templates/elements/ce_hyperlink_optout.html5' => '@Contao_pct_privacy_manager/ce_hyperlink_optout.html5',
+        ],
+        'ce_privacy_iframe' => [
+            'system/modules/pct_privacy_manager/templates/elements/ce_privacy_iframe.html5' => '@Contao_pct_privacy_manager/ce_privacy_iframe.html5',
+        ],
+        'j_privacymanager' => [
+            'system/modules/pct_privacy_manager/templates/scripts/j_privacymanager.html5' => '@Contao_pct_privacy_manager/j_privacymanager.html5',
+        ],
+        'info_default' => [
+            'vendor/contao/listing-bundle/contao/templates/info/info_default.html5' => '@Contao_ContaoListingBundle/info_default.html5',
+        ],
+        'list_default' => [
+            'vendor/contao/listing-bundle/contao/templates/listing/list_default.html5' => '@Contao_ContaoListingBundle/list_default.html5',
+        ],
+        'ce_revolutionslider' => [
+            'system/modules/pct_revolutionslider/templates/ce_revolutionslider.html5' => '@Contao_pct_revolutionslider/ce_revolutionslider.html5',
+        ],
+        'ce_revolutionslider_hyperlink' => [
+            'system/modules/pct_revolutionslider/templates/ce_revolutionslider_hyperlink.html5' => '@Contao_pct_revolutionslider/ce_revolutionslider_hyperlink.html5',
+        ],
+        'ce_revolutionslider_image' => [
+            'system/modules/pct_revolutionslider/templates/ce_revolutionslider_image.html5' => '@Contao_pct_revolutionslider/ce_revolutionslider_image.html5',
+        ],
+        'ce_revolutionslider_text' => [
+            'system/modules/pct_revolutionslider/templates/ce_revolutionslider_text.html5' => '@Contao_pct_revolutionslider/ce_revolutionslider_text.html5',
+        ],
+        'ce_revolutionslider_video' => [
+            'system/modules/pct_revolutionslider/templates/ce_revolutionslider_video.html5' => '@Contao_pct_revolutionslider/ce_revolutionslider_video.html5',
+        ],
+        'interface_article' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_article.html5' => '@Contao_pct_frontend_quickedit/interface_article.html5',
+        ],
+        'interface_contentelement' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_contentelement.html5' => '@Contao_pct_frontend_quickedit/interface_contentelement.html5',
+        ],
+        'interface_contentelement_autogridColStart' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_contentelement_autogridColStart.html5' => '@Contao_pct_frontend_quickedit/interface_contentelement_autogridColStart.html5',
+        ],
+        'interface_contentelement_revolutionslider' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_contentelement_revolutionslider.html5' => '@Contao_pct_frontend_quickedit/interface_contentelement_revolutionslider.html5',
+        ],
+        'interface_contentelement_sliderStart' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_contentelement_sliderStart.html5' => '@Contao_pct_frontend_quickedit/interface_contentelement_sliderStart.html5',
+        ],
+        'interface_contentelement_swiper-slider-start' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_contentelement_swiper-slider-start.html5' => '@Contao_pct_frontend_quickedit/interface_contentelement_swiper-slider-start.html5',
+        ],
+        'interface_customcatalog' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_customcatalog.html5' => '@Contao_pct_frontend_quickedit/interface_customcatalog.html5',
+        ],
+        'interface_default' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_default.html5' => '@Contao_pct_frontend_quickedit/interface_default.html5',
+        ],
+        'interface_events' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_events.html5' => '@Contao_pct_frontend_quickedit/interface_events.html5',
+        ],
+        'interface_form' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_form.html5' => '@Contao_pct_frontend_quickedit/interface_form.html5',
+        ],
+        'interface_module' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_module.html5' => '@Contao_pct_frontend_quickedit/interface_module.html5',
+        ],
+        'interface_news' => [
+            'system/modules/pct_frontend_quickedit/templates/interface/interface_news.html5' => '@Contao_pct_frontend_quickedit/interface_news.html5',
+        ],
+        'mod_backendlogin' => [
+            'system/modules/pct_frontend_quickedit/templates/modules/mod_backendlogin.html5' => '@Contao_pct_frontend_quickedit/mod_backendlogin.html5',
+        ],
+        'script_pct_frontend_quickedit' => [
+            'system/modules/pct_frontend_quickedit/templates/scripts/script_pct_frontend_quickedit.html5' => '@Contao_pct_frontend_quickedit/script_pct_frontend_quickedit.html5',
+        ],
+        'be_widget_sizes_wizard' => [
+            'system/modules/pct_frontend_quickedit/templates/widgets/be_widget_sizes_wizard.html5' => '@Contao_pct_frontend_quickedit/be_widget_sizes_wizard.html5',
+        ],
+        'form_mp_form_pageswitch' => [
+            'vendor/terminal42/contao-mp_forms/contao/templates/form_mp_form_pageswitch.html5' => '@Contao_Terminal42MultipageFormsBundle/form_mp_form_pageswitch.html5',
+        ],
+        'form_mp_form_placeholder' => [
+            'vendor/terminal42/contao-mp_forms/contao/templates/form_mp_form_placeholder.html5' => '@Contao_Terminal42MultipageFormsBundle/form_mp_form_placeholder.html5',
+        ],
+        'mod_mp_form_steps' => [
+            'vendor/terminal42/contao-mp_forms/contao/templates/mod_mp_form_steps.html5' => '@Contao_Terminal42MultipageFormsBundle/mod_mp_form_steps.html5',
+        ],
+        'mod_newsarchive' => [
+            'vendor/contao/news-bundle/contao/templates/modules/mod_newsarchive.html5' => '@Contao_ContaoNewsBundle/mod_newsarchive.html5',
+        ],
+        'mod_newslist' => [
+            'vendor/contao/news-bundle/contao/templates/modules/mod_newslist.html5' => '@Contao_ContaoNewsBundle/mod_newslist.html5',
+        ],
+        'mod_newsmenu' => [
+            'vendor/contao/news-bundle/contao/templates/modules/mod_newsmenu.html5' => '@Contao_ContaoNewsBundle/mod_newsmenu.html5',
+        ],
+        'mod_newsreader' => [
+            'vendor/contao/news-bundle/contao/templates/modules/mod_newsreader.html5' => '@Contao_ContaoNewsBundle/mod_newsreader.html5',
+        ],
+        'news_full' => [
+            'vendor/contao/news-bundle/contao/templates/news/news_full.html5' => '@Contao_ContaoNewsBundle/news_full.html5',
+        ],
+        'news_latest' => [
+            'vendor/contao/news-bundle/contao/templates/news/news_latest.html5' => '@Contao_ContaoNewsBundle/news_latest.html5',
+        ],
+        'news_short' => [
+            'vendor/contao/news-bundle/contao/templates/news/news_short.html5' => '@Contao_ContaoNewsBundle/news_short.html5',
+        ],
+        'news_simple' => [
+            'vendor/contao/news-bundle/contao/templates/news/news_simple.html5' => '@Contao_ContaoNewsBundle/news_simple.html5',
+        ],
+        'customelement_attr_default' => [
+            'system/modules/pct_customelements/templates/customelement_attr_default.html5' => '@Contao_pct_customelements/customelement_attr_default.html5',
+        ],
+        'customelement_grouped' => [
+            'system/modules/pct_customelements/templates/customelement_grouped.html5' => '@Contao_pct_customelements/customelement_grouped.html5',
+        ],
+        'customelement_simple' => [
+            'system/modules/pct_customelements/templates/customelement_simple.html5' => '@Contao_pct_customelements/customelement_simple.html5',
+        ],
+        'be_ce_wildcard' => [
+            'system/modules/pct_customelements/templates/backend/be_ce_wildcard.html5' => '@Contao_pct_customelements/be_ce_wildcard.html5',
+        ],
+        'be_field_customelement' => [
+            'system/modules/pct_customelements/templates/backend/be_field_customelement.html5' => '@Contao_pct_customelements/be_field_customelement.html5',
+        ],
+        'be_js_moo_fxslide' => [
+            'system/modules/pct_customelements/templates/backend/be_js_moo_fxslide.html5' => '@Contao_pct_customelements/be_js_moo_fxslide.html5',
+        ],
+        'be_maintenance_attributeupdater' => [
+            'system/modules/pct_customelements/templates/backend/be_maintenance_attributeupdater.html5' => '@Contao_pct_customelements/be_maintenance_attributeupdater.html5',
+        ],
+        'be_maintenance_jobs' => [
+            'system/modules/pct_customelements/templates/backend/be_maintenance_jobs.html5' => '@Contao_pct_customelements/be_maintenance_jobs.html5',
+        ],
+        'be_maintenance_resolvevault' => [
+            'system/modules/pct_customelements/templates/backend/be_maintenance_resolvevault.html5' => '@Contao_pct_customelements/be_maintenance_resolvevault.html5',
+        ],
+        'be_maintenance_vaultupdater' => [
+            'system/modules/pct_customelements/templates/backend/be_maintenance_vaultupdater.html5' => '@Contao_pct_customelements/be_maintenance_vaultupdater.html5',
+        ],
+        'be_maintenance_wizardupdater' => [
+            'system/modules/pct_customelements/templates/backend/be_maintenance_wizardupdater.html5' => '@Contao_pct_customelements/be_maintenance_wizardupdater.html5',
+        ],
+        'be_page_export' => [
+            'system/modules/pct_customelements/templates/backend/be_page_export.html5' => '@Contao_pct_customelements/be_page_export.html5',
+        ],
+        'be_page_import' => [
+            'system/modules/pct_customelements/templates/backend/be_page_import.html5' => '@Contao_pct_customelements/be_page_import.html5',
+        ],
+        'be_tl_customelement_group' => [
+            'system/modules/pct_customelements/templates/backend/be_tl_customelement_group.html5' => '@Contao_pct_customelements/be_tl_customelement_group.html5',
+        ],
+        'be_widget_customelement' => [
+            'system/modules/pct_customelements/templates/backend/be_widget_customelement.html5' => '@Contao_pct_customelements/be_widget_customelement.html5',
+        ],
+        'tinymce' => [
+            'system/modules/pct_customelements/templates/backend/tinymce.html5' => '@Contao_pct_customelements/tinymce.html5',
+        ],
+        'autogrid' => [
+            'system/modules/pct_autogrid/templates/autogrid.html5' => '@Contao_pct_autogrid/autogrid.html5',
+        ],
+        'ce_autogrid_grid' => [
+            'system/modules/pct_autogrid/templates/ce_autogrid_grid.html5' => '@Contao_pct_autogrid/ce_autogrid_grid.html5',
+        ],
+        'ce_autogrid_row' => [
+            'system/modules/pct_autogrid/templates/ce_autogrid_row.html5' => '@Contao_pct_autogrid/ce_autogrid_row.html5',
+        ],
+        'form_autogrid_col' => [
+            'system/modules/pct_autogrid/templates/form_autogrid_col.html5' => '@Contao_pct_autogrid/form_autogrid_col.html5',
+        ],
+        'form_autogrid_row' => [
+            'system/modules/pct_autogrid/templates/form_autogrid_row.html5' => '@Contao_pct_autogrid/form_autogrid_row.html5',
+        ],
+        'be_autogrid_buttons' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_buttons.html5' => '@Contao_pct_autogrid/be_autogrid_buttons.html5',
+        ],
+        'be_autogrid_col' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_col.html5' => '@Contao_pct_autogrid/be_autogrid_col.html5',
+        ],
+        'be_autogrid_grid' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_grid.html5' => '@Contao_pct_autogrid/be_autogrid_grid.html5',
+        ],
+        'be_autogrid_infobox' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_infobox.html5' => '@Contao_pct_autogrid/be_autogrid_infobox.html5',
+        ],
+        'be_autogrid_row' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_row.html5' => '@Contao_pct_autogrid/be_autogrid_row.html5',
+        ],
+        'be_autogrid_viewport_panel' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_viewport_panel.html5' => '@Contao_pct_autogrid/be_autogrid_viewport_panel.html5',
+        ],
+        'be_autogrid_wildcard' => [
+            'system/modules/pct_autogrid/templates/backend/be_autogrid_wildcard.html5' => '@Contao_pct_autogrid/be_autogrid_wildcard.html5',
+        ],
+        'be_js_autogrid' => [
+            'system/modules/pct_autogrid/templates/backend/be_js_autogrid.html5' => '@Contao_pct_autogrid/be_js_autogrid.html5',
+        ],
+        'be_mod_grid_preview' => [
+            'system/modules/pct_autogrid/templates/backend/be_mod_grid_preview.html5' => '@Contao_pct_autogrid/be_mod_grid_preview.html5',
+        ],
+        'be_page_grid_preset' => [
+            'system/modules/pct_autogrid/templates/backend/be_page_grid_preset.html5' => '@Contao_pct_autogrid/be_page_grid_preset.html5',
+        ],
+        'be_page_pct_theme_export' => [
+            'system/modules/pct_themer/templates/backend/be_page_pct_theme_export.html5' => '@Contao_pct_themer/be_page_pct_theme_export.html5',
+        ],
+        'be_pct_demoinstaller' => [
+            'system/modules/pct_themer/templates/backend/be_pct_demoinstaller.html5' => '@Contao_pct_themer/be_pct_demoinstaller.html5',
+        ],
+        'fe_page_themedesigner' => [
+            'system/modules/pct_themer/templates/themedesigner/fe_page_themedesigner.html5' => '@Contao_pct_themer/fe_page_themedesigner.html5',
+        ],
+        'td_devices_and_zoom' => [
+            'system/modules/pct_themer/templates/themedesigner/td_devices_and_zoom.html5' => '@Contao_pct_themer/td_devices_and_zoom.html5',
+        ],
+        'td_nav' => [
+            'system/modules/pct_themer/templates/themedesigner/td_nav.html5' => '@Contao_pct_themer/td_nav.html5',
+        ],
+        'td_section' => [
+            'system/modules/pct_themer/templates/themedesigner/td_section.html5' => '@Contao_pct_themer/td_section.html5',
+        ],
+        'td_versions_form' => [
+            'system/modules/pct_themer/templates/themedesigner/td_versions_form.html5' => '@Contao_pct_themer/td_versions_form.html5',
+        ],
+        'themedesigner' => [
+            'system/modules/pct_themer/templates/themedesigner/themedesigner.html5' => '@Contao_pct_themer/themedesigner.html5',
+        ],
+        'themedesigner_quickinfo' => [
+            'system/modules/pct_themer/templates/themedesigner/themedesigner_quickinfo.html5' => '@Contao_pct_themer/themedesigner_quickinfo.html5',
+        ],
+        'css_webfonts' => [
+            'system/modules/pct_themer/templates/themedesigner/css/css_webfonts.html5' => '@Contao_pct_themer/css_webfonts.html5',
+        ],
+        'stylesheet' => [
+            'system/modules/pct_themer/templates/themedesigner/css/stylesheet.html5' => '@Contao_pct_themer/stylesheet.html5',
+        ],
+        'td_form_checkbox_single' => [
+            'system/modules/pct_themer/templates/themedesigner/forms/td_form_checkbox_single.html5' => '@Contao_pct_themer/td_form_checkbox_single.html5',
+        ],
+        'td_form_select_fontpicker' => [
+            'system/modules/pct_themer/templates/themedesigner/forms/td_form_select_fontpicker.html5' => '@Contao_pct_themer/td_form_select_fontpicker.html5',
+        ],
+        'td_form_textfield_colorpicker' => [
+            'system/modules/pct_themer/templates/themedesigner/forms/td_form_textfield_colorpicker.html5' => '@Contao_pct_themer/td_form_textfield_colorpicker.html5',
+        ],
+        'td_form_textfield_slider' => [
+            'system/modules/pct_themer/templates/themedesigner/forms/td_form_textfield_slider.html5' => '@Contao_pct_themer/td_form_textfield_slider.html5',
+        ],
+        'td_form_upload_dropzone' => [
+            'system/modules/pct_themer/templates/themedesigner/forms/td_form_upload_dropzone.html5' => '@Contao_pct_themer/td_form_upload_dropzone.html5',
+        ],
+        'js_stylesheet' => [
+            'system/modules/pct_themer/templates/themedesigner/js/js_stylesheet.html5' => '@Contao_pct_themer/js_stylesheet.html5',
+        ],
+        'js_themedesigner' => [
+            'system/modules/pct_themer/templates/themedesigner/js/js_themedesigner.html5' => '@Contao_pct_themer/js_themedesigner.html5',
+        ],
+        'js_themedesigner_iframe_helper' => [
+            'system/modules/pct_themer/templates/themedesigner/js/js_themedesigner_iframe_helper.html5' => '@Contao_pct_themer/js_themedesigner_iframe_helper.html5',
+        ],
+        'js_themedesigner_selector' => [
+            'system/modules/pct_themer/templates/themedesigner/js/js_themedesigner_selector.html5' => '@Contao_pct_themer/js_themedesigner_selector.html5',
+        ],
+        'be_js_pct_theme_updater' => [
+            'system/modules/pct_theme_updater/templates/be_js_pct_theme_updater.html5' => '@Contao_pct_theme_updater/be_js_pct_theme_updater.html5',
+        ],
+        'be_maintenance_theme_updater' => [
+            'system/modules/pct_theme_updater/templates/be_maintenance_theme_updater.html5' => '@Contao_pct_theme_updater/be_maintenance_theme_updater.html5',
+        ],
+        'be_pct_theme_updater' => [
+            'system/modules/pct_theme_updater/templates/be_pct_theme_updater.html5' => '@Contao_pct_theme_updater/be_pct_theme_updater.html5',
+        ],
+        'pct_theme_updater_breadcrumb' => [
+            'system/modules/pct_theme_updater/templates/pct_theme_updater_breadcrumb.html5' => '@Contao_pct_theme_updater/pct_theme_updater_breadcrumb.html5',
+        ],
+        'mod_faqlist' => [
+            'vendor/contao/faq-bundle/contao/templates/modules/mod_faqlist.html5' => '@Contao_ContaoFaqBundle/mod_faqlist.html5',
+        ],
+        'mod_faqpage' => [
+            'vendor/contao/faq-bundle/contao/templates/modules/mod_faqpage.html5' => '@Contao_ContaoFaqBundle/mod_faqpage.html5',
+        ],
+        'mod_faqreader' => [
+            'vendor/contao/faq-bundle/contao/templates/modules/mod_faqreader.html5' => '@Contao_ContaoFaqBundle/mod_faqreader.html5',
+        ],
+        'be_pct_tabletree' => [
+            'system/modules/pct_tabletree_widget/templates/be_pct_tabletree.html5' => '@Contao_pct_tabletree_widget/be_pct_tabletree.html5',
+        ],
+        'be_ace' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_ace.html5' => '@Contao_ContaoCoreBundle/be_ace.html5',
+        ],
+        'be_alerts' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_alerts.html5' => '@Contao_ContaoCoreBundle/be_alerts.html5',
+        ],
+        'be_confirm' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_confirm.html5' => '@Contao_ContaoCoreBundle/be_confirm.html5',
+        ],
+        'be_conflict' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_conflict.html5' => '@Contao_ContaoCoreBundle/be_conflict.html5',
+        ],
+        'be_crawl' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_crawl.html5' => '@Contao_ContaoCoreBundle/be_crawl.html5',
+        ],
+        'be_csv_import' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_csv_import.html5' => '@Contao_ContaoCoreBundle/be_csv_import.html5',
+        ],
+        'be_diff' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_diff.html5' => '@Contao_ContaoCoreBundle/be_diff.html5',
+        ],
+        'be_help' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_help.html5' => '@Contao_ContaoCoreBundle/be_help.html5',
+        ],
+        'be_login' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_login.html5' => '@Contao_ContaoCoreBundle/be_login.html5',
+        ],
+        'be_login_two_factor' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_login_two_factor.html5' => '@Contao_ContaoCoreBundle/be_login_two_factor.html5',
+        ],
+        'be_main' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_main.html5' => '@Contao_ContaoCoreBundle/be_main.html5',
+        ],
+        'be_maintenance' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_maintenance.html5' => '@Contao_ContaoCoreBundle/be_maintenance.html5',
+        ],
+        'be_pagination' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_pagination.html5' => '@Contao_ContaoCoreBundle/be_pagination.html5',
+        ],
+        'be_password' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_password.html5' => '@Contao_ContaoCoreBundle/be_password.html5',
+        ],
+        'be_popup' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_popup.html5' => '@Contao_ContaoCoreBundle/be_popup.html5',
+        ],
+        'be_purge_data' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_purge_data.html5' => '@Contao_ContaoCoreBundle/be_purge_data.html5',
+        ],
+        'be_tinyNews' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_tinyNews.html5' => '@Contao_ContaoCoreBundle/be_tinyNews.html5',
+        ],
+        'be_two_factor' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_two_factor.html5' => '@Contao_ContaoCoreBundle/be_two_factor.html5',
+        ],
+        'be_welcome' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_welcome.html5' => '@Contao_ContaoCoreBundle/be_welcome.html5',
+        ],
+        'be_widget' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_widget.html5' => '@Contao_ContaoCoreBundle/be_widget.html5',
+        ],
+        'be_widget_chk' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_widget_chk.html5' => '@Contao_ContaoCoreBundle/be_widget_chk.html5',
+        ],
+        'be_widget_chpw' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_widget_chpw.html5' => '@Contao_ContaoCoreBundle/be_widget_chpw.html5',
+        ],
+        'be_widget_rdo' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_widget_rdo.html5' => '@Contao_ContaoCoreBundle/be_widget_rdo.html5',
+        ],
+        'be_wildcard' => [
+            'vendor/contao/core-bundle/contao/templates/backend/be_wildcard.html5' => '@Contao_ContaoCoreBundle/be_wildcard.html5',
+        ],
+        'block_searchable' => [
+            'vendor/contao/core-bundle/contao/templates/block/block_searchable.html5' => '@Contao_ContaoCoreBundle/block_searchable.html5',
+        ],
+        'block_section' => [
+            'vendor/contao/core-bundle/contao/templates/block/block_section.html5' => '@Contao_ContaoCoreBundle/block_section.html5',
+        ],
+        'block_sections' => [
+            'vendor/contao/core-bundle/contao/templates/block/block_sections.html5' => '@Contao_ContaoCoreBundle/block_sections.html5',
+        ],
+        'block_unsearchable' => [
+            'vendor/contao/core-bundle/contao/templates/block/block_unsearchable.html5' => '@Contao_ContaoCoreBundle/block_unsearchable.html5',
+        ],
+        'ce_accordionStop' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_accordionStop.html5' => '@Contao_ContaoCoreBundle/ce_accordionStop.html5',
+        ],
+        'ce_code' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_code.html5' => '@Contao_ContaoCoreBundle/ce_code.html5',
+        ],
+        'ce_downloads' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_downloads.html5' => '@Contao_ContaoCoreBundle/ce_downloads.html5',
+        ],
+        'ce_gallery' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_gallery.html5' => '@Contao_ContaoCoreBundle/ce_gallery.html5',
+        ],
+        'ce_headline' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_headline.html5' => '@Contao_ContaoCoreBundle/ce_headline.html5',
+        ],
+        'ce_html' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_html.html5' => '@Contao_ContaoCoreBundle/ce_html.html5',
+        ],
+        'ce_hyperlink' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_hyperlink.html5' => '@Contao_ContaoCoreBundle/ce_hyperlink.html5',
+        ],
+        'ce_image' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_image.html5' => '@Contao_ContaoCoreBundle/ce_image.html5',
+        ],
+        'ce_list' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_list.html5' => '@Contao_ContaoCoreBundle/ce_list.html5',
+        ],
+        'ce_sliderStart' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_sliderStart.html5' => '@Contao_ContaoCoreBundle/ce_sliderStart.html5',
+        ],
+        'ce_sliderStop' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_sliderStop.html5' => '@Contao_ContaoCoreBundle/ce_sliderStop.html5',
+        ],
+        'ce_table' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_table.html5' => '@Contao_ContaoCoreBundle/ce_table.html5',
+        ],
+        'ce_teaser' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_teaser.html5' => '@Contao_ContaoCoreBundle/ce_teaser.html5',
+        ],
+        'ce_text' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_text.html5' => '@Contao_ContaoCoreBundle/ce_text.html5',
+        ],
+        'ce_toplink' => [
+            'vendor/contao/core-bundle/contao/templates/elements/ce_toplink.html5' => '@Contao_ContaoCoreBundle/ce_toplink.html5',
+        ],
+        'form_captcha' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_captcha.html5' => '@Contao_ContaoCoreBundle/form_captcha.html5',
+        ],
+        'form_checkbox' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_checkbox.html5' => '@Contao_ContaoCoreBundle/form_checkbox.html5',
+        ],
+        'form_explanation' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_explanation.html5' => '@Contao_ContaoCoreBundle/form_explanation.html5',
+        ],
+        'form_fieldsetStart' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_fieldsetStart.html5' => '@Contao_ContaoCoreBundle/form_fieldsetStart.html5',
+        ],
+        'form_fieldsetStop' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_fieldsetStop.html5' => '@Contao_ContaoCoreBundle/form_fieldsetStop.html5',
+        ],
+        'form_hidden' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_hidden.html5' => '@Contao_ContaoCoreBundle/form_hidden.html5',
+        ],
+        'form_html' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_html.html5' => '@Contao_ContaoCoreBundle/form_html.html5',
+        ],
+        'form_inline' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_inline.html5' => '@Contao_ContaoCoreBundle/form_inline.html5',
+        ],
+        'form_message' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_message.html5' => '@Contao_ContaoCoreBundle/form_message.html5',
+        ],
+        'form_password' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_password.html5' => '@Contao_ContaoCoreBundle/form_password.html5',
+        ],
+        'form_radio' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_radio.html5' => '@Contao_ContaoCoreBundle/form_radio.html5',
+        ],
+        'form_range' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_range.html5' => '@Contao_ContaoCoreBundle/form_range.html5',
+        ],
+        'form_row' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_row.html5' => '@Contao_ContaoCoreBundle/form_row.html5',
+        ],
+        'form_select' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_select.html5' => '@Contao_ContaoCoreBundle/form_select.html5',
+        ],
+        'form_submit' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_submit.html5' => '@Contao_ContaoCoreBundle/form_submit.html5',
+        ],
+        'form_textarea' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_textarea.html5' => '@Contao_ContaoCoreBundle/form_textarea.html5',
+        ],
+        'form_upload' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_upload.html5' => '@Contao_ContaoCoreBundle/form_upload.html5',
+        ],
+        'form_wrapper' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_wrapper.html5' => '@Contao_ContaoCoreBundle/form_wrapper.html5',
+        ],
+        'form_xml' => [
+            'vendor/contao/core-bundle/contao/templates/forms/form_xml.html5' => '@Contao_ContaoCoreBundle/form_xml.html5',
+        ],
+        'image' => [
+            'vendor/contao/core-bundle/contao/templates/image/image.html5' => '@Contao_ContaoCoreBundle/image.html5',
+        ],
+        'js_accordion' => [
+            'vendor/contao/core-bundle/contao/templates/js/js_accordion.html5' => '@Contao_ContaoCoreBundle/js_accordion.html5',
+        ],
+        'js_autofocus' => [
+            'vendor/contao/core-bundle/contao/templates/js/js_autofocus.html5' => '@Contao_ContaoCoreBundle/js_autofocus.html5',
+        ],
+        'js_nocookie' => [
+            'vendor/contao/core-bundle/contao/templates/js/js_nocookie.html5' => '@Contao_ContaoCoreBundle/js_nocookie.html5',
+        ],
+        'mail_default' => [
+            'vendor/contao/core-bundle/contao/templates/mail/mail_default.html5' => '@Contao_ContaoCoreBundle/mail_default.html5',
+        ],
+        'mail_responsive' => [
+            'vendor/contao/core-bundle/contao/templates/mail/mail_responsive.html5' => '@Contao_ContaoCoreBundle/mail_responsive.html5',
+        ],
+        'member_default' => [
+            'vendor/contao/core-bundle/contao/templates/member/member_default.html5' => '@Contao_ContaoCoreBundle/member_default.html5',
+        ],
+        'member_grouped' => [
+            'vendor/contao/core-bundle/contao/templates/member/member_grouped.html5' => '@Contao_ContaoCoreBundle/member_grouped.html5',
+        ],
+        'mod_articlelist' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_articlelist.html5' => '@Contao_ContaoCoreBundle/mod_articlelist.html5',
+        ],
+        'mod_articlenav' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_articlenav.html5' => '@Contao_ContaoCoreBundle/mod_articlenav.html5',
+        ],
+        'mod_booknav' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_booknav.html5' => '@Contao_ContaoCoreBundle/mod_booknav.html5',
+        ],
+        'mod_changePassword' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_changePassword.html5' => '@Contao_ContaoCoreBundle/mod_changePassword.html5',
+        ],
+        'mod_closeAccount' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_closeAccount.html5' => '@Contao_ContaoCoreBundle/mod_closeAccount.html5',
+        ],
+        'mod_customnav' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_customnav.html5' => '@Contao_ContaoCoreBundle/mod_customnav.html5',
+        ],
+        'mod_html' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_html.html5' => '@Contao_ContaoCoreBundle/mod_html.html5',
+        ],
+        'mod_lostPassword' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_lostPassword.html5' => '@Contao_ContaoCoreBundle/mod_lostPassword.html5',
+        ],
+        'mod_message' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_message.html5' => '@Contao_ContaoCoreBundle/mod_message.html5',
+        ],
+        'mod_password' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_password.html5' => '@Contao_ContaoCoreBundle/mod_password.html5',
+        ],
+        'mod_quicklink' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_quicklink.html5' => '@Contao_ContaoCoreBundle/mod_quicklink.html5',
+        ],
+        'mod_quicknav' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_quicknav.html5' => '@Contao_ContaoCoreBundle/mod_quicknav.html5',
+        ],
+        'mod_randomImage' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_randomImage.html5' => '@Contao_ContaoCoreBundle/mod_randomImage.html5',
+        ],
+        'mod_search' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_search.html5' => '@Contao_ContaoCoreBundle/mod_search.html5',
+        ],
+        'mod_sitemap' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_sitemap.html5' => '@Contao_ContaoCoreBundle/mod_sitemap.html5',
+        ],
+        'mod_two_factor' => [
+            'vendor/contao/core-bundle/contao/templates/modules/mod_two_factor.html5' => '@Contao_ContaoCoreBundle/mod_two_factor.html5',
+        ],
+        'moo_accordion' => [
+            'vendor/contao/core-bundle/contao/templates/mootools/moo_accordion.html5' => '@Contao_ContaoCoreBundle/moo_accordion.html5',
+        ],
+        'moo_chosen' => [
+            'vendor/contao/core-bundle/contao/templates/mootools/moo_chosen.html5' => '@Contao_ContaoCoreBundle/moo_chosen.html5',
+        ],
+        'moo_mediabox' => [
+            'vendor/contao/core-bundle/contao/templates/mootools/moo_mediabox.html5' => '@Contao_ContaoCoreBundle/moo_mediabox.html5',
+        ],
+        'moo_tablesort' => [
+            'vendor/contao/core-bundle/contao/templates/mootools/moo_tablesort.html5' => '@Contao_ContaoCoreBundle/moo_tablesort.html5',
+        ],
+        'picture_default' => [
+            'vendor/contao/core-bundle/contao/templates/picture/picture_default.html5' => '@Contao_ContaoCoreBundle/picture_default.html5',
+        ],
+        'rss_default' => [
+            'vendor/contao/core-bundle/contao/templates/rss/rss_default.html5' => '@Contao_ContaoCoreBundle/rss_default.html5',
+        ],
+        'rss_items_only' => [
+            'vendor/contao/core-bundle/contao/templates/rss/rss_items_only.html5' => '@Contao_ContaoCoreBundle/rss_items_only.html5',
+        ],
+        'search_default' => [
+            'vendor/contao/core-bundle/contao/templates/search/search_default.html5' => '@Contao_ContaoCoreBundle/search_default.html5',
+        ],
+        'backend/module_wildcard' => [
+            'vendor/contao/core-bundle/contao/templates/twig/backend/module_wildcard.html.twig' => '@Contao_ContaoCoreBundle/backend/module_wildcard.html.twig',
+        ],
+        'backend/template_skeleton' => [
+            'vendor/contao/core-bundle/contao/templates/twig/backend/template_skeleton.html.twig' => '@Contao_ContaoCoreBundle/backend/template_skeleton.html.twig',
+        ],
+        'component/_download' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_download.html.twig' => '@Contao_ContaoCoreBundle/component/_download.html.twig',
+        ],
+        'component/_figure' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_figure.html.twig' => '@Contao_ContaoCoreBundle/component/_figure.html.twig',
+        ],
+        'component/_headline' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_headline.html.twig' => '@Contao_ContaoCoreBundle/component/_headline.html.twig',
+        ],
+        'component/_list' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_list.html.twig' => '@Contao_ContaoCoreBundle/component/_list.html.twig',
+        ],
+        'component/_picture' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_picture.html.twig' => '@Contao_ContaoCoreBundle/component/_picture.html.twig',
+        ],
+        'component/_read_more' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_read_more.html.twig' => '@Contao_ContaoCoreBundle/component/_read_more.html.twig',
+        ],
+        'component/_splash_screen' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_splash_screen.html.twig' => '@Contao_ContaoCoreBundle/component/_splash_screen.html.twig',
+        ],
+        'component/_stylesheet' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_stylesheet.html.twig' => '@Contao_ContaoCoreBundle/component/_stylesheet.html.twig',
+        ],
+        'component/_table' => [
+            'vendor/contao/core-bundle/contao/templates/twig/component/_table.html.twig' => '@Contao_ContaoCoreBundle/component/_table.html.twig',
+        ],
+        'content_element/_base' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/_base.html.twig' => '@Contao_ContaoCoreBundle/content_element/_base.html.twig',
+        ],
+        'content_element/_video' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/_video.html.twig' => '@Contao_ContaoCoreBundle/content_element/_video.html.twig',
+        ],
+        'content_element/accordion' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/accordion.html.twig' => '@Contao_ContaoCoreBundle/content_element/accordion.html.twig',
+        ],
+        'content_element/code' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/code.html.twig' => '@Contao_ContaoCoreBundle/content_element/code.html.twig',
+        ],
+        'content_element/description_list' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/description_list.html.twig' => '@Contao_ContaoCoreBundle/content_element/description_list.html.twig',
+        ],
+        'content_element/download' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/download.html.twig' => '@Contao_ContaoCoreBundle/content_element/download.html.twig',
+        ],
+        'content_element/downloads' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/downloads.html.twig' => '@Contao_ContaoCoreBundle/content_element/downloads.html.twig',
+        ],
+        'content_element/element_group' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/element_group.html.twig' => '@Contao_ContaoCoreBundle/content_element/element_group.html.twig',
+        ],
+        'content_element/gallery' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/gallery.html.twig' => '@Contao_ContaoCoreBundle/content_element/gallery.html.twig',
+        ],
+        'content_element/headline' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/headline.html.twig' => '@Contao_ContaoCoreBundle/content_element/headline.html.twig',
+        ],
+        'content_element/html' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/html.html.twig' => '@Contao_ContaoCoreBundle/content_element/html.html.twig',
+        ],
+        'content_element/hyperlink' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/hyperlink.html.twig' => '@Contao_ContaoCoreBundle/content_element/hyperlink.html.twig',
+        ],
+        'content_element/image' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/image.html.twig' => '@Contao_ContaoCoreBundle/content_element/image.html.twig',
+        ],
+        'content_element/list' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/list.html.twig' => '@Contao_ContaoCoreBundle/content_element/list.html.twig',
+        ],
+        'content_element/markdown' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/markdown.html.twig' => '@Contao_ContaoCoreBundle/content_element/markdown.html.twig',
+        ],
+        'content_element/player' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/player.html.twig' => '@Contao_ContaoCoreBundle/content_element/player.html.twig',
+        ],
+        'content_element/swiper' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/swiper.html.twig' => '@Contao_ContaoCoreBundle/content_element/swiper.html.twig',
+        ],
+        'content_element/table' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/table.html.twig' => '@Contao_ContaoCoreBundle/content_element/table.html.twig',
+        ],
+        'content_element/teaser' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/teaser.html.twig' => '@Contao_ContaoCoreBundle/content_element/teaser.html.twig',
+        ],
+        'content_element/template' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/template.html.twig' => '@Contao_ContaoCoreBundle/content_element/template.html.twig',
+        ],
+        'content_element/text' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/text.html.twig' => '@Contao_ContaoCoreBundle/content_element/text.html.twig',
+        ],
+        'content_element/toplink' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/toplink.html.twig' => '@Contao_ContaoCoreBundle/content_element/toplink.html.twig',
+        ],
+        'content_element/unfiltered_html' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/unfiltered_html.html.twig' => '@Contao_ContaoCoreBundle/content_element/unfiltered_html.html.twig',
+        ],
+        'content_element/vimeo' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/vimeo.html.twig' => '@Contao_ContaoCoreBundle/content_element/vimeo.html.twig',
+        ],
+        'content_element/youtube' => [
+            'vendor/contao/core-bundle/contao/templates/twig/content_element/youtube.html.twig' => '@Contao_ContaoCoreBundle/content_element/youtube.html.twig',
+        ],
+        'frontend_module/_base' => [
+            'vendor/contao/core-bundle/contao/templates/twig/frontend_module/_base.html.twig' => '@Contao_ContaoCoreBundle/frontend_module/_base.html.twig',
+        ],
+        'frontend_module/feed_reader' => [
+            'vendor/contao/core-bundle/contao/templates/twig/frontend_module/feed_reader.html.twig' => '@Contao_ContaoCoreBundle/frontend_module/feed_reader.html.twig',
+        ],
+        'frontend_module/template' => [
+            'vendor/contao/core-bundle/contao/templates/twig/frontend_module/template.html.twig' => '@Contao_ContaoCoreBundle/frontend_module/template.html.twig',
+        ],
+        'frontend_module/unfiltered_html' => [
+            'vendor/contao/core-bundle/contao/templates/twig/frontend_module/unfiltered_html.html.twig' => '@Contao_ContaoCoreBundle/frontend_module/unfiltered_html.html.twig',
+        ],
+    ],
+    [],
+]];

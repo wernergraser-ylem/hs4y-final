@@ -1,0 +1,12 @@
+<!-- indexer::stop -->
+<div class="smartmenu-content">
+	<div class="mod_navigation">
+		<div class="smartmenu-scrollable">
+			<div class="smartmenu-table">
+				<?= $this->items ?>
+			</div>
+		</div>
+		<div class="smartmenu-close"></div>
+	</div>
+</div>
+<!-- indexer::continue -->

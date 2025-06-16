@@ -1,0 +1,21 @@
+/* =============================================================================
+ * ce_divider_image
+ * ========================================================================== */
+
+.ce_divider_image .image_container img {
+	width: auto;
+	display: inline;
+}
+.ce_divider_image {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.ce_divider_image.align-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ce_divider_image.align-right {
+	margin-left: auto;
+}

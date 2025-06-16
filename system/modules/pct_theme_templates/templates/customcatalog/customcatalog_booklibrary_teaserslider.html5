@@ -1,0 +1,72 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/swiper/swiper.jquery.min.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/swiper/swiper.min.css|static';	
+?>
+<?php if(!$this->empty): ?>
+	<div class="swiper-container " id="swiper_<?php echo $this->id; ?>">
+		<div class="swiper-wrapper">
+			<?php foreach($this->entries as $entry): ?>
+			<div class="swiper-slide block entry" <?php echo $this->cssID; ?>>
+				<div class="item-inside">
+					<div class="image">
+						<?php if($entry->field('banner_one')->value() || $entry->field('banner_two')->value()): ?>
+						<div class="product-banner">
+							<ul>
+						<?php endif; ?>
+						<?php if($entry->field('banner_one')->value()): ?><li class="banner-one bg-accent"><?php echo $entry->field('banner_one')->value(); ?></li><?php endif; ?>
+						<?php if($entry->field('banner_two')->value()): ?><li class="banner-two bg-second"><?php echo $entry->field('banner_two')->value(); ?></li><?php endif; ?>
+						
+						<?php if($entry->field('banner_one')->value() || $entry->field('banner_two')->value()): ?>
+							</ul>
+						</div>
+						<?php endif; ?>
+						<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+					</div>
+			
+					<div class="content">
+						<div class="content-inside">
+							<?php if($entry->field('author')->value()): ?><div class="author"><?php echo $entry->field('author')->html(); ?></div><?php endif; ?>
+							<div class="headline"><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></div>
+							<?php if($entry->field('price')->value()): ?><div class="price color-accent">&euro; <?php echo $entry->field('price')->html(); ?></div><?php endif; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+		<div id="swiper-button-next_<?php echo $this->id; ?>" class="swiper-button-next"></div>
+		<div id="swiper-button-prev_<?php echo $this->id; ?>" class="swiper-button-prev"></div>
+	</div>	
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+ var swiper_<?php echo $this->id; ?> = new Swiper('#swiper_<?php echo $this->id; ?>', {
+	 	paginationClickable: true,
+	 	pagination:	{
+        	el: '.swiper-pagination_<?php echo $this->id; ?>',
+			clickable: true,
+      	},
+	 	grabCursor: true,
+	 	navigation: {
+        	nextEl: '#swiper-button-next_<?php echo $this->id; ?>',
+			prevEl: '#swiper-button-prev_<?php echo $this->id; ?>',
+		},
+		breakpoints: {
+        	10: {
+				slidesPerView: 1,
+				spaceBetween: 0,
+			},
+			768: {
+				slidesPerView: 5,
+				spaceBetween: 0,
+			},
+
+		},
+    });       
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php else: ?>
+<p class="info empty">Keine Artikel gefunden</p>
+<?php endif;?>

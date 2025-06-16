@@ -1,0 +1,34 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newsteaser_v7.css|static';
+$hasText = $this->hasText;
+?>
+
+<div class="newsteaser_v7 autogrid one_third block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+	<div class="item-inside">
+	<?php if ($hasText): ?><a href="<?php echo $this->link; ?>" <?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>><?php endif; ?>
+	
+	<div class="image_container">
+		<?php $this->insert('picture_default', $this->picture); ?>
+		<?php if ($this->hasTeaser): ?>
+		<div class="item-overlay">
+			<div class="item-overlay-inside" itemprop="description">
+				<?php echo $this->teaser; ?>
+			</div>
+		</div>
+		<?php endif; ?>
+	</div>
+	
+	<div class="title h5"><?php echo $this->newsHeadline; ?></div>
+
+	<?php if ($this->date): ?>
+	<div class="date" itemprop="datePublished">
+		<span class="day"><?= \Contao\Date::parse("d", $this->timestamp);?></span>
+		<span class="month"><?= \Contao\Date::parse("M", $this->timestamp);?></span>
+		<span class="year"><?= \Contao\Date::parse("Y", $this->timestamp);?></span>
+	</div>
+	<?php endif; ?>
+	
+	<?php if ($hasText): ?></a><?php endif; ?>
+	</div>
+</div>
+

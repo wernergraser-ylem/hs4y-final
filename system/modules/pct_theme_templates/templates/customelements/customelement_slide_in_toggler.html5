@@ -1,0 +1,54 @@
+<!-- indexer::stop -->
+<?php 
+$slideStartId = $GLOBALS['CE_SLIDE_IN_START'] ?? 0; // id of the slide-in-start element to be toggled
+?>
+<div class="<?= $this->class; ?> ce_slide_in_toggler_<?= $this->id; ?>" data-style="<?= $this->field('style')->value(); ?>" data-size="<?= $this->field('size')->value(); ?>" data-align="<?= $this->field('align')->value(); ?>"<?php echo $this->cssID; ?>>
+<?php if( $this->field('label_open')->value() ): ?>
+<button type="button" data-slide_in="<?= $slideStartId; ?>" class="button open" title="<?= $this->field('label_open')->value(); ?>"><?= $this->field('label_open')->value(); ?></button>
+<?php endif; ?>
+<?php if( $this->field('label_close')->value() ): ?>
+<button type="button" data-slide_in="<?= $slideStartId; ?>" class="button close" title="<?= $this->field('label_close')->value(); ?>"><?= $this->field('label_close')->value(); ?></button>
+<?php endif; ?>
+</div>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	var startElement = jQuery('.slide-in-container[data-slide_in="<?= $slideStartId; ?>"]');
+	var toggler = jQuery('.ce_slide_in_toggler_<?= $this->id; ?>');
+	
+	const slide_<?= $slideStartId; ?> = function(elem)
+	{
+		let wrapper = elem.find('.slide_in_wrapper');
+		let deltaX = ( elem.find('.slide_in_content').width() ) * -1;
+		wrapper.css('transform','translateX('+ deltaX +'px)');
+		
+		setTimeout(function() 
+		{
+			wrapper.removeClass('init');
+		}, 400);
+	}
+	slide_<?= $slideStartId; ?>( startElement );
+	
+	toggler.find('.button').click(function(e)
+	{
+		e.preventDefault();
+		toggler.toggleClass('open');
+		startElement.toggleClass('open');
+		slide_<?= $slideStartId; ?>( startElement );
+	});
+	
+	jQuery(window).on('resize',function() 
+	{
+		slide_<?= $slideStartId; ?>( startElement );
+	});
+	
+	setTimeout(function() 
+	{
+		jQuery(window).resize();
+	}, 400);
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

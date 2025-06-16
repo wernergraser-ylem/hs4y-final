@@ -1,0 +1,177 @@
+### 3.0.5
+Fixed: Specialchars in hyperlink elements (#122)
+
+### 3.0.4
+Update: Lists: Wrap icon and list content in seperate spans (#120)
+
+### 3.0.3
+Fixed: Unclosed span in list items (#118)
+
+### 3.0.2
+Fixed: Missing icon selection in calendar, news content elements (#116)
+
+### 3.0.1
+Fixed: Missing icon selection in form fields (#112)
+Fixed: Preserve special characters in lists (#111)
+Fixed: Unclosed <ul> list in picker page (#114)
+
+### 3.0.0
+Fixed: Removed DOMXpath XML-comments from source code (#108)
+Update: General Contao 5 compatibility (#94)
+Removed: Contao 4.9 compatibility (#94)
+Removed: FontawesomeCDN option from system settings (#102)
+Removed: Iconpicker Formsubmit (#97)
+Removed: External php assets page (#94)
+
+### 2.3.9
+Fixed: Hyperlink: Uncached inserttags did not work when the icon picker was enabled (#99)
+
+### 2.3.8
+Update: PHP8 Warnings (#93)
+
+### 2.3.7
+Fixed: Encode & character before DOM processing (#91)
+
+### 2.3.6
+Fixed: Invalid content element due to missing parent id information for non-admins (#89)
+
+### 2.3.5
+Update: General PHP8 updates (#87)
+
+### 2.3.4
+Fixed: Determine DataContainer class via DataContainer::getDriverForTable instead of DCA array (#85)
+
+### 2.3.3
+Update: Set @ini_set('display_errors', '0'); in iconpicker.php (#81)
+Update: Handle revolutionslider_hyperlink elements (#83)
+
+### 2.3.2
+Fixed: Using DOMNode prepend, append required PHP8. Rebuild to use insertBefore, appendChild methods (#79)
+
+### 2.3.1
+Fixed: Preserve inner HTML in list, hyperlink elements when adding the icon (#77)
+
+### 2.3.0
+New: Support for Contao 4.13
+Fixed: Load stylesheets in backend only and not automatically in front end also (#74)
+Update: Rebuild for current Contao ModalWindows (#71)
+Update: General backend styling update (#70)
+Update: Do not add font-icon class to css-class field in tl_page (#69)
+Update: General Contao deprecated methods update (#61)
+Update: Rebuild list, hyperlink icon additions (#75)
+
+### 2.2.1
+Update: Support changed server-architecture (found on Strato) and print errors to screen when initialize.php has not been detected (#66)
+
+### 2.2.0
+Update: Refractor classes to Contao namespace (#302)
+Update: Contao 4.9 LTS compatibility
+
+### 2.1.0
+New: Back to Fontawesome in backend iconpicker widget, so it matches the frontend output (#62)
+
+### 2.0.0
+New: New font library: line-awesome (#56,#57)
+Change: Do not include the script librarys to the page automatically. A source must be set in the system settings (#57)
+
+### 1.9.3
+Fixed: Search did not work due to Contao session changes (#58)
+
+### 1.9.2
+Update: PHP 7.2 compatibility (#53)
+Update: Put constants in quotations for php 7.2
+
+### 1.9.1
+Update: Minor styling changes under Contao 4
+
+### 1.9.0
+Fixed: Define TL_SCRIPT with path to the external file
+Fixed: tl_pct_customelement_attribute.eval_tl_class_w50,eval_tl_class_clr showed up twice (#47)
+Fixed: Load the DCA modifications via Hook to place the palette below CustomElements (#46)
+
+### 1.8.3
+Update: Strictly load pct_customelements before via autoload.ini because various Contao4.4 installations load modules in reverse order for some reasons
+
+### 1.8.2
+Update: Do not return the tl_pct_customelement_attribute dca file when CustomElements has not been installed yet (#43)
+Update: Try to locate subfolder installations in iconpicker.php (#41)
+
+### 1.8.1
+Fixed: Find path to initialize.php correctly in contao3 and contao4 web structures (#41)
+
+### 1.8.0
+Update: Contao 4.4 ready (#37)
+Update: Added an icon preview container next to wizard icon to avoid wrong font settings of the widget in the backend (#38)
+Removed: DCA field load_callback (#38)
+
+### 1.7.2
+Fixed: Failed to load DataContainer in CustomCatalogs
+
+### 1.7.1
+Update: Transifex language files
+
+### 1.7.0
+New: Support {{icon::MY-ICON-CLASS}} inserttags (#33)
+
+### 1.6.6
+Fixed: Missing wizard icon
+Update: Path to the initialize.php for IIS servers
+
+### 1.6.5
+Update: Support CE2 correctly
+
+### 1.6.4
+Update: Remove class restriction in callback function parameters (#28)
+
+### 1.6.3
+Fixed: Load Fontawesome from CDN as general fallback (#26)
+
+### 1.6.2
+Update: Check if data container array has been loaded already before loading it in dca files
+
+### 1.6.1
+Fixed: Replace the headline correct when headline element has a class attribute (#21)
+Update: Do not automatically manipulate the output when processing a custom template (#20)
+
+### 1.6.0
+Update: Better fallback when Iconpicker runs in an environment without CustomElements
+Update: Fontawesome CDN to 4.5.0
+
+### 1.5.4
+Update: Set fontawesome source to local (if CustomElements is installed) or cdn as fallback if Config has not been saved yet (#17)
+
+### 1.5.3
+Fixed: Missing parameter in strpos methode
+
+### 1.5.2
+Added: sql definition in DCA array for CustomCatalog
+Update: Add more apache servers to be recognized
+
+### 1.5.1
+Fixed: Support nginx server correctly (#14)
+
+### 1.5.0
+Added: New IconPicker palette in settings and fontaweseome source selection (#12)
+Update: Load the stylesheets in the frontend
+Update: Support fontawesome classes
+Update: Support external stylesheet files loaded via CDN
+Update: Support custom icon class selectors like ".myIcon-" etc. set in systemconfig
+Update: Rebuild the popup window instance based on contaos pop windows and classes loaded via autoload.php (#10)
+
+### 1.4.2
+Fixed: The iconpicker popup windows won't close under Contao 3.5
+Update: Added the request token to the urls
+
+### 1.4.1
+Fixed: The require_once statement might have caused an php error on misc. servers
+
+### 1.4.0
+Fixed: Remove the caching because it causes error when loading external CSS definitions
+
+### 1.3
+Added: English language files (#4)
+
+### 1.2
+Fixed: Wrong class name call to AutoGrid
+Fixed: Check if pct_autogrid runs before calling classes
+Added: changelog.txt, Version constant: PCT_ICONPICKER_VERSION

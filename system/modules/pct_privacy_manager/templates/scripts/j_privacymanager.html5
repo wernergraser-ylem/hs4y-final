@@ -1,0 +1,190 @@
+<!-- SEO-SCRIPT-START -->
+<script>
+/**
+ * PrivacyManager
+ */
+var PrivacyManager =
+{
+	/**
+	 * The privacy localStorage key
+	 * @var string
+	 */
+	privacy_session : 'user_privacy_settings',
+
+	/**
+	 * Get the selected privacy checkbox values from a formular array
+	 * @param array 
+	 * @return array
+	 */
+	getUserSelectionFromFormData: function (arrSubmitted)
+	{
+		if (arrSubmitted == null || arrSubmitted == undefined)
+		{
+			return [];
+		}
+
+		var arrReturn = [];
+		for (var k in arrSubmitted)
+		{
+			var v = arrSubmitted[k];
+			if (v['name'] == 'privacy')
+			{ 
+				arrReturn.push(v['value']);
+			}
+		}
+		return arrReturn;
+	},
+
+
+	/**
+	 * Access control
+	 * @param string
+	 */
+	hasAccess : function (varSelection)
+	{
+		var token = localStorage.getItem( this.privacy_session );
+		if( token == undefined )
+		{
+			return false;
+		}
+
+		// convert to string
+		if( typeof(varSelection) == 'number' )
+		{
+			varSelection = varSelection.toString();
+		}
+		// convert to array
+		if( typeof(varSelection) == 'string' )
+		{
+			varSelection = varSelection.split(',');
+		}
+
+		for(i in varSelection)
+		{
+			var value = varSelection[i].toString().replace(' ','');
+			if( token.indexOf( value ) >= 0 )
+			{
+				return true;
+			}
+		}
+		return false;
+	},
+
+
+	/**
+	 * Clear privacy settings and redirect page
+	 * @param boolean
+	 */
+	optout: function (strRedirect)
+	{
+		// clear local storage
+		localStorage.removeItem(this.privacy_session);
+		localStorage.removeItem(this.privacy_session+'_expires');
+		// fire event
+		jQuery(document).trigger('Privacy.clear_privacy_settings',{});
+		// log
+		console.log('Privacy settings cleared');
+		// redirect
+		if (strRedirect != undefined)
+		{
+			location.href = strRedirect;
+		}
+		else
+		{
+			location.reload();
+		}
+	},
+
+
+	/**
+	 * Clear all cookies and localstorage
+	 */
+	clearAll: function()
+	{
+		var host = window.location.hostname;
+		var domain = host.substring( host.indexOf('.') , host.length);
+		// clear all cookies
+		document.cookie.split(";").forEach(function(c) 
+		{ 
+			document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"+ ";domain="+host); 
+			document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"+ ";domain="+domain); 
+		});
+		// clear whole localstorage
+		window.localStorage.clear();
+		for (var i = 0; i <= localStorage.length; i++) 
+		{
+		   localStorage.removeItem(localStorage.key(i));
+		}
+		// log
+		console.log('Cookies and localstorage cleared');
+	}
+};
+</script>
+
+<script>
+/**
+ * Univerasl optin protection
+ * @param string	Type of element to be protected e.g. img or iframe etc.
+ */
+PrivacyManager.optin = function(strElementType)
+{
+	if(strElementType == undefined || strElementType == '')
+	{
+		return;
+	}
+	// user settings not applied yet
+	if(localStorage.getItem(this.privacy_session) == undefined || localStorage.getItem(this.privacy_session) == '' || localStorage.getItem(this.privacy_session) <= 0)
+	{
+		return
+	}
+
+	// find all scripts having a data-src attribute
+	var targets = jQuery(strElementType+'[data-src]');	
+	
+	if(targets.length > 0)
+	{
+		jQuery.each(targets,function(i,e)
+		{
+			var privacy = jQuery(e).data('privacy');
+			if(privacy == undefined)
+			{
+				privacy = 0;
+			}
+			
+			var attr = 'src';
+			if(strElementType == 'link')
+			{
+				attr = 'href';
+			}
+			else if(strElementType == 'object')
+			{
+				attr = 'data';
+			}
+			
+			if(localStorage.getItem('user_privacy_settings').indexOf(privacy) >= 0)
+			{
+				jQuery(e).attr(attr,jQuery(e).data('src') );
+			}
+		});
+	}
+}
+
+jQuery(document).on('Privacy.changed', function() 
+{
+	PrivacyManager.optin('script');
+	PrivacyManager.optin('link');
+	PrivacyManager.optin('iframe');
+	PrivacyManager.optin('object');
+	PrivacyManager.optin('img');
+});
+
+jQuery(document).ready(function()
+{
+	PrivacyManager.optin('script');
+	PrivacyManager.optin('link');
+	PrivacyManager.optin('iframe');
+	PrivacyManager.optin('object');
+	PrivacyManager.optin('img');
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

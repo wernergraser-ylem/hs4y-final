@@ -1,0 +1,21 @@
+<?php
+/**
+ * Linklist filter template
+ */
+?>
+
+<div <?php echo $this->cssID; ?> class="widget <?php echo $this->class; ?> block">
+<fieldset class="linklist_container">
+	<?php if($this->label): ?><legend><?php echo $this->label; ?></legend><?php endif; ?>
+	<ul class="linklist">
+	<?php foreach($this->options as $option): ?>
+	<?php if($option['selected']): ?>
+	<li id="<?php echo $option['id']; ?>" class="sibling active"><a class="active" href="<?php echo $option['href']; ?>" title=""><?php echo $option['label']; ?></a>
+	<?php else: ?>
+	<li id="<?php echo $option['id']; ?>" class="sibling"><a href="<?php echo $option['href']; ?>" title=""><?php echo $option['label']; ?></a>
+	<?php endif;?>
+	<?php endforeach; ?>
+	</ul>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?php echo $this->description; ?></div><?php endif; ?>
+</div>

@@ -1,0 +1,72 @@
+
+<div id="tl_maintenance_index" class="maintenance_<?php echo $this->isActive ? 'active' : 'inactive'; ?>">
+
+  <h2 class="sub_headline_index"><?php echo $this->indexHeadline; ?></h2>
+
+  <?php if ($this->indexMessage): ?>
+    <div class="tl_message">
+      <p class="tl_error"><?php echo $this->indexMessage; ?></p>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($this->isRunning): ?>
+    <div id="tl_rebuild_index">
+      <p id="index_loading"><?php echo $this->loading; ?></p>
+      <p id="index_complete" style="display:none"><?php echo $this->complete; ?></p>
+      <p style="margin-bottom:0"><?php echo $this->content; ?></p>
+    </div>
+
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	window.addEvent('domready', function() 
+	{
+		var urls = $$('.vault_data');
+		var last = urls.length-1; 
+	
+		function runStep(i)
+		{
+			var el = urls[i];
+			
+			new Request(
+			{
+				'url': location.href,
+				'data': 'vault_id='+el.getAttribute('data-vault_id'),
+				onComplete: function() 
+				{
+					el.addClass('tl_green');
+					if(i < last)
+					{
+						return runStep(i+1);
+					}
+					else
+					{
+						$('index_loading').setStyle('display', 'none');
+						$('index_complete').setStyle('display', 'block');
+					}
+				},
+				onFailure: function()
+				{
+					el.addClass('tl_red');
+				},
+				onException: function()
+				{
+					el.addClass('tl_red');
+				}
+			}).get();
+		}
+		runStep(0);
+	});
+	/* ]]> */	
+	</script>
+	<?php endif; ?>
+	
+    <form action="<?php echo $this->action; ?>" class="tl_form" method="get">
+      <div class="tl_submit_container">
+        <input type="hidden" name="do" value="maintenance">
+        <input type="submit" id="index" class="tl_submit" value="<?php echo $this->indexContinue; ?>">
+      </div>
+    </form>
+	
+</div>
+
+

@@ -1,0 +1,81 @@
+<?php
+namespace Contao;
+
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/swiper/swiper.jquery.min.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/swiper/swiper.min.css|static';
+
+$container = System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+?>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+ var swiper_<?php echo $this->id; ?> = new Swiper('#swiper_<?php echo $this->id; ?>', {
+	 	paginationClickable: true,
+	 	slidesPerView: 1,
+	 	grabCursor: true,
+	 	autoplay: {
+        	delay: 3000,
+			disableOnInteraction: false,
+      	},
+	 	navigation: {
+        	nextEl: '#swiper-button-next_<?php echo $this->id; ?>',
+			prevEl: '#swiper-button-prev_<?php echo $this->id; ?>',
+		},
+		pagination:	{
+        	el: '#swiper-pagination_<?php echo $this->id; ?>',
+			clickable: true,
+      	},
+    });       
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<div class="cc_cardealer_slider">
+<div class="swiper-container" id="swiper_<?php echo $this->id; ?>">
+<div class="swiper-wrapper">
+<?php foreach($this->entries as $entry): ?>
+	<div class="swiper-slide block entry" <?php echo $this->cssID; ?>>
+	<?php 
+		$strImage = $entry->field('image')->generate();
+		$objFile = FilesModel::findByPk( $entry->field('image')->value() );
+		$size = StringUtil::deserialize( $entry->field('image')->option('size') );
+		if( $objFile !== null && \is_array($size) )
+		{
+			$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+			if( $objPicture !== null )
+			{
+				$sources = $objPicture->getSources($projectDir, $staticUrl);
+				// look up prefered source image file (not media query)
+				foreach($sources ?: array() as $data)
+				{
+					if( isset($data['src']) && $data['src'] != $strImage)
+					{
+						$strImage = $data['src'];
+					}
+				}
+			}
+		}
+		?>
+		<div class="image" style="background-image: url(<?= $strImage; ?>);"></div>
+			<div class="content-outside">
+				<div class="content-inside">
+					<a href="<?php echo $entry->links('detail')->url; ?>">
+					<div class="slider-content-wrapper">
+						<div class="state"><?php echo $entry->field('state')->html(); ?></div>
+						<div class="name"><?php echo $entry->field('name')->value(); ?></div>
+						<div class="price"><strong>&euro; <?php echo $entry->field('price')->html(); ?></strong><span><?php echo $entry->field('price_add')->value(); ?></span></div>
+					</div>
+					</a>
+				</div>	
+			</div>
+	</div>
+<?php endforeach; ?>
+
+</div>
+<div id="swiper-pagination_<?php echo $this->id; ?>" class="swiper-pagination"></div>
+<div id="swiper-button-next_<?php echo $this->id; ?>" class="swiper-button-next"></div>
+<div id="swiper-button-prev_<?php echo $this->id; ?>" class="swiper-button-prev"></div>
+
+</div>
+</div>

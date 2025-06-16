@@ -1,0 +1,122 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/gallery/ce_gallery.css|static';
+?>
+
+<ul class="cols_<?php echo $this->perRow; ?> flex-gallery" id="gallery_<?php echo $this->id; ?>" itemscope itemtype="http://schema.org/ImageGallery">
+
+<?php 
+$intItem = 0;
+   ?>
+  <?php foreach ($this->body as $class=>$row): ?>
+    <?php foreach ($row as $col): ?>
+	<?php 
+      foreach(array('href','caption','class','margin','linkTitle','attributes','alt','addImage') as $f)
+      {
+        if( !isset($col->{$f}) )
+        {
+          $col->{$f} = '';
+        }
+      }
+      ?>
+      <?php if ($col->addImage): ?>
+        <li class="entry row<?php echo $this->perRow; ?><?php if($col->class): ?> <?php echo $col->class; ?><?php endif; ?>">
+       	 <figure class="image_container" itemscope itemtype="http://schema.org/ImageObject">
+
+            <?php $this->insert('picture_default', $col->picture); ?>
+			
+			<?php 
+			$itemId = $this->id.'_'.$intItem;
+			$isVideo = false;
+	        if( in_array(\pathinfo($col->href,PATHINFO_EXTENSION), array('mp4','mov','ogv','webm')) )
+			{
+				$isVideo = true;
+			}
+			?>
+			
+			<?php if ($col->href): ?>
+            <a href="<?php echo $col->href; ?>" class="gallery_link_<?= $itemId; ?><?= $isVideo ? '_video' : ''; ?>" <?= $col->attributes; ?> title="<?php echo $col->alt; ?>" itemprop="contentUrl">
+            <?php endif; ?>
+
+            <?php if ($col->href || $col->caption): ?>
+            <div class="content">
+	            <div class="content-outside">
+		        	<div class="content-inside">
+						<div class="capt" itemprop="caption"><?php echo $col->caption; ?></div>
+					<?php if (strlen($col->href) > 0 && strlen($col->caption) < 1): ?>
+						<i class="fa <?= $isVideo ? 'fa-play-circle': 'fa-plus-circle'; ?> fa-3x"></i>
+				   	<?php endif; ?>
+		            </div>
+	            </div>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($col->href): ?>
+            </a>
+            <?php endif; ?>
+            
+            <?php 
+	        if( $isVideo ): ?>
+           <div style='display:none'>
+			    <div id="inlinevideocontent_<?= $itemId ; ?>" class="inlinevideocontent">
+			        <video id="video_<?= $itemId; ?>" class="video" controls autoplay>
+						<source src="<?= $col->href; ?>" type="video/mp4">
+					</video>
+			    </div>
+			</div>
+			<!-- SEO-SCRIPT-START -->
+			<script>
+			var arrVideos = [];
+			jQuery(document).ready(function()
+			{
+				var video =  document.getElementById("video_<?= $itemId; ?>");
+				arrVideos.push("video_<?= $itemId; ?>");
+				if( jQuery(video).attr('autoplay') )
+				{
+					video.muted = true;
+				}
+				
+				jQuery('.gallery_link_<?= $itemId; ?>_video').colorbox(
+				{
+					rel:"gallery<?= $this->id; ?>",	inline:true, width:"80%", height:"auto", maxWidth:"900px",href:"#inlinevideocontent_<?= $itemId ; ?>",
+					onComplete: function()
+					{
+						// pause other videos
+						jQuery.each(arrVideos, function(i,elem) 
+						{
+							document.getElementById(elem).pause();
+						});
+						
+						video = jQuery('#video_<?= $itemId; ?>')[0];
+						if( jQuery(video).attr('autoplay') )
+						{
+							video.muted = false;
+							video.play();
+						}
+					},
+					onClosed: function()
+					{
+						video.pause();
+					}
+				});
+			});
+			</script>
+			<!-- SEO-SCRIPT-STOP -->
+			<?php endif; ?>
+			
+          </figure>
+        </li>
+      <?php endif; ?>
+      <?php $intItem++; ?>
+    <?php endforeach; ?>
+  <?php endforeach; ?>
+</ul>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	jQuery('.gallery_link_<?= $this->id; ?>').removeAttr('data-lightbox');
+	jQuery('.gallery_link_<?= $this->id; ?>').colorbox({rel:"gallery<?= $this->id; ?>"});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

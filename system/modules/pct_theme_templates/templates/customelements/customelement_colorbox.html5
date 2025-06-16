@@ -1,0 +1,67 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_colorbox.css|static';
+
+// responsive images
+$container = \Contao\System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();
+	
+// responsive images
+$strImage = $this->field('image')->generate();
+
+$objFile = \Contao\FilesModel::findByPk( $this->field('image')->value() );
+$size = \Contao\StringUtil::deserialize( $this->field('image')->option('size') );
+if( $objFile !== null && is_array($size) )
+{
+	$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+	$sources = $objPicture->getSources($projectDir, $staticUrl);
+	
+	$arrMediaQueries = array();
+	if( $objPicture !== null && !empty($sources) )
+	{
+		foreach($sources ?: array() as $data)
+		{
+			if( !isset($data['media']) || strlen($data['media']) < 1 )
+			{
+				continue;
+			}
+			$arrMediaQueries[] = '@media '.$data['media'].' { .ce_colorbox_'.$this->id.' .ce_colorbox_inside { background-image:url('.$data['src'].') !important; } }';
+		}
+
+		// look up prefered source image file (not media query)
+		foreach($sources ?: array() as $data)
+		{
+			if( (isset($data['src']) && $data['src']) != $strImage && (!isset($data['media']) || strlen($data['media']) < 1) )
+			{
+				$strImage = $data['src'];
+			}
+		}
+	}
+	if( count($arrMediaQueries) > 0 )
+	{
+		$GLOBALS['TL_HEAD'][] = '<style>'.implode("\n",$arrMediaQueries).'</style>';
+	}
+}
+$bg_color = '';
+if( $this->field('own_bgcolor')->value() )
+{
+	// compile color
+	$color = $this->field('own_bgcolor')->attribute()->compileColor( $this->field('own_bgcolor')->value() );
+	$bg_color = $color->rgba;
+}
+?>
+<div class="<?php echo $this->class; ?> ce_colorbox_<?php echo $this->id; ?> <?php if($this->field('invert')->value()): ?> invert<?php endif; ?> <?php echo $this->field('style')->value(); ?> block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_colorbox_inside <?php echo $this->field('bgcolor')->value(); ?>" style="<?php if($this->field('image')->value()): ?>background-image: url(<?= $strImage; ?>);<?php endif; ?><?php if($this->field('own_bgcolor')->value()): ?>background-color:<?= $bg_color; ?>;<?php endif; ?>">
+		<?php echo $this->field('subheadline')->html(); ?>
+
+		<div class="mainheadline">
+			<?php echo $this->field('headline')->html(); ?>
+		</div>
+
+		<?php if($this->field('text')->value()): ?>
+			<?php echo $this->field('text')->value(); ?>
+		<?php endif; ?>
+
+		<?php echo $this->field('link')->html(); ?>
+	</div>
+</div>

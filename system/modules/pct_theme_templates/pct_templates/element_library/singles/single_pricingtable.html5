@@ -1,0 +1,131 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_pricingtable
+*/
+$arrImport = array (
+'tstamp' => '13.11.2023 08:26',
+'name' => 'single_pricingtable',
+'category' => 'tables_lists',
+'thumb' => '',
+'elements' => 'pricetable3',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 124720,
+1 => 14525,
+2 => 64,
+3 => 1699863907,
+5 => 'pricetable3',
+6 => 'a:2:{s:4:"unit";s:2:"h1";s:5:"value";s:0:"";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+102 => '0.5',
+160 => 'a:7:{s:6:"values";a:121:{s:15:"t0qbfa5gkdbuji0";s:7:"STARTER";s:15:"1irol810gmw99mb";s:12:"fa fa-server";s:14:"1ead2ztldyzv3k";s:3:"€";s:15:"z1rb2pqog8dvkm5";s:2:"99";s:15:"zmp0jf75tdo23cv";s:3:"/mo";s:15:"543g3gesjws66zc";s:26:"Lorem ipsum dolor sit amet";s:15:"mx6ftv5091r0kin";s:391:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li><span class="line-through">Analytic Report</span></li>
+<li><span class="line-through">Member Access</span></li>
+<li><span class="line-through color-lightgray">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:14:"j7bd6jb46cde35";s:0:"";s:15:"hcf8i1b5tsvyb0j";s:0:"";s:15:"x9qgagrdim9k4bh";s:5:"star3";s:15:"wjoqu91qqlh6i9q";s:16:"{{link_url::21}}";s:15:"31teq58inn46r2f";s:8:"STANDARD";s:15:"26somwkoe5ba42z";s:10:"fa fa-star";s:15:"2skrwr0jeco5d3r";s:3:"€";s:15:"9i3vdnjssu3vv21";s:3:"199";s:15:"tlnocw8r9vwmym1";s:3:"/mo";s:15:"541iqj0hccc8dd3";s:26:"Lorem ipsum dolor sit amet";s:15:"yqual12tvxftjfz";s:352:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-success">FREE</span></li>
+<li><span class="line-through">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:14:"j59ieqvq223e59";s:1:"1";s:15:"u2nf2o9xlnq42or";s:11:"BEST SELLER";s:14:"hr4s8u76kmgj8b";s:5:"star4";s:14:"nwt6aj1k23z7bb";s:16:"{{link_url::21}}";s:15:"7ts9l1s8f7ehoj5";s:8:"BUSINESS";s:15:"3cdyhde7tzf8k7h";s:10:"fa fa-user";s:15:"w1bd3t9jmee73h6";s:3:"€";s:15:"lm8qv61hpfk0fmr";s:3:"299";s:15:"wa02h2hwhu6wko4";s:3:"/mo";s:14:"fyj950yamkf4k2";s:26:"Lorem ipsum dolor sit amet";s:15:"yw9s68sfffdaeqi";s:320:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-info">UNLIMITED</span></li>
+<li>E-Mail Support*</li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:15:"upgau8rq6cm6h1l";s:0:"";s:13:"hxbav0z08nywc";s:0:"";s:15:"73xb3xspbhg8pdr";s:5:"star5";s:14:"wiocw3io1yvk4c";s:16:"{{link_url::21}}";s:15:"fnpyx4rm2kjpifc";s:0:"";s:14:"qyz76p9ew1hil2";s:0:"";s:15:"qaxtayyffnoysax";s:7:"STARTER";s:15:"mx7c5x5zv1jc14x";s:7:"STARTER";s:15:"a2y6pp7qilugx90";s:12:"fa fa-server";s:15:"agyng4nxjv9s6pc";s:12:"fa fa-server";s:26:"agyng4nxjv9s6pc_iconpicker";s:0:"";s:15:"i2lawqs8is9fr7f";s:3:"€";s:14:"pjtat1modx270g";s:3:"€";s:15:"lgy1q4yyfz0s4kd";s:2:"99";s:14:"bbmhnsnqonp2r7";s:2:"99";s:15:"29vaj3ywyee1qe2";s:3:"/mo";s:14:"sa003tuqx824pq";s:3:"/mo";s:15:"ym6zae49kx57md3";s:26:"Lorem ipsum dolor sit amet";s:15:"ngvevw5okkhc1j1";s:26:"Lorem ipsum dolor sit amet";s:15:"7mepw7ykfmfzgd2";s:391:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li><span class="line-through">Analytic Report</span></li>
+<li><span class="line-through">Member Access</span></li>
+<li><span class="line-through color-lightgray">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:15:"of9xad1nt3tgaj0";s:391:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li><span class="line-through">Analytic Report</span></li>
+<li><span class="line-through">Member Access</span></li>
+<li><span class="line-through color-lightgray">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:12:"yne5xabpvt1g";s:0:"";s:15:"aa32k8adzmmsezu";s:0:"";s:14:"blbre4xyz4jo4l";s:0:"";s:15:"47i1h1ad72pp63m";s:0:"";s:17:"47i1h1ad72pp63m_1";N;s:15:"edktmnvmme8zzvi";s:5:"star3";s:14:"892e5lby4e5ssm";s:5:"star3";s:20:"892e5lby4e5ssm_Array";N;s:15:"z3ckpg1dp08d5xs";s:16:"{{link_url::21}}";s:14:"fcw1bctew04cfy";s:1:"#";s:25:"fcw1bctew04cfy_pagepicker";s:0:"";s:21:"fcw1bctew04cfy_target";s:0:"";s:23:"fcw1bctew04cfy_linkText";s:9:"Subscribe";s:15:"qr2qagji0r2rx7g";s:8:"STANDARD";s:13:"ettiqaobe14az";s:8:"STANDARD";s:15:"vai3t9op0573ul7";s:10:"fa fa-star";s:15:"x38crijshnwonnt";s:10:"fa fa-star";s:26:"x38crijshnwonnt_iconpicker";s:0:"";s:15:"ogc4nioopkmm7zt";s:3:"€";s:15:"e8v2hoss7xzekvf";s:3:"€";s:12:"kmtd6tn0krqc";s:3:"199";s:15:"mxn7sqw46j5xwyg";s:3:"199";s:15:"pvnrk11uvotn2hs";s:3:"/mo";s:15:"labp9irxqhrsrqb";s:3:"/mo";s:14:"0qsskgy5f43i55";s:26:"Lorem ipsum dolor sit amet";s:15:"kzb19b260j9l0o0";s:26:"Lorem ipsum dolor sit amet";s:14:"z0b6v4hiczrs36";s:352:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-success">FREE</span></li>
+<li><span class="line-through">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:15:"5zzh3pqhsxy56kw";s:352:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-success">FREE</span></li>
+<li><span class="line-through">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:14:"0d5xr8738uprdd";s:1:"1";s:15:"n0mf1jf103wsp2y";s:1:"1";s:15:"yoziwm0v6yzqdn0";s:11:"BEST SELLER";s:14:"9e74rlmhx6yh7q";s:11:"BEST SELLER";s:16:"9e74rlmhx6yh7q_1";N;s:15:"8wtwa6iaaa46lc9";s:5:"star4";s:14:"61mbz7vp2blacc";s:5:"star4";s:20:"61mbz7vp2blacc_Array";N;s:14:"9oxn661uud0ibv";s:16:"{{link_url::21}}";s:15:"sp93jctc5qpcb3o";s:1:"#";s:26:"sp93jctc5qpcb3o_pagepicker";s:0:"";s:22:"sp93jctc5qpcb3o_target";s:0:"";s:24:"sp93jctc5qpcb3o_linkText";s:9:"Subscribe";s:15:"ompf2sj9e14nzq7";s:8:"BUSINESS";s:14:"9h78wgliqnw6c3";s:8:"BUSINESS";s:15:"7drdujarefjknt3";s:10:"fa fa-user";s:14:"utqj1ffldumnc8";s:10:"fa fa-user";s:25:"utqj1ffldumnc8_iconpicker";s:0:"";s:15:"w49hh52rtmvt2y1";s:3:"€";s:15:"xxyybwl3g58fgu1";s:3:"€";s:15:"u25wvu5buuvr3lf";s:3:"299";s:13:"oq86wp0tnndpk";s:3:"299";s:15:"h54j1uiq07qjxsy";s:3:"/mo";s:15:"ctx36yua17ro76r";s:3:"/mo";s:15:"ywz16nui9nn52qn";s:26:"Lorem ipsum dolor sit amet";s:15:"4q0k095jmg6o1ss";s:26:"Lorem ipsum dolor sit amet";s:15:"9bpgisstzgezwfe";s:320:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-info">UNLIMITED</span></li>
+<li>E-Mail Support*</li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:12:"zwgbvoizjuel";s:320:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-info">UNLIMITED</span></li>
+<li>E-Mail Support*</li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:15:"ifitovdfkku81cv";s:0:"";s:15:"n663bj4d8ux99yl";s:0:"";s:15:"3rk519dr0sm1sf0";s:0:"";s:15:"2fy3qmjixgou0wt";s:0:"";s:17:"2fy3qmjixgou0wt_1";N;s:14:"ufceym1avr8zrh";s:5:"star5";s:15:"xz3u9j6g0gkiz6w";s:5:"star5";s:21:"xz3u9j6g0gkiz6w_Array";N;s:15:"0a8evz4jeij4767";s:16:"{{link_url::21}}";s:14:"yo1490e58k43sg";s:1:"#";s:25:"yo1490e58k43sg_pagepicker";s:0:"";s:21:"yo1490e58k43sg_target";s:0:"";s:23:"yo1490e58k43sg_linkText";s:9:"Subscribe";s:14:"dscpi6253mu1bc";N;s:15:"97agw0ivmobfsnx";N;}s:6:"groups";a:3:{i:0;a:4:{s:5:"ident";s:4:"10_0";s:8:"group_id";i:10;s:11:"group_alias";s:7:"content";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:15:"mx7c5x5zv1jc14x";s:2:"id";i:29;s:5:"alias";s:7:"title_1";}i:1;a:3:{s:4:"uuid";s:15:"agyng4nxjv9s6pc";s:2:"id";i:40;s:5:"alias";s:6:"icon_1";}i:2;a:3:{s:4:"uuid";s:14:"pjtat1modx270g";s:2:"id";i:30;s:5:"alias";s:10:"currency_1";}i:3;a:3:{s:4:"uuid";s:14:"bbmhnsnqonp2r7";s:2:"id";i:31;s:5:"alias";s:7:"price_1";}i:4;a:3:{s:4:"uuid";s:14:"sa003tuqx824pq";s:2:"id";i:32;s:5:"alias";s:8:"period_1";}i:5;a:3:{s:4:"uuid";s:15:"ngvevw5okkhc1j1";s:2:"id";i:36;s:5:"alias";s:11:"priceinfo_1";}i:6;a:3:{s:4:"uuid";s:15:"of9xad1nt3tgaj0";s:2:"id";i:62;s:5:"alias";s:10:"contents_1";}i:7;a:3:{s:4:"uuid";s:15:"aa32k8adzmmsezu";s:2:"id";i:35;s:5:"alias";s:11:"highlight_1";}i:8;a:3:{s:4:"uuid";s:15:"47i1h1ad72pp63m";s:2:"id";i:37;s:5:"alias";s:16:"highlight_text_1";}i:9;a:3:{s:4:"uuid";s:14:"892e5lby4e5ssm";s:2:"id";i:186;s:5:"alias";s:8:"rating_1";}i:10;a:3:{s:4:"uuid";s:14:"fcw1bctew04cfy";s:2:"id";i:34;s:5:"alias";s:6:"link_1";}}}i:1;a:4:{s:5:"ident";s:4:"32_0";s:8:"group_id";i:32;s:11:"group_alias";s:7:"table_2";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:13:"ettiqaobe14az";s:2:"id";i:166;s:5:"alias";s:7:"title_2";}i:1;a:3:{s:4:"uuid";s:15:"x38crijshnwonnt";s:2:"id";i:167;s:5:"alias";s:6:"icon_2";}i:2;a:3:{s:4:"uuid";s:15:"e8v2hoss7xzekvf";s:2:"id";i:168;s:5:"alias";s:10:"currency_2";}i:3;a:3:{s:4:"uuid";s:15:"mxn7sqw46j5xwyg";s:2:"id";i:169;s:5:"alias";s:7:"price_2";}i:4;a:3:{s:4:"uuid";s:15:"labp9irxqhrsrqb";s:2:"id";i:170;s:5:"alias";s:8:"period_2";}i:5;a:3:{s:4:"uuid";s:15:"kzb19b260j9l0o0";s:2:"id";i:171;s:5:"alias";s:11:"priceinfo_2";}i:6;a:3:{s:4:"uuid";s:15:"5zzh3pqhsxy56kw";s:2:"id";i:172;s:5:"alias";s:10:"contents_2";}i:7;a:3:{s:4:"uuid";s:15:"n0mf1jf103wsp2y";s:2:"id";i:173;s:5:"alias";s:11:"highlight_2";}i:8;a:3:{s:4:"uuid";s:14:"9e74rlmhx6yh7q";s:2:"id";i:174;s:5:"alias";s:16:"highlight_text_2";}i:9;a:3:{s:4:"uuid";s:14:"61mbz7vp2blacc";s:2:"id";i:187;s:5:"alias";s:8:"rating_2";}i:10;a:3:{s:4:"uuid";s:15:"sp93jctc5qpcb3o";s:2:"id";i:175;s:5:"alias";s:6:"link_2";}}}i:2;a:4:{s:5:"ident";s:4:"33_0";s:8:"group_id";i:33;s:11:"group_alias";s:7:"table_3";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:14:"9h78wgliqnw6c3";s:2:"id";i:176;s:5:"alias";s:7:"title_3";}i:1;a:3:{s:4:"uuid";s:14:"utqj1ffldumnc8";s:2:"id";i:177;s:5:"alias";s:6:"icon_3";}i:2;a:3:{s:4:"uuid";s:15:"xxyybwl3g58fgu1";s:2:"id";i:178;s:5:"alias";s:10:"currency_3";}i:3;a:3:{s:4:"uuid";s:13:"oq86wp0tnndpk";s:2:"id";i:179;s:5:"alias";s:7:"price_3";}i:4;a:3:{s:4:"uuid";s:15:"ctx36yua17ro76r";s:2:"id";i:180;s:5:"alias";s:8:"period_3";}i:5;a:3:{s:4:"uuid";s:15:"4q0k095jmg6o1ss";s:2:"id";i:181;s:5:"alias";s:11:"priceinfo_3";}i:6;a:3:{s:4:"uuid";s:12:"zwgbvoizjuel";s:2:"id";i:182;s:5:"alias";s:10:"contents_3";}i:7;a:3:{s:4:"uuid";s:15:"n663bj4d8ux99yl";s:2:"id";i:183;s:5:"alias";s:11:"highlight_3";}i:8;a:3:{s:4:"uuid";s:15:"2fy3qmjixgou0wt";s:2:"id";i:184;s:5:"alias";s:16:"highlight_text_3";}i:9;a:3:{s:4:"uuid";s:15:"xz3u9j6g0gkiz6w";s:2:"id";i:188;s:5:"alias";s:8:"rating_3";}i:10;a:3:{s:4:"uuid";s:14:"yo1490e58k43sg";s:2:"id";i:185;s:5:"alias";s:6:"link_3";}}}}s:6:"tstamp";i:1567424849;s:5:"alias";s:11:"pricetable3";s:5:"uuids";a:37:{i:0;s:15:"mx7c5x5zv1jc14x";i:1;s:15:"agyng4nxjv9s6pc";i:2;s:14:"pjtat1modx270g";i:3;s:14:"bbmhnsnqonp2r7";i:4;s:14:"sa003tuqx824pq";i:5;s:15:"ngvevw5okkhc1j1";i:6;s:15:"of9xad1nt3tgaj0";i:7;s:15:"aa32k8adzmmsezu";i:8;s:15:"47i1h1ad72pp63m";i:9;s:14:"892e5lby4e5ssm";i:10;s:14:"fcw1bctew04cfy";i:11;s:13:"ettiqaobe14az";i:12;s:15:"x38crijshnwonnt";i:13;s:15:"e8v2hoss7xzekvf";i:14;s:15:"mxn7sqw46j5xwyg";i:15;s:15:"labp9irxqhrsrqb";i:16;s:15:"kzb19b260j9l0o0";i:17;s:15:"5zzh3pqhsxy56kw";i:18;s:15:"n0mf1jf103wsp2y";i:19;s:14:"9e74rlmhx6yh7q";i:20;s:14:"61mbz7vp2blacc";i:21;s:15:"sp93jctc5qpcb3o";i:22;s:14:"9h78wgliqnw6c3";i:23;s:14:"utqj1ffldumnc8";i:24;s:15:"xxyybwl3g58fgu1";i:25;s:13:"oq86wp0tnndpk";i:26;s:15:"ctx36yua17ro76r";i:27;s:15:"4q0k095jmg6o1ss";i:28;s:12:"zwgbvoizjuel";i:29;s:15:"n663bj4d8ux99yl";i:30;s:15:"2fy3qmjixgou0wt";i:31;s:15:"xz3u9j6g0gkiz6w";i:32;s:14:"yo1490e58k43sg";i:33;s:15:"fnpyx4rm2kjpifc";i:34;s:14:"qyz76p9ew1hil2";i:35;s:14:"dscpi6253mu1bc";i:36;s:15:"97agw0ivmobfsnx";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:6;}',
+162 => 'sourceText',
+),
+),
+);

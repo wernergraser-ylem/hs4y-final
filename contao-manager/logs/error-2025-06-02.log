@@ -1,0 +1,10 @@
+[02-Jun-2025 08:19:20 UTC] PHP Fatal error:  Uncaught Error: Class "_ContaoManager\Contao\ManagerApi\HttpKernel\ApiProblemResponse" not found in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/dist/api.php:25
+Stack trace:
+#0 /var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php(69): Phar::webPhar()
+#1 {main}
+  thrown in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/dist/api.php on line 25
+[02-Jun-2025 08:19:20 UTC] PHP Fatal error:  Uncaught Error: Class "_ContaoManager\Symfony\Component\ErrorHandler\ThrowableUtils" not found in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/vendor/symfony/error-handler/ErrorHandler.php:420
+Stack trace:
+#0 [internal function]: _ContaoManager\Symfony\Component\ErrorHandler\ErrorHandler->handleException()
+#1 {main}
+  thrown in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/vendor/symfony/error-handler/ErrorHandler.php on line 420

@@ -1,0 +1,56 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/easypiecharts/easypiechart.min.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_piechart.css|static';
+?>
+<div class="<?= $this->class; ?> block"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<div class="piechart" id="piechart_<?= $this->id; ?>" data-percent="<?= $this->field('percent')->value(); ?>" style="height:<?= $this->field('size')->value(); ?>px"><span class="prozent"><?= $this->field('label')->value(); ?></span></div>
+	<?= $this->field('headline')->html(); ?>
+	<div class="text"><?= $this->field('text')->value(); ?></div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	function initObserver() 
+	{
+		var objObserver = new IntersectionObserver( function(entries, observer)
+		{
+			entries.forEach(function(entry) 
+			{
+				if (entry.isIntersecting) 
+				{
+					jQuery(entry.target).easyPieChart(
+					{
+						animate: <?= $this->field('duration')->value() == '' ? '500' : $this->field('duration')->value(); ?>,
+						lineWidth: <?= $this->field('linewidth')->value() == '' ? '4' : $this->field('linewidth')->value(); ?>,
+						size: <?= $this->field('size')->value() == '' ? '180' : $this->field('size')->value(); ?>,
+						barColor:'rgba(<?= $this->field('barcolor')->value() == '' ? '0,0,0,0.5' : $this->field('barcolor')->value(); ?>)',
+						trackColor:'rgba(<?= $this->field('trackcolor')->value() == '' ? '0,0,0,0.2' : $this->field('trackcolor')->value(); ?>)',
+						lineCap:'butt',
+						scaleColor: 'rgba(<?= $this->field('barcolor')->value() == '' ? '0,0,0,0.5' : $this->field('barcolor')->value(); ?>)',
+						scaleLength: <?= $this->field('scalelength')->value(); ?>
+					});
+					// stop observing
+					objObserver.unobserve( entry.target );	
+				}
+			});
+		}, {root: null,rootMargin: '0px',threshold: 0.25} );
+		objObserver.observe( jQuery('#piechart_<?= $this->id; ?>')[0] );
+	}
+
+	// check if a revolutionslider exists in page
+	if (jQuery(document).revolution != undefined)
+	{
+		jQuery(document).on('RevolutionSlider.loaded', function (e, params)
+		{ 
+			initObserver();
+		});
+	}
+	else
+	{
+		initObserver();
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

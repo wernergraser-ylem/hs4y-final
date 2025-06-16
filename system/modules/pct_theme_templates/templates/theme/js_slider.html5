@@ -1,0 +1,38 @@
+<?php
+
+// Add the swipe style sheet
+$GLOBALS['TL_CSS'][] = 'assets/swipe/css/swipe.min.css'.(\PCT\SEO::getProtocol() == 'http2' ? '' : '|static');
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'assets/swipe/js/swipe.min.js';
+?>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()  
+{
+    //var e = document.querySelectorAll('.content-slider, .slider-control');
+    jQuery('.content-slider').each(function(i,elem) 
+    {
+	    var config = jQuery(elem).attr('data-config');
+	   	if( config )
+	    {
+		    var menu = jQuery(elem).next('.slider-control');
+		    c = config.split(',');
+		    var options = 
+		    {
+			    'auto': parseInt(c[0]),
+		        'speed': parseInt(c[1]),
+		        'startSlide': parseInt(c[2]),
+		        'continuous': parseInt(c[3])
+		    }
+		    // menu
+		    if ( menu )
+		    {
+			    // replace # with slahs
+			    menu.find('a').attr('href','/');
+			    options.menu = menu[0];
+		    }
+		    new Swipe(elem, options);
+	     }
+      });
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

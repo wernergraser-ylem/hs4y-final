@@ -1,0 +1,147 @@
+/* =============================================================================
+ * ce_highlighted_text
+ * ========================================================================== */
+
+.ce_highlighted_text a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.ce_highlighted_text[data-align="left"] {
+  text-align: left;
+}
+
+.ce_highlighted_text[data-align="center"] {
+  text-align: center;
+}
+
+.ce_highlighted_text[data-align="right"] {
+  text-align: right;
+}
+
+/* data-highlighted default */
+.ce_highlighted_text span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, var(--accentColor) 0, var(--accentColor) 100%);
+  background-size: 0 80%;
+  display: inline;
+  background-position: left 70%;
+  transition: background-size 0.4s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+/* data-speed */
+.ce_highlighted_text[data-speed="ani-fast"] span[data-highlighted="true"] {
+  transition: background-size 0.3s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+.ce_highlighted_text[data-speed="ani-slow"] span[data-highlighted="true"] {
+  transition: background-size 1.4s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+.ce_highlighted_text[data-speed="ani-none"] span[data-highlighted="true"] {
+  transition: none;
+  background-size: 100% 80%;
+}
+
+/* data-color */
+.ce_highlighted_text[data-color="accent-color"] {
+  color: var(--accentColor);
+}
+
+.ce_highlighted_text[data-color="second-color"] {
+  color: var(--secondColor);
+}
+
+.ce_highlighted_text[data-color="white"] {
+  color: #ffffff;
+}
+
+.ce_highlighted_text[data-color="black"] {
+  color: #000000;
+}
+
+.ce_highlighted_text[data-color="light-gray"] {
+  color: #b4b4b4;
+}
+
+.ce_highlighted_text[data-color="dark-gray"] {
+  color: #7f7f7f;
+}
+
+.ce_highlighted_text[data-color="custom1"] {
+  color: var(--customColor1);
+}
+
+.ce_highlighted_text[data-color="custom2"] {
+  color: var(--customColor2);
+}
+
+/* data-color-highlighted */
+.ce_highlighted_text[data-color-highlighted="accent-color"] span[data-highlighted="true"] {
+  color: var(--accentColor);
+}
+
+.ce_highlighted_text[data-color-highlighted="second-color"] span[data-highlighted="true"] {
+  color: var(--secondColor);
+}
+
+.ce_highlighted_text[data-color-highlighted="white"] span[data-highlighted="true"] {
+  color: #ffffff;
+}
+
+.ce_highlighted_text[data-color-highlighted="black"] span[data-highlighted="true"] {
+  color: #000000;
+}
+
+.ce_highlighted_text[data-color-highlighted="light-gray"] span[data-highlighted="true"] {
+  color: #b4b4b4;
+}
+
+.ce_highlighted_text[data-color-highlighted="dark-gray"] span[data-highlighted="true"] {
+  color: #7f7f7f;
+}
+
+.ce_highlighted_text[data-color-highlighted="custom1"] span[data-highlighted="true"] {
+  color: var(--customColor1);
+}
+
+.ce_highlighted_text[data-color-highlighted="custom2"] span[data-highlighted="true"] {
+  color: var(--customColor2);
+}
+
+/* data-highlighted-bg */
+.ce_highlighted_text[data-highlighted-bg="accent-color"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, var(--accentColor) 0, var(--accentColor) 100%);
+}
+
+.ce_highlighted_text[data-highlighted-bg="second-color"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, var(--secondColor) 0, var(--accentColor) 100%); /* korrigiert von var(--socondColor) */
+}
+
+.ce_highlighted_text[data-highlighted-bg="white"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, #ffffff 0, #ffffff); /* korrigiert fehlendes 100% und ; */
+}
+
+.ce_highlighted_text[data-highlighted-bg="black"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, #000 0, #000 100%);
+}
+
+.ce_highlighted_text[data-highlighted-bg="light-gray"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, #b4b4b4 0, #b4b4b4 100%);
+}
+
+.ce_highlighted_text[data-highlighted-bg="dark-gray"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, #7f7f7f 0, #7f7f7f 100%);
+}
+
+.ce_highlighted_text[data-highlighted-bg="custom1"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, var(--customColor1) 0, var(--customColor1) 100%);
+}
+
+.ce_highlighted_text[data-highlighted-bg="custom2"] span[data-highlighted="true"] {
+  background-image: linear-gradient(to right, var(--customColor2) 0, var(--customColor2) 100%);
+}
+
+/* isInViewport */
+.ce_highlighted_text.isInViewport span[data-highlighted="true"] {
+  background-size: 100% 80%;
+}

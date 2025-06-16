@@ -1,0 +1,1708 @@
+### 5.1.0
+Fixed: Country select: Replaced deprecated getCountry (#1331)
+Update: API: Rebuild the update, insert, delete logic (#1328)
+Update: Replaced hasAccess with core permissions (#1317)
+Update: Replaced getFrontendUrl with url_generator (#1316)
+Update: Minor PHP8 update (#1330)
+Update: Minor code updates (#1329)
+
+### 5.0.19
+Fixed: Check if root page is published and in time scope when creating the sitemap urls (#1322)
+Update: Minor code updates (#1323)
+
+### 5.0.18
+Added: API: getSourceData Hook to manipulate the source data array of an API import (#1319)
+Fixed: Wrong version number in version 5.0.17
+Update: Removed last deprecated parts of CEs plugin management (#1315)
+Update: Minor code updates (#1320)
+
+### 5.0.17
+Fixed: Save and edit in tl_pct_customelement_filter tables did not work correctly under Contao 5.3 (#1312)
+Update: Register "Elementset library"-page as backend key when pct_theme_settings module is active (#1310)
+Update: Register "Grid preset"-page as backend key when pct_autogrid module is active (#1310)
+Update: Minor code updates (#1311)
+Update: Minor code updates related to POST-filter feature (#1311)
+
+### 5.0.16
+Fixed: Avoid event registration under Contao 4.13 (#1307)
+Fixed: API Import: Insert statement did not recognize multidimensional arrays (#1306)
+Fixed: Path to templates folder should not be relative to class folder (#1308)
+Update: Kickstart /contao/dca/FILES (#1304)
+Update: Optimize "database update check" logic (#1305)
+
+### 5.0.15
+Fixed: Support contao.sitemap event to append sitemap entries under Contao 5.3 (#1300)
+Fixed: Backend filters and search did not work correctly (#1299)
+Update: Avoid COLLATE in "database update check" logic (#1298)
+Update: Added global variable (flag): $GLOBALS['PCT_CUSTOMCATALOG']['SETTINGS']['disableDatabaseUpdateCheck'] to bypass the backend database update check (#1302)
+
+### 5.0.14
+Fixed: SelectDB cache key must be unique (#1296)
+
+### 5.0.13
+Update: SelectDB attribute now uses options_callback for fetching values (#1291)
+Update: Minor code updates (#1290)
+Update: Updated operation buttons for Contao 5 (#1294)
+
+### 5.0.12
+Fixed: DcaPicker dependencies for Contao 4.13, Contao 5.3 (#1284)
+Fixed: Remove fields without DCA sql definition from database update check (#1287)
+Update: Filter: Combiner: Added more definition values for further identification (#1285)
+Update: Minor code updates (#1286)
+
+### 5.0.11
+Fixed: Added id-key in select filters and select filter templates (#1278)
+Fixed: Query combiner and Query-section-wrappers where skipped in query building routine (#1280)
+Update: Set tl_pct_customcatalog as ctable of tl_pct_customelement to include data in undo date (#1282)
+Update: Minor code updates (#1281)
+
+### 5.0.10
+Fixed: Prevent Array to String conversion in wildcard values (#1273)
+Fixed: Replaced deprecated Controller::replaceInsertTags call in DcaHelper class (#1276)
+Update: Minor PHP8 update (#1273)
+Update: Show CustomCatalog related backend messages to admins only (#1275)
+Update: Added CustomElement widget backend wildcard output (#1274)
+
+### 5.0.9
+Fixed: Hooks: prepareField, getOptionFieldDefinition Hook did not loop through all callbacks (#1270)
+Update: Alias: Changed sql definition to tinytext under Contao 4.13 and 5.3 (#1268)
+
+### 5.0.8
+Fixed: PCT\CustomCatalog\API\Factory must not extend Contao\Model (#1263)
+Fixed: InsertTags: Controller::replaceInsertTags is deprecated (#1266)
+Update: Allow optional fields for files attributes (#1265)
+Update: SQL: char(1) fields: Wrong version_compare lead to wrong sql field definition under Contao 4.13 (#1264)
+ 
+### 5.0.7
+Fixed: Toggle feature under Contao 4.13 did not work correctly (#1261)
+Update: Delete unsaved entries via resiveTable hook (#1260)
+
+### 5.0.6
+Fixed: CustomCatalog::prepareDetailsLinks() generateFrontendUrl method does not exist in Contao 5.3 anymore (#1257)
+Removed: Deprecated HashInsertTagsHelper class (#1255)
+Update: Minor PHP8 update (#1256)
+
+### 5.0.5
+Update: Support Contao darkmode (#1252)
+Update: Backend icons (#1253)
+
+### 5.0.4
+Fixed: Backend filtering, search for custom filter fields like pagetree, selectdb attribute (#1249)
+
+### 5.0.3
+Fixed: A php error in AttributeCallback renderCallback logic when processing optional fields (#1245)
+Fixed: Pagetree attribute: generateFrontendUrl method does not exist in Contao 5.3 anymore (#1244)
+Fixed: Missing labels in backend filters for attributes using foreignKey setting (#1243)
+Fixed: Missing rootPaste button in mode 5,5.1 (#1241)
+Fixed: Backend filtering in multilingual configurations (#1240)
+Update: Removed TL_ASSETS call in customcatalog_filter_range, customcatalog_filter_datepicker templates (#1246)
+Update: Added filter caching for custom backend filter methods (#1242)
+
+### 5.0.2
+Fixed: VERSION error in BackendIntegration unter Contao 5.3 (#1238)
+Fixed: Deprecated Controller::replaceInsertTags call (#1238) 
+Fixed: Alias: Wrong version_compare lead to wrong sql field definition under Contao 4.13 (#1236)
+Fixed: Missing backend fields in attribute settings (#1237)
+Fixed: Missing language reference when saving a new language record (#1235)
+
+### 5.0.1
+Fixed: "Base table view not found" error when activating a new configuration for a whole new table (#1231)
+Fixed: TL_MODE error in InstallerHelper under Contao 5.3 (#1232)
+Update: Improved the database check in the backend (#1231)
+
+### 5.0.0
+Added: Filter cache for heavy load filters (page tree etc.) (#1205)
+Fixed: Reimplement "renderImageAttribute" (#1213)
+Fixed: Backend search filter did not work correctly (#1199)
+Fixed: Extended tables: Skip fields with the same alias to avoid duplicate field outputs (#1197)
+Fixed: Missing ce_TYPE class in wrapper output (#1202)
+Update: Rebuild and simplify the auto-completer feautre and template (#1226)
+Update: Removed CDATA from scripts (#1200)
+Update: Reduced cronjobs (#1204)
+Update: Support Contaos new toggle feature (#1214)
+Update: General Contao 5 compatibility (#1188)
+Update: Minimum required CustomElements version is now 5.0.0 (#1188)
+Update: Text filter: Strict mode will not combine search queries with AND anymore unless the search mode is not fuzzy (#1192)
+Update: Skip existing fields in existing tables that already have a DCA inputType defined to avoid duplicated backend output (#1197)
+Update: Support "isBlankOption" key and do not show counter for blank option (#1228)
+Update: Multilanguage class methods are now static (#1190)
+Update: Rebuild the DCA caching and DCA file support. DCA files are now created with the whole DCA array to allow Contao to cache the file (#1189)
+Update: Rebuild the database management to support database updates in the backend under Contao 5
+Added: customelement_attr_tags_include_catalog template (#1198)
+Added: customelement_attr_select_include_catalog template (#1198)
+Added: Geolocatoin filter: Input field for Google-/OSM-key (#1216)
+Removed: Group-sets feature (#1172)
+Removed: Contao 4.9 compatibility (#1188)
+Removed: Include catalog attribute feature. The same feature can be archived via tags or select-database attributes (#1198)
+Removed: customcatalog_default2 template (#1192)
+
+### 4.4.22
+Fixed: Content elements in child tables were not listed in order (#1182)
+Fixed: Missing label for tl_module.customcatalog_imgSize (#1181)
+Udpate: Filter: Geoloaction: Write log in debug mode only (#1183)
+Update: General PHP8 updates (#1184)
+
+### 4.4.21
+Fixed: Empty id="" in attribute templates (#1178)
+Update: MariaDB sill uses length in integer fields (#1179)
+
+### 4.4.20
+Fixed: Pass the attribute alias instead of the generic field name to the rendering methods (#1175)
+Fixed: Rateit attribute: Did use the deprecated session object (#1176)
+Update: Integer fields sql without length definition under mysql8 (#1174)
+Update: Changelog for 4.4.19
+Update: General PHP8 updates (#1171)
+Update: General code updates (#1173)
+
+### 4.4.19
+Fixed: Pagetree attribute, multiple: Backend filter did not work correctly (#1168)
+Update: Include the cssID and css classes in the {{customcatalog::...::html}} inserttag (#1166)
+Update: Support {{customcatalog::...::label}} flag in inserttag to return the label of a given value (#1164)
+Update: Minor code updates (#1165)
+Update: General PHP8 updates (#1163)
+Update: Use CustomElements image processing routines (#1169)
+Update: Reader pages without a base-language entry and no fallback will return 404 now (#1167)
+Removed: AttributeCallbacks::renderAttributeImage methode (#1169)
+
+### 4.4.18
+Update: General PHP8 updates (#1160)
+
+### 4.4.17
+Fixed: "Edit config" button was missing in list view (#1154)
+Update: Reduce included jquery ui themes (#1155)
+Update: customcatalog_filter_datepicker load jquery-ui from local source (#1156)
+Update: PHP Warnings (#1153)
+Update: Use attribute template when rendering an attribute via inserttag (#1158)
+
+### 4.4.16
+Fixed: Missing DCA information for extended tables in Contao Manager database updater (#1146)
+Update: Quickmenu: Do not render in Contao dev mode (#1150)
+Update: Create real DCA file for extended tables to pass DCA information to the Contao Manager (#1146)
+Update: PHP Warnings (#1145)
+Update: General code improvements (#1148)
+
+### 4.4.15
+Fixed: Missing title tag in image attribute (#1131)
+Fixed: Extended tables DCA did not merge correctly with default DCA array unter PHP8.1 due to changes in PHPs array_merge_recursive (#1134)
+Fixed: Unknown variable in FilterFactory::findPublishedById (#1137)
+Update: Include dcaconfig.php in post processing (#1136)
+Update: Set DCA list > sorting > fields to "id" when empty (#1138)
+Update: Reset the opcache in InstallHelper to minimize missing information due to caching (#1142)
+Update: General PHP8 updates (#1134)
+Update: General code updates (#1137)
+
+### 4.4.14
+Fixed: Missing translated labels (#1129)
+
+### 4.4.13
+Fixed: Alias: Custom alias fields did overwrite attribute object in save_callback (#1127)
+Update: Handle custom translations of fields in extended tables more convenient (#1125)
+
+### 4.4.12
+Fixed: Quickmenu: List links were generated with act-parameter and lead to wrong backend link (#1122)
+Update: Respect the "show published/unpublised" preview setting (#1121)
+Update: Respect reader modules in preview setting (#1121)
+Update: Minor PHP8 updates (#1120)
+Update: Quickmenu: Minor PHP8 updates (#1119)
+
+### 4.4.11
+Fixed: The inserttag cc_url resolved to the wrong entry when using ids and an alias field in the CustomCatalog configuration (#1115)
+Fixed: Frontend preview to published elements feature (#1116)
+Update: Minor PHP8 and Contao namespace updates (#1117)
+
+### 4.4.10
+Fixed: Return value of translatedValue Hook is now a string and should be checked via empty method (#1113)
+
+### 4.4.9
+Fixed: Do not change collation of blobs (#1106)
+Fixed: PHP syntax issue in Filter Pagetree (#1109)
+Update: Replaced deprecated Contao methods (#1108)
+Update: General PHP8 updates (#1107)
+Update: Added Geolocation->findRecordsAroundAddress method (#1110)
+
+### 4.4.8
+Fixed: Do not change the collation of blob NULL fields (#1106)
+
+### 4.4.8
+Fixed: Filter module: Redirect url on POST submit had wrong url after changing to PageModel::getFrontendUrl (#1096)
+Fixed: Image attributes: Meta data from file structre has been ignored due to strict overwriteMeta setting (#1101)
+Fixed: Routing error in filter formular with tags filters (#1099)
+Update: Quickmenu link logic and session class (#1100)
+
+### 4.4.7
+Fixed: Some individual attribute settings did not load correctly due to type error in variable $strTyp(e) (#1092)
+Update: Geolocation attribute: Convert coordinates using floatval (#1094)
+Update: Minor PHP8 updates (#1093, #1098)
+
+### 4.4.6
+Fixed: Session->getData error when resettings frontend filters (#1089)
+Update: Minor code updates and replace for deprecated methods (#1090)
+
+### 4.4.5
+Fixed: CustomElement attribute: tl_pct_customelement_vault base table view error when deleting entries (#1084)
+Fixed: Respect strict filters correctly (#1086)
+Update: Check if dca-cache folder exists before purging it (#1085)
+Update: Minor code updates and replace for deprecated methods (#1087)
+
+### 4.4.4
+Fixed: Changed tl_module.customcatalog_template default value to customcatalog_layout (#1081)
+Update: Applies overwriteMeta changes since 4.13 for image attribute (#1082)
+
+### 4.4.3
+Fixed: array_key error in InstallerHelper (#1078)
+
+### 4.4.2
+Fixed: Missing backend options in attribute settings (#1074)
+Fixed: Template: customcatalog_filter_geosearch did not update the value of the filter correctly (#1075)
+Update: Added a workaround for list mode 5, 5.1 to allow limitations via the backend limit filter (#1073)
+
+### 4.4.1
+Fixed: Alias attribute: Format field was not formatted correctly (#1070)
+
+### 4.4.0
+New: Support for Contao 4.13
+New: Alias attribute: Extended alias logic options (#980)
+New: Alias attribute: Build custom alias-logics with field inserttags (#1019)
+New: Include attribute now allows to include foreign custom catalogs (#979)
+New: API Job "relations" for mapping values (#988)
+New: Support direct linking via DCApicker (#992)
+Change: Alias attribute: SQL to "binary not null default" under Contao 4.9 (#968)
+Change: tl_pct_customelement_filter.min_value,max_value,steps SQL field type to char(10) to allow digits (#964)
+Change: Changed .alias fields to varchar(255) BINARY NOT NULL default '' (#1060)
+Fixed: Filter: Text missing return value in searchSelect (#972)
+Fixed: Filter::getValueCount return if varValue is empty (#1061)
+Fixed: tl_pct_customelement.enableDatabaseUpdateCheck is now only trigged by onsubmit_callback (#1053)
+Fixed: Country attribute: Check that value is an array before rendering (#1058)
+Fixed: Fixed a misspelling in "hideDatabaseUpdateAlertbox" (#1052)
+Fixed: Do not change the field collaction of alias atttributes when they are utf_bin already (#1059)
+Fixed: "activeRecord" objects should now be type of ContentModel for ContentElement instances (#986)
+Update: Changed min. CustomElements requirement to 4.0.0
+Update: CustomElement attribute: Support CustomElement 4.4.0 (#1031)
+Update: Rebuild database update processes for Contao 4.4, 4.9 and higher (#966)
+Update: tl_pct_customelement_filter.min_value,max_value,steps moved to core DCA file (#964)
+Update: Use ContentModel class for activeRecords for ContentElements (#986)
+Update: Templates: customcatalog_filter_geosearch, _filter_range now use range input slider instead of jquery ui slider (except mode between) (#1014, #1057)
+Update: Template: customcatalog_filter_countryselect is now sorted by deafult (#1015)
+Update: General PHP8 improvements (#1051)
+Update: Replaced deprecated Contao methods (#1023)
+Removed: Deprecated Contao < 3.5 code (#1051)
+Removed: LIGHT-Version (#1054)
+
+### 4.3.15
+Fixed: Multilanguage::getActiveFrontendLanguage() must be static (#1047)
+Fixed: Remove default setting for tl_pct_customcatalog_api.type (#1048)
+Update: Workaround for tl_pct_customcatalog_job.action field Contao selector bug (#1046)
+
+### 4.3.14
+Fixed: Minor code issues under PHP8 (#1043)
+Fixed: Select-Db attribute: Only use foreignKey when key field is the id-field of the source table (#1044) 
+Fixed: autocomplete.html5: Encode entities of field value of data-value attribute (#1040)
+Update: Range filter: Allow equal values for mode "between" (#1041)
+Update: Range filter: Added mode "equals" (#1041)
+
+### 4.3.13
+Fixed: Missing cc-related backend settings (filter, search, sort) in attribute settings (again) (#1036)
+Fixed: Select database attribute did not apply backend filtering in extended tables (#1035)
+Fixed: Geolocation attribute: Wrong address variable name in openstreetmap logic (#1034)
+Fixed: Link title text of "Edit config" button did not replace the placeholder with the config id (#1033)
+Update: Added $GLOBALS['PCT_CUSTOMCATALOG']['findByBackendModule'] config variable to set references from Contaos do-parameter to a table (#1035)
+
+### 4.3.12
+Fixed: List-label feature did not recognize Inserttag-parameters under Contao >= 4.9.17 (#1027)
+Fixed: Missing cc-related backend settings (filter, search, sort) in attribute settings (#1028)
+Fixed: Pagetree attribute: Non-multiple field in combination with root preselection caused a default value error when creating a new element (#1030) 
+Update: Quickmenu has now access level admin or tl_pct_customcatalog.create (#1029)
+
+### 4.3.11
+Fixed: Set default value for tl_pct_customcatalog.mode to "new" (#1021)
+Update: Get the current table name in general callbacks via getTable method (#1024)
+
+### 4.3.10
+Fixed: Quickemnu overrides backend module title (#1013)
+Fixed: Text filter, AutoComplete did not recognize multilingual tags correctly (#1016)
+Fixed: Files, Gallery Attribute: Switch from multiple selection to single value selection might cause a validator error (#1016)
+Fixed: SelectDb-Attribute did not load correctly when extending tl_member (#1018)
+
+### 4.3.9
+Fixed: Missing table information in CC-load_callbacks when triggered from the front end (#1010)
+Fixed: Reader module did not respect the changes made in issue #997 yet (#1011)
+
+### 4.3.8
+Fixed: Multilanguage entries with same alias have not been added to the sitemap correctly (#999)
+Fixed: Multilanguage lists without an active language filter did not filter correctly when DCA caching is active and when running out of the session time scope (#1000)
+Fixed: AttributeFactory::findByDca did not find CustomElement attributes correctly inside CCs CustomElement widgets attribute (#998)
+Fixed: Bypass DCA Cache for CustomCatalogs in mode "existing" (#1002)
+Fixed: Bypass DCA Cache for backend database update logic (#1005)
+Fixed: CC extend mode did not append all palettes correctly (#1008)
+Update: mod_customcatalog: The CustomCatalog objects ->render() methode is now triggered in the template, not in the module anymore to allow individual manipulations before rendering the CustomCatalog (#997)
+Update: Attributes extending tl_member now have eval.feEditable, eval.feViewable, eval.feGroup "personal" by default (#1003)
+
+### 4.3.7
+Fixed: tl_pct_customcatalog_api list published / unpublished visible status (#990)
+Fixed: Protection attribute: Backend filtering has been applied even when there was no backend related protection in use (#993)
+Fixed: Wrong hasAccess permissions check for edit_config button (#994)
+Fixed: Bypass DCA Cache in install tool (#995)
+Update: Do not render "published" field when user has not the required field permissions (#987)
+Update: Select database filter: Support multiple selectdb attributes (#991)
+
+### 4.3.6
+Fixed: Missing border-left-style in checkbox attribute styling when checkbox is a selector (#981)
+Fixed: Selector checkboxes did not work correctly with active DCA cache (#982)
+Fixed: Text: Missing backend filter options (#984)
+Update: RateIt attribute: field set to "doNotCopy" (#983)
+
+### 4.3.5
+Fixed: Dynamic child tables did not load correctly when DCA caching is active (#976)
+Fixed: PCT\CustomElements\Filters\Text::searchSelect missing return value (#972)
+Update: Enable filter "Select, single" to be used with attribute "Select, multiple checkbox" (#977)
+
+### 4.3.4
+Fixed: CustomElement attribute: Wrong attribute reference might occure when using the same attribute alias and referenced CustomElement over multiple catalogs (#974)
+Fixed: DCA tl_module.customcatalog_table sill had an outdated template as default value defined (#973)
+
+### 4.3.3
+Fixed: Added rateit[value], rateit[counter] to ignored option fields (#965)
+Fixed: Skip fields without sql definition to avoid unwanted "update database" alerts (#967)
+Fixed: Skip non-CustomCatalog tables in sql CREATE process (#969)
+
+### 4.3.2
+Fixed: Wrong collation change under Contao 4.9 (#961)
+Fixed: Cron jobs under Contao 4.9 (#960)
+Update: Rebuild and simplify the cron job managemant (#960)
+
+### 4.3.1
+Fixed: Wrong defaultValue field in [text] attributes (#956)
+Fixed: Check if table exists before applying backend filters in post DCA processessing (#957)
+Update: Backend styling for selector checkboxes under Contao 4
+Update: Minor code updates
+Update: Check if pct_tabletree_widget is active module in TableModule, ModuleList
+Update: tl_pct_customcatalog.sectionAlias set to unique and doNotCopy to avoid duplicate backend alias (#954)
+Update: Purge Contao cache only when a new table has to be created (#958)
+
+### 4.3.0
+New: Checkbox filter template: customcatalog_filter_checkbox.html5 (#925)
+New: Pagetree attribute: Added page selection (#948)
+New: customcatalog_filter_select_sorted template (#947)
+Fixed: The "custom selection" (tl_module.multiSRC) field did not respect the new id-based table selection (#949)
+Added: Checkbox filter: Support conditions (#925)
+Added Filter->bypassActiveFilterCheck flag (#951)
+Update: Reenable the custom order for Contao >= 4.9.4 (#950)
+Update: Order the list by the "custom selection" only when no order field and no custom order is applied to the list (#949)
+Update: List module: "filter active language" is now no longer handled as an active filter to respect the "show all entries on empty filter" option (#951)
+Update: Minor backend stylings
+
+### 4.2.3
+Update: Added default value "30" for tl_module.customcatalog_perPage field (#943)
+Update: Check unwanted base entries logic also against standalone language entries in reviseTable hook (#944)
+
+### 4.2.2
+Fixed: "Update base entries" job created unwanted base entry references (#934)
+Fixed: "Unknown inserttag" system log for CC-related inserttags in list label when field value is empty (#932)
+Fixed: Protection attribute was not strict enough on user and user_group level when used in combination with each other (#938)
+Fixed: Backend database updater: "purgeSymfonyCache" is not a protected method anymore under Contao 4.9
+Fixed: CustomElement widget: User being logged out on ajax requests (#941)
+Update: Pass an "activeRecord" object to the list label function (#933)
+Update: Moved the "create base language" logic to the tl_pct_customcatalog.onsubmit_callback (#935)
+Update: Updated "Create base language" maintenance job (#936)
+Update: Added logic to remove unwanted base entries to reviseTable hook (#934)
+Update: Support "?html" or "?html=TEMPLATE" parameter in list label inserttags e.g. {{myField?html}} (#937)
+Update: Backend database updater: No need to purge the whole cache folder under Contao 4.9
+Remove: "Update base language" cronjob (#935)
+
+### 4.2.1
+Fixed: Load required data containers in DCA cache post processing (#926)
+Fixed: Pagetree filter: Missing reset feature for manual filtering (#924)
+Fixed: Remove "edit config" operation for users without permission when DCA cache is active (#928)
+Fixed: [prepareField] kook must be trigged in post cache processing (#929)
+Fixed: Backend database updater must clear the whole Symphony cache folder under Contao 4.9 (#930)
+Fixed: Missing translations for palettes when using DCA cache
+Update: Simplify filter condition logic (#927)
+Update: Geolocation attribute: Added optional fields to contaos rights
+Update: RateIt attribute: Added optional fields to contaos rights
+
+### 4.2.0
+Added: API Hook: $GLOBALS['CUSTOMCATALOG_HOOKS']['getRecords'] to manipulate the database query when fetching the records for the API process (#916)
+Added: Pagetree filter: Support manual filtering (#921)
+Fixed: Missing translation in DCA global_operation when DCA Cache is active (#910)
+Fixed: "Unknown inserttag" system log for CC-related inserttags in list label (#918)
+Fixed: Purge DCA Cache oncopy,onsubmit,oncut for multilanguage tables to see changes take effect immediately (#919)
+Fixed: Backend users had no right to edit comments (#920)
+Update: Backend database update message logic improved (#912)
+Update: Purge Symphony cache on tl_pct_customcatalog.ondelete (#913)
+Update: Purge Symphony cache on tl_pct_customelement.ondelete (#913)
+Update: Show tl_module.customcatalog_sqlWhere,customcatalog_sqlSorting in API-Starter module to customize API queries (#915)
+Update: API-Starter: Do not allow custom sql via input parameters (#917)
+Update: API-Starter: Allow custom sql via input paramter via $GLOBALS['PCT_CUSTOMCATALOG_API']['sql_where'][-INPUT-KEY-], $GLOBALS['PCT_CUSTOMCATALOG_API']['sql_sorting'][-INPUT-KEY-] (#917)
+Update: Minor code updates
+Change: Moved purgeFileCache method to Maintenance class (#914)
+
+### 4.1.1
+Added: System settings: Disable DCA cache (#902)
+Fixed: Bypass DCA cache on backend ajax requests (#901)
+Fixed: Custom backend filters must be applied in post DCA cache processing (#904)
+Update: Check if json cache file exists before calling the delete method
+Update: Added placeholder texts for tl_module.customcatalog_sqlWhere, sqlSorting with examples
+
+### 4.1.0
+New: DCA caching (#878)
+New: API: Remapping of target fields for exports (#892)
+New: API: Support custom references (remapping keys) by API config definition array: $GLOBALS['PCT_CUSTOMCATALOG']['API'][MY-API]['reference'] (#892)
+Fixed: Clear the deprecated path to customelement_attr_rateit template
+Fixed: The [tl_pct_customcatalog_api.mode] field might be hidden for the [Standard] API under Contao 4 (#891)
+Fixed: Pagetree filter: Elements on child pages did not show up when filter is set to Inherit and active page is parent page (#897)
+Fixed: Pagetree filter: Did not respect the "show all feature" in list modules (#897)
+Added: System settings to enable debug mode (#898)
+Update: API Job: Files -> toPath: Support incoming binary, uuid data correctly and convert them to file path (#893)
+Update: API: Added the [tl_pct_customcatalog_api.mode] field to API [Standard] palette and hide mode field when selected API has no modes (#891)
+Update: API: Track column count difference "error" only when debug mode is on
+Update: Maintenance: The "Base record update" job now creates base records for existing CC entries even when there is no language entry jet (create real base record logic) (#894)
+Update: Minor code updates
+
+### 4.0.7
+Fixed: Rebuild the Quickmenu injection to make it more reliable under Contao 4.9 and later (#887)
+Update: Removed the "injectBelow" feature under Contao 4.9 because backend modules will be sorted alphabetically by Contao (#887)
+Update: Increased the size of the hitarea of the Quickmenu ui-toggler button (#887)
+
+### 4.0.6
+Fixed: Missing "Filter by active language" option in reader modules (#883)
+Fixed: Missing information in backend updater page due to new session logic under Contao 4 (#884)
+Fixed: Missing DCA information in manageable table configurations for existing tables (#885)
+
+### 4.0.5
+Fixed: tl_pct_customcatalog_language.source should be varchar(128) matching max char size of table names (#876)
+Fixed: A php error due to numeric table names in getSearchablePages Hook (#880)
+Update: New cron job execution logic (TL_CRON) (#877)
+
+### 4.0.4
+Update: Filter mode 5,5.1 with sorting root (fallback for DCA under Contao lte 3.5). (Has no effect on hte Contao 4.4) (#873)
+Removed: Deprecated mode 5,5.1 multilanguage "hack" (#874)
+
+### 4.0.3
+Fixed: Missing ->numRows value due to rebuild on Model in #863 lead to missing image output (#870)
+Fixed: TableCustomCatalogApi: Class error due to "\\" 
+
+### 4.0.2
+Fixed: Disconnected filtersets and attribute selections in modules due to id values (#865)
+Update: Include orderSRC_ fields in visible fields when their parent attribute (gallery, files) is selected (#867) 
+Removed: TableModule::getChildCustomCatalogs (never used)
+
+### 4.0.1
+Fixed: Missing "active record" information in attributes (#863)
+Update: Rebuild on using ContaoModel class instead of DatabaseResultHelper/MysqliResultHelper class for database records (#863)
+Removed: DatabaseResultHelper class (#863)
+Removed: MysqliResultHelper class (#863)
+
+### 4.0.0
+New: Sitemap/search-index source field in configuration to allow custom sitemap urls per entry (#849)
+New: Select-Database attribute can now be multiple (#851)
+Fixed: Use the database update logic for the install tool in sqlCompileCommands Hook since Contao 4.4 started to use this method
+Added: tl_pct_customcatalog.sitemapField (#849)
+Update: Next Contao 4.9 LTS compatibility (#753)
+Update: Rebuild on Contao namespaces (#850)
+Update: New Quickmenu logic for Contao 4.9 (#852)
+Change: tl_module.customcatalog does now store the CC id instead of the tablename (#861)
+Removed: Contao 3.5 compatibility in certain parts
+
+### 3.3.3
+Fixed: Update and rebuild the pagetree filter logic (#855)
+Fixed: Pagetree attribute: Backend filter did not reset unter Contao 4.4 (#856)
+Update: Remove the strict declaration of \DataContainer class in DCA callbacks (#857)
+
+### 3.3.2
+Fixed: CustomElement attribute: Load DCA in filepicker ajax and pass the CC table to CE as accessible table (#847)
+
+### 3.3.1
+Fixed: Hyperlink attribute: Globe icon has been rendered twice under Contao 4.4 (#796)
+Fixed: Hyperlink attribute: Some compatibility issues due to the new picker under Contao 4.4 (#796)
+Update: CustomElement attribute: Performance update for file picker DCA creation, only processed when actually working in a file picker (#845)
+Update: CustomElement attribute: Backwards compatibility to Contao 3.5 in Filepicker DCA. The whole feature is only needed in Contao lte 3.5 due to the new picker structure unter Contao 4  (#845)
+Update: {{cc}} and {{cc_url}} inserttags now expect the 2nd parameter to be the reader page id or alias e.g. {{cc::PAGE-ID-OR-ALIAS::ID-OR-TABLE::ENTRY-ID-OR-ALIAS}}
+Update: Minor PHP 7.3 update
+
+### 3.3.0
+Added: New inserttag: {{cc::ID-OR-TABLE::ENTRY-ID-OR-ALIAS}}, {{cc_url::ID-OR-TABLE::ENTRY-ID-OR-ALIAS}} (#831)
+Added: "Hide in sitemap" - feature for list modules. Using the tl_module.hardLimit field as indicator. (#834)
+Added: Create a new base record when coming from a standalone language record and connect the base record to the language record (#839)
+Fixed: Contao 3.5: Entries where not filted by language
+Fixed: Contao 4: An unwanted duplicated record has been created when the automatic language switch creates a new language record (#838)
+Fixed: Contao 4: Updated the reviseTable session logic when creating new records on the fly (#838)
+Update: Respect the "custom sql conditions" in list modules in sitemap, search index logic (#832)
+
+### 3.2.1
+Fixed: Filter RelatedItems: Mode "related" had a logic issue and did not recognize the correct source and ran into a sql error due to wrong field selection (#826)
+Fixed: Misspelling of a variable in Geolocations attribute
+Fixed: Geolocaton filter: Append the " ORDER BY distance" part after the optional "published" query part.
+
+### 3.2.0
+Fixed: Reorder the root ids in Mode 5 and multilanguage (#822)
+Fixed: A php7 count error in a multilanguage list view 
+Fixed: An issue that CC could not extend the data container array of an existing table correctly
+Added: Support inserttags in selectdb WHERE condition (#824)
+Update: Support multiple CC configurations to extend existing tables (#823)
+Update: Show tl_module.customcatalog_filter_actLang in filter module and improve the empty result conditional handling (#821)
+Update: Minor updates
+
+### 3.1.6
+Update: Use DCA filtering instead of root ids to filter the list view to language records in mode 5,5.1 to prevent sorting (#739)
+Update: Open the reorder feature for multi-language records: Language siblings will be reordered by the currently pasted record (#739)
+Change: tl_module.customcatalog_visibles change inputType checkboxWizard to checkbox
+
+### 3.1.5
+Fixed: Load DCA for ajax related fields in existing tables (#815)
+Fixed: Missing title attribute in images under Contao 4
+Fixed: Correctly support special characters in the alias generating (#818)
+Update: Improve DCA palette generation when working with existing tables
+Update: Minor updates
+
+### 3.1.4
+Fixed: Backend Database-Updater did not execute SQL-statements under Contao 4 (#813)
+
+### 3.1.3
+Fixed: Missing original DCA for existing tables. Contaos DCA for existing tables should only be loaded inside Contaos loadDataContainer Hook (#811)
+Fixed: Do not try to create symlinks for inactive modules (#810)
+Update: Custom CE-widget templates set by ->html() methode now return the rendered CE element directly (#809)
+
+### 3.1.2
+Fixed: Missing parameter in generalDataContainerHook callback
+
+### 3.1.1
+Fixed: Missing parameter in oncreate callback
+
+### 3.1.0
+Change: Disable default list sorting when an active sorting has been applied. Config: $GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['LIST']['disableDefaultSorting'] (default: true) (#799)
+Update: Reorder template attributes/fields by their sorting (#802)
+
+### 3.0.5
+Fixed: Missing return value in tl_pct_customcatalog.pTable save_callback (#795)
+Fixed: PHP7.2 countable error might occure when just a single image attribute has been selected in list modules to override the image size
+Fixed: PHP7.2 countable error might occure in a multilanguage enviroment when list filter is empty
+Update: Geocoding: Use curl requests instead of file_get_contents (#798)
+Update: Reorder default wildcard output by attribute sorting (#800)
+Update: Minor code updates
+
+### 3.0.4
+Fixed: Clone filter object before applying global settings to avoid overriding (#793)
+
+### 3.0.3
+Fixed: API Import: New INSERT data has been executed a single row inserts when extracted from the UPDATE department resulting in an invalid sql statement with field names equal the array keys (#781)
+Fixed: API Job > Data source > Hook not being executed when incoming value is NULL (#784)
+Fixed: API Import: Remove primary key values from UPDATE set list to avoid SQL duplicate key failures (#788)
+Update: API Import, QueryBuilder: Insert statements now being executed one by one (#783)
+Update: Improved API ajax response logging (#782)
+Update: API: Use individual temp cache folders by API id (#789)
+Update: API: Serialize local cache string to minimize the file size (#790)
+Update: API: Debugging: Do no log the normal html ajax request in the browser console, just the important information
+
+### 3.0.2
+Fixed: Avoid duplicate creation of base language entries (#775)
+Fixed: Missing backend module icons under Contao 3.5 (#778)
+Fixed: Duplicate DCA default fields when more than one CC extends an existing table (#777) 
+Update: Timestamp filter: Support inserttags in default value field (#774)
+
+### 3.0.1
+Fixed: Duplicate output of palettes and fields in regular CCs
+
+### 3.0.0
+New: The former "managed existing tables" expert feature is now public accessible for every existing table and changed to a save, DCA extending method (#769)
+New: Support custom fields in text-search filter (#765)
+Fixed: Wrong reference to attribute selection in configuration when a parent table is selected (#766)
+
+### 2.22.1
+Fixed: Misspelling of a variable in API Job.php class led to a php error that was tracked as a field value error in the job department (#763)
+Update: Remove tl_class w50 for multiple select,checkbox fields to avoid overlapping under Contao 4
+Update: Generate a canonical tag when the url-parameter on the reader page is the same as the id of the entry (#762)
+Update: Write the error logged to the system log when job is supposed to break the whole API process
+
+### 2.22.0
+New: Geolocation: Support geocoding request via nominatim.openstreetmap.org. Set up using $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['geocoder_url'] = 'https://nominatim.openstreetmap.org/search';
+Fixed: System logs require a real function name unter Contao 4
+Fixed: Missing entries in site index and sitemap when list module has "filter active language" still set but CC has multilanguage turned off (#757)
+Update: Statuscode: -100 for automatic language filters (#748)
+Update: Removed the deprecated text/javascript tag for html5 templates
+Change: Use $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['geocoder_url'] as variable to set up the geocoder service address
+
+### 2.21.1
+Update: styles.css: .widget:not(.w50) {clear: both;} styling to avoid overlapping elements in combination with w50 elements
+Update: styles.css: .widget.w50 {height:auto;}
+Update: (DSGVO) Added jquery ui library to module assets folder to load jquery ui related components locally  (#754)
+
+### 2.21.0
+Added: New inserttag: {{customcataloglist::total_per_page::MODULE-ID}} to display a pagination sensitive page counter e.g. (Elements 1 to 15, 16 to 30)
+Fixed: LanguageSwitch filter: tl_pct_customelement_filter.defaultValue did not recognise the empty option (#751)
+Update: LanguageSwitch filter called via inserttag without default language set now works like a list module with filtering the current active language (#751)
+Update: LanguageSwitch filter now respects its strict settings
+
+### 2.20.0
+Change: Empty strict filters will not negate the list when list module setting is "show all" (#744)
+Change: Select filter: Do not combine via sql OR by default to the next filter (#743)
+Fixed: only_full_group_by SQL error under Mysql 5.7 in strict sql modes (#741)
+Fixed: CustomElement Widget Attribute compatibility under Contao 4.4 update (#742)
+Fixed: Missing backend-module icons under Contao 4.4 (#745)
+Fixed: Filters did not recognize filter module setting tl_module.customcatalog_filter_showAll in conditions
+Fixed: Custom SQL filter: Bypass query array when condition is empty (#746)
+Update: Store Quickmenu html in a temp. file instead of the session (#740)
+Update: tl_pct_customelement_filter.conditional_filters do not list filter combiners
+Update: Custom SQl filter: tl_pct_customelement_filter.customsql is now mandatory (#746)
+
+### 2.19.1
+Fixed: customcatalog_filter_countryselect blank option did not show label
+Fixed: Missing request token in child-table operations (#737)
+Update: Trigger maintenance hooks only when CC is supposed to be initialized
+Update: Trigger [getUserNavigation] hook only when CC is supposed to be initialized
+
+### 2.19.0
+New: Allow custom sql conditions in the custom html filter widget - filter (#735)
+Added: Input related inserttags {{input::METHOD::KEY::OPTIONAL DEFAULT VALUE when empty}}. Example: {{input::get::myParameter}}. Example with default value: {{input::get::myParameter::hello world}}
+Update: ModuleFilter: Trigger [processFilter] hook when processing the filter for frontend output
+Fixed: Rating attribute: Optional fields "XYZ_value,XYZ_count" should not be ignored in database update
+
+### 2.18.4
+Fixed: ModuleApiStarter "run"-submit button element needs value
+Fixed: Wrong icon in child-table edit button
+Update: SystemIntegration: Secure foreach() php error when tl_pct_customelement_attribute.subpalettes did not save as valid serialized array
+
+### 2.18.3
+Fixed: Added the missing InstallerController helper class for Contao 4 (#732)
+
+### 2.18.2
+Fixed: Load module templates correctly in Contao 4.4
+
+### 2.18.1
+Fixed: DCA did not load correctly in popups (#728)
+Update: tl_pct_customelement_filter.defaultMulti should not be half width "w50" when type of listWizard
+Update: customcatalog_filter_text_autocomplete hide result box when search result is empty
+
+### 2.18.0
+New: Database-Update-Helper to update the database in the contao backend (#709)
+Update: Changed minimum CustomElements version to 3.0.0
+Update: Backend description in filter, api settings did not follow the backend styling under Contao 4 (#725)
+
+### 2.17.2
+Fixed: Missing attribute selection in sorting alpha., numeric filters (#723)
+
+### 2.17.1
+Fixed: API: Added check if current database record array is empty or not, since Contaos internal function "array_is_assoc" returns true for empty arrays
+Fixed: API: The internal job index counter variable was wrong
+Fixed: FilterCollection::add should not check for a filter id when adding the filter to the stack (#720)
+Update: PHP 7.2 compatibility
+
+### 2.17.0
+New: Country select attribute (#718)
+New: Protection attribute: Auto-submit option added (attribute setting) to submit the current user/usergroup when field has been submitted empty or record is empty (#717)
+Fixed: AttributeFactory::fetchAllByTypeAndCustomCatalog should not have a query limit
+Added: customcatalog_filter_countryselect filter template (#718)
+
+### 2.16.1
+Update: More convenient use of BackendUser->authenticate() method
+Update: PHP 7.2 compatibility
+
+### 2.16.0
+New: Special sorting filter: sorting by a filter, sorting by an attribute (#700)
+Added: Special sorting by filter: Geolocation sorting in relation to an active geolocation filter (order by distance) (#700)
+Added: Special sorting by attribute: tags sorting (#700)
+Added: $GLOBALS['CUSTOMCATALOG_HOOKS']['customOrder'] Hook to apply custom orderings for the sorting filter (#700)
+Added: A small button to hide the "database update" message in the backend manually (#705)
+Added: Geolocation filter: SQL query caching for haversine formular
+Added: SelectDB Attribute: Backend sorting (#706)
+Update: Removed the "isStrict" button for sorting filters
+Update: AutoCompleter define TL_SCRIPT to $_SERVER['SCRIPT_NAME'] in search.php to make the latest Contao 4 version redirect correctly on ajax requests (#715)
+
+### 2.15.4
+Fixed: Pagination did not work anymore: Revert changes made in #696: Do not cache the sql query due to missing pagination limitations (#711)
+
+### 2.15.3
+Fixed: tl_module.customcatalog_filtersets should not be w50
+Fixed: Paste into operations not contain the request token under Contao 4 (#707)
+Fixed: Pagination did not work anymore: Revert changes made in #696: Do not cache the sql query due to missing pagination limitations (#711)
+Update: Do not connect the strict setting of a filter to the list module setting "show all"
+Update: PHP 7.2 compatibility 
+
+### 2.15.2
+Fixed: Backend module navigation requires associative array under Contao 4.5 (#699)
+Fixed: The list module did not react to "show all on empty filters" (#702)
+Update: Use ::isModified($strKey) instead of in_array
+Update: Geolocation::findCoordinates: Implemented global caching based on address information
+Update: Geolocation::findDistance: Implemented object caching
+
+### 2.15.1
+Fixed: Filter combiners not been recognised when filter returns empty result (#697)
+Fixed: tl_pct_customelement_attribute load CC related fields / palettes via DCA load callback instead of having the settings in the dca file. (#695)
+Update: PHP 7.2 compatibility (#693)
+Update: Geolocation attribute: findCoordinates(): Added an internal retry counter in case of OVER_QUERY_LIMIT response from Google. Define max. retry count via: $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['google']['over_query_limit_retrys'] (default: 3), define timeout in seconds via: $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['google']['over_query_limit_timeout'] (default: 2)
+Update: Log text-filter search queries for more information when CC is in debug mode
+Update: Avoid double getQueryOptions() runs coming from CC->getTotal() and CC->render() on identical CC objects (#696)
+
+### 2.15.0
+Added: Hook: $GLOBALS['CUSTOMCATALOG_HOOKS']['generateDetailsUrl'] to manipulate frontend urls (#686)
+
+### 2.14.4
+Fixed: tl_pct_customcatalog.list_headerFields returned empty (#683)
+Fixed: Validate entries found by unique alias against the current language in readers (#685)
+Update: Put constants in quotations for php 7.2
+Update: Geolocation attribute: Use a curl request as fallback incase the file_get_contents request on the Google maps api fails (#679)
+Update: Geolocation attribute: Use $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['google']['geocoder_url'] to define the request string on the google maps api. Default is: https://maps.googleapis.com/maps/api/geocode/json?key=
+Update: Details-url-building: Added Contao 4 standard methods
+Update: API: Show hook definitions in list view (#681)
+Update: Added more attribute types to default $GLOBALS['PCT_CUSTOMCATALOG']['ignoreOptionFields'] global (#684)
+Update: $GLOBALS['PCT_CUSTOMCATALOG']['ignoreOptionFields'] can now be defined before CC e.g. in config files (#684)
+Update: Searchindex: Find and validate entry using the multilingual responsive findPublishedItemsByIdOrAlias method (#687)
+
+### 2.14.3
+Update: Text filter: Should not be strict by default. Toggle the strictness of the filter by the backend "isStrict" checkbox to combine search queries via AND (strict) or OR (not strict (default))
+Update: Geolocation filter: React to GET parameters for the coordinates "NAME-OF-FILTER_lat", "NAME-OF-FILTER_lon" when no address is given
+Update: Geolocation attribute: Improve the findCoordinates method by a caching system
+Update: Geolocation filter: Pass the current coordinates to the filter template immediately
+Update: Geolocation customcatalog_filter_geosearch template: Added hidden fields for latitude and longitude GET parameters (commented out by default)
+Update: Geolocation customcatalog_filter_geosearch template: Added a little helper javascript to append the coordinates to the url on first load and when not GET parameter for them has been set yet (commented out by default)
+
+### 2.14.2
+Fixed: AutoCompleter should define TL_SCRIPT on search.php to make Contao redirect to app.php automatically
+
+### 2.14.1
+Update: Show fields tl_module.guests,protected in CC related modules (#672)
+Fixed: Contao 4 did not fire 404 pages in readers and paginations correctly (#674)
+
+### 2.14.0
+Change: Select-DB Filter: Uses ids instead of readable values as filter values to avoid common spelling mistakes or malformatted values (#669)
+Fixed: AutoCompleter could not find intialize.php under Contao 4.4 (#670)
+
+### 2.13.0
+Added: Geolocation attribute: findDistanceByCoords method to provide php based distance calculation between two coordinates (#661)
+Fixed: Filter combiners should be handled as filters with no representative results and therefore not being count as active filters (#662)
+Fixed: Contao4: Image attribute: Optional links did not process
+Update: Flag filter combiners with doNotRender (#663)
+Update: Respect published settings in search index and sitemap depending on a published field set or not (#665)
+
+### 2.12.0
+Added: Support custom back end templates in list overwrite via {{template::MY-TEMPLATE}} insert tag (#659)
+Fixed: New string syntax in cache for generic options to avoid crossovers with regular field names (#658)
+Update: Restrict the {{sql}} insert tag to the back end
+
+### 2.11.1
+Fixed: API: list view: Do not render the cronjob info when it is not checked active anymore
+Fixed: API did not write local.storage correctly under Contao 4
+Update: Print ajax response to browser console when CC is in debug mode
+
+### 2.11.0
+Added: Front end output for Protection filter and manual filtering support (#649)
+Fixed: Image attribute did not create title field and did not write alt tag under Contao 4 (#648)
+Fixed: API: Call to wrong method name "addCriticalError" (#651)
+Update: Rebuild the Protection filter to basically work like a Select filter (#649)
+Update: Filter language records by root page language in page indexer like the sitemap.xml when list module setting is "filter by active language" (#647)
+Update: getOptionFieldDefinition Hook now triggered for any attribute that has optional fields and is not ignored by global setting
+
+### 2.10.0
+Added: Sorting "random" as a new default sorting method in list modules (#643)
+Update: Fontawesome for backend Quickmenu togglers in subitems (#644)
+Update: Minor spelling update in the core files
+
+### 2.9.1
+Fixed: Attribute pagetree showed raw value in wildcard (#641)  
+Update: Avoid duplicate urls in search index when added before (#639)
+
+### 2.9.0
+Fixed: Missing version number in Contao 4 backend
+Fixed: Missing language switch in edit mode in Contao 4 backend
+Fixed: Language switch in edit mode might get stuck with the Loading data Overlay in Contao 4
+Added: BackendIntegration::injectVersionnumberInBackendPage for parseTemplate Hook
+Changed: BackendIntegration::injectCSSInBackendPage for parseTemplate Hook
+Changed: BackendIntegration::injectLanguagePanelInEditView for parseTemplate Hook
+Removed: be_main template from extension folder
+
+### 2.8.2
+Fixed: The value counter in a multi lingual environment (#635)
+
+### 2.8.1
+Fixed: Filter SimpleCondition: Do not set attribute type to "tags" just for any blob value field type (#631)
+Fixed: Check if tl_pct_customcatalog table exists in CustomCatalogModel to avoid invalid sql requests under Contao 4.4. It seams Contao does not check for table existence in models anymore.
+Update: CustomSQL filter: Do not render the filter in the FE
+Update: SimpleCondition filter: Do not handle any blob value automatically as a tags filter
+
+### 2.8.0
+Added: Systemsetting: "customcatalog_showEmptyResults" as convenient access to the global showEmptyResults setting (#628)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['FILTER']['showEmptyResults'] (default: false). If if true, values with empty results will not be excluded but show result count (0)
+Fixed: Make Cache getFilterCollection, addFilterCollection method strict static
+Fixed: Checkbox filter: Do not change checkbox value. It must always be 1 (#626)
+Update: API: Minor updates and changes that make working with the API even more convenient
+Update: Start the API in the front end when run=1
+Update: Check for $GLOBALS['TL_CONFIG']['licenseAccepted'] before initialization to make sure Contao created a localconfig.php file
+Update: Add the active item parameter to the formular action depending on the jumpTo setting of the filter module (#629)
+Update: Contao 4: Support templates loaded via TemplatesLoader in tl_templates (#627)
+
+### 2.7.0
+Added: "Is strict" setting in expert settings of a filter. Added tl_pct_customelement_filter.isStrict (#622)
+Fixed: Wrong parameter in Attribute CustomElement :: ondeleteCustomCatalogEntry
+Update: Contao 4.4 ready (#616)
+Update: Minor updates and code changes
+
+### 2.6.0
+New: Toggle the strictness of a filter (strict mode true/false) by the Global setting: $GLOBALS['PCT_CUSTOMCATALOG']['FILTER'][-NAME-OR-ID-OF-THE-FILTER-]['strictMode'] = true|false; (#609)
+New: Strict filter will force an impossible query result by a query on the id column (e.g. id='-10' -> 10 is the ID of the filter that is strictly forcing the negativ result) (this setting is resepecting the list / filter module setting: tl_module.customcatalog_filter_showAll) (#609)
+New: Toggle global strictness of all filters or by table using the Global system setting (default: false) or $GLOBALS['PCT_CUSTOMCATALOG'][-TABLENAME-]['strictMode'] = true|false; (#617)
+Fixed: CustomElements attribute: Wrong inputType name in DCA configuration
+Fixed: Write error log on reader pages when no entry can be found because the value is NULL
+Fixed: Missing sql AND when filter type is wrapperStop (#608)
+Fixed: API Job: The mode option "auto" was not declared in DCA yet
+Fixed: Respect the reference attributes in palettes (#614)
+Fixed: API Job: Certain inserttags like date were not replaced duo to caching option in replaceInsertTags method (#620)
+Added: API Base: Pass the data index and the job index to the jobs object when processing (#610)
+Added: Inserttag to return  total amount of items returning 0 on empty results, respecting filtersets: {{customcatalog::TABLENAME-OR-ID::rtotal::(optional)FILTERSET-IDS}} (#604)
+Added: API CSV: Allow custom enclosures by $GLOBALS['PCT_CUSTOMCATALOG_API']['ENCLOSURE'][ID-OF-THE-API-RECORD] (#606)
+Update: API CSV: Always use str_getcsv. It's more convenient than explode. (#606)
+Update: Filter conditions mode (show all or remove on empty result) can be set up in filter module now. (#605)
+Update: Geolocation filter: Use file_get_contents instead of Contao request class to fetch Google Maps API results (#603)
+Update: Geolocation filter: Cache the request results for further usage to avoid multiple (unessessary) Google Maps API calls (#602)
+Update: A respectable url parameters must not be a filter just an active value (#612)
+Update: SelectDb attribute: key field and value field are mandatory now by DCA (#615)
+
+### 2.5.6
+Fixed: CustomElements attribute: Binary fields could not hold data (requires CE 2.2.13) (#600)
+Fixed: CustomElements attribute: Image fields did not load DCA in duplicated groups (requires CE 2.2.13) (#600)
+Fixed: Removed php debugger call in Select filter
+Update: When using straight numeric aliases the record found should be validated against the real ID of the record when the value of the alias field differs from the one requested (e.g. in a front edit scenario when a new record has been created) (#598)
+Update: Set default DCA values of field in SystemIntegration if the attribute does not set it by itself (#599)
+
+### 2.5.5
+Fixed: Wrong front end url in customcatalog_filter_linklist when filter method is GET
+Fixed: Remove duplicate fields loaded by CE in editAll, overrideAll mode (#594)
+Fixed: Support filtering of multiple select attributes correctly (#595)
+Update: Let the autoitem inserttag find the auto_item GET parameter automatically as fallback when used before a reader module has been initialized (#591)
+Update: Set the TL_MODELS global for the requested table when using the \ContaoModel class to fetch database records (#592)
+Update: Added 'KEY', 'GROUP' as SQL reserved words (#593)
+Update: Alias can be a numeric value
+
+### 2.5.4
+Fixed: Bring back the custom edit icon for child table configurations (#585)
+Fixed: Reviewed the related items filter. Improved the "normal" mode when key field is "id" and changing the function to work more as expected by the backend description of the mode of the filter (#586,#587)
+Fixed: Create single block API report only when API max range < 1 (#589)
+Update: Minor update in be_cc_api_report template (#589)
+Update: API: Allow full processing without active jobs (#588)
+
+### 2.5.3
+Fixed: Duplicate domain base in search index when root page has a domain name entered (#581)
+Fixed: Do not handle filters with empty results or filters like combiners, wrappers to be a representing filter. Collect them and unset them after processing (#583)
+
+### 2.5.2
+Fixed: Use \Input::get('auto_item',false,true) with 3. parameter = true ($blnKeepUnused) to not let Contao set the value as GET parameter or let it marked to be used (#577)
+Update: ModuleApiStartet: Use setSource instead of setAffected to support the Base->runJobs() method
+
+### 2.5.1
+Fixed: Removed the obsolete call on source_data() in API job class
+Fixed: API Export: Set affected rows via setSource() to prevent empty source data in runJobs() methode
+Update: Set the source data option to current table fields in Standard, export mode (#574)
+Update: Improved PHP function method using a real php file (system/tmp/cc_api/api_job_helper_ID-OF-JOB.php) to execute code. Now any code can be executed 
+Update: Minor updates on language files
+
+### 2.5.0
+New: API job: File/files support. Supporting local and external paths directly in the job record or by the source data (#552)
+Added: API job mode "automatic". Providing a simple way to let the developer decide how to convert the output job data (#563) e.g. if API is Import, a file path will be converted to binary. If API is Export and incoming data is binary (file), output will be the local path
+Added: API Base: [public] runJobs() method that simply runs all active jobs and returns the modified data as array, also calls outputDataHook. Custom API can now use this method by simply extending the Base class (#553)
+Added: Page tree filter now has a real front end out put when in manual mode (filter by active page NOT selected)
+Update: API Job: Simplify the fieldActionValue::source action and use only current_row() as source data
+Update: Change tl_module.customcatalog_fieldset field type to checkboxWizard for CustomCatalog filters to support manual sortings
+Change: Make filters less strict: Do not let filters decide when an impossible result should be returned depending on "tl_module.customcatalog_filter_showAll" because CC respects this field in regard of active filters which is a better and clearer solution (#571)
+
+### 2.4.4
+Fixed: Do not set $_GET['items'] by default in list module to prevent bypassing 404 pages even when Contao set an auto_items parameter by an even url fragment structure duo to Contao Frontend class (#559)
+Fixed: Added Attribute pagetree wildcard output. Now showing the page titles (#556)
+Fixed: Language filter did not support sublanguages correctly with ISO standard like de-AT (#565)
+Fixed: Remove the unwanted/mistaken php debugger call in BackendIntegration.php
+Update: QLAM mode can be set via $GLOBALS['PCT_CUSTOMCATALOG']['BACKEND']['QLAM']['mode']. 'create' or 'copy'. Default = copy (#562)
+Update: QLAM link text logic now in $GLOBALS['PCT_CUSTOMCATALOG']['BACKEND']['QLAM']['linkTextLogic'] to prevent missing link text in backend languages that CC do not support by default (#562)
+Update: Minor updates on existing language files
+Update: Respect the tl_page.noSearch setting when creating search index
+Update: Minor CSS update for QLAM
+
+### 2.4.3
+Fixed: Missing language switch in list view duo to CustomCatalogFactory::fetchCurrent changes
+Update: Use tl_pct_customelement_filter.defaultValue as placeholder in Filter Text
+Update: "QLAM" related english translations
+
+### 2.4.2
+Fixed: API Export, CSV: Handle single data collection correctly (#551)
+Fixed: CustomCataloFactory::findCurrent() fails in child tables due to wrong variable spelling (#554)
+Update: Added english language files for: tl_pct_customcatalog_api, tl_pct_customcatalog_job
+Update: Set access level of QLAM to "pct_customcatalogsp::create"
+Update: Minor updates on existing language files and dca files
+
+### 2.4.1
+Fixed: API: Do not trim first and last value in CSV source data detection because it is not necessary anymore
+Fixed: API Export (CSV): Respect changes made in #544 and do not capsule lines and values in quotations
+Added: Inserttag to return total amount of items, respecting filtersets: {{customcatalog::TABLENAME-OR-ID::total::(optional)FILTERSET-IDS}} (#548)
+Update: Filter the output value array in multiple value attributes ('gallery','image','files','tags','selectdb') to avoid Contaos empty string array issue
+Update: {{customcatalog_filterurl::TABLENAME-OR-ID}} inserttag now returns current query string (GET parameters) when no filter session is set
+
+### 2.4.0
+New: Custom Html filter element to create custom filter fields right from the backend (#535)
+New: Quick access operation button for language entries (#538)
+New: API Job: Convert source data using PHP functions mode (#545)
+Update: Filter conditions field now has its own palette (#534)
+Update: Allow PHP exceptions in job execution to be thrown directly when Contao is in debug mode (bypasses try / catch) (#546)
+Update: Do not wrap the CSV delimiter in quotation marks (#544)
+
+### 2.3.8
+Fixed: SystemIntegration $this must declared static in Hook calls (#519)
+Fixed: Make active groupset session unique by the id of the parent CE in the backend (#537)
+Fixed: CE wiget attributes of the same type in different fields overwrite each others data on subpalette changes (#532)
+Fixed: API: New fields created as return values of api jobs have not been added to database set array (#541)
+Fixed: API Import: In various cases updating values failed due to too early removing/splicing the database set array
+Update: API Job: Use current_row() as fallback if no key field is set to detect the source array (#543)
+
+### 2.3.7
+Fixed: Backend labels might not be processed correctly when a CustomElement with the same ID as the current CustomCatalog exists (#528)
+Update: Improved the backend performance on wildcard rendering (#529)
+
+### 2.3.6
+Fixed: TableCustomCatalogApi::getForeignFields, source table must store the field names instead of array index (#523)
+Fixed: Rebuild Quickmenu on api record or api job record submit (#523)
+Fixed: SystemIntegration::isReady() must allow access to popups and ajax requests (#526)
+
+### 2.3.5
+Fixed: Install tool wants to remove unpublished attributes/fields
+Fixed: Resolve insert tags in backend labels correctly
+Update: Introduced SystemIntegration::isReady() to simplify the testes to pass before initializing   
+Update: Cache filter result counts
+
+### 2.3.4
+Fixed: Check if tl_pct_customcatalog has been created in public methods in SystemIntegration to prevent false database queries
+
+### 2.3.3
+Fixed: Prevent Contao from overriding back end related constants in front end
+
+### 2.3.2
+Fixed: Filter, api translation files not loaded correctly in back end (#515)
+Change: API Jobs: Field action [source][hook] execute without source value (#516)
+Update: Wrong version number
+Update: API Jobs: Improved source data checking. Source data can be an associate array or sequential array.
+Update: API: Call the keyfield_callback as fallback for file sources in TableCustomCatalogApi::getForeignFields when selected file extension is not supported by default
+Update: Minor updates on language files
+
+### 2.3.1
+Fixed: API: Missing argument 3 in dataOutput Hook. Arguments now are ($arrSet,$strTable,$objApi)
+Fixed: API: Brackets in CSV values break Insert statement (#512)
+Fixed: API: Callback return values do not update the jobs value array (#513)
+
+### 2.3.0
+Fixed: Load language php files with require_once to allow overriding (#504)
+Fixed: Missing editable fields in tl_user_group (#508)
+Added: customcatalog_grouped template (#503)
+Added: Geolocation Attribute: ::findDistance(A,B), findDistanceTo(B) methods to calculate distances by using Google maps distance matrix api
+Update: Support the groups() and group() method in CC templates (#503)
+Update: Change tl_module.customcatalog_jumpTo label for customcatalogfilter (#505)
+Update: Minor updates in language files
+
+### 2.2.0
+Fixed: Check if tl_pct_customcatalog has been created yet before trying to create the backend navigation
+Fixed: Multiple identical child tables might cause an recursion error when creating the edit buttons in list view
+Fixed: Load backend assets for popups
+Fixed: API Jobs: Missing 'html' option in field actions
+Fixed: API Jobs: Respect field action "hook" (#499)
+Fixed: Unwanted redirects to the undo table when opening the tl_pct_customcatalog_api table
+Fixed: Create a CC related origin object to the attributes in the templates
+Added: (API) Allow custom delimiters. Defined by dcaconfig and $GLOBALS['PCT_CUSTOMCATALOG_API']['DELIMITER']['myCustomDelimiter'] (#498)
+Update: Geoloaction Attribute/Filter: Updated the google api request string
+Update: Bring back the feature to change languages in pct_tableTree widget popup (Tags attribute). It got lost when Contao started to override the language GET parameter
+
+### 2.1.6
+Fixed: Register a general Contao model class only for new cc related tables
+
+### 2.1.5
+Fixed: SystemIntegration::findAllTables must be declared static
+Update: Do not render all related child tables edit buttons (#491)
+Update: Minor backend updates when using languages
+
+### 2.1.4
+Fixed: RelatedItems filter from an invalid github merge
+
+### 2.1.3
+Fixed: Missing table name in loadDataContainer method
+Fixed: A php array_filter error in edit view when an attribute, with the backend sorting option enabled, has been deleted and the database has not been updated yet
+Fixed: Return the field value in Meta attributes to avoid multiple rendering through the TemplateAttribute->html() method (#487)
+
+### 2.1.2
+Update: Check if an existing DCA array has a valid config dataContainer key registered
+
+### 2.1.1
+Fixed: \PCT\CustomElements\Helper\Functions::array_combine_recursive must be declared static to use correctly in lower php7 (#483)
+Update: \PCT\CustomElements\Helper\Functions all functions now being declared static
+
+### 2.1.0
+Fixed: Language switch displays wrong values count in the front end when contao is set to append the language to the url (#479)
+Added: Support any CC managed table as dynamic child table to any CC configuration or custom DCA array (#481)
+Update: Bring back the feature to switch CC languages in the front end even when contao is set to append the language to the url
+Update: Improved overall backend performance on high CC count (#477)
+Update: Preselect the backend search option for table related attributes
+Change: \PCT\CustomElements\Plugins\CustomCatalog\Core\AttributeFactory::findByDca now expects DCA object
+Change: Use static constructor instead of self constructor in instance classes
+Removed: \PCT\CustomElements\Plugins\CustomCatalog\Core\SystemIntegration::loadCustomCatalogs without fallback, never used
+Removed: \PCT\CustomElements\Plugins\CustomCatalog\Core\SystemIntegration::addOptionsFields without fallback, never used
+
+### 2.0.2
+Fixed: A very rare error that might occur when creating an alias through pct_customelements_plugin_cc_frontedit or directly through the Alias attribute save_callback effected by the SQL caching
+Update: Restrict content elements if CC table is tl_content only in Backend mode
+Update: Improved database request caching in AttributeFactory
+	
+### 2.0.1
+Fixed: ModelCollections cannot be checked with ->numRows anymore (#475)
+
+### 2.0.0
+Added: Respect the front end preview published settings (#436)
+Added: A version_compare as fallback to Contao 3.2 in autoload.php to find the default be_main Template via \TemplateLoader::getPath('be_main','html5')
+Added: \PCT\CustomElements\Plugins\CustomCatalog\Core\Controller with general methods to manipulate and access custom catalog objects
+Added: \PCT\CustomElements\Filters\Controller with general methods to manipulate and access filter objects
+Added: \PCT\CustomElements\Models\CustomCatalogModel
+Added: \PCT\CustomElements\Models\FiltersetModel
+Added: \Contao\ContaoModel class to work very flexible with Contao Models e.g. $objEntry = \ContaoModel::getInstance('MY-CC-TABLE')->findById(...);
+Added: statuscodes.txt
+Update: \PCT\CustomElements\Models\FilterModel to use it as meant to be in Contao
+Update: \PCT\CustomElements\Helper\DataContainerHelper: Inject the Database and Session object in the data container instance if not done before
+Update: Object-values can no be accessed directly e.g. $objAttribute->id = $objAttribute->get('id');
+Update: Remove the $strTable Parameter in Hooks::getInstance()
+Update: Use the \PCT\CustomElements\Core\AttributeFactory::findById(...) instead of fetchById(...) method in Filters because it respects the caching
+Update: customelement_attr_googlemap.html5: Include the Google Maps API Key information
+Update: CustomElement Attr: Reset the id of the customelement to the id of the active record processed in CCs (#452)
+Update: CustomCatalog::getQueryOption() is now public (#454)
+Update: tl_pct_customcatalog.languages is now mandatory
+Remove: \PCT\CustomElements\Plugins\CustomCatalog\Models\CustomCatalogModel
+Remove: \PCT\CustomElements\Plugins\CustomCatalog\Core\GroupFactory
+Remove: \PCT\CustomElements\Plugins\CustomCatalog\Core\Attribute without fallback. CustomCatalog will not override the original attribute classes from now on
+Remove: \PCT\CustomElements\Core\FilterFactory::fetchFiltersetByTableName(...) use instead: \PCT\CustomElements\Models\FiltersetModel::findByTableName(...)
+Remove: \PCT\CustomElements\Core\FilterFactory::fetchFiltersetById(...) use instead: \PCT\CustomElements\Models\FiltersetModel::findById(...)
+Remove: \PCT\CustomElements\Core\FilterFactory::fetchPublishedFiltersetById(...) use instead: \PCT\CustomElements\Models\FiltersetModel::findPublishedById(...)
+Remove: \PCT\CustomElements\Core\FilterFactory::fetchByPid(...) use instead: \PCT\CustomElements\Models\FilterModel::findByPId(...)
+Remove: \PCT\CustomElements\Core\FilterFactory::fetchPublishedByPid(...) use instead: \PCT\CustomElements\Models\FilterModel::findPublishedByPId(...)
+Remove: (deprecated or never used) \PCT\CustomElements\Core\CustomCatalogFactory::findContaoModelById(...) without fallback
+Remove: \PCT\CustomElements\Plugins\CustomCatalog\Core\Controller::getQueryOptions use $objCC->getQueryOption() instead (#454)
+Remove: The whole json caching (#460)
+Change: \PCT\CustomElements\Plugins\CustomCatalog\Core\CustomCatalogFactory::findByModel(...) to findByModule(...), Effected: ModuleList, ModuleReader, ModuleFilter
+Change: Any fetch...() method in \PCT\CustomElements\Plugins\CustomCatalog\Core\CustomCatalogFactory returns \PCT\CustomElements\Models\CustomCatalogModel or Model\Collection now
+Change: Any fetch...() method in \PCT\CustomElements\Core\FilterFactory returns \PCT\CustomElements\Models\FilterModel or Model\Collection now
+Change: Set minimum CE Version to 2.0.0
+Change: QueryBuilder class must now be instantiated e.g. QueryBuilder::getInstance()->count($arrOptions);
+
+### 1.6.7
+Fixed: LanguageSwitch Filter: check if languages have been set
+Fixed: Added missing alt attribute in Image Attributes (#437)
+Fixed: Groups have been duplicated even when creating a new blank groupset without the „create from active list“ option (#446)
+Fixed: Do not regenerate the alias when it has been set already (#450)
+Fixed: Check in the config.php if the Database class has been loaded by Contao before initializing the CC core (#451)
+Added: A version_compare as fallback to Contao 3.2 in autoload.php to find the default be_main Template via \TemplateLoader::getPath('be_main','html5')
+Added: Overwrite field labels with labels of attributes in the active palette (#447)
+Added: Custom backend sortings. Use $objAttribute->getBackendSortingOptions($objDC) to define own sortings (#448)
+Update: \PCT\CustomElements\Helper\DataContainerHelper: Inject the Database and Session object in the data container instance if not done before
+Update: Call the backendFilterOptionCallback only when backend filtering is active
+Update: Show empty result when selected in ListModule and no filter is active
+Update: Do not change selected palettes in Group view on delete (#445)
+
+### 1.6.6
+Fixed: Custom list operation buttons not showing for non-admin users (#429)
+
+### 1.6.5
+Fixed: Wrong field callback in toggleActiveState() in TableCustomElementFilterset class
+Fixed: Pass the value from orderSRC fields to the related attribute (#425)
+Fixed: Wrong url base in getSearchablePages Hook (#426)
+Fixed: Quickmenu links might have an obsolete request token due to session changes. Store the used request token in the Quickmenu Session to compare it later.
+Added: Missing engl. language variable $GLOBALS['TL_LANG']['PCT_CUSTOMCATALOG']['MSC']['filter_clear']
+Added: eval_tl_class_m12 option for attributes: PageTree
+Update: Set DCA field definition for attributes in subpalettes to referenced attribute
+Update: Cache filters more efficient
+Update: Allow commentary notification persons other than the system admin in configurations
+Update: Reduce palettes for referenced attributes (#420)
+
+### 1.6.4
+Fixed: MetaDescription, MetaKeywords attribute wrong closing brackets in strlen()
+Update: Clone objects before returning from cache
+
+### 1.6.3
+Fixed: Do not duplicate groups again when resubmitting a group set record that was supposed to duplicate groups
+Fixed: ModuleReader: Do not set the GET table parameter automatically
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['renderUnpublishedGroups'] to toggle whether to render attributes disrespecting the published setting of their parent group or not
+Added: Include palettes selector attribute in active views automatically if it is missing (required by Contao)
+Added: Add orderSRC_ fields to the cache
+Update: ModuleReader: Allow both tl_content elements and regular entries
+Update: Purge revised groups by obsolete group set selectors in reviseTable Hook
+Update: Make the palette switch feature more convenient
+Update: Order group sets by title in group set panel
+Update: Update tl_pct_customelement_group.selector to new group set alias when submitted
+Update: Set default sql definition for a checkboxMenu attribute to "blob NULL"
+Update: Set current CC table name as ptable in foreign child table DCA arrays
+Update: Reformat parent labels in mode 6 and added Post-System action (#410)
+
+### 1.6.2
+Fixed: Added missing tl_pct_customelement_language.source check in Maintenance::purgeLanguageEntries()
+Fixed: Added missing tl_pct_customelement_language.source check in Maintenance::createLanguageForBaseEntries() and make the query less strict
+Fixed: CustomElement Attribute: Widget fetches wrong data after duplicating data when switching to a new language record (#398) 
+Added: tl_pct_customelement_attribute.ref_attribute [eval]['includeAllGroupsets'] true/false to show all attributes in reference attribute selection or just the ones in default
+Added: config.php: $GLOBALS['PCT_CUSTOMCATALOG']['deleteLanguageRecordOnBaseRecordDelete'] = true; whether delete related language records when deleting a base record or not.
+Update: Load the attribute definition when filling the cache and generate the attribute
+Update: Skip the cache building when either the customelement or customcatalog object not exist
+Update: Remove $strLanguage parameter from Multilanguage::isBaseRecord()
+
+### 1.6.1
+Fixed: In some cases the DCA might contain old or revised attributes coming from old cached data (#394)
+Added: Caching for database results (#394)
+Added: AttributeFactory::fetchAllByCustomElement() (#394)
+Update: Skip maintenance routines when tl_pct_customcatalog table has not been created yet (#393)
+
+### 1.6.0
+New: "Protection" attribute. Protect entries on member/member group level (frontend) and/or user / user group level (backend) (#375)
+Fixed: In some situations the database alert das been displayed even the database is up to date
+Fixed: Missing edit button in a multiple tl_content relation scenario (#382)
+Fixed: Wrong source value passed to tabletree widget in tl_module.multiSRC 
+Fixed: Wrong filters applied for multiple lists modules on reader pages due to caching
+Fixed: RateIt attribute: Session data must be an array and check GET parameters against current record id (#380)
+Fixed: Missing css classes in empty lists (#391)
+Added: Use tl_content as child table standalone without a configuration (#382)
+Added: Copy filters when duplicating a filterset (#386)
+Update: Allow timestamp attributes to be selected in range filters (#377)
+Update: More improvements using the cache and contao model classes and minor code improvements
+Update: Rebuild the pagetree filter procedure (#380)
+Update: Improved the RelatedItems filter
+Update: Increased the min-width of the quickmenu
+Update: CustomElement Widget Attribute: Copy and remove data on CC DCA actions
+Update: Use the tl_module.customcatalog_filter_showAll to toggle between showing all entries or none when there are no filters set
+Update: Remove any tiny mce relations if field is not a textarea (#388)
+Update: Remove the $GLOBALS['loadDataContainer'] setting so Contao will load external dca files again
+Update: Referenced attributes do not need to be in the default groupset anymore
+
+### 1.5.3
+Update: Do not use the deprecated Controller::generateFrontendUrl method with static language parameter (>= Contao 3.5.7)
+
+### 1.5.2
+Fixed: Wrong language reference updated when logged in with multiple backend users (#354)
+Fixed/Update: Hyperlink Attribute / AttributeCallbacks: Check if tl_content DataContainer is loaded for hyperlink attribute
+Added: Daily cronjob: Purge the tl_customcatalog_language table from revised entries by their source tables
+Update: Optional fields will now be included in a text search. Searching for an image caption will now return the entry. Fields can be excluded via Globals: $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['image']['fields']['caption']['searchable'] = false
+Update: Send an ajax request when toggling the language switch to protect the backend from invalid input while loading (#354)
+Update: Avoid a real_escape php error in the install tool coming from early backend user data calls
+Update: Support multiple select attributes for CustomElements versions lower than 1.7.2
+
+### 1.5.1
+Fixed: A php _clone error when rendering attributes with underscore and potential generic option fields (#355)
+Fixed: Published field independent from list operation "toggle" (#359)
+Fixed: Selectors not toggling on create. Remove the default value key from selectors when not set before (#362)
+Fixed: A little php error when first creating the dca file saying it already exists (#365)
+Added: Include a jquery key listener for the [enter] key in the customcatalog_filter_default template when form is supposed to submit on change to make text searches more convenient 
+Added: CustomCatalogFactory::findByTableName($strTable, $arrOptions=array(), $blnDoNotReset=false) added the option to not reset the return object, so data remains the same as the actual cached object
+Added: Simple Checkbox filter (#364)
+Added: More english translations for attributes
+Update: Added the selectdb attribute to the default $GLOBALS['PCT_CUSTOMCATALOG']['ignoreOptionFields'] set
+Update: Use Contao Model classes when possible: Use \PageModel class to fetch page database results (#358)
+Update: Do not render attributes in unpublished groups
+Update: Always fill the caches and add attributes that have not been cached by CE before
+Update: Never reset the origin of an object unless we do it on purpose
+Update: Delete system folders on tl_pct_customelement ondelete callback
+Update: Add new CuustomCatalogs to cache when they were created by the factory
+Update: Check if child table is an active custom catalog before inserting the edit child table button
+Update: If a backend module section not exist anymore let the referenced configuration create it, instead of using the "content" section as fallback
+Update: Handle the index.php fragment correctly in \Function::removeFromUrl when url rewriting is turned off
+
+### 1.5.0
+Fixed: Respect language entries correctly in filter conditions (#341)
+Fixed: Respect visible fields correctly in filter conditions query (#343)
+Fixed: Field names with underscore that are not optional fields validate now correct against fields with the same base name but without underscore (#345)
+Fixed: Locate base entry ID as fallback when no language entry has been found and base entries are fallback (#349)
+Added: Condition selection for SelectDb Filter
+Added: Skip custom url parameters from smart filtering via $GLOBALS['PCT_CUSTOMCATALOG']['urlCustomIgnoreParameters']
+Added: Systemintegration::loadDCA($varValue) methode. Excepts the table name or ID of a CustomCatalog configuration
+Added: CustomElement attribute: Copy and remove data (#340)
+Added: General DCA hook $GLOBALS['CUSTOMCATALOG_HOOKS']['generalDataContainer'] passing the action (oncut,oncreate,ondelete,onsubmit,onload) and all CC and DC information (#342)
+Update: Allow DCA Array configurations without palettes and fields, just create the basic DCA structure
+Update: CustomElement Attribute: Check if the selected CE still exists and remove the ->setGenericAttribute call (obsolete)
+Update: Check in config.php if composer is updating the database
+Update: Bypass the CustomElements Cache when forced loading the DCA of a CustomCatalog
+Update: Search language siblings in details page only when an alias field is set
+Update: Inject the Quickmenu via getUserNavigation Hook
+Update: Use the backend template (be_main) instead of DOMDocument to write the version number
+Update: Use the backend template (be_main) instead of string replacing to inject the language switch in edit mode
+Update: PHP7 ready
+Update: Remove closing tag for <input> in customcatalog_filter_select.html5 template
+Change: Autom. filter parameters: Pagination-Param. ($GLOBALS['PCT_CUSTOMCATALOG']['urlPaginationParameter']), PerPage-Param. ($GLOBALS['PCT_CUSTOMCATALOG']['urlPerPageParameter']) will not be added automatically to the respectable filters. They must be added manually now with: $GLOBALS['PCT_CUSTOMCATALOG']['urlCustomParameters']
+
+### 1.4.13
+Fixed: Skip render callback when a CustomElement is being rendered
+Added: New filter: Wrapper. Allows to capsule filters into subparts separated with brackets (#333)
+
+### 1.4.12.1
+Fixed: CustomElement Attribute: Load duplicated fields correctly
+Fixed: Check permission to create CCs in toggle visibility operation button
+Fixed: Deleting a language record in the backend might effected other language references with the same entry id (#332)
+Added: \PCT\CustomElements\Helper\DataContainerHelper class to work with DataContainers more flexible
+Added: \PCT\CustomElements\Plugins\CustomCatalog\Helper\QueryBuilder->generateWHERE added as public
+
+### 1.4.12
+Fixed: Clone the active record object to avoid overrides for contao default field names in AttributeCallbacks
+Fixed: Invalid requests in the backend when request token is disabled. Request tokens are mandatory in the backend but optional in the front end (#327)
+Fixed: Webkit browsers might skip the caching process when browser cache is empty (first page load)
+Fixed: Handle single POST values in range filter correctly
+Fixed: Respect the group sorting when using cache
+Fixed: Load CustomCatalog DataContainers in popup via loadDataContainer Hook. 
+Added: Include rel="prev", rel="next" in page head for active paginations
+Added: Load CustomCatalogs directly via System->loadCustomCatalog($strTable)
+Added: Toggle visibility of option fields in the front end with $GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['renderOptionFields'] (true/false)
+Added: Support the PageTree attribute and general blob attributes in SimpleCondition Filter
+Added: CustomIdList filtering for list modules using the pct_tabletree_widget (>= 1.3.5) on tl_module.multiSRC and tl_module.orderSRC
+Update: Improve the filters by respecting the published field (#325)
+Update: Inherit pages in the Pagetree filter now fetches all records in a trail
+Update: The RelatedItems Filter now respects language detail entries and the published field (is enabled)
+Update: Allow custom system/modules folder logic via $GLOBALS['PCT_CUSTOMCATALOG']['folderLogic']
+Update: Check custom/private DCA arrays against the default DCA array to avoid errors or missing definitions from outside
+Update: Geolocation Attribute: Allow empty values for street, city, zipcode, country fields. Try to locate just with the given values
+Update: Geolocation Attribute: Use POST data as address source when saving for the first time because the active record is empty at this moment
+Update: Geolocation Attribute: Write system log when detecting geo-coordinates in save_callback fails
+Update: Set the switchToEdit option only for CCs that have child tables by default
+Update: Removed deprecated: $GLOBALS['PCT_CUSTOMCATALOG']['SETTINGS']['initializeInFrontend']
+Update: Due to loading ordner the customelement widget must search for customcatalog tables in the config.php and add them to the CE tables
+
+### 1.4.11
+Fixed: Javascript error in customelement_attr_googlemap when not rendering with real coordinates
+Fixed: Quickmenu links when request token is turned off (#315)
+Fixed: Add the generic option field to the json dca. They might need contao classes to be loaded like tl_content for wizards.
+Fixed: Added missing options array in CustomCatalogFactory::findAllActive and wrong options parameter in the QueryBuilder find methode
+Added: Sanitize the attribute alias from unsave sql terms using $GLOBALS['PCT_CUSTOMCATALOG']['reservedWords'] (#317)
+Added: Alias-classes: Contao\CustomCatalog (#318)
+Added: SelectDb Attribute backendWildardValue callback
+Update: Check the coordinates values more strictly in the Geolocation Attribute
+Update: Improved the Functions addToUrl methode
+Update: Use php time() in Maintenance::getSearchablePages as fallback when Contao < 3.5
+Update: Rebuild the json dca file on drag and drop in tl_pct_customelement_attribute
+Update: Calling a factory method should respect the Cache
+Update: Rebuild the Quickmenu at tl_pct_customelement_group onsubmit, ondelete 
+Update: Removed the whole json caching and replaced it with the reliable and flexible Caching via Global variables (#320)
+Update: Do not use the module CSS classes. Just use the regular CSS classes from the content element or the module class when included via site layout
+
+### 1.4.10.1
+Fixed: Fatal php error "Can't use method return value in write context" in config.php (use count() instead of empty())
+Fixed: Bypass the json cache for contao ajax requests
+Update: customelement_attr_googlemap.html5 template using real coordinates when given instead of the geocoder
+
+### 1.4.10
+Fixed: A php error that might occur in the Pagetree Attribute.
+Fixed: Do not process optional values for the checkboxMenu attribute
+Fixed: Check if optional field has been created before adding to visibles stack (#306)
+Fixed: Never return empty or strlen < 1 filter values in the $objFilter->getValue() methode
+Fixed: Connecting to a childTable might run into a php error
+Fixed: Fetching content elements when pid GET parameter is an alias
+Added: Important settings can now be applied directly through the system settings
+Added: Add comments to any customcatalog template with the RowTemplate::getComments method
+Added: Ignore list for attributes that use the option column for real values not for generic fields ($GLOBALS['PCT_CUSTOMCATALOG']['ignoreOptionFields'])
+Update: Pass deserialized values to the renderCallback methode
+Update: Comments are now unique for the entry not for the config (customcatalog) id. Fallback: $GLOBALS['PCT_CUSTOMCATALOG']['SETTINGS'][MY_TABLE]['uniqueComments'] = false
+Update: Delete json file and rebuild it for tl_pct_customelement_attribute oncut_callback
+Update: Add a back end body class with the current back end theme name and adjust the backend styles with it
+Update: Showing the back end database update alert constantly
+Update: Respect language records in value count for filters (#309)
+Update: Do not ampersand quickmenu links. It might causes errors
+Update: More backend performance updates
+
+### 1.4.9
+Fixed: Add optional fields to the list of visible fields to include them in the active record (#303)
+Fixed: Support callbacks to dca datacontainer classes when json dca file is active
+Update: Disable the json dca file for the update database list or in the install tool to avoid deleting unpublished attributes
+Update: When CC debugging is on, write sql queries to system log
+
+### 1.4.8
+Fixed: Handle dynamic values like translations correctly when using the json cache file (#296)
+Fixed: PHP error when trying to delete the json file when creating groups or attributes (#297)
+Fixed: Respect the evaluation key and filter_id key in sql options array (#300)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['LIST']['baseRecordIsFallback'] to set the base records to be fallback in the list module
+Added: The language filter can now have a default value (#298)
+Update: Redirecting to a 404 in the reader when language record that does not exist and base entry is not the fallback. $GLOBALS['PCT_CUSTOMCATALOG']['FRONTEND']['READER']['baseRecordIsFallback']  (#295)
+
+### 1.4.7
+Update: Respect the $GLOBALS['PCT_CUSTOMCATALOG']['SETTINGS']['bypassCache'] variable in Front end
+
+### 1.4.7-light
+Added: Missing FilterFactory class for applying simple filters like sql statements (#293)
+
+### 1.4.6
+Fixed: isBaseRecord method and isLanguageRecord method must compare the given ids before returning
+Fixed: Toggling between languages might create a new language record
+Fixed: Do not purge standalone language records from tl_pct_customcatalog_language where pid=0
+Fixed: Update mode 5,5.1 for the new multilanguage mode (#286)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['SETTINGS']['bypassCache'] to allow bypassing the caching
+Added: Cache.php getCustomElement(), addCustomElement() with class check if CE Cache.php exists
+Added: Create missing language entries for base records via daily cronjob 
+Added: Media queries in styles.css for the isSelector,isSubpalette classes (#288)
+Added: Create a JSON dca file for caching the DCA array (#258)
+Added: Add pages to search index (#290)
+Added: Maintenance job for purging the json dca files
+Added: Maintenance job for updating the base language entries manually
+Update: Add the langpid GET parameter even for base entries in list view
+Update: More stability updates when creating language records 
+Update: Remove duplicate language references in reviseTable hook
+Update: Do not instantiate the Database Result helper class twice
+Update: Show edit config button only to admins (#284)
+Update: Show the quickmenu only to admins (#285)
+Update: More updates due to the caching
+Update: Always show paste button in root for mode5,5.1 (#289)
+
+### 1.4.5
+Fixed: The language switch should respect the backend filtering. Must use FIND_IN_SET in backend filer query
+Added: Add the langpid GET parameter to the editheader button
+Update: Reactive the purging of revised language entries by checking the base entry id
+Update: Hide the blank option in language switch when user is about to create a language entry
+
+### 1.4.4
+Update: Reset the CustomCatalog objects when returning from the cache to avoid modified values like $arrOptions
+
+### 1.4.3
+Fixed: Check if a backend language filter has been set before creating base record
+
+### 1.4.2
+Fixed: A missing is_array check in CustomCatalog.php
+Fixed: Add the numRows counter to MysqliResultHelper, MysqlResultHelper class when setting the cache array
+
+### 1.4.1
+Update: Reactivate the purging of revised language entries
+
+### 1.4.0
+Added: Performance kit: Caching and minimizing sql queries
+Update: Show base language entries as fallback when list is supposed to be filtered by the active language but language is unknown (#273)
+Update: Toggle languages freely without taking care of a base entry
+Update: Improved the whole backend multilanguage support
+
+### 1.3.4
+Fixed: Last processed filter combiner must be AND or ignored (#266)
+Fixed: Do not reset the global language when looking for translations in filters
+Added: Show language switch in TableTree Widget (#264)
+Added: More useful functions to the Multilanguage class
+Added: Show backend hint when working on language records (#265)
+Update: Load generic fields more precisely to the DCA array
+Update: More stability updates and user rights updates
+Update: CustomElements Attribute must add the CC table to the CE access tables
+Update: Performance Update: Backend caching
+Update: Add multilanguage related GET parameters to edit and delete button
+Update: Always add the table GET parameter to the edit button
+
+### 1.3.3
+Fixed: Backend filters/search loose value in multilanguage mode due to reload in the language panel (#248)
+Fixed: Show only default palette set in CustomElement attributes (#251)
+Fixed: Handle filter combiners correctly
+Fixed: Geolocation filter ignores filter showAll setting (#259)
+Fixed: The haversine formular for the geolocation filter and selecting the coordinates values from the database correctly (#255)
+Fixed: Find filter value translations in the frontend with underscore
+Added: "Smart filtering" (#260)
+Added: Default sortings can be applied by "orderby" GET or POST parameter (#247)
+Added: Respect GET parameters applied manually or by the system (e.g. paginations) (optional by other filters) and keep them alive while filtering (#246,#253)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['urlPaginationParameter']
+Added: Search headline attributes in Text filter (#254)
+Added: Geolocation Attribute: $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['defaultRounding'], $GLOBALS['PCT_CUSTOMELEMENTS']['ATTRIBUTES']['geolocation']['useMiles'] (#255)
+Update: General updates basically make working with attributes in CC more flexible
+Update: Updates due to filtering
+Update: Removed switchToEdit for tl_pct_customelement_filter
+Update: Clearing filters no only clears the filters by the module (#252)
+Update: Do not run the whole initialization of the DCA array in the frontend. Flag: $GLOBALS['PCT_CUSTOMCATALOG']['SETTINGS']['initializeInFrontend']
+Update: decodeEntities in Text attributes by default (#257)
+Update: Load Templates from TemplatesLoader in template-editor (#256)
+Update: Improved the multilanguage-alias support and the general multilanguage unique field type check (#261)
+
+### 1.3.2
+Fixed: getTotal and getCount must respect dynamically applied filters like limits on paginations
+
+### 1.3.1
+Added: customcatalog_filter_hidden template
+Update: Do not add the default "orderby" string if an urlparameter is set in the filter
+
+### 1.3.0
+Fixed: Check if $GLOBALS['CUSTOMCATALOG_HOOKS']['hookfilter'] has been declared already
+Fixed: A missing variable name in SimpleCondition filter
+Fixed: Call static variables with self:: in CustomCatalogFactory
+Fixed: Sortings on the same field should overwrite each other (#237)
+Fixed: Check if CC is in multilanguage mode in ModuleReader
+Fixed: An issue with language files in the frontend when member is logged in (#241)
+Fixed: Find the correct language entry by alias and language in the Reader (#240)
+Added: Mark fields with "copy". Custom field names can be added by $GLOBALS['PCT_CUSTOMCATALOG']['fieldnamesMarkedOnCopy'] = array('myField') (#233)
+Added: {{sql::MY-SQL-QUERY::MY-RETURN-FIELD}} Inserttag (#235)
+Added: Unique id to the sorting filters to allow multiple sortings on the same lsit (#237)
+Added: Multilanguage class to provide methods for the multilanguage support
+Update: Support attribute fields as inserttags like {{id}} in custom list label
+Update: Update the PID of a language sibling to its language parent record if it exists (#229)
+Update: Use onsubmit_callback to create base entry and language reference from a NEW language record (#231)
+Update: Do not hide parent records for nested language records. Keep the trail visible
+Update: Support customcatalog inserttags in list label (#235)
+Update: Minimize the call on the CustomCatalog->getQueryOption (#238)
+Update: Store the active backend language by the current table (#239)
+Update: Resolve static variables and set to self where it makes the code more flexible
+
+### 1.2.6
+Fixed: Do not load the tl_content, tl_module datacontainer in popup windows (#214)
+Fixed: tl_pct_customcatalog_language.id should not be PRIMARY (#226)
+Added: [experimantal] Hide foreign language child entries in mode5,5.1 (#225)
+Added: Support field and palette translations in backend (#227)
+Update: Correct backend label in geolocation filter defaultValue (#223)
+ 
+### 1.2.5
+Fixed: Remove the language switch panel in edit mode when multi-language is turned off
+Added: Support unique value check in a multiple-language environment (#220)
+Update: Include cc_ templates in template selection (#219)
+
+### 1.2.4
+Fixed: Rendering an image bypasses the attribute template (#215)
+Fixed: Avoid overriding the image processing of CustomElements
+Update: Support default values in Selectdb attributes
+Update: More inserttags (be_user::id OR be_user::ID-OR-USERNAME::FIELD)
+
+### 1.2.3
+Fixed: Missing parent table name in dca configuration in nested table structures (#212)
+Added: Use system columns as fallback in the list labels (#211)
+
+### 1.2.2
+Fixed: Missing options array variable in Sorting Filter::getQueryOptionsCallback
+Fixed: Image Attribute sizes (#206)
+Added: SimpleColumn Attribute as core attribute
+Added: Fallback for language variables in filter labels (#200)
+Added: Support mode 5 multilanguage filtering (#203)
+Added: Support manual sorting in mode 5 with multilanguages (#205)
+Added: Support backend filter in mode 5 with multilanguages (#204)
+Added: Support id list inserttags like {{id:1,2,3}} in SimpleConditions Filter for tags or selectdb attributes
+Added: RowTemplate->activerecord()
+Added: Use {{myField::myValue1,myValue2}} as custom sql where in module list for filtering blobs
+Update: Attribute order in Sorting filter can be set by checkboxWizard order (#201)
+
+### 1.2.1
+Fixed: Select attributes should not set options values from active record (#197)
+
+### 1.2.0
+Fixed: Select filter not using the correct labels
+Added: AutoComplete functionality for the Text Filter (#159)
+Added: SimpleCondition filter (#192)
+Added: DoNotRender flag in Filter class to skip the frontend rendering
+Added: Show the number of counts per value in the filter template (#193)
+Update: Remove tl_class w50 for tl_pct_customelement_filter.attr_ids
+Update: Show tl_module.customcatalog_filter_actLang option in reader module (#194)
+Update: Show the backend filter options in Text attribute
+
+### 1.1.7
+Fixed: Handle the image size settings correctly (#188)
+Fixed: The child table edit icons overwrite the parent table icon (#190)
+Fixed: Simple select filter showing the key instead of the label in the widget
+Fixed: Do not filter empty values in Select filter
+Added: Support Tags, SelectDb, Select Attributes in Text Filter
+Added: Search translations (#181)
+Added: Fallback for metaWizard under Contao 3.2 in SelectDb Attribute
+Update: Purge the tl_pct_customcatalog_language table via resiveTable Hook (#189)
+Update: Do not delete the base language record when deleting a language sibling
+
+### 1.1.6
+Fixed: Wrong value for mode in Text filter
+Fixed: Selecting multiple attributes in Text filter might cause sql error duo to the face that contao creates database result array with ID as array keys not with an consecutiv integer
+Fixed: Handle option fields from attributes that do not provide their own getOptionFieldDefinition method like the Url Attribute (#186)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['fieldnamesSharedWithContao'] to avoid unwanted contao fields to be processed when rendering an attribute
+Update: Support same alias across language records (#180)
+Update: The Text filter now searches Tags, SelectDb, Select Attributes for matching labels (#181)
+Update: Load tl_content, tl_module data container in SystemIntegration to have access to the tl_content class
+Update: General updates and fixes
+
+### 1.1.5
+Fixed: CustomSql filter needs a column key in the return array
+Fixed: Foreach error when attribute uses the tl_pct_customelement_attribute.options field for single selections e.g. the list attribute
+Update: Use methods like ->html() or ->value() in the filter form templates (#177)
+Update: Check for empty filter values in Range filter
+Update: General update and fixes
+
+### 1.1.4
+Fixed: The text search filter ignores the filterShowAll setting (#174)
+Fixed: Perform searches with wildcard like values correctly like '%s%' (#174)
+Added: Replace minus in active language with underscore (#173)
+Added: Clear the active record from field names shared with contao content elements (#171). 
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['fieldnamesSharedWithContao'] as a basic field name stack (#171)
+
+### 1.1.3
+Fixed: Remove the DataContainerHelper class (#169)
+Added: CustomCatalog->generateDetailsUrl support page ids as parameter (#167)
+Update: Support the backend explanation attribute (#165)
+Update: Pass the CustomCatalog object to the RowTemplate object (#168)
+
+### 1.1.2
+Fixed: When adding a language with ->setLanguage in the languageSwitch filter, apply the value via ->setValue as well
+Added: Load the language array instead of the country array for supported languages
+Update: Load custom catalog tables and attributes in the install tool to avoid contao to drop tables etc. (#161)
+Update: Load the assets via loadDataContainer Hook
+Update: Resolve classes via class_alias to real class names (#162)
+
+### 1.1.1
+Fixed: Check if tables exist before calling table relevant methods
+Added: tl_pct_customelement_tags in import chain
+Update: Set default value for tl_pct_customcatalog.showMenu to 1 (#156)
+
+### 1.1.0
+Fixed: Handle generic option fields in subpalettes correctly (#101)
+Fixed: Load option values (#114)
+Fixed: Avoid empty dca files or empty table name definitions by creating DCA file only for configurations with a valid table name (#119)
+Fixed: Set auto_items GET parameter in list modules for lists related to a reader module like the related items filter
+Fixed: RateIt attribute needs generic option field to count ratings per entry (#128)
+Fixed: Groupsets created duplicated groups in wrong custom elements (#131)
+Added: Maintenance class and purge obsolete language reference entries via daily cronjob
+Added: Indications for subpalettes and selectors in attribute list view
+Added: be_filter (backend filter) option to checkbox attribute (#99)
+Added: tl_pct_customelement_filter.cssID (#103)
+Added: Methods to find filter values from the url
+Added: tl_pct_customelement_filter.config_id
+Added: RelatedItems filter and inserttags (#109)
+Added: Support for custom list modes, integrated list mode 5.1 -> cut&paste without paste into
+Added: The new icon
+Added: CustomElement attribute (#110)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['childTableMustBeAConfiguration'] flag whether handle child tables without configuration or not
+Added: ItemTemplate Attribute to overwrite the frontend output for each entry (#100)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['makeReferenceAttributeUnique'] flag (see config.php for documentation)
+Added: Filter.addToUrl and removeFromUrl method to generate filter urls
+Added: Template: customcatalog_filter_linklist
+Added: RowTemplate.links() Method for fetching information about the details links (#115)
+Added: Allow any checkbox to be list operation button (#123)
+Added: Attribute Pagetree: Reference array for BE filter option and backend filtering (#124)
+Added: Delete revised custom catalog data (#126)
+Added: be_customelement_attr_default template for rendering attributes in the backend
+Added: Purge revised groupset data in daily cron job (#130)
+Added: added frontend output for LanguageSwitch filter and improved the filtering (#132)
+Added: Toggle between language records on reader page (#133)
+Added: Display a backend hint when there is no paletteselect attribute created yet (#135)
+Added: Enable the database check after deleting attributes (#136)
+Added: tl_pct_customelement_filter.mode as default field
+Added: Support translations (#146)
+Added: Attribute TranslationWidget (#149)
+Added: eval_unique for attributes (#152)
+Added: Engl language files (#150)
+Added: Handle parent alias in lists (#154)
+Added: Check once per hour for db updates via cronjob (#155)
+Update: Improved the multi-language record handling in backend
+Update: Quickmenu has now z-index 9999
+Update: Improved the displayDatabaseUpdateAlert routine
+Update: The sorting panel is now part of the default panel layout
+Update: Various changes and bugfixes
+Update: Changed aliasField and publishedField to id-based integer fields (#106)
+Update: Updated the loading order in config.php and added a bypass when updating the database (#106)
+Update: New template structure to render individual templates for each row processed
+Update: Delete the referenced attributes when the parent attribute is being deleted (#111)
+Update: Filter templates should be global and should be available with no type restrictions (#116)
+Update: Handle recursive child tables
+Update: Use the default generateListLabel Method for the child_record_callback (#120)
+Update: Show database alert on field definition change (#118)
+Update: ptable is now a default field for any table
+Update: Perform database field integrity check only when needed (#125)
+Update: Quickmenu 2.0 (#84)
+Update: Append the filter stack in CustomCatalog->addFilter() if there are filters already (#134)
+Update: Enable the database check for tl_pct_customcatalog ondelete, onsubmit (#138)
+Update: Resolved the _layout_ templates (#137)
+Update: The RelatedItems filter now works like the page select filter (#139)
+Update: The RelatedItems filter now works in both ways by selecting the mode
+Update: Delete the search_mode field, use tl_pct_customelement_filter.mode field instead (#140)
+Update: Use tl_pct_customelement_filter.mode instead of timestamp_mode (#142)
+Update: Use tl_pct_customelement_filter.mode instead of range_mode (#141)
+Update: More convenience _filter_ template structure
+Update: Set dynamicPtable for all child tables since ptable is a systemcolumn (#151)
+
+### 1.0.0
+Fixed: Replace inserttags correctly (#30)
+Fixed: Groupsets need to be child table from tl_pct_customelement (#34)
+Fixed: Main headline writes incorrect submodule title as "Array" (#44)
+Fixed: Update sibling attributes on submit (#81)
+Fixed: Wrong label for the edit all configs button in the quick menu (#80)
+Fixed: Avoid calling the renderCallback again for attributes rendered by a custom element before
+Added: CustomSql Filter (#22)
+Added: Combine Filter to connect filters via AND or OR on the fly (#32)
+Added: Backend icons for filters and attributes
+Added: Link to child entries (#33)
+Added: Automatically set child table in parent custom catalog record (#33)
+Added: Filter::reset to reset a filter and redirect to a url without the filter parameter set
+Added: Show version number in custom catalog tables
+Added: Text filter (#43)
+Added: \PCT\CustomElements\Plugins\CustomCatalog\Core\Attribute class
+Added: \PCT\CustomElements\Plugins\CustomCatalog\Core\CustomElementFactory class
+Added: Handle generic option fields from attributes (#50)
+Added: Handle dynamic parent tables like tl_content (#51)
+Added: $GLOBALS['PCT_CUSTOMCATALOG']['manageExistingTables'] true/false to toggle whether CC is allowed manages existing tables or not (default: false)
+Added: tl_pct_customcatalog.isManageable to let the user decide which existing tables are manageable
+Added: General Contao Models class
+Added: FilterPagetree, Filter by active Page, or a set of pages
+Added: CustomCatalogFactory::findCurrent() returns the custom catalog that the user edits by the current do=ALIAS GET parameter
+Added: Support for custom SQL Where conditions in ModelList class
+Added: \PCT\CustomElements\Plugins\CustomCatalog\Core\CustomElement class
+Added: SelectDb (database) Attribute and Filter (#67)
+Added: More Inserttags (#71)
+Added: Overwrite image settings in CustomCatalogList Module (#73)
+Added: Hook Filter (#74)
+Added: [getEntries] Hook
+Added: [renderCatalog] Hook
+Added: \PCT\CustomElements\Plugins\CustomCatalog\Core\AttributeFactory::findByDca() to find an attribute by its dca field name
+Added: Attribute MetaDescriptions
+Added: Timestamp Filter with datepicker textfield (#83)
+Added: Caching for processed attribute objects when rendering the custom catalog
+Added: Filtersets and their filters to the quickmenu (#85)
+Added: Fonticons in Quickmenu
+Added: Active state to the quick menu toggler
+Added: Dynamic sql sorting by simply adding new sorting options by CC->addSorting(field,order) (#87)
+Added: Sorting Filter (alphabetic, numeric) (#87)
+Added: prepareCatalog Hook
+Added: Set filter values via Session e.g. $session[customcatalogfilter][ID-CC][FILTERS][NAME-OF-FILTER] = array(VALUE) (#70)
+Added: tl_pct_customelements_filter.module_id to load reference modules
+Added: Pagebreak Filter (#88)
+Added: processFilter Hook. Triggered right before the filter is being processed.
+Added: Render content elements in reader module (#92)
+Added: Comments in reader module (#92)
+Added: SystemIntegration prepareField HOOK
+Added: DcaHelper loadDataContainer Hook
+Added: Geolocation Attribute for CE and CC (#94)
+Added: Fallback to first position in content block when the related backend section is not available
+Added: Filter class: Added a filter name parameter to use the methods more flexible with custom filters
+Added: Geolocation filter (#94)
+Added: Template information messages for filters and attributes
+Added: RateIt Attribute (#72)
+Added: getOptionFieldDefinition Hook to pass a field definition array to a processed generic option field
+Added: Backend filtering support for nonstandard field types (#96)
+Added: Attribute overview/listview button as first button (#97)
+Added: Support backend search for custom field types
+Added: Restrict content elements in tl_content child tables (#61)
+Update: Update to new plugin exclusions handling
+Update: Use require instead of require_once in FilterLoader class
+Update: Minor bug fixes and updates
+Update: Load filters in initializeSystem Hook
+Update: Inject groupset panel layout only for CEs that are allowed to be customcatalogs
+Update: Remove the dynamic parent option. It is now default for any child or existing table (#52)
+Update: Remove the difference between parent and child definitions (#53)
+Update: SystemHelper class extends \Contao\System and initializes User objects
+Update: The database update should only recognize deleted or new attributes, not unpublished ones
+Update: Filter list module by active language if set (#64)
+Update: Do not render or save AttributeAlias in CustomElements
+Update: Building the backend url through $GLOBALS['PCT_CUSTOMCATALOG']['backendUrlLogic'] string
+Update: Rename attributes to short classnames (#75)
+Update: Renamed the SystemHelper class to SystemIntegration and moved it to the core class folder (#79)
+Update: Set requirement to CustomElements Version 1.2.7
+Update: Delete generic extension folder on custom catalog delete (#82)
+Update: Improved filter reset method
+Update: Set tl_pct_customelement_attribute.alias to readonly when a reference attribute has been selected (#91)
+Update: Disable the auto. alias generation for the alias field in the default groupset and when there is an alias set already (#90)
+Update: Do not show the update database alert for existing tables that are not allowed to be managed
+Update: Attribute labels to new language array
+Update: Range Filters allow regular text Attributes
+Update: Use the wildcard generating process from CE for regular wildcards (#95)
+Update: Raised the min. required CE version to 1.2.9
+Update: Better wildcard rendering support
+
+### 1.0.1-beta.2
+Fixed: Allow custom values in SimpleIdList filter
+Update: Use SimpleFilter class to filter the reader module
+
+### 1.0.0-beta.2
+Fixed: Show filters in visibles list when module is a customcatalogfilter
+Added: FilterModel class (PCT\CustomElements\Models\FilterModel)
+Added: renderFilterHook (#8b93ef4)
+Added: An internal counter in FilterCollection and getCount() method (#37ce601)
+Added: fetch() method in PCT\CustomElements\Models\Model
+Added: fetchValues() method for Filters. Returns possible filter values
+Added: Render only visible filter (#14)
+Added: tl_module.customcatalog_filter_method to select the form method and how the url is supposed to be generated
+Added: tl_module.customcatalog_filter_formID to allow individual form names
+Added: showAll option for lists tl_module.customcatalog_filter_showAll (#15)
+Added: tl_pct_customelement_filter.includeReset field (#12)
+Added: Strict Mode option for Filters
+Added: Radio Button option for Select filter (#16)
+Added: SimpleFilter class (#19)
+Added: Backend description for filters (#17)
+Update: Filter class now extends FilterModel class
+Update: Move getCustomCatalog method to FilterModel class (#11)
+Update: Handle blob value attributes in Filters (#18)
+Update: List only published filtersets in Module settings (#20)
+
+### 1.0.0-beta.1
+Initial release

@@ -1,0 +1,75 @@
+/* =============================================================================
+ * mod_breadcrumb.html5
+ * ========================================================================== */
+
+.mod_breadcrumb {
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside {
+	position: relative;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:before {
+	content: '';
+	border-top: 1px solid rgba(0,0,0,0.1);
+	position: absolute;
+	top: 0;
+	left: 40px;
+	right: 40px;
+	height: 1px;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:after {
+	content: '';
+	border-top: 1px solid rgba(0,0,0,0.1);
+	position: absolute;
+	bottom: 0;
+	left: 40px;
+	right: 40px;
+	height: 1px;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:before,
+.mod_breadcrumb .mod_breadcrumb_inside:after {
+	display: none;
+}
+
+.mod_breadcrumb ul {
+	font-size: 0.9rem;
+	line-height: 0.9rem;
+	text-align: center;
+	display: inline-block;
+	float: none;
+	padding: 11px 0;
+}
+
+.mod_breadcrumb li {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.mod_breadcrumb li:before {
+	font-family: "FontAwesome";
+	content: "\f101";
+	margin-right: 5px;
+}
+
+.mod_breadcrumb li.first:before {
+	display: none;
+}
+
+.mod_breadcrumb .pagetitle {
+	display: none;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.mod_breadcrumb {
+		display: none;
+	}
+}
+

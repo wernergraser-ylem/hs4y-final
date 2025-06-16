@@ -1,0 +1,43 @@
+<?php
+
+// vendor/contao/faq-bundle/contao/languages/sl/tl_faq.xlf
+$GLOBALS['TL_LANG']['tl_faq']['question']['0'] = 'Vprašanje';
+$GLOBALS['TL_LANG']['tl_faq']['question']['1'] = 'Vnesite vprašanje.';
+$GLOBALS['TL_LANG']['tl_faq']['alias']['0'] = 'FAQ vzdevek (alias)';
+$GLOBALS['TL_LANG']['tl_faq']['alias']['1'] = 'FAQ vzdevek je unikatna referenca vprašanja, ki jo lahko uporabimo namesto ID vprašanja.';
+$GLOBALS['TL_LANG']['tl_faq']['author']['0'] = 'Avtor';
+$GLOBALS['TL_LANG']['tl_faq']['author']['1'] = 'Izberite avtorja.';
+$GLOBALS['TL_LANG']['tl_faq']['answer']['0'] = 'Odgovor';
+$GLOBALS['TL_LANG']['tl_faq']['answer']['1'] = 'Vnesite odgovor.';
+$GLOBALS['TL_LANG']['tl_faq']['addImage']['0'] = 'Dodaj sliko';
+$GLOBALS['TL_LANG']['tl_faq']['addImage']['1'] = 'Dodaj sliko k odgovoru.';
+$GLOBALS['TL_LANG']['tl_faq']['pageTitle']['0'] = 'Meta title';
+$GLOBALS['TL_LANG']['tl_faq']['pageTitle']['1'] = 'Tu lahko vnesete meta naziv po meri, ki bo prepisal privzetega za spletno stran.';
+$GLOBALS['TL_LANG']['tl_faq']['robots']['0'] = 'Oznake robota';
+$GLOBALS['TL_LANG']['tl_faq']['robots']['1'] = 'Tu lahko nastavite, kako naj spletni iskalniki obravnavajo FAQ.';
+$GLOBALS['TL_LANG']['tl_faq']['description']['0'] = 'Meta description';
+$GLOBALS['TL_LANG']['tl_faq']['description']['1'] = 'Tu lahko vnesete meta opis po meri, ki bo prepisal privzetega za spletno stran.';
+$GLOBALS['TL_LANG']['tl_faq']['addEnclosure']['0'] = 'Dodaj prilogo';
+$GLOBALS['TL_LANG']['tl_faq']['addEnclosure']['1'] = 'Dodaj datoteko za prenos k odgovoru.';
+$GLOBALS['TL_LANG']['tl_faq']['enclosure']['0'] = 'Priloge';
+$GLOBALS['TL_LANG']['tl_faq']['enclosure']['1'] = 'Izberite datoteko, ki jo želite dodati k odgovoru.';
+$GLOBALS['TL_LANG']['tl_faq']['published']['0'] = 'Objavi';
+$GLOBALS['TL_LANG']['tl_faq']['published']['1'] = 'Pogosto zastavljeno vprašanje (FAQ) ne bo vidno dokler ni objavljeno.';
+$GLOBALS['TL_LANG']['tl_faq']['title_legend'] = 'Naslov in avtor';
+$GLOBALS['TL_LANG']['tl_faq']['answer_legend'] = 'Odgovor';
+$GLOBALS['TL_LANG']['tl_faq']['meta_legend'] = 'Meta podatki';
+$GLOBALS['TL_LANG']['tl_faq']['image_legend'] = 'Nastavitve slike';
+$GLOBALS['TL_LANG']['tl_faq']['enclosure_legend'] = 'Priloge';
+$GLOBALS['TL_LANG']['tl_faq']['publish_legend'] = 'Objavi nastavitve';
+$GLOBALS['TL_LANG']['tl_faq']['new']['0'] = 'Nov';
+$GLOBALS['TL_LANG']['tl_faq']['new']['1'] = 'Ustvari novo vprašanje';
+$GLOBALS['TL_LANG']['tl_faq']['show'] = 'Prikaži podrobnosti vprašanja ID %s';
+$GLOBALS['TL_LANG']['tl_faq']['edit'] = 'Uredi vprašanje ID %s';
+$GLOBALS['TL_LANG']['tl_faq']['copy'] = 'Kopiraj vprašanje ID %s';
+$GLOBALS['TL_LANG']['tl_faq']['cut'] = 'Premakni vprašanje ID %s';
+$GLOBALS['TL_LANG']['tl_faq']['delete'] = 'Izbriši vprašanje ID %s';
+$GLOBALS['TL_LANG']['tl_faq']['toggle']['0'] = 'Objavi/neobjavi vprašanja';
+$GLOBALS['TL_LANG']['tl_faq']['pasteafter']['0'] = 'Prilepi na vrh';
+$GLOBALS['TL_LANG']['tl_faq']['pasteafter']['1'] = 'Prilepi za vprašanje ID %s';
+$GLOBALS['TL_LANG']['tl_faq']['pastenew']['0'] = 'Ustvari novo vprašanje na vrhu';
+$GLOBALS['TL_LANG']['tl_faq']['pastenew']['1'] = 'Ustvari novo vprašanje za vprašanjem z ID %s';

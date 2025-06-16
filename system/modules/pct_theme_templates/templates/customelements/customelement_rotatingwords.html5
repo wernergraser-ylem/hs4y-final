@@ -1,0 +1,47 @@
+<?php
+
+use Contao\StringUtil;
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_rotating_words.css';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/eclipsex/fx/core.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/cto_layout/scripts/eclipsex/fx/rotatingwords/js/scripts.js';
+
+$element = $this->field('markup')->value();
+if( strpos($element,'.') !== false )
+{
+    $element = 'div';
+}
+?>
+<<?= $element; ?> <?= $this->cssID; ?> class="<?= $this->class; ?> ce_rotating_words_<?= $this->id;?> <?= str_replace('.', '', $this->field('markup')->value()); ?>" 
+data-align="<?= $this->field('align')->value(); ?>" 
+data-color="<?= $this->field('color')->value(); ?>" 
+data-color-highlighted="<?= $this->field('color_highlighted')->value(); ?>" 
+data-speed="<?= $this->field('speed')->value(); ?>"
+>
+	<div class="rotating-words-container">
+		<?php if( $this->field('text_begin')->value() ): ?>
+		<span><?= $this->field('text_begin')->html('customelement_attr_raw'); ?></span>
+		<?php endif; ?>
+		<span class="rotating-words">
+			<?php 
+			$words = StringUtil::deserialize( $this->field('effect_words')->value() ) ?? array();
+			?>
+			<?php foreach($words as $i => $word): ?>
+				<span class="word <?php if($i == 0): ?>active<?php endif; ?>"><span class="mask"><?= $word; ?></span></span>
+			<?php endforeach; ?>
+		</span>
+		<?php if( $this->field('text_end')->value() ): ?>
+		<span><?= $this->field('text_end')->html('customelement_attr_raw'); ?></span>
+		<?php endif; ?>
+        </span>
+	</div>
+</<?= $element; ?>>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() {
+    setTimeout(function() {
+        var options = {speed:<?= $this->field('speed')->value(); ?>, duration:<?= $this->field('duration')->value(); ?>};
+        var fx = EX.fx.rotatingwords('.ce_rotating_words_<?= $this->id; ?> .rotating-words-container', options);
+    }, 500);
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

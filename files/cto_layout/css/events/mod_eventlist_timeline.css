@@ -1,0 +1,153 @@
+/* =============================================================================
+ * event_list_timeline
+ * ========================================================================== */
+
+.js-cd-h-timeline {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.js-cd-h-timeline .timeline {
+	width: 100%;
+	max-width: 100%;
+}
+
+.js-cd-h-timeline .event {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 2em 0;
+}
+
+.js-cd-h-timeline .event-content {
+	padding-right: 2%;
+}
+
+.js-cd-h-timeline .events-content li {
+	padding: 0;
+}
+
+.js-cd-h-timeline .event-content,
+.js-cd-h-timeline .image_container {
+	flex: 0 0 50%;
+}
+
+.js-cd-h-timeline .image_container {
+	padding-left: 2%;
+}
+
+.js-cd-h-timeline .event_item {
+	overflow: hidden;
+}
+
+.js-cd-h-timeline .info {
+	color: rgb(120,120,120);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	display: inline-block;
+	border-top: 1px solid rgb(240,240,240);
+	border-bottom: 1px solid rgb(240,240,240);
+	padding: 5px 0;
+}
+
+.js-cd-h-timeline .ce_text p {
+	line-height: 1.7;
+}
+
+.js-cd-h-timeline time,
+.js-cd-h-timeline .location {
+	display: inline-block;
+}
+
+.js-cd-h-timeline .location {
+	margin-left: 10px;
+}
+
+.js-cd-h-timeline time:before {
+	font-family: "FontAwesome";
+	content: "\f133";
+	margin-right: 4px;
+}
+
+.js-cd-h-timeline .location:before {
+	font-family: "FontAwesome";
+	content: "\f124";
+	margin-right: 4px;
+}
+
+.js-cd-h-timeline .ce_text em {
+	font-size: 1.3rem;
+}
+
+.js-cd-h-timeline .more {
+	margin-top: 10px;
+}
+
+.js-cd-h-timeline .more a {
+	display: inline-block;
+	background: var(--accentColor);
+	padding: 8px 15px;
+	border-radius: 3px;
+	font-size: 0.85rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: rgb(255,255,255);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.js-cd-h-timeline .more a:hover {
+	background: rgb(50,50,50);
+}
+
+.js-cd-h-timeline .events a {
+	font-size: 1rem;
+}
+
+.js-cd-h-timeline .events a:after {
+	bottom: -7px;
+}
+
+.js-cd-h-timeline .filling-line {
+	background-color: var(--accentColor);
+}
+
+.js .cd-h-timeline__date--older-event::after {
+	border-color: var(--accentColor);
+}
+
+.js .cd-h-timeline__date:hover::after,
+.js .cd-h-timeline__date--selected::after {
+	background-color: var(--accentColor);
+	border-color: var(--accentColor);
+}
+
+.js-cd-h-timeline .ce_text em {
+	color: var(--accentColor);
+}
+
+.js-cd-h-timeline time:before,
+.js-cd-h-timeline .location:before {
+	color: var(--accentColor);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+    .js-cd-h-timeline .event-content,
+    .js-cd-h-timeline .image_container {
+        flex: 0 0 100%;
+        padding: 0%;
+    }
+    
+    .js-cd-h-timeline .image_container {
+        margin-top: 20px;
+    }
+    
+    .js-cd-h-timeline .location {
+        margin-left: 0;
+        display: block;
+    }
+    
+}

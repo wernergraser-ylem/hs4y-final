@@ -1,0 +1,29 @@
+<div class="mmenu_trigger" title="Open mobile navigation">
+	<div class="label">Menu</div>
+	<div class="burger transform">
+		<div class="burger_lines"></div>
+	</div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{
+	jQuery('.mmenu_trigger').click(function(e) 
+	{
+		var elem = jQuery('#header');
+		if( jQuery('body').hasClass('fixed-header') )
+		{
+			elem = jQuery('#stickyheader');
+		}
+		var delta = elem.position('body').top + elem.height();
+		jQuery('#mmenu').css(
+		{
+			'top':delta,
+			'transform':'translateY(calc(-100% - '+delta+'px))',
+			'height': 'calc(100% - '+delta+'px)'
+		});
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

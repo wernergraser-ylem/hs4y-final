@@ -1,0 +1,113 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_tabs.css|static';
+?>
+<div class="item-wrap autogrid_wrapper">
+
+	<div class="leftside autogrid one_fourth block">
+		<div class="leftside-inside">
+			<div class="single-logo">
+				<?php echo $this->field('logo')->html(); ?>
+			</div>
+			<h5><?php echo $this->field('name')->value(); ?></h5>
+			<div class="single-destination color-accent"><i class="fa fa-neuter"></i><?php echo $this->field('destination')->html(); ?></div>
+			<div class="single-price-left-wrap">
+				<div class="single-price-left-label">Preis</div>
+				<div class="single-price-left">&euro; <?php echo $this->field('price')->html(); ?></div>
+			</div>
+			<div class="single-short-description"><?php echo $this->field('short_description')->html(); ?></div>
+			<?php echo $this->field('rating')->html(); ?>
+		</div>
+	</div>
+	
+	<div class="rightside autogrid three_fourth block">
+	
+		<div class="single-top">
+			<div class="single-top-content">
+				<div class="single-leftside">
+					<?php echo $this->field('gallery')->html(); ?>
+				</div>
+				<div class="single-rightside">
+					<h1><?php echo $this->field('name')->value(); ?></h1>
+					<div class="single-destination"><i class="fa fa-neuter"></i><?php echo $this->field('destination')->html(); ?></div>
+					<div class="single-date"><i class="fa fa-calendar-o"></i><?php echo $this->field('arrival')->html(); ?> - <?php echo $this->field('departure')->html(); ?></div>
+					<div class="single-price"><strong class="bg-accent">&euro; <?php echo $this->field('price')->html(); ?></strong></div>
+					<div class="single-metadata">
+						<table class="table-striped">
+							<tr>
+								<td class="color-accent">&Uuml;bernachtungen</td>
+								<td class="color-accent"><?php echo $this->field('stay')->value(); ?> Tage</td>
+							</tr>
+							<tr>
+								<td>Hotelgr&ouml;sse</td>
+								<td><?php echo $this->field('size')->value(); ?> Betten</td>
+							</tr>
+							<tr>
+								<td>Stornokosten</td>
+								<td><?php echo $this->field('cancellation')->value(); ?></td>
+							</tr>
+							<tr>
+								<td>Check-In</td>
+								<td><?php echo $this->field('check_in')->value(); ?> Uhr</td>
+							</tr>
+							<tr>
+								<td>Check-Out</td>
+								<td><?php echo $this->field('check_out')->value(); ?> Uhr</td>
+							</tr>
+						</table>	
+						<?php echo $this->field('notelist')->html(); ?>
+						<div class="single-print"><a href="javascript:window.print();"><i class="fa fa-print"></i> Drucken</a></div>
+						<div class="single-mail"><a href="mailto:info@yourdomain.com?subject=<?php echo $this->field('name')->value(); ?>"><i class="fa fa-envelope"></i> Per E-Mail anfragen</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="single-bottom">
+			<div class="ce_tabs">
+				<div class="tabs classic tabs_<?php echo $this->id; ?>">
+					<ul>
+						<li><span>Austattung</span></li>
+						<li><span>Beschreibung</span></li>
+						<li><span>Sonstiges</span></li>
+					</ul>
+				</div>
+				<div class="panes panes_<?php echo $this->id; ?>">
+					<div class="section active">
+						<h3>Austattung</h3>
+						<div class="single-features"><?php echo $this->field('features')->html(); ?></div>
+					</div>
+					<div class="section">
+						<h3>Beschreibung</h3>
+						<div class="single-desc"><?php echo $this->field('description')->html(); ?></div>
+					</div>
+					<div class="section">
+						<h3>Sonstiges</h3>
+						<div class="single-desc-add"><?php echo $this->field('additional_desc')->html(); ?></div>
+					</div>
+				</div>
+			</div>
+			{{insert_form::19}}
+			<?php echo $this->field('geo_data')->html(); ?>
+		</div>
+	
+	</div>
+
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	jQuery(".tabs_<?php echo $this->id; ?> li:first").addClass('active');
+    jQuery(".tabs_<?php echo $this->id; ?> li").click(function(e){
+        if (!jQuery(this).hasClass("active")) {
+            var tabNum = jQuery(this).index();
+            var nthChild = tabNum+1;
+            jQuery(".tabs_<?php echo $this->id; ?> li.active").removeClass("active");
+            jQuery(this).addClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div.active").removeClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+

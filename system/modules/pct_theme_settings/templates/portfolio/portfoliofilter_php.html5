@@ -1,0 +1,62 @@
+
+<?php
+global $objPage;
+$arrFilter = \deserialize($this->news_filters) ?: array();
+
+// multiple filtering
+$isMultiple = (boolean)$this->news_filter_multiple; // true|false
+
+$arrFilters = array_filter( explode(',', \Contao\Input::get('filter') ) );
+$strBase = $objPage->getFrontendUrl();
+?>
+
+<ul id='portfoliofilter_<?= $this->id; ?>' class="mod_portfoliofilter php filter block">
+<?php foreach($arrFilter as $data): ?>
+
+<?php 
+// active state
+$isActive = false;
+if(in_array($data['value'], $arrFilters) )
+{
+	$isActive = true;
+}
+
+$filters = array();
+if( $isMultiple )
+{
+	$filters = $arrFilters;
+}
+
+// add filter value
+if( $isMultiple && !in_array($data['value'], $filters) )
+{
+	$filters[] = $data['value'];
+}
+// remove filter value
+else if( $isMultiple && in_array($data['value'], $filters) )
+{
+	$i = array_search($data['value'], $filters);
+	unset( $filters[$i] );
+}
+// simply strict filter value
+else if( !$isMultiple )
+{
+	$filters = array( $data['value'] );
+}
+// build filter url
+$filterUrl = $strBase;
+if( !empty($filters) )
+{
+	$filterUrl .= '?filter='.implode(',', $filters); 
+}
+?>
+
+<li class="<?= $data['value']; ?> <?php if($isActive): ?>active<?php endif; ?>" data-filter="<?= $data['value']; ?>">
+<?php if($isActive && !$isMultiple): ?>
+<span class="active"><?= $data['label']; ?></span>
+<?php else: ?>
+<a href="<?= $filterUrl ?>" class="<?php if($isActive): ?>active<?php endif; ?>" title="Filter: <?php $data['label']; ?>"><?= $data['label']; ?></a>
+<?php endif; ?>
+</li>
+<?php endforeach; ?>
+</ul>

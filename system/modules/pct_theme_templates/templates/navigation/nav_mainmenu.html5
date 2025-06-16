@@ -1,0 +1,52 @@
+<?php
+$floatLeftOpen = false;
+$floatRightOpen = false;
+?>
+<ul class="vlist <?= $this->level; ?>">
+<?php foreach ($this->items as $i => $item): ?>
+	<?php if( $item['visibility_css'] )
+	{
+		$item['class'] .= ' '.$item['visibility_css'];
+	}
+	if( $item['addFontIcon'] && !empty('fontIcon') )
+	{
+		$item['class'] .= ' hasIcon';
+	}
+	if( isset($item['helper_css']) && !empty($item['helper_css']) )
+	{
+		$item['class'] .= ' '.\implode(' ',\Contao\StringUtil::deserialize( $item['helper_css'] ) );
+	}
+
+	$item['class'] .= ' '.$this->level.' page_'.$item['id'];
+	if( !isset($item['subitems']) )
+	{
+		$item['subitems'] = '';
+	}
+	?>
+    <?php // opening floatbox
+	$arrClass = array_filter(explode(' ',$item['class']));
+	$arrNextClass = array_filter(explode(' ', isset($this->items[$i+1]['class']) ? $this->items[$i+1]['class'] : ''));
+	?>
+
+	<?php if(in_array('float_left',$arrClass) && !$floatLeftOpen): ?>
+	<li class="float_left floatbox sibling"><ol class="inner">
+	<?php $floatLeftOpen = true; endif; ?>
+	
+	<?php if(in_array('float_right',$arrClass) && !$floatRightOpen): ?>
+	<li class="float_right floatbox sibling"><ol class="inner">
+	<?php $floatRightOpen = true; endif; ?>
+	<li class="mlist <?= $item['type']; ?><?php if ($item['class']): ?> <?= $item['class']; ?><?php endif; ?> <?php if($item['isActive']): ?>mm-selected Selected<?php endif; ?>">
+		<a href="<?= $item['href'] ?: './' ?>" title="<?= $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>" class="mainmenu_link a-<?= $this->level; ?> <?= $item['type']; ?><?php if ($item['class']): ?> <?= $item['class']; ?><?php endif; ?><?php if ($item['addFontIcon']): ?> nav-icon<?php endif; ?>"<?php if ($item['accesskey'] != ''): ?> accesskey="<?= $item['accesskey']; ?>"<?php endif; ?><?php if (isset($item['tabindex'])): ?> tabindex="<?= $item['tabindex']; ?>"<?php endif; ?><?= $item['rel'] ?? '' ?><?= $item['target']; ?>><?php if($item['addFontIcon']): ?><i class="<?= $item['fontIcon']; ?>"></i><?php endif; ?><span><?= $item['link']; ?><?php if ($item['ribbon']): ?><span class="ribbon"><?= $item['ribbon']; ?></span><?php endif; ?></span></a>
+		<?= $item['subitems']; ?>
+	</li>
+	<?php //  closing floatbox
+	if($floatLeftOpen && !in_array('float_left', $arrNextClass)) :?>
+	</ol></li>
+	<?php $floatLeftOpen = false; endif; ?>
+	
+	<?php if($floatRightOpen && !in_array('float_right',$arrNextClass)): ?>
+	</ol></li>
+	<?php $floatRightOpen = false; endif; ?>
+
+<?php endforeach; ?>
+</ul>

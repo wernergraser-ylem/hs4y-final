@@ -1,0 +1,74 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/jquery.mb.YTPlayer/inc/jquery.mb.YTPlayer.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/jquery.mb.YTPlayer/css/jquery.mb.YTPlayer.min.css|static';	
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_youtube_background.css|static';
+?>
+<div class="<?php echo $this->class; ?> block boxed-content youtubevid_<?php echo $this->id; ?><?php if($this->field('invert')->value()): ?> color-white<?php endif; ?><?php if($this->field('overlay')->value()): ?> overlay<?php endif; ?>" style="background-image: url(<?php echo $this->field('poster')->generate(); ?>);<?php echo $this->style; ?>"<?php echo $this->cssID; ?>>
+	<!-- indexer::stop -->
+	<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von YouTube wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}YouTube has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+	<!-- indexer::continue -->
+	
+	<!-- SEO-SCRIPT-START -->
+   <script>
+   jQuery(document).ready(function() {
+	   if(!jQuery('body').hasClass('mobile')) {
+		   jQuery(".player").mb_YTPlayer();
+      }
+   });
+   </script>
+	<script>
+	// show privacy information if nessessary
+	jQuery(document).ready(function() 
+	{
+		if( !PrivacyManager.hasAccess(2) )
+		{
+			jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+		}
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+
+	<div class="ce_youtube_background-inside contentwrap<?php if($this->field('padding_top_class')->value()): ?> <?php echo $this->field('padding_top_class')->value(); ?><?php endif; ?><?php if($this->field('padding_bottom_class')->value()): ?> <?php echo $this->field('padding_bottom_class')->value(); ?><?php endif; ?>">
+		<div id="youtube_iframe_<?= $this->id; ?>"></div>
+		<!-- SEO-SCRIPT-START -->
+		<script>
+		// inject iframe html when privacy setting allows it
+		var options_<?= $this->id; ?> = 
+		{
+			videoURL : '<?= $this->field('youtube')->value() ?>',
+			containment : '.youtubevid_<?= $this->id; ?>',
+			autoPlay : 'true',
+			opacity : 1,
+			startAt : 0,
+			showYTLogo : 'false'
+		}
+		<?php if($this->field('muted')->value()): ?>
+		options_<?= $this->id; ?>.mute = 'true';
+		<?php endif; ?>
+		<?php if($this->field('controls')->value()): ?>
+		options_<?= $this->id; ?>.showControls = 'true';
+		<?php endif; ?>
+		
+		jQuery(document).ready(function() 
+		{
+			if( PrivacyManager.hasAccess(2) )
+			{
+				var elem = jQuery('#youtube_iframe_<?= $this->id; ?>').append('<a class="player"></a>');
+				elem.find('a.player').data('property',options_<?= $this->id; ?>);
+				jQuery('#youtube_iframe_<?= $this->id; ?> .player').mb_YTPlayer();	
+			}
+		});
+		
+		// listen to Eclipse.user_privacy Event
+		jQuery(document).on('Privacy.changed',function(event,params)
+		{
+			if( PrivacyManager.hasAccess(2) )
+			{
+				jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+				var elem = jQuery('#youtube_iframe_<?= $this->id; ?>').append('<a class="player"></a>');
+				elem.find('a.player').data('property',options_<?= $this->id; ?>);
+				jQuery('#youtube_iframe_<?= $this->id; ?> .player').mb_YTPlayer();
+			}
+		});
+		</script>
+		<!-- SEO-SCRIPT-STOP -->

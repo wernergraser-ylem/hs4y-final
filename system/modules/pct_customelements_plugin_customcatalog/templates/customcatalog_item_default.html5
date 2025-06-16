@@ -1,0 +1,14 @@
+<?php
+/**
+ * Custom catalog item template
+ * 
+ * Example: get the value of the field "title": <?php echo $this->field('title')->value(); ?>
+ * Example: Prerender an image with the field alias "image": <?php echo $this->field('image')->html(); ?>
+ */	
+?>
+
+<div class="item block">
+	<?php foreach($this->fields() as $field): ?>
+	<?php echo $field->html(); ?>
+	<?php endforeach; ?>
+</div>

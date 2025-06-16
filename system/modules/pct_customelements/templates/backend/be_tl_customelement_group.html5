@@ -1,0 +1,31 @@
+<?php
+/**
+ * Backend template for tl_pct_customelement_group list
+ */
+?>
+
+<div class="tl_content_left tl_customelement_group  <?php echo ($this->row['published'] ? '' : 'unpublished'); ?> <?php echo ($this->row['isLegend'] ?? 'is_legend'); ?>">
+<div id="customelement_group_<?php echo $this->row['id']; ?>" class="group_title active <?php echo(!empty($this->childs) > 0 ? 'hasChilds' : 'empty')?>"><?php echo $this->row['title']; ?></div>
+<div id="slide_<?php echo $this->row['id']; ?>" class="slide active">
+<?php if(!empty($this->childs)):?>
+<ul class="child_list">
+<?php foreach($this->childs as $child): ?>
+<li class="field field_<?php echo $child['id']; ?> <?php echo ($child['published'] ? '' : 'unpublished'); ?>">
+	<div class="col left">
+		<span class="title"><?php echo $child['title']; ?></span>
+		[<span class="definition italic"><?php echo $child['type']; ?> <?php echo $child['alias']; ?></span>]
+	</div>
+	<div class="col right buttons">
+		<span class="edit"><?php echo $child['__edit__']; ?></span>
+		<span class="delete"><?php echo $child['__delete__']; ?></span>
+		<span class="toggle"><?php echo $child['__toggle__']; ?></span>
+	</div>
+</li>
+<?php endforeach; ?>
+</ul>
+<?php else: ?>
+<p class="empty"><?php echo $this->empty; ?></p>
+<?php endif;?>
+</div>
+</div>
+

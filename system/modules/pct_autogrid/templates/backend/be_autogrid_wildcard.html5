@@ -1,0 +1,73 @@
+
+<?php // skip wildcard for certain elements
+if( in_array($this->type, array('autogridRowStop','autogridColStart','autogridColStop','autogridGridStop')) )
+{
+	return '';
+}
+?>
+
+<?php 
+$arrFields = $GLOBALS['PCT_AUTOGRID']['BE_WILDCARD'] ?: array();
+?>
+
+
+<?php if( in_array($this->type, array('autogridRowStart','autogridGridStart')) ): ?>
+<ul class="autogrid_info autogrid_wildcard">
+<li title="<?= $GLOBALS['TL_LANG']['autogrid_wildcard']['sameheight']['label']; ?>" class="field clickable autogrid_sameheight<?php if($this->autogrid_sameheight): ?> active<?php endif; ?>" data-field="autogrid_sameheight" data-value="<?= $this->autogrid_sameheight; ?>"><?= $GLOBALS['TL_LANG']['autogrid_wildcard']['sameheight']['label']; ?></li>
+<li class="field clickable autogrid_gutter">
+	<ul>
+   		<li class="label"><?= $GLOBALS['TL_LANG']['autogrid_wildcard']['gutter']['label']; ?></li>
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_wildcard']['gutter']['gutter_l']; ?>" class="clickable<?php if($this->autogrid_gutter == 'gutter_l'): ?> active<?php endif; ?>" data-field="autogrid_gutter" data-value="gutter_l">L</li>
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_wildcard']['gutter']['gutter_m']; ?>" class="clickable<?php if($this->autogrid_gutter == 'gutter_m'): ?> active<?php endif; ?>" data-field="autogrid_gutter" data-value="gutter_m">M</li>
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_wildcard']['gutter']['gutter_s']; ?>"class="clickable<?php if($this->autogrid_gutter == 'gutter_s'): ?> active<?php endif; ?>" data-field="autogrid_gutter" data-value="gutter_s">S</li>
+		<li title="<?= $GLOBALS['TL_LANG']['autogrid_wildcard']['gutter']['gutter_none']; ?>" class="clickable<?php if($this->autogrid_gutter == 'gutter_none'): ?> active<?php endif; ?>" data-field="autogrid_gutter" data-value="gutter_none">-</li>
+	</ul>
+</li>
+</ul>
+<?php else: ?>
+
+<ul class="autogrid_info">
+
+<?php foreach($arrFields as $field): ?>
+<?php 
+
+// skip certain fields
+if( $this->type == 'autogridRowStart' && in_array($field, array('autogrid_css','autogrid_grid') ) )
+{
+	continue;
+}
+
+// field definition
+$arrFieldDef = $GLOBALS['PCT_AUTOGRID']['autogrid_fields'][$field];
+
+// load grid preset defaults
+if( empty($this->{$field}) && $this->type == 'autogridGridStart' && isset($GLOBALS['PCT_AUTOGRID']['GRID_PRESETS'][$this->autogrid_grid]) )
+{
+	$key = '';
+	if( isset($GLOBALS['TL_DCA'][\Contao\Input::get('table')]['fields'][$field]['grid']) )
+	{
+		$key = $GLOBALS['TL_DCA'][\Contao\Input::get('table')]['fields'][$field]['grid'] ;
+	}
+	
+	if( !empty($key) && $GLOBALS['PCT_AUTOGRID']['GRID_PRESETS'][$this->autogrid_grid]['grid'][$key] )
+	{
+		$this->{$field} = $GLOBALS['PCT_AUTOGRID']['GRID_PRESETS'][$this->autogrid_grid]['grid'][$key];
+	}
+}
+
+if( empty($this->{$field}) ) 
+{ 
+	continue; 
+}
+
+$value = $this->{$field};
+// reference
+if( isset($arrFieldDef['reference'][$value]) )
+{
+	$value = $arrFieldDef['reference'][$value];
+}
+?>
+<li class="info"><span class="field <?= $field; ?>"><?= $GLOBALS['TL_LANG']['dca_autogrid'][$field][0]; ?>: <span class="value"><?= $value; ?></span>
+<?php endforeach; ?>	
+</ul>
+<?php endif; ?>

@@ -1,0 +1,337 @@
+<?php
+
+/**
+ * Contao Open Source CMS
+ * 
+ * Copyright (C) 2005-2013 Leo Feyer
+ * 
+ * @copyright	Tim Gatzky 2016
+ * @author		Tim Gatzky <info@tim-gatzky.de>
+ * @package		pct_customelements
+ * @subpackage	pct_customelements_plugin_customcatalog
+ * @link		http://contao.org
+ */
+
+use Contao\DC_Table;
+
+/**
+ * Table tl_pct_customcatalog_job
+ */
+$GLOBALS['TL_DCA']['tl_pct_customcatalog_job'] = array
+(
+	// Config
+	'config' => array
+	(
+		'dataContainer'               => DC_Table::class,
+		'ptable'                      => 'tl_pct_customcatalog_api',
+		'switchToEdit'                => true,
+		'onload_callback'			  => array
+		(
+			array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob','modifyDCA'),
+		),
+		'onsubmit_callback' => array
+		(
+			array('PCT\CustomElements\Plugins\CustomCatalog\Backend\Quickmenu','rebuildMenuOnPageLoad'),
+		),
+		'sql' => array
+		(
+			'keys' => array
+			(
+				'id' => 'primary',
+				'pid' => 'index',
+			)
+		)
+	),
+	// List
+	'list' => array
+	(
+		'sorting' => array
+		(
+			'mode'                    => 4,
+			'flag'					  => 1,
+			'fields'                  => array('sorting'),
+			'headerFields'            => array('type','mode','title'),
+			'header_callback'		  => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob','listHeaderFields'),
+			'panelLayout'             => 'filter;search,limit',
+			'child_record_callback'	  => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'listRecords'),
+		),
+		'label' => array
+		(
+			'fields'                  => array('type','target','action','mode'),
+			'format'                  => '%s %s',
+		),
+		'global_operations' => array
+		(
+			'all' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
+				'href'                => 'act=select',
+				'class'               => 'header_edit_all',
+				'attributes'          => 'onclick="Backend.getScrollOffset();" accesskey="e"'
+			),
+		),
+		'operations' => array
+		(
+			'edit' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['edit'],
+				'href'                => 'act=edit',
+				'icon'                => 'edit.svg',
+			),
+			'copy' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['copy'],
+				'href'                => 'act=copy',
+				'icon'                => 'copy.svg',
+			),
+			'cut' => array
+			(
+			   'label'               => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['cut'],
+			   'href'                => 'act=paste&amp;mode=cut',
+			   'icon'                => 'cut.gif',
+			),
+			'toggle' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['toggle'],
+				'icon'                => 'visible.svg',
+				'href'                => 'act=toggle&amp;field=published',
+				#'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s);"',
+				'button_callback'     => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'toggleIcon')
+			),
+			'delete' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['delete'],
+				'href'                => 'act=delete',
+				'icon'                => 'delete.svg',
+				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"',
+			),
+		)
+	),
+	// Palettes
+	'palettes' => array
+	(
+		'__selector__'				  => array('type','action','addTitle','mode','published'),
+		'default'                  	  => '{title_legend},type;{expert_legend},published',
+		'field'                  	  => '{title_legend},type,target;{settings_legend},addTitle;{action_legend},action;{reference_legend:hide},reference;{expert_legend},published'
+	),
+	// Subpalettes
+	'subpalettes' => array
+	(
+		'action_source'			      => 'source,mode',
+		'action_value'			      => 'valueSRC',
+		'action_hook'			      => 'hookSRC',
+		'action_sql'			      => 'sqlSRC',
+		'action_timestamp'		      => 'tstampSRC',
+		'action_text'		      	  => 'code',
+		'action_html'		      	  => 'code',
+		'action_headline'		      => 'valueSRC',
+		'action_file'				  => 'source,mode,attr_id,code',
+		'action_files'				  => 'source,mode,attr_id,code',
+		'action_relations'			  => 'source,code',
+		'addTitle'					  => 'title,description',
+		'mode_hook'					  => 'hookSRC',
+		'mode_php'					  => 'code',
+		'published'					  => 'rule,onError'
+	),
+	// Fields
+	'fields' => array
+	(
+		'id' => array
+		(
+			'eval'					  => array('doNotCopy'=>true),
+			'sql'                     => "int(10) unsigned NOT NULL auto_increment",
+		),
+		'pid' => array
+		(
+			'sql'                     => "int(10) unsigned NOT NULL default '0'",
+		),
+		'sorting' => array
+		(
+			'sql'                     => "int(10) unsigned NOT NULL default '0'",
+		),
+		'tstamp' => array
+		(
+			'eval'					  => array('doNotCopy'=>true),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'",
+		),
+		'type' => array
+		(
+		   'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['type'],
+		   'exclude'                 => true,
+		   'filter'				 	 => true,
+		   'default'				 => 'field',
+		   'inputType'               => 'select',
+		   'options'       			 => array('field'),
+		   'options_callback'		  => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'getTypes'),
+		   'reference'				 => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['type'],
+		   'eval'                    => array('mandatory'=>true,'tl_class'=>'w50','chosen'=>true,'submitOnChange'=>true),
+		   'sql'					  => "varchar(128) NOT NULL default ''",
+		),
+		'target' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['target'],
+			'exclude'                 => true,
+			'filter'				  => true,
+			'search'				  => true,
+			'inputType'               => 'select',
+			'eval'                    => array('mandatory'=>true,'tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true),
+			'sql'					  => "varchar(96) NOT NULL default ''",
+		),
+		'source' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['source'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'options_callback'		  => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'getForeignFields'),
+			'eval'                    => array('mandatory'=>true,'tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true),
+			'sql'                     => "varchar(96) NOT NULL default ''"
+		),
+		'action' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['action'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'default'				  => 'value',
+			'options'				  => array('value','exclude','source','sql','hook','timestamp','text','html','headline','file','files','relations'),
+			'options_callback'        => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'getActions'),
+			'reference'				  => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['action'],
+			'eval'                    => array('tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true,'submitOnChange'=>true),
+			'sql'					  => "varchar(64) NOT NULL default ''",
+		),
+		'mode' => array
+		(
+		   'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['mode'],
+		   'exclude'                 => true,
+		   'inputType'               => 'select',
+		   'options'       			 => array('auto','copy','hook','uuidToBin','binToUuid','toPath','php'),
+		   'reference'				 => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['mode'],
+		   'eval'                    => array('mandatory'=>true,'tl_class'=>'w50','chosen'=>true,'submitOnChange'=>true),
+		   'sql'					  => "varchar(128) NOT NULL default ''",
+		),
+		
+		'reference' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['reference'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true),
+			'sql'                     => "varchar(96) NOT NULL default ''"
+		),
+		'code' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['code'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('tl_class'=>'clr long','preserveTags'=>true, 'decodeEntities'=>true, 'class'=>'monospace', 'rte'=>'ace', 'helpwizard'=>true,),
+			'sql'                     => "text NULL"
+		),
+		
+		'addTitle' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['addTitle'],
+			'exclude'                 => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('tl_class'=>'','submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default ''",
+		),
+		'title' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['title'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'clr w50'),
+			'sql'					  =>  "varchar(255) NOT NULL default ''",
+		),
+		'description' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['description'],
+			'exclude'                 => true,
+			'inputType'				  => 'text',
+			'eval'                    => array('tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''",
+		),
+		
+		'attr_id' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['attr_id'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'options_callback'        => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'getAttributes'),
+			'eval'                    => array('tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true,'submitOnChange'=>true),
+			'sql'					  => "char(10) NOT NULL default ''",
+		),
+		
+		'valueSRC' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['valueSRC'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('tl_class'=>'w50','maxLength'=>255,'allowHtml'=>true),
+			'sql'					  => "varchar(255) NOT NULL default ''",
+		),
+		'hookSRC' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['hookSRC'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'options_callback'		  => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'getHooks'),
+			'eval'                    => array('tl_class'=>'w50','includeBlankOption'=>true,'chosen'=>true,'decodeEntities'=>true),
+			'sql'					  => "varchar(255) NOT NULL default ''",
+		),
+		'sqlSRC' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['sqlSRC'],
+			'exclude'                 => true,
+			'inputType'               => 'textarea',
+			'eval'                    => array('tl_class'=>'clr','style'=>'min-height:40px;','decodeEntities'=>true),
+			'sql'					  => "mediumtext NULL",
+		),
+		'tstampSRC' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['tstampSRC'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
+		),
+		'multiSRC' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['multiSRC'],
+			'sql'					  => "blob NULL",
+		),
+		
+		// expert settings
+		'published' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['published'],
+			'exclude'                 => true,
+			'toggle'				  => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('tl_class'=>'clr','submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default ''",
+		),
+		'onError' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['onError'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'options'				  => array('skip','escape'),
+			'reference'				  => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['onError'],
+			'eval'                    => array('tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true),
+			'sql'					  => "varchar(32) NOT NULL default ''",
+		),
+		'rule' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['rule'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'options_callback'        => array('PCT\CustomElements\Plugins\CustomCatalog\Backend\TableCustomCatalogJob', 'getRules'),
+			'reference'				  => &$GLOBALS['TL_LANG']['tl_pct_customcatalog_job']['rule'],
+			'eval'                    => array('tl_class'=>'w50','chosen'=>true,'includeBlankOption'=>true),
+			'sql'					  => "varchar(32) NOT NULL default ''",
+		),
+		
+		
+	)
+);

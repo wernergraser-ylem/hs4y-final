@@ -1,0 +1,59 @@
+/* =============================================================================
+ * ce_headertext
+ * ========================================================================== */
+
+.ce_headertext {
+	text-align: center;
+	border-bottom: 1px solid rgb(229,229,229);
+	padding: 45px 0 65px 0;
+}
+
+.ce_headertext_inside {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ce_headertext h1,
+.ce_headertext h2,
+.ce_headertext h3,
+.ce_headertext h4,
+.ce_headertext h5,
+.ce_headertext h6,
+.ce_headertext .h1,
+.ce_headertext .h2,
+.ce_headertext .h3,
+.ce_headertext .h4,
+.ce_headertext .h5,
+.ce_headertext .h6 {
+	font-size: 1.467rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.ce_headertext h1:after,
+.ce_headertext h2:after,
+.ce_headertext h3:after,
+.ce_headertext h4:after,
+.ce_headertext h5:after,
+.ce_headertext h6:after,
+.ce_headertext .h1:after,
+.ce_headertext .h2:after,
+.ce_headertext .h3:after,
+.ce_headertext .h4:after,
+.ce_headertext .h5:after,
+.ce_headertext .h6:after {
+	background: var(--accentColor);
+	content: '';
+	display: block;
+	height: 2px;
+	margin: 20px auto 20px auto;
+	position: relative;
+	width: 22px;
+
+}
+
+.ce_headertext p {
+	font-size: 1.067rem;
+	color: rgb(127,127,127);
+}

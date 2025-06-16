@@ -1,0 +1,102 @@
+/* =============================================================================
+ * ce_rotating_words
+ * ========================================================================== */
+
+.ce_rotating_words {
+	line-height: 1.3;
+} 
+
+.ce_rotating_words,
+.ce_rotating_words * {
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+.ce_rotating_words a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.ce_rotating_words[data-align="center"] .rotating-words-container {
+  justify-content: center;
+}
+
+.ce_rotating_words[data-align="right"] .rotating-words-container {
+  justify-content: right;
+}
+
+/* data-color */
+.ce_rotating_words[data-color="accent-color"] {
+  color: var(--accentColor);
+}
+
+.ce_rotating_words[data-color="second-color"] {
+  color: var(--secondColor);
+}
+
+.ce_rotating_words[data-color="white"] {
+  color: #ffffff;
+}
+
+.ce_rotating_words[data-color="black"] {
+  color: #000000;
+}
+
+.ce_rotating_words[data-color="light-gray"] {
+  color: #b4b4b4;
+}
+
+.ce_rotating_words[data-color="dark-gray"] {
+  color: #7f7f7f;
+}
+
+.ce_rotating_words[data-color="custom1"] {
+  color: var(--customColor1);
+}
+
+.ce_rotating_words[data-color="custom2"] {
+  color: var(--customColor2);
+}
+
+/* effect */
+.ce_rotating_words .rotating-words-container {
+    display: flex;
+}
+
+.ce_rotating_words .rotating-words {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    white-space: nowrap;
+    position: relative;
+    transition: width 0.3s ease-out;
+}
+
+.ce_rotating_words .word {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0; 
+    white-space: nowrap;
+    overflow: hidden;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: transform 0.8s cubic-bezier(.2,1,.3,1), opacity 0.8s cubic-bezier(.2,1,.3,1);
+}
+
+.ce_rotating_words .word .mask {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    transition: width 0.8s cubic-bezier(.2,1,.3,1);
+}
+
+.ce_rotating_words .word.active {
+    opacity: 1;
+    transform: translateX(0);
+}

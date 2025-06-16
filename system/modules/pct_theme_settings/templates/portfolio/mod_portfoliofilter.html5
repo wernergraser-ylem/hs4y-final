@@ -1,0 +1,18 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?php 
+// add the portfoliofilter based on PHP and system functions
+if($this->news_sysfilter)
+{
+	include $this->getTemplate('portfoliofilter_php', 'html5'); 
+}
+// add the isotope javascript based portfoliofilter
+else
+{
+	include $this->getTemplate('portfoliofilter_isotope', 'html5'); 
+}
+?>
+
+<?php $this->endblock(); ?>

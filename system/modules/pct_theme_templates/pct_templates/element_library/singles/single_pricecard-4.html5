@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_pricecard-4
+*/
+$arrImport = array (
+'tstamp' => '21.11.2023 08:17',
+'name' => 'single_pricecard-4',
+'category' => 'infographics',
+'thumb' => '',
+'elements' => 'pricecard',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126468,
+1 => 14779,
+2 => 640,
+3 => 1700554407,
+5 => 'pricecard',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+100 => '14',
+102 => '0.5',
+160 => 'a:7:{s:6:"values";a:20:{s:15:"5yzo4de8mkitqjp";a:2:{s:5:"value";s:12:"Starter Plan";s:4:"unit";s:2:"h2";}s:18:"5yzo4de8mkitqjp_h1";s:0:"";s:18:"5yzo4de8mkitqjp_h2";s:0:"";s:18:"5yzo4de8mkitqjp_h3";s:0:"";s:18:"5yzo4de8mkitqjp_h4";s:0:"";s:18:"5yzo4de8mkitqjp_h5";s:0:"";s:18:"5yzo4de8mkitqjp_h6";s:0:"";s:14:"x6xguzyyawtitl";s:9:"€ 29.99";s:15:"8rtca9mufefz9dn";s:176:"<ul class="training-list">
+<li>Lorem ipsum dolor</li>
+<li>Magnis dis parturient</li>
+<li>Amet adipiscing</li>
+<li>Nullam quis ant</li>
+<li>Lorem ipsum dolor sit amet</li>
+</ul>";s:15:"mpcwaxyvxx2tjc3";s:1:"#";s:26:"mpcwaxyvxx2tjc3_pagepicker";s:0:"";s:22:"mpcwaxyvxx2tjc3_target";s:0:"";s:24:"mpcwaxyvxx2tjc3_linkText";s:7:"Sign up";s:25:"mpcwaxyvxx2tjc3_titleText";s:7:"Sign up";s:15:"r6rhbatclx5n0qx";s:6:"style2";s:15:"5w59npup8evq70h";s:1:"1";s:14:"59biak71o0hjc1";N;s:15:"u66ngmjuduyw5uw";N;s:15:"tjhlz2lw70556cz";N;s:15:"p6txptdz1jl1tym";N;}s:6:"groups";a:3:{i:0;a:4:{s:5:"ident";s:5:"139_0";s:8:"group_id";i:139;s:11:"group_alias";s:4:"text";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"5yzo4de8mkitqjp";s:2:"id";i:852;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:14:"x6xguzyyawtitl";s:2:"id";i:853;s:5:"alias";s:5:"price";}i:2;a:3:{s:4:"uuid";s:15:"8rtca9mufefz9dn";s:2:"id";i:854;s:5:"alias";s:11:"description";}}}i:1;a:4:{s:5:"ident";s:5:"399_0";s:8:"group_id";i:399;s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"mpcwaxyvxx2tjc3";s:2:"id";i:855;s:5:"alias";s:4:"link";}}}i:2;a:4:{s:5:"ident";s:5:"400_0";s:8:"group_id";i:400;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"r6rhbatclx5n0qx";s:2:"id";i:1049;s:5:"alias";s:5:"style";}i:1;a:3:{s:4:"uuid";s:15:"5w59npup8evq70h";s:2:"id";i:1050;s:5:"alias";s:9:"highlight";}}}}s:6:"tstamp";i:1567424810;s:5:"alias";s:9:"pricecard";s:5:"uuids";a:10:{i:0;s:15:"5yzo4de8mkitqjp";i:1;s:14:"x6xguzyyawtitl";i:2;s:15:"8rtca9mufefz9dn";i:3;s:15:"mpcwaxyvxx2tjc3";i:4;s:15:"r6rhbatclx5n0qx";i:5;s:15:"5w59npup8evq70h";i:6;s:14:"59biak71o0hjc1";i:7;s:15:"u66ngmjuduyw5uw";i:8;s:15:"tjhlz2lw70556cz";i:9;s:15:"p6txptdz1jl1tym";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:83;}',
+162 => 'sourceText',
+),
+),
+);

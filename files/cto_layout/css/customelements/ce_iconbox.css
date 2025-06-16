@@ -1,0 +1,334 @@
+/* =============================================================================
+ * ce_iconbox default
+ * ========================================================================== */
+
+.ce_iconbox {
+	text-align: center;
+	display: block;
+	position: relative;
+	overflow: visible!important;
+}
+
+.ce_iconbox.padding:hover {
+	z-index: 100;
+}
+
+.ce_iconbox.default i {
+	font-size: 3rem;
+}
+
+.ce_iconbox .ce_iconbox_inside {
+	position: relative;
+}
+
+.ce_iconbox .ce_iconbox_outside {
+	width:100%;
+}
+
+.ce_iconbox.border-radius .ce_iconbox_outside {
+	border-radius: 20px;
+}
+
+.ce_iconbox .ce_iconbox_outside.padding {
+	padding: 25px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_iconbox:hover .ce_iconbox_outside.padding {
+	opacity: 1;
+	box-shadow: 0 40px 70px rgba(0,0,0,.2);
+	z-index: 100;
+}
+
+.ce_iconbox .ce_iconbox_outside.padding .content {
+	opacity: 0.6;
+}
+
+.ce_iconbox a.link {
+	margin-top: 10px;
+	display: inline-flex;
+	align-items: center;
+}
+
+.ce_iconbox .image_container {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.ce_iconbox .image_container img {
+	width: auto;
+	display: inline-block;
+}
+
+.ce_iconbox h3 {
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	position: relative;
+	line-height: 1.4;
+	margin-bottom: 10px;
+}
+
+.ce_iconbox .headline {
+	margin-bottom: 0;
+}
+
+.ce_iconbox .content {
+	margin-top: 10px;
+}
+
+.ce_iconbox:not(.version2):not(.version3) .ce_iconbox_cwrapper {
+	margin-top: 20px;
+}
+
+.ce_iconbox .link {
+	color: var(--accentColor);
+}
+
+.ce_iconbox .link:before {
+	content: "\f105";
+	font-family:FontAwesome;
+	font-weight: normal;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.ce_iconbox.version2 .link:before {
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+}
+
+.ce_iconbox.version2:hover .link:before {
+	margin-right: 10px;
+}
+
+.ce_iconbox.same-height {
+	display: flex!important;
+}
+
+.ce_iconbox.default .image_container,
+.ce_iconbox.default i {
+	padding-top: 5px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	position: relative;
+	top: 0;
+}
+.ce_iconbox.default:hover .image_container,
+.ce_iconbox.default:hover i {
+	top: -5px;
+}
+.ce_iconbox li {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+
+.ce_iconbox.right-align .ce_iconbox_inside {
+	justify-content: right;
+}
+
+/* =============================================================================
+ * ce_iconbox.version2
+ * ========================================================================== */
+
+.ce_iconbox.version2 .ce_iconbox_inside {
+	text-align: left;
+	display: flex;
+	align-items: center;
+}
+
+.ce_iconbox.version2 .ce_iconbox_icon  {
+	flex: 0 0 80px;
+	align-self: flex-start;
+}
+
+.ce_iconbox.version2 .headline {
+	padding-top: 0;
+}
+
+.ce_iconbox.version2 .image_container {
+	line-height: 1.4;
+}
+
+.ce_iconbox.version2 .image_container img {
+	width: 60px;
+}
+
+.ce_iconbox.version2 i {
+	font-size: 1.733rem;
+	border-radius: 100%;
+	text-align: center;
+	width: 60px;
+	max-width: 60px;
+	height: 60px;
+	line-height: 60px;
+	color: rgb(255,255,255);
+	background: var(--accentColor);
+}
+
+.ce_iconbox.version2 .ce_iconbox_inside:after {
+	position: absolute;
+	left: 30px;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	content:'';
+	border-right: 1px dashed rgb(229,229,229);
+	z-index: 1;
+}
+
+.ce_iconbox.version2:last-of-type .ce_iconbox_inside:after {
+	display:none;
+}
+
+.ce_iconbox.version2 .image_container {
+	text-align: left;
+}
+
+.ce_iconbox.version2 a.link {
+	margin-top: 0;
+}
+
+/* =============================================================================
+ * ce_iconbox.version2.right
+ * ========================================================================== */
+
+.ce_iconbox.version2.right-align .ce_iconbox_inside {
+	text-align: right;
+	display: flex;
+	align-items: center;
+}
+
+.ce_iconbox.version2.right-align .ce_iconbox_icon {
+	flex: 0 0 80px;
+	align-self: flex-start;
+	order: 2;
+}
+
+.ce_iconbox.version2 .ce_iconbox_cwrapper {
+	order: 1;
+}
+
+.ce_iconbox.version2.right-align:last-of-type .ce_iconbox_inside:after {
+	display:none;
+}
+
+.ce_iconbox.version2.right-align .image_container {
+	text-align: right;
+}
+
+.ce_iconbox.version2 .ce_iconbox_inside:after {
+	display: none;
+}
+
+/* =============================================================================
+ * ce_iconbox.version3
+ * ========================================================================== */
+
+ .ce_iconbox.version3 .ce_iconbox_inside {
+ 	text-align: left;
+ 	display: flex;
+ 	align-items: center;
+ }
+
+.ce_iconbox.version3 .ce_iconbox_icon {
+	flex: 0 0 50px;
+	align-self: flex-start;
+}
+
+.ce_iconbox.version3 .headline {
+	padding-top: 0;
+}
+
+.ce_iconbox.version3 .image_container {
+	line-height: 1.4;
+}
+
+.ce_iconbox.version3 .image_container img {
+	width: 30px;
+}
+
+.ce_iconbox.version3 i {
+	font-size: 2.2rem;
+	line-height: 2.2rem;
+	text-align: center;
+	width: 40px;
+}
+
+.ce_iconbox.version3:last-of-type .ce_iconbox_inside:after {
+	display:none;
+}
+ 
+.ce_iconbox.version3 a.link {	
+	margin-top: 0;
+}
+
+.ce_iconbox.version3.xsmall i {
+	font-size: inherit;
+	line-height: inherit;
+	text-align: left;
+	width: 25px;
+}
+
+.ce_iconbox.version3.xsmall p {
+	margin-bottom: 0;
+	line-height: inherit;
+}
+
+.ce_iconbox.version3.xsmall .ce_iconbox_icon {
+	flex: 0 0 25px;
+}
+
+.ce_iconbox.version3.xsmall .content {
+	margin-top: 0;
+}
+
+/* =============================================================================
+ * ce_iconbox.version4
+ * ========================================================================== */
+
+.ce_iconbox.version4 {
+	text-align: left;
+}
+
+.ce_iconbox.version4 .image_container {
+	text-align: left;
+}
+
+/* =============================================================================
+ * ce_iconbox same-height
+ * ========================================================================== */
+ 
+.autogrid_row.same_height .ce_iconbox,
+.autogrid_row.same_height .ce_iconbox .ce_iconbox_outside {
+	height: 100%;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_iconbox:not(.no_gutter):not(.version3.xsmall) {
+		margin-bottom: 30px;
+	}
+	
+	.ce_iconbox.version2.right-align .ce_iconbox_inside {
+		text-align: left;
+	}
+	
+	.ce_iconbox.version2.right-align .image_container {
+		text-align: left;
+	}
+	
+	.ce_iconbox.version2.right-align .ce_iconbox_icon {
+		order: 1;
+	}
+	
+	.ce_iconbox.version2 .ce_iconbox_cwrapper {
+		order: 2;
+	}
+
+	.ce_iconbox.same-height {
+		display: block!important;
+	}
+}

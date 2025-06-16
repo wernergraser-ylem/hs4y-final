@@ -1,0 +1,29 @@
+<?php
+/**
+ * Timestamp/date filter template
+ */
+?>
+<?php 
+global $objPage;
+$GLOBALS['TL_CSS'][] = PCT_CUSTOMCATALOG_PATH.'/assets/js/jquery/ui/themes/smoothness/jquery-ui.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_CUSTOMCATALOG_PATH.'/assets/js/jquery/ui/jquery-ui.min.js';	
+?>
+
+<script>
+/**
+ * Datepicker
+ * @link http://jqueryui.com/datepicker/
+ */
+jQuery(document).ready(function()
+{
+	jQuery("#filter_timestamp_<?php echo $this->id; ?>").datepicker({dateFormat:"yy-mm-dd"});
+});
+</script>
+
+
+<div <?php echo $this->cssID; ?> class="widget <?php echo $this->class; ?> block">
+<fieldset class="timestamp_container">
+<legend><?php echo $this->label; ?></legend>
+<input type="text" id="filter_timestamp_<?php echo $this->id; ?>" name="<?php echo $this->name; ?>" value="<?php echo $this->value; ?>">
+</fieldset>
+</div>

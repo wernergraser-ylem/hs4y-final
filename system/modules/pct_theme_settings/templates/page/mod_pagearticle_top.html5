@@ -1,0 +1,3 @@
+<?php if($this->hasArticle_top): ?>
+{{insert_article::<?= $this->article_top; ?>}}
+<?php endif; ?>

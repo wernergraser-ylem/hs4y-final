@@ -1,0 +1,44 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newslist_timeline_both.css|static';
+$hasText = $this->hasText;
+?>
+
+<div class="newslist-timeline-both newslist-timeline-both-oner block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+	
+	<?php if ($this->date): ?>
+		<div class="newslist-timeline-date" itemprop="datePublished"><?= \Contao\Date::parse("d", $this->timestamp);?>. <?= \Contao\Date::parse("M", $this->timestamp);?> <?= \Contao\Date::parse("Y", $this->timestamp);?></div>
+	<?php endif; ?>
+	
+	<div class="newslist-timeline-contentwrapper">
+		<div class="image_container<?php echo $this->floatClass; ?>"<?php if ($this->margin || $this->float): ?> style="<?php echo trim($this->margin . $this->float); ?>"<?php endif; ?>>
+			<?php if ($hasText): ?><a href="<?php echo $this->link; ?>" data-lightbox="newsreader-onepage" data-cbox-width="80%" data-cbox-height="100%"><?php endif; ?>
+			<?php if ($this->picture): ?><?php $this->insert('picture_default', $this->picture); ?><?php endif; ?>
+			<?php if ($hasText): ?></a><?php endif; ?>
+		</div>
+		
+		<div class="newslist-timeline-content">
+					
+			<?php if ($this->hasSubHeadline): ?>
+			<div class="subheadline-v2"><?php echo $this->subHeadline; ?></div>
+			<?php endif; ?>
+			
+			<div class="h4" itemprop="name"><?php if ($hasText): ?><a href="<?php echo $this->link; ?>" itemprop="contentUrl" data-lightbox="newsreader-onepage" data-cbox-width="80%" data-cbox-height="100%"><?php endif; ?><?php echo $this->newsHeadline; ?><?php if ($this->hasText): ?></a><?php endif; ?></div>
+	
+			<div class="info">
+				
+				<?php if ($this->author): ?>
+				<div class="author"><i class="fa fa-user"></i><?php echo $this->author; ?></div>
+				<?php endif; ?>
+				
+				<?php if ($this->commentCount): ?>
+				<div class="comments"><i class="fa fa-comment"></i><?php echo $this->numberOfComments; ?></div>
+				<?php endif; ?>
+			</div>
+			
+			<div class="teaser-v2" itemprop="description"><?php echo $this->teaser; ?></div>
+		
+		</div>
+		
+	</div>
+	
+</div>

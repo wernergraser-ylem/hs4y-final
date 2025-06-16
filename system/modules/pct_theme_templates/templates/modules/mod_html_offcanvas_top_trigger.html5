@@ -1,0 +1,11 @@
+<div class="offcanvas-trigger"><span class="line1"></span><span class="line2"></span></div>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){ 
+	jQuery('.offcanvas-trigger').click(function(){
+		jQuery('#offcanvas-top').toggleClass('offcanvas-top-open');
+		jQuery('.offcanvas-trigger').toggleClass('offcanvas-top-open');
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

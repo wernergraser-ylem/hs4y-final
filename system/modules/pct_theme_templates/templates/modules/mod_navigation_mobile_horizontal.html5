@@ -1,0 +1,58 @@
+
+<!-- indexer::stop -->
+<nav <?= $this->cssID; ?> class="<?= $this->class ?> mobile_horizontal block"<?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?> itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+  <?php if ($this->headline): ?>
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+  <?php endif; ?>
+
+  <?= $this->items ?>
+
+</nav>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{
+	jQuery('nav.mobile_horizontal .trail').addClass('open');
+	jQuery('nav.mobile_horizontal .trail').parent('li').siblings('li').addClass('hidden')
+	jQuery('nav.mobile_horizontal li.submenu > a').append('<span class="opener"></span>');
+	jQuery('nav.mobile_horizontal li.submenu .opener, nav.mobile_horizontal li.submenu a.forward:not(.click-default), nav.mobile_horizontal li.submenu a.pct_megamenu').click(function(e)
+	{ 
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		
+		var _this = jQuery(this);
+		var parent = _this.parent('li');
+		
+		// opener div
+		var isOpener = _this.hasClass('opener');
+		if( isOpener )
+		{
+			var parent = _this.parent('a').parent('li');
+		}
+		
+		if( isOpener  )
+		{
+			_this.siblings('a').toggleClass('open');
+		}
+		
+		_this.toggleClass('open');
+		parent.toggleClass('open');
+		parent.siblings('li').toggleClass('hidden');
+
+		var trail = _this.parents('li');
+		if( trail[1] )
+		{
+			jQuery(trail[1]).toggleClass('trail');
+			jQuery(trail[1]).find('> a').toggleClass('trail');
+		}
+		else
+		{
+			parent.removeClass('trail');
+		}
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

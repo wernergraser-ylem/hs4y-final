@@ -1,0 +1,42 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/pct_iconpicker/languages/de/tl_settings.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_settings.iconStylesheets.0">
+        <source>Choose more font icon collection stylesheets</source>
+        <target>Zusätzliche Font-Icon-Sammlungen auswählen</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.iconStylesheets.1">
+        <source>Choose more font icon stylesheets</source>
+        <target>W채hlen Sie weitere Font-Icon-Stylesheets aus</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.customIconClasses.0">
+        <source>Custom icon CSS classes</source>
+        <target>Eigene Icon-CSS-Klassen</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.customIconClasses.1">
+        <source>Enter your own icon classes like (.myIcons-,.myIcons2-)</source>
+        <target>Geben Sie Ihre eigenen Icon-Klassen kommagetrennt ein z.B. (.meineIcons-,.meinIcons2-)</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.0">
+        <source>Source</source>
+        <target>Quelle</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.1">
+        <source>Choose the source for the automatical loading. Leave empty to have autom. loading deactivated (default)</source>
+        <target>Wählen Sie hier die Quelle für das autom. Laden der Icons im Frontend. Lassen Sie die Auswahl leer, um das autom. Laden zu deaktivieren (Standard).</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.local">
+        <source>Local from module folder</source>
+        <target>Lokal aus Modulordner</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.cdn">
+        <source>CDN: (//maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css)</source>
+        <target>CDN: (//maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css)</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.iconpicker_legend">
+        <source>IconPicker settings</source>
+        <target>IconPicker-Einstellungen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

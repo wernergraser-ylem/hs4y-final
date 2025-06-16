@@ -1,0 +1,320 @@
+
+<?php // find valid urls
+$arrUrls = array();
+
+global $objPage;
+
+// find all accessible pages in the current page strucutre
+$arrPages = \Contao\Database::getInstance()->getChildRecords($objPage->rootId,'tl_page');
+
+$objPages = \Contao\PageModel::findMultipleByIds($arrPages);
+$objRouter = \Contao\System::getContainer()->get('contao.routing.content_url_generator');
+
+if($objPages !== null)
+{
+	foreach($objPages as $page)
+	{
+		if( in_array($page->type, array('forward','redirect','error_401','error_403','error_404','error_503')) && empty($page->jumpTo) )
+		{
+			continue;
+		}
+		
+		if( isset($page->jumpTo) && !empty($page->jumpTo) )
+		{
+			$page = \Contao\PageModel::findById( $page->jumpTo );
+		}
+
+		if( $page === null || !isset($page->id) || empty($page->id) || !isset($page->published) || !$page->published )
+		{
+			continue;
+		}
+
+		$url = $objRouter->generate($page);
+		$arrUrls[] = $url;
+		$arrUrls[] = $url . '?themedesigner_iframe=1';
+	}
+}
+
+// allow current page
+$arrUrls[] = $objRouter->generate($objPage);
+
+// root page and first page
+$objRoot = \Contao\PageModel::findByPk($objPage->rootId);
+$objFirst = \Contao\PageModel::findFirstPublishedRegularByPid($objPage->rootId);
+if($objFirst === null)
+{
+	$objFirst = \Contao\PageModel::findFirstPublishedByPid($objPage->rootId);
+}
+
+$strRootUrl = $objRouter->generate($objRoot);
+$strFirstUrl = $objRouter->generate($objFirst);
+
+// add to page stack
+$arrUrls[] = $strFirstUrl;
+?>
+
+
+
+<script>
+
+/**
+ * Prevent certain link from clicking
+ */
+jQuery(document).ready(function() 
+{
+	jQuery('a.pct_megamenu, a.click_open').attr('href','#');
+});
+
+/**
+ * Observe any clicks on anchors and change the parent iframe src
+ */
+jQuery(document).ready(function() 
+{
+	// rewrite all root page links to first page published links
+	jQuery('a[href="<?= $strRootUrl; ?>"]').attr('href','<?= $strFirstUrl; ?>');
+	
+	// remove themedesigner_iframe=1 from certain links
+	jQuery( jQuery('a[target="_blank"]') ).each(function(index, element)
+	{
+		var url = jQuery(element).attr('href');
+		if(url === undefined)
+		{
+			url = '';
+		}
+		
+		if(url.length < 1 || url.indexOf('themedesigner_iframe') < 0)
+		{
+			return true;
+		}
+		
+		url = url.replace('?themedesigner_iframe=1','');
+		url = url.replace('&themedesigner_iframe=1','');
+		
+		jQuery(element).attr('href',url);
+	}); 
+	
+	// append themedesigner_iframe=1 to all links
+	//jQuery( jQuery('a:not([href=""]):not([href*=javascript]):not([href^=#]):not([href^=mailto]):not([target="_blank"])') ).each(function(index, element) 
+	//{
+	//	var url = jQuery(element).attr('href');
+	//	if(url === undefined)
+	//	{
+	//		url = '';
+	//	}
+	//	
+	//	if(url.length < 1)
+	//	{
+	//		return true;
+	//	}
+	//	
+	//	if(url.indexOf('?') >= 0)
+	//	{
+	//		url += '&themedesigner_iframe=1';
+	//	}
+	//	else
+	//	{
+	//		url += '?themedesigner_iframe=1';
+	//	}
+	//	
+	//	jQuery(element).attr('href',url);
+	//});
+	
+	var intDelay = 1000;
+	setTimeout(function() 
+	{
+		var strUrl = '<?= $GLOBALS['PCT_THEMEDESIGNER']['ajaxUrl']; ?>';
+		if(!strUrl)
+		{
+			strUrl = location.href;
+		}
+		
+		var objValidUrls = <?= json_encode($arrUrls); ?>;
+		
+		//-- links
+		jQuery('a:not([href=""]):not([href*=javascript]):not([href=\\#]):not([href^=mailto]):not([target="_blank"])').click(function(event)
+		{
+			var elem = jQuery(this);
+			var url = elem.attr('href');
+			var target = elem.attr('target');
+			var hasAccess = true;
+				
+			if(url === undefined)
+			{
+				url = '';
+			}
+
+			// new windows/tabs
+			if(target == '_blank')
+			{
+				return true;
+			}
+			// anchors without href or empty href are ok
+			else if(url == '' || url.length < 1)
+			{
+				return true;
+			}
+			// timeline elements are ok
+			else if(jQuery(this).parents('.cd-horizontal-timeline').length > 0 && url.indexOf('.html') < 0)			
+			{
+				return true;
+			}
+			// logos
+			else if(url == './')
+			{
+				hasAccess = false;
+			}
+			// url has an anchor but is not a backlink class of a onepage website
+			else if(url.indexOf('#') >= 0 && !elem.hasClass('backlink'))
+			{
+				hasAccess = false;
+			}
+			
+			// prevent links that are not part of the current site structure
+			//if(objValidUrls.indexOf(url) < 0)
+			//{
+			//	hasAccess = false;
+			//}
+			//
+			//// news reader
+			//if(jQuery(this).parent('.more').length > 0)
+			//{
+			//	hasAccess = true;
+			//}
+			
+			// prevent lightbox links
+			if(elem.attr('data-lightbox') !== undefined || elem.attr('rel') == 'lightbox')
+			{
+				// prevent default clicking behaviour
+				event.preventDefault();
+			
+				// show warning
+				alert('Please run the ThemeDesigner in Live mode to enable lightbox elements.');
+				return false;
+			}
+
+			if(hasAccess === true)
+			{
+				// prevent default clicking behaviour
+				event.preventDefault();
+			
+				// show iframe loader
+				jQuery('#themedesigner_iframe_wrapper .loader',parent.document).addClass('show');
+				
+				// add class
+				jQuery('body',parent.document).addClass('waiting_for_iframe');
+				
+				// fire event
+				//jQuery('body',parent.document).trigger('ThemeDesigner.iframeChange',{'url':url});
+				
+				// set cookie
+				//document.cookie = '<?= $this->cookie; ?>='+url;
+				
+				// change src of parent iframe
+				//jQuery('#themedesigner_iframe',parent.document).attr('src',url+'?themedesigner_iframe=1');
+				
+				// send ajax and remember new page url
+				jQuery.ajax(
+				{
+					method	: "GET",
+					url		: strUrl,
+					data	: {'themedesigner':1,'action':'updateIframeUrl','url':url,'theme':'<?= $this->theme; ?>'},
+					success	: function(response)
+					{
+				   		if(url.indexOf('?') >= 0)
+				   		{
+					   		var tmp = url.split('?');
+					   		url = tmp[0];
+				   		}
+				   		
+				   		console.log('Redirect iframe to: '+url);
+				
+				   		// change 
+				   		//window.location.href = url;
+				   		//jQuery('#themedesigner_iframe',parent.document).attr('src',url+'?themedesigner_iframe=1');
+				   		if(url.indexOf('?') >= 0)
+						{
+							url += '&themedesigner_iframe=1';
+						}
+						else
+						{
+							url +='?themedesigner_iframe=1';
+						}
+				   		
+				   		jQuery('#themedesigner_iframe',parent.document).attr('src',url);
+				   }
+				});
+			}
+		});
+		
+		//-- forms
+		
+		// remove auto submits
+		jQuery('form[method="get"][onchange="this.submit();"]:not([action=""])').attr('onchange','');
+		
+		var objForms = jQuery('form[method="get"]:not([action=""])');
+		var objSubmit = undefined;
+		
+		// prevent submits from submitting
+		objForms.find('input[type="submit"]').click(function(event)
+		{
+			//event.preventDefault();
+			objSubmit = jQuery(event.target);
+		});
+		
+		// bind change listener to form and submit it to trigger submit event listener
+		objForms.change(function(event)
+		{
+			event.preventDefault();
+			jQuery(this).submit();
+		});
+		
+		// simulate form submit and redirect iframe to url with GET parameters
+		objForms.submit(function(event,params)
+		{
+			event.preventDefault();
+			
+			var url = jQuery(this).attr('action');
+			var strParams = jQuery(this).serialize();
+			
+			// form submitted by a submit input
+			if(objSubmit !== undefined)
+			{
+				if(objSubmit.hasClass('clearall'))
+				{
+					strParams = '';
+				}
+			}
+			
+			if(strParams.length > 0)
+			{
+				if(url.indexOf('?') >= 0)
+				{
+					url += '&'+strParams;
+				}
+				else 
+				{
+					url += '?'+strParams;
+				}
+			}
+			
+			// send ajax and remember new page url
+			jQuery.ajax(
+			{
+				method	: "GET",
+				url		: strUrl,
+				data	: {'themedesigner':1,'action':'updateIframeUrl','url':url,'theme':'<?= $this->theme; ?>'},
+				success	: function(response)
+				{
+					console.log('Redirect iframe to: '+url);
+					
+					// change iframe src
+					jQuery('#themedesigner_iframe',parent.document).attr('src',url);
+				}
+			});
+			
+		});
+		
+	}, intDelay);
+}); 
+
+</script>

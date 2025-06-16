@@ -1,0 +1,64 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_divider_image',
+'category' => 'dividers',
+'thumb' => '',
+'elements' => 'divider_image',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 125327,
+1 => 14654,
+2 => 288,
+3 => 1700467980,
+5 => 'divider_image',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+100 => '14',
+102 => '0.5',
+160 => 'a:7:{s:6:"values";a:12:{s:14:"pa69ykxxyz53ww";s:9:"version10";s:15:"8nuabsql2hxcq1y";s:10:"align-left";s:15:"z95ja3f0cgnf6a2";s:0:"";s:14:"5g7o6xu1nd9vso";s:0:"";s:15:"wq32m67dq37po3j";s:0:"";s:14:"kntkufnz7oq7xt";s:36:"9cd31b12-877c-11ee-8170-8f902406ae5b";s:19:"kntkufnz7oq7xt_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"369jk022gpmyfe6";s:13:"align-default";s:15:"ylsxa23wyvo4r4a";s:0:"";s:14:"6nwo4wv98ukw6p";s:0:"";s:15:"rgp1iswgmkjdnu6";s:0:"";s:15:"g6p49kzhss2nyqf";s:0:"";}s:6:"groups";a:1:{i:0;a:4:{s:5:"ident";s:5:"247_0";s:8:"group_id";i:247;s:11:"group_alias";s:5:"image";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:14:"kntkufnz7oq7xt";s:2:"id";i:1364;s:5:"alias";s:5:"image";}i:1;a:3:{s:4:"uuid";s:15:"369jk022gpmyfe6";s:2:"id";i:1365;s:5:"alias";s:5:"align";}}}}s:6:"tstamp";i:1567425342;s:5:"alias";s:13:"divider_image";s:5:"uuids";a:6:{i:0;s:14:"kntkufnz7oq7xt";i:1;s:15:"369jk022gpmyfe6";i:2;s:15:"ylsxa23wyvo4r4a";i:3;s:14:"6nwo4wv98ukw6p";i:4;s:15:"rgp1iswgmkjdnu6";i:5;s:15:"g6p49kzhss2nyqf";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:117;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'9cd31b12-877c-11ee-8170-8f902406ae5b' => 'files/cto_layout/img/element_library/divider.svg',
+),
+);

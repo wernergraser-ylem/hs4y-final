@@ -1,0 +1,152 @@
+<?php 
+//'fadefromright','fadefromleft','fadefromtop','fadefrombottom',
+//'fadetoleftfadefromright','fadetorightfadefromleft','fadetotopfadefrombottom','fadetobottomfadefromtop',
+//'parallaxtoright','parallaxtoleft','parallaxtotop','parallaxtobottom',
+//'scaledownfromright','scaledownfromleft','scaledownfromtop','scaledownfrombottom',
+//'zoomout','zoomin',
+//'slotzoom-horizontal','slotzoom-vertical',
+//'random-static'
+//'boxslide','boxfade', 'slotzoom-horizontal', 'slotzoom-vertical',
+//'slotslide-horizontal', 'slotslide-vertical', 
+//'slotfade-horizontal','slotfade-vertical', 
+//'slideleft', 'slideright', 'slideup' ,'slidedown',
+//'slidehorizontal', 'slidevertical',	
+//'fade',	'random',
+//'curtain-1', 'curtain-2', 'curtain-3',
+//'3dcurtain-vertical','3dcurtain-horizonal',
+//'cube','cube-horizontal',
+//'papercut',
+//'flyin',
+//'turnoff','turnoff-vertical',
+//'random-premium'
+$effect = 'fade';
+?>
+
+<?php // load scripts and css
+$GLOBALS['SEO_SCRIPTS_FILE'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'] . '/js/jquery.themepunch.tools.min.js';
+$GLOBALS['SEO_SCRIPTS_FILE'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'] . '/js/jquery.themepunch.revolution.min.js';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'] . '/css/settings.css|static';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'] . '/css/layers.css|static';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'] . '/css/navigation.css|static';
+$GLOBALS['TL_CSS'][] = REVOLUTIONSLIDER_PATH . '/assets/css/styles.css|static';
+?>
+
+<div class="ce_revolutionslider rs-container resonsive banner block <?= $this->class; ?>">
+	<div class="rs-container block">
+		<div class="banner fullscreen tp-banner block" id="gallery_revoslider_<?= $this->id; ?>" data-version="5.4.8">
+			<ul>
+				<?php foreach ($this->body as $class => $row) : ?>
+					<?php foreach ($row as $col) : ?>
+						<?php 
+						foreach(array('href','caption','class','margin','linkTitle','attributes','alt','addImage') as $f)
+						{
+							if( !isset($col->{$f}) )
+							{
+								$col->{$f} = '';
+							}
+						}
+						?>
+						<li class="slide row<?= $this->perRow; ?>" data-transition="<?= $effect; ?>" data-slotamount="4" data-thumb="<?= $col->src; ?>" <?php if ($col->href) : ?> data-link="<?= $col->href; ?>" data-target="_blank" <?php endif; ?>>
+							<img src="<?= $col->src; ?>" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" class="rev-slidebg">
+						</li>
+					<?php endforeach; ?>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+	jQuery(document).ready(function() {
+		var options = {
+			// general settings
+			jsFileLocation:'<?= $GLOBALS['REVOLUTIONSLIDER']['scriptPath']; ?>/js/',
+			delay: 5000,
+			gridwidth: 1240,
+			gridheight: 800,
+			startWithSlide: 0,
+			sliderType: 'standard',
+			sliderLayout: "auto",
+			fullScreenOffset:0,
+			//fullScreenOffsetContainer: "#header",
+			fullWidth: "on",
+			fullScreen: "off",
+
+			touchenabled: "on",
+			onHoverStop: 'off',
+
+			swipe_velocity: 0.7,
+			swipe_min_touches: 1,
+			swipe_max_touches: 1,
+			drag_block_vertical: false,
+
+			// lopp settings
+			stopAtSlide: -1,
+			stopAfterLoops: -1,
+
+			shadow: 0,
+
+			navigation: {
+				bullets: {
+					enable: true,
+					style: "hebe",
+					h_align:"center",
+					v_align:"bottom",
+					v_offset: 20,
+					h_offset: 0,
+					wrapper_color: 'transparent',
+					hide_onmobile: true,
+					hide_under: 767,
+					space: 5,
+				},
+                keyboardNavigation: "on",
+                keyboard_direction: "horizontal",
+                mouseScrollNavigation: "off",
+                onHoverStop: "off",
+                touch: {
+                    touchenabled: "on",
+                	swipe_threshold: 75,
+                    swipe_min_touches: 1,
+                    swipe_direction: "horizontal",
+                    drag_block_vertical: false
+                },
+                arrows: {
+                    style: "hesperiden",
+                    enable: true,
+                    hide_onmobile: false,
+                    hide_onleave: false,
+                    tmp: '',
+                    left: {
+                        h_align: "left",
+                        v_align: "center",
+                        h_offset: 10,
+                        v_offset: 0
+                    },
+                    right: {
+                        h_align: "right",
+                        v_align: "center",
+                        h_offset: 10,
+                        v_offset: 0
+                    }
+                }
+			}
+		}
+
+		// init slider  
+		var api = jQuery('#gallery_revoslider_<?= $this->id; ?>').show().revolution(options);
+
+		api.bind("revolution.slide.onloaded", function(e) {
+			// attach lightbox
+			jQuery('#gallery_revoslider_<?= $this->id; ?> li.slide a').attr('data-lightbox', 'gallery_revoslider_<?= $this->id; ?>').map(function() {
+				jQuery(this).colorbox({
+					// Put custom options here
+					loop: false,
+					rel: jQuery(this).attr('data-lightbox'),
+					maxWidth: '95%',
+					maxHeight: '95%'
+				});
+			});
+		});
+	});
+</script>
+<!-- SEO-SCRIPT-STOP -->

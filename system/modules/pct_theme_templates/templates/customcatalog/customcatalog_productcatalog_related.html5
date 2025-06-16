@@ -1,0 +1,51 @@
+<?php if(!$this->empty): ?>
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/swiper/swiper.jquery.min.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/scripts/swiper/swiper.min.css|static';	
+?>
+	<div class="swiper-container" id="swiper_<?php echo $this->id; ?>">
+		<div class="swiper-wrapper">
+			<?php foreach($this->entries as $entry): ?>
+			<div class="swiper-slide block entry<?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+				<div class="item-inside">
+					<?php if($entry->field('highlight')->value()): ?> <i class="item-highlight-icon fa fa-star"></i><?php endif; ?>
+					<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+					<h6><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h6>
+					<div class="brand"><?php echo $entry->field('brand')->html(); ?></div>
+					<div class="price color-accent">&euro;<?php echo $entry->field('price')->value(); ?><?php if($entry->field('price_old')->value()): ?><span> &euro;<?php echo $entry->field('price_old')->value(); ?></span><?php endif; ?></div>
+					<?php echo $entry->field('rating')->html(); ?>
+				</div>	
+			</div>
+			<?php endforeach; ?>
+		</div>		
+		<div id="swiper-button-next_<?php echo $this->id; ?>" class="swiper-button-next"></div>
+		<div id="swiper-button-prev_<?php echo $this->id; ?>" class="swiper-button-prev"></div>
+	</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+ var swiper_<?php echo $this->id; ?> = new Swiper('#swiper_<?php echo $this->id; ?>', {
+	 	paginationClickable: true,
+	 	grabCursor: true,
+	 	navigation: {
+        	nextEl: '#swiper-button-next_<?php echo $this->id; ?>',
+			prevEl: '#swiper-button-prev_<?php echo $this->id; ?>',
+		},
+		breakpoints: {
+        	10: {
+				slidesPerView: 1,
+				spaceBetween: 0,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 0,
+			}
+
+		}	
+    });       
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php else: ?>
+<p class="info empty">Keine Artikel gefunden</p>
+<?php endif;?>

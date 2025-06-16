@@ -1,0 +1,62 @@
+<?php
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/countup/countUp.min.js|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_countup.css|static';
+?>
+<div class="<?= $this->class; ?> block<?php if($this->field('style')): ?> <?= $this->field('style')->value(); ?><?php endif; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<?php if($this->field('icon')): ?><i class="<?= $this->field('icon')->value(); ?>"></i><?php endif; ?>
+	<?php if($this->field('image-icon')): ?><?= $this->field('image-icon')->html(); ?><?php endif; ?>
+	<div class="headline h3" id="ce_countup_<?= $this->id; ?>">0</div>
+	<div class="text"><?= $this->field('text')->value(); ?></div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	var startFrom = <?= $this->field('startfrom')->value() == '' ? '0' : $this->field('startfrom')->value(); ?>;
+	var countTo = <?= $this->field('countto')->value(); ?>;
+	var duration = <?= $this->field('duration')->value() == '' ? '500' : $this->field('duration')->value(); ?>;
+	var decimals = <?= $this->field('decimals')->value() == '' ? '0' : $this->field('decimals')->value(); ?>;
+	
+	function initObserver() 
+	{
+		var objObserver = new IntersectionObserver( function(entries, observer)
+		{
+			entries.forEach(function(entry) 
+			{
+				if (entry.isIntersecting) 
+				{
+					if( !jQuery('body').hasClass('acc_disable_animations') )
+					{
+						// start counter
+						var ce_countup_<?= $this->id; ?> = new countUp("ce_countup_<?= $this->id; ?>", startFrom, countTo, decimals, duration,{useEasing : true, useGrouping : true, separator : '.', decimal : ',', prefix : '<?= $this->field('prefix')->value(); ?>', suffix : '<?= $this->field('suffix')->value(); ?>'}).start();
+					}
+					else 
+					{
+						jQuery('#ce_countup_<?= $this->id; ?>').html(countTo);
+					}
+					
+					// stop observing
+					objObserver.unobserve( entry.target );
+					
+				}
+			});
+		}, {root: null,rootMargin: '0px',threshold: 0.25} );
+		objObserver.observe( jQuery('#ce_countup_<?= $this->id; ?>')[0] );
+	}
+
+	// check if a revolutionslider exists in page
+	if (jQuery(document).revolution != undefined)
+	{
+		jQuery(document).on('RevolutionSlider.loaded', function (e, params)
+		{ 
+			initObserver();
+		});
+	}
+	else
+	{
+		initObserver();
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

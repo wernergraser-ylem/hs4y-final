@@ -1,0 +1,40 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_teaserbox.css|static';
+?>
+<div class="<?php echo $this->class; ?> block <?php echo $this->field('schema')->value(); ?> <?php echo $this->field('image_valign')->value(); ?> <?php echo $this->field('text_valign')->value(); ?> <?php echo $this->field('text_halign')->value(); ?> <?php echo $this->field('width')->value(); ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+		<div class="ce_teaserbox_inside">
+			
+			<?php if($this->field('schema')->value()=="image_left"): ?>
+			<div class="image_wrapper">
+		 		<div class="margins" style="<?php if($this->field('image_margin_top')->value()): ?>margin-top:<?php echo $this->field('image_margin_top')->value(); ?>%;<?php endif; ?><?php if($this->field('image_margin_right')->value()): ?>margin-right:<?php echo $this->field('image_margin_right')->value(); ?>%;<?php endif; ?><?php if($this->field('image_margin_bottom')->value()): ?>margin-bottom:<?php echo $this->field('image_margin_bottom')->value(); ?>%;<?php endif; ?><?php if($this->field('image_margin_left')->value()): ?>margin-left:<?php echo $this->field('image_margin_left')->value(); ?>%;<?php endif; ?>">
+		 			<?php echo $this->field('image')->html(); ?>
+		 		</div>
+			</div>
+			
+			<div class="text_wrapper">
+				<div class="margins"  style="<?php if($this->field('text_margin_top')->value()): ?>margin-top:<?php echo $this->field('text_margin_top')->value(); ?>%;<?php endif; ?><?php if($this->field('text_margin_right')->value()): ?>margin-right:<?php echo $this->field('text_margin_right')->value(); ?>%;<?php endif; ?><?php if($this->field('text_margin_bottom')->value()): ?>margin-bottom:<?php echo $this->field('text_margin_bottom')->value(); ?>%;<?php endif; ?><?php if($this->field('text_margin_left')->value()): ?>margin-left:<?php echo $this->field('text_margin_left')->value(); ?>%;<?php endif; ?>">
+		 			<?php echo $this->field('headline')->html(); ?>
+		 			<?php echo $this->field('text')->html(); ?>
+		 			<?php if($this->field('hyperlink')->value()): ?><div class="ce_hyperlink"><?php echo $this->field('hyperlink')->html(); ?></div><?php endif; ?>
+				</div>
+			</div>
+			<?php endif; ?>
+			
+			<?php if($this->field('schema')->value()=="image_right"): ?>
+			<div class="text_wrapper">
+				<div class="margins"  style="<?php if($this->field('text_margin_top')->value()): ?>margin-top:<?php echo $this->field('text_margin_top')->value(); ?>%;<?php endif; ?><?php if($this->field('text_margin_right')->value()): ?>margin-right:<?php echo $this->field('text_margin_right')->value(); ?>%;<?php endif; ?><?php if($this->field('text_margin_bottom')->value()): ?>margin-bottom:<?php echo $this->field('text_margin_bottom')->value(); ?>%;<?php endif; ?><?php if($this->field('text_margin_left')->value()): ?>margin-left:<?php echo $this->field('text_margin_left')->value(); ?>%;<?php endif; ?>">
+		 			<?php echo $this->field('headline')->html(); ?>
+		 			<?php echo $this->field('text')->html(); ?>
+		 			<?php if($this->field('hyperlink')->value()): ?><div class="ce_hyperlink"><?php echo $this->field('hyperlink')->html(); ?></div><?php endif; ?>
+				</div>
+			</div>
+			
+			<div class="image_wrapper">
+		 		<div class="margins" style="<?php if($this->field('image_margin_top')->value()): ?>margin-top:<?php echo $this->field('image_margin_top')->value(); ?>%;<?php endif; ?><?php if($this->field('image_margin_right')->value()): ?>margin-right:<?php echo $this->field('image_margin_right')->value(); ?>%;<?php endif; ?><?php if($this->field('image_margin_bottom')->value()): ?>margin-bottom:<?php echo $this->field('image_margin_bottom')->value(); ?>%;<?php endif; ?><?php if($this->field('image_margin_left')->value()): ?>margin-left:<?php echo $this->field('image_margin_left')->value(); ?>%;<?php endif; ?>">
+		 			<?php echo $this->field('image')->html(); ?>
+		 		</div>
+			</div>
+			<?php endif; ?>
+			
+		</div>
+</div>

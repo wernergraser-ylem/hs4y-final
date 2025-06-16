@@ -1,0 +1,52 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_chartbar.css|static';
+$GLOBALS['TL_HEAD'][] = "<style>.ce_chart_" . $this->id  . ".start .chart_data{width: " . $this->field('procent')->value() . "%;}</style>";
+
+?>
+
+<div class="<?= $this->class; ?> block ce_chart_<?= $this->id; ?> <?= $this->field('schema')->value(); ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<div class="ce_chart_inside">
+		<div class="title"><?= $this->field('title')->value(); ?></div>
+		<div class="chart_bg">
+			<div class="chart_data <?= $this->field('color')->value(); ?>"><span><?= $this->field('procent')->value(); ?>%</span></div>
+		</div>
+	</div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	function initObserver() 
+	{
+		var objObserver = new IntersectionObserver( function(entries, observer)
+		{
+			entries.forEach(function(entry) 
+			{
+				if (entry.isIntersecting) 
+				{
+					jQuery(entry.target).addClass('start');	
+					
+					// stop observing
+					objObserver.unobserve( entry.target );
+				}
+			});
+		}, {root: null,rootMargin: '0px',threshold: 0.25} );
+		objObserver.observe( jQuery('.ce_chart_<?= $this->id; ?>')[0] );
+	}
+
+	// check if a revolutionslider exists in page
+	if (jQuery(document).revolution != undefined)
+	{
+		jQuery(document).on('RevolutionSlider.loaded', function (e, params)
+		{ 
+			initObserver();
+		});
+	}
+	else
+	{
+		initObserver();
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

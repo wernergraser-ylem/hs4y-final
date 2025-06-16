@@ -1,0 +1,152 @@
+<?php $this->extend('form_row'); ?>
+
+<?php $this->block('field'); ?>
+  <fieldset id="ctrl_<?= $this->id ?>" class="checkbox_container<?php if ($this->class) echo ' ' . $this->class; ?>">
+
+    <?php if ($this->label): ?>
+      <legend>
+        <?php if ($this->mandatory): ?>
+          <span class="invisible"><?= $this->mandatoryField ?></span> <?= $this->label ?><span class="mandatory">*</span>
+        <?php else: ?>
+          <?= $this->label ?>
+        <?php endif; ?>
+      </legend>
+    <?php endif; ?>
+
+    <?php if ($this->hasErrors()): ?>
+      <p class="error"><?= $this->getErrorAsString() ?></p>
+    <?php endif; ?>
+
+    <input type="hidden" name="<?= $this->name ?>" value="">
+
+    <?php foreach ($this->getOptions() as $option): ?>
+      <span><input type="checkbox" name="<?= $option['name'] ?>" id="opt_<?= $option['id'] ?>" class="checkbox" value="<?= $option['value'] ?>"<?= $option['checked'] ?><?= $option['attributes'] ?>> <label id="lbl_<?= $option['id'] ?>" for="opt_<?= $option['id'] ?>"><?= $option['label'] ?></label></span>
+    <?php endforeach; ?>
+
+  </fieldset>
+
+  <?php if ($this->addSubmit): ?>
+    <input type="submit" id="ctrl_<?= $this->id ?>_submit" class="submit" value="<?= $this->slabel ?>">
+  <?php endif; ?>
+
+
+<script>
+
+/**
+ * Handle checkbox like a selector to toggle fieldsets
+ */
+jQuery(document).ready(function() 
+{
+	<?php
+	$objForm = \Contao\FormModel::findByPk($this->pid);
+	$strFormSubmit = 'auto_form_'.$objForm->id;
+	if($objForm->formID)
+	{
+		$strFormSubmit = 'auto_'.$objForm->formID;
+	}
+	?>
+	
+	var objForm = jQuery('form input[name="FORM_SUBMIT"][value="<?= $strFormSubmit; ?>"]').parents('form');
+	var arrPalettes = new Array();
+	
+	// find effected palletes / fieldsets
+	<?php foreach ($this->getOptions() as $option): ?>
+		var fieldset = objForm.find('fieldset.<?php echo $option['value']; ?>');
+		// effect fieldsets should contain the value as classname
+		arrPalettes['<?php echo $option['value']; ?>'] = fieldset.html();
+		<?php if(!$option['checked']): ?>
+		fieldset.addClass('hidden').html('');
+		<?php endif; ?>
+		<?php // store selector in global scope
+		$GLOBALS['checkbox_selector_helper'][$objForm->id]['__selector__'][$option['name']][] = $option['value'];
+		?>
+	<?php endforeach; ?>
+	
+	jQuery('#ctrl_<?= $this->id ?>').click(function(e)
+	{
+		if(arrPalettes[e.target.value] && e.target.checked == true)
+		{
+			objForm.find('fieldset.'+e.target.value).removeClass('hidden').html(arrPalettes[e.target.value]);
+		}
+		else if(arrPalettes[e.target.value] && e.target.checked == false)
+		{
+			objForm.find('fieldset.'+e.target.value).addClass('hidden').html('');
+		}
+	});
+});
+
+
+</script>
+
+<?php
+	
+// register hook
+$GLOBALS['TL_HOOKS']['loadFormField']['checkbox_select_helper_bypassValidation'] = array('checkbox_select_helper','bypassValidation');	
+
+if(!class_exists('checkbox_select_helper',false))
+{
+	/**
+	 * Class checkbox_select_helper
+	 * @author Tim Gatzky
+	 */
+	class checkbox_select_helper extends \Contao\Frontend
+	{
+		/**
+		 * Bypass the validation of form fields that should be effected by a selector
+		 * @param object
+		 * @param string
+		 * @param array
+		 * called from loadFormField Hook
+		 */
+		public function bypassValidation($objWidget,$strFormId,$arrForm)
+		{
+			if(\Contao\Input::post('FORM_SUBMIT') != $strFormId)
+			{
+				return $objWidget;
+			}
+			
+			$intForm = $arrForm['id'];
+
+			if( !is_array($GLOBALS['checkbox_selector_helper'][$intForm]['__selector__']) )
+			{
+				return $objWidget;
+			}
+
+			$arrSelectors = $GLOBALS['checkbox_selector_helper'][$intForm]['__selector__'];
+			$arrClass = array_filter( explode(' ', $objWidget->class) ?: array() );
+			
+			if( ($objWidget->type == 'fieldset' && $objWidget->fsType == 'fsStart') || $objWidget->type == 'fieldsetStart' )
+			{
+				foreach($arrSelectors as $selector => $values)
+				{
+					if(array_intersect($values, $arrClass))
+					{
+						$GLOBALS['CHECKBOX_FIELDSET_START'] = true;
+					}
+				}
+				return $objWidget;
+			}
+			else if( ($objWidget->type == 'fieldset' && $objWidget->fsType == 'fsStop') || $objWidget->type == 'fieldsetStop' )
+			{
+				unset($GLOBALS['CHECKBOX_FIELDSET_START']);
+				return $objWidget;
+			}
+			
+			foreach($arrSelectors as $selector => $values)
+			{
+				// selector not active, bypass validation for fields with class of the selector value
+				if(strlen(\Contao\Input::post($selector)) < 1 && $objWidget->submitInput())
+				{
+					if( empty( array_intersect($values, $arrClass) ) === false || (boolean)$GLOBALS['CHECKBOX_FIELDSET_START'] === true)
+					{
+						$objWidget->mandatory = false;
+					}
+				}
+			}
+			return $objWidget;
+		}
+	}
+}	
+?>
+
+<?php $this->endblock(); ?>

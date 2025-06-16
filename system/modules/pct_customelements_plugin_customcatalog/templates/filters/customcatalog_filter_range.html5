@@ -1,0 +1,66 @@
+<?php
+/**
+ * Range filter template
+ */
+?>
+<?php 
+if($this->mode == 'between')
+{
+	$GLOBALS['TL_CSS'][] = PCT_CUSTOMCATALOG_PATH.'/assets/js/jquery/ui/themes/smoothness/jquery-ui.css|static';
+	$GLOBALS['TL_JAVASCRIPT'][] = PCT_CUSTOMCATALOG_PATH.'/assets/js/jquery/ui/jquery-ui.min.js';	
+}
+?>
+<div <?= $this->cssID; ?> class="widget <?= $this->class; ?> block">
+<fieldset class="range_container">
+<?php if($this->label): ?><legend><?= $this->label; ?></legend><?php endif; ?>
+<?php if($this->label): ?><label for="<?= $this->name; ?>"><?= $this->label; ?></label><?php endif; ?>	
+<?php if($this->mode == 'between'): ?>
+	<input name="<?= $this->name; ?>" type="hidden" id="slider-input_<?= $this->name; ?>" value="<?= $this->value; ?>">
+	<input readonly type="text" id="slider-text_<?= $this->name; ?>">
+	<div id="slider-range_<?= $this->name; ?>"></div>
+	<script>
+	jQuery(document).ready(function()
+	{
+		var elem = jQuery('#slider-range_<?= $this->name; ?>');
+		var text = jQuery('#slider-text_<?= $this->name; ?>');
+		var input = jQuery('#slider-input_<?= $this->name; ?>');
+		elem.slider(
+		{
+		  range: true,
+		  min: <?= $this->minValue; ?>,
+		  max: <?= $this->maxValue; ?>,
+		  step: <?= $this->stepValue; ?>,
+		  values: [<?= $this->actMinValue; ?>, <?= $this->actMaxValue; ?>],
+		  slide: function(event,ui) 
+		  {
+		  		text.val(ui.values[0] + " - " + ui.values[1] );
+		  		input.val(ui.values[0] + "," + ui.values[1]);
+		  },
+		  change:function(event,ui)
+		  {
+			  // submit form on change
+			  <?php if($this->getFilter()->getModule()->customcatalog_filter_submit): ?>
+			  jQuery(event.target).parents('form').submit();
+			  <?php endif; ?>
+		  }
+		});
+		text.val(elem.slider("values",0) + " - " + elem.slider("values",1));
+		input.val(elem.slider("values",0) + "," + elem.slider("values",1));
+	});
+	</script>
+<?php else: ?>
+	<div id="<?= $this->name.'_value'; ?>"><span class="value"><?= $this->value ?: $this->minValue; ?></span></div>
+	<input type="range" class="range-slider" name="<?= $this->name; ?>" steps="<?= $this->stepsValue; ?>" min="<?= $this->minValue; ?>" max="<?= $this->maxValue; ?>" value="<?= $this->value; ?>">
+	<script>
+	jQuery(document).ready(function() 
+	{
+		jQuery('input[name="<?= $this->name; ?>"]').on('input change',function()
+		{
+			jQuery('#<?= $this->name.'_value'; ?> .value').html(this.value);
+		});
+	});
+	</script>
+<?php endif; ?>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?= $this->description; ?></div><?php endif; ?>	
+</div>

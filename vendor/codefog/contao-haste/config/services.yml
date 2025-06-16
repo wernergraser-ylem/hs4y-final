@@ -1,0 +1,56 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            string $projectDir: '%kernel.project_dir%'
+
+    # AjaxReload
+    Codefog\HasteBundle\AjaxReloadManager:
+        public: true
+
+    Codefog\HasteBundle\EventListener\AjaxReloadListener: ~
+
+    # DcaAjaxOperations
+    Codefog\HasteBundle\EventListener\DcaAjaxOperationsListener: ~
+
+    # DcaDateRangeFilter
+    Codefog\HasteBundle\EventListener\DcaDateRangeFilter: ~
+
+    # DoctrineOrm
+    Codefog\HasteBundle\DoctrineOrmHelper:
+        public: true
+
+    Codefog\HasteBundle\EventListener\DoctrineOrmListener: ~
+
+    # InsertTagsListener
+    Codefog\HasteBundle\EventListener\InsertTagsListener: ~
+
+    # Formatter
+    Codefog\HasteBundle\Formatter:
+        public: true
+
+    # Relations
+    Codefog\HasteBundle\EventListener\DcaRelationsListener:
+        tags:
+            - { name: doctrine.event_listener, event: postGenerateSchema }
+
+    Codefog\HasteBundle\DcaRelationsManager:
+        arguments:
+            $entityManager: '@?doctrine.orm.entity_manager'
+        public: true
+
+    # StringParser
+    Codefog\HasteBundle\StringParser:
+        public: true
+
+    # UndoManager
+    Codefog\HasteBundle\UndoManager:
+        public: true
+
+    # UrlParser
+    Codefog\HasteBundle\UrlParser:
+        public: true
+
+    # FileUploadNormalizer
+    Codefog\HasteBundle\FileUploadNormalizer: ~

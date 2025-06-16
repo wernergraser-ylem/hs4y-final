@@ -1,0 +1,30 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_infobox.css|static';
+?>
+<?php if($this->field('schema')->value() == 'alert'): ?>
+<div class="<?php echo $this->class; ?> ce_infobox_alert block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<i class="fa fa-flash"></i>
+	<?php echo $this->field('text')->html(); ?>
+</div>
+<?php endif; ?>
+
+<?php if($this->field('schema')->value() == 'info'): ?>
+<div class="<?php echo $this->class; ?> ce_infobox_info block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<i class="fa fa-bullhorn"></i>
+	<?php echo $this->field('text')->html(); ?>
+</div>
+<?php endif; ?>
+
+<?php if($this->field('schema')->value() == 'success'): ?>
+<div class="<?php echo $this->class; ?> ce_infobox_success block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<i class="fa fa-check"></i>
+	<?php echo $this->field('text')->html(); ?>
+</div>
+<?php endif; ?>
+
+<?php if($this->field('schema')->value() == 'warning'): ?>
+<div class="<?php echo $this->class; ?> ce_infobox_warning block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<i class="fa fa-warning"></i>
+	<?php echo $this->field('text')->html(); ?>
+</div>
+<?php endif; ?>

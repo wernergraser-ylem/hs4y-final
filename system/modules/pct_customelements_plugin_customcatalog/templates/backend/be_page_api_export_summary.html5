@@ -1,0 +1,41 @@
+<?php
+/**
+ * CustomCatalog API Standard: "Summary" page backend template
+ */
+
+use PCT\CustomElements\Plugins\CustomCatalog\Core\Controller;
+
+?>
+
+<?php 
+$objLang = (object)$GLOBALS['TL_LANG']['tl_pct_customcatalog_api']['be_page_api'];
+?>
+
+<?php if(count($this->data) > 0): ?>
+
+<div id="tl_rebuild_index">	
+	
+	<?php if(isset($this->file)) :?>
+	<p><?php echo sprintf($objLang->file_created, $this->file->__get('name'), str_replace(Controller::rootDir(),'',$this->file->__get('dirname') )); ?></p>
+	<?php endif; ?>
+	
+	<?php if($this->report): ?>
+	<p><?php echo $this->report; ?></p>
+	<?php else: ?>
+	<p><?php echo $objLang->no_summary; ?></p>
+	<?php endif; ?>
+	
+	<?php if($this->hasDownload): ?>
+	<a href="<?php echo $this->file->path; ?>" class="tl_submit download">Download</a>
+	<?php endif; ?>
+	
+	
+</div>
+
+<?php else: ?>
+
+<div id="tl_rebuild_index">
+<p class="tl_error">No export data found</p>
+</div>
+
+<?php endif; ?>

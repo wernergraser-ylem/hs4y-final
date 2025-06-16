@@ -1,0 +1,70 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_imagebox-2',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'imagebox',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126494,
+1 => 14783,
+2 => 384,
+3 => 1700566524,
+5 => 'imagebox',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:14:{s:15:"t4tzxc9c8dlt0kk";a:2:{s:5:"value";s:8:"Imagebox";s:4:"unit";s:2:"h2";}s:15:"tl4rbhnyuji2t4u";s:198:"<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>";s:14:"r3elvl38ej5dnb";s:36:"0782e8ec-885a-11ee-99c8-50aa6600cd04";s:19:"r3elvl38ej5dnb_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:15:"ghzf0ogn2po8m99";s:1:"#";s:22:"ghzf0ogn2po8m99_target";s:0:"";s:25:"ghzf0ogn2po8m99_titleText";s:9:"Read more";s:14:"igfwi49b9w9p8o";s:17:"imagebox_version2";s:15:"pszz8tf2ad99whz";s:8:"align-lb";s:13:"ri91jap0g7xih";s:3:"500";s:13:"657xdzyvimqwr";s:22:"light_text color-white";s:15:"csrx17twoy8gg18";s:9:"width-100";s:15:"lue4jvr51yf8bt2";a:2:{i:0;s:0:"";i:1;s:0:"";}s:15:"nl6clkpgzt4giqw";s:0:"";}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:4:"88_0";s:8:"group_id";i:88;s:11:"group_alias";s:4:"text";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"t4tzxc9c8dlt0kk";s:2:"id";i:486;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:15:"tl4rbhnyuji2t4u";s:2:"id";i:479;s:5:"alias";s:4:"text";}}}i:1;a:4:{s:5:"ident";s:5:"370_0";s:8:"group_id";i:370;s:11:"group_alias";s:5:"image";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"r3elvl38ej5dnb";s:2:"id";i:482;s:5:"alias";s:5:"image";}}}i:2;a:4:{s:5:"ident";s:5:"371_0";s:8:"group_id";i:371;s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"ghzf0ogn2po8m99";s:2:"id";i:481;s:5:"alias";s:4:"link";}}}i:3;a:4:{s:5:"ident";s:5:"339_0";s:8:"group_id";i:339;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:7:{i:0;a:3:{s:4:"uuid";s:14:"igfwi49b9w9p8o";s:2:"id";i:487;s:5:"alias";s:7:"version";}i:1;a:3:{s:4:"uuid";s:15:"pszz8tf2ad99whz";s:2:"id";i:480;s:5:"alias";s:5:"align";}i:2;a:3:{s:4:"uuid";s:13:"ri91jap0g7xih";s:2:"id";i:484;s:5:"alias";s:6:"height";}i:3;a:3:{s:4:"uuid";s:13:"657xdzyvimqwr";s:2:"id";i:483;s:5:"alias";s:6:"schema";}i:4;a:3:{s:4:"uuid";s:15:"csrx17twoy8gg18";s:2:"id";i:488;s:5:"alias";s:5:"width";}i:5;a:3:{s:4:"uuid";s:15:"lue4jvr51yf8bt2";s:2:"id";i:590;s:5:"alias";s:8:"bg_color";}i:6;a:3:{s:4:"uuid";s:15:"nl6clkpgzt4giqw";s:2:"id";i:485;s:5:"alias";s:8:"parallax";}}}}s:6:"tstamp";i:1566472738;s:5:"alias";s:8:"imagebox";s:5:"uuids";a:11:{i:0;s:15:"t4tzxc9c8dlt0kk";i:1;s:15:"tl4rbhnyuji2t4u";i:2;s:14:"r3elvl38ej5dnb";i:3;s:15:"ghzf0ogn2po8m99";i:4;s:14:"igfwi49b9w9p8o";i:5;s:15:"pszz8tf2ad99whz";i:6;s:13:"ri91jap0g7xih";i:7;s:13:"657xdzyvimqwr";i:8;s:15:"csrx17twoy8gg18";i:9;s:15:"lue4jvr51yf8bt2";i:10;s:15:"nl6clkpgzt4giqw";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:53;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'0782e8ec-885a-11ee-99c8-50aa6600cd04' => 'files/cto_layout/img/element_library/1000x560_w_icon_v2.png',
+),
+);

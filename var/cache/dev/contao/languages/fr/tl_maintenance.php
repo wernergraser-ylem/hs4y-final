@@ -1,0 +1,45 @@
+<?php
+
+// vendor/contao/core-bundle/contao/languages/fr/tl_maintenance.xlf
+$GLOBALS['TL_LANG']['tl_maintenance']['cacheTables']['0'] = 'Purger des données';
+$GLOBALS['TL_LANG']['tl_maintenance']['cacheTables']['1'] = 'Choisir les données à purger ou à recréer.';
+$GLOBALS['TL_LANG']['tl_maintenance']['job'] = 'Travail';
+$GLOBALS['TL_LANG']['tl_maintenance']['description'] = 'Description';
+$GLOBALS['TL_LANG']['tl_maintenance']['clearCache'] = 'Purger des données';
+$GLOBALS['TL_LANG']['tl_maintenance']['cacheCleared'] = 'Les données ont été nettoyées';
+$GLOBALS['TL_LANG']['tl_maintenance']['updateHelp'] = 'Veuillez saisir votre %s.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['index']['0'] = 'Purger l\'index de recherche';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['index']['1'] = 'Vider les tables <code>tl_search</code>, <code>tl_search_index</code> and <code>tl_search_term</code>. Ensuite, vous devez reconstruire l\'index de recherche (voir ci-dessus).';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['undo']['0'] = 'Purger la table des annulations';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['undo']['1'] = 'Vider la table <code>tl_undo</code> qui stocke les enregistrements supprimés. Cet action les supprime d\'une façon permanente.  ';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['versions']['0'] = 'Purger la table des versions';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['versions']['1'] = 'Vider la table <code>tl_version</code> qui stocke les versions précédentes d\'un enregistrement. Cet action supprime ces enregistrements d\'une façon permanente.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['log']['0'] = 'Purger le journal système';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['log']['1'] = 'vider la table <code>tl_log</code> qui stocke toutes les entrées du journal système. Cet action supprime ces enregistrements d\'une façon permanente. ';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['crawl_queue']['0'] = 'Purger la file d\'attente d\'exploration du site';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['crawl_queue']['1'] = 'Vide la table the <code>tl_crawl_queue</code> qui stocke toutes les informations de file d\'attente des processus d\'exploration du site.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['images']['0'] = 'Purger le cache des images';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['images']['1'] = 'Supprime les images générées automatiquement, puis purge le cache serveur, il n\'y a donc aucun lien vers les ressources supprimées.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['previews']['0'] = 'Purger le cache de prévisualisation';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['previews']['1'] = 'Removes the automatically generated preview images and then purges the shared cache, so there are no links to deleted resources.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['scripts']['0'] = 'Purger le cache des scripts';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['scripts']['1'] = 'Supprime les fichiers <code>.css</code> et <code>.js</code> générés automatiquement, puis purge le cache partagé, de sorte qu\'il n\'y a pas de liens vers les ressources supprimées.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['pages']['0'] = 'Purger le cache serveur';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['pages']['1'] = 'Supprime les versions en cache des pages front office.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['temp']['0'] = 'Purger le répertoire temporaire';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['temp']['1'] = 'Supprime les fichiers temporaires.';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['xml']['0'] = 'Recréer les fichiers XML';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['symlinks']['0'] = 'Recréer les liens symboliques ';
+$GLOBALS['TL_LANG']['tl_maintenance_jobs']['symlinks']['1'] = 'Recrée les liens symboliques dans le dossier public (racine du document).';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawler'] = 'Robot d\'exploration';
+$GLOBALS['TL_LANG']['tl_maintenance']['startCrawling'] = 'Démarrer l\'exploration';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscribers']['0'] = 'Fonctionnalités activées';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscribers']['1'] = 'Le robot d\'exploration explore toutes les URL qu\'il trouve. Ici, vous pouvez décider quoi faire avec ces résultats.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlMember']['0'] = 'Membre';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlMember']['1'] = 'Connecte automatiquement un membre pour indexer les pages protégées';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlWaitToBeFinished'] = 'Le robot d\'exploration est en cours d\'indexation. Veuillez attendre la fin pour voir les résultats.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlDebugLog'] = 'Journal de débogage';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlDebugLogExplain'] = 'Si des erreurs se sont produites ou si des pages ont été ignorées, vérifiez le journal de débogage pour plus d\'informations.';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlDownloadLog'] = 'Télécharger le journal';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscriberNames']['search-index'] = 'Mettre à jour l\'index de recherche';
+$GLOBALS['TL_LANG']['tl_maintenance']['crawlSubscriberNames']['broken-link-checker'] = 'Rechercher les liens morts';

@@ -1,0 +1,178 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div id="portfolio_<?php echo $this->id; ?>" class="mod_portfoliolist">
+ <?php if (empty($this->articles)): ?>
+    <p class="empty"><?php echo $this->empty; ?></p>
+  <?php else: ?>
+	<div class="autogrid_wrapper block">
+    <?php echo implode('', $this->articles); ?>
+  	</div>
+  <?php endif; ?>
+</div>
+<?php if ($this->pagination): ?>
+	<div class="mod_portfoliolist_v1_pagination ">
+    	<?= $this->pagination ?>
+	</div>
+<?php endif; ?>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	var allowEmpty = false; // if set to true, the list will be empty on no results
+  	var container = jQuery('#portfolio_<?php echo $this->id; ?>');
+	var items = container.find('.item');
+	
+	var buttons = jQuery('.ce_portfoliofilter').find('a');
+	var buttonAll = jQuery('.ce_portfoliofilter a.all');
+	var filters = [];
+	var urlParam = 'filter'; // the GET parameter containing the filter values
+	var classPrefix = '.filter_';
+	var filter_all = '*'; // is not a filter
+	var isStrict = false; // strict filtering
+	var singleAction = true; // only one category active at a time
+	var overwriteLinks = true; // append the filter params to the details links
+	var addToUrl = true; // append selected filters to the url
+	var links = container.find('.item a');
+	
+	// get filters from localStorage
+	<?php if(\Contao\Input::get('filter') == ''): ?> 
+	if( localStorage.getItem('portfolio_<?= $this->id; ?>') != undefined )
+	{
+		filters = localStorage.getItem('portfolio_<?= $this->id; ?>').split(',');
+	}
+	<?php endif; ?>
+	
+	// check url for predefined filters via GET parameters 
+	<?php if(\Contao\Input::get('filter') != ''): ?>
+	<?php foreach(explode(',',\Contao\Input::get('filter')) as $filter): ?>
+	filters.push(classPrefix+'<?= $filter; ?>');
+	<?php endforeach; ?>
+	
+	// append the current filter values to the details links in the newslist
+	if(filters.length > 0 && overwriteLinks)
+	{
+		// push the new GET parameters to the url
+		var arrGet = new Array();
+		jQuery.each(filters, function(i,f)
+		{
+			if(f != filter_all)
+			{
+				arrGet.push( f.replace(classPrefix, '') );
+			}
+		});
+		
+		jQuery.each(links, function(index, elem)
+		{
+			var href = jQuery(elem).attr('href').split('?');
+			jQuery(elem).attr('href',href[0]+'?'+urlParam+'='+arrGet.join(','));
+		});
+	}	
+	
+	<?php endif; ?>	
+
+	// apply filters
+	if(filters.length > 0)
+	{
+		// hide all items except the ones we want to filter
+		items.addClass('hidden');
+
+		if(isStrict)
+		{
+			items.filter(filters.join(' ')).removeClass('hidden');
+		}
+		else
+		{
+			items.filter(filters.join(',')).removeClass('hidden');
+		}
+		
+		// illiterate through the buttons and filters
+		jQuery.each(buttons, function(index,elem)
+		{
+			jQuery.each(filters, function(i,f)
+			{
+				if(jQuery(elem).attr('data-filter') == f)
+				{
+					buttons.removeClass('selected');
+					jQuery(elem).addClass('selected');
+				}
+			});
+		});
+	}
+	
+	buttons.click(function(e)
+	{
+		e.preventDefault
+		var _this = jQuery(this);
+		var value = _this.attr('data-filter');
+		
+		// reset
+		if(value == filter_all)
+		{
+			buttons.removeClass('selected');
+			buttonAll.addClass('selected');
+			filters = [];
+			if(allowEmpty)
+			{
+				items.addClass('hidden');
+			}
+			else
+			{
+				items.removeClass('hidden');
+			}
+			
+			// remove from localStorage
+			localStorage.removeItem('portfolio_<?= $this->id; ?>');
+
+			return false;
+		}
+		
+		if(singleAction)
+		{
+			buttons.removeClass('selected');
+			filters = [];
+		}
+			
+		if(_this.hasClass('selected'))
+		{
+			_this.removeClass('selected');
+			filters.splice(filters.indexOf(value),1);
+		}
+		else
+		{
+			_this.addClass('selected');
+			filters.push(value);
+		}
+		
+		// set an "impossible" filter value if empty results are allowed
+		if(allowEmpty && filters.length < 1)
+		{
+			items.addClass('hidden');
+			return false;
+		}
+		
+		// hide all items except the ones we want to filter
+		items.addClass('hidden');
+
+		if(isStrict)
+		{
+			items.filter(filters.join(' ')).removeClass('hidden');
+		}
+		else
+		{
+			items.filter(filters.join(',')).removeClass('hidden');
+		}
+
+		// store filters in localStorage
+		localStorage.setItem('portfolio_<?= $this->id; ?>',filters.join(','));
+		
+		return false;
+	});
+});
+
+
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php $this->endblock(); ?>

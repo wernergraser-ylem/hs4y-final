@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "webauthn": {
+        "a34cc6e6153be72b54e9ac4f246acc462219c87b39765b28794571a96467019f": {
+            "options": "{\"challenge\":\"o0zG5hU75ytU6axPJGrMRiIZyHs5dlsoeUVxqWRnAZ8\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1748934160
+        },
+        "7b8c8b40586b51747663ebfc01c1a0984b7dbb95ed8057575dce5fd79c834c8e": {
+            "options": "{\"challenge\":\"e4yLQFhrUXR2Y-v8AcGgmEt9u5XtgFdXXc5f15yDTI4\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1748934184
+        },
+        "7e6b9e800a6d952ab569baaa56ec7b08270f9bd6cec1896f2fb229ac632d81d2": {
+            "options": "{\"challenge\":\"fmuegAptlSq1abqqVux7CCcPm9bOwYlvL7IprGMtgdI\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1748934287
+        }
+    },
+    "users": {
+        "cmadmin-hs4y-0504": {
+            "username": "cmadmin-hs4y-0504",
+            "password": null,
+            "passkey": "{\"publicKeyCredentialId\":\"nTa0iJoM0sxwa382A-E0TTuq-Zs\",\"type\":\"public-key\",\"transports\":[\"hybrid\",\"internal\"],\"attestationType\":\"none\",\"trustPath\":[],\"aaguid\":\"00000000-0000-0000-0000-000000000000\",\"credentialPublicKey\":\"pQECAyYgASFYIFjLcTzatud22oUNBpuTI7hfrPU7m74Pqs25qozioSdaIlgg8_OK9aZWzzJR4y5bG5hEB2dV2HlKamsBJDaj2rNtYj4\",\"userHandle\":\"Y21hZG1pbi1oczR5LTA1MDQ\",\"counter\":0,\"backupEligible\":true,\"backupStatus\":true,\"uvInitialized\":true}",
+            "scope": "admin",
+            "totp_secret": null
+        }
+    },
+    "secret": "198756b2bc70d43d161424f4791a72f14ab49d8ebc85fe1c3ad42651b38441869e299de0d03557d6"
+}

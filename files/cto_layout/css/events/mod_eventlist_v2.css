@@ -1,0 +1,69 @@
+/* =============================================================================
+ * mod_eventlist_v2
+ * ========================================================================== */
+
+.mod_eventlist_v2 .event {
+	border-top: 1px solid rgb(233, 238, 241);
+	padding: 5px;
+	transition: background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
+	line-height: 2.5rem;
+}
+
+.mod_eventlist_v2 .event:hover {
+	background: rgb(245,245,245);
+}
+.mod_eventlist_v2 .event:last-of-type {
+	border-bottom: 1px solid rgb(233, 238, 241);
+}
+
+.mod_eventlist_v2 p {
+	margin-bottom: 0;
+}
+
+.mod_eventlist_v2 .date {
+	font-size: 1.3rem;
+	font-weight: bold;
+	border-right: 2px solid rgb(204, 213, 218);
+}
+
+.mod_eventlist_v2 .location {
+	border-left: 2px solid rgb(204, 213, 218);
+	color: rgb(159, 163, 165);
+}
+
+.mod_eventlist_v2 i {
+	margin-right: 4px;
+}
+
+.mod_eventlist_v2 .time {
+	text-align: right;
+}
+
+.mod_eventlist_v2 .title a {
+	color: var(--accentColor);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.mod_eventlist_v2 .date,
+	.mod_eventlist_v2 .title,
+	.mod_eventlist_v2 .time,
+	.mod_eventlist_v2 .location {
+		margin-bottom: 0!important;
+		border: 0!important;
+	}
+	
+	.mod_eventlist_v2 .time {
+		text-align: left;
+	}
+	
+	.mod_eventlist_v2 .event {
+		line-height: 1.5;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+

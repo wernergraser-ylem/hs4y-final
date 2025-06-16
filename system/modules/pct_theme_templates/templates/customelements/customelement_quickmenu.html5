@@ -1,0 +1,31 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_quickmenu.css|static';
+?>
+<div class="<?php echo $this->class; ?> mod_quickmenu_<?php echo $this->id; ?> block <?php echo $this->field('style')->value(); ?> <?php echo $this->field('position')->value(); ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<ul>
+	<?php foreach($this->group('content') as $i => $fields): ?>
+		<li class="content">
+			<a href="<?php echo $this->field('link#'.$i)->value(); ?>"<?php if($this->field('link#'.$i)->option('titleText')): ?> title="<?php echo $this->field('link#'.$i)->option('titleText'); ?>"<?php endif; ?><?php if($this->field('link#'.$i)->option('target')): ?> target="_blank"<?php endif; ?>><i class="<?php echo $this->field('icon#'.$i)->value(); ?>"></i><span><?php echo $this->field('label#'.$i)->value(); ?></span></a>
+		</li>
+	<?php endforeach; ?>
+	</ul>
+</div>
+<?php if($this->field('width')->value()): ?>
+<?php $GLOBALS['TL_HEAD'][] = "<style>.mod_quickmenu_" . $this->id  . " li a:hover {width:" . $this->field('width')->value() . "px!important}</style>" ;?>
+<?php endif; ?>
+
+<?php if(!$this->field('collapse_no')->value()): ?>
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	jQuery(window).scroll(function(){
+		if (jQuery(this).scrollTop() > 300) {
+			jQuery('.mod_quickmenu').addClass('collapse');
+		} else {
+			jQuery('.mod_quickmenu').removeClass('collapse');
+		}
+	}); 
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php endif; ?>

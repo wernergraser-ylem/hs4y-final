@@ -1,0 +1,49 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_video_background.css|static';
+?>
+<div class="<?php echo $this->class; ?> ce_video_background_<?php echo $this->id; ?> block<?php if($this->field('invert')->value()): ?> color-white<?php endif; ?><?php if($this->field('fullscreen')->value()): ?> fullscreen-video<?php endif; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if($this->field('overlay')->value()): ?><div class="video-overlay"></div><?php endif; ?>
+
+<video id="video_<?php echo $this->id; ?>" class="video" muted autoplay playsinline loop poster="<?php echo $this->field('poster')->generate(); ?>">
+  <source src="<?php echo \Contao\FilesModel::findByPk($this->field('video_mp4')->value())->path; ?>" type="video/mp4">
+</video>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+(function() {
+	var video = document.getElementById("video_<?php echo $this->id; ?>");
+	video.addEventListener( "canplay", function() {
+		video.play();
+  	});
+})();
+
+jQuery(document).ready(function() {
+    function adjustFullscreenHeight() {
+        var videoBackgroundClass = '.ce_video_background_<?php echo $this->id; ?>';
+        
+        if (jQuery(videoBackgroundClass).hasClass('fullscreen-video')) {
+            var headerHeight = 0;
+
+            // Prüfen, ob #fix-wrapper nicht 'absolute' ist
+            if (jQuery('#fix-wrapper').css('position') !== 'absolute') {
+                headerHeight = jQuery('#header').outerHeight();
+            }
+
+            jQuery(videoBackgroundClass).css('height', 'calc(100vh - ' + headerHeight + 'px)');
+        }
+    }
+    
+    // Funktion beim Laden und Resizing aufrufen
+    adjustFullscreenHeight();
+    jQuery(window).resize(adjustFullscreenHeight);
+    
+    setTimeout(function() 
+	{
+		jQuery(window).resize();
+	}, 400);
+});
+
+</script>
+<!-- SEO-SCRIPT-STOP -->
+
+<div class="ce_video_background_inside contentwrap<?php if($this->field('padding_top_class')->value()): ?> <?php echo $this->field('padding_top_class')->value(); ?><?php endif; ?><?php if($this->field('padding_bottom_class')->value()): ?> <?php echo $this->field('padding_bottom_class')->value(); ?><?php endif; ?>">

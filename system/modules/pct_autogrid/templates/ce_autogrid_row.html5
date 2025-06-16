@@ -1,0 +1,7 @@
+
+<?php if(isset($this->AutoGrid->start)): ?>
+<div class="autogrid_row<?php if($this->class): ?> <?= $this->class; ?><?php endif; ?><?php if($this->AutoGrid->gutter): ?> <?= $this->AutoGrid->gutter;?><?php endif; ?><?php if($this->AutoGrid->same_height): ?> same_height<?php endif; ?>"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+<?php endif; ?>
+<?php if(isset($this->AutoGrid->stop)): ?>
+</div>
+<?php endif;?>

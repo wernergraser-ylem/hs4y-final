@@ -1,0 +1,5 @@
+<?php
+if($this->field('height_mobile')->value())
+$GLOBALS['TL_HEAD'][] = "<style>@media only screen and (max-width: 767px){.ce_vertical_spacer_" . $this->id  . " {height:" . $this->field('height_mobile')->value() . "px!important;}}</style>"
+?>
+<div class="<?= $this->class; ?> ce_vertical_spacer_<?= $this->id ?><?php if($this->field('mobile_hide')->value()): ?> hide-mobile<?php endif; ?>" style="height:<?= $this->field('height')->value(); ?>px;"<?= $this->cssID; ?>></div>

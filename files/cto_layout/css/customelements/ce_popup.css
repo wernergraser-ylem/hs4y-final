@@ -1,0 +1,120 @@
+/* =============================================================================
+ * ce_popup
+ * ========================================================================== */
+
+.ce_popup_start {
+	display: none;
+}
+
+.ce_popup_start.popup_show {
+	display: block;
+}
+
+.ce_popup_start .ce_popup_overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 100000;
+}
+
+.ce_popup_start.popup_show .ce_popup_overlay,
+.ce_popup_start.popup_show .ce_popup_content {
+	-webkit-animation: fadeIn 1s ease;
+	-moz-animation: fadeIn 1s ease;
+	-ms-animation: fadeIn 1s ease;
+	animation: fadeIn 1s ease;
+}
+
+.ce_popup_start.overlay_light .ce_popup_overlay {
+	background: rgba(255,255,255,0.7);
+}
+
+.ce_popup_start.overlay_dark .ce_popup_overlay {
+	background: rgba(0,0,0,0.6);
+}
+
+.ce_popup_start .ce_popup_content {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	z-index: 200000;
+	width: 90%;
+	max-width: 600px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	padding-bottom: 35px;
+	background: rgb(255,255,255);
+}
+
+.ce_popup_start .popup_close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	z-index: 100;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	cursor: pointer;
+	background: rgba(255,255,255,0.95);
+	border-radius: 100%;
+	line-height: 35px;
+	width: 35px;
+	text-align: center;
+}
+
+.ce_popup_start .popup_close:hover {
+	opacity: 0.8;
+}
+
+.ce_popup_start .ce_popup_content .checkbox {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	height: 35px;
+	width: 100%;
+	background: #f8f8f8;
+}
+
+.ce_popup_start .ce_popup_content .checkbox input {
+	width: auto;
+	margin-right: 8px;
+	margin-left: 10px;
+}
+
+.ce_popup_start .ce_popup_content .checkbox label {
+	display: block;
+	margin-bottom: 0;
+}
+
+/* =============================================================================
+ * ce_popup mod_subscribe
+ * ========================================================================== */
+
+.ce_popup_start .mod_subscribe {
+	padding: 0;
+	border: 0;
+}
+
+.ce_popup_start .mod_subscribe .formbody {
+	display: block;
+}
+
+.ce_popup_start .mod_subscribe input.submit {
+	width: 100%;
+}
+
+.ce_popup_start .mod_subscribe input.text {
+	margin-bottom: 15px;
+}
+
+.ce_popup_start .mod_subscribe p.error {
+	background: red;
+	color: rgb(255,255,255);
+	padding: 0 4px;
+}

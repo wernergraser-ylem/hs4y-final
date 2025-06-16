@@ -1,0 +1,39 @@
+<?php 
+namespace Contao;
+
+use PCT\FrontendQuickEdit\Controller;
+
+?>
+<!-- indexer::stop -->
+<div id="<?= $this->selector; ?>_interface" class="pct_edit_interface <?= $this->Config->table; ?>" data-id="<?= $this->Config->id; ?>" data-table="<?= $this->Config->table; ?>" data-selector="<?= $this->selector; ?>"<?php
+if($this->clickToEdit): ?> data-clicktoedit="true"<?php endif; ?>>
+<div class="__info__ <?= $this->Config->type; ?> <?= $this->Config->table; ?>">
+<div>
+	<div><?= $this->Config->type; ?></div>
+</div>
+</div>
+<div class="__buttons__ <?= $this->Config->table; ?> <?= $this->Config->type; ?>">
+	<?php $button = $this->buttons['edit']; ?>
+	<div class="edit __button__">
+	<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if(isset($button['target'])): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+	</div>
+	<?php 
+	// edit RS list view
+	$objModel = \RevolutionSlider\Models\Slider::findByPk( ContentModel::findByPk($this->Config->id)->revolutionslider );
+	$arrLabels = $GLOBALS['TL_LANG'][$this->Config->table];
+	$params = array('do'=>'revolutionslider','table'=>'tl_revolutionslider_slides','id'=>$objModel->id,'rt'=>Controller::request_token(),);
+	$button = array
+	(
+		'href' 		=> StringUtil::decodeEntities( Environment::get('base').'contao'.'?'.http_build_query($params) ),
+		'icon'	  	=> Image::getHtml(\PCT_FRONTEND_QUICKEDIT_PATH.'/assets/img/icon_list.svg'),
+		'class'		=> 'edit',
+		'title'		=> sprintf( $arrLabels['edit'][1], $this->Config->id ),
+		'attributes' =>  ' data-size="size-l"'
+	);
+	?>
+	<div class="edit_list __button__">
+	<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if(isset($button['target'])): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+	</div>
+</div>
+</div>
+<!-- indexer::continue -->

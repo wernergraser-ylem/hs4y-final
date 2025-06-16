@@ -1,0 +1,33 @@
+<?php
+/**
+ * Select/Radio-Button filter template
+ */
+?>
+
+<?php if($this->radio): ?>
+<div <?= $this->cssID; ?> class="widget <?= $this->class; ?> block">
+<fieldset class="radio_container">
+	<?php if($this->label): ?><legend><?= $this->label; ?></legend><?php endif; ?>
+	<?php foreach($this->options as $i => $option): ?>
+	<div>
+	<input type="radio" id="opt_<?= $option['id'] ?? 'reset'; ?>" class="radio" name="<?= $this->name; ?>" value="<?= $option['value']; ?>" <?php if($option['selected']):?>checked<?php endif;?> >
+	<label id="lbl_<?= $option['id'] ?? 'reset'; ?>" for="opt_<?= $option['id'] ?? 'reset'; ?>"><?= \Contao\StringUtil::specialchars($option['label']); ?><?php if(!$option['isBlankOption']): ?>(<?= $this->countValue($option['value']); ?>)<?php endif; ?></label>
+	</div>
+	<?php endforeach; ?>
+	<?php if($this->description): ?><div class="description"><?= $this->description; ?></div><?php endif; ?>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?= $this->description; ?></div><?php endif; ?>	
+</div>
+<?php else: ?>
+<div <?= $this->cssID; ?> class="widget <?= $this->class; ?> block">
+<fieldset class="select_container">
+	<?php if($this->label): ?><legend><?= $this->label; ?></legend><?php endif; ?>
+	<select name="<?= $this->name; ?>">
+	<?php foreach($this->options as $i => $option): ?>
+	<option id="opt_<?= $option['id'] ?? 'reset'; ?>" value="<?= $option['value']; ?>"<?php if(isset($option['selected']) && $option['selected']):?>selected<?php endif;?>><?= \Contao\StringUtil::specialchars($option['label']); ?> <?php if(!$option['isBlankOption']): ?>(<?= $this->countValue($option['value']); ?>)<?php endif; ?></option>
+	<?php endforeach; ?>
+	</select>
+</fieldset>
+<?php if($this->description): ?><div class="description"><?= $this->description; ?></div><?php endif; ?>	
+</div>
+<?php endif; ?>

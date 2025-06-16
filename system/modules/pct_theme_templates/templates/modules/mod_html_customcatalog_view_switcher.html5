@@ -1,0 +1,70 @@
+<?php 
+// ajax listener
+$objSession = \Contao\System::getContainer()->get('request_stack')->getSession();
+if(\Contao\Input::post('view_switcher') != '')
+{
+	$objSession->set('view_switcher',\Contao\Input::post('view_switcher'));
+}	
+?>
+
+<div class="mod_view_switcher">
+	<ul>
+		<li class="grid_view"><a href="#"><i data-view="gridview" class="fa fa-th"></a></i>
+		<li class="list_view"><a href="#"><i data-view="listview" class="fa fa-list"></a></i>
+		<?php 
+			// change the page id to your page id containing the "__CC-Demo Directory: List (GoogleMaps Markers)" customcataloglist module
+		?>
+		<!-- <li class="map_view"><a href="{{link_url::1675}}<?php if(\Contao\Environment::get('queryString')): ?>?<?= \Contao\Environment::get('queryString'); ?><?php endif; ?>" data-view=""><i class="fa fa-map"></a></i> -->
+	</ul>
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+/**
+ * view_switcher
+ */
+jQuery(document).ready(function()
+{
+	// set view from session
+	<?php if($objSession ->get('view_switcher') != ''): ?>
+	jQuery(".mod_customcataloglist.cc_directory").addClass('<?= $objSession ->get('view_switcher'); ?>');
+	// set li to active
+	jQuery('.mod_view_switcher li[data-view="<?= $objSession ->get('view_switcher'); ?>"]').addClass('active');
+	<?php endif; ?>
+	
+	var lastView = '';
+	jQuery(".mod_view_switcher .list_view i, .mod_view_switcher .grid_view i").click(function(e)
+	{
+    	// prevent default clicking behavior
+    	e.preventDefault();
+    	
+    	var currView = jQuery(e.target).data('view');
+    	
+    	// do nothing if it is the same button
+    	if(currView == lastView)
+    	{
+	    	return false;
+    	}
+    	
+    	// remove active from li elements
+    	jQuery('.mod_view_switcher li').removeClass('active');
+    	// add active to parent li of clicked item
+    	jQuery(e.target).parent('li').addClass('active');
+    	
+    	// set the customcatalog list class
+    	jQuery(".mod_customcataloglist.cc_directory").removeClass(lastView);
+	    jQuery(".mod_customcataloglist.cc_directory").addClass(currView);
+    	
+    	// send an ajax request to store value in the session
+    	jQuery.ajax(
+    	{
+	    	type: "POST",
+			url: location.url,
+			data: {'view_switcher':currView,'REQUEST_TOKEN':'<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>'}
+    	});
+    	
+    	// remember last one clicked
+    	lastView = currView;
+   });
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

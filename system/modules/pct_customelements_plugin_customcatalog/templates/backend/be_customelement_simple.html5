@@ -1,0 +1,7 @@
+<?php if(!$this->empty): ?>
+<?php foreach($this->fields() as $field): ?>
+<?php echo $field->html(); ?>
+<?php endforeach; ?>
+<?php else: ?>
+<p class="info empty"><?php echo $this->empty; ?></p>
+<?php endif;?>

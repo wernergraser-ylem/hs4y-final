@@ -1,0 +1,77 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_hyperlink_outline-2
+*/
+$arrImport = array (
+'tstamp' => '13.11.2023 10:10',
+'name' => 'single_hyperlink_outline-2',
+'category' => 'links',
+'thumb' => '',
+'elements' => 'hyperlink',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+34 => 'url',
+36 => 'linkTitle',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+64 => 'titleText',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+107 => 'color_css',
+111 => 'format_css',
+141 => 'privacy_level',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126119,
+1 => 14750,
+2 => 1152,
+3 => 1699869945,
+5 => 'hyperlink',
+6 => 'a:2:{s:4:"unit";s:2:"h2";s:5:"value";s:0:"";}',
+17 => 'above',
+28 => 'ascending',
+34 => '#',
+36 => 'Accent-Small',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+64 => 'Accent-Small',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+107 => 'btn-accent-outline',
+111 => 'btn-size-small',
+141 => 1,
+162 => 'sourceText',
+),
+),
+);

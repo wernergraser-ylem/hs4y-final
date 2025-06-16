@@ -1,0 +1,13 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/events/mod_eventlist_v2.css|static';
+$classes = \array_filter( \array_merge( \explode(' ',$this->class), explode(' ',$this->origCssID[1] ?? '') ) );
+$classes[] = 'mod_eventlist_v2';
+$classes = \array_unique($classes);
+?>
+
+<div <?php if($this->cssID): ?><?= $this->cssID; ?><?php endif; ?> class="<?= implode(' ',$classes); ?>">
+<?php $this->block('content'); ?>
+  <?= $this->events ?>
+  <?= $this->pagination ?>
+<?php $this->endblock(); ?>
+</div>

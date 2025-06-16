@@ -1,0 +1,71 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_textlink-2
+*/
+$arrImport = array (
+'tstamp' => '14.01.2025 09:51',
+'name' => 'single_textlink-2',
+'category' => 'links',
+'thumb' => '',
+'elements' => 'textlink',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+16 => 'floating',
+27 => 'sortOrder',
+41 => 'perRow',
+53 => 'cssID',
+54 => 'com_order',
+61 => 'ptable',
+68 => 'sliderSpeed',
+78 => 'autogrid_css',
+82 => 'revolutionslider_data_speed',
+84 => 'revolutionslider_data_animation_start',
+85 => 'revolutionslider_data_animation_end',
+91 => 'revolutionslider_videoType',
+96 => 'revolutionslider_text_fontsize',
+98 => 'revolutionslider_data_speed_OUT',
+137 => 'privacy_level',
+156 => 'pct_customelement',
+158 => 'markdownSource',
+165 => 'sectionHeadline',
+),
+'values' =>
+array (
+0 => 132311,
+1 => 15223,
+2 => 1184,
+3 => 1736759784,
+5 => 'textlink',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+16 => 'above',
+27 => 'ascending',
+41 => 4,
+53 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+54 => 'ascending',
+61 => 'tl_article',
+68 => 300,
+78 => 'col_12',
+82 => '0.5',
+84 => 'fade',
+85 => 'fadeout',
+91 => 'local',
+96 => '14',
+98 => '0.5',
+137 => 1,
+156 => 'a:7:{s:6:"values";a:9:{s:15:"t8k59knp9pbus8u";s:5:"&#35;";s:22:"t8k59knp9pbus8u_target";s:0:"";s:24:"t8k59knp9pbus8u_linkText";s:17:"A Simple Textlink";s:25:"t8k59knp9pbus8u_titleText";s:17:"A Simple Textlink";s:24:"t8k59knp9pbus8u_lightbox";s:0:"";s:15:"as20y1zx6xhg5tq";s:6:"style2";s:15:"5ad37vt863o4be1";s:7:"default";s:15:"uibat0dp4cj299w";s:3:".h4";s:15:"2hxaekwzj53ql5f";s:4:"left";}s:6:"groups";a:2:{i:0;a:4:{s:5:"ident";s:5:"459_0";s:8:"group_id";i:459;s:11:"group_alias";s:0:"";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"t8k59knp9pbus8u";s:2:"id";i:2067;s:5:"alias";s:4:"link";}}}i:1;a:4:{s:5:"ident";s:5:"460_0";s:8:"group_id";i:460;s:11:"group_alias";s:0:"";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"as20y1zx6xhg5tq";s:2:"id";i:2076;s:5:"alias";s:5:"style";}i:1;a:3:{s:4:"uuid";s:15:"5ad37vt863o4be1";s:2:"id";i:2333;s:5:"alias";s:5:"color";}i:2;a:3:{s:4:"uuid";s:15:"uibat0dp4cj299w";s:2:"id";i:2332;s:5:"alias";s:6:"markup";}i:3;a:3:{s:4:"uuid";s:15:"2hxaekwzj53ql5f";s:2:"id";i:2077;s:5:"alias";s:5:"align";}}}}s:6:"tstamp";i:1736248214;s:5:"alias";s:8:"textlink";s:5:"uuids";a:5:{i:0;s:15:"t8k59knp9pbus8u";i:1;s:15:"as20y1zx6xhg5tq";i:2;s:15:"5ad37vt863o4be1";i:3;s:15:"uibat0dp4cj299w";i:4;s:15:"2hxaekwzj53ql5f";}s:7:"version";s:6:"5.0.11";s:13:"customelement";i:159;}',
+158 => 'sourceText',
+165 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+),
+),
+);

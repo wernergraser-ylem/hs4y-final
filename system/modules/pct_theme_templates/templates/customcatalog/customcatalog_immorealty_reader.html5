@@ -1,0 +1,55 @@
+
+	<div class="propety-headline">
+		<h2 class="name"><?php echo $this->field('name')->value(); ?></h2>
+		<div class="place"><i class="fa fa-dot-circle-o"></i><?php echo $this->field('place')->html(); ?></div>
+	</div>
+	<div class="propety-header">
+		<div class="image">
+			<?php echo $this->field('image')->html(); ?>
+			<?php if($this->field('purchase_price')->value() > 0): ?>
+			<div class="price">&euro; <?php echo $this->field('purchase_price')->value(); ?></div>
+			<?php endif; ?>
+			
+			<?php if($this->field('rent_price')->value() > 0): ?>
+			<div class="price">&euro; <?php echo $this->field('rent_price')->value(); ?> / Monat</div>
+			<?php endif; ?>
+
+		</div>
+	</div>
+	<ul class="property-meta">
+		<li><i class="fa fa-bookmark"></i>Objektnummer: <?php echo $this->field('propety_number')->value(); ?></li>
+		<li><i class="fa fa-expand"></i>Gesamfl&auml;che: <?php echo $this->field('size')->value(); ?>m&sup2;</li>
+		<li><i class="fa fa-car"></i><?php echo $this->field('parking')->value(); ?> Parkpl&auml;tze</li>
+		<li><i class="fa fa-tint"></i><?php echo $this->field('bathroom')->value(); ?> Badezimmer</li>
+		<li><i class="fa fa-bed"></i><?php echo $this->field('rooms')->html(); ?></li>
+		<?php if($this->field('purchase_price')->value() > 0): ?><li><i class="fa fa-calculator"></i>&euro; <?php echo $this->field('purchase_price')->value(); ?></li><?php endif; ?>
+		<?php if($this->field('rent_price')->value() > 0): ?><li><i class="fa fa-calculator"></i>&euro; <?php echo $this->field('rent_price')->value(); ?></li><?php endif; ?>
+	</ul>
+	
+	<div class="property-description">
+		<h3>Beschreibung</h3>
+		<?php echo $this->field('description')->html(); ?>
+	</div>
+	<div class="property-gallery">
+		<?php echo $this->field('gallery')->html(); ?>
+	</div>
+	<div class="property-furnishing">
+		<h3>Ausstattung</h3>
+		<?php echo $this->field('furnishing')->html(); ?>
+	</div>
+	<div class="objekt-map">
+		<h3>Maps</h3>
+		<?php echo $this->field('map')->html(); ?>
+	</div>
+	
+	<h3>Adresse</h3>
+	<ul class="objekt-adresse">
+		<li><?php echo $this->field('map')->option('street'); ?></li>
+		<li><?php echo $this->field('map')->option('zipcode'); ?> <?php echo $this->field('map')->option('city'); ?></li>
+		<li><?php echo $this->field('map')->option('country'); ?></li>
+	</ul>
+	
+	<h3>Merkliste</h3>
+	<div><?php echo $this->field('notelist')->html(); ?></div>
+
+

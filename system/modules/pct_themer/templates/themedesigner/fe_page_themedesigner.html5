@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="<?php echo $this->language; ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+<head>
+
+	<?php $this->block('head'); ?>
+
+		<meta charset="<?php echo $this->charset; ?>">
+	    <title>ThemeDesigner</title>
+	    <base href="<?php echo $this->base; ?>">
+
+		<?php $this->block('meta'); ?>
+		<meta name="generator" content="Contao Open Source CMS">
+		<link rel="apple-touch-icon" sizes="180x180" href="files/cto_layout/img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="files/cto_layout/img/favicon/favicon-32x32.png">
+		<?php $this->endblock(); ?>
+
+		<?php echo $this->framework; ?>
+		<?php echo $this->mooScripts; ?>
+		<?php echo $this->stylesheets; ?>
+		<?php echo $this->head; ?>
+
+		<script src="<?= PCT_THEMER_PATH.'/assets/js/jquery.slimscroll.min.js'; ?>"></script>
+
+	<?php $this->endblock(); ?>
+
+</head>
+
+<body class="<?php if($GLOBALS['PCT_THEMEDESIGNER']['demoMode']): ?>demo_mode<?php endif; ?> contao-ht35 <?php if ($this->class) echo ' ' . trim(preg_replace('/fa(?:-[-\w]+|\b)/','', $this->class)); ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?>>
+
+<?php if($this->pct_themedesigner): ?>
+
+<div class="themedesigner_bar">
+	<div class="td_logo"><span>Theme-Designer</span></div>
+	<?= $this->pct_themedesigner_navigation; ?>
+	<?php if($GLOBALS['PCT_THEMEDESIGNER']['demoMode']): ?>
+	<div class="demo_mode_info"><strong>DEMO-MODE</strong><span>Save not possible</span></div>
+	<?php else: ?>
+	<?= $this->pct_themedesigner_versions; ?>
+	<?php endif; ?>
+
+	<?= $this->pct_themedesigner_toggler; ?>
+	<?= $this->pct_themedesigner_reset; ?>
+	<?= $this->pct_themedesigner_quickinfo; ?>
+</div>
+
+<div id="themedesigner" class="themedesigner_wrapper">
+<div class="scrollbar"
+<?= $this->pct_themedesigner; ?>
+</div>
+<div id="themedesigner_loader"><div class="loader"></div></div>
+</div>
+
+<?php endif; ?>
+
+<?php
+$objTD = new \PCT\ThemeDesigner;
+$src = \Contao\Environment::get('request');
+$arrSession = $objTD->getSession();
+
+$strIframeUrl = $arrSession['IFRAME_URL'] ?? '';
+$tmp = explode('?', $strIframeUrl);
+$strIframeUrl = $tmp[0];
+
+if($strIframeUrl != '' &&  $strIframeUrl!= $src)
+{
+	$src = $strIframeUrl;
+}
+
+$strQueryString = '?themedesigner_iframe=1';
+if(\Contao\Config::get('disableAlias') || strlen( \Contao\Environment::get('queryString') ) > 0)
+{
+	$strQueryString = \Contao\Environment::get('queryString').'&themedesigner_iframe=1';
+}
+?>
+
+<?php if($GLOBALS['PCT_THEMEDESIGNER']['useIframe']): ?>
+<div id="themedesigner_iframe_wrapper" class="<?php if($this->isMobileView): ?>mobile<?php endif; ?><?php if($this->device): ?> themedesigner_<?= $this->device; ?><?php endif; ?><?php if($this->zoom): ?> zoom_<?= $this->zoom; ?><?php endif; ?>">
+<div class="inner">
+<iframe seamless id="themedesigner_iframe" src="<?= str_replace('preview.php/','',\Contao\Environment::get('request')) . $strQueryString.'&'.time(); ?>"  width="100%" height="100%"></iframe>
+<div class="loader"></div>
+</div>
+</div>
+<?php endif; ?>
+
+<!--[if lt IE 9]><p id="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
+
+<script>jQuery.noConflict();</script>
+<?php echo $this->mootools; ?>
+
+<script>
+/* <![CDATA[ */
+
+jQuery(document).ajaxStart(function()
+{
+	jQuery('body').addClass('wait_for_ajax');
+});
+
+jQuery(document).ajaxStop(function()
+{
+	jQuery('body').removeClass('wait_for_ajax');
+});
+
+jQuery(document).ready(function()
+{
+	var src = '<?= $arrSession['IFRAME_URL']; ?>';
+	if(src)
+	{
+		if(src.indexOf('?') >= 0)
+		{
+			src += '&themedesigner_iframe=1';
+		}
+		else
+		{
+			src +='?themedesigner_iframe=1';
+		}
+		jQuery('#themedesigner_iframe').attr('src',src+'<?php if(\Contao\Input::get('themedesigner_reset') != ''): ?>&themedesigner_reset=1<?php endif; ?>');
+	}
+});
+
+jQuery(document).ready(function()
+{
+	// resize iframe
+	ThemeDesignerIframe.resize();
+
+	// init js scrollbars
+	if(!jQuery("body").hasClass("mobile"))
+	{
+		jQuery("#themedesigner .scrollbar").slimScroll({height: 'auto'});
+	}
+});
+
+jQuery(window).resize(function()
+{
+	// resize iframe
+	ThemeDesignerIframe.resize();
+
+	// init js scrollbars
+	if(!jQuery("body").hasClass("mobile"))
+	{
+		jQuery("#themedesigner .scrollbar").slimScroll({height: 'auto'});
+	}
+});
+
+// add page-loaded class
+jQuery('#themedesigner_iframe',document).ready(function()
+{
+	setTimeout(function(){ jQuery('body').addClass('page-loaded'); }, 1000);
+});
+
+
+jQuery('#themedesigner_iframe').on('load',function()
+{
+	jQuery('body').removeClass('waiting_for_iframe');
+
+	// hide iframe loader
+	jQuery('#themedesigner_iframe_wrapper .loader').removeClass('show');
+
+});
+
+
+/**
+ * Detect browser tab changes and remove last iframe url when tab focus has changed
+ */
+jQuery(document).ready(function()
+{
+	var strHidden;
+	var strVisibiltyChange;
+	// Opera 12.10 and Firefox 18 and later support
+	if(typeof document.hidden !== "undefined")
+	{
+	  strHidden = "hidden";
+	  strVisibilityChange = "visibilitychange";
+	}
+	// IE, Edge
+	else if(typeof document.msHidden !== "undefined")
+	{
+		strHidden = "msHidden";
+		strVisibilityChange = "msvisibilitychange";
+	}
+	// webkit
+	else if(typeof document.webkitHidden !== "undefined")
+	{
+	  strHidden = "webkitHidden";
+	  strVisibilityChange = "webkitvisibilitychange";
+	}
+
+	if(typeof document.addEventListener === "undefined" || typeof document[strHidden] === "undefined")
+	{
+		console.log("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+	}
+	else
+	{
+		document.addEventListener(strVisibilityChange,function()
+		{
+			if(document.hidden)
+			{
+				ThemeDesigner.request('updateIframeUrl',{url:'',doNotApply:true,noLoader:true});
+			}
+		});
+	}
+});
+
+jQuery(document).ready(function()
+{
+	if( jQuery('body').hasClass('mobile') )
+	{
+		jQuery('head').append('<meta name="viewport" content="width=device-width,initial-scale=1.0">');
+	}
+});
+
+/* ]]> */
+</script>
+
+</body>
+</html>

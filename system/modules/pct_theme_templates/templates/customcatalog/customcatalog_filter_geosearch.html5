@@ -1,0 +1,35 @@
+<div <?= $this->cssID; ?> class="widget <?= $this->class; ?> block">
+<fieldset class="range_container">
+	<legend><?= $this->label_location; ?></legend>
+	<input type="text" name="<?= $this->name.'_address'; ?>" value="<?= $this->value_address; ?>" placeholder="{{iflng::de}}PLZ und Ort ...{{iflng::en}}ZIP and Place ...{{iflng}}">
+	<div class="range_wrapper">
+		<?php if($this->label): ?><i class="fa fa-map-marker"></i><label for="<?= $this->name; ?>"><?= $this->label; ?></label><?php endif; ?>
+		<input name="<?= $this->name; ?>" type="hidden" id="slider-input_<?= $this->name; ?>" value="<?= $this->value ?: $this->min; ?>">
+		<input type="number" id="slider-text_<?= $this->name; ?>" class="slider_range_input color-accent" min="<?= $this->min; ?>" max="<?= $this->max; ?>" step="<?= $this->steps; ?>" value="<?= $this->value ?: $this->min; ?>">
+		<input type="range" id="slider-range_<?= $this->name; ?>" class="slider_range_input color-accent" min="<?= $this->min; ?>" max="<?= $this->max; ?>" step="<?= $this->steps; ?>" value="<?= $this->value ?: $this->min; ?>">
+		
+	</div>
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	jQuery(document).ready(function()
+	{
+		jQuery('#slider-text_<?= $this->name; ?>').on('change',function()
+		{
+			jQuery('#slider-input_<?= $this->name; ?>').val( this.value );
+		});
+		
+		jQuery('#slider-range_<?= $this->name; ?>').on('change',function()
+		{
+			jQuery('#slider-text_<?= $this->name; ?>').val( this.value );
+			jQuery('#slider-input_<?= $this->name; ?>').val( this.value );
+		});
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+</fieldset>
+</div>
+
+<script>
+// Log geo information
+console.log('Geolocation: Center (<?= $this->latitude; ?>,<?= $this->longitude; ?>) Radius: <?= $this->radius; ?>');
+</script>	

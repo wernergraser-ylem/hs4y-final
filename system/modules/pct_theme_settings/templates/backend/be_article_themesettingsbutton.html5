@@ -1,0 +1,184 @@
+<?php 
+$objLang = (object)$GLOBALS['TL_LANG']['quicksettings'];
+?>
+<div id="theme_settings_<?= $this->id; ?>" class="article_quicksettings theme_settings">
+	<div class="section_one">
+		<div class="article_quicksettings_inside">
+			<div class="layout_css inside">
+				<label><?= $objLang->layout_css ?? 'Article width'; ?></label>
+				<ul>
+					<li class="fullwidth-boxed clickable<?php if($this->layout_css == 'fullwidth-boxed'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth-boxed">Large</li>
+					<li class="fullwidth-boxed-medium clickable<?php if($this->layout_css == 'fullwidth-boxed-medium'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth-boxed-medium">Medium</li>
+					<li class="fullwidth-boxed-small clickable<?php if($this->layout_css == 'fullwidth-boxed-small'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth-boxed-small">Small</li>
+					<li class="boxed clickable<?php if($this->layout_css == 'boxed'): ?> active<?php endif; ?>" data-field="layout_css" data-value="boxed">Boxed</li>
+					<li class="fullwidth clickable<?php if($this->layout_css == 'fullwidth'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth">Fullwidth</li>
+					<li class="fullwidth-padding-left clickable<?php if($this->layout_css == 'fullwidth-padding-left'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth-padding-left">Fullwidth Padding Left</li>
+					<li class="fullwidth-padding-right clickable<?php if($this->layout_css == 'fullwidth-padding-right'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth-padding-right">Fullwidth Padding Right</li>
+					<li class="fullwidth-padding-both clickable<?php if($this->layout_css == 'fullwidth-padding-both'): ?> active<?php endif; ?>" data-field="layout_css" data-value="fullwidth-padding-both">Fullwidth Padding Both</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section_two">
+		<div class="article_quicksettings_inside">
+			<div class="field_container padding_top_classes padding_t">
+				<label><?= $objLang->padding_top ?? 'Padding top'; ?></label>
+				<ul>
+					<li class="article-pt-xxl clickable<?php if($this->padding_t == 'article-pt-xxl'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-xxl">XXL</li>
+					<li class="article-pt-xl clickable<?php if($this->padding_t == 'article-pt-xl'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-xl">XL</li>
+					<li class="article-pt-l clickable<?php if($this->padding_t == 'article-pt-l'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-l">L</li>
+					<li class="article-pt-m clickable<?php if($this->padding_t == 'article-pt-m'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-m">M</li>
+					<li class="article-pt-s clickable<?php if($this->padding_t == 'article-pt-s'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-s">S</li>
+					<li class="article-pt-xs clickable<?php if($this->padding_t == 'article-pt-xs'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-xs">XS</li>
+					<li class="article-pt-xxs clickable<?php if($this->padding_t == 'article-pt-xxs'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-xxs">XXS</li>
+					<li class="article-pt-0 clickable<?php if($this->padding_t == 'article-pt-0'): ?> active<?php endif; ?>" data-field="padding_t" data-value="article-pt-0">0</li>
+				</ul>
+			</div>
+			
+			<div class="field_container padding_bottom_classes padding_b">
+				<label><?= $objLang->padding_bottom ?? 'Padding bottom'; ?></label>
+				<ul>
+					<li class="article-pb-xxl clickable<?php if($this->padding_b == 'article-pb-xxl'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-xxl">XXL</li>
+					<li class="article-pb-xl clickable<?php if($this->padding_b == 'article-pb-xl'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-xl">XL</li>
+					<li class="article-pb-l clickable<?php if($this->padding_b == 'article-pb-l'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-l">L</li>
+					<li class="article-pb-m clickable<?php if($this->padding_b == 'article-pb-m'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-m">M</li>
+					<li class="article-pb-s clickable<?php if($this->padding_b == 'article-pb-s'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-s">S</li>
+					<li class="article-pb-xs clickable<?php if($this->padding_b == 'article-pb-xs'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-xs">XS</li>
+					<li class="article-pb-xxs clickable<?php if($this->padding_b == 'article-pb-xxs'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-xxs">XXS</li>
+					<li class="article-pb-0 clickable<?php if($this->padding_b == 'article-pb-0'): ?> active<?php endif; ?>" data-field="padding_b" data-value="article-pb-0">0</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	<div class="section_three">
+		<div class="article_quicksettings_inside">
+			<div class="field_container bgcolor_classes">
+				<label>Hintergrundfarbe</label>
+				<ul>
+					<li class="bg-accent bgcolor_css clickable<?php if($this->bgcolor_css == 'bg-accent'): ?> active<?php endif; ?>" data-field="bgcolor_css,background" data-value="bg-accent,1">Accent</li>
+					<li class="bg-second bgcolor_css clickable<?php if($this->bgcolor_css == 'bg-second'): ?> active<?php endif; ?>" data-field="bgcolor_css,background" data-value="bg-second,1">Second</li>
+					<li class="bg-black bgcolor_css clickable<?php if($this->bgcolor_css == 'bg-black'): ?> active<?php endif; ?>" data-field="bgcolor_css,background" data-value="bg-black,1"></li>
+					<li class="bg-gray bgcolor_css clickable<?php if($this->bgcolor_css == 'bg-gray'): ?> active<?php endif; ?>" data-field="bgcolor_css,background" data-value="bg-gray,1"></li>
+					<li class="bg-white bgcolor_css clickable<?php if($this->bgcolor_css == 'bg-white'): ?> active<?php endif; ?>" data-field="bgcolor_css,background" data-value="bg-white,1"></li>
+				</ul>
+			</div>
+			
+			<div class="field_container background-image">
+				<label>Hintergrundbild</label>
+				<?php 
+				$path = '-';
+				if( isset($this->bgimage) && !empty($this->bgimage) ) 
+				{
+					$objFile = \Contao\FilesModel::findByUuid( $this->bgimage );
+					if( $objFile !== null )
+					{
+						$path = $objFile->path;
+					}
+				}
+				?>
+				<span><?= $path; ?></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="section_four">
+		<?php 
+		$url = \Contao\Environment::get('base').'contao?do=article&act=edit&id='.$this->id.'&rt='.\Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue().'#pal_theme_settings';
+		?>
+		<button class="settings" data-value="<?= $url; ?>">Artikeleinstellungen</button>
+		<script>
+			jQuery(document).ready(function() 
+			{
+				jQuery('#theme_settings_<?= $this->id; ?> button.settings').click(function(e)
+				{
+					e.preventDefault();
+					location.href = jQuery(this).attr('data-value');
+				});
+			});
+		</script>
+	</div>
+</div>
+
+<script>
+/**
+ * Toggle theme settings container open/close
+ */
+// !-- toggle: open close
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#theme_settings_<?= $this->id; ?>').parent('a.theme_settings');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	var objElements = jQuery('a.theme_settings');
+
+	objElement.click(function(e)
+	{
+		e.preventDefault();
+		// close any open other container
+		objElements.not(this).removeClass('active');
+		objElements.parents('li').removeClass('active');
+		// toggle active the current one
+		jQuery(this).toggleClass('active');
+		jQuery('#li_<?= $this->id; ?>').toggleClass('active');
+	});
+
+	jQuery('#main').click(function(e)
+	{
+		objElements.removeClass('active');
+		jQuery('#li_<?= $this->id; ?>').removeClass('active');
+	});
+});
+
+
+/**
+ * Button interaction
+ */
+// !-- field toggler
+jQuery(document).ready(function() 
+{
+	var objElements = jQuery('#theme_settings_<?= $this->id; ?> .clickable');
+	if(objElements.length < 1)
+	{
+		return;
+	}
+	
+	objElements.click(function(e)
+	{
+		e.stopPropagation();
+		e.preventDefault();
+		
+		var _this = jQuery(this);
+		var strField = _this.attr('data-field');
+		var varValue = _this.attr('data-value');
+		
+		// set active
+		_this.toggleClass('active');
+		
+		// remove sibling active 
+		_this.siblings('li').removeClass('active');
+
+		if( _this.hasClass('active') === false )
+		{
+			varValue = '';
+		}
+
+		// send event
+		jQuery(document).trigger('THEME_SETTINGS.'+strField,{'elem':<?= $this->id; ?>,'value':varValue});
+
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'POST',
+			data: {'action':'toggleThemeSettingsFieldValue','elem':<?= $this->id; ?>,'state':varValue,'field':strField}
+		});		
+	});
+});
+</script>

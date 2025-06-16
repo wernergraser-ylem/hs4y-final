@@ -1,0 +1,125 @@
+<?php
+/**
+ * Contao Open Source CMS
+ * 
+ * Copyright (C) 2005-2013 Leo Feyer
+ * 
+ * @copyright	Tim Gatzky 2013, Premium Contao Webworks, Premium Contao Themes
+ * @author		Tim Gatzky <info@tim-gatzky.de>
+ * @package		pct_customelements
+ * @link		http://contao.org
+ */
+?>
+
+<?php
+$objSession = \Contao\System::getContainer()->get('request_stack')->getSession();
+$arrSession = $objSession->get('pct_customelements_togglers');
+$phpsession = '';
+if($arrSession)
+{
+	$phpsession = json_encode($arrSession);
+}
+?>
+
+<script>
+
+/**
+ * Init MooTxSlide
+ */
+var initCustomElementTogglers = function()
+{
+	var togglers = $$('div.slide_toggler');
+	if(togglers.length < 1)
+	{
+		return false;
+	}
+	
+	// get php session
+	var phpsession = '<?php echo $phpsession ? $phpsession : ''; ?>';
+	var session = {};
+	if(phpsession.length > 0)
+	{
+		session = JSON.parse(phpsession);
+	}
+	togglers.each(function(elem,index)
+	{
+		// add click event
+		elem.addEvent('click', function(event)
+		{
+			event.preventDefault();
+			event.stopPropagation();
+
+			var toggler = elem;
+			var p = toggler.getParent('div.group');
+			var ident = p.getAttribute('data-id')+'_'+p.getAttribute('data-copy');
+			var slide = document.getElementById('slide_'+ident);
+			
+			if(slide.hasClass('active'))
+			{
+				toggler.removeClass('active');
+				slide.removeClass('active');
+				
+				state = 'open';
+			}
+			else
+			{
+				toggler.addClass('active');
+				slide.addClass('active');
+				
+				state = 'closed';
+			}
+
+			session['group_toggler_'+ident] = state;
+			
+			// send ajax request with session data
+			new Request.Contao().post({'action':'toggleCustomElementSlide','toggler':'group_toggler_'+ident,'state':state,'session':JSON.stringify(session),'pct_customelements':1,'REQUEST_TOKEN':Contao.request_token});
+	
+		});
+	});
+}
+
+window.addEvent('domready', function() 
+{
+	initCustomElementTogglers();
+});
+
+window.addEvent('CustomElements.duplicate_group', function(params) 
+{
+	var elem = $$('#group_toggler_'+params.newGroupId);
+	var slide = document.getElementById('slide_'+params.newGroupId);
+	
+	// get php session
+	var phpsession = '<?= $phpsession ?? ''; ?>';
+	var session = {};
+	if(phpsession.length > 0)
+	{
+		session = JSON.parse(phpsession);
+	}
+
+	elem.addEvent('click', function(event)
+	{
+		event.preventDefault();
+		event.stopPropagation();
+		
+		if(slide.hasClass('active'))
+		{
+			elem.removeClass('active');
+			slide.removeClass('active');
+			
+			session[params.newGroupId] = 'open';
+		}
+		else
+		{
+			elem.addClass('active');
+			slide.addClass('active');
+			
+			session[params.newGroupId] = 'closed';
+		}
+		
+		// send ajax request with session data
+		new Request.Contao().post({'action':'toggleCustomElementSlide','toggler':params.newGroupId,'state':session[params.newGroupId],'session':JSON.stringify(session),'pct_customelements':1,'REQUEST_TOKEN':Contao.request_token});
+	});
+});
+
+
+</script>

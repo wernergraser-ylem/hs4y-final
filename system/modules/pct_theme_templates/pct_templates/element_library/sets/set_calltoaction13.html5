@@ -1,0 +1,64 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:22',
+'name' => 'set_calltoaction13',
+'category' => 'sections',
+'thumb' => '',
+'elements' => 'calltoaction',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 71641,
+1 => 10055,
+2 => 64,
+3 => 1496318363,
+5 => 'calltoaction',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+100 => '14',
+102 => '0.5',
+160 => 'a:8:{s:6:"values";a:21:{s:15:"r68l87khv7iazr8";a:2:{s:5:"value";s:14:"CALL TO ACTION";s:4:"unit";s:2:"h4";}s:18:"r68l87khv7iazr8_h1";s:0:"";s:18:"r68l87khv7iazr8_h2";s:0:"";s:18:"r68l87khv7iazr8_h3";s:0:"";s:18:"r68l87khv7iazr8_h4";s:0:"";s:18:"r68l87khv7iazr8_h5";s:0:"";s:18:"r68l87khv7iazr8_h6";s:0:"";s:15:"3ksyrfiiwx62zbo";s:125:"<p>Get a free quote. Call +01 444 666 898 or write us a mail to <a href="mailto:office@domain.com">office@domain.com</a>.</p>";s:15:"zw5piy5at3wkphd";s:1:"#";s:26:"zw5piy5at3wkphd_pagepicker";s:0:"";s:22:"zw5piy5at3wkphd_target";s:0:"";s:24:"zw5piy5at3wkphd_linkText";s:10:"CONTACT US";s:25:"zw5piy5at3wkphd_titleText";s:10:"CONTACT US";s:15:"pcd4jqkle1qr107";s:0:"";s:13:"gj6wlhzj8dchz";s:1:"1";s:15:"assk3k8mdg1pydm";s:36:"f4423fd8-4686-11e7-bf44-e17ed19fa664";s:15:"pm3jndq8oy2u4ke";s:0:"";s:15:"blt9bplg8wnjzsw";s:0:"";s:14:"n67faunqxn996w";s:0:"";s:15:"qc6p7qtcblff982";s:0:"";s:20:"assk3k8mdg1pydm_size";N;}s:6:"groups";a:5:{i:0;a:4:{s:5:"ident";s:4:"45_0";s:8:"group_id";s:2:"45";s:11:"group_alias";s:4:"text";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"r68l87khv7iazr8";s:2:"id";s:3:"282";s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:15:"3ksyrfiiwx62zbo";s:2:"id";s:3:"283";s:5:"alias";s:4:"text";}}}i:1;a:4:{s:5:"ident";s:5:"378_0";s:8:"group_id";s:3:"378";s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"zw5piy5at3wkphd";s:2:"id";s:3:"284";s:5:"alias";s:4:"link";}}}i:2;a:4:{s:5:"ident";s:5:"379_0";s:8:"group_id";s:3:"379";s:11:"group_alias";s:10:"background";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:15:"pcd4jqkle1qr107";s:2:"id";s:3:"557";s:5:"alias";s:8:"bg_color";}i:1;a:3:{s:4:"uuid";s:15:"assk3k8mdg1pydm";s:2:"id";s:3:"559";s:5:"alias";s:5:"image";}}}i:3;a:4:{s:5:"ident";s:5:"340_0";s:8:"group_id";s:3:"340";s:11:"group_alias";s:8:"settings";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:13:"gj6wlhzj8dchz";s:2:"id";s:3:"558";s:5:"alias";s:6:"invert";}}}i:4;a:4:{s:5:"ident";s:5:"194_0";s:8:"group_id";s:3:"194";s:11:"group_alias";s:7:"margins";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"pm3jndq8oy2u4ke";s:2:"id";s:4:"1069";s:5:"alias";s:10:"margin_top";}i:1;a:3:{s:4:"uuid";s:15:"blt9bplg8wnjzsw";s:2:"id";s:4:"1070";s:5:"alias";s:13:"margin_bottom";}i:2;a:3:{s:4:"uuid";s:14:"n67faunqxn996w";s:2:"id";s:4:"1266";s:5:"alias";s:17:"margin_top_mobile";}i:3;a:3:{s:4:"uuid";s:15:"qc6p7qtcblff982";s:2:"id";s:4:"1267";s:5:"alias";s:20:"margin_bottom_mobile";}}}}s:6:"clones";a:0:{}s:6:"tstamp";s:10:"1566386524";s:5:"alias";s:12:"calltoaction";s:5:"uuids";a:10:{i:0;s:15:"r68l87khv7iazr8";i:1;s:15:"3ksyrfiiwx62zbo";i:2;s:15:"zw5piy5at3wkphd";i:3;s:15:"pcd4jqkle1qr107";i:4;s:15:"assk3k8mdg1pydm";i:5;s:13:"gj6wlhzj8dchz";i:6;s:15:"pm3jndq8oy2u4ke";i:7;s:15:"blt9bplg8wnjzsw";i:8;s:14:"n67faunqxn996w";i:9;s:15:"qc6p7qtcblff982";}s:7:"version";s:5:"4.0.1";s:13:"customelement";s:2:"28";}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'f4423fd8-4686-11e7-bf44-e17ed19fa664' => 'files/cto_layout/img/element_library/sets/background_image_dark.jpg',
+),
+);

@@ -1,0 +1,32 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_imagemap.css|static';
+?>
+<div class="<?php echo $this->class; ?> block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div id="imagemap_inside_<?= $this->id; ?>" class="imagemap_inside <?php echo $this->field('align')->value(); ?><?php if($this->field('margin_top')->value()): ?> <?php echo $this->field('margin_top')->value(); ?><?php endif; ?><?php if($this->field('margin_bottom')->value()): ?> <?php echo $this->field('margin_bottom')->value(); ?><?php endif; ?><?php if($this->field('margin_top_mobile')->value()): ?> <?php echo $this->field('margin_top_mobile')->value(); ?><?php endif; ?><?php if($this->field('margin_bottom_mobile')->value()): ?> <?php echo $this->field('margin_bottom_mobile')->value(); ?><?php endif; ?>"<?php if($this->field('image_width')->value()): ?> style="max-width:<?php echo $this->field('image_width')->value(); ?>px;"<?php endif; ?>>
+		<?php foreach($this->group('hotspot') as $i => $fields): ?>
+		<div class="hotspot <?php echo $this->field('hotspot-size')->value(); ?>" style="top: <?php echo $this->field('vposition#'.$i)->value(); ?>%; left: <?php echo $this->field('hposition#'.$i)->value(); ?>%;">
+			<div class="circle"></div>
+			<div>
+				<div class="hotspot_content <?php echo $this->field('content_position#'.$i)->value(); ?>">
+					<?php echo $this->field('hotspot_content#'.$i)->value(); ?>
+				</div>
+			</div>
+		</div>
+		<?php endforeach; ?>
+		
+		<div class="image"><?php echo $this->field('image')->html(); ?></div>		
+	</div>
+
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	jQuery(document).ready(function() 
+	{
+		jQuery('#imagemap_inside_<?= $this->id; ?> .hotspot').click(function() 
+		{
+			jQuery(this).toggleClass('active');
+		});
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+
+</div>

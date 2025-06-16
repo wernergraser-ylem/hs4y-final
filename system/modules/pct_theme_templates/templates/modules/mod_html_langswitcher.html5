@@ -1,0 +1,7 @@
+<!-- indexer::stop -->
+<div class="mod_langswitcher meta-nav <?= $this->class ?>" {{FRONTEND_QUICKEDIT}}>
+	<div class="mod_langswitcher_inside">
+		<?php echo $this->html; ?>
+	</div>
+</div>
+<!-- indexer::continue -->

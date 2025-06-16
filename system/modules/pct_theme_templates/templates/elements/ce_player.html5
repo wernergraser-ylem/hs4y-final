@@ -1,0 +1,84 @@
+
+
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?php
+$autoplay = $this->autoplay ?: isset($this->attributes['autoplay']);
+$attributes = $this->attributes;
+$attributes['controls'] = 'controls';
+?>
+	
+<!-- indexer::stop -->
+<?php if ($this->isVideo): ?>
+	<?php if (count($this->files) == 1 && $this->files[0]->mime == 'video/x-youtube'): ?>
+	
+	<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von YouTube wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}YouTube has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	// show privacy information if nessessary
+	jQuery(document).ready(function() 
+	{
+		if( !PrivacyManager.hasAccess(2) )
+		{
+			jQuery('#privacy_info_<?= $this->id; ?>').removeClass('hidden');
+		}
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+	<div class="ce_video_custom"<?php
+		if ($this->playerSize && ($playerSize = \Contao\StringUtil::deserialize($this->playerSize)) && !empty($playerSize[0]) && !empty($playerSize[1])) {
+			echo ' style="padding-bottom:' . number_format($playerSize[1] / $playerSize[0] * 100, 2, '.', '') . '%;"';
+		}
+	?>>
+	
+	<?php 
+	$path = explode('?v=', $this->files[0]->path);
+	$iframe = '<iframe type="text/html" src="'.(\Contao\Environment::get('ssl') ? 'https' : 'http').'://www.youtube.com/embed/'.$path[1].($autoplay ? '?autoplay=1' : '').'" frameborder="0"></iframe>'
+	?>
+	<div id="player_iframe_<?= $this->id; ?>"></div>
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	// inject iframe html when privacy setting allows it
+	jQuery(document).ready(function() 
+	{
+		if( PrivacyManager.hasAccess(2) )
+		{
+			jQuery('#player_iframe_<?= $this->id; ?>').html('<?= $iframe; ?>');
+		}
+	});
+	// listen to privacy event
+	jQuery(document).on('Privacy.changed',function(event,params)
+	{
+		if( PrivacyManager.hasAccess(2) )
+		{
+			jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+			jQuery('#player_iframe_<?= $this->id; ?>').html('<?= $iframe; ?>');
+		}
+	});	
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+	</div>
+	
+	<?php else: ?>
+	<video<?php echo $this->size; ?><?php if ($this->poster): ?> poster="<?php echo $this->poster; ?>" preload="none"<?php endif; ?><?php if ($autoplay): ?> autoplay muted<?php endif; ?> <?= implode(' ', $attributes); ?>>
+	<?php foreach ($this->files as $file): ?>
+		<source type="<?= $file->mime ?>" src="<?= $file->path.$this->range ?>" title="<?= $file->title ?>">
+	<?php endforeach; ?>
+	</video>
+	
+	<?php endif ?>
+
+<?php else: ?>
+
+<audio width="100%" preload="none"<?php if ($autoplay): ?> autoplay<?php endif; ?> <?= implode(' ', $attributes); ?>>
+<?php foreach ($this->files as $file): ?>
+  <source type="<?php echo $file->mime; ?>" src="<?php echo $file->path; ?>">
+<?php endforeach; ?>
+</audio>
+<?php endif; ?>
+<!-- indexer::continue -->
+
+<?php $this->endblock(); ?>
+

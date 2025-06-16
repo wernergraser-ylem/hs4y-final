@@ -1,0 +1,26 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_fancylink.css|static';
+
+$lightbox = $this->field('link')->option('lightbox');
+if( $this->field('link')->option('lightbox') )
+{
+	if( strpos($lightbox, 'data-lightbox') !== false )
+	{
+		$lightbox = str_replace('data-', '',$lightbox);	
+	}	
+	$lightbox = ' data-lightbox="'.$lightbox.'"';
+}
+?>
+<div class="<?=  $this->class; ?> <?php echo $this->field('size')->value(); ?> <?php echo $this->field('style')->value(); ?> <?php echo $this->field('color')->value(); ?> <?php echo $this->field('text_format')->value(); ?> <?php echo $this->field('align')->value(); ?> <?php echo $this->field('align_mob')->value(); ?>"<?php echo $this->cssID; ?>>
+   <?php if($this->field('style')->value() == 'style1'): ?>
+	<a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('titleText')): ?> title="<?php echo $this->field('link')->option('titleText'); ?>"<?php endif; ?><?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?php echo $lightbox; ?><?php endif; ?>><span class="link_text"><?php if($this->field('link')->option('linkText')): ?><?php echo $this->field('link')->option('linkText'); ?><?php else: ?>{{page::title}}<?php endif; ?></span><span class="shaft"></span></a>
+   <?php endif; ?>
+
+	<?php if($this->field('style')->value() == 'style2'): ?>
+	<a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('titleText')): ?> title="<?php echo $this->field('link')->option('titleText'); ?>"<?php endif; ?><?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?php echo $lightbox; ?><?php endif; ?>><?php if($this->field('link')->option('linkText')): ?><?php echo $this->field('link')->option('linkText'); ?><?php else: ?>{{page::title}}<?php endif; ?><span class="arrow"></span></a>
+   <?php endif; ?>
+   
+   <?php if($this->field('style')->value() == 'style3'): ?>
+	<a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('titleText')): ?> title="<?php echo $this->field('link')->option('titleText'); ?>"<?php endif; ?><?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?php echo $lightbox; ?><?php endif; ?>><?php if($this->field('link')->option('linkText')): ?><?php echo $this->field('link')->option('linkText'); ?><?php else: ?>{{page::title}}<?php endif; ?></a>
+   <?php endif; ?>
+</div>

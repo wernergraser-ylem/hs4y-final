@@ -1,0 +1,517 @@
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function() 
+{	
+	var isBot = false;
+	var agent = navigator.userAgent.toLowerCase();
+	if( agent.indexOf("speed insights") >= 0 || agent.indexOf("lighthouse") >= 0 || agent.indexOf("metrix") >= 0 )
+	{
+		isBot = true;
+	}
+	
+	if( isBot === true )
+	{
+		return;
+	}
+
+	var options = 
+	{
+		jsFileLocation:'<?= $GLOBALS['REVOLUTIONSLIDER']['scriptPath']; ?>/js/',
+		delay:<?php echo $this->delay; ?>,
+		responsiveLevels:[<?= $this->startWidth; ?>,<?= $this->breakpoint_mobile ? ($this->breakpoint_mobile) : 767; ?>],	// Single or Array for Responsive Levels i.e.: 4064 or i.e. [2048, 1024, 768, 480]					
+		visibilityLevels:[<?= $this->startWidth; ?>,<?= $this->breakpoint_mobile ? ($this->breakpoint_mobile) : 767; ?>],	// Single or Array for Responsive Visibility Levels i.e.: 4064 or i.e. [2048, 1024, 768, 480]					
+		gridwidth:[<?= $this->startWidth; ?>],			
+		gridheight:[<?= $this->startHeight; ?>],
+		autoHeight:"off",					
+		sliderType : "standard",							// standard, carousel, hero					
+		sliderLayout : "<?= $this->sliderLayout; ?>",		// auto, fullscreen				
+		fullScreenAutoWidth:"off",							// Turns the FullScreen Slider to be a FullHeight but auto Width Slider
+		fullScreenAlignForce:"off",
+		fullScreenOffset:"0",								// Size for FullScreen Slider minimising					
+		hideCaptionAtLimit:0,								// It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+		hideAllCaptionAtLimit:0,							// Hide all The Captions if Width of Browser is less then this value
+		hideSliderAtLimit:0,								// Hide the whole slider, and stop also functions if Width of Browser is less than this value										
+		disableProgressBar:"on",							// Hides Progress Bar if is set to "on"
+		startWithSlide:<?= $this->startWithSlide ? ($this->startWithSlide - 1) : 0; ?>,	
+		stopAtSlide:<?= $this->stopAtSlide ?: -1; ?>,				// Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+		stopAfterLoops:<?= $this->stopAfterLoops ?: -1; ?>,		// Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+		shadow:0,											//0 = no Shadow, 1,2,3 = 3 Different Art of Shadows  (No Shadow in Fullwidth Version !)
+		startDelay:0,										// Delay before the first Animation starts.				
+		lazyType : "smart",									//full, smart, single
+		spinner:"spinner0",	
+		shuffle:"off",
+		viewPort:{
+			enable:true,									// if enabled, slider wait with start or wait at first slide.
+			outof:"wait",									// wait,pause						
+			visible_area:"80%",								// Start Animation when 60% of Slider is visible
+			presize:false 									// Presize the Height of the Slider Container for Internal Link Positions
+		},
+		fallbacks:{
+			isJoomla:false,
+			panZoomDisableOnMobile:"off",
+			simplifyAll:"on",
+			nextSlideOnWindowFocus:"off",	
+			disableFocusListener:true,
+			ignoreHeightChanges:"off",  // off, mobile, always
+			ignoreHeightChangesSize:0,
+			allowHTML5AutoPlayOnAndroid:true
+		},
+		parallax : {
+			type : "scroll",						// off, mouse, scroll, mouse+scroll
+			levels: [10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+			origo:"enterpoint",				// slidercenter or enterpoint
+			speed:400,
+			bgparallax : "on",
+			opacity:"on",
+			disable_onmobile:"off",
+			ddd_shadow:"on",
+			ddd_bgfreeze:"off",
+			ddd_overflow:"visible",
+			ddd_layer_overflow:"visible",
+			ddd_z_correction:65,
+			ddd_path:"mouse"								
+		},
+		scrolleffect: {
+			fade:"off",
+			blur:"off",
+			scale:"off",
+			grayscale:"off",					
+			maxblur:10,									
+			on_layers:"off",
+			on_slidebg:"off",
+			on_static_layers:"off",
+			on_parallax_layers:"off",
+			on_parallax_static_layers:"off",
+			direction:"both",
+			multiplicator:1.35,
+			multiplicator_layers:0.5,
+			tilt:30,
+			disable_on_mobile:"on"		
+		},		
+		navigation : 
+		{
+			keyboardNavigation:"off",	
+			keyboard_direction:"horizontal",									//	horizontal - left/right arrows,  vertical - top/bottom arrows
+			mouseScrollNavigation:"off",										// on, off, carousel					
+			touch: {
+				touchenabled:"off",												// Enable Swipe Function : on/off
+				touchOnDesktop:"off",											// Enable Tuoch on Desktop Systems also
+				swipe_treshold : 75,											// The number of pixels that the user must move their finger by before it is considered a swipe.
+				swipe_min_touches : 1,											// Min Finger (touch) used for swipe							
+				drag_block_vertical:false,										// Prevent Vertical Scroll during Swipe
+				swipe_direction:"horizontal"
+			}
+		}					
+	};
+
+	<?php if($this->fullScreenOffsetContainer && $this->sliderLayout == 'fullscreen'): ?>
+	options.fullScreenOffsetContainer = "#<?= $this->fullScreenOffsetContainer; ?>";
+	<?php endif;?>	
+
+	<?php if($this->sliderType == 'carousel'): ?>
+	// carousel slider
+	options.sliderType = 'carousel';
+	options.carousel = 
+	{
+		easing:punchgs.Power3.easeInOut,
+		speed:800,
+		showLayersAllTime : "off",
+		horizontal_align : "center",
+		vertical_align : "center",
+		infinity : "on",
+		space : 0,
+		maxVisibleItems : 3,						
+		stretch:"off",						
+		fadeout:"on",						
+		maxRotation:0,						
+		minScale:0,
+		vary_fade:"off",
+		vary_rotation:"on",
+		vary_scale:"off",						
+		border_radius:"0px",
+		padding_top:0,
+		padding_bottom:0
+	};
+	<?php endif; ?>
+	
+	<?php if($this->overlay): ?>
+	//twoxtwo, threexthree, twoxtwowhite, threexthreewhite
+	options.dottedOverlay = "<?= $this->overlay; ?>";
+	<?php endif; ?>		
+
+	
+	<?php if($this->stopOnHover): ?>
+	// Stop Banner Timet at Hover on Slide on/off
+	options.navigation.onHoverStop = "on";
+	<?php endif; ?>
+
+	<?php if($this->bullets): ?>
+	// Bullets
+	options.navigation.bullets = 
+	{
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+		hide_onmobile:false,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		space: 5,
+	};
+
+	<?php if( $this->navigationStyle == 'hades' ): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-image"></span>';
+	<?php elseif($this->navigationStyle == 'ares'): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-title">{{title}}</span>';
+	<?php elseif($this->navigationStyle == 'hebe'): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-image"></span>';
+	<?php elseif($this->navigationStyle == 'zeus'): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-image"></span><span class="tp-bullet-imageoverlay"></span><span class="tp-bullet-title">{{title}}</span>';
+	<?php elseif($this->navigationStyle == 'metis'): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-img-wrap"><span class="tp-bullet-image"></span></span><span class="tp-bullet-title">{{title}}</span>';
+	<?php elseif($this->navigationStyle == 'dione'): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-img-wrap"><span class="tp-bullet-image"></span></span><span class="tp-bullet-title">{{title}}</span>';
+	<?php elseif($this->navigationStyle == 'uranus'): ?>
+	options.navigation.bullets.tmp = '<span class="tp-bullet-inner"></span>';
+	<?php endif; ?>
+	
+	<?php endif; ?>
+
+	<?php if($this->tabs): ?>
+	// Tabs
+	options.navigation.tabs = 
+	{
+		<?php if($this->navigationStyle == 'ares'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 200; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 80; ?>,
+        min_width: 200,
+        direction: 'vertical',
+        space: 0,
+        span: true,
+        wrapper_padding: 0,
+        wrapper_color: '#FFF',
+        wrapper_opacity: '0.85',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'erinyen'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 180; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 20; ?>,
+        min_width: 180,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		wrapper_color: 'transparent',
+		hide_onmobile: true,
+		hide_under: 767,
+
+
+		<?php elseif($this->navigationStyle == 'gyges'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 265; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 65; ?>,
+        min_width: 265,
+        wrapper_padding: 0,
+        wrapper_color: '#000',
+        wrapper_opacity: '0.2',
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'hades'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 150; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 105; ?>,
+        min_width: 150,
+        direction: 'vertical',
+        space: 20,
+        span: true,
+        wrapper_padding: 10,
+        wrapper_color: '#FFF',
+        wrapper_opacity: '0.85',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'hebe'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 150; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 50; ?>,
+        min_width: 150,
+        direction: 'vertical',
+        space: 25,
+        wrapper_padding: 20,
+        wrapper_color: '#000',
+        wrapper_opacity: '0.65',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'hermes'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 200; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 150; ?>,
+        min_width: 200,
+        space: 0,
+		wrapper_color: 'transparent',
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'hesperiden'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 180; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 65; ?>,
+        min_width: 180,
+        wrapper_padding: 0,
+        wrapper_color: '#FFF',
+        wrapper_opacity: '0.65',
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'metis'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 400; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 30; ?>,
+        direction: 'vertical',
+        span: true,
+        space: 20,
+		wrapper_color: '#000',
+        wrapper_opacity: '0.65',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'zeus'): ?>
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 180; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 30; ?>,
+        min_width: 180,
+        space: 20,
+		wrapper_color: '#000',
+        wrapper_opacity: '0.65',
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php endif; ?>
+	};
+
+	<?php if( $this->navigationStyle == 'hesperiden' ): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-content"><span class="tp-tab-date">{{param1}}</span><span class="tp-tab-title">{{title}}</span></div><div class="tp-tab-image"></div>';
+	<?php elseif($this->navigationStyle == 'gyges'): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-content"> <span class="tp-tab-date">{{param1}}</span> <span class="tp-tab-title">{{title}}</span></div><div class="tp-tab-image"></div>';
+	<?php elseif($this->navigationStyle == 'hades'): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-inner"> <span class="tp-tab-title">{{title}}</span> <span class="tp-tab-price">{{param1}}</span></div>';
+	<?php elseif($this->navigationStyle == 'ares'): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-content"><span class="tp-tab-date">{{param1}}</span><span class="tp-tab-title">{{title}}</span></div><div class="tp-tab-image"></div>';
+	<?php elseif($this->navigationStyle == 'hebe'): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-title">{{title}}</div><div class="tp-tab-desc">{{param1}}</div>';
+	<?php elseif($this->navigationStyle == 'hermes'): ?>
+	options.navigation.tabs.tmp = '<span class="tp-tab-image"></span><span class="tp-tab-content-wrapper"><span class="tp-tab-bg"></span><span class="tp-tab-content"> <span class="tp-tab-date">{{param1}}</span> <span class="tp-tab-title">{{title}}</span></span></span>';
+	<?php elseif($this->navigationStyle == 'erinyen'): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-title">{{title}}</div><div class="tp-tab-desc">{{param1}}</div>';
+	<?php elseif($this->navigationStyle == 'zeus'): ?>
+	options.navigation.tabs.tmp = '<span class="tp-tab-title">{{title}}</span>';
+	<?php elseif($this->navigationStyle == 'metis'): ?>
+	options.navigation.tabs.tmp = '<div class="tp-tab-wrapper"><div class="tp-tab-number">{{param1}}</div><div class="tp-tab-divider"></div><div class="tp-tab-title-mask"><div class="tp-tab-title">{{title}}</div></div></div>';
+	<?php endif; ?>
+
+	<?php endif; ?>
+
+	<?php if($this->arrows): ?>
+	// Arrows
+	options.navigation.arrows = 
+	{
+		enable: <?php if($this->slideCount > 1): ?>true<?php else: ?>false<?php endif; ?>,
+		style:"<?= $this->arrowStyle; ?>",
+	};
+	
+	
+	<?php if( $this->arrowStyle == 'hades' ): ?>
+	options.navigation.arrows.tmp = '<div class="tp-arr-allwrapper"><div class="tp-arr-imgholder"></div></div>';
+	<?php elseif($this->arrowStyle == 'ares'): ?>
+	options.navigation.arrows.tmp = '<div class="tp-title-wrap"><span class="tp-arr-titleholder">{{title}}</span></div>';
+	<?php elseif($this->arrowStyle == 'hebe'): ?>
+	options.navigation.arrows.tmp = '<div class="tp-title-wrap"> <span class="tp-arr-titleholder">{{title}}</span><span class="tp-arr-imgholder"></span></div>';
+	<?php elseif($this->arrowStyle == 'hermes'): ?>
+	options.navigation.arrows.tmp = '<div class="tp-arr-allwrapper"><div class="tp-arr-imgholder"></div><div class="tp-arr-titleholder">{{title}}</div></div>';
+	<?php elseif($this->arrowStyle == 'erinyen'): ?>
+	options.navigation.arrows.tmp = '<div class="tp-title-wrap"><div class="tp-arr-imgholder"></div><div class="tp-arr-img-over"></div><span class="tp-arr-titleholder">{{title}}</span></div>';
+	<?php elseif($this->arrowStyle == 'zeus'): ?>
+	options.navigation.arrows.tmp = '<div class="tp-title-wrap"><div class="tp-arr-imgholder"></div></div>';
+	<?php elseif($this->arrowStyle == 'dione'): ?>
+	options.navigation.arrows.tmp = '<div class="tp-arr-imgwrapper"><div class="tp-arr-imgholder"></div></div>';
+	<?php endif; ?>
+	
+	<?php endif; ?>
+	
+	<?php if($this->thumbs): ?>
+	// Thumbnails
+	options.navigation.thumbnails = 
+	{
+		<?php if( $this->navigationStyle == 'erinyen' ): ?>
+		enable:true,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 180; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 100; ?>,
+		min_width: 180,
+		space: 15,
+		visibleAmount:<?= $this->thumbAmount ?: 0; ?>,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		wrapper_color: 'transparent',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'gyges'): ?>
+		enable:true,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 100; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 50; ?>,
+		min_width: 100,
+		space: 5,
+		visibleAmount:<?= $this->thumbAmount ?: 0; ?>,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		wrapper_color: 'transparent',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'hades'): ?>
+		enable:true,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 50; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 50; ?>,
+		min_width: 50,
+		space: 5,
+		visibleAmount:<?= $this->thumbAmount ?: 0; ?>,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		wrapper_color: 'transparent',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'hesperiden'): ?>
+		enable:true,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 100; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 50; ?>,
+		min_width: 100,
+		space: 5,
+		visibleAmount:<?= $this->thumbAmount ?: 0; ?>,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		wrapper_color: 'transparent',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php elseif($this->navigationStyle == 'zeus'): ?>
+		enable:true,
+		style:"<?= $this->navigationStyle; ?>",
+        width: <?= $this->navigationWidth ? ($this->navigationWidth) : 180; ?>,
+        height: <?= $this->navigationHeight ? ($this->navigationHeight) : 100; ?>,
+		min_width: 180,
+		space: 15,
+		visibleAmount:<?= $this->thumbAmount ?: 0; ?>,
+		h_align:"center",
+		v_align:"bottom",
+		v_offset: 20,
+		h_offset: 0,
+		wrapper_color: 'transparent',
+		hide_onmobile: true,
+		hide_under: 767,
+
+		<?php endif; ?>
+	};
+
+	<?php if( $this->navigationStyle == 'hesperiden' ): ?>
+	options.navigation.thumbnails.tmp = '<span class="tp-thumb-image"></span><span class="tp-thumb-title">{{title}}</span>';
+	<?php elseif($this->navigationStyle == 'gyges'): ?>
+	options.navigation.thumbnails.tmp = '<span class="tp-thumb-img-wrap"><span class="tp-thumb-image"></span></span>';
+	<?php elseif($this->navigationStyle == 'hades'): ?>
+	options.navigation.thumbnails.tmp = '<span class="tp-thumb-img-wrap"><span class="tp-thumb-image"></span></span>';
+	<?php elseif($this->navigationStyle == 'erinyen'): ?>
+	options.navigation.thumbnails.tmp = '<span class="tp-thumb-over"></span><span class="tp-thumb-image"></span><span class="tp-thumb-title">{{title}}</span><span class="tp-thumb-more"></span>';
+	<?php elseif($this->navigationStyle == 'zeus'): ?>
+	options.navigation.thumbnails.tmp = '<span class="tp-thumb-over"></span><span class="tp-thumb-image"></span><span class="tp-thumb-title">{{title}}</span><span class="tp-thumb-more"></span>';
+	<?php endif; ?>
+	
+	<?php endif; ?>
+
+	// init slider  
+	if( PrivacyManager.hasAccess(2) )
+	{	
+		var api = jQuery('<?= $this->selector; ?>').show().revolution(options);
+		if( jQuery('<?= $this->selector; ?> .rs-background-video-layer').length > 0 )
+		{
+			setTimeout(function() 
+			{
+				jQuery(window).trigger('resize');
+			}, 1000);
+		}
+	}
+
+	// listen to privacy event
+	jQuery(document).on('Privacy.changed',function(event,params)
+	{
+		if(params.level.indexOf(2) >= 0)
+		{
+			var api = jQuery('<?= $this->selector; ?>').show().revolution(options);
+			jQuery('#privacy_info_rs_<?= $this->id; ?>').hide().remove();
+			if( jQuery('<?= $this->selector; ?> .rs-background-video-layer').length > 0 )
+			{
+				setTimeout(function() 
+				{
+					jQuery(window).trigger('resize');
+				}, 1000);
+			}
+		}
+	});
+});
+
+// Create privacy info text
+jQuery(document).ready(function() 
+{
+	if( !PrivacyManager.hasAccess(2) )
+	{
+		//<p id='privacy_info_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von YouTube wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}YouTube has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+		var text = 'Das Laden des Slides wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>';
+		<?php if($GLOBALS['TL_LANGUAGE'] == 'en'): ?>
+		text = 'The slider has been restricted due to <a class="privacy_optout_click">privacy settings</a>';
+		<?php endif; ?>
+		jQuery('<?= $this->selector; ?>').parent('div').prepend('<p id="privacy_info_rs_<?= $this->id; ?>" class="privacy">'+text+'</p>');
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

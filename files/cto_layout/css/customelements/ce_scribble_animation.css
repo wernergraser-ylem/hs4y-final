@@ -1,0 +1,139 @@
+/* =============================================================================
+ * ce_scribble_animation
+ * ========================================================================== */
+
+/* a-tags */
+.ce_scribble_animation a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* align */
+.ce_scribble_animation[data-align="left"] {
+  text-align: left;
+}
+
+.ce_scribble_animation[data-align="center"] {
+  text-align: center;
+}
+
+.ce_scribble_animation[data-align="right"] {
+  text-align: right;
+}
+
+/* defaults */
+.ce_scribble_animation span {
+	position: relative;
+	display: inline-block;	
+}
+
+.ce_scribble_animation svg {
+	width: 100%;
+	bottom: -20%;
+	height: 30%;
+	position: absolute;
+	left: 0;
+	display: none;
+}
+
+.ce_scribble_animation.isInViewport svg {
+	display: block;
+}
+
+.ce_scribble_animation.isInViewport svg path {
+	stroke-linecap: round;
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	opacity: 1;
+	animation: scribble_animation 1.3s cubic-bezier(0.65,0,0.35,1) forwards;
+}
+
+/* styles */
+.ce_scribble_animation[data-style="style4"] svg {
+	width: 130%;
+	height: 140%;
+	top: -20%;
+	left: -15%;
+}
+
+/* data-color */
+.ce_scribble_animation[data-color="accent-color"] {
+  color: var(--accentColor);
+}
+
+.ce_scribble_animation[data-color="second-color"] {
+  color: var(--secondColor); 
+}
+
+.ce_scribble_animation[data-color="white"] {
+  color: #ffffff;
+}
+
+.ce_scribble_animation[data-color="black"] {
+  color: #000000;
+}
+
+.ce_scribble_animation[data-color="light-gray"] {
+  color: #b4b4b4;
+}
+
+.ce_scribble_animation[data-color="dark-gray"] {
+  color: #7f7f7f;
+}
+
+.ce_scribble_animation[data-color="custom1"] {
+  color: var(--customColor1);
+}
+
+.ce_scribble_animation[data-color="custom2"] {
+  color: var(--customColor2);
+}
+
+/* data-color-scribble */
+.ce_scribble_animation[data-color-scribble="accent-color"] svg path {
+  stroke: var(--accentColor);
+}
+
+.ce_scribble_animation[data-color-scribble="second-color"] svg path {
+  stroke: var(--secondColor);
+}
+
+.ce_scribble_animation[data-color-scribble="white"] svg path {
+  stroke: #ffffff;
+}
+
+.ce_scribble_animation[data-color-scribble="black"] svg path {
+  stroke: #000000;
+}
+
+.ce_scribble_animation[data-color-scribble="light-gray"] svg path {
+  stroke: #b4b4b4;
+}
+
+.ce_scribble_animation[data-color-scribble="dark-gray"] svg path {
+  stroke: #7f7f7f;
+}
+
+.ce_scribble_animation[data-color-scribble="custom1"] svg path {
+  stroke: var(--customColor1);
+}
+
+.ce_scribble_animation[data-color-scribble="custom2"] svg path {
+  stroke: var(--customColor2);
+}
+
+/* keyframes animations */
+@keyframes scribble_animation {
+	0% {
+		stroke-dashoffset: 1;
+		opacity: 0;
+	}
+
+	1% {
+		opacity: 1;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+	}
+}

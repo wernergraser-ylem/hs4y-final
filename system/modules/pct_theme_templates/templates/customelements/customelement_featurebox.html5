@@ -1,0 +1,16 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_featurebox.css|static';
+?>
+<div class="<?php echo $this->class; ?> <?php echo $this->field('style')->value(); ?> block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_featurebox_inside">
+		<?php if ($this->field('link')->value()): ?> <a href="<?php echo $this->field('link')->value(); ?>"<?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?>><?php endif; ?>
+		<?php echo $this->field('image')->html(); ?>
+		<div class="ce_featurebox_content">
+			<?php if ($this->field('headline_one')->value()): ?><div class="headline_one"><?php echo $this->field('headline_one')->html(); ?></div><?php endif; ?>
+			<?php if ($this->field('headline_two')->value()): ?><div class="headline_two"><?php echo $this->field('headline_two')->html(); ?></div><?php endif; ?>
+			<?php if ($this->field('text')->value()): ?><?php echo $this->field('text')->html(); ?><?php endif; ?>
+			<?php if ($this->field('link')->value()): ?><div class="link color-accent"><?php echo $this->field('link')->option('linkText'); ?><i class="fa fa-long-arrow-right"></i></div><?php endif; ?>
+		</div>
+		<?php if ($this->field('link')->value()): ?></a><?php endif; ?>
+	</div>
+</div>

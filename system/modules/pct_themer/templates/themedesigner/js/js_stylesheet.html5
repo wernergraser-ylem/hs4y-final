@@ -1,0 +1,94 @@
+
+<script>
+/* <![CDATA[ */
+
+jQuery(document).ready(function()
+{
+	// set the base variables
+	<?php echo $this->baseVariables; ?>
+
+	var objData = <?php echo json_encode($this->ThemeDesigner->getData(true)); ?>;
+	var objFonts = <?php echo json_encode($this->ThemeDesigner->getFonts()); ?>;
+	
+	var prepareCSS = function(objData)
+	{
+		if(objData === undefined)
+		{
+			// get the current data from the storage
+			objData = ThemeDesigner.storage();
+		}
+
+		css = '';
+
+		<?php echo $this->js; ?>
+
+		return css;
+	}
+	
+	// apply CSS on page load	
+	var css = prepareCSS(objData);
+	if(css.length > 0)
+	{
+		// remove the last style
+		jQuery('#themedesigner_style').remove();
+		// include new style
+		jQuery('head').append('<style type="text/css" id="themedesigner_style">'+css+'</style>');
+
+		// remove the last style in iframe
+		jQuery('#themedesigner_iframe').contents().find('#themedesigner_style').remove();
+		// include new style in iframe
+		jQuery('#themedesigner_iframe').contents().find('head').append('<style type="text/css" id="themedesigner_style">'+css+'</style>');
+	}
+	
+	/**
+	 * Apply CSS on ThemeDesigner value changes
+	 */
+	jQuery(document).on('ThemeDesigner.onValue',function(event,params)
+	{
+		var name = params.name;
+		var value = params.value;
+		
+		// rmeove from storage
+		if(value == null)
+		{
+			ThemeDesigner.removeFromStorage(name);
+		}
+		
+		var objFont = objFonts[value];
+		
+		var objData = ThemeDesigner.storage();
+		if(objFont)
+		{
+			if(objFont.family)
+			{
+				// update storage
+				ThemeDesigner.storage(name,objFont.family);
+				// get the current data from the storage
+				objData[name] = objFont.family;
+			}
+		}
+		
+		var css = prepareCSS(objData);
+
+		if(css.length > 0)
+		{
+			// remove the last style
+			jQuery('#themedesigner_style').remove();
+			// include new style
+			jQuery('head').append('<style type="text/css" id="themedesigner_style">'+css+'</style>');
+
+			// remove the last style in iframe
+			jQuery('#themedesigner_iframe').contents().find('#themedesigner_style').remove();
+			// include new style in iframe
+			jQuery('#themedesigner_iframe').contents().find('head').append('<style type="text/css" id="themedesigner_style">'+css+'</style>');
+		}
+		else
+		{
+			jQuery('#themedesigner_style').remove();
+			jQuery('#themedesigner_iframe').contents().find('#themedesigner_style').remove();
+		}
+	});
+});
+
+/* ]]> */
+</script>

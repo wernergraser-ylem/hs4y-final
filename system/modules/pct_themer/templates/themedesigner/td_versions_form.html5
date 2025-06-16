@@ -1,0 +1,57 @@
+
+<div class="pct_versions_toggler"></div>
+
+<form action="<?= \Contao\Environment::get('request'); ?>" id="<?= $this->formId ?>" name="<?= $this->formId ?>" method="<?= $this->method ?>" novalidate>
+	<div class="formbody">
+	<?php if ($this->method != 'get'): ?>
+	<input type="hidden" name="FORM_SUBMIT" value="<?= $this->formSubmit ?>">
+	<input type="hidden" name="REQUEST_TOKEN" value="<?= \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(); ?>">
+	<?php endif; ?>
+	
+	<?= $this->descriptionInput; ?>
+	<?= $this->saveSubmit; ?>
+	<?= $this->versionsSelect; ?>
+	</div>
+</form>
+
+	
+<?php if($this->submitOnChange): ?>
+
+<?php 	
+global $objPage;
+if(!$objPage->hasJQuery)
+{
+	$GLOBALS['TL_JAVASCRIPT'][] = '//code.jquery.com/jquery-1.10.2.js';
+}	
+?>
+<script>
+/* <![CDATA[ */
+jQuery(document).ready(function() 
+{
+	
+	// submit form when user selects a valid value
+	jQuery('#ctrl_<?=$this->versionsSelectId; ?>').change(function(event)
+	{
+		if(event.target.value > 0 && event.target.value.length > 0)
+		{
+			jQuery(event.target).parents('form').submit();
+		}
+		// replace the placeholder in the input
+		else
+		{
+			jQuery('#ctrl_<?= $this->descriptionInputId; ?>').attr('placeholder','<?= $this->descriptionInputPlaceholder; ?>');
+		}		
+	});
+});
+
+jQuery(document).ready(function()
+{ 
+	jQuery('.pct_versions_toggler').click(function(){
+		jQuery('.pct_versions').toggleClass('pct_versions_show');
+	});
+});
+
+/* ]]> */
+</script>
+
+<?php endif; ?>

@@ -1,0 +1,13 @@
+<?php $this->block('content'); ?>
+<?php if ($this->headline): ?><<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>><?php endif; ?>
+<div class="ce_download_small block <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_download_small_inside">
+	  <?php if ( isset($this->previews) && $this->previews): ?>
+	    <?php foreach ($this->previews as $preview): ?>
+	      <?php $this->insert('image', $preview->getLegacyTemplateData()) ?>
+	    <?php endforeach ?>
+	  <?php endif ?>
+	<a href="<?= $this->href ?>" title="<?= $this->title ?>"><?= $this->link ?><span class="size">(<?= $this->filesize ?>)</span></a>
+	</div>
+</div>
+

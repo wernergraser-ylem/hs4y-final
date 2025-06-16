@@ -1,0 +1,10 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_badge.css|static';
+?>
+<div class="<?=  $this->class; ?>" data-style="<?php echo $this->field('style')->value(); ?>"<?php echo $this->cssID; ?>>
+	<?php if($this->field('text')->value()): ?>
+	<div class="ce_badge_inside">
+		<?php echo $this->field('text')->value(); ?>
+	</div>
+	<?php endif; ?>
+</div>

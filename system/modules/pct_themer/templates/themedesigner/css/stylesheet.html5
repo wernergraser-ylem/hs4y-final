@@ -1,0 +1,8398 @@
+
+<?php
+/**
+ * Stylesheet template for generating a css file
+ */
+?>
+
+<?php if($this->accentColor): ?>
+:root {
+	--accentColor: <?= $this->accentColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->secondColor): ?>
+:root {
+	--secondColor: <?= $this->secondColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customColor1): ?>
+:root {
+	--customColor1: <?= $this->customColor1; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customColor2): ?>
+:root {
+	--customColor2: <?= $this->customColor2; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bgColorLightgray): ?>
+:root {
+	--bgColorLightGray: <?= $this->bgColorLightgray; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bgColorGray): ?>
+:root {
+	--bgColorGray: <?= $this->bgColorGray; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bgColorDarkgray): ?>
+:root {
+	--bgColorDarkGray: <?= $this->bgColorDarkgray; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->txtColorGray): ?>
+:root {
+	--txtColorGray: <?= $this->txtColorGray; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->activeColor): ?>
+.header.original .mainmenu ul li a.trail,
+.header.original .mainmenu ul li a.active,
+.header.cloned .mainmenu ul li a.trail,
+.header.cloned .mainmenu ul li a.active,
+.mod_pct_megamenu .mod_navigation a.active {
+	color: <?= $this->activeColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->hoverColor): ?>
+.header .mainmenu ul li a:hover  {
+	color: <?= $this->hoverColor; ?>;
+}
+<?php endif; ?>
+
+
+<?php if($this->topbarElementsTopbar): ?>
+#top {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsEmail): ?>
+body.viewport_desktop #top .mod_top_mail,
+body.viewport_desktop #top .topbar_mail {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsTeaser): ?>
+body.viewport_desktop #top .topbar_teaser,
+body.viewport_desktop #top .mod_top_phone {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsMetanav): ?>
+body.viewport_desktop #top .top_metanavi,
+body.viewport_desktop #top .topbar_metanavi {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsLogin): ?>
+body.viewport_desktop #top .mod_login_top {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsSearch): ?>
+body.viewport_desktop #top .mod_search {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsSocials): ?>
+body.viewport_desktop #top .mod_socials {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsLangswitch): ?>
+body.viewport_desktop #top .mod_langswitcher {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsEmailTablet): ?>
+body.viewport_tablet #top .mod_top_mail,
+body.viewport_tablet #top .topbar_mail {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsTeaserTablet): ?>
+body.viewport_tablet #top .topbar_teaser,
+body.viewport_tablet #top .mod_top_phone {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsMetanavTablet): ?>
+body.viewport_tablet #top .top_metanavi,
+body.viewport_tablet #top .topbar_metanavi {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsLoginTablet): ?>
+body.viewport_tablet #top .mod_login_top {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsSearchTablet): ?>
+body.viewport_tablet #top .mod_search {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsSocialsTablet): ?>
+body.viewport_tablet #top .mod_socials {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsLangswitchTablet): ?>
+body.viewport_tablet #top .mod_langswitcher {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsEmailMobile): ?>
+body.viewport_mobile #top .mod_top_mail,
+body.viewport_mobile #top .topbar_mail {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsTeaserMobile): ?>
+body.viewport_mobile #top .topbar_teaser,
+body.viewport_mobile #top .mod_top_phone {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsMetanavMobile): ?>
+body.viewport_mobile #top .top_metanavi,
+body.viewport_mobile #top .topbar_metanavi {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsLoginMobile): ?>
+body.viewport_mobile #top .mod_login_top {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsSearchMobile): ?>
+body.viewport_mobile #top .mod_search {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsSocialsMobile): ?>
+body.viewport_mobile #top .mod_socials {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarElementsLangswitchMobile): ?>
+body.viewport_mobile #top .mod_langswitcher {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->topbarFontSize): ?>
+#top,
+#top .mod_socials a i {
+	font-size: <?= $this->topbarFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->topbarFontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	#top,
+	#top .mod_socials a i {
+		font-size: <?= $this->topbarFontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->topbarFontColor): ?>
+#top,
+#top a,
+#top .mod_socials a i {
+	color: <?= $this->topbarFontColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->topbarBackgroundColor): ?>
+#top,
+#top .inside {
+	background-color: <?= $this->topbarBackgroundColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutHeight): ?>
+#top-wrapper #top .inside {
+	padding-top: <?= $this->topbarLayoutHeight; ?>px;
+	padding-bottom: <?= $this->topbarLayoutHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutMarginTop): ?>
+#top-wrapper #top {
+	margin-top: <?= $this->topbarLayoutMarginTop; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutMarginBottom): ?>
+#top-wrapper #top {
+	margin-bottom: <?= $this->topbarLayoutMarginBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutMarginLeftRight): ?>
+#top-wrapper #top {
+	margin-left: <?= $this->topbarLayoutMarginLeftRight; ?>px;
+	margin-right: <?= $this->topbarLayoutMarginLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutShadow): ?>
+#top {
+	box-shadow: 0 0 8px 6px rgba(0,0,0,<?= $this->topbarLayoutShadow; ?>);
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutSocialV2): ?>
+#top .mod_socials i {
+	margin: 0 2px;
+}
+
+#top .mod_socials i.fa-facebook {
+	background: rgb(67,96,152)!important;
+	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-twitter {
+	background: #111418!important;
+	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-xing {
+ 	background: rgb(0,93,94)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-tumblr {
+ 	background: rgb(45,73,102)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-google-plus {
+ 	background: rgb(217,82,50)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-flickr {
+ 	background: rgb(250,29,132)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-linkedin {
+ 	background: rgb(2,116,179)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-instagram {
+ 	background: rgb(167,124,98)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-pinterest {
+ 	background: rgb(205,33,40)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-vimeo-square {
+ 	background: rgb(52,192,238)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i.fa-youtube {
+ 	background: rgb(220,33,48)!important;
+ 	color: rgb(255,2552,255)!important;
+}
+
+#top .mod_socials i:hover, {
+	opacity: 0.7!important;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutBorderRadius): ?>
+#top-wrapper #top,
+#top-wrapper #top .inside  {
+	border-radius: <?= $this->topbarLayoutBorderRadius; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->topbarLayoutBorder): ?>
+#top-wrapper #top  {
+	border-bottom: 1px solid <?= $this->topbarLayoutBorder; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontFamily): ?>
+html, body  {
+	font-family: <?= $this->bodyFontFamily; ?>;
+	font-weight: <?= $this->bodyFontFamily_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontColor): ?>
+:root {
+	--body-color: <?= $this->bodyFontColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontHyphensOff): ?>
+* {
+	hyphens: none;
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+}
+<?php endif; ?>
+
+<?php if($this->bodyBackgroundColor): ?>
+:root {
+	--bodyBackgroundColor: <?= $this->bodyBackgroundColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontSize): ?>
+:root {
+	--body-fontSize: <?= $this->bodyFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontLineHeight): ?>
+p  {
+	line-height: <?= $this->bodyFontLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontSizeMobile): ?>
+@media only screen and (max-width: 767px) {
+
+html, body  {
+	font-size: <?= $this->bodyFontSizeMobile; ?>px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->bodyFontLineHeightMobile): ?>
+@media only screen and (max-width: 767px) {
+
+p  {
+	line-height: <?= $this->bodyFontLineHeightMobile; ?>px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamily): ?>
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
+.ce_revolutionslider_text.bold, .font_headline {
+	font-family: <?= $this->headlineFontFamily; ?>;
+	font-weight: <?= $this->headlineFontFamily_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineHyphensOff): ?>
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .font_headline {
+	hyphens: none;
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamilyH1): ?>
+h1, .h1 {
+	font-family: <?= $this->headlineFontFamilyH1; ?>;
+	font-weight: <?= $this->headlineFontFamilyH1_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH1): ?>
+:root {
+	--h1-fontSize: <?= $this->headlineFontSizeH1; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH1): ?>
+h1, .h1, .h1 p {
+	line-height: <?= $this->headlineLineHeightH1; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLetterspacingH1): ?>
+h1, .h1, .h1 p {
+	letter-spacing: <?= $this->headlineLetterspacingH1; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontWeightH1): ?>
+h1, .h1, .h1 p {
+	font-weight: <?= $this->headlineFontWeightH1; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontColorH1): ?>
+h1, h1 a, .h1, .h1 a, .h1 p {
+	color: <?= $this->headlineFontColorH1; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamilyH2): ?>
+h2, .h2 {
+	font-family: <?= $this->headlineFontFamilyH2; ?>;
+	font-weight: <?= $this->headlineFontFamilyH2_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH2): ?>
+:root {
+	--h2-fontSize: <?= $this->headlineFontSizeH2; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH2): ?>
+h2, .h2, .h2 p {
+	line-height: <?= $this->headlineLineHeightH2; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLetterspacingH2): ?>
+h2, .h2, .h2 p {
+	letter-spacing: <?= $this->headlineLetterspacingH2; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontWeightH2): ?>
+h2, .h2, .h2 p {
+	font-weight: <?= $this->headlineFontWeightH2; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontColorH2): ?>
+h2, h2 a, .h2, .h2 a, .h2 p {
+	color: <?= $this->headlineFontColorH2; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamilyH3): ?>
+h3, .h3 {
+	font-family: <?= $this->headlineFontFamilyH3; ?>;
+	font-weight: <?= $this->headlineFontFamilyH3_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH3): ?>
+:root {
+	--h3-fontSize: <?= $this->headlineFontSizeH3; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH3): ?>
+h3, .h3, .h3 p {
+	line-height: <?= $this->headlineLineHeightH3; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLetterspacingH3): ?>
+h3, .h3, .h3 p {
+	letter-spacing: <?= $this->headlineLetterspacingH3; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontWeightH3): ?>
+h3, .h3, .h3 p {
+	font-weight: <?= $this->headlineFontWeightH3; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontColorH3): ?>
+h3, h3 a, .h3, .h3 a, .h3 p {
+	color: <?= $this->headlineFontColorH3; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamilyH4): ?>
+h4, .h4 {
+	font-family: <?= $this->headlineFontFamilyH4; ?>;
+	font-weight: <?= $this->headlineFontFamilyH4_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH4): ?>
+:root {
+	--h4-fontSize: <?= $this->headlineFontSizeH4; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH4): ?>
+h4, .h4, .h4 p {
+	line-height: <?= $this->headlineLineHeightH4; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLetterspacingH4): ?>
+h4, .h4, .h4 p {
+	letter-spacing: <?= $this->headlineLetterspacingH4; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontWeightH4): ?>
+h4, .h4, .h4 p {
+	font-weight: <?= $this->headlineFontWeightH4; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontColorH4): ?>
+h4, h4 a, .h4, .h4 a, .h4 p {
+	color: <?= $this->headlineFontColorH4; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamilyH5): ?>
+h5, .h5 {
+	font-family: <?= $this->headlineFontFamilyH5; ?>;
+	font-weight: <?= $this->headlineFontFamilyH5_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH5): ?>
+:root {
+	--h5-fontSize: <?= $this->headlineFontSizeH5; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH5): ?>
+h5, .h5, .h5 p {
+	line-height: <?= $this->headlineLineHeightH5; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLetterspacingH5): ?>
+h5, .h5, .h5 p {
+	letter-spacing: <?= $this->headlineLetterspacingH5; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontWeightH5): ?>
+h5, .h5, .h5 p {
+	font-weight: <?= $this->headlineFontWeightH5; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontColorH5): ?>
+h5, h5 a, .h5, .h5 a, .h5 p {
+	color: <?= $this->headlineFontColorH5; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontFamilyH6): ?>
+h6, .h6 {
+	font-family: <?= $this->headlineFontFamilyH6; ?>;
+	font-weight: <?= $this->headlineFontFamilyH6_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH6): ?>
+:root {
+	--h6-fontSize: <?= $this->headlineFontSizeH6; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH6): ?>
+h6, .h6, .h6 p {
+	line-height: <?= $this->headlineLineHeightH6; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineLetterspacingH6): ?>
+h6, .h6, .h6 p {
+	letter-spacing: <?= $this->headlineLetterspacingH6; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontWeightH6): ?>
+h6, .h6, .h6 p {
+	font-weight: <?= $this->headlineFontWeightH6; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontColorH6): ?>
+h6, h6 a, .h6, .h6 a, .h6 p {
+	color: <?= $this->headlineFontColorH6; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH1Mob): ?>
+@media only screen and (max-width: 767px) {
+	h1, .h1, .h1 p {
+		font-size: <?= $this->headlineFontSizeH1Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH1Mob): ?>
+@media only screen and (max-width: 767px) {
+	h1, .h1, .h1 p {
+		line-height: <?= $this->headlineLineHeightH1Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH2Mob): ?>
+@media only screen and (max-width: 767px) {
+	h2, .h2, .h2 p {
+		font-size: <?= $this->headlineFontSizeH2Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH2Mob): ?>
+@media only screen and (max-width: 767px) {
+	h2, .h2, .h2 p {
+		line-height: <?= $this->headlineLineHeightH2Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH3Mob): ?>
+@media only screen and (max-width: 767px) {
+	h3, .h3, .h3 p {
+		font-size: <?= $this->headlineFontSizeH3Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH3Mob): ?>
+@media only screen and (max-width: 767px) {
+	h3, .h3, .h3 p {
+		line-height: <?= $this->headlineLineHeightH3Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH4Mob): ?>
+@media only screen and (max-width: 767px) {
+	h4, .h4, .h4 p {
+		font-size: <?= $this->headlineFontSizeH4Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH4Mob): ?>
+@media only screen and (max-width: 767px) {
+	h4, .h4, .h4 p {
+		line-height: <?= $this->headlineLineHeightH4Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH5Mob): ?>
+@media only screen and (max-width: 767px) {
+	h5, .h5, .h5 p {
+		font-size: <?= $this->headlineFontSizeH5Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH5Mob): ?>
+@media only screen and (max-width: 767px) {
+	h5, .h5, .h5 p {
+		line-height: <?= $this->headlineLineHeightH5Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineFontSizeH6Mob): ?>
+@media only screen and (max-width: 767px) {
+	h6, .h6, .h6 p {
+		font-size: <?= $this->headlineFontSizeH6Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headlineLineHeightH6Mob): ?>
+@media only screen and (max-width: 767px) {
+	h6, .h6, .h6 p {
+		line-height: <?= $this->headlineLineHeightH6Mob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->layoutFullwidthContentWidth): ?>
+:root {
+	--contentBoxedWidth: calc(100% - <?= $this->layoutFullwidthContentWidth; ?>%);
+	--articlePaddingLeftRight: <?= $this->layoutFullwidthContentWidth / 2; ?>%;
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle1): ?>
+#offcanvas-top,
+#contentwrapper,
+#top-wrapper,
+#footer,
+#bottom,
+.header {
+	max-width: 1210px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	background-color: rgba(0,0,0,0.05);
+}
+
+@media only screen and (max-width: 1280px) {
+
+	#contentwrapper,
+	#top-wrapper {
+		max-width: 1100px;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle1Shadow): ?>
+#contentwrapper {
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle1ContentWidth): ?>
+#offcanvas-top,
+#contentwrapper,
+#top-wrapper,
+#footer,
+#bottom,
+.header,
+.mod_customcataloglist.cc_immorealty_slider .content-outside,
+.mod_customcataloglist.cc_cardealer_slider .content-outside {
+	max-width: <?= $this->layoutBoxedStyle1ContentWidth; ?>px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	background-color: rgba(0,0,0,0.05);
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle1MarginTop): ?>
+@media only screen and (min-width: 768px) {
+
+#contentwrapper {
+	margin-top: <?= $this->layoutBoxedStyle1MarginTop; ?>px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle2): ?>
+#wrapper,
+#footer,
+#bottom {
+	max-width: var(--contentBoxedWidth);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	background-color: rgba(0,0,0,0.05);
+}
+
+#contentwrapper {
+	background: none;
+}
+
+#wrapper {
+	margin-top: -50px;
+	z-index: 1000;
+}
+
+#slider {
+	min-height: 120px;
+}
+
+#titlebar {
+	min-height: 120px;
+}
+
+.mod_breadcrumb {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle1BackgroundColor): ?>
+body {
+	background-color: <?= $this->layoutBoxedStyle1BackgroundColor; ?>!important;
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle2ContentWidth): ?>
+#wrapper,
+#footer,
+#bottom {
+	max-width: <?= $this->layoutBoxedStyle2ContentWidth; ?>px;
+	margin-left: auto;
+	margin-right: auto;
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle2NegativeMargin): ?>
+#wrapper {
+	margin-top: -<?=$this->layoutBoxedStyle2NegativeMargin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle2BackgroundColor): ?>
+body {
+	background-color: <?= $this->layoutBoxedStyle2BackgroundColor; ?>!important;
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle3): ?>
+@media only screen and (min-width: 768px) {
+
+body {
+	background: #393939;
+	margin: <?= $this->layoutBoxedStyle3; ?>px;
+}
+
+.stickyheader {
+   width: calc(100% - <?= $this->layoutBoxedStyle3; ?>px  - <?= $this->layoutBoxedStyle3; ?>px);
+   left: <?= $this->layoutBoxedStyle3; ?>px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->layoutBoxedStyle3BackgroundColor): ?>
+body {
+	background-color: <?= $this->layoutBoxedStyle3BackgroundColor; ?>!important;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundUpload): ?>
+body {
+	background-image: url(<?= $this->backgroundUpload->file; ?>)!important;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundRepeatNone): ?>
+body {
+	background-repeat: no-repeat;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundRepeatBoth): ?>
+body {
+	background-repeat: repeat;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundRepeatX): ?>
+body {
+	background-repeat: repeat-x;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundRepeatY): ?>
+body {
+	background-repeat: repeat-y;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundPosition): ?>
+body {
+	background-position: center top;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundFullsize): ?>
+body {
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center top;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundAttachment): ?>
+body {
+	background-attachment: fixed;
+}
+<?php endif; ?>
+
+<?php if($this->backgroundColor): ?>
+body {
+	background-color: <?= $this->backgroundColor; ?> !important;
+}
+<?php endif; ?>
+
+<?php if($this->layoutMiscGrid): ?>
+.autogrid_wrapper {
+	margin-left: -2%;
+	margin-right: -2%;
+}
+
+.autogrid {
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.autogrid_wrapper.article .inner {
+	margin-left: -2%;
+	margin-right: -2%;
+}
+<?php endif; ?>
+
+<?php if($this->layoutMiscGridPixel): ?>
+.autogrid_wrapper {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.autogrid {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.autogrid_wrapper.article .inner {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+<?php endif; ?>
+
+<?php if($this->layoutMiscWhiteSpace): ?>
+	@media only screen and (min-width: 768px) {
+		.mod_article:not(.fullwidth).article-pt > .container {
+			padding-top: <?= $this->layoutMiscWhiteSpace; ?>px;
+		}
+		.mod_article:not(.fullwidth).article-pb > .container {
+			padding-bottom: <?= $this->layoutMiscWhiteSpace; ?>px;
+		}
+
+	}
+<?php endif; ?>
+
+<?php if($this->layoutMiscBreadcrumb): ?>
+#breadcrumb,
+.mod_breadcrumb {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->layoutHideToTopLink): ?>
+#top_link {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->layoutHideOptOutLink): ?>
+#privacy_optout_link {
+	display: none;
+}
+<?php endif; ?>
+
+
+<?php if($this->footerElementsHide): ?>
+#footer  {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->footerElementsCol3): ?>
+#footer div.autogrid {
+	flex: 0 0 33.33%;
+}
+
+.footer-col4 {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->footerElementsCol2): ?>
+#footer div.autogrid {
+	flex: 0 0 50%;
+}
+
+.footer-col3,
+.footer-col4 {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->footerElementsCol1): ?>
+#footer div.autogrid {
+	flex: 0 0 100%;
+}
+
+.footer-col2,
+.footer-col3,
+.footer-col4 {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->footerElementsHeight): ?>
+#footer .inside {
+	padding-top: <?= $this->footerElementsHeight; ?>%;
+	padding-bottom: <?= $this->footerElementsHeight; ?>%;
+}
+<?php endif; ?>
+
+<?php if($this->footerElementsMarginLeftRight): ?>
+#footer {
+	margin-left: <?= $this->footerElementsMarginLeftRight; ?>px;
+	margin-right: <?= $this->footerElementsMarginLeftRight; ?>px;
+}
+<?php endif; ?>
+
+
+<?php if($this->footerElementsMarginTopBottom): ?>
+#footer {
+	margin-top: <?= $this->footerElementsMarginTopBottom; ?>px;
+	margin-bottom: <?= $this->footerElementsMarginTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerBorderRadius): ?>
+#footer {
+	border-radius: <?= $this->footerBorderRadius; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSize1): ?>
+:root {
+	--footer-h1-fontSize: <?= $this->footerFontHeadlineSize1; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSize2): ?>
+:root {
+	--footer-h2-fontSize: <?= $this->footerFontHeadlineSize2; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSize3): ?>
+:root {
+	--footer-h3-fontSize: <?= $this->footerFontHeadlineSize3; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSize4): ?>
+:root {
+	--footer-h4-fontSize: <?= $this->footerFontHeadlineSize4; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSize5): ?>
+:root {
+	--footer-h5-fontSize: <?= $this->footerFontHeadlineSize5; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSize6): ?>
+:root {
+	--footer-h6-fontSize: <?= $this->footerFontHeadlineSize6; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSizeMob1): ?>
+@media only screen and (max-width: 767px) {
+	#footer h1,
+	#footer .h1 {
+		font-size: <?= $this->footerFontHeadlineSizeMob1; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSizeMob2): ?>
+@media only screen and (max-width: 767px) {
+	#footer h2,
+	#footer .h2 {
+		font-size: <?= $this->footerFontHeadlineSizeMob2; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSizeMob3): ?>
+@media only screen and (max-width: 767px) {
+	#footer h3,
+	#footer .h3 {
+		font-size: <?= $this->footerFontHeadlineSizeMob3; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSizeMob4): ?>
+@media only screen and (max-width: 767px) {
+	#footer h4,
+	#footer .h4 {
+		font-size: <?= $this->footerFontHeadlineSizeMob4; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSizeMob5): ?>
+@media only screen and (max-width: 767px) {
+	#footer h5,
+	#footer .h5 {
+		font-size: <?= $this->footerFontHeadlineSizeMob5; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineSizeMob6): ?>
+@media only screen and (max-width: 767px) {
+	#footer h6,
+	#footer .h6 {
+		font-size: <?= $this->footerFontHeadlineSizeMob6; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHeadlineColor): ?>
+:root {
+	--footer-headline-color: <?= $this->footerFontHeadlineColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontSize): ?>
+#footer {
+	font-size: <?= $this->footerFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	#footer {
+		font-size: <?= $this->footerFontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->footerFontColor): ?>
+#footer,
+#footer a {
+	color: <?= $this->footerFontColor; ?>;
+}
+
+#footer li:after {
+	border-color: <?= $this->footerFontColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->footerFontHoverColor): ?>
+#footer a:hover:not(.ce_hyperlink a) {
+	color: <?= $this->footerFontHoverColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->footerBackground): ?>
+#footer {
+	background-color: <?= $this->footerBackground; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->footerBackgroundImage): ?>
+#footer {
+	background-image: url(<?= $this->footerBackgroundImage->file; ?>);
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+<?php endif; ?>
+
+<?php if($this->footerBackgroundFullsize): ?>
+#footer {
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+}
+<?php endif; ?>
+
+<?php if($this->footerBackgroundRepeat): ?>
+#footer {
+	background-repeat: repeat!important;
+}
+<?php endif; ?>
+
+<?php if($this->footerBorder): ?>
+#footer {
+	border-top: 1px solid <?= $this->footerBorder; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bottomElementsHide): ?>
+#bottom {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->bottomElementsHeight): ?>
+#bottom .inside {
+	padding-top: <?= $this->bottomElementsHeight; ?>%;
+	padding-bottom: <?= $this->bottomElementsHeight; ?>%;
+}
+<?php endif; ?>
+
+<?php if($this->bottomElementsMarginLeftRight): ?>
+#bottom {
+	margin-left: <?= $this->bottomElementsMarginLeftRight; ?>px;
+	margin-right: <?= $this->bottomElementsMarginLeftRight; ?>px;
+}
+<?php endif; ?>
+
+
+<?php if($this->bottomElementsMarginTopBottom): ?>
+#bottom {
+	margin-top: <?= $this->bottomElementsMarginTopBottom; ?>px;
+	margin-bottom: <?= $this->bottomElementsMarginTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->bottomElementsAlign): ?>
+#bottom .inside .left,
+#bottom .inside .right {
+	float: none;
+	text-align: center;
+}
+
+#bottom .inside .left {
+	margin-bottom: 1rem;
+}
+
+#bottom .inside .right a:first-child {
+	margin-left: 0;
+}
+<?php endif; ?>
+
+
+<?php if($this->bottomFontSize): ?>
+#bottom {
+	font-size: <?= $this->bottomFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->bottomFontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	#bottom {
+		font-size: <?= $this->bottomFontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->bottomFontColor): ?>
+#bottom .inside,
+#bottom .inside a {
+	color: <?= $this->bottomFontColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bottomFontHoverColor): ?>
+#bottom .inside a:hover {
+	color: <?= $this->bottomFontHoverColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bottomBackground): ?>
+#bottom {
+	 background-color: <?= $this->bottomBackground; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bottomBackgroundImage): ?>
+#bottom {
+	background-image: url(<?= $this->bottomBackgroundImage->file; ?>);
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+<?php endif; ?>
+
+<?php if($this->bottomBackgroundFullsize): ?>
+#bottom {
+	background-size: cover;
+}
+<?php endif; ?>
+
+<?php if($this->bottomBackgroundRepeat): ?>
+#bottom {
+	background-repeat: repeat!important;
+}
+<?php endif; ?>
+
+<?php if($this->bottomBorder): ?>
+#bottom {
+	border-top: 1px solid <?= $this->bottomBorder; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->bottomBorderRadius): ?>
+#bottom {
+	border-radius: <?= $this->bottomBorderRadius; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headerElementsSearch): ?>
+.header .mod_search {
+	display: none!important;
+}
+
+.header .mod_langswitcher {
+	margin-left: 40px;
+}
+
+.header .mod_socials {
+	margin-left: 40px;
+}
+<?php endif; ?>
+
+<?php if($this->headerElementsLangswitch): ?>
+.header .mod_langswitcher {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->headerElementsSocials): ?>
+@media only screen and (min-width: 768px) {
+.header .mod_socials {
+	display: block;
+}
+
+.header .mod_langswitcher {
+	margin-left: 20px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->headerElementsSticky): ?>
+@media only screen and (min-width: 768px) {
+
+.stickyheader {
+	display: none!important;
+}
+
+html {
+	scroll-padding: 0;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header1): ?>
+#top .inside {
+	background: none!important;
+}
+<?php endif; ?>
+
+<?php if($this->header1PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header1Background): ?>
+.header {
+	background-color: <?= $this->header1Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header1Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header1Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header1Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header1Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header1Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header1Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header1Border; ?>;
+}
+<?php endif; ?>
+
+	<?php if($this->header2): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original {
+	line-height: 60px!important;
+}
+
+.header.original .mainmenu {
+	float: left;
+}
+
+.header.original .logo {
+	float: none;
+}
+
+.header.original .mainmenu ul {
+	text-align: left;
+}
+
+.header.original .header_metanavi {
+	position: absolute;
+	right: var(--headerPaddings);
+	top: 20px;
+	display: block;
+}
+
+.header.original .header_metanavi a {
+	margin-left: 20px;
+}
+
+.header.original .header_metanavi a.last {
+	margin-right: 0;
+}
+
+.header.original .mainmenu:before {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: var(--headerPaddings);
+	bottom: 60px;
+	right: var(--headerPaddings);
+	background: rgb(0,0,0);
+	opacity: 0.15;
+}
+
+.header.original .smartmenu {
+	float: left;
+	margin-left: 0;
+}
+
+.header.original .smartmenu .smartmenu-trigger {
+	height: 60px;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:before,
+.mod_breadcrumb .mod_breadcrumb_inside:after {
+	display: block;
+}
+
+.mod_breadcrumb {
+	border: 0;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+
+.header {
+	background-color: #ffffff;
+}
+<?php endif; ?>
+
+<?php if($this->header2PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+.header.original .mainmenu:after {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: 40px;
+	bottom: 0;
+	right: 40px;
+	background: rgba(0,0,0,0.1);
+	opacity: 0.15;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header2Background): ?>
+.header {
+	background-color: <?= $this->header2Background; ?>;
+}
+<?php endif; ?>
+
+
+<?php if($this->header2Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header2Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header2Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header2Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header2Color; ?>;
+}
+
+.header.original .mainmenu:before,
+.header.original .mainmenu:after {
+	background: <?= $this->header2Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header3): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original {
+	line-height: 60px!important;
+}
+
+.header.original .logo {
+	float: none;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.header.original .mainmenu ul {
+	text-align: left;
+}
+
+.header.original .header_metanavi {
+	position: absolute;
+	left: var(--headerPaddings);
+	top: 20px;
+	display: block;
+}
+
+.header.original .header_metanavi a {
+	margin-left: 0;
+	margin-right: 20px;
+}
+
+.header.original .mainmenu:before {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: var(--headerPaddings);
+	bottom: 65px;
+	right: var(--headerPaddings);
+	background: rgb(0,0,0);
+	opacity: 0.15;
+}
+
+.header.original .smartmenu {
+	float: left;
+	margin-left: 0;
+}
+
+.header.original .smartmenu .smartmenu-trigger {
+	height: 60px;
+}
+
+.header.original .mainmenu {
+	float: left;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:before,
+.mod_breadcrumb .mod_breadcrumb_inside:after {
+	display: block;
+}
+
+.mod_breadcrumb {
+	border: 0;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header3PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+.header.original .mainmenu:after {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: 40px;
+	bottom: 0;
+	right: 40px;
+	background: rgba(0,0,0,0.1);
+	opacity: 0.15;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header3Background): ?>
+.header {
+	background-color: <?= $this->header3Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header3Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header3Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header3Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header3Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header3Color; ?>;
+}
+
+.header.original .mainmenu:before,
+.header.original .mainmenu:after {
+	background: <?= $this->header3Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header4): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original .logo {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header.original {
+	line-height: 65px!important;
+}
+
+.header.original .mainmenu:before {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: var(--headerPaddings);
+	bottom: 65px;
+	right: var(--headerPaddings);
+	background: rgb(0,0,0);
+	opacity: 0.15;
+}
+
+.header.original .smartmenu {
+	float: left;
+	margin-left: 0;
+}
+
+.header.original .smartmenu .smartmenu-trigger {
+	height: 60px;
+}
+
+.header.original .mainmenu {
+	float: left;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:before,
+.mod_breadcrumb .mod_breadcrumb_inside:after {
+	display: block;
+}
+
+.mod_breadcrumb {
+	border: 0;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header4PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+.header.original .mainmenu:after {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: 40px;
+	bottom: 0;
+	right: 40px;
+	background: rgba(0,0,0,0.1);
+	opacity: 0.15;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header4Background): ?>
+.header {
+	background-color: <?= $this->header4Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header4Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header4Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header4Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header4Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header4Color; ?>;
+}
+
+.header.original .mainmenu:before,
+.header.original .mainmenu:after {
+	background: <?= $this->header4Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header5): ?>
+@media only screen and (min-width: 768px) {
+
+.header .mainmenu {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	width: 100%;
+}
+
+.header .mainmenu ul {
+	text-align: center;
+}
+
+.header .logo {
+	position: relative;
+	z-index: 100;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header5PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header5Background): ?>
+.header {
+	background-color: <?= $this->header5Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header5Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header5Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header5Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header5Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header5Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header5Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header5Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header5Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header6): ?>
+@media only screen and (min-width: 768px) {
+
+.header .mainmenu {
+	float: left;
+}
+
+.header .logo {
+	margin-right: 40px;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header6PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header6Background): ?>
+.header {
+	background-color: <?= $this->header6Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header6Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header6Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header6Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header6Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header6Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header6Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header6Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header6Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header7): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original .logo {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header.original .mainmenu {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header.original .meta-nav {
+	display: none;
+}
+
+.header.original .mainmenu ul {
+	text-align: center;
+}
+
+.header.original .mainmenu ul,
+.header.original .mainmenu ul li a {
+	line-height: 65px;
+}
+
+.header.original .mod_search {
+	display: none!important;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+.header.original .smartmenu {
+	position: absolute;
+	top: 0;
+	right: 40px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header7PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header7Background): ?>
+.header {
+	background-color: <?= $this->header7Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header7Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header7Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header7Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header7Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header7Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header7Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header7Border): ?>
+.header.original .mainmenu {
+	border-top: 1px solid <?= $this->header7Border; ?>;
+	border-bottom: 1px solid <?= $this->header7Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header8): ?>
+@media only screen and (min-width: 768px) {
+
+.header .logo {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+  	transform: translateX(-50%);
+}
+
+.header .mainmenu {
+	width: 100%;
+}
+
+.header .mainmenu li.float_left.floatbox {
+	float: left;
+	margin: 0;
+}
+
+.header .mainmenu li.float_right.floatbox {
+	float: right;
+	margin: 0;
+}
+
+.header .mod_langswitcher {
+	display: none!important;
+}
+
+.header .mod_search {
+	display: none!important;
+}
+
+body .header .mainmenu ul li.float_right.floatbox ol li:first-child a:before {
+	display: none;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+.header.original .mainmenu ul li.floatbox {
+	line-height:inherit;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header8PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header8Background): ?>
+.header {
+	background-color: <?= $this->header8Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header8Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header8Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header8Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header8Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header8Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header8Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header8Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header8Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header9): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background: none;
+}
+
+.header.cloned {
+	box-shadow: none;
+}
+
+.header.cloned .inside {
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+}
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header .inside {
+	background: #ffffff;
+}
+
+#top {
+	background: none!important;
+}
+
+#top .inside {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#slider {
+	min-height: 156px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header9PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header9Background): ?>
+.header .inside {
+	background-color: <?= $this->header9Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header9Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header9Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header9Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header9Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header9Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header9Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header10): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original,
+.header.original .inside {
+	background: none;
+}
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+body .header.original .logo {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body .header.original .inside {
+	text-align: center;
+}
+
+.header.original .mainmenu ul {
+	text-align: center;
+}
+
+.header.original {
+	line-height: 70px!important;
+}
+
+.header.original .mainmenu {
+	background: #ffffff;
+	float: none;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 100px;
+}
+
+.header .mod_socials {
+	margin-right: 40px;
+}
+
+.header .mod_socials:before {
+	display: none;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+.header .smartmenu {
+	display: none!important;
+}
+
+.header.original .mod_search {
+	float: left;
+	padding-left: 0;
+	margin-left: 40px;
+}
+
+.header.original .mod_langswitcher {
+	margin-right: 40px;
+	margin-left: 0;
+}
+
+.stickyheader {
+	width: calc(100%  - 80px);
+	margin-top: 20px;
+	left: 40px;
+}
+
+.stickyheader .header {
+	border-radius: 100px;
+}
+
+.header .mainmenu {
+	display: block!important;
+	float: none;
+}
+
+.stickyheader .header .logo {
+	display: none;
+}
+
+.stickyheader {
+	top: -300px;
+}
+
+.stickyheader .mod_search {
+	float: left;
+	margin-right: 40px;
+	margin-left: 0;
+}
+
+.mainmenu ul {
+	text-align: center;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header10PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header10Background): ?>
+.header.original .mainmenu,
+.header.cloned {
+	background-color: <?= $this->header10Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header10Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header10Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header10Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header10Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header10Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header10Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header11): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original .logo {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header.original .mainmenu {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.header.original .mainmenu ul {
+	text-align: center;
+}
+
+.header.original .mainmenu {
+	line-height: 65px;
+}
+
+.header.original .inside {
+	max-width: 100%;
+	padding: 0;
+}
+
+.header.original .mod_langswitcher {
+	position: absolute;
+	top: 0;
+	left: 40px;
+}
+
+.header.original .mod_search {
+	position: absolute;
+	top: 0;
+	right: 40px;
+}
+
+.header.original .mainmenu ul li.megamenu .megamenu-wrapper {
+	width: calc(100% - 80px)!important;
+}
+
+.header.original .mainmenu .level_1 {
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.mod_breadcrumb {
+	border-top: 0;
+}
+
+.header.original .mainmenu ul li {
+	margin-left: 0!important;
+	margin-right: 0!important;
+	letter-spacing: -4px;
+}
+
+.header.original .mainmenu ul li.float_right ol {
+	margin-left: -4px;
+}
+
+.header.original .mainmenu ul li a.first {
+	border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+.header.original .mainmenu ul li ul li a.first {
+	border-left: none;
+}
+
+.header.original .mainmenu ul li a {
+	border-right: 1px solid rgba(0,0,0,0.1);
+	padding-left: 40px;
+	padding-right: 40px;
+	letter-spacing: 0;
+}
+
+.header.original .mainmenu ul li ul li a {
+	border: 0;
+}
+
+.header.original .mainmenu ul .megamenu-wrapper {
+	z-index: 100;
+	border-top: 0;
+}
+
+.header.original .mainmenu ul .megamenu-wrapper ul {
+	margin-top: 0;
+}
+
+.header.original .mainmenu ul ul {
+	border-top: 1px solid rgb(229,229,229);
+	margin-top: 0;
+}
+
+.header.original .mainmenu ul ul ul {
+	border-top: 0;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+.header.original .smartmenu {
+	position: absolute;
+	top: 0;
+	right: 100px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header11PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header11Background): ?>
+.header {
+	background-color: <?= $this->header11Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header11Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header11Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header11Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header11Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header11Color; ?>;
+}
+
+<?php endif; ?>
+
+<?php if($this->header11LineColor): ?>
+.header.original .inside .mainmenu,
+.header.original .mainmenu ul li a,
+.header.original .mainmenu ul li a.first {
+	border-color:  <?= $this->header11LineColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header12): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original {
+	background: none;
+}
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+#top {
+	background: none!important;
+}
+
+#top .inside {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.header .inside {
+	background: #ffffff;
+}
+
+.header .mainmenu {
+	border-left: 1px solid rgba(0,0,0,0.1);
+	padding-left: 35px;
+}
+
+.header .mod_search {
+	border-left: 1px solid rgba(0,0,0,0.1);
+	padding-left: 40px;
+}
+
+.header .mainmenu {
+	float: left;
+}
+
+.header .mod_socials:before {
+	display: none;
+}
+
+#slider {
+	min-height: 180px;
+}
+
+.logo {
+	margin-right: 35px;
+}
+
+.header.cloned {
+	box-shadow: none;
+	background: none;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header12Background): ?>
+.header.original .inside,
+.header.cloned .inside {
+	background-color: <?= $this->header12Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header12Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header12Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header12Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header12Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header12Color; ?>;
+}
+
+<?php endif; ?>
+
+<?php if($this->header12PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header12LineColor): ?>
+.header.original .mainmenu,
+.header.original .mod_search {
+	border-color:  <?= $this->header12LineColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header13): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original {
+	background: none;
+	margin-top: 50px;
+}
+
+.header.original .mainmenu {
+	background: #ffffff;
+	float: right;
+	border-radius: 100px;
+	padding-left: 30px;
+	padding-right: 30px;
+	box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+
+.header.original .mainmenu ul li a {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.header.original .mainmenu ul li a.last {
+	border-right: 0;
+}
+
+.header.original .mainmenu ul li {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.header.original .mainmenu ul li.last {
+	border-right: 0;
+}
+
+.header.original .smartmenu .smartmenu-trigger {
+	width: 56px;
+	padding: 0 10px;
+	background: rgba(255,255,255,0.95);
+}
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header .meta-nav,
+.header .mod_search {
+	display: none!important;
+}
+
+.header.original .logo {
+	height: 79px;
+}
+
+.header.original {
+	line-height: 79px;
+}
+
+#slider {
+	min-height: 200px;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header13Background): ?>
+.header.original .mainmenu,
+.header.cloned {
+	background-color: <?= $this->header13Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header13Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header13Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header13Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header13Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header13Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header13PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header14): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original {
+	line-height: 60px!important;
+}
+
+.header.original .logo {
+	float: none;
+}
+
+.header.original .mainmenu ul {
+	text-align: left;
+}
+
+.header.original .header_metanavi {
+	position: absolute;
+	right: var(--headerPaddings);
+	top: 20px;
+	display: block;
+}
+
+.header.original .header_metanavi a {
+	margin-left: 20px;
+}
+
+.header.original .header_metanavi a.last {
+	margin-right: 0;
+}
+
+.header.original .smartmenu {
+	float: left;
+	margin-left: 0;
+}
+
+.header.original .smartmenu .smartmenu-trigger {
+	height: 60px;
+}
+
+.header.original .mainmenu {
+	float: left;
+}
+
+.mod_breadcrumb .mod_breadcrumb_inside:before,
+.mod_breadcrumb .mod_breadcrumb_inside:after {
+	display: block;
+}
+
+.mod_breadcrumb {
+	border: 0;
+}
+
+.header.original:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 63px;
+	background: #000000;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header14Background): ?>
+.header.original:before,
+.header.cloned {
+	background-color: <?= $this->header14Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header14Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .mod_socials a {
+	color: <?= $this->header14Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header14Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header14Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header14Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header15): ?>
+@media only screen and (min-width: 768px) {
+
+.smartmenu {
+	display: block;
+}
+
+.mainmenu {
+	display: none;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header15PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header15Background): ?>
+.header {
+	background-color: <?= $this->header15Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header15Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header15Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header15Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header15Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header15Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header15Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header15Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header16): ?>
+@media only screen and (min-width: 768px) {
+
+.smartmenu {
+	display: block;
+}
+
+.mainmenu {
+	display: none;
+}
+
+.smartmenu .smartmenu-trigger .line,
+.smartmenu .smartmenu-trigger .line:before,
+.smartmenu .smartmenu-trigger .line:after {
+	height: 2px;
+	width: 20px;
+}
+
+.smartmenu .smartmenu-trigger .line {
+	width: 15px;
+}
+
+.smartmenu .smartmenu-trigger .line:before {
+	margin-top: 5px;
+}
+
+.smartmenu .smartmenu-trigger .line:after {
+	margin-top: -7px;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header16PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header16Background): ?>
+.header {
+	background-color: <?= $this->header16Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header16Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header16Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header16Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header16Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header16Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header16Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header16Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header17): ?>
+@media only screen and (min-width: 768px) {
+   
+#top {
+     display: none;
+}
+
+.header .inside {
+	height: 100vh;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.header.original .mainmenu ul .megamenu-wrapper {
+	top: 0!important;
+}
+
+.mainmenu ul li, .mainmenu ul ul li {
+	line-height: 45px;
+}
+
+.mainmenu {
+	float: none;
+	margin-bottom: 40px;
+	display: block;
+	background: #fff;
+	position: relative;
+	z-index: 10;
+}
+
+.mainmenu ul {
+	text-align: left;
+}
+
+.mainmenu ul li {
+	display: block;
+	text-align: left;
+	position: relative;
+	right: auto;
+}
+
+body .header .mainmenu ul li {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+body .header.original .mainmenu ul li a:before {
+	display: none;
+}
+
+.mainmenu ul li ul li {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.mainmenu ul li a {
+	text-align: left;
+}
+
+.mainmenu ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.mainmenu .vlist.level_1 > li {
+	margin-top: 0;
+}
+
+.mainmenu ul .megamenu-wrapper {
+	left: 100%;
+	top: 0;
+	width: auto!important;
+}
+
+.mainmenu ul li:not(.floatbox) {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mainmenu ul li.first:not(.floatbox) {
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.mainmenu ul li ul li.first,
+.mainmenu ul li ul li {
+	border-top: 0!important;
+	border-bottom: 0!important;
+}
+
+.mainmenu ul ul {
+	border-top: 0;
+	margin-top: 0;
+}
+
+nav.mainmenu li.megamenu ul li {
+	min-width: 180px;
+}
+
+body .mainmenu ul ul li.open-left ul {
+	left: 100%;
+	right: auto!important;
+}
+
+#fix-wrapper {
+	width: 300px;
+	position: fixed;
+	box-shadow: 5px 0px 10px -2px rgba(0, 0, 0, 0.1);
+	top: 0;
+}
+
+#slider,
+#wrapper,
+#bottom,
+#offcanvas-top,
+#footer,
+.mod_breadcrumb {
+	margin-left: 300px;
+}
+
+.logo {
+	float: none;
+	height: 200px;
+}
+
+#fix-wrapper.fixed .header {
+	position: relative;
+}
+
+#fix-wrapper {
+	height: 100%!important;
+}
+
+#fix-wrapper.fixed .header {
+	box-shadow: none;
+}
+
+#top .meta-nav {
+	display: none;
+}
+
+.mainmenu ul li a {
+	padding-left: 0;
+}
+
+#top-wrapper {
+	height: 100%;
+}
+
+.offcanvas-trigger {
+	display: none;
+}
+
+.stickyheader {
+	display: none!important;
+}
+
+.header .mainmenu ul li a span {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	display: inline-block;
+}
+
+.header .mainmenu ul li a i.fa {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	position: static;
+	width: 20px;
+}
+
+nav.mainmenu li.megamenu ul {
+	padding: 20px;
+}
+
+.smartmenu {
+	display: none!important;
+}
+
+.ce_revolutionslider .rs-container {
+	left: 0!important;
+	width: 100%!important;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+body .header .mainmenu ul li[class*="highlight"].last {
+	margin-top: 40px;
+	border-bottom: 0;
+}
+
+body .header .mainmenu ul li a[class*="highlight"] span {
+	padding: 0px 15px;
+}
+
+body .header .mainmenu ul li a[class*="highlight"]:not(.last) span {
+	line-height: 2rem;
+}
+
+#fix-wrapper {
+   left: 0;
+   transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+}	
+
+.mod_pct_megamenu {
+   top: 50%!important;
+   transform: translateY(-50%);
+   margin-left: 285px;
+   margin-right: 25px;
+   position: fixed;
+}
+
+.header .mainmenu a.pct_megamenu:after, 
+.header .mainmenu a.submenu:after {
+   position: absolute;
+   right: 10px;
+}
+
+.header .mod_search {
+	position: absolute;
+	z-index: 1;
+	right: 20px;
+	bottom: 20px;
+	line-height: 37px;
+	padding: 0;
+}
+
+.header .mod_langswitcher {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	line-height: 35px;
+}
+
+.header .mod_langswitcher ul {
+	left: 0;
+	right: auto;
+	top: auto;
+	bottom: 100%;
+	border-radius: 5px;
+}
+}
+<?php endif; ?>
+
+<?php if($this->header17vCenter): ?>
+.mainmenu {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: calc((-1 * var(--logoHeight)) - 55px);
+}
+<?php endif; ?>
+
+<?php if($this->header17Background): ?>
+.header,
+.mainmenu {
+	background-color: <?= $this->header17Background; ?>;
+}
+
+.mod_langswitcher ul {
+	background-color: <?= $this->header17Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header17Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header17Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header17Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header17Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header17Color; ?>;
+}
+
+
+.sidebar_trigger .burger .burger_lines:after,
+.sidebar_trigger .burger .burger_lines:before {
+   background: <?= $this->header17Color; ?>;
+}
+
+<?php endif; ?>
+
+<?php if($this->header17LineColor): ?>
+@media only screen and (min-width: 768px) {
+
+.mainmenu ul li:not(.floatbox),
+.mainmenu ul li.first:not(.floatbox) {
+	border-color: <?= $this->header17LineColor; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header17BackgroundImage): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background-image: url(<?= $this->header17BackgroundImage->file; ?>);
+	background-size: cover;
+	background-position: left top:
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header17TriggerSmallview): ?>
+@media only screen and (min-width: 768px) {
+
+.sidebar_trigger {
+	display: block;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header18): ?>
+@media only screen and (min-width: 768px) {
+   
+#top {
+     display: none;
+}
+
+.header .inside {
+	height: 100vh;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+
+.header.original .mainmenu ul .megamenu-wrapper {
+	top: 0!important;
+}
+
+.mainmenu ul li, .mainmenu ul ul li {
+	line-height: 45px;
+}
+
+.mainmenu {
+	float: none;
+	margin-bottom: 40px;
+	display: block;
+	background: #fff;
+	position: relative;
+	z-index: 10;
+}
+
+.mainmenu ul {
+	text-align: left;
+}
+
+.mainmenu ul li {
+	display: block;
+	text-align: left;
+	position: relative;
+	right: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+body .header .mainmenu ul li {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+body .header.original .mainmenu ul li a:before {
+	display: none;
+}
+
+.mainmenu ul li ul li {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.mainmenu ul li a {
+	text-align: center;
+}
+
+.mainmenu ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.mainmenu .vlist.level_1 > li {
+	margin-top: 0;
+}
+
+.mainmenu ul .megamenu-wrapper {
+	left: 100%;
+	top: 0;
+	width: auto!important;
+}
+
+.mainmenu ul li:not(.floatbox) {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mainmenu ul li:not(.float_left) li:last-of-type {
+	border: none;
+}
+
+.mainmenu ul li ul li.first,
+.mainmenu ul li ul li {
+	border-top: 0!important;
+	border-bottom: 0!important;
+}
+
+.mainmenu ul ul {
+	border-top: 0;
+	margin-top: 0;
+}
+
+nav.mainmenu li.megamenu ul li {
+	min-width: 180px;
+}
+
+body .mainmenu ul ul li.open-left ul {
+	left: 100%;
+	right: auto!important;
+}
+
+#fix-wrapper {
+	width: 300px;
+	position: fixed;
+	box-shadow: 5px 0px 10px -2px rgba(0, 0, 0, 0.1);
+	top: 0;
+}
+
+#slider,
+#wrapper,
+#bottom,
+#offcanvas-top,
+#footer,
+.mod_breadcrumb {
+	margin-left: 300px;
+}
+
+.logo {
+	float: none;
+	height: 200px;
+	display: inline-block;
+}
+
+#fix-wrapper.fixed .header {
+	position: relative;
+}
+
+#fix-wrapper {
+	height: 100%!important;
+}
+
+#fix-wrapper.fixed .header {
+	box-shadow: none;
+}
+
+#top .meta-nav {
+	display: none;
+}
+
+.mainmenu ul li a {
+	padding-left: 0;
+}
+
+#top-wrapper {
+	height: 100%;
+}
+
+.offcanvas-trigger {
+	display: none;
+}
+
+.stickyheader {
+	display: none!important;
+}
+
+.header .mainmenu ul li a span {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	display: inline-block;
+}
+
+.header .mainmenu ul li a i.fa {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	position: static;
+	width: 20px;
+}
+
+nav.mainmenu li.megamenu ul {
+	padding: 20px;
+}
+
+.smartmenu {
+	display: none!important;
+}
+
+.ce_revolutionslider .rs-container {
+	left: 0!important;
+	width: 100%!important;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+body .header .mainmenu ul li[class*="highlight"].last {
+	margin-top: 40px;
+	border-bottom: 0;
+}
+
+body .header .mainmenu ul li a[class*="highlight"] span {
+	padding: 0px 15px;
+}
+
+body .header .mainmenu ul li a[class*="highlight"]:not(.last) span {
+	line-height: 2rem;
+}
+
+#fix-wrapper {
+   left: 0;
+   transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+}	
+
+.mod_pct_megamenu {
+   top: 50%!important;
+   transform: translateY(-50%);
+   margin-left: 285px;
+   margin-right: 25px;
+   position: fixed;
+}
+
+.header .mainmenu a.pct_megamenu:after, 
+.header .mainmenu a.submenu:after {
+   position: absolute;
+   right: 10px;
+}
+
+.header .mod_search {
+	position: absolute;
+	z-index: 1;
+	right: 20px;
+	bottom: 20px;
+	line-height: 37px;
+	padding: 0;
+}
+
+.header .mod_langswitcher {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	line-height: 35px;
+}
+
+.header .mod_langswitcher ul {
+	left: 0;
+	right: auto;
+	top: auto;
+	bottom: 100%;
+	border-radius: 5px;
+}
+}
+<?php endif; ?>
+
+<?php if($this->header18vCenter): ?>
+.mainmenu {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: calc((-1 * var(--logoHeight)) - 55px);
+}
+<?php endif; ?>
+
+<?php if($this->header18Background): ?>
+.header,
+.mainmenu {
+	background-color: <?= $this->header18Background; ?>;
+}
+
+.mod_langswitcher ul {
+	background-color: <?= $this->header18Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header18Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header18Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header18Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header18Color; ?>;
+}
+
+.sidebar_trigger .burger .burger_lines:after,
+.sidebar_trigger .burger .burger_lines:before {
+   background: <?= $this->header18Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header18LineColor): ?>
+@media only screen and (min-width: 768px) {
+
+.mainmenu ul li.first,
+.mainmenu ul li:not(.floatbox) {
+	border-color: <?= $this->header18LineColor; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header18BackgroundImage): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background-image: url(<?= $this->header18BackgroundImage->file; ?>);
+	background-size: cover;
+	background-position: left top:
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header19): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original .mainmenu ul .megamenu-wrapper {
+	top: 0!important;
+}
+
+.mainmenu ul li, .mainmenu ul ul li {
+	line-height: 2.5;
+}
+
+.mainmenu {
+	float: none;
+	margin-bottom: 40px;
+	display: table;
+	margin-bottom: 170px;
+	height: calc(100% - var(--logoHeight));
+	width: 100%;
+	background: #fff;
+	position: relative;
+}
+
+.mainmenu .vlist.level_1 > li {
+	margin-top: 0;
+}
+
+.mainmenu ul.level_1 {
+	padding-bottom: 170px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.mainmenu ul {
+	text-align: left;
+}
+
+.mainmenu ul li {
+	display: block;
+	text-align: left;
+	position: relative;
+	right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+body .header .mainmenu ul li {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.mainmenu ul li a:before {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	content: '';
+	width: 1px;
+	position: absolute;
+	background-color: rgba(255,255,255,0.2);
+	left: -30px;
+	top: 0;
+	height: 0;
+}
+
+.mainmenu ul li a:hover:before {
+	height: 100%;
+}
+
+.mainmenu ul li a.trail:before,
+.mainmenu ul li a.active:before {
+	content: '';
+	width: 1px;
+	position: absolute;
+	background-color: rgba(255,255,255,0.2);
+	left: -30px;
+	top: 0;
+	height: 100%;
+}
+
+.mainmenu ul li ul li a:hover:before {
+	display: none;
+}
+
+.mainmenu ul li a.submenu:after {
+	font-family: "FontAwesome";
+	content: "\f105";
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.mainmenu ul li ul li {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.mainmenu ul li a {
+	text-align: left;
+}
+
+.mainmenu ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.mainmenu ul .megamenu-wrapper {
+	left: 100%;
+	top: 0;
+	width: auto!important;
+}
+
+.mainmenu ul ul {
+	margin-top: 0;
+}
+
+nav.mainmenu li.megamenu ul li {
+	min-width: 180px;
+}
+
+body .mainmenu ul ul li.open-left ul {
+	left: 100%;
+	right: auto!important;
+}
+
+.header.original {
+	height: 100%;
+}
+
+#header .inside {
+	padding-right: 0;
+	padding-left: 0;
+	height: 100%;
+}
+
+#fix-wrapper {
+	width: 270px;
+	position: fixed;
+	background: rgb(255,255,255);
+	top: 0;
+}
+
+#slider,
+#wrapper,
+#bottom,
+#offcanvas-top,
+#footer,
+.mod_breadcrumb {
+	margin-left: 270px;
+}
+
+.logo {
+	float: none;
+	height: 170px;
+	margin-left: 30px;
+}
+
+#fix-wrapper.fixed .header {
+	position: relative;
+}
+
+#fix-wrapper {
+	height: 100%!important;
+}
+
+#fix-wrapper.fixed .header {
+	box-shadow: none;
+}
+
+#top {
+	display: none!important;
+}
+
+.mainmenu ul li a {
+	padding-left: 0;
+}
+
+.header .mod_search {
+	position: absolute;
+	left: 160px;
+	bottom: 50px;
+	line-height: 37px;
+	padding: 0;
+}
+
+.header .mod_langswitcher {
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+	margin-left: 30px;
+	margin-right: 20px;
+	line-height: 35px;
+}
+
+.header .mod_langswitcher ul {
+	left: 0;
+	right: auto;
+	width: 210px;
+	border-radius: 0 3px 3px 3px;
+	border: 1px solid rgba(0,0,0,0.05);
+	box-shadow: none;
+}
+
+.header .mod_langswitcher ul li {
+	display: inline-block;
+}
+
+.header .mod_langswitcher ul li a {
+	border-bottom: 0;
+	padding: 10px 15px;
+}
+
+#nav-open-btn {
+	display: none;
+}
+
+#top-wrapper {
+	height: 100%;
+}
+
+.offcanvas-trigger {
+	display: none;
+}
+
+.stickyheader {
+	display: none!important;
+}
+
+.header .mainmenu ul li a span {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	display: inline-block;
+}
+
+.header .mainmenu ul li a i.fa {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	position: static;
+	width: 20px;
+}
+
+nav.mainmenu li.megamenu ul {
+	padding: 20px;
+}
+
+.smartmenu {
+	display: none!important;
+}
+
+.ce_revolutionslider .rs-container {
+	left: 0!important;
+	width: 100%!important;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+body .header .mainmenu ul li[class*="highlight"].last {
+	margin-top: 40px;
+	border-bottom: 0;
+}
+
+body .header .mainmenu ul li a[class*="highlight"] span {
+	padding: 5px 15px;
+}
+
+body .header .mainmenu ul li a[class*="highlight"]:not(.last) span {
+	line-height: 2rem;
+}
+
+#fix-wrapper {
+   left: 0;
+}
+
+.sidebar_trigger {
+   display: block;
+   line-height: 1;
+   height: 35px;
+}
+
+.sidebar_trigger {
+	position: relative;
+	color: rgb(0,0,0);
+	display: none;
+}
+
+.sidebar_trigger .burger {
+	height: 21px;
+	width: 21px;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	font-size: 7px;
+	cursor: pointer;
+	transition: .2s all;
+	transform: rotate(180deg);
+}
+
+.sidebar_trigger .burger .burger_lines:after {
+   left: 0;
+   top: 0; 
+   transform: rotate(45deg);
+   background: rgb(0,0,0);
+}
+
+.sidebar_trigger .burger .burger_lines:before {
+   left: 0;
+   top: 0; 
+   transform: rotate(-45deg);
+   background: rgb(0,0,0);
+}
+
+.sidebar_trigger .burger:after {
+	content: '';
+    display: block;
+    position: absolute;
+    height: 150%;
+    width: 150%;
+    top: -25%;
+    left: -25%; 
+}
+  
+.sidebar_trigger .burger .burger_lines {
+	top: 50%;
+	margin-top: -1px;
+	background-color: transparent;
+ }
+ 
+.sidebar_trigger .burger .burger_lines, 
+.sidebar_trigger .burger .burger_lines:after, 
+.sidebar_trigger .burger .burger_lines:before {
+    pointer-events: none;
+    display: block;
+    content: '';
+    width: 100%;
+    border-radius: 10px;
+    height: 2px;
+    position: absolute;
+}
+
+.sidebar_trigger .burger.rotate .burger_lines, 
+.sidebar_trigger .burger.rotate .burger_lines:after, 
+.sidebar_trigger .burger.rotate .burger_lines:before {
+	transition: all .2s; 
+}
+
+.mod_pct_megamenu {
+   top: 50%!important;
+   transform: translateY(-50%);
+   margin-left: 250px;
+   margin-right: 25px;
+   position: fixed;
+}
+}
+<?php endif; ?>
+
+<?php if($this->header19TriggerSmallview): ?>
+@media only screen and (min-width: 768px) {
+
+.sidebar_trigger {
+	display: block;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header19Background): ?>
+.header,
+.mainmenu {
+	background-color: <?= $this->header19Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header19Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header19Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header19Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header19Color; ?>;
+}
+
+.sidebar_trigger .burger .burger_lines:after,
+.sidebar_trigger .burger .burger_lines:before {
+   background: <?= $this->header19Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header19BackgroundImage): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background-image: url(<?= $this->header19BackgroundImage->file; ?>);
+	background-size: cover;
+	background-position: left top:
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header20): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background: none;
+}
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+	top: 40px;
+}
+
+.header .inside {
+	background: #ffffff;
+}
+
+.header {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header {
+	max-width: var(--contentBoxedWidth);
+}
+
+.header.cloned {
+	box-shadow: none;
+}
+
+#slider {
+	min-height: 156px;
+}
+
+#top {
+	display: none;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header20Background): ?>
+.header .inside,
+.header .inside {
+	background-color: <?= $this->header20Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header20Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header20Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header20Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header20Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header20Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header20Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header19BackgroundImage): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background-image: url(<?= $this->header19BackgroundImage->file; ?>);
+	background-size: cover;
+	background-position: left top:
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header21): ?>
+@media only screen and (min-width: 768px) {
+
+.mainmenu ul li,
+.mainmenu ul ul li {
+	line-height: 2.5;
+}
+
+.mainmenu {
+	float: none;
+	margin-bottom: 40px;
+	display: block;
+}
+
+.mainmenu ul {
+	text-align: left;
+}
+
+.mainmenu ul li {
+	display: block;
+	text-align: left;
+	position: relative;
+	right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+body .header .mainmenu ul li {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.mainmenu ul li a:hover:before,
+.mainmenu ul li a.trail:before,
+.mainmenu ul li a.active:before {
+	content: '';
+	width: 3px;
+	position: absolute;
+	background-color: rgb(160,160,160);
+	left: -30px;
+	top: 0;
+	height: 100%;
+}
+
+.mainmenu ul li ul li a:hover:before {
+	display: none;
+}
+
+.mainmenu ul li a.submenu:after {
+	font-family: "FontAwesome";
+	content: "\f105";
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.mainmenu ul li ul li {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.mainmenu ul li a {
+	text-align: left;
+}
+
+.mainmenu ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.mainmenu ul .megamenu-wrapper {
+	left: 100%;
+	top: 0;
+	width: auto!important;
+}
+
+.mainmenu ul ul {
+	margin-top: 0;
+}
+
+nav.mainmenu li.megamenu ul li {
+	min-width: 180px;
+}
+
+body .mainmenu ul ul li.open-left ul {
+	left: 100%;
+	right: auto!important;
+}
+
+.header.original {
+	height: 100%;
+}
+
+#header .inside {
+	padding-right: 0;
+	padding-left: 0;
+	height: 100%;
+}
+
+#fix-wrapper {
+	width: 270px;
+	position: fixed;
+	background: rgb(255,255,255);
+	top: 0;
+}
+
+#slider,
+#wrapper,
+#bottom,
+#offcanvas-top,
+#footer,
+.mod_breadcrumb {
+	margin-left: 270px;
+}
+
+#top .inside {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#top .mod_socials {
+	margin-left: 0;
+}
+
+.logo {
+	float: none;
+	height: 200px;
+	margin-left: 30px;
+}
+
+#fix-wrapper.fixed .header {
+	position: relative;
+}
+
+#fix-wrapper {
+	height: 100%!important;
+}
+
+#fix-wrapper.fixed .header {
+	box-shadow: none;
+}
+
+#top .meta-nav {
+	display: none;
+}
+
+#top .mod_socials {
+	float: none;
+}
+
+.mainmenu ul li a {
+	padding-left: 0;
+}
+
+.header .mod_search {
+	position: absolute;
+	left: 160px;
+	bottom: 80px;
+	line-height: 37px;
+	padding: 0;
+}
+
+.header .mod_langswitcher {
+	position: absolute;
+	left: 0;
+	bottom: 80px;
+	margin-left: 30px;
+	margin-right: 20px;
+	line-height: 35px;
+}
+
+.header .mod_langswitcher ul {
+	left: 0;
+	right: auto;
+	width: 210px;
+	border-radius: 0 3px 3px 3px;
+	border: 1px solid rgba(0,0,0,0.05);
+	box-shadow: none;
+}
+
+.header .mod_langswitcher ul li {
+	display: inline-block;
+}
+
+.header .mod_langswitcher ul li a {
+	border-bottom: 0;
+	padding: 10px 15px;
+}
+
+#nav-open-btn {
+	display: none;
+}
+
+#top-wrapper {
+	height: 100%;
+}
+
+.offcanvas-trigger {
+	display: none;
+}
+
+body.fixed-header .header.cloned {
+	height: 0!important;
+	line-height: 0!important;
+	display: none!important;
+}
+
+.header .mainmenu ul li a span {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	display: inline-block;
+}
+
+.header .mainmenu ul li a i.fa {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	position: static;
+	width: 20px;
+}
+
+#top .top_metanavi {
+	display: none;
+}
+
+nav.mainmenu li.megamenu ul {
+	padding: 20px;
+}
+
+.smartmenu {
+	display: none;
+}
+
+.ce_revolutionslider .rs-container {
+	left: 0!important;
+	width: 100%!important;
+}
+
+.header.original {
+	background: #ffffff;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header21BackgroundImage): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background-image: url(<?= $this->header21BackgroundImage->file; ?>);
+	background-size: cover;
+	background-position: left top:
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header22): ?>
+@media only screen and (min-width: 768px) {
+   
+#top {
+     display: none;
+}
+
+.header.original .mainmenu ul .megamenu-wrapper {
+	top: 0!important;
+}
+
+.mainmenu ul li, .mainmenu ul ul li {
+	line-height: 45px;
+}
+
+.mainmenu {
+	float: none;
+	margin-bottom: 40px;
+	display: block;
+	background: #fff;
+	position: relative;
+	z-index: 10;
+}
+
+.mainmenu ul {
+	text-align: left;
+}
+
+.mainmenu ul li {
+	display: block;
+	text-align: left;
+	position: relative;
+	right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.mainmenu .vlist.level_1 > li {
+	margin-top: 0;
+}
+
+body .header .mainmenu ul li {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.mainmenu ul li ul li {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+body .header.original .mainmenu ul li a:before {
+	display: none;
+}
+
+.mainmenu ul li a {
+	text-align: left;
+}
+
+.mainmenu ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.mainmenu ul .megamenu-wrapper {
+	left: 100%;
+	top: 0;
+	width: auto!important;
+	border: 0;
+	box-shadow: 1px 8px 15px rgba(0,0,0,0.1);
+}
+
+.mainmenu ul li:not(.floatbox) {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mainmenu ul li.first {
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.mainmenu ul li ul li.first,
+.mainmenu ul li ul li {
+	border-top: 0!important;
+	border-bottom: 0!important;
+}
+
+.mainmenu ul ul {
+	border-top: 0;
+	margin-top: 0;
+}
+
+nav.mainmenu li.megamenu ul li {
+	min-width: 180px;
+}
+
+.header .inside {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#fix-wrapper {
+	width: 300px;
+	position: fixed;
+	background: rgba(255,255,255,1);
+	box-shadow: 5px 0px 10px 6px rgba(0, 0, 0, 0.1);
+	top: 0;
+	right: 0;
+}
+
+#slider,
+#wrapper,
+#bottom,
+#offcanvas-top,
+#footer,
+.mod_breadcrumb {
+	margin-right: 300px;
+}
+
+.logo {
+	float: none;
+	height: 200px;
+	margin-left: 30px;
+}
+
+#fix-wrapper.fixed .header {
+	position: relative;
+}
+
+#fix-wrapper {
+	height: 100%!important;
+}
+
+#fix-wrapper.fixed .header {
+	box-shadow: none;
+}
+
+.mainmenu ul li a {
+	padding-left: 0;
+}
+
+.header .mod_search {
+	position: absolute;
+	z-index: 1;
+	right: 30px;
+	bottom: 20px;
+	line-height: 37px;
+	padding: 0;
+}
+
+.header .mod_langswitcher {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	bottom: 20px;
+	margin-left: 30px;
+	margin-right: 20px;
+	line-height: 35px;
+}
+
+.header .mod_langswitcher ul {
+	left: 0;
+	right: auto;
+	top: auto;
+	bottom: 100%;
+	border-radius: 5px;
+}
+
+#top-wrapper {
+	height: 100%;
+}
+
+.offcanvas-trigger {
+	display: none;
+}
+
+.stickyheader {
+	display: none!important;
+}
+
+.header .mainmenu ul li a span {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	display: inline-block;
+}
+
+.header .mainmenu ul li a i.fa {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	position: static;
+	width: 20px;
+}
+
+.mainmenu ul ul,
+.mainmenu ul .megamenu-wrapper {
+	left: auto!important;
+	right: 100%!important;
+}
+
+nav.mainmenu li.megamenu .megamenu-wrapper ul,
+nav.mainmenu li.megamenu .megamenu-wrapper ul a {
+	box-shadow: none;
+}
+
+.mainmenu ul .megamenu-wrapper {
+	max-width: 980px;
+}
+
+nav.mainmenu li.megamenu ul {
+	padding: 20px;
+}
+
+.smartmenu {
+	display: none!important;
+}
+
+.ce_revolutionslider .rs-container {
+	left: 0!important;
+	width: 100%!important;
+}
+
+.header .mod_socials {
+	float: none;
+	line-height: 1;
+	padding: 5px 0;
+	margin: 5px 0 25px 20px;
+	border-top: 1px solid rgba(0,0,0,0.05);
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header .mod_socials a {
+	display: inline-block;
+	float: none;
+}
+
+.header .mod_socials:before {
+	display: none;
+}
+
+body .header .mainmenu ul li[class*="highlight"].last {
+	margin-top: 40px;
+	border-bottom: 0;
+}
+
+body .header .mainmenu ul li a[class*="highlight"] span {
+	padding: 0px 15px;
+}
+
+body .header .mainmenu ul li a[class*="highlight"]:not(.last) span {
+	line-height: 2rem;
+}
+
+.mod_pct_megamenu {
+   top: 50%!important;
+   transform: translateY(-50%);
+   margin-right: 285px;
+   margin-left: 25px;
+   position: fixed;
+   left: auto;
+}
+
+.mod_pct_megamenu .item.active {
+   box-shadow: 0 0 11px 5px rgba(0,0,0,0.1);
+}
+
+.header .mainmenu a.pct_megamenu:after, 
+.header .mainmenu a.submenu:after {
+   position: absolute;
+   right: 10px;
+}
+
+.header .inside {
+	height: 100vh;
+}
+}
+<?php endif; ?>
+
+<?php if($this->header22vCenter): ?>
+.mainmenu {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: calc((-1 * var(--logoHeight)) - 55px);
+}
+<?php endif; ?>
+
+<?php if($this->header22Background): ?>
+.header,
+.mainmenu {
+	background-color: <?= $this->header22Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header22Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header22Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header22Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header22LineColor): ?>
+@media only screen and (min-width: 768px) {
+
+.mainmenu ul li.first,
+.mainmenu ul li:not(.floatbox) {
+	border-color: <?= $this->header22LineColor; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header22BackgroundImage): ?>
+@media only screen and (min-width: 768px) {
+
+.header {
+	background-image: url(<?= $this->header22BackgroundImage->file; ?>);
+	background-size: cover;
+	background-position: left top:
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header23): ?>
+@media only screen and (min-width: 768px) {
+
+.header.original .logo {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header.original .mainmenu {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fff;
+}
+
+.header.original .mod_langswitcher {
+	position: absolute;
+	top: 0;
+	left: var(--headerPaddings);
+	margin-left: 0;
+}
+
+.header.original .mainmenu ul {
+	text-align: center;
+}
+
+.header.original .mainmenu ul,
+.header.original .mainmenu ul li a {
+	line-height: 90px;
+}
+
+.header.original .mod_search {
+	position: absolute;
+	right: var(--headerPaddings);
+	top: 0;
+}
+
+.header {
+	background: #f8f8f8;
+}
+
+.header.original .mainmenu {
+	background: #fff;
+}
+
+.header .mod_socials {
+	display: none!important;
+}
+
+#top .inside {
+	background: none!important;
+}
+
+.header.original .smartmenu {
+	position: absolute;
+	top: 0;
+	right: 100px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header23Background): ?>
+.header {
+	background-color: <?= $this->header23Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header23Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header23Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header23Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header23Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header23Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header24): ?>
+#top .inside {
+	background: none!important;
+}
+
+.logo {
+	position: absolute;
+}
+
+.header {
+	line-height: 70px!important;
+}
+
+.smartmenu .smartmenu-trigger {
+	height: 70px!important;
+}
+
+@media only screen and (max-width: 767px) {
+
+.stickyheader .header.cloned .inside,
+.header .inside {
+	height: 70px!important;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header24PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header24Background): ?>
+.header {
+	background-color: <?= $this->header24Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header24Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header24Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header24Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header24Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header24Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header24Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header24Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header25): ?>
+@media only screen and (min-width: 768px) {
+
+.header .inside {
+	max-width: calc(var(--contentBoxedWidth) - (var(--headerPaddings) * 2));
+}
+
+.header {
+	height: 75px;
+	background: #000;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header .inside {
+	background: #ffffff;
+}
+
+.header.cloned {
+	background: none;
+	box-shadow: none;
+}
+
+#slider {
+	min-height: 156px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header25Background): ?>
+@media only screen and (min-width: 768px) {
+	.header {
+		background-color: <?= $this->header25Background; ?>;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->header25Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header25Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header25Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header25Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header25Color; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->header25Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header26): ?>
+#top .inside {
+	background: none!important;
+}
+
+.header .inside {
+	max-width: 100%;
+	padding-left: 0;
+}
+
+#top .inside {
+	max-width: 100%;
+}
+<?php endif; ?>
+
+<?php if($this->header26PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+	
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+.header {
+	background-color: transparent;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header26Background): ?>
+.header {
+	background-color: <?= $this->header26Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header26Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header26Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header26Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header26Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header26Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header26Border): ?>
+.header.original {
+	border-bottom: 1px solid <?= $this->header26Border; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyBackground): ?>
+@media only screen and (min-width: 768px) {
+
+.header.cloned {
+	background: <?= $this->headerStickyBackground; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header27): ?>
+.header {
+	background: none!important;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.header .inside {
+	box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+	border-radius: 100px;
+	background: #fff;
+}
+
+.header.cloned {
+	box-shadow: none!important;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.header.cloned .inside {
+	box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+}
+
+<?php endif; ?>
+
+<?php if($this->header27PositionAbsolute): ?>
+@media only screen and (min-width: 768px) {
+
+#fix-wrapper {
+	position: absolute;
+	left: 0;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->header27Background): ?>
+.header .inside {
+	background-color: <?= $this->header27Background; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header27Color): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->header27Color; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->header27Color; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->header27Color; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->header27Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->header27ShadowNone): ?>
+.header .inside {
+	box-shadow: none;
+}
+<?php endif; ?>
+
+
+<?php if($this->headerStickyFontSize): ?>
+@media only screen and (min-width: 768px) {
+
+.header.cloned,
+.header.cloned .mainmenu ul li a,
+.header.cloned .mod_langswitcher {
+	font-size: <?= $this->headerStickyFontSize; ?>px;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyColor): ?>
+@media only screen and (min-width: 768px) {
+
+.header.cloned .mainmenu ul li a,
+.header.cloned .ce_search_label i,
+.header.cloned .mod_langswitcher .mod_langswitcher_inside,
+.header.cloned .mod_socials a {
+	color: <?= $this->headerStickyColor; ?>;
+}
+
+.header.cloned .mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->headerStickyColor; ?>;
+}
+
+.header.cloned .mod_socials:before {
+	border-color: <?= $this->headerStickyColor; ?>;
+}
+
+.header.cloned .smartmenu .smartmenu-trigger .line,
+.header.cloned .smartmenu .smartmenu-trigger .line:before,
+.header.cloned .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->headerStickyColor; ?>;
+
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileBackground): ?>
+@media only screen and (max-width: 767px) {
+
+.header {
+	background: <?= $this->headerMobileBackground; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileTriggerColor): ?>
+.mmenu_trigger {
+	color: <?= $this->headerMobileTriggerColor; ?>;
+}
+
+.mmenu_trigger .burger .burger_lines, 
+.mmenu_trigger .burger .burger_lines:after, 
+.mmenu_trigger .burger .burger_lines:before {
+	background-color: <?= $this->headerMobileTriggerColor; ?>;
+}
+<?php endif; ?>
+
+
+<?php if($this->headerMobileColor): ?>
+@media only screen and (max-width: 767px) {
+
+.header .mod_langswitcher .mod_langswitcher_inside {
+	color: <?= $this->headerMobileColor; ?>;
+}
+
+.header .mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->headerMobileColor; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->logo_desktop): ?>
+.logo a {
+	background-image: url(<?= $this->logo_desktop->file; ?>);
+}
+<?php endif; ?>
+
+
+<?php if($this->logo_sticky): ?>
+.stickyheader .logo a {
+	background-image: url(<?= $this->logo_sticky->file; ?>);
+}
+<?php endif; ?>
+
+<?php if($this->logo_mobile): ?>
+@media only screen and (max-width: 767px) {
+	.logo a {
+		background-image: url(<?= $this->logo_mobile->file; ?>);
+	}
+}
+<?php endif; ?>
+
+<?php if($this->logo_sticky_mob): ?>
+@media only screen and (max-width: 767px) {
+	.stickyheader .logo a {
+		background-image: url(<?= $this->logo_sticky_mob->file; ?>);
+	}
+}
+<?php endif; ?>
+
+
+<?php if($this->logo_width): ?>
+@media only screen and (min-width: 768px) {
+
+	.header.original .logo {
+		width: <?= $this->logo_width; ?>px;
+	}
+	
+		:root {
+		--logoWidth: <?= $this->logo_height; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+
+<?php if($this->logo_height): ?>
+@media only screen and (min-width: 768px) {
+
+	.header.original .logo {
+		height: <?= $this->logo_height; ?>px;
+	}
+
+	.header.original {
+		line-height: <?= $this->logo_height; ?>px;
+	}
+
+	.smartmenu .smartmenu-trigger {
+		height: <?= $this->logo_height; ?>px;
+	}
+	
+	:root {
+		--logoHeight: <?= $this->logo_height; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+
+<?php if($this->logo_width_sticky): ?>
+@media only screen and (min-width: 768px) {
+
+	.stickyheader .header .logo {
+		width: <?= $this->logo_width_sticky; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->logo_height_sticky): ?>
+@media only screen and (min-width: 768px) {
+
+	.stickyheader .header .logo {
+		height: <?= $this->logo_height_sticky; ?>px;
+	}
+
+	.stickyheader .header.cloned {
+		line-height: <?= $this->logo_height_sticky; ?>px;
+	}
+	
+	.header.cloned .smartmenu .smartmenu-trigger {
+		height: <?= $this->logo_height_sticky; ?>px;
+	}
+	
+	html {
+		scroll-padding: <?= $this->logo_height_sticky; ?>px 0 0 0;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->logo_width_tablet): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+	.header.original .logo {
+		width: <?= $this->logo_width_tablet; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->logo_height_tablet): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+	.header.original .logo {
+		height: <?= $this->logo_height_tablet; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+
+
+<?php if($this->logo_width_sticky_tablet): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+	.stickyheader .header .logo {
+		width: <?= $this->logo_width_sticky_tablet; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->logo_height_sticky_tablet): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+	.stickyheader .header .logo {
+		height: <?= $this->logo_height_sticky_tablet; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+
+
+
+<?php if($this->logo_width_mobile): ?>
+@media only screen and (max-width: 767px) {
+
+	.header .logo {
+		width: <?= $this->logo_width_mobile; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+
+<?php if($this->logo_height_mobile): ?>
+@media only screen and (max-width: 767px) {
+
+	.header .logo {
+		height: <?= $this->logo_height_mobile; ?>px;
+	}
+	
+	.header {
+		line-height: <?= $this->logo_height_mobile; ?>px;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->logo_width_sticky_mob): ?>
+@media only screen and (max-width: 767px) {
+
+	.stickyheader .header .logo {
+		width: <?= $this->logo_width_sticky_mob; ?>px;
+	}
+	
+}
+<?php endif; ?>
+
+
+<?php if($this->logo_height_sticky_mob): ?>
+@media only screen and (max-width: 767px) {
+
+	.stickyheader .header .logo {
+		height: <?= $this->logo_height_sticky_mob; ?>px;
+	}
+	
+	html {
+		scroll-padding: <?= $this->logo_height_sticky_mob; ?>px 0 0 0;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->menuFontFamily): ?>
+.mainmenu ul li a  {
+	font-family: <?= $this->menuFontFamily; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontFamily_weight): ?>
+.mainmenu ul li a  {
+	font-weight: <?= $this->menuFontFamily_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontSize): ?>
+.mainmenu ul li a  {
+	font-size: <?= $this->menuFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontColor): ?>
+.header .mainmenu ul li a,
+.header .mainmenu ul li ul a.active,
+.header .ce_search_label i,
+.header .mod_langswitcher .mod_langswitcher_inside,
+.header .header_metanavi a,
+.header .mod_socials a {
+	color: <?= $this->menuFontColor; ?>;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->menuFontColor; ?>;
+}
+
+.header .mod_socials:before {
+	border-color: <?= $this->menuFontColor; ?>;
+}
+
+.header .smartmenu .smartmenu-trigger .line,
+.header .smartmenu .smartmenu-trigger .line:before,
+.header .smartmenu .smartmenu-trigger .line:after {
+	background: <?= $this->menuFontColor; ?>;
+}
+
+.header.original .mainmenu:before {
+	background: <?= $this->menuFontColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontColorActive): ?>
+.header.original .mainmenu ul li a.trail.a-level_1,
+.header.original .mainmenu ul li a.active.a-level_1,
+.header.cloned .mainmenu ul li a.trail.a-level_1,
+.header.cloned .mainmenu ul li a.active.a-level_1,
+.mod_pct_megamenu .mod_navigation a.active.a-level_1 {
+	color: <?= $this->menuFontColorActive; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontColorHover): ?>
+.header .mainmenu ul li a.a-level_1:hover  {
+	color: <?= $this->menuFontColorHover; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontUppercase): ?>
+.mainmenu ul li a {
+	text-transform: uppercase;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontLineHeight): ?>
+.header.original .mainmenu ul li {
+	line-height: <?= $this->menuFontLineHeight; ?>px;
+}
+.header.original .mainmenu ul .megamenu-wrapper {
+	top: auto;
+}
+<?php endif; ?>
+
+<?php if($this->menuFontLetterSpacing): ?>
+.header .mainmenu ul li {
+	letter-spacing: <?= $this->menuFontLetterSpacing; ?>px;
+}
+<?php endif; ?>
+
+
+<?php if($this->dropdownFontFamily): ?>
+.mainmenu ul li ul li a,
+.mod_pct_megamenu .mod_navigation a {
+	font-family: <?= $this->dropdownFontFamily; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownFontSize): ?>
+.mainmenu ul li ul li a,
+.mod_pct_megamenu .mod_navigation a  {
+	font-size: <?= $this->dropdownFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownFontLineHeight): ?>
+.mainmenu ul li ul li a,
+.mod_pct_megamenu .mod_navigation a  {
+	line-height: <?= $this->dropdownFontLineHeight; ?>px!important;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownFontUppercase): ?>
+.mainmenu ul li ul li a,
+.mod_pct_megamenu .mod_navigation a {
+	text-transform: uppercase;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownFontBorderNone): ?>
+.mainmenu ul li ul li a {
+	border: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuMargin): ?>
+.mainmenu ul li {
+	margin-left: <?= $this->menuMargin; ?>px;
+	margin-right: <?= $this->menuMargin; ?>px;
+}
+
+.mainmenu ul li a:after {
+	right: -<?= $this->menuMargin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->menuBreakpoint): ?>
+@media only screen and (min-width: 768px) and (max-width: <?= $this->menuBreakpoint; ?>px) {
+
+	.smartmenu {
+		display: block;
+	}
+
+	.mainmenu {
+		display: none;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->menuBreakpoint && $this->header10): ?>
+@media only screen and (min-width: 768px) and (max-width: <?= $this->menuBreakpoint; ?>px) {
+	.header.original .mod_langswitcher {
+		position: absolute;
+		top: 50%;
+		right: 100px;
+		margin-right: 0;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+	}
+
+	.header.original .mod_search {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+	}
+}
+<?php endif; ?>
+
+<?php if($this->menuLayoutIconV2): ?>
+.mainmenu ul li a.nav-icon span {
+	line-height: inherit;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+
+.mainmenu ul li a i.fa {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	position: static;
+	width: auto;
+	margin-right: 7px;
+}
+<?php endif; ?>
+
+<?php if($this->menuLayoutDividerV1): ?>
+.header.original .mainmenu ul li a:before {
+	content: '';
+	width: 2px;
+	background: <?= $this->menuLayoutDividerV1; ?> !important;
+	height: 2px;
+	position: absolute;
+	left: -15px;
+	top: 50%
+}
+
+.header.original .mainmenu ul li ul li a:before,
+.header.original .mainmenu ul li.first a:before,
+.header.original .mainmenu ul li.float_left.floatbox li:first-child a:before {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuLayoutDividerV2): ?>
+.header.original .mainmenu ul li a:before {
+	content: '';
+	width: 1px;
+	background: <?= $this->menuLayoutDividerV2; ?> !important;
+	transform: rotate(35deg);
+	-webkit-transform: rotate(35deg);
+	height: 20px;
+	position: absolute;
+	left: -15px;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.header.original .mainmenu ul li ul li a:before,
+.header.original .mainmenu ul li.first a:before,
+.header.original .mainmenu ul li.float_left.floatbox li:first-child a:before {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuLayoutDividerV3): ?>
+.header.original .mainmenu ul li a:before {
+	content: '';
+	width: 1px;
+	background: <?= $this->menuLayoutDividerV3; ?> !important;
+	height: 20px;
+	position: absolute;
+	left: -15px;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.header.original .mainmenu ul li ul li a:before,
+.header.original .mainmenu ul li.first a:before,
+.header.original .mainmenu ul li.float_left.floatbox li:first-child a:before {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuLayoutArrows): ?>
+.header .mainmenu a.pct_megamenu:after,
+.header .mainmenu a.submenu:after {
+   font-family: FontAwesome;
+   content: "\f107";
+   margin-left: 5px;
+   transition: all 0.3s;
+   display: inline-block;
+   transform-origin: center center;
+}
+
+.header .mainmenu a.pct_megamenu.active:after,
+.header .mainmenu a.active.submenu:after,
+.header .mainmenu a.submenu:not(.click_open):not(.pct_megamenu):hover:after,
+.header .mainmenu li.submenu:not(.click_open):not(.pct_megamenu):hover a:after {
+   transform: rotate(180deg);
+}
+
+.header .mainmenu ul ul li.submenu a:after {
+   transform: rotate(-90deg)!important;
+}
+<?php endif; ?>
+
+<?php if($this->menuActiveColor): ?>
+.header.original .mainmenu ul li a.trail,
+.header.original .mainmenu ul li a.active,
+.header.cloned .mainmenu ul li a.trail,
+.header.cloned .mainmenu ul li a.active,
+.mod_pct_megamenu .mod_navigation a.active {
+	color: <?= $this->menuActiveColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->menuActiveStyle2): ?>
+.header .mainmenu ul li a.a-level_1.trail:not(.highlight),
+.header .mainmenu ul li a.a-level_1.active:not(.highlight) {
+	background: <?= $this->menuActiveStyle2; ?>;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+<?php endif; ?>
+
+<?php if($this->menuActiveStyle3): ?>
+.header .mainmenu ul li a.a-level_1.trail:not(.highlight):after,
+.header .mainmenu ul li a.a-level_1.active:not(.highlight):after {
+	border: 2px solid <?= $this->menuActiveStyle3; ?>;
+	padding-left: 15px;
+	padding-right: 15px;
+	content: '';
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	margin-bottom: -20px;
+	bottom: 50%;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background: none!important;
+}
+
+.header .mainmenu ul li a.trail:not(.highlight),
+.header .mainmenu ul li a.active:not(.highlight) {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.header .mainmenu ul li a.nav-icon span {
+	line-height: inherit;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+
+.header .mainmenu ul li a i.fa {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuActiveStyle4): ?>
+.header ul li a.a-level_1.trail:not(.highlight):before,
+.header ul li a.a-level_1.active:not(.highlight):before {
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 3px;
+	width: 100%!important;
+	background: <?= $this->menuActiveStyle4; ?> !important;
+	left: 0;
+}
+
+.header ul li a.a-level_1:not(.highlight):before  {
+	content: '';
+	height: 3px;
+	background: <?= $this->menuActiveStyle4; ?> !important;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 0;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.header.original ul li ul li a:not(.highlight):before {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuActiveStyle5): ?>
+.header .mainmenu ul li a.a-level_1.trail:not(.highlight) span,
+.header .mainmenu ul li a.a-level_1.active:not(.highlight) span {
+	border-bottom: 1px solid <?= $this->menuActiveStyle5; ?>;
+	padding-bottom: 8px;
+}
+
+.header .mainmenu ul ul li a.a-level_1.trail:not(.highlight) span,
+.header .mainmenu ul ul li a.a-level_1.active:not(.highlight) span {
+	border-bottom: none;
+}
+<?php endif; ?>
+
+<?php if($this->menuActiveStyle6): ?>
+@media only screen and (min-width: 768px) {
+
+.header .mainmenu ul li a.a-level_1.trail:not(.highlight) span,
+.header .mainmenu ul li a.a-level_1.active:not(.highlight) span {
+	background: <?= $this->menuActiveStyle6; ?>;
+	padding: 10px 25px;
+	border-radius: 100px;
+}
+
+.header .mainmenu ul ul li a.a-level_1.trail:not(.highlight) span,
+.header .mainmenu ul ul li a.a-level_1.active:not(.highlight) span {
+	background: none;
+	padding: 0;
+}
+
+.mainmenu ul li a.nav-icon span {
+	line-height: inherit;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+
+.mainmenu ul li a i.fa {
+	display: none;
+}
+
+}
+
+<?php endif; ?>
+
+<?php if($this->menuActiveStyle7): ?>
+@media only screen and (min-width: 768px) {
+
+.header .mainmenu ul li a.a-level_1.trail:not(.highlight) span,
+.header .mainmenu ul li a.a-level_1.active:not(.highlight) span {
+	background: <?= $this->menuActiveStyle7; ?>;
+	padding: 10px 15px;
+}
+
+.header .mainmenu ul ul li a.a-level_1.trail:not(.highlight) span,
+.header .mainmenu ul ul li a.a-level_1.active:not(.highlight) span {
+	background: none;
+	padding: 0;
+}
+
+.mainmenu ul li a.nav-icon span {
+	line-height: inherit;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+
+.mainmenu ul li a i.fa {
+	display: none;
+}
+
+}
+
+<?php endif; ?>
+
+<?php if($this->highlightfontWeight): ?>
+:root {
+	--menu-highlight-font-weight: <?= $this->highlightfontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->highlightfontSize): ?>
+:root {
+	--menu-highlight-font-size: <?= $this->highlightfontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->highlightColor): ?>
+:root {
+	--menu-highlight-color: <?= $this->highlightColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->highlightBgColor): ?>
+:root {
+	--menu-highlight-bg-color: <?= $this->highlightBgColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->highlightBorderColor): ?>
+:root {
+	--menu-highlight-border-color: <?= $this->highlightBorderColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->highlightBorderRadius): ?>
+:root {
+	--menu-highlight-border-radius: <?= $this->highlightBorderRadius; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->highlightBorderWidth): ?>
+:root {
+	--menu-highlight-border-width: <?= $this->highlightBorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->highlightPaddingLR): ?>
+:root {
+	--menu-highlight-padding-lr: <?= $this->highlightPaddingLR; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->highlightPaddingTB): ?>
+:root {
+	--menu-highlight-padding-tb: <?= $this->highlightPaddingTB; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->highlightMarginLeft): ?>
+:root {
+	--menu-highlight-margin-left: <?= $this->highlightMarginLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->highlightMarginRight): ?>
+:root {
+	--menu-highlight-margin-right: <?= $this->highlightMarginRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownColor): ?>
+.mainmenu ul ul li a,
+nav.mainmenu a.menuheader,
+.mod_pct_megamenu .mod_navigation a,
+#top .mod_navigation li ul li a {
+	color: <?= $this->dropdownColor; ?>!important;
+}
+
+.header .mainmenu ul ul li a:not(.menuheader):not(.megamenu) span:before,
+.header .mainmenu ul ul li a.active span:before,
+.header .mainmenu ul ul li a.trail:not(.megamenu) span:before,
+.mod_pct_megamenu .mod_navigation a:before {
+   background: <?= $this->dropdownColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownActiveColor): ?>
+nav.mainmenu ul ul a.active,
+.mod_pct_megamenu .mod_navigation a.active,
+#top .mod_navigation li ul li a.active {
+	color: <?= $this->dropdownActiveColor; ?>!important;
+}
+
+.mod_pct_megamenu .mod_navigation a.active:before,
+.header .mainmenu ul ul li a.active span:before {
+   background-color: <?= $this->dropdownActiveColor; ?>!important;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownMMHeadlines): ?>
+.mod_pct_megamenu .ce_headline {
+   color: <?= $this->dropdownMMHeadlines; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownNoUnderline): ?>
+.header .mainmenu ul ul li a:hover span:before,
+.header .mainmenu ul ul li a.active span:before,
+.header .mainmenu ul ul li a.trail span:before,
+.mod_pct_megamenu .mod_navigation a:hover:before,
+.mod_pct_megamenu .mod_navigation a.active:before {
+   display: none;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownRoundedCorners): ?>
+.mainmenu ul ul,
+#top .mod_navigation li ul,
+.mod_pct_megamenu {
+   border-radius: 5px;
+}
+
+.mod_pct_megamenu .column:last-of-type .attributes {
+	border-radius: 0 5px 5px 0;
+}
+<?php endif; ?>
+
+<?php if($this->dropdownBackground): ?>
+.mainmenu ul ul,
+#top .mod_navigation li ul {
+	background-color: <?= $this->dropdownBackground; ?>
+}
+
+#top .mod_navigation li ul:before {
+	border-color: transparent transparent <?= $this->dropdownBackground; ?> transparent;
+}
+
+nav.mainmenu a.menuheader {
+	background-color: <?= $this->dropdownBackground; ?>!important;
+}
+
+.mainmenu ul .megamenu-wrapper ul ul {
+	background: none;
+}
+
+.mod_pct_megamenu {
+	background-color: <?= $this->dropdownBackground; ?>
+}
+
+.mod_langswitcher ul {
+	background-color: <?= $this->dropdownBackground; ?>
+}
+
+<?php endif; ?>
+
+<?php if($this->dropdownBorderColor): ?>
+.mainmenu ul ul li a,
+nav.mainmenu li.megamenu > .last,
+.mainmenu ul .megamenu ul li,
+.mainmenu ul li.megamenu .megamenu-wrapper {
+	border-color: <?= $this->dropdownBorderColor; ?>;
+}
+<?php endif; ?>
+
+
+<?php if($this->mobileMenuSearch): ?>
+.mm-menu .mod_search {
+	display: none;
+}
+
+.mm-navbars_top {
+	height: 0;
+}
+
+.mm-navbars_top .mm-panels {
+	top: 0px;
+}
+<?php endif; ?>
+
+<?php if($this->mobileMenuLangswitch): ?>
+.mm-menu .mod_langswitcher {
+	display: none;
+}
+
+.mm-navbars_bottom {
+	height: 40px;
+}
+<?php endif; ?>
+
+<?php if($this->mobileMenuSocials): ?>
+.mm-menu .mod_socials {
+	display: none;
+}
+
+.mm-navbars_bottom {
+	height: 40px;
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyColorActive): ?>
+.header.cloned .mainmenu ul li a.trail.a-level_1,
+.header.cloned .mainmenu ul li a.active.a-level_1 {
+	color: <?= $this->headerStickyColorActive; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyHighlightPaddingLR): ?>
+:root {
+	--menu-highlight-padding-lr-sticky: <?= $this->headerStickyHighlightPaddingLR; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyHighlightPaddingTB): ?>
+:root {
+	--menu-highlight-padding-tb-sticky: <?= $this->headerStickyHighlightPaddingTB; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyHighlightMarginLeft): ?>
+:root {
+	--menu-highlight-margin-left-sticky: <?= $this->headerStickyHighlightMarginLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headerStickyHighlightMarginRight): ?>
+:root {
+	--menu-highlight-margin-right-sticky: <?= $this->headerStickyHighlightMarginRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->noSmartmenu): ?>
+@media only screen and (min-width: 768px) {
+
+	.mainmenu {
+		display: block;
+	}
+
+	.smartmenu {
+		display: none;
+	}
+
+}
+<?php endif; ?>
+
+<?php if($this->langswitch_style2): ?>
+.header .mod_langswitcher {
+	font-size: 0.9rem;
+}
+
+.header .mod_langswitcher .mod_langswitcher_inside {
+	padding-right: 0;
+	vertical-align: middle;
+}
+
+.mod_langswitcher ul {
+	left: auto;
+	right: 0;
+	width: auto;
+}
+
+.mod_langswitcher .mod_langswitcher_inside {
+	line-height: 1rem;
+}
+
+.mod_langswitcher span {
+	display: inline-block
+}
+
+.mod_langswitcher img {
+	display: none;
+}
+
+.mod_langswitcher .mod_langswitcher_inside:before {
+	display: none;
+}
+
+#top .mod_langswitcher .mod_langswitcher_inside span:hover {
+	background: none;
+}
+
+.mm-menu .mod_langswitcher ul li img {
+	display: none;
+}
+
+.mm-menu .mod_langswitcher .mod_langswitcher_inside > span {
+	display: none;
+}
+
+<?php endif; ?>
+
+<?php if($this->smartmenuFont): ?>
+.smartmenu-content .mod_navigation li:not(.floatbox) {
+	font-family:<?= $this->smartmenuFont; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuFontSize): ?>
+.smartmenu-content .mod_navigation li:not(.floatbox) {
+	font-size:<?= $this->smartmenuFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuFontLineHeight): ?>
+.smartmenu-content .mod_navigation li:not(.floatbox) {
+	line-height:<?= $this->smartmenuFontLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuFontLineHeight): ?>
+.smartmenu-content .mod_navigation li:not(.floatbox) {
+	line-height:<?= $this->smartmenuFontLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuFontUppercase): ?>
+.smartmenu-content .mod_navigation li:not(.floatbox) {
+	text-transform: uppercase;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuFontColor): ?>
+.smartmenu-content .mod_navigation a {
+	color:<?= $this->smartmenuFontColor; ?>;
+}
+
+.smartmenu-content .mod_navigation a.active, .smartmenu-content .mod_navigation a.trail {
+	border-color:<?= $this->smartmenuFontColor; ?>;
+}
+
+.smartmenu-content .smartmenu-close:before, .smartmenu-content .smartmenu-close:after {
+	background:<?= $this->smartmenuFontColor; ?>;
+}
+
+.smartmenu-content .subitems_trigger:before {
+	color: <?= $this->smartmenuFontColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuBackgroundColor): ?>
+.smartmenu-content {
+	background-color:<?= $this->smartmenuBackgroundColor; ?>;
+}
+
+body {
+	background-color:<?= $this->smartmenuBackgroundColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuHighlightPaddingLR): ?>
+:root {
+	--menu-highlight-padding-lr-smartmenu: <?= $this->smartmenuHighlightPaddingLR; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuHighlightFontSize): ?>
+:root {
+	--menu-highlight-font-size-smartmenu: <?= $this->smartmenuHighlightFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuHighlightPaddingTB): ?>
+:root {
+	--menu-highlight-padding-tb-smartmenu: <?= $this->smartmenuHighlightPaddingTB; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuHighlightMarginTop): ?>
+:root {
+	--menu-highlight-margin-top-smartmenu: <?= $this->smartmenuHighlightMarginTop; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuHighlightMarginBottom): ?>
+:root {
+	--menu-highlight-margin-bottom-smartmenu: <?= $this->smartmenuHighlightMarginBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuOff): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+	.smartmenu {
+		display: none;
+	}
+	.mainmenu {
+		display: block;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->mmenuOnTablets): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+	#top {
+		display: none!important;
+	}
+
+   .mmenu_trigger {
+      float: right!important;
+      display: flex!important;
+      margin-left: 15px!important;
+   }
+   
+   .smartmenu {
+      display: none!important;
+   }
+   
+   .mainmenu {
+      display: none!important;
+   }
+   
+   #mmenu {
+      display: block!important;
+   }
+
+    #fix-wrapper {
+		width: 100%!important; 
+		height:auto!important;
+		top: 0!important;
+	}
+
+	.mmenu_trigger {
+		display: flex!important;
+		right: 20px!important;
+	}
+	
+	.header .mainmenu,
+	.header .mod_socials,
+	.header .mod_langswitcher,
+	.header .mod_search,
+	.header .header_metanavi {
+		display: none!important;
+	}
+	
+	#slider,
+	#wrapper, 
+	#bottom, 
+	#offcanvas-top, 
+	#footer {
+		margin-left: auto!important;
+		margin-right: auto!important;
+	}  
+
+	#mmenu {
+		display: block!important;
+		top: 0;
+	}
+
+	.logo {
+		float: left!important;
+		position: static!important;
+		transform: none!important;
+		-webkit-transform: none!important;
+		margin: 0!important;
+	}
+
+	.header {
+		margin: 0!important;
+	}
+
+	.header .inside {
+		padding-left: 40px!important;
+	}
+
+	.header.original:before {
+		display: none!important;
+	}
+
+	.header.original {
+		height: auto!important;
+	}
+}
+
+<?php endif; ?>
+
+<?php if($this->mmenuOnTabletsColor): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+   .mmenu_trigger {
+      color: <?= $this->mmenuOnTabletsColor; ?>;
+   }
+   
+   .mmenu_trigger .burger .burger_lines, 
+   .mmenu_trigger .burger .burger_lines:after, 
+   .mmenu_trigger .burger .burger_lines:before
+    {
+          background-color: <?= $this->mmenuOnTabletsColor; ?>;
+    }
+}
+<?php endif; ?>
+
+<?php if($this->smartmenuForceTablets): ?>
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+	.mainmenu {
+		display: none;
+	}
+
+	.smartmenu {
+		display: block;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->topbarMobile): ?>
+@media only screen and (max-width: 767px) {
+	#top {
+		display: block!important;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->topbarMobileHideLogin): ?>
+@media only screen and (max-width: 767px) {
+	#top .mod_login_top {
+		display: none;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileShowLangswitch): ?>
+@media only screen and (max-width: 767px) {
+	.header .mod_langswitcher {
+		display: block;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileHideTriggerlabel): ?>
+.mmenu_trigger .label {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileTriggerlabelUppercase): ?>
+.mmenu_trigger .label {
+	text-transform: uppercase;
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileTriggerlabelSize): ?>
+.mmenu_trigger .label {
+	font-size: <?= $this->headerMobileTriggerlabelSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileAbsoluteHome): ?>
+@media only screen and (max-width: 767px) {
+	body.home #fix-wrapper {
+			position: absolute;
+		}
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileAbsoluteContent): ?>
+@media only screen and (max-width: 767px) {
+	body.content_page #fix-wrapper {
+			position: absolute;
+		}
+}
+<?php endif; ?>
+
+<?php if($this->headerMobileLogoCenter): ?>
+@media only screen and (max-width: 767px) {
+	.logo {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.mmenu_trigger .label {
+		display: none;
+	}
+	
+	.mmenu_trigger {
+		top: 50%;
+		right: 20px;
+		position: absolute;
+		transform: translateY(-50%);
+	}
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileBackground): ?>
+@media only screen and (max-width: 767px) {
+
+.stickyheader .header {
+	background: <?= $this->stickyMobileBackground; ?>;
+}
+
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileTriggerColor): ?>
+.stickyheader .mmenu_trigger {
+	color: <?= $this->stickyMobileTriggerColor; ?>;
+}
+
+.stickyheader .mmenu_trigger .burger .burger_lines, 
+.stickyheader .mmenu_trigger .burger .burger_lines:after, 
+.stickyheader .mmenu_trigger .burger .burger_lines:before {
+	background-color: <?= $this->stickyMobileTriggerColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileShowLangswitch): ?>
+@media only screen and (max-width: 767px) {
+	.stickyheader .header .mod_langswitcher {
+		display: block;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileTriggerV2): ?>
+.stickyheader #nav-open-btn:before {
+	display: none;
+}
+
+.stickyheader #nav-open-btn span {
+	height: 1px;
+	background: <?= $this->stickyMobileTriggerV2; ?>;
+	display: block;
+}
+
+.stickyheader #nav-open-btn span.line2 {
+	margin: 8px 0;
+}
+
+.stickyheader #nav-open-btn {
+	margin-top: -10px;
+	height: 20px;
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileTriggerV3): ?>
+
+.stickyheader #nav-open-btn {
+	width: 75px;
+}
+
+.stickyheader #nav-open-btn:before {
+	display: none;
+}
+
+.stickyheader #nav-open-btn span {
+	height: 1px;
+	background: <?= $this->stickyMobileTriggerV3; ?>;
+	display: block;
+	width: 28px;
+}
+
+.stickyheader #nav-open-btn strong {
+	display: block;
+	position: absolute;
+	top: 2px;
+	right: 0;
+	color: <?= $this->stickyMobileTriggerV3; ?>;
+	line-height: 1;
+}
+
+.stickyheader #nav-open-btn span.line2 {
+	margin: 7px 0;
+}
+
+.stickyheader #nav-open-btn {
+	margin-top: -10px;
+	height: 20px;
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileLogoCenter): ?>
+@media only screen and (max-width: 767px) {
+	.stickyheader .logo {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->stickyMobileHide): ?>
+@media only screen and (max-width: 767px) {
+	.stickyheader {
+		display: none;
+	}
+	
+	html {
+		scroll-padding: 0;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphSize): ?>
+p,
+.ce_text ul,
+.ce_text ol {
+	font-size: <?= $this->paragraphSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLineHeight): ?>
+p,
+.ce_text ul,
+.ce_text ol {
+	line-height: <?= $this->paragraphLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphColor): ?>
+p, 
+p a,
+.ce_text {
+	color: <?= $this->paragraphColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphSizeSmall): ?>
+:root {
+	--paragraph-small-font-size: <?= $this->paragraphSizeSmall; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLineHeightSmall): ?>
+:root {
+	--paragraph-small-line-height: <?= $this->paragraphLineHeightSmall; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphColorSmall): ?>
+.ce_text.format-p-small p,
+.ce_text.format-p-small ul,
+.ce_text.format-p-small ol,
+.ce_text.format-p-small p a {
+	color: <?= $this->paragraphColorSmall; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphSizeMedium): ?>
+:root {
+	--paragraph-medium-font-size: <?= $this->paragraphSizeMedium; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLineHeightMedium): ?>
+:root {
+	--paragraph-medium-line-height: <?= $this->paragraphLineHeightMedium; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphColorMedium): ?>
+.ce_text.format-p-medium p,
+.ce_text.format-p-medium ul,
+.ce_text.format-p-medium ol,
+.ce_text.format-p-medium p a {
+	color: <?= $this->paragraphColorMedium; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphSizeBig): ?>
+:root {
+	--paragraph-large-font-size: <?= $this->paragraphSizeBig; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLineHeightBig): ?>
+:root {
+	--paragraph-large-line-height: <?= $this->paragraphLineHeightBig; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphColorBig): ?>
+.ce_text.format-p-large p,
+.ce_text.format-p-large ul,
+.ce_text.format-p-large ol,
+.ce_text.format-p-large p a {
+	color: <?= $this->paragraphColorBig; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobSize): ?>
+@media only screen and (max-width: 767px) {
+	p,
+	.ce_text ul,
+	.ce_text ol {
+		font-size: <?= $this->paragraphMobSize; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobLineHeight): ?>
+@media only screen and (max-width: 767px) {
+	p,
+	.ce_text ul,
+	.ce_text ol {
+		line-height: <?= $this->paragraphMobLineHeight; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobSizeSmall): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text.format-p-small p,
+	.ce_text.format-p-small ul,
+	.ce_text.format-p-small ol {
+		font-size: <?= $this->paragraphMobSizeSmall; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobLineHeightSmall): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text.format-p-small p,
+	.ce_text.format-p-small ul,
+	.ce_text.format-p-small ol {
+		line-height: <?= $this->paragraphMobLineHeightSmall; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobSizeMedium): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text.format-p-medium p,
+	.ce_text.format-p-medium ul,
+	.ce_text.format-p-medium ol {
+		font-size: <?= $this->paragraphMobSizeMedium; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobLineHeightMedium): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text.format-p-medium p,
+	.ce_text.format-p-medium ul,
+	.ce_text.format-p-medium ol {
+		line-height: <?= $this->paragraphMobLineHeightMedium; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobSizeBig): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text.format-p-large p,
+	.ce_text.format-p-large ul,
+	.ce_text.format-p-large ol {
+		font-size: <?= $this->paragraphMobSizeBig; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphMobLineHeightBig): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text.format-p-large p,
+	.ce_text.format-p-large ul,
+	.ce_text.format-p-large ol {
+		line-height: <?= $this->paragraphMobLineHeightBig; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLinksColorAccent): ?>
+.ce_text a,
+.ce_text p a {
+	color: var(--accentColor)!important;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLinksColor): ?>
+.ce_text a,
+.ce_text p a {
+	color: <?= $this->paragraphLinksColor; ?>!important;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphLinksUnderline): ?>
+.ce_text a {
+	text-decoration: underline;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListStyle1): ?>
+.ce_text ul li {
+	list-style: circle;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListStyle2): ?>
+.ce_text ul li {
+	list-style: square;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListStyleNone): ?>
+.ce_text ul {
+	padding-left: 0;
+}
+
+.ce_text ul li {
+	list-style: none;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListPadding): ?>
+.ce_text ul, 
+.ce_text ol {
+	padding-left: <?= $this->paragraphListPadding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListPaddingMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text ul, 
+	.ce_text ol {
+		padding-left: <?= $this->paragraphListPaddingMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListMargin): ?>
+.ce_text ul li, 
+.ce_text ol li {
+	margin-bottom: <?= $this->paragraphListMargin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->paragraphListMarginMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_text ul li, 
+	.ce_text ol li {
+		margin-bottom: <?= $this->paragraphListMarginMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->customFont1Family): ?>
+:root {
+	--customFont1: <?= $this->customFont1Family; ?>;
+	--customFont1Weight: <?= $this->customFont1Family_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customFont1FontSize): ?>
+:root {
+	--customFont1FontSize: <?= $this->customFont1FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont1FontSizeMob): ?>
+:root {
+	--customFont1FontSizeMob: <?= $this->customFont1FontSizeMob; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont1LineHeight): ?>
+:root {
+	--customFont1LineHeight: <?= $this->customFont1LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont1LineHeightMob): ?>
+:root {
+	--customFont1LineHeightMob: <?= $this->customFont1LineHeightMob; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customfont1StrokeColor): ?>
+:root {
+	--customFont1-stroke-color: <?= $this->customfont1StrokeColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customfont1StrokeWidth): ?>
+:root {
+	--customFont1-stroke-width: <?= $this->customfont1StrokeWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customfont1Color): ?>
+:root {
+	--customFont1-text-color: <?= $this->customfont1Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customfont1LetterSpacing): ?>
+:root {
+	--customFont1-letter-spacing: <?= $this->customfont1LetterSpacing; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont2Family): ?>
+:root {
+	--customFont2: <?= $this->customFont2Family; ?>;
+	--customFont2Weight: <?= $this->customFont2Family_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customFont2FontSize): ?>
+:root {
+	--customFont2FontSize: <?= $this->customFont2FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont2FontSizeMob): ?>
+:root {
+	--customFont2FontSizeMob: <?= $this->customFont2FontSizeMob; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont2LineHeight): ?>
+:root {
+	--customFont2LineHeight: <?= $this->customFont2LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customFont2LineHeightMob): ?>
+:root {
+	--customFont2LineHeightMob: <?= $this->customFont2LineHeightMob; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customfont2StrokeColor): ?>
+:root {
+	--customFont2-stroke-color: <?= $this->customfont2StrokeColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customfont2StrokeWidth): ?>
+:root {
+	--customFont2-stroke-width: <?= $this->customfont2StrokeWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->customfont2Color): ?>
+:root {
+	--customFont2-text-color: <?= $this->customfont2Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->customfont2LetterSpacing): ?>
+:root {
+	--customFont2-letter-spacing: <?= $this->customfont2LetterSpacing; ?>px;
+}
+<?php endif; ?>
+
+
+<?php if($this->listStyle1StyleNone): ?>
+.ce_list ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.ce_list ul li i {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1FontSize): ?>
+.ce_list ul {
+	font-size: <?= $this->listStyle1FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1Margin): ?>
+.ce_list li {
+	padding-top: <?= $this->listStyle1Margin; ?>px;
+	padding-bottom: <?= $this->listStyle1Margin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1Padding): ?>
+.ce_list ol,
+.ce_list ul,
+.ce_list.hasIcon ul,
+.ce_list.hasIcon ol {
+	padding-left: <?= $this->listStyle1Padding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1MarginMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list li {
+		padding-top: <?= $this->listStyle1MarginMob; ?>px;
+		padding-bottom: <?= $this->listStyle1MarginMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1PaddingMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list ol,
+	.ce_list ul,
+	.ce_list.hasIcon ul,
+	.ce_list.hasIcon ol {
+		padding-left: <?= $this->listStyle1PaddingMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1FontSize): ?>
+.ce_list:not(.style2):not(.style3):not(.customStyle1):not(.customStyle2) li {
+	font-size: <?= $this->listStyle1FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1FontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list:not(.style2):not(.style3):not(.customStyle1):not(.customStyle2) li {
+		font-size: <?= $this->listStyle1FontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1FontWeight): ?>
+.ce_list:not(.style2):not(.style3):not(.customStyle1):not(.customStyle2) li {
+	font-weight: <?= $this->listStyle1FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1LineHeight): ?>
+.ce_list:not(.style2):not(.style3):not(.customStyle1):not(.customStyle2) li {
+	line-height: <?= $this->listStyle1LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1LineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list:not(.style2):not(.style3):not(.customStyle1):not(.customStyle2) li {
+		line-height: <?= $this->listStyle1LineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle1Divider): ?>
+.ce_list:not(.style2):not(.style3):not(.customStyle1):not(.customStyle2) li:after {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2StyleNone): ?>
+.ce_list.style2 ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.ce_list.style2 ul li i {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2FontSize): ?>
+.ce_list.style2 ul {
+	font-size: <?= $this->listStyle2FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2Margin): ?>
+.ce_list.style2 li {
+	padding-top: <?= $this->listStyle2Margin; ?>px;
+	padding-bottom: <?= $this->listStyle2Margin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2Padding): ?>
+.ce_list.style2 ol,
+.ce_list.style2 ul,
+.ce_list.style2.hasIcon ul,
+.ce_list.style2.hasIcon ol {
+	padding-left: <?= $this->listStyle2Padding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2MarginMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style2 li {
+		padding-top: <?= $this->listStyle2MarginMob; ?>px;
+		padding-bottom: <?= $this->listStyle2MarginMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2PaddingMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style2 ol,
+	.ce_list.style2 ul,
+	.ce_list.style2.hasIcon ul,
+	.ce_list.style2.hasIcon ol {
+		padding-left: <?= $this->listStyle2PaddingMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2FontSize): ?>
+.ce_list.style2 li {
+	font-size: <?= $this->listStyle2FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2FontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style2 li {
+		font-size: <?= $this->listStyle2FontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2FontWeight): ?>
+.ce_list.style2 li {
+	font-weight: <?= $this->listStyle2FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2LineHeight): ?>
+.ce_list.style2 li {
+	line-height: <?= $this->listStyle2LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle2LineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style2 li {
+		line-height: <?= $this->listStyle2LineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3StyleNone): ?>
+.ce_list.style3 ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.ce_list.style3 li i {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3FontSize): ?>
+.ce_list.style3 ul {
+	font-size: <?= $this->listStyle3FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3Margin): ?>
+.ce_list.style3 li {
+	padding-top: <?= $this->listStyle3Margin; ?>px;
+	padding-bottom: <?= $this->listStyle3Margin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3Padding): ?>
+.ce_list.style3 ol,
+.ce_list.style3 ul,
+.ce_list.style3.hasIcon ul,
+.ce_list.style3.hasIcon ol {
+	padding-left: <?= $this->listStyle3Padding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3MarginMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style3 li {
+		padding-top: <?= $this->listStyle3MarginMob; ?>px;
+		padding-bottom: <?= $this->listStyle3MarginMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3PaddingMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style3 ol,
+	.ce_list.style3 ul,
+	.ce_list.style3.hasIcon ul,
+	.ce_list.style3.hasIcon ol {
+		padding-left: <?= $this->listStyle3PaddingMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3FontSize): ?>
+.ce_list.style3 li {
+	font-size: <?= $this->listStyle3FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3FontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style3 li {
+		font-size: <?= $this->listStyle3FontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3FontWeight): ?>
+.ce_list.style3 li {
+	font-weight: <?= $this->listStyle3FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3LineHeight): ?>
+.ce_list.style3 li {
+	line-height: <?= $this->listStyle3LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3LineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.style3 li {
+		line-height: <?= $this->listStyle3LineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listStyle3Divider): ?>
+.ce_list.style3 li:after {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1StyleNone): ?>
+.ce_list.customStyle1 ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.ce_list.customStyle1 li i {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1FontSize): ?>
+.ce_list.customStyle1 ul {
+	font-size: <?= $this->listCustomStyle1FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1Margin): ?>
+.ce_list.customStyle1 li {
+	padding-top: <?= $this->listCustomStyle1Margin; ?>px;
+	padding-bottom: <?= $this->listCustomStyle1Margin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1Padding): ?>
+.ce_list.customStyle1 ol,
+.ce_list.customStyle1 ul,
+.ce_list.customStyle1.hasIcon ul,
+.ce_list.customStyle1t.hasIcon ol {
+	padding-left: <?= $this->listCustomStyle1Padding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1MarginMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle1 li {
+		padding-top: <?= $this->listCustomStyle1MarginMob; ?>px;
+		padding-bottom: <?= $this->listCustomStyle1MarginMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1PaddingMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle1 ol,
+	.ce_list.customStyle1 ul,
+	.ce_list.customStyle1.hasIcon ul,
+	.ce_list.customStyle1t.hasIcon ol {
+		padding-left: <?= $this->listCustomStyle1PaddingMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1FontSize): ?>
+.ce_list.customStyle1 li {
+	font-size: <?= $this->listCustomStyle1FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1FontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle1 li {
+		font-size: <?= $this->listCustomStyle1FontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1FontWeight): ?>
+.ce_list.customStyle1 li {
+	font-weight: <?= $this->listCustomStyle1FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1LineHeight): ?>
+.ce_list.customStyle1 li {
+	line-height: <?= $this->listCustomStyle1LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1LineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle1 li {
+		line-height: <?= $this->listCustomStyle1LineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle1Divider): ?>
+.ce_list.customStyle1 li:after {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2StyleNone): ?>
+.ce_list.customStyle2 ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+
+.ce_list.customStyle2 li i {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2FontSize): ?>
+.ce_list.customStyle2 ul {
+	font-size: <?= $this->listCustomStyle2FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2Margin): ?>
+.ce_list.customStyle2 li {
+	padding-top: <?= $this->listCustomStyle2Margin; ?>px;
+	padding-bottom: <?= $this->listCustomStyle2Margin; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2Padding): ?>
+.ce_list.customStyle2 ol,
+.ce_list.customStyle2 ul,
+.ce_list.customStyle2.hasIcon ul,
+.ce_list.customStyle12.hasIcon ol {
+	padding-left: <?= $this->listCustomStyle2Padding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2MarginMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle2 li {
+		padding-top: <?= $this->listCustomStyle2MarginMob; ?>px;
+		padding-bottom: <?= $this->listCustomStyle2MarginMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2PaddingMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle2 ol,
+	.ce_list.customStyle2 ul,
+	.ce_list.customStyle2.hasIcon ul,
+	.ce_list.customStyle2.hasIcon ol {
+		padding-left: <?= $this->listCustomStyle2PaddingMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2FontSize): ?>
+.ce_list.customStyle2 li {
+	font-size: <?= $this->listCustomStyle2FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2FontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle2 li {
+		font-size: <?= $this->listCustomStyle2FontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2FontWeight): ?>
+.ce_list.customStyle2 li {
+	font-weight: <?= $this->listCustomStyle2FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2LineHeight): ?>
+.ce_list.customStyle2 li {
+	line-height: <?= $this->listCustomStyle2LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2LineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_list.customStyle2 li {
+		line-height: <?= $this->listCustomStyle2LineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->listCustomStyle2Divider): ?>
+.ce_list.customStyle2 li:after {
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderFontSize): ?>
+.ce_table.table-custom1 tr th {
+	font-size: <?= $this->tableCustomStyle1HeaderFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderFontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr th {
+		font-size: <?= $this->tableCustomStyle1HeaderFontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderFontLineHeight): ?>
+.ce_table.table-custom1 tr th {
+	line-height: <?= $this->tableCustomStyle1HeaderFontLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderFontLineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr th {
+		line-height: <?= $this->tableCustomStyle1HeaderFontLineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderFontWeight): ?>
+.ce_table.table-custom1 tr th {
+	font-weight: <?= $this->tableCustomStyle1HeaderFontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderLastColumRight): ?>
+.ce_table.table-custom1 tr th:last-child {
+	text-align: right;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderColorFont): ?>
+.ce_table.table-custom1 tr th {
+	color: <?= $this->tableCustomStyle1HeaderColorFont; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderColorBg): ?>
+.ce_table.table-custom1 tr th {
+	background-color: <?= $this->tableCustomStyle1HeaderColorBg; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingLeft): ?>
+.ce_table.table-custom1 tr th {
+	padding-left: <?= $this->tableCustomStyle1HeaderPaddingLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingLeftMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr th {
+		padding-left: <?= $this->tableCustomStyle1HeaderPaddingLeftMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingRight): ?>
+.ce_table.table-custom1 tr th {
+	padding-right: <?= $this->tableCustomStyle1HeaderPaddingRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingRightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr th {
+		padding-right: <?= $this->tableCustomStyle1HeaderPaddingRightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingTop): ?>
+.ce_table.table-custom1 tr th {
+	padding-top: <?= $this->tableCustomStyle1HeaderPaddingTop; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingTopMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr th {
+		padding-top: <?= $this->tableCustomStyle1HeaderPaddingTopMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingBottom): ?>
+.ce_table.table-custom1 tr th {
+	padding-bottom: <?= $this->tableCustomStyle1HeaderPaddingBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderPaddingBottomMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr th {
+		padding-bottom: <?= $this->tableCustomStyle1HeaderPaddingBottomMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderBorderLeftRight): ?>
+.ce_table.table-custom1 tr th {
+	border-left-width: <?= $this->tableCustomStyle1HeaderBorderLeftRight; ?>px;
+	border-left-style: solid;
+	border-color: var(--tableCustom1HeaderBorderColor);
+}
+
+.ce_table.table-custom1 tr th:last-child {
+	border-right-width: <?= $this->tableCustomStyle1HeaderBorderLeftRight; ?>px;
+	border-right-style: solid;
+	border-color: var(--tableCustom1HeaderBorderColor);
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderBorderLeftRightV2): ?>
+.ce_table.table-custom1 tr th {
+	border-left-width: <?= $this->tableCustomStyle1HeaderBorderLeftRightV2; ?>px;
+	border-left-style: solid;
+	border-color: var(--tableCustom1HeaderBorderColor);
+}
+
+.ce_table.table-custom1 tr th:first-child {
+	border-left-width: 0;
+}
+
+.ce_table.table-custom1 tr th:last-child {
+	border-right-width: 0;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderBorderTop): ?>
+.ce_table.table-custom1 tr th {
+	border-top-width: <?= $this->tableCustomStyle1HeaderBorderTop; ?>px;
+	border-top-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderBorderColor): ?>
+:root {
+	--tableCustom1HeaderBorderColor: <?= $this->tableCustomStyle1HeaderBorderColor; ?>
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1HeaderBorderBottom): ?>
+.ce_table.table-custom1 tr th {
+	border-bottom-width: <?= $this->tableCustomStyle1HeaderBorderBottom; ?>px;
+	border-bottom-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyFontSize): ?>
+.ce_table.table-custom1 tr td {
+	font-size: <?= $this->tableCustomStyle1BodyFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyFontSizeMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr td {
+		font-size: <?= $this->tableCustomStyle1BodyFontSizeMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyFontLineHeight): ?>
+.ce_table.table-custom1 tr td {
+	line-height: <?= $this->tableCustomStyle1BodyFontLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyFontLineHeightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr td {
+		line-height: <?= $this->tableCustomStyle1BodyFontLineHeightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyFontWeight): ?>
+.ce_table.table-custom1 tr td {
+	font-weight: <?= $this->tableCustomStyle1BodyFontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyLastColumRight): ?>
+.ce_table.table-custom1 tr td:last-child {
+	text-align: right;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyColorFont): ?>
+.ce_table.table-custom1 tr td {
+	color: <?= $this->tableCustomStyle1BodyColorFont; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyColorBg): ?>
+.ce_table.table-custom1 tr td {
+	background-color: <?= $this->tableCustomStyle1BodyColorBg; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingLeft): ?>
+.ce_table.table-custom1 tr td {
+	padding-left: <?= $this->tableCustomStyle1BodyPaddingLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingLeftMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr td {
+		padding-left: <?= $this->tableCustomStyle1BodyPaddingLeftMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingRight): ?>
+.ce_table.table-custom1 tr td {
+	padding-right: <?= $this->tableCustomStyle1BodyPaddingRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingRightMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr td {
+		padding-right: <?= $this->tableCustomStyle1BodyPaddingRightMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingTop): ?>
+.ce_table.table-custom1 tr td {
+	padding-top: <?= $this->tableCustomStyle1BodyPaddingTop; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingTopMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr td {
+		padding-top: <?= $this->tableCustomStyle1BodyPaddingTopMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingBottom): ?>
+.ce_table.table-custom1 tr td {
+	padding-bottom: <?= $this->tableCustomStyle1BodyPaddingBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyPaddingBottomMob): ?>
+@media only screen and (max-width: 767px) {
+	.ce_table.table-custom1 tr td {
+		padding-bottom: <?= $this->tableCustomStyle1BodyPaddingBottomMob; ?>px;
+	}
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyBorderLeftRight): ?>
+.ce_table.table-custom1 tr td {
+	border-left-width: <?= $this->tableCustomStyle1BodyBorderLeftRight; ?>px;
+	border-left-style: solid;
+	border-color: var(--tableCustom1BodyBorderColor);
+}
+
+.ce_table.table-custom1 tr td:last-child {
+	border-right-width: <?= $this->tableCustomStyle1BodyBorderLeftRight; ?>px;
+	border-right-style: solid;
+	border-color: var(--tableCustom1BodyBorderColor);
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyBorderLeftRightV2): ?>
+.ce_table.table-custom1 tr td {
+	border-left-width: <?= $this->tableCustomStyle1BodyBorderLeftRightV2; ?>px;
+	border-left-style: solid;
+	border-color: var(--tableCustom1BodyBorderColor);
+}
+
+.ce_table.table-custom1 tr td:first-child {
+	border-left-width: 0;
+}
+
+.ce_table.table-custom1 tr td:last-child {
+	border-right-width: 0;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyBorderTop): ?>
+.ce_table.table-custom1 tr td {
+	border-top-width: <?= $this->tableCustomStyle1BodyBorderTop; ?>px;
+	border-top-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyBorderColor): ?>
+:root {
+	--tableCustom1BodyBorderColor: <?= $this->tableCustomStyle1BodyBorderColor; ?>
+}
+<?php endif; ?>
+
+<?php if($this->tableCustomStyle1BodyBorderBottom): ?>
+.ce_table.table-custom1 tr td {
+	border-bottom-width: <?= $this->tableCustomStyle1BodyBorderBottom; ?>px;
+	border-bottom-style: solid;
+}
+<?php endif; ?>
+
+
+<?php if($this->linkDefaultFontSize): ?>
+:root {
+	--hyperlink-default-font-size: <?= $this->linkDefaultFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkDefaultFontWeight): ?>
+:root {
+	--hyperlink-default-font-weight: <?= $this->linkDefaultFontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkDefaultLineHeight): ?>
+:root {
+	--hyperlink-default-line-height: <?= $this->linkDefaultLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkDefaultPaddingLeftRight): ?>
+:root {
+	--hyperlink-default-padding-left: <?= $this->linkDefaultPaddingLeftRight; ?>px;
+	--hyperlink-default-padding-right: <?= $this->linkDefaultPaddingLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkDefaultPaddingTopBottom): ?>
+:root {
+	--hyperlink-default-padding-top: <?= $this->linkDefaultPaddingTopBottom; ?>px;
+	--hyperlink-default-padding-bottom: <?= $this->linkDefaultPaddingTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkDefaultBorderWidth): ?>
+:root {
+	--hyperlink-default-border-width: <?= $this->linkDefaultBorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkDefaultMinWidth): ?>
+:root {
+	--hyperlink-default-min-width: <?= $this->linkDefaultMinWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallFontSize): ?>
+:root {
+	--hyperlink-small-font-size: <?= $this->linkSmallFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallFontWeight): ?>
+:root {
+	--hyperlink-small-font-weight: <?= $this->linkSmallFontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallLineHeight): ?>
+:root {
+	--hyperlink-small-line-height: <?= $this->linkSmallLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallPaddingLeftRight): ?>
+:root {
+	--hyperlink-small-padding-left: <?= $this->linkSmallPaddingLeftRight; ?>px;
+	--hyperlink-small-padding-right: <?= $this->linkSmallPaddingLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallPaddingTopBottom): ?>
+:root {
+	--hyperlink-small-padding-top: <?= $this->linkSmallPaddingTopBottom; ?>px;
+	--hyperlink-small-padding-bottom: <?= $this->linkSmallPaddingTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallBorderWidth): ?>
+:root {
+	--hyperlink-small-border-width: <?= $this->linkSmallBorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkSmallMinWidth): ?>
+:root {
+	--hyperlink-small-min-width: <?= $this->linkSmallMinWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumFontSize): ?>
+:root {
+	--hyperlink-medium-font-size: <?= $this->linkMediumFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumFontWeight): ?>
+:root {
+	--hyperlink-medium-font-weight: <?= $this->linkMediumFontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumLineHeight): ?>
+:root {
+	--hyperlink-medium-line-height: <?= $this->linkMediumLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumPaddingLeftRight): ?>
+:root {
+	--hyperlink-medium-padding-left: <?= $this->linkMediumPaddingLeftRight; ?>px;
+	--hyperlink-medium-padding-right: <?= $this->linkMediumPaddingLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumPaddingTopBottom): ?>
+:root {
+	--hyperlink-medium-padding-top: <?= $this->linkMediumPaddingTopBottom; ?>px;
+	--hyperlink-medium-padding-bottom: <?= $this->linkMediumPaddingTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumBorderWidth): ?>
+:root {
+	--hyperlink-medium-border-width: <?= $this->linkMediumBorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkMediumMinWidth): ?>
+:root {
+	--hyperlink-medium-min-width: <?= $this->linkMediumMinWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargeFontSize): ?>
+:root {
+	--hyperlink-large-font-size: <?= $this->linkLargeFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargeFontWeight): ?>
+:root {
+	--hyperlink-large-font-weight: <?= $this->linkLargeFontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargeLineHeight): ?>
+:root {
+	--hyperlink-large-line-height: <?= $this->linkLargeLineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargePaddingLeftRight): ?>
+:root {
+	--hyperlink-large-padding-left: <?= $this->linkLargePaddingLeftRight; ?>px;
+	--hyperlink-large-padding-right: <?= $this->linkLargePaddingLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargePaddingTopBottom): ?>
+:root {
+	--hyperlink-large-padding-top: <?= $this->linkLargePaddingTopBottom; ?>px;
+	--hyperlink-large-padding-bottom: <?= $this->linkLargePaddingTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargeBorderWidth): ?>
+:root {
+	--hyperlink-large-border-width: <?= $this->linkLargeBorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkLargeMinWidth): ?>
+:root {
+	--hyperlink-large-min-width: <?= $this->linkLargeMinWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1FontSize): ?>
+:root {
+	--ce_customlink-style1-font-size: <?= $this->linkCustomStyle1FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1FontWeight): ?>
+:root {
+	--ce_customlink-style1-font-weight: <?= $this->linkCustomStyle1FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1LineHeight): ?>
+:root {
+	--ce_customlink-style1-line-height: <?= $this->linkCustomStyle1LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1PaddingLeftRight): ?>
+:root {
+	--ce_customlink-style1-padding-lr: <?= $this->linkCustomStyle1PaddingLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1PaddingTopBottom): ?>
+:root {
+	--ce_customlink-style1-padding-tb: <?= $this->linkCustomStyle1PaddingTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1BorderWidth): ?>
+:root {
+	--ce_customlink-style1-border-width: <?= $this->linkCustomStyle1BorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1BorderRadius): ?>
+:root {
+	--ce_customlink-style1-border-radius: <?= $this->linkCustomStyle1BorderRadius; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1BorderColor): ?>
+:root {
+	--ce_customlink-style1-border-color: <?= $this->linkCustomStyle1BorderColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1BgColor): ?>
+:root {
+	--ce_customlink-style1-bg-color: <?= $this->linkCustomStyle1BgColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1Color): ?>
+:root {
+	--ce_customlink-style1-color: <?= $this->linkCustomStyle1Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle1MinWidth): ?>
+:root {
+	--ce_customlink-style1-min-width: <?= $this->linkCustomStyle1MinWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2FontSize): ?>
+:root {
+	--ce_customlink-style2-font-size: <?= $this->linkCustomStyle2FontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2FontWeight): ?>
+:root {
+	--ce_customlink-style2-font-weight: <?= $this->linkCustomStyle2FontWeight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2LineHeight): ?>
+:root {
+	--ce_customlink-style2-line-height: <?= $this->linkCustomStyle2LineHeight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2PaddingLeftRight): ?>
+:root {
+	--ce_customlink-style2-padding-lr: <?= $this->linkCustomStyle2PaddingLeftRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2PaddingTopBottom): ?>
+:root {
+	--ce_customlink-style2-padding-tb: <?= $this->linkCustomStyle2PaddingTopBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2BorderWidth): ?>
+:root {
+	--ce_customlink-style2-border-width: <?= $this->linkCustomStyle2BorderWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2BorderRadius): ?>
+:root {
+	--ce_customlink-style2-border-radius: <?= $this->linkCustomStyle2BorderRadius; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2BorderColor): ?>
+:root {
+	--ce_customlink-style2-border-color: <?= $this->linkCustomStyle2BorderColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2BgColor): ?>
+:root {
+	--ce_customlink-style2-bg-color: <?= $this->linkCustomStyle2BgColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2Color): ?>
+:root {
+	--ce_customlink-style2-color: <?= $this->linkCustomStyle2Color; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->linkCustomStyle2MinWidth): ?>
+:root {
+	--ce_customlink-style2-min-width: <?= $this->linkCustomStyle2MinWidth; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1BorderColor): ?>
+.ce_image.customStyle1 figure img {
+	border-color: <?= $this->imageCustomStyle1BorderColor; ?>;
+	border-width: 1px;
+	border-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1BorderWidth): ?>
+.ce_image.customStyle1 figure img {
+	border-width: <?= $this->imageCustomStyle1BorderWidth; ?>px;
+	border-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1BorderRadiusTopLeft): ?>
+.ce_image.customStyle1 figure img {
+	border-top-left-radius: <?= $this->imageCustomStyle1BorderRadiusTopLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1BorderRadiusTopRight): ?>
+.ce_image.customStyle1 figure img {
+	border-top-right-radius: <?= $this->imageCustomStyle1BorderRadiusTopRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1BorderRadiusBottomLeft): ?>
+.ce_image.customStyle1 figure img {
+	border-bottom-left-radius: <?= $this->imageCustomStyle1BorderRadiusBottomLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1BorderRadiusBottomRight): ?>
+.ce_image.customStyle1 figure img {
+	border-bottom-right-radius: <?= $this->imageCustomStyle1BorderRadiusBottomRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle1Padding): ?>
+.ce_image.customStyle1 figure img {
+	padding: <?= $this->imageCustomStyle1Padding; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2BorderColor): ?>
+.ce_image.customStyle2 figure img {
+	border-color: <?= $this->imageCustomStyle2BorderColor; ?>;
+	border-width: 1px;
+	border-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2BorderWidth): ?>
+.ce_image.customStyle2 figure img {
+	border-width: <?= $this->imageCustomStyle2BorderWidth; ?>px;
+	border-style: solid;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2BorderRadiusTopLeft): ?>
+.ce_image.customStyle2 figure img {
+	border-top-left-radius: <?= $this->imageCustomStyle2BorderRadiusTopLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2BorderRadiusTopRight): ?>
+.ce_image.customStyle2 figure img {
+	border-top-right-radius: <?= $this->imageCustomStyle2BorderRadiusTopRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2BorderRadiusBottomLeft): ?>
+.ce_image.customStyle2 figure img {
+	border-bottom-left-radius: <?= $this->imageCustomStyle2BorderRadiusBottomLeft; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2BorderRadiusBottomRight): ?>
+.ce_image.customStyle2 figure img {
+	border-bottom-right-radius: <?= $this->imageCustomStyle2BorderRadiusBottomRight; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->imageCustomStyle2Padding): ?>
+.ce_image.customStyle2 figure img {
+	padding: <?= $this->imageCustomStyle2Padding; ?>px;
+}
+<?php endif; ?>
+
+
+<?php if($this->mmenuLeft): ?>
+#mmenu {
+	left: 0;
+	right: auto;
+	bottom: 0;
+	transform: translateY(0)!important;
+	transform: translateX(-100%)!important;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuRight): ?>
+#mmenu {
+	right: 0;
+	bottom: 0;
+	left: auto;
+	transform: translateY(0)!important;
+	transform: translateX(100%)!important;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuTop): ?>
+#mmenu {
+	background: none!important;
+}
+
+#mmenu #mmenu_bottom {
+	position: static;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuTopFullscreen): ?>
+#mmenu {
+	bottom: 0;
+}
+<?php endif; ?>
+
+
+<?php if($this->mmenuHorizontal): ?>
+#mmenu nav.mobile_vertical {
+	display: none;
+}
+
+#mmenu nav.mobile_horizontal {
+	display: block;
+}
+
+<?php endif; ?>
+
+<?php if($this->mmenuFontFamily): ?>
+#mmenu .mod_navigation li a {
+	font-family: <?= $this->mmenuFontFamily; ?>;
+	font-weight: <?= $this->mmenuFontFamily_weight; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuFontSize): ?>
+:root {
+	--menu-highlight-font-size-mobile: <?= $this->mmenuFontSize; ?>px;
+}
+#mmenu .mod_navigation li a {
+	font-size: <?= $this->mmenuFontSize; ?>px;
+}
+
+#mmenu .mod_navigation li.submenu .opener {
+	width: calc(<?= $this->mmenuFontSize; ?>px + 10px);
+}
+<?php endif; ?>
+
+<?php if($this->mmenuLineHeight): ?>
+#mmenu .mod_navigation li a {
+	line-height: <?= $this->mmenuLineHeight; ?>px;
+}
+
+#mmenu .mod_navigation li.submenu .opener {
+	height: calc(<?= $this->mmenuLineHeight; ?>px + 5px);
+}
+<?php endif; ?>
+
+<?php if($this->mmenuSubmenuFontSize): ?>
+#mmenu .mod_navigation li ul li a {
+	font-size: <?= $this->mmenuSubmenuFontSize; ?>px;
+}
+
+#mmenu .mod_navigation .level_2 li.submenu .opener {
+	width: calc(<?= $this->mmenuSubmenuFontSize; ?>px + 13px);
+}
+<?php endif; ?>
+
+<?php if($this->mmenuSubmenuLineHeight): ?>
+#mmenu .mod_navigation li ul li a {
+	line-height: <?= $this->mmenuSubmenuLineHeight; ?>px;
+}
+
+#mmenu .mod_navigation .level_2 li.submenu .opener {
+	height: calc(<?= $this->mmenuSubmenuLineHeight; ?>px + 5px);
+}
+<?php endif; ?>
+
+<?php if($this->mmenuUppercase): ?>
+#mmenu .mod_navigation li a {
+	text-transform: uppercase;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuAlignCenter): ?>
+#mmenu .mod_navigation li,
+#mmenu .mod_navigation li a {
+	text-align: center;
+	padding: 4px 0;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuHighlightPaddingLR): ?>
+:root {
+	--menu-highlight-padding-lr-mobile: <?= $this->mmenuHighlightPaddingLR; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuHighlightPaddingTB): ?>
+:root {
+	--menu-highlight-padding-tb-mobile: <?= $this->mmenuHighlightPaddingTB; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuHighlightMarginTop): ?>
+:root {
+	--menu-highlight-margin-top-mobile: <?= $this->mmenuHighlightMarginTop; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuHighlightMarginBottom): ?>
+:root {
+	--menu-highlight-margin-bottom-mobile: <?= $this->mmenuHighlightMarginBottom; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuHighlightFontSize): ?>
+:root {
+	--menu-highlight-font-size-mobile: <?= $this->mmenuHighlightFontSize; ?>px;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuBackgroundColor): ?>
+#mmenu {
+	background-color: <?= $this->mmenuBackgroundColor; ?>;
+}
+
+#mmenu .mod_langswitcher ul {
+	background-color: <?= $this->mmenuBackgroundColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuBackgroundImage): ?>
+#mmenu {
+	background-image: url(<?= $this->mmenuBackgroundImage->file; ?>);
+}
+<?php endif; ?>
+
+<?php if($this->mmenuColor): ?>
+#mmenu .mod_navigation li a,
+#mmenu .mod_socials a,
+#mmenu .mod_mmenu_custom_nav a,
+#mmenu #mmenu_bottom .mod_langswitcher ul li span {
+	color: <?= $this->mmenuColor; ?>;
+}
+
+#mmenu .mod_search input {
+	color: <?= $this->mmenuColor; ?>;
+}
+
+#mmenu .mod_langswitcher .mod_langswitcher_inside:after {
+	color: <?= $this->mmenuColor; ?>;
+}
+
+#mmenu .mod_langswitcher .mod_langswitcher_inside:before {
+	border-color: <?= $this->mmenuColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuActiveColor): ?>
+#mmenu .mod_navigation li a.open, #mmenu .mod_navigation li a.active {
+	color: <?= $this->mmenuActiveColor; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuSocials): ?>
+#mmenu .mod_socials {
+	display: none;
+}
+
+#mmenu .scrollable {
+	height: 100%;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuSocialsSize): ?>
+#mmenu #mmenu_bottom .mod_socials a i {
+	line-height: <?= $this->mmenuSocialsSize; ?>px;
+	font-size: <?= $this->mmenuSocialsSize; ?>px;
+	width: calc(<?= $this->mmenuSocialsSize; ?>px + 10px);
+	height: calc(<?= $this->mmenuSocialsSize; ?>px + 10px);
+}
+<?php endif; ?>
+
+<?php if($this->mmenuSocialsBorder): ?>
+#mmenu .mod_socials {
+	border-color: <?= $this->mmenuSocialsBorder; ?>;
+}
+<?php endif; ?>
+
+
+<?php if($this->mmenuLangswitch): ?>
+#mmenu .mod_langswitcher {
+	display: none;
+}
+
+#mmenu .mod_search {
+	width: 100%;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuIconBackground): ?>
+#mmenu .mod_navigation li.submenu .opener {
+	background-color: <?= $this->mmenuIconBackground; ?>;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuIcon1): ?>
+#mmenu .mod_navigation li a.submenu:after {
+	content: "+";
+	font-family: Arial, Verdana, sans-serif;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuIcon2): ?>
+#mmenu .mod_navigation li a.submenu:after {
+	content: "";
+	display: none;
+}
+<?php endif; ?>
+
+<?php if($this->mmenuCustomMenuLineHeight): ?>
+#mmenu .mod_mmenu_custom_nav a {
+	line-height: <?= $this->mmenuCustomMenuLineHeight; ?>px;
+}
+<?php endif; ?>
+

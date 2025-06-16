@@ -1,0 +1,134 @@
+/* =============================================================================
+ * ce_iconbox_header
+ * ========================================================================== */
+
+.ce_iconbox_header {
+	overflow: hidden;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.ce_iconbox_header .iconbox_header_item_inside {
+	overflow: hidden;
+	padding: 25px;
+}
+
+.ce_iconbox_header .contentwrap {
+	overflow: hidden;
+}
+
+.ce_iconbox_header .iconbox_header_item {
+	margin-bottom: 25px;
+}
+
+.ce_iconbox_header.color-light h1,
+.ce_iconbox_header.color-light h2,
+.ce_iconbox_header.color-light h3,
+.ce_iconbox_header.color-light h4,
+.ce_iconbox_header.color-light h5,
+.ce_iconbox_header.color-light h6,
+.ce_iconbox_header.color-light p {
+	color: rgb(255,255,255);
+}
+
+.ce_iconbox_header h1,
+.ce_iconbox_header h2,
+.ce_iconbox_header h3,
+.ce_iconbox_header h4,
+.ce_iconbox_header h5,
+.ce_iconbox_header h6 {
+	margin-bottom: 10px;
+}
+
+.ce_iconbox_header .iconbox_header_icon {
+	float: left;
+	width: 30%;
+	font-size: 5.333rem;
+	line-height: 5.333rem;
+}
+
+.ce_iconbox_header .iconbox_header_item .iconbox_header_icon i,
+.ce_iconbox_header .iconbox_header_item .image_container img {
+	transition: transform 0.3s ease;
+	-webkit-transition: transform 0.3s ease;
+}
+
+.ce_iconbox_header .iconbox_header_item .iconbox_header_icon i {
+	padding-right: 25px;
+	text-align: center;
+	display: block;
+}
+
+.ce_iconbox_header .iconbox_header_item .image_container {
+	text-align: center;
+	margin-right: 30px;
+}
+
+.ce_iconbox_header .iconbox_header_item .image_container img {
+	transform: scale(0.9,0.9);
+	display: inline-block;
+}
+
+.ce_iconbox_header .iconbox_header_item:hover .image_container img {
+	transform: scale(1,1);
+}
+
+.ce_iconbox_header .iconbox_header_item:hover .iconbox_header_icon i {
+	transform: scale(1.1,1.1);
+}
+
+.ce_iconbox_header .image_container img {
+	width: auto;
+}
+
+.ce_iconbox_header .iconbox_header_content {
+	float: left;
+	width: 70%
+}
+
+.ce_iconbox_header .link {
+	margin-top: 5px;
+}
+
+.ce_iconbox_header .link a {
+	font-weight: bold;
+}
+
+.ce_iconbox_header .link a:hover {
+	text-decoration: underline;
+}
+
+.ce_iconbox_header .link a:after {
+	font-family: "FontAwesome";
+	content: "\f054";
+	display: inline-block;
+	margin-left: 7px;
+}
+
+.ce_iconbox_header .iconbox_header_item_inside {
+	height: 100%;
+}
+
+.ce_iconbox_header .iconbox_header_item_inside.bg-black {
+	background: rgba(0,0,0,0.8)!important;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_iconbox_header .iconbox_header_item_inside.bg-black:hover {
+	background: rgba(0,0,0,1)!important;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_iconbox_header {
+		position: static;
+		margin-top: 25px;
+	}
+}

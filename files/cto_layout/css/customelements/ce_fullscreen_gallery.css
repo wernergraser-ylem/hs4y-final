@@ -1,0 +1,24 @@
+/* =============================================================================
+ * ce_fullscreen_gallery
+ * ========================================================================== */
+
+.ce_fullscreen_gallery.version2 .bold {
+	background-color: rgba(255,255,255,0.9);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.ce_fullscreen_gallery.version2 .bold.invertcolor {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.ce_fullscreen_gallery.version3 .bold {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: var(--accentColor);
+}
+
+.ce_fullscreen_gallery .ce_revolutionslider_text {
+	hyphens: none;
+	white-space: nowrap;
+}

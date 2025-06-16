@@ -1,0 +1,8 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/modules/mod_navigation_submenu_v4.css|static';
+?>
+<!-- indexer::stop -->
+<div class="submenu_v4 <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<?= $this->items ?>
+</div>
+<!-- indexer::continue -->

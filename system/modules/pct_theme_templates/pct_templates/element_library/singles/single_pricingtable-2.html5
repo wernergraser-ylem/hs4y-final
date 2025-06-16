@@ -1,0 +1,91 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_pricingtable-2
+*/
+$arrImport = array (
+'tstamp' => '13.11.2023 08:26',
+'name' => 'single_pricingtable-2',
+'category' => 'tables_lists',
+'thumb' => '',
+'elements' => 'pricetable4',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 124721,
+1 => 14530,
+2 => 64,
+3 => 1699863996,
+5 => 'pricetable4',
+6 => 'a:2:{s:4:"unit";s:2:"h1";s:5:"value";s:0:"";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+85 => '0.5',
+102 => '0.5',
+160 => 'a:7:{s:6:"values";a:68:{s:15:"t0qbfa5gkdbuji0";s:7:"STARTER";s:15:"1irol810gmw99mb";s:0:"";s:26:"1irol810gmw99mb_iconpicker";s:0:"";s:14:"1ead2ztldyzv3k";s:3:"€";s:15:"z1rb2pqog8dvkm5";s:2:"99";s:15:"zmp0jf75tdo23cv";s:3:"/mo";s:15:"543g3gesjws66zc";s:26:"Lorem ipsum dolor sit amet";s:15:"mx6ftv5091r0kin";s:391:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li><span class="line-through">Analytic Report</span></li>
+<li><span class="line-through">Member Access</span></li>
+<li><span class="line-through color-lightgray">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:14:"j7bd6jb46cde35";s:0:"";s:15:"hcf8i1b5tsvyb0j";s:0:"";s:15:"x9qgagrdim9k4bh";s:5:"star3";s:15:"wjoqu91qqlh6i9q";s:1:"#";s:26:"wjoqu91qqlh6i9q_pagepicker";s:0:"";s:22:"wjoqu91qqlh6i9q_target";s:0:"";s:24:"wjoqu91qqlh6i9q_linkText";s:9:"Subscribe";s:15:"31teq58inn46r2f";s:8:"STANDARD";s:15:"26somwkoe5ba42z";s:0:"";s:26:"26somwkoe5ba42z_iconpicker";s:0:"";s:15:"2skrwr0jeco5d3r";s:3:"€";s:15:"9i3vdnjssu3vv21";s:3:"199";s:15:"tlnocw8r9vwmym1";s:3:"/mo";s:15:"541iqj0hccc8dd3";s:26:"Lorem ipsum dolor sit amet";s:15:"yqual12tvxftjfz";s:352:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-success">FREE</span></li>
+<li><span class="line-through">E-Mail Support*</span></li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:14:"j59ieqvq223e59";s:1:"1";s:15:"u2nf2o9xlnq42or";s:10:"BEST PRICE";s:14:"hr4s8u76kmgj8b";s:5:"star4";s:14:"nwt6aj1k23z7bb";s:1:"#";s:25:"nwt6aj1k23z7bb_pagepicker";s:0:"";s:21:"nwt6aj1k23z7bb_target";s:0:"";s:23:"nwt6aj1k23z7bb_linkText";s:9:"Subscribe";s:15:"7ts9l1s8f7ehoj5";s:8:"BUSINESS";s:15:"3cdyhde7tzf8k7h";s:0:"";s:26:"3cdyhde7tzf8k7h_iconpicker";s:0:"";s:15:"w1bd3t9jmee73h6";s:3:"€";s:15:"lm8qv61hpfk0fmr";s:3:"299";s:15:"wa02h2hwhu6wko4";s:3:"/mo";s:14:"fyj950yamkf4k2";s:26:"Lorem ipsum dolor sit amet";s:15:"yw9s68sfffdaeqi";s:320:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report</li>
+<li>Member Access[nbsp]<span class="label-info">UNLIMITED</span></li>
+<li>E-Mail Support*</li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:15:"upgau8rq6cm6h1l";s:0:"";s:13:"hxbav0z08nywc";s:0:"";s:15:"73xb3xspbhg8pdr";s:5:"star5";s:14:"wiocw3io1yvk4c";s:1:"#";s:25:"wiocw3io1yvk4c_pagepicker";s:0:"";s:21:"wiocw3io1yvk4c_target";s:0:"";s:23:"wiocw3io1yvk4c_linkText";s:9:"Subscribe";s:14:"0c2ydz4kzkw213";s:10:"ENTERPRISE";s:15:"3vwnsoalwm75kg4";s:0:"";s:26:"3vwnsoalwm75kg4_iconpicker";s:0:"";s:14:"s5r64q9opsjqtl";s:3:"€";s:14:"gwj9jutffzjfms";s:3:"599";s:15:"rjcu0khyc1n6ln2";s:6:"/Monat";s:14:"ik91d2gt1sfmkm";s:26:"Lorem ipsum dolor sit amet";s:14:"4y7cin0uox9j10";s:313:"<ul>
+<li>1000 Ads</li>
+<li>5GB Download</li>
+<li>10GB Upload[nbsp]</li>
+<li>Analytic Report <span class="label-warning">FREE</span></li>
+<li>Member Access</li>
+<li>E-Mail Support*</li>
+<li><span class="color-lightgray">* Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</span></li>
+</ul>";s:15:"ki2yjhrkgiz23le";s:0:"";s:15:"iki18rvvnu36uc6";s:0:"";s:15:"u8cdo3y5lx7nhkt";s:5:"star5";s:14:"4aa1u6on8thkzw";s:1:"#";s:25:"4aa1u6on8thkzw_pagepicker";s:0:"";s:21:"4aa1u6on8thkzw_target";s:0:"";s:23:"4aa1u6on8thkzw_linkText";s:9:"Subscribe";s:14:"yx0jkan4vp0l8q";s:0:"";s:15:"ljjfc5b4oj95tp8";s:0:"";s:17:"hcf8i1b5tsvyb0j_1";N;s:17:"u2nf2o9xlnq42or_1";N;s:15:"hxbav0z08nywc_1";N;s:17:"iki18rvvnu36uc6_1";N;s:13:"1ra8afqk55g5d";N;s:15:"emm6zwp8p77i0sk";N;}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:4:"37_0";s:8:"group_id";i:37;s:11:"group_alias";s:7:"content";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:15:"t0qbfa5gkdbuji0";s:2:"id";i:222;s:5:"alias";s:7:"title_1";}i:1;a:3:{s:4:"uuid";s:15:"1irol810gmw99mb";s:2:"id";i:223;s:5:"alias";s:6:"icon_1";}i:2;a:3:{s:4:"uuid";s:14:"1ead2ztldyzv3k";s:2:"id";i:224;s:5:"alias";s:10:"currency_1";}i:3;a:3:{s:4:"uuid";s:15:"z1rb2pqog8dvkm5";s:2:"id";i:225;s:5:"alias";s:7:"price_1";}i:4;a:3:{s:4:"uuid";s:15:"zmp0jf75tdo23cv";s:2:"id";i:226;s:5:"alias";s:8:"period_1";}i:5;a:3:{s:4:"uuid";s:15:"543g3gesjws66zc";s:2:"id";i:227;s:5:"alias";s:11:"priceinfo_1";}i:6;a:3:{s:4:"uuid";s:15:"mx6ftv5091r0kin";s:2:"id";i:228;s:5:"alias";s:10:"contents_1";}i:7;a:3:{s:4:"uuid";s:14:"j7bd6jb46cde35";s:2:"id";i:229;s:5:"alias";s:11:"highlight_1";}i:8;a:3:{s:4:"uuid";s:15:"hcf8i1b5tsvyb0j";s:2:"id";i:230;s:5:"alias";s:16:"highlight_text_1";}i:9;a:3:{s:4:"uuid";s:15:"x9qgagrdim9k4bh";s:2:"id";i:231;s:5:"alias";s:8:"rating_1";}i:10;a:3:{s:4:"uuid";s:15:"wjoqu91qqlh6i9q";s:2:"id";i:232;s:5:"alias";s:6:"link_1";}}}i:1;a:4:{s:5:"ident";s:4:"38_0";s:8:"group_id";i:38;s:11:"group_alias";s:7:"table_2";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:15:"31teq58inn46r2f";s:2:"id";i:233;s:5:"alias";s:7:"title_2";}i:1;a:3:{s:4:"uuid";s:15:"26somwkoe5ba42z";s:2:"id";i:234;s:5:"alias";s:6:"icon_2";}i:2;a:3:{s:4:"uuid";s:15:"2skrwr0jeco5d3r";s:2:"id";i:235;s:5:"alias";s:10:"currency_2";}i:3;a:3:{s:4:"uuid";s:15:"9i3vdnjssu3vv21";s:2:"id";i:236;s:5:"alias";s:7:"price_2";}i:4;a:3:{s:4:"uuid";s:15:"tlnocw8r9vwmym1";s:2:"id";i:237;s:5:"alias";s:8:"period_2";}i:5;a:3:{s:4:"uuid";s:15:"541iqj0hccc8dd3";s:2:"id";i:238;s:5:"alias";s:11:"priceinfo_2";}i:6;a:3:{s:4:"uuid";s:15:"yqual12tvxftjfz";s:2:"id";i:239;s:5:"alias";s:10:"contents_2";}i:7;a:3:{s:4:"uuid";s:14:"j59ieqvq223e59";s:2:"id";i:240;s:5:"alias";s:11:"highlight_2";}i:8;a:3:{s:4:"uuid";s:15:"u2nf2o9xlnq42or";s:2:"id";i:241;s:5:"alias";s:16:"highlight_text_2";}i:9;a:3:{s:4:"uuid";s:14:"hr4s8u76kmgj8b";s:2:"id";i:242;s:5:"alias";s:8:"rating_2";}i:10;a:3:{s:4:"uuid";s:14:"nwt6aj1k23z7bb";s:2:"id";i:243;s:5:"alias";s:6:"link_2";}}}i:2;a:4:{s:5:"ident";s:4:"39_0";s:8:"group_id";i:39;s:11:"group_alias";s:7:"table_3";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:15:"7ts9l1s8f7ehoj5";s:2:"id";i:244;s:5:"alias";s:7:"title_3";}i:1;a:3:{s:4:"uuid";s:15:"3cdyhde7tzf8k7h";s:2:"id";i:245;s:5:"alias";s:6:"icon_3";}i:2;a:3:{s:4:"uuid";s:15:"w1bd3t9jmee73h6";s:2:"id";i:246;s:5:"alias";s:10:"currency_3";}i:3;a:3:{s:4:"uuid";s:15:"lm8qv61hpfk0fmr";s:2:"id";i:247;s:5:"alias";s:7:"price_3";}i:4;a:3:{s:4:"uuid";s:15:"wa02h2hwhu6wko4";s:2:"id";i:248;s:5:"alias";s:8:"period_3";}i:5;a:3:{s:4:"uuid";s:14:"fyj950yamkf4k2";s:2:"id";i:249;s:5:"alias";s:11:"priceinfo_3";}i:6;a:3:{s:4:"uuid";s:15:"yw9s68sfffdaeqi";s:2:"id";i:250;s:5:"alias";s:10:"contents_3";}i:7;a:3:{s:4:"uuid";s:15:"upgau8rq6cm6h1l";s:2:"id";i:251;s:5:"alias";s:11:"highlight_3";}i:8;a:3:{s:4:"uuid";s:13:"hxbav0z08nywc";s:2:"id";i:252;s:5:"alias";s:16:"highlight_text_3";}i:9;a:3:{s:4:"uuid";s:15:"73xb3xspbhg8pdr";s:2:"id";i:253;s:5:"alias";s:8:"rating_3";}i:10;a:3:{s:4:"uuid";s:14:"wiocw3io1yvk4c";s:2:"id";i:254;s:5:"alias";s:6:"link_3";}}}i:3;a:4:{s:5:"ident";s:4:"40_0";s:8:"group_id";i:40;s:11:"group_alias";s:7:"table_4";s:10:"attributes";a:11:{i:0;a:3:{s:4:"uuid";s:14:"0c2ydz4kzkw213";s:2:"id";i:255;s:5:"alias";s:7:"title_4";}i:1;a:3:{s:4:"uuid";s:15:"3vwnsoalwm75kg4";s:2:"id";i:256;s:5:"alias";s:6:"icon_4";}i:2;a:3:{s:4:"uuid";s:14:"s5r64q9opsjqtl";s:2:"id";i:257;s:5:"alias";s:10:"currency_4";}i:3;a:3:{s:4:"uuid";s:14:"gwj9jutffzjfms";s:2:"id";i:258;s:5:"alias";s:7:"price_4";}i:4;a:3:{s:4:"uuid";s:15:"rjcu0khyc1n6ln2";s:2:"id";i:259;s:5:"alias";s:8:"period_4";}i:5;a:3:{s:4:"uuid";s:14:"ik91d2gt1sfmkm";s:2:"id";i:260;s:5:"alias";s:11:"priceinfo_4";}i:6;a:3:{s:4:"uuid";s:14:"4y7cin0uox9j10";s:2:"id";i:261;s:5:"alias";s:10:"contents_4";}i:7;a:3:{s:4:"uuid";s:15:"ki2yjhrkgiz23le";s:2:"id";i:262;s:5:"alias";s:11:"highlight_4";}i:8;a:3:{s:4:"uuid";s:15:"iki18rvvnu36uc6";s:2:"id";i:263;s:5:"alias";s:16:"highlight_text_4";}i:9;a:3:{s:4:"uuid";s:15:"u8cdo3y5lx7nhkt";s:2:"id";i:264;s:5:"alias";s:8:"rating_4";}i:10;a:3:{s:4:"uuid";s:14:"4aa1u6on8thkzw";s:2:"id";i:265;s:5:"alias";s:6:"link_4";}}}}s:6:"tstamp";i:1567424863;s:5:"alias";s:11:"pricetable4";s:5:"uuids";a:48:{i:0;s:15:"t0qbfa5gkdbuji0";i:1;s:15:"1irol810gmw99mb";i:2;s:14:"1ead2ztldyzv3k";i:3;s:15:"z1rb2pqog8dvkm5";i:4;s:15:"zmp0jf75tdo23cv";i:5;s:15:"543g3gesjws66zc";i:6;s:15:"mx6ftv5091r0kin";i:7;s:14:"j7bd6jb46cde35";i:8;s:15:"hcf8i1b5tsvyb0j";i:9;s:15:"x9qgagrdim9k4bh";i:10;s:15:"wjoqu91qqlh6i9q";i:11;s:15:"31teq58inn46r2f";i:12;s:15:"26somwkoe5ba42z";i:13;s:15:"2skrwr0jeco5d3r";i:14;s:15:"9i3vdnjssu3vv21";i:15;s:15:"tlnocw8r9vwmym1";i:16;s:15:"541iqj0hccc8dd3";i:17;s:15:"yqual12tvxftjfz";i:18;s:14:"j59ieqvq223e59";i:19;s:15:"u2nf2o9xlnq42or";i:20;s:14:"hr4s8u76kmgj8b";i:21;s:14:"nwt6aj1k23z7bb";i:22;s:15:"7ts9l1s8f7ehoj5";i:23;s:15:"3cdyhde7tzf8k7h";i:24;s:15:"w1bd3t9jmee73h6";i:25;s:15:"lm8qv61hpfk0fmr";i:26;s:15:"wa02h2hwhu6wko4";i:27;s:14:"fyj950yamkf4k2";i:28;s:15:"yw9s68sfffdaeqi";i:29;s:15:"upgau8rq6cm6h1l";i:30;s:13:"hxbav0z08nywc";i:31;s:15:"73xb3xspbhg8pdr";i:32;s:14:"wiocw3io1yvk4c";i:33;s:14:"0c2ydz4kzkw213";i:34;s:15:"3vwnsoalwm75kg4";i:35;s:14:"s5r64q9opsjqtl";i:36;s:14:"gwj9jutffzjfms";i:37;s:15:"rjcu0khyc1n6ln2";i:38;s:14:"ik91d2gt1sfmkm";i:39;s:14:"4y7cin0uox9j10";i:40;s:15:"ki2yjhrkgiz23le";i:41;s:15:"iki18rvvnu36uc6";i:42;s:15:"u8cdo3y5lx7nhkt";i:43;s:14:"4aa1u6on8thkzw";i:44;s:14:"yx0jkan4vp0l8q";i:45;s:15:"ljjfc5b4oj95tp8";i:46;s:13:"1ra8afqk55g5d";i:47;s:15:"emm6zwp8p77i0sk";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:23;}',
+162 => 'sourceText',
+),
+),
+);

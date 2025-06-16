@@ -1,0 +1,99 @@
+
+<?php 
+$objLang = (object)$GLOBALS['TL_LANG']['tl_pct_customcatalog']['be_page_db_update'];
+
+if($this->status)
+{
+	$objLang->headline = $objLang->{'headline_'.strtolower($this->status)};
+	$objLang->info = $objLang->{'info_'.strtolower($this->status)};
+}
+
+$strToken = \Contao\System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
+?>
+
+<div id="page_db_update" class="<?= 'status_'.strtolower($this->status); ?>">
+	<div id="tl_buttons">
+	<a href="<?= \Contao\Controller::getReferer(); ?>" class="tl_button reset header_back" title="<?= $GLOBALS['TL_LANG']['MSC']['goBack']; ?>"><?= $GLOBALS['TL_LANG']['MSC']['goBack']; ?></a>
+	</div>
+	
+	<h2 class="headline sub_headline"><?= $objLang->headline; ?></h2>
+
+<!-- ! ERROR -->
+<?php if($this->status == 'DONE'): ?>
+	<div class="tl_message body tl_info"><?= sprintf($objLang->info, implode(', ',$this->tables)); ?></div>
+	
+	<?php if(!empty($this->statements)) :?>
+	<div class="tl_message statements">
+		<div class="accordion_container">
+			<div class="toggler tl_headline"><?= $objLang->subheadline_statements; ?></div>
+			<ul class="list_container accordion">
+			<?php foreach($this->statements as $statement): ?>
+				<li><?= $statement; ?></li>
+			<?php endforeach; ?>
+			</ul>
+		</div>
+	</div>
+	
+	<script>
+	window.addEvent('domready', function() 
+	{
+		$$('#page_db_update .accordion_container .toggler').addEvent('click',function(e)
+		{
+			this.getParent('.accordion_container').toggleClass('open');
+		});
+	});
+	</script>
+	
+	<?php endif; ?>
+	
+
+	
+<!-- ! CLEAR_CACHE -->		
+<?php elseif($this->status == 'CLEAR_CACHE'): ?>
+	<div class="tl_message body tl_info"><?= $objLang->info; ?></div>
+
+<!-- ! DB_UPDATE -->
+<?php elseif($this->status == 'DB_UPDATE'): ?>
+	<div class="tl_message body tl_info"><?= sprintf($objLang->info, implode(', ',$this->tables)); ?></div>
+	
+<!-- ! ERROR -->
+<?php elseif($this->status == 'ERROR'): ?>
+	<div class="tl_message body tl_info"><?= $objLang->info; ?></div>
+
+	<div class="tl_message tl_error"><?= sprintf($objLang->errors, implode(', ',$this->errors)); ?></div>
+
+<!-- ! WELCOME -->
+
+<?php elseif(empty($this->status) || $this->status == 'WELCOME'): ?>
+	
+	<?php if(empty($this->tables)): ?>
+	<div class="tl_message body tl_info"><?= $objLang->info_empty; ?></div>
+	<?php else: ?>
+	
+	<div class="tl_message body tl_info"><?= sprintf($objLang->info, implode(', ',$this->tables) ); ?></div>
+	
+	<form action="<?= \Contao\Environment::get('request'); ?>" method="post">
+		<input type="hidden" name="FORM_SUBMIT" value="<?= $this->formID; ?>">
+		<input type="hidden" name="REQUEST_TOKEN" value="<?= $strToken; ?>">
+		
+		<fieldset class="tables">
+			<span class="legend"><?= $objLang->legend_tables; ?></span>
+			<ul class="checkbox_container tables">
+			<?php foreach($this->tables as $table): ?>
+				<li><input type="checkbox" name="tables[]" value="<?= $table; ?>" id="input_<?= $table; ?>"><label for="input_<?= $table; ?>"><?= $table; ?></label></li>		
+			<?php endforeach; ?>
+			</ul>
+		</fieldset>
+		
+		<div class="tl_formbody_submit">
+			<div class="tl_submit_container">
+				<input type="submit" name="run" class="tl_submit" value="<?= $objLang->submit; ?>">
+			</div>
+		</div>
+	</form>
+	<?php endif; ?>
+	
+<?php endif; ?>
+	
+	
+</div>

@@ -1,0 +1,127 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* @pct_theme_templates/customelements/customelement_countup.html5 */
+class __TwigTemplate_3fa8efe0ec8239b684da7f46190fb7c8 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 1
+        yield "<?php
+\$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/countup/countUp.min.js|static';
+\$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_countup.css|static';
+?>
+<div class=\"<?= \$this->class; ?> block<?php if(\$this->field('style')): ?> <?= \$this->field('style')->value(); ?><?php endif; ?>\"<?= \$this->cssID; ?><?php if (\$this->style): ?> style=\"<?= \$this->style; ?>\"<?php endif; ?>>
+\t<?php if(\$this->field('icon')): ?><i class=\"<?= \$this->field('icon')->value(); ?>\"></i><?php endif; ?>
+\t<?php if(\$this->field('image-icon')): ?><?= \$this->field('image-icon')->html(); ?><?php endif; ?>
+\t<div class=\"headline h3\" id=\"ce_countup_<?= \$this->id; ?>\">0</div>
+\t<div class=\"text\"><?= \$this->field('text')->value(); ?></div>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+\tvar startFrom = <?= \$this->field('startfrom')->value() == '' ? '0' : \$this->field('startfrom')->value(); ?>;
+\tvar countTo = <?= \$this->field('countto')->value(); ?>;
+\tvar duration = <?= \$this->field('duration')->value() == '' ? '500' : \$this->field('duration')->value(); ?>;
+\tvar decimals = <?= \$this->field('decimals')->value() == '' ? '0' : \$this->field('decimals')->value(); ?>;
+\t
+\tfunction initObserver() 
+\t{
+\t\tvar objObserver = new IntersectionObserver( function(entries, observer)
+\t\t{
+\t\t\tentries.forEach(function(entry) 
+\t\t\t{
+\t\t\t\tif (entry.isIntersecting) 
+\t\t\t\t{
+\t\t\t\t\tif( !jQuery('body').hasClass('acc_disable_animations') )
+\t\t\t\t\t{
+\t\t\t\t\t\t// start counter
+\t\t\t\t\t\tvar ce_countup_<?= \$this->id; ?> = new countUp(\"ce_countup_<?= \$this->id; ?>\", startFrom, countTo, decimals, duration,{useEasing : true, useGrouping : true, separator : '.', decimal : ',', prefix : '<?= \$this->field('prefix')->value(); ?>', suffix : '<?= \$this->field('suffix')->value(); ?>'}).start();
+\t\t\t\t\t}
+\t\t\t\t\telse 
+\t\t\t\t\t{
+\t\t\t\t\t\tjQuery('#ce_countup_<?= \$this->id; ?>').html(countTo);
+\t\t\t\t\t}
+\t\t\t\t\t
+\t\t\t\t\t// stop observing
+\t\t\t\t\tobjObserver.unobserve( entry.target );
+\t\t\t\t\t
+\t\t\t\t}
+\t\t\t});
+\t\t}, {root: null,rootMargin: '0px',threshold: 0.25} );
+\t\tobjObserver.observe( jQuery('#ce_countup_<?= \$this->id; ?>')[0] );
+\t}
+
+\t// check if a revolutionslider exists in page
+\tif (jQuery(document).revolution != undefined)
+\t{
+\t\tjQuery(document).on('RevolutionSlider.loaded', function (e, params)
+\t\t{ 
+\t\t\tinitObserver();
+\t\t});
+\t}
+\telse
+\t{
+\t\tinitObserver();
+\t}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->";
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "@pct_theme_templates/customelements/customelement_countup.html5";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  42 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("", "@pct_theme_templates/customelements/customelement_countup.html5", "/var/www/vhosts/handyservice4you.at/update.handyservice4you.at/system/modules/pct_theme_templates/templates/customelements/customelement_countup.html5");
+    }
+}

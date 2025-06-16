@@ -1,0 +1,70 @@
+<?php
+$arrImport = array (
+'tstamp' => '11.04.2024 07:23',
+'name' => 'single_authorbox',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'authorbox',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126348,
+1 => 14767,
+2 => 128,
+3 => 1700726228,
+5 => 'authorbox',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:13:{s:15:"h4ubjx0vtnyb88m";s:14:"Max Mustermann";s:15:"idtn9z6e9i6ew24";s:17:"Designer & Author";s:15:"ki7pjwzulfb7j2e";s:385:"<p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </strong>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>";s:15:"iht3pdkq3zjkne4";s:36:"08459120-8932-11ee-bdbf-5d443f6d67ba";s:19:"iht3pdkq3zjkne4_alt";s:0:"";s:21:"iht3pdkq3zjkne4_title";s:0:"";s:20:"iht3pdkq3zjkne4_size";a:3:{i:2;s:12:"proportional";i:0;s:2:"90";i:1;s:0:"";}s:15:"9004cji8r3lbhbf";s:0:"";s:22:"9004cji8r3lbhbf_target";s:0:"";s:24:"9004cji8r3lbhbf_linkText";s:0:"";s:25:"9004cji8r3lbhbf_titleText";s:0:"";s:24:"9004cji8r3lbhbf_lightbox";s:0:"";s:14:"5dlcilt1c6jmrl";s:6:"style1";}s:6:"groups";a:4:{i:0;a:4:{s:5:"ident";s:5:"149_0";s:8:"group_id";i:149;s:11:"group_alias";s:4:"text";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"h4ubjx0vtnyb88m";s:2:"id";i:921;s:5:"alias";s:4:"name";}i:1;a:3:{s:4:"uuid";s:15:"idtn9z6e9i6ew24";s:2:"id";i:1021;s:5:"alias";s:8:"subtitle";}i:2;a:3:{s:4:"uuid";s:15:"ki7pjwzulfb7j2e";s:2:"id";i:923;s:5:"alias";s:4:"text";}}}i:1;a:4:{s:5:"ident";s:5:"366_0";s:8:"group_id";i:366;s:11:"group_alias";s:5:"image";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"iht3pdkq3zjkne4";s:2:"id";i:922;s:5:"alias";s:5:"image";}}}i:2;a:4:{s:5:"ident";s:5:"367_0";s:8:"group_id";i:367;s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"9004cji8r3lbhbf";s:2:"id";i:1022;s:5:"alias";s:4:"link";}}}i:3;a:4:{s:5:"ident";s:5:"376_0";s:8:"group_id";i:376;s:11:"group_alias";s:13:"einstellungen";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"5dlcilt1c6jmrl";s:2:"id";i:1020;s:5:"alias";s:5:"style";}}}}s:6:"tstamp";i:1566472687;s:5:"alias";s:9:"authorbox";s:5:"uuids";a:6:{i:0;s:15:"h4ubjx0vtnyb88m";i:1;s:15:"idtn9z6e9i6ew24";i:2;s:15:"ki7pjwzulfb7j2e";i:3;s:15:"iht3pdkq3zjkne4";i:4;s:15:"9004cji8r3lbhbf";i:5;s:14:"5dlcilt1c6jmrl";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:90;}',
+162 => 'sourceText',
+),
+),
+'tl_files' =>
+array (
+'08459120-8932-11ee-bdbf-5d443f6d67ba' => 'files/cto_layout/img/element_library/men.jpg',
+),
+);

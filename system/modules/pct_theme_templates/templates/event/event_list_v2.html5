@@ -1,0 +1,25 @@
+<?php 
+$date = new \Contao\Date($this->firstDate);
+$newtime = $date->tstamp ?: $this->startDate; 
+?>
+<div class="autogrid_wrapper block event layout_list<?= $this->classList ?>" itemscope itemtype="http://schema.org/Event">
+	
+	<div class="autogrid one_sixth block date">
+		<?php echo \Contao\Date::parse("d", $newtime); ?> <?php echo \Contao\Date::parse("M", $newtime); ?>
+	</div>
+	
+	<div class="autogrid three_sixth block title">
+		<a href="<?= $this->href ?>" itemprop="url" title="<?= $this->title ?> (<?php if ($this->day) echo $this->day . ', '; ?><?= $this->date ?><?php if ($this->time) echo ', ' . $this->time; ?>)"<?= $this->target ?>><?= $this->link ?></a>
+	</div>
+		
+	<div class="autogrid one_sixth block location">
+		<?php if ($this->location): ?>
+    		<i class="fa fa-location-arrow"></i><?= $this->locationLabel ?>: <?= $this->location ?>
+  		<?php endif; ?>
+	</div>
+	
+	<div class="autogrid one_sixth block time" itemprop="startDate">
+		<?php if ($this->time): ?><i class="fa fa-clock-o"></i><?= $this->time ?><?php else: ?>&nbsp;<?php endif; ?>
+	</div>
+	
+</div>

@@ -1,0 +1,2 @@
+
+<div <?php echo $this->cssID; ?> class="field widget contao-ht35 <?php echo $this->class; ?> <?php echo $this->type; ?>"<?php echo $this->data_attributes; ?>><?php echo $this->html; ?></div>

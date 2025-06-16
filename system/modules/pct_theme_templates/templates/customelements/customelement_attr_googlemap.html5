@@ -1,0 +1,143 @@
+
+<?php
+global $objPage;
+$objRoot = \Contao\PageModel::findByPk( $objPage->rootId );
+?>
+
+<!-- indexer::stop -->
+<p id='privacy_info_attr_<?= $this->id; ?>' class="privacy hidden">{{iflng::de}}Das Laden von Google Maps wurde nicht erlaubt. Bitte ändern Sie die <a class="privacy_optout_click">Datenschutz-Einstellungen</a>{{iflng}}{{iflng::en}}Google Maps has been restricted due to <a class="privacy_optout_click">privacy settings</a>{{iflng}}</p>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+// show privacy information if nessessary
+jQuery(document).ready(function() 
+{
+	if( !PrivacyManager.hasAccess(2) )
+	{
+		jQuery('#privacy_info_attr_<?= $this->id; ?>').removeClass('hidden');
+	}
+});
+// listen to Eclipse.user_privacy Event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if( PrivacyManager.hasAccess(2) )
+	{
+		jQuery('#privacy_info_<?= $this->id; ?>').fadeOut();
+	}
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->
+
+<?php
+
+/**
+ * To use google maps, please fill in your Google Maps API Key below
+ */
+$GoogleMapsApiKey = $objRoot->google_maps;
+
+
+/**
+ * DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+ */
+if(strlen($GoogleMapsApiKey) < 1)
+{
+	echo ($GLOBALS['TL_LANGUAGE'] == 'de' ? 'Google Maps API Schlüssel benötigt. Bitte tragen Sie den API Schlüssel im Template customelement_attr_googlemap.html5 ein' : 'Google Maps requires a valid API Key!');	
+	return '';
+}
+?>
+
+<?php
+$GLOBALS['TL_HEAD'][] = 
+'<script id="googleapis_maps"></script>
+<script>
+// Optin privacy setting token
+var token = localStorage.getItem("user_privacy_settings");
+if( token == undefined )
+{
+	token = "";
+}
+if(token.indexOf(2) >= 0)
+{
+  	document.getElementById("googleapis_maps").src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key='.$GoogleMapsApiKey.'&loading=async&callback=initializeMap_'.$this->id.'";
+}
+
+// listen to Eclipse.user_privacy Event
+jQuery(document).on("Eclipse.user_privacy",function(event,params)
+{
+	if(params.level.indexOf(2) >= 0)
+	{
+  		document.getElementById("googleapis_maps").src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key='.$GoogleMapsApiKey.'&loading=async&callback=initializeMap_'.$this->id.'";
+	}
+});
+</script>';
+?>
+
+<?php
+$strStyle = ($this->size[0] > 0 ? 'width:'.$this->size[0].'px;':'').($this->size[1] > 0 ? 'height:'.$this->size[1].'px;' : '');
+?>
+
+<div id="<?php echo $this->selector; ?>" <?php if($this->class): ?>class="<?php echo $this->class; ?>"<?php endif; ?> <?php if($strStyle): ?>style="<?php echo $strStyle; ?>"<?php endif;?>>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+/**
+ * Initialize the googlemap
+ */
+function initializeMap_<?= $this->selector; ?>() {
+
+	var address = '<?php echo $this->formattedAddress; ?>';
+	
+	var mapOptions = 
+	{
+		mapId: 'gmap_<?= $this->id; ?>',
+		zoom: 15,
+		scrollwheel: false,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	<?php if($this->hasCoordinates): ?>
+	mapOptions.center: new google.maps.LatLng(<?= $this->latitude; ?>, <?= $this->longitude; ?>),
+	<?php endif; ?>
+		
+	
+	var map = new google.maps.Map(document.getElementById('<?php echo $this->selector; ?>'),mapOptions);
+	var marker = await google.maps.importLibrary("marker");
+
+	<?php if($this->hasCoordinates): ?>
+	
+	    var pos = {lat:<?php echo $this->latitude; ?>, lng:<?php echo $this->longitude; ?>};
+	    map.setCenter(pos);
+	    marker = new google.maps.marker.AdvancedMarkerElement({
+	        map: map,
+	        position: pos
+	    });
+	
+	<?php else: ?>	
+		
+		var geocoder = new google.maps.Geocoder;
+		var geocoderOptions = {};
+		geocoderOptions.address = address;
+		
+		geocoder.geocode(geocoderOptions, function(results, status) 
+		{
+			if (status == google.maps.GeocoderStatus.OK) 
+			{
+				map.setCenter(results[0].geometry.location);
+				marker = new google.maps.marker.AdvancedMarkerElement(
+				{
+				  	map: map,
+				  	position: results[0].geometry.location
+				});
+			} 
+			else 
+			{
+				console.log('<?php echo $GLOBALS['TL_LANG']['PCT_CUSTOMELEMENTS']['MSC']['mapLocationNotFound']; ?>');
+			}
+		});
+
+	<?php endif; ?>
+}
+</script>
+<!-- SEO-SCRIPT-STOP -->
+
+</div>

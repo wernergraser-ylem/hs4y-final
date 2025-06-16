@@ -1,0 +1,128 @@
+<?php
+global $objPage;
+// include PrivacyManager styles
+$GLOBALS['TL_CSS'][] = 'system/modules/pct_privacy_manager/assets/css/styles.min.css|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/modules/mod_privacy_optin_slim.css|static';
+
+$objLayout = \Contao\LayoutModel::findByPk( $objPage->layout );
+$arrJquery = \Contao\StringUtil::deserialize( $objLayout->jquery ) ?? array();
+
+$scriptMissing = false;
+if( !in_array('j_privacymanager',$arrJquery) || !$objPage->hasJQuery )
+{
+	$scriptMissing = true;
+}
+?>
+
+<?php if( $scriptMissing ): ?>
+<p class="privacy_optin info error">{{iflng::en}}j_privacymanager script is missing in page layout{{iflng}}{{iflng::de}}j_privacymanager Template benötigt. Bitte fügen Sie jQuery und das j_privacymanager Template über die Seitenlayouts hinzu.{{iflng}}</p>
+<?php return ''; endif; ?>
+
+<!-- indexer::stop -->
+<div id="privacy_optout_link"><span title="{{iflng::en}}Reset Data Privacy Settings{{iflng}}{{iflng::de}}Datenschutzeinstellungen neu wählen{{iflng}}"></span></div>
+<div id="privacy_optin_<?= $this->id; ?>" class="mod_privacy_optin_slim">
+	<div class="privacy_inside">
+		<div class="privacy_content"><?= $this->privacy_text; ?> <?= $this->link_1; ?> <?= $this->link_2; ?></div>
+		<div class="privacy_buttons">
+			<div class="privacy_button privacy_agree"><a data-privacy="1,2,3" href="">{{iflng::en}}Accept{{iflng}}{{iflng::de}}Zustimmen{{iflng}}</a></div>
+			<div class="privacy_button privacy_disagree"><a data-privacy="0" href="">{{iflng::en}}I disagree{{iflng}}{{iflng::de}}Nicht zustimmen{{iflng}}</a></div>
+		</div>
+	</div>
+	<div class="privacy_overlay"></div>
+</div>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	// add hide_optin body class when on imprint or privacy page
+	<?php if( isset($this->hide_optin) ): ?>
+	jQuery('body').addClass('hide_optin');
+	<?php endif; ?>
+	
+	//--- opt out remove token
+	jQuery('#privacy_optout_link').click(function(e)
+	{
+		e.preventDefault();
+		PrivacyManager.optout(document.location.origin+document.location.pathname);
+	});
+	
+	if(window.location.search.indexOf('clear_privacy_settings') >= 0)
+	{
+		PrivacyManager.optout(document.location.origin+document.location.pathname);
+	}
+	//--
+
+	var privacy = localStorage.getItem('<?= $this->session_name; ?>');
+	var expires = Number( localStorage.getItem('<?= $this->session_name; ?>_expires') );
+	// check lease time
+	var now = new Date().setDate(new Date().getDate());
+	if( now >= expires )
+	{
+		expires = 0;
+	}
+
+	if(privacy == undefined || privacy == '' || expires <= 0 )
+	{
+		jQuery('#privacy_optin_<?= $this->id; ?>').addClass('open');
+		jQuery('body').addClass('privacy_open');
+		setTimeout(function()
+		{
+			jQuery('body').css('padding-bottom', jQuery('.mod_privacy_optin_slim .inside').outerHeight() + 'px');
+		}, 800);
+		// set privacy level to 0
+		privacy = '0';
+	}
+
+	// set a body class
+	jQuery('body').addClass('privacy_setting_'+privacy.toString().split(',').join('-'));
+
+	jQuery('#privacy_optin_<?= $this->id; ?> .privacy_button a').click(function(e)
+	{
+		e.preventDefault();
+
+		var privacy = jQuery(this).data('privacy').toString();
+		// set local storage
+		localStorage.setItem('<?= $this->session_name; ?>',privacy);
+		// set lease time
+		var expires = new Date().setDate(new Date().getDate() + <?= (int)$this->privacy_cookie_expires; ?>);
+		localStorage.setItem('<?= $this->session_name; ?>_expires',expires);
+		// set a body class
+		jQuery('body').addClass('privacy_setting_'+privacy.toString().split(',').join('-'));
+		// remove negative body class
+		jQuery('body').removeClass('privacy_setting_0');
+		setTimeout(function()
+		{
+			// fire JS event
+			jQuery(document).trigger('Privacy.changed',{'level':privacy});
+		}, 500);
+	});
+});
+
+// listen to Privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(0) >= 0 || PrivacyManager.hasAccess(1) )
+	{
+		jQuery('#privacy_optin_<?= $this->id; ?>').removeClass('open');
+		jQuery('body').removeClass('privacy_open');
+		// send ajax for log file
+		jQuery.ajax(
+		{
+			url:location.href,
+			data:{'user_privacy_settings':params.level,'tstamp':Math.round(new Date().getTime()/1000)}
+		});
+	}
+});
+
+// Opt-out listener
+jQuery(document).ready(function()
+{
+	jQuery('.privacy_optout_click, .privacy_optout_link').click(function()
+	{
+		PrivacyManager.optout();
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

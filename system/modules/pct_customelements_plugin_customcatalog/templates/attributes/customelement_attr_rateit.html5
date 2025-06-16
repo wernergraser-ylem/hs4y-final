@@ -1,0 +1,81 @@
+
+<?php
+/**
+ * Custom elements RateIt attribute template
+ */
+?>
+
+<?php
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_CUSTOMCATALOG_PATH.'/PCT/CustomElements/Attributes/RateIt/assets/rateit/src/jquery.rateit.min.js|static';
+$GLOBALS['TL_CSS'][] = PCT_CUSTOMCATALOG_PATH.'/PCT/CustomElements/Attributes/RateIt/assets/rateit/src/rateit.css|static';
+?>
+
+<?php // options
+$steps = 0.5;
+?>
+
+<script>
+/**
+ * RateIt jquery star rating plugin
+ * http://rateit.codeplex.com/
+ * see http://www.radioactivethinking.com/rateit/example/example.htm for more options
+ */
+jQuery(document).ready(function()
+{
+	// initialize rateit
+	jQuery('#<?php echo $this->selector; ?>').rateit(
+	{
+		min: <?php echo $this->min_value ?? 1; ?>,
+		max: <?php echo $this->max_value ?? 5; ?>,
+		step: <?php echo $steps ?? 1; ?>,
+		//backingfld: '#<?php echo $this->selector; ?>'
+	});
+
+	// bind an ajax request to the field
+	<?php if($this->votingIsAllowed): ?>
+	jQuery('#<?php echo $this->selector; ?>').bind('rated reset',function(event)
+	{
+		var elem = jQuery(this);
+		jQuery.ajax(
+		{
+		   url: document.location,
+		   data: {attr_id:elem.data('attr_id'), value:elem.rateit('value'), rateit:1, item_id:<?php echo $this->activeRecord->id; ?>},
+		   type: 'GET',
+		   success: function(data)
+		   {
+				if(jQuery('#<?php echo $this->selector; ?> .thankyou').length < 1)
+				{
+					elem.attr('data-rateit-readonly',true);
+					elem.attr('data-rateit-ispreset',true);
+					elem.attr('data-rateit-value',elem.rateit('value'));
+					
+					//elem.unbind();
+					var thankyou = elem.append('<p class="thankyou ajax_success"><?php echo $GLOBALS['TL_LANG']['PCT_CUSTOMELEMENTS']['MSC']['rateit']['thankyou']; ?></p>');
+					jQuery('#<?php echo $this->selector; ?> .thankyou').hide().fadeIn();
+				}
+			}
+		});
+	});
+	<?php endif; ?>
+
+	// show value as number on hover
+	jQuery("#<?php echo $this->selector; ?>").bind('over', function (event,value) { jQuery(this).attr('title', value); });
+});
+
+</script>
+
+<div class="widget rateit_container">
+	<div class="counter"><?php echo $this->counter; ?></div>
+	<div id="<?php echo $this->selector; ?>" class="rateit"
+		data-attr_id="<?php echo $this->id; ?>"
+		data-rateit-value="<?php echo $this->value; ?>"
+		data-rateit-min="<?php echo $this->min_value; ?>"
+		data-rateit-max="<?php echo $this->max_value; ?>"
+		data-rateit-step="<?php echo $steps; ?>"
+		<?php if(!$this->votingIsAllowed): ?>
+		data-rateit-readonly="true"
+		data-rateit-ispreset="true"
+		<?php endif; ?>
+	>
+	</div>
+</div>

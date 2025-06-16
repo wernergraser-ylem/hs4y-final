@@ -1,0 +1,13 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div id="mod_news_<?php echo $this->id; ?>" class="mod_newslist_v3">
+ <?php if (empty($this->articles)): ?>
+    <p class="empty"><?php echo $this->empty; ?></p>
+  <?php else: ?>
+    <?php echo implode('', $this->articles); ?>
+  <?php endif; ?>
+</div>
+<?php echo $this->pagination; ?>
+<?php $this->endblock(); ?>

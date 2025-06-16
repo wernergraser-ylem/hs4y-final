@@ -1,0 +1,65 @@
+{
+  "name": "terminal42/contao-mp_forms",
+  "description": "An extension for Contao Open Source CMS to create multi steps forms using the form generator",
+  "keywords": ["contao", "forms", "multi", "multipage", "step"],
+  "type": "contao-bundle",
+  "license": "LGPL-3.0+",
+  "authors":[
+    {
+      "name":"terminal42 gmbh",
+      "homepage":"https://www.terminal42.ch"
+    }
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/terminal42"
+    },
+    {
+      "type": "other",
+      "url": "https://ko-fi.com/terminal42"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/terminal42/contao-mp_forms/issues",
+    "source": "https://github.com/terminal42/contao-mp_forms",
+    "forum": "https://community.contao.org"
+  },
+  "require": {
+    "php": "^8.1",
+    "contao/core-bundle": "^4.13 || ^5.0.8",
+    "codefog/contao-haste": "^5.2",
+    "symfony/filesystem": "^5.4 || ^6.0",
+    "symfony/var-dumper": "^5.4 || ^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Terminal42\\MultipageFormsBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Terminal42\\MultipageFormsBundle\\Test\\": "tests/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Terminal42\\MultipageFormsBundle\\ContaoManager\\Plugin"
+  },
+  "scripts": {
+    "unit-tests": "@php vendor/bin/phpunit"
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": false,
+      "contao/manager-plugin": false,
+      "php-http/discovery": true,
+      "terminal42/contao-build-tools": true
+    }
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.12",
+    "terminal42/contao-build-tools": "@dev",
+    "phpunit/phpunit": "^9.6",
+    "contao/test-case": "^5.0"
+  }
+}

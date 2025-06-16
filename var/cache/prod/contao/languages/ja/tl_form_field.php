@@ -1,0 +1,141 @@
+<?php
+
+// vendor/contao/core-bundle/contao/languages/ja/tl_form_field.xlf
+$GLOBALS['TL_LANG']['tl_form_field']['type']['0'] = '項目の種類';
+$GLOBALS['TL_LANG']['tl_form_field']['type']['1'] = 'フォームの項目の種類を選択してください。';
+$GLOBALS['TL_LANG']['tl_form_field']['name']['0'] = '項目の名前';
+$GLOBALS['TL_LANG']['tl_form_field']['name']['1'] = '項目の名前は、フォームの項目を識別する重複しない名前です。';
+$GLOBALS['TL_LANG']['tl_form_field']['label']['0'] = '項目のラベル';
+$GLOBALS['TL_LANG']['tl_form_field']['label']['1'] = '項目のラベルは、一般にウェブサイトでは項目の前や上に表示します。';
+$GLOBALS['TL_LANG']['tl_form_field']['text']['0'] = 'テキスト';
+$GLOBALS['TL_LANG']['tl_form_field']['text']['1'] = 'HTMLタグを使用してテキストの書式を整形できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['html']['0'] = 'HTML';
+$GLOBALS['TL_LANG']['tl_form_field']['html']['1'] = 'バックエンドの設定で許可するHTMLタグのリストを変更できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['options']['0'] = '選択肢';
+$GLOBALS['TL_LANG']['tl_form_field']['options']['1'] = 'JavaScriptを無効にしている場合は、順番を変更する前に行った変更を忘れずに保存してください。';
+$GLOBALS['TL_LANG']['tl_form_field']['mandatory']['0'] = '必須の項目';
+$GLOBALS['TL_LANG']['tl_form_field']['mandatory']['1'] = '項目を未入力の状態だとフォームを提出できません。';
+$GLOBALS['TL_LANG']['tl_form_field']['rgxp']['0'] = '入力の検証';
+$GLOBALS['TL_LANG']['tl_form_field']['rgxp']['1'] = '正規表現で入力を検証します。';
+$GLOBALS['TL_LANG']['tl_form_field']['digit']['0'] = '数字';
+$GLOBALS['TL_LANG']['tl_form_field']['digit']['1'] = '数字、マイナス(-)、ドット(.)を許可します。';
+$GLOBALS['TL_LANG']['tl_form_field']['alpha']['0'] = '英文字';
+$GLOBALS['TL_LANG']['tl_form_field']['alpha']['1'] = '英文字、マイナス(-)、ドット(.)、スペース文字( )を許可します。';
+$GLOBALS['TL_LANG']['tl_form_field']['alnum']['0'] = '英数字';
+$GLOBALS['TL_LANG']['tl_form_field']['alnum']['1'] = '英字、数字、マイナス(-)、ドット(.)、下線(_)、スペース文字( )を許可します。';
+$GLOBALS['TL_LANG']['tl_form_field']['extnd']['0'] = '拡張した英数字';
+$GLOBALS['TL_LANG']['tl_form_field']['extnd']['1'] = 'セキュリティ上の理由で次の通常はエンコードが必要な特殊文字以外すべてを許可します: #<>()\\=';
+$GLOBALS['TL_LANG']['tl_form_field']['date']['0'] = '日付';
+$GLOBALS['TL_LANG']['tl_form_field']['date']['1'] = 'バックエンドの設定で指定した日付の書式に入力が合っているかどうか確認します。';
+$GLOBALS['TL_LANG']['tl_form_field']['time']['0'] = '時刻';
+$GLOBALS['TL_LANG']['tl_form_field']['time']['1'] = 'バックエンドの設定で指定した時刻の書式に入力が合っているかどうか確認します。';
+$GLOBALS['TL_LANG']['tl_form_field']['datim']['0'] = '日付と時刻';
+$GLOBALS['TL_LANG']['tl_form_field']['datim']['1'] = 'バックエンドの設定で指定した日付と時刻の書式に入力が合っているかどうか確認します。';
+$GLOBALS['TL_LANG']['tl_form_field']['phone']['0'] = '電話番号';
+$GLOBALS['TL_LANG']['tl_form_field']['phone']['1'] = '数字、プラス(+)、マイナス(-)、スラッシュ(/)、丸括弧()、スペース文字( )を許可します。';
+$GLOBALS['TL_LANG']['tl_form_field']['email']['0'] = '電子メールアドレス';
+$GLOBALS['TL_LANG']['tl_form_field']['email']['1'] = '入力が有効な電子メールアドレスかどうか確認します。';
+$GLOBALS['TL_LANG']['tl_form_field']['url']['0'] = 'URL書式';
+$GLOBALS['TL_LANG']['tl_form_field']['url']['1'] = '入力が有効なURLかどうか確認します。';
+$GLOBALS['TL_LANG']['tl_form_field']['httpurl']['0'] = '絶対URL';
+$GLOBALS['TL_LANG']['tl_form_field']['httpurl']['1'] = '入力が有効なURLであるかどうか確認します。';
+$GLOBALS['TL_LANG']['tl_form_field']['custom']['0'] = '独自';
+$GLOBALS['TL_LANG']['tl_form_field']['custom']['1'] = '独自の正規表現で確認しました。';
+$GLOBALS['TL_LANG']['tl_form_field']['placeholder']['0'] = 'プレースホルダー';
+$GLOBALS['TL_LANG']['tl_form_field']['placeholder']['1'] = '入力欄が空の状態の間はこのテキストを表示します。(HTML5が必要)';
+$GLOBALS['TL_LANG']['tl_form_field']['customRgxp']['0'] = '独自の正規表現';
+$GLOBALS['TL_LANG']['tl_form_field']['customRgxp']['1'] = '区切り文字と修飾子を含んだ独自の正規表現です。';
+$GLOBALS['TL_LANG']['tl_form_field']['errorMsg']['0'] = 'エラーメッセージ';
+$GLOBALS['TL_LANG']['tl_form_field']['errorMsg']['1'] = '入力が不正な場合にフロントエンドでエラーメッセージを表示します。';
+$GLOBALS['TL_LANG']['tl_form_field']['minlength']['0'] = '最小長';
+$GLOBALS['TL_LANG']['tl_form_field']['minlength']['1'] = '入力が必要な文字数の下限を指定します。';
+$GLOBALS['TL_LANG']['tl_form_field']['maxlength']['0'] = '最大長';
+$GLOBALS['TL_LANG']['tl_form_field']['maxlength']['1'] = '入力できる(テキストの)文字数や(ファイルアップロードの)バイト数といった数値の上限を指定します。';
+$GLOBALS['TL_LANG']['tl_form_field']['maxImageWidth']['0'] = '画像の最大の幅';
+$GLOBALS['TL_LANG']['tl_form_field']['maxImageWidth']['1'] = 'アップロードする画像の最大の幅をピクセルで指定できます。0を入力するとシステムの初期値を使用します。';
+$GLOBALS['TL_LANG']['tl_form_field']['maxImageHeight']['0'] = '画像の最大の高さ';
+$GLOBALS['TL_LANG']['tl_form_field']['maxImageHeight']['1'] = 'アップロードする画像の最大の高さをピクセルで指定できます。0を入力するとシステムの初期値を使用します。';
+$GLOBALS['TL_LANG']['tl_form_field']['minval']['0'] = '最小値';
+$GLOBALS['TL_LANG']['tl_form_field']['minval']['1'] = '数値の入力欄の最小値を指定できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['maxval']['0'] = '最大値';
+$GLOBALS['TL_LANG']['tl_form_field']['maxval']['1'] = '数値の入力欄の最大値を指定できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['step']['0'] = '段階的な値';
+$GLOBALS['TL_LANG']['tl_form_field']['step']['1'] = '項目の段階的に変更する値を設定できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['size']['0'] = '行と列';
+$GLOBALS['TL_LANG']['tl_form_field']['size']['1'] = 'テキストエリアの行と数の値です。';
+$GLOBALS['TL_LANG']['tl_form_field']['multiple']['0'] = '複数の選択';
+$GLOBALS['TL_LANG']['tl_form_field']['multiple']['1'] = '複数の選択を許可します。';
+$GLOBALS['TL_LANG']['tl_form_field']['mSize']['0'] = 'リストの大きさ';
+$GLOBALS['TL_LANG']['tl_form_field']['mSize']['1'] = '選択ボックスの数を入力します。';
+$GLOBALS['TL_LANG']['tl_form_field']['extensions']['0'] = '許可するファイル形式';
+$GLOBALS['TL_LANG']['tl_form_field']['extensions']['1'] = '有効なファイルの拡張子をコンマで区切ったリストです。';
+$GLOBALS['TL_LANG']['tl_form_field']['storeFile']['0'] = 'アップロードしたファイルを保存';
+$GLOBALS['TL_LANG']['tl_form_field']['storeFile']['1'] = 'アップロードしたファイルをサーバーのフォルダーに移動します。';
+$GLOBALS['TL_LANG']['tl_form_field']['uploadFolder']['0'] = '保存先のフォルダー';
+$GLOBALS['TL_LANG']['tl_form_field']['uploadFolder']['1'] = 'ファイルディレクトリから保存先とするフォルダーを選択してください。';
+$GLOBALS['TL_LANG']['tl_form_field']['useHomeDir']['0'] = 'ホームディレクトリの使用';
+$GLOBALS['TL_LANG']['tl_form_field']['useHomeDir']['1'] = 'ログインしたメンバーの場合はホームディレクトリにファイルを保存します。';
+$GLOBALS['TL_LANG']['tl_form_field']['doNotOverwrite']['0'] = '既存のファイルを保護';
+$GLOBALS['TL_LANG']['tl_form_field']['doNotOverwrite']['1'] = 'ファイルが既に存在すると、新しいファイル名に数字のサフィックスを追加します。';
+$GLOBALS['TL_LANG']['tl_form_field']['value']['0'] = '初期設定';
+$GLOBALS['TL_LANG']['tl_form_field']['value']['1'] = '入力項目の初期設定の値を入力できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['class']['0'] = 'CSSのclass';
+$GLOBALS['TL_LANG']['tl_form_field']['class']['1'] = '1つ以上のclassを入力できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['accesskey']['0'] = 'アクセスキー';
+$GLOBALS['TL_LANG']['tl_form_field']['accesskey']['1'] = '[ALT]や[CTRL]とアクセスキーを同時に押して、フォームのフィールドにフォーカスを移動できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['fSize']['0'] = '項目の大きさ';
+$GLOBALS['TL_LANG']['tl_form_field']['fSize']['1'] = 'アップロードの項目の大きさ(<em>size</em>属性)を入力できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['customTpl']['0'] = 'フォームの項目のテンプレート';
+$GLOBALS['TL_LANG']['tl_form_field']['customTpl']['1'] = 'フォームの項目のテンプレートを選択できます。';
+$GLOBALS['TL_LANG']['tl_form_field']['slabel']['0'] = '提出ボタンのラベル';
+$GLOBALS['TL_LANG']['tl_form_field']['slabel']['1'] = '提出ボタンのラベルを入力してください。';
+$GLOBALS['TL_LANG']['tl_form_field']['imageSubmit']['0'] = '画像ボタンの作成';
+$GLOBALS['TL_LANG']['tl_form_field']['imageSubmit']['1'] = '通常のテキストのボタンの代わりに画像の提出ボタンを使用します。';
+$GLOBALS['TL_LANG']['tl_form_field']['singleSRC']['0'] = 'ソースファイル';
+$GLOBALS['TL_LANG']['tl_form_field']['singleSRC']['1'] = 'ファイルディレクトリから画像を選択してください。';
+$GLOBALS['TL_LANG']['tl_form_field']['invisible']['0'] = '非表示';
+$GLOBALS['TL_LANG']['tl_form_field']['invisible']['1'] = 'フォームの項目をウェブサイトに表示しません。';
+$GLOBALS['TL_LANG']['tl_form_field']['type_legend'] = '項目の種類と名前';
+$GLOBALS['TL_LANG']['tl_form_field']['text_legend'] = 'テキスト/HTML';
+$GLOBALS['TL_LANG']['tl_form_field']['fconfig_legend'] = '項目の構成';
+$GLOBALS['TL_LANG']['tl_form_field']['options_legend'] = '選択肢';
+$GLOBALS['TL_LANG']['tl_form_field']['store_legend'] = 'ファイルの保存';
+$GLOBALS['TL_LANG']['tl_form_field']['expert_legend'] = '専門的な設定';
+$GLOBALS['TL_LANG']['tl_form_field']['size_legend'] = '行と列';
+$GLOBALS['TL_LANG']['tl_form_field']['template_legend'] = 'テンプレートの設定';
+$GLOBALS['TL_LANG']['tl_form_field']['submit_legend'] = '提出ボタン';
+$GLOBALS['TL_LANG']['tl_form_field']['image_legend'] = '画像ボタン';
+$GLOBALS['TL_LANG']['tl_form_field']['invisible_legend'] = '可視性';
+$GLOBALS['TL_LANG']['tl_form_field']['new']['0'] = '新規作成';
+$GLOBALS['TL_LANG']['tl_form_field']['new']['1'] = '新しいフォームの項目を作成';
+$GLOBALS['TL_LANG']['tl_form_field']['show'] = 'ID %sのフォームの項目の詳細を表示';
+$GLOBALS['TL_LANG']['tl_form_field']['edit'] = 'ID %sのフォームの項目を編集';
+$GLOBALS['TL_LANG']['tl_form_field']['cut'] = 'ID %sのフォームの項目を移動';
+$GLOBALS['TL_LANG']['tl_form_field']['copy'] = 'ID %sのフォームの項目を複製';
+$GLOBALS['TL_LANG']['tl_form_field']['delete'] = 'ID %sのフォームの項目を削除';
+$GLOBALS['TL_LANG']['tl_form_field']['toggle']['0'] = 'フォームの項目を表示または非表示';
+$GLOBALS['TL_LANG']['tl_form_field']['toggle']['1'] = 'ID %sのフォームの項目を非表示';
+$GLOBALS['TL_LANG']['tl_form_field']['toggle']['2'] = 'ID %sのフォームの項目を表示';
+$GLOBALS['TL_LANG']['tl_form_field']['pasteafter']['0'] = '先頭に貼り付け';
+$GLOBALS['TL_LANG']['tl_form_field']['pasteafter']['1'] = 'ID %sのフォームの項目の後に貼り付け';
+$GLOBALS['TL_LANG']['tl_form_field']['pastenew']['0'] = '先頭に新しいフォームの項目を作成';
+$GLOBALS['TL_LANG']['tl_form_field']['pastenew']['1'] = 'ID %sのフォームの項目の後に新しいフォームの項目を作成';
+$GLOBALS['TL_LANG']['tl_form_field']['option']['1'] = 'CSVファイルからインポートのオプション';
+
+/*
+ * Form fields
+ */
+$GLOBALS['TL_LANG']['FFL']['mp_form_pageswitch'] = ['改ページ', 'フォームの項目を異るページ/段階に分割します。'];
+$GLOBALS['TL_LANG']['FFL']['mp_form_placeholder'] = ['要約', '以前のページのフォームのデータを表示します。'];
+/*
+ * Legends
+ */
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_download_legend'] = 'ダウンロードの設定';
+/*
+ * Fields
+ */
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_backButton'] = ['戻るボタンのラベル', '戻るボタンのラベルを入力してください。'];
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_backFragment'] = ['戻るボタンのURLの断片', '戻るボタンをクリックしたときのURLに付加するURLの断片(例えば、アンカーのリンク)を入力できます。"#"とすると省略できます。'];
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_nextFragment'] = ['続けるボタンのURLの断片', '続けるボタンをクリックしたときのURLに付加するURLの断片(例えば、アンカーのリンク)を入力できます。"#"とすると省略できます。'];
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_downloadTemplate'] = ['ダウンロード用テンプレート', 'サマリーページのダウンロードリンクのレンダリングに使用されるテンプレート。'];
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_downloadInline'] = ['ブラウザーで表示', 'ダウンロードのダイアログを開く代わりにブラウザーでファイルを表示します。'];

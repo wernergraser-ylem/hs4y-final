@@ -1,0 +1,23 @@
+.container, body, .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+
+.mod_article:not(.fullwidth) > .container {
+  padding-top: 10px!important;}
+    
+  
+.print .inside > .container {
+    width: 100%!important;
+    max-width: 20cm!important;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    padding-left: 0cm!important;
+    padding-right: 0cm!important;
+}
+
+body p {font-size:0.92rem!important;}
+
+.back {display:none!important;}

@@ -1,0 +1,113 @@
+/* =============================================================================
+ * ce_teaserbox
+ * ========================================================================== */
+
+.ce_teaserbox {
+	overflow: hidden;
+	position: relative;
+}
+
+.ce_teaserbox .ce_teaserbox_inside {
+	display: table;
+	width: 100%;
+}
+
+.ce_teaserbox .image_wrapper,
+.ce_teaserbox .text_wrapper {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.ce_teaserbox.width_image_30 .image_wrapper {
+	width: 30%;
+}
+
+.ce_teaserbox.width_image_40 .image_wrapper {
+	width: 40%;
+}
+
+.ce_teaserbox.width_image_50 .image_wrapper {
+	width: 50%;
+}
+
+.ce_teaserbox.width_image_60 .image_wrapper {
+	width: 60%;
+}
+
+.ce_teaserbox.width_image_70 .image_wrapper {
+	width: 70%;
+}
+
+.ce_teaserbox.image_valign_top .image_wrapper {
+	vertical-align: top;
+}
+
+.ce_teaserbox.image_valign_middle .image_wrapper {
+	vertical-align: middle;
+}
+
+.ce_teaserbox.image_valign_bottom .image_wrapper {
+	vertical-align: bottom;
+}
+
+.ce_teaserbox.text_valign_top .text_wrapper {
+	vertical-align: top;
+}
+
+.ce_teaserbox.text_valign_middle .text_wrapper {
+	vertical-align: middle;
+}
+
+.ce_teaserbox.text_valign_bottom .text_wrapper {
+	vertical-align: bottom;
+}
+
+.ce_teaserbox.text_align_left .text_wrapper {
+	text-align: left;
+}
+
+.ce_teaserbox.text_align_center .text_wrapper {
+	text-align: center;
+}
+
+.ce_teaserbox.text_align_right .text_wrapper {
+	text-align: right;
+}
+
+.ce_teaserbox .ce_hyperlink {
+	margin-top: 30px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_teaserbox .ce_teaserbox_inside {
+		display: table;
+	}
+	
+	.ce_teaserbox .image_wrapper {
+		width: 100%!important;
+	}
+	
+	.ce_teaserbox .text_wrapper {
+		text-align: left!important;
+	}
+	
+	.ce_teaserbox .image_wrapper,
+	.ce_teaserbox .text_wrapper {
+		display: block;
+	}
+	
+	.ce_teaserbox .margins {
+		margin: 0!important;
+	}
+	
+	.ce_teaserbox.image_right .text_wrapper {
+		margin-bottom: 30px;
+	}
+	
+	.ce_teaserbox.image_left .text_wrapper {
+		margin-top: 30px;
+	}
+}

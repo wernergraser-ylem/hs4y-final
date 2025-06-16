@@ -1,0 +1,41 @@
+<?php 
+$GLOBALS['SEO_SCRIPTS_FILE'][] = 'files/cto_layout/scripts/parallax/jquery.stellar.min.js|static';
+$date = new \Contao\Date($this->firstDate);
+$newtime = $date->tstamp ?: $this->startDate; 
+?>
+<div class="block event pt-l pb-l layout_list<?php if($this->classList): ?> <?= $this->classList ?><?php endif; ?>" style="background-image: url(<?= $this->src; ?>)" data-stellar-background-ratio="0.1" data-stellar-offset-parent="true" itemscope itemtype="http://schema.org/Event">
+	<div class="event-overlay"></div>
+		<div class="event-content">
+			<?php if ($this->date): ?>
+			<div class="day font-size-s" itemprop="startDate">
+				<?php echo \Contao\Date::parse("l", $newtime); ?>
+			</div>
+			
+			<div class="date font-size-xs mb-xs">
+				<?php echo \Contao\Date::parse("d", $newtime); ?>/<?php echo \Contao\Date::parse("m", $newtime); ?>/<?php echo \Contao\Date::parse("Y", $newtime); ?>
+			</div>
+			<?php endif; ?>
+			
+			<div class="title h3 font-size-xl">
+				<a href="<?= $this->href ?>" title="<?= $this->title ?> (<?php if ($this->day) echo $this->day . ', '; ?><?= $this->date ?><?php if ($this->time) echo ', ' . $this->time; ?>)"<?= $this->target ?>><?= $this->link ?></a>
+			</div>
+			
+			<?php if ($this->teaser): ?>
+			<div class="teaser font-size-xs" itemprop="description">
+				<?= $this->teaser ?>
+			</div>
+			<?php endif; ?>
+			
+			<?php if ($this->location): ?>
+			<div class="location font-size-xs">
+				<?= $this->location ?>
+			</div>
+			<?php endif; ?>
+			
+			<?php if ($this->hasDetails): ?>
+				<div class="ce_hyperlink mt-m">
+					<a href="<?= $this->href ?>" itemprop="url" class="link-white outline" title="<?= $this->readMore ?>"<?= $this->target ?>><?= $this->more ?></a>
+				</div>
+			<?php endif; ?>
+		</div>
+</div>

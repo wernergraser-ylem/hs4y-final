@@ -1,0 +1,71 @@
+
+
+<?php foreach($this->models as $objModel): ?>
+
+<?php
+$strClass = \Contao\ContentElement::findClass($objModel->type);
+if( class_exists($strClass) === false)
+{
+	continue;
+}
+
+$strBuffer = '';
+if( in_array($objModel->type, $GLOBALS['PCT_AUTOGRID']['wrapperElements']) )
+{
+	$objModel->autogrid_tablet = null;
+	$objModel->autogrid_mobile = null;
+
+	$objElement = new $strClass($objModel);
+	$objElement->isGridPreview = true;
+	$strBuffer = $objElement->generate();
+}
+
+if( $objModel->type == 'autogridGridStart' && $objModel->autogrid_css != $GLOBALS['PCT_AUTOGRID']['GRID_PRESETS'][$objModel->autogrid_grid]['grid']['desktop'] && isset($GLOBALS['PCT_AUTOGRID']['GRID_PRESETS'][$objModel->autogrid_grid]) )
+{
+	\PCT\AutoGrid\Core::addToTemplate($this,$objModel);
+	$GLOBALS['TL_HEAD::PCT_AUTOGRID'][] = '<style id="custom">.grid_'.$this->AutoGrid->preset.'.'.$this->AutoGrid->Grid->desktop.' {grid-template-columns: '.$this->autogrid_css.';}</style>';
+}
+
+if( $this->flex && $objModel->type == 'autogridColStart' )
+{
+	$GLOBALS['PCT_AUTOGRID']['autogridColStarted'] = true;
+}
+else if( $this->flex && $objModel->type == 'autogridColStop' )
+{
+	unset($GLOBALS['PCT_AUTOGRID']['autogridColStarted']);
+}
+
+if( $this->flex && !in_array($objModel->type, $GLOBALS['PCT_AUTOGRID']['wrapperElements']) )
+{
+	if( (isset($GLOBALS['PCT_AUTOGRID']['autogridRowStarted']) && $GLOBALS['PCT_AUTOGRID']['autogridRowStarted']) && (isset($GLOBALS['PCT_AUTOGRID']['autogridColStarted']) && $GLOBALS['PCT_AUTOGRID']['autogridColStarted']) )
+	{
+		$this->flex = false;
+	}
+}
+
+if( !$this->flex && $objModel->autogrid && !in_array($objModel->type, $GLOBALS['PCT_AUTOGRID']['wrapperElements']) )
+{
+	$this->flex = true;
+}
+?>
+
+<?php if($strBuffer): ?>
+<?= $strBuffer; ?>
+<?php else: ?>
+
+<?php if($this->flex): ?>
+<?php
+// viewport classes
+$autogrid_tablet = str_replace('_t','',$objModel->autogrid_tablet ?: $objModel->autogrid_css);
+$autogrid_mobile = str_replace('_m','',$objModel->autogrid_mobile ?: 'col_12');
+?>
+<div class="column hasViewport cte <?= $objModel->autogrid_css; ?> <?php if(empty($objModel->autogrid_tablet)):?>no_tablet_grid<?php endif; ?> <?= $objModel->autogrid_offset; ?>" data-id="<?= $objModel->id; ?>"data-desktop="<?= $objModel->autogrid_css; ?>" data-tablet="<?= $autogrid_tablet; ?>" data-mobile="<?= $autogrid_mobile; ?>">
+<?php endif; ?>
+<div class="placeholder" data-id="<?= $objModel->id; ?>"></div>
+<?php if($this->flex): ?>
+</div>
+<?php endif; ?>
+
+<?php endif; ?>
+
+<?php endforeach; ?>

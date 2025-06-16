@@ -1,0 +1,49 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    <IfModule mod_headers.c>
+        # Assets in /assets and /bundles either contain a hash in their filename
+        # or are called with a ?version suffix, therefore cache them for 1 year.
+        RewriteRule ^(assets|bundles)/ - [ENV=CONTAO_ASSETS:true]
+        Header set Cache-Control "max-age=31536000" env=CONTAO_ASSETS
+
+        # Allow CORS on the Contao TinyMCE skin.
+        RewriteRule ^assets/tinymce4/js/skins/contao/fonts/ - [ENV=CONTAO_TINYMCE_SKIN:true]
+        Header set Access-Control-Allow-Origin "*" env=CONTAO_TINYMCE_SKIN
+    </IfModule>
+
+    # Determine the RewriteBase automatically and set it as environment variable.
+    RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+    RewriteRule ^(.*) - [E=BASE:%1]
+
+    # Sets the HTTP_AUTHORIZATION header removed by Apache
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect to URI without front controller to prevent duplicate content
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+    RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+
+    # If the requested filename exists, simply serve it.
+    # We only want to let Apache serve files and not directories.
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Rewrite all other queries to the front controller.
+    RewriteRule ^ %{ENV:BASE}/index.php [L]
+
+    # Fehlerseiten-Weiterleitungen
+    ErrorDocument 403 /vertraege-login
+    ErrorDocument 401 /vertraege-login
+    ErrorDocument 404 /vertraege-login
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    <IfModule mod_alias.c>
+        # When mod_rewrite is not available, we instruct a temporary redirect of
+        # the start page to the front controller explicitly so that the website
+        # and the generated links can still be used.
+        RedirectMatch 302 ^/$ /index.php/
+        # RedirectTemp cannot be used instead
+    </IfModule>
+</IfModule>

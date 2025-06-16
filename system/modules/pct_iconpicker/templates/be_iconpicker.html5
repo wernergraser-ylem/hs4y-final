@@ -1,0 +1,15 @@
+<div id="pct_iconpicker">
+  <?php if ($this->addSearch) : ?>
+    <form action="<?php echo $this->action; ?>" method="post">
+      <div id="search">
+        <input type="hidden" name="FORM_SUBMIT" value="item_selector">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?= $this->request_token; ?>">
+        <input type="text" name="keyword" id="keyword" value="<?php echo $this->value; ?>" class="tl_text<?php if ($this->value != '') : ?> active<?php endif; ?>">
+        <input type="submit" name="search" value="<?= $this->search; ?>" class="tl_submit">
+      </div>
+    </form>
+  <?php endif; ?>
+  <div class="tl_listing_container">
+    <?php echo $this->main; ?>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<?php 
+global $objPage;
+$objPage->customBodyClass .= ' has_search';
+?>
+
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<?php $this->block('content'); ?>
+	<div class="search-overlay"></div>
+	<div class="inside">
+   	<div id="search_<?php echo $this->id; ?>" class="container">
+         <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> method="get">
+   		   <div class="formbody">
+               <label for="ctrl_keywords_<?= $this->uniqueId ?>" class="invisible"><?= $this->keywordLabel ?></label>
+               <input type="search" name="keywords" id="ctrl_keywords_<?= $this->uniqueId ?>" class="text" value="<?= $this->keyword ?>" placeholder="<?php echo $this->headline; ?>">
+               <span class="line"></span>
+   		   </div>
+   		   <div class="close-window"><i class="ti ti-close"></i></div>  
+         </form>
+         <p>{{iflng::en}}Hit enter to search or ESC to close{{iflng}}{{iflng::de}}Drücken Sie die Eingabetaste um zu suchen{{iflng}}</p>
+      </div>
+	</div>
+</div>
+<!-- SEO-SCRIPT-START -->
+<script>
+/**
+ * Set focus to search input
+ */
+jQuery(document).ready(function() 
+{
+	jQuery('.ce_search_label').click(function()
+	{
+		// wait for element to be in sight app. 800ms tweening delay
+		setTimeout(function()
+		{
+			jQuery('#search_<?php echo $this->id; ?> input[name="keywords"]').focus();
+		
+		}, 800);
+		
+		/* add class on click */
+		jQuery(".body_bottom .mod_search").addClass("show-search");
+		
+		/* fadeIn overlay */
+		jQuery(".body_bottom .mod_search .search-overlay").fadeIn();
+	});
+	
+   /* close button*/
+	jQuery(".body_bottom .close-window").click(function(){
+    	jQuery(".body_bottom .mod_search").removeClass("show-search");
+    	jQuery('body').removeClass('search_overlay');
+    	jQuery(".search-overlay").fadeOut(300);
+	});
+	
+	jQuery(".search-overlay").click(function(){
+    	jQuery(".body_bottom .mod_search").removeClass("show-search");
+    	jQuery('body').removeClass('search_overlay');
+    	jQuery(".search-overlay").fadeOut(300);
+	});
+});
+
+jQuery(document).keyup(function(e) {
+   if (e.keyCode === 27) jQuery(".mod_search").removeClass("show-search");
+   if (e.keyCode === 27) jQuery("body").removeClass("search_overlay");
+   if (e.keyCode === 27) jQuery(".search-overlay").fadeOut(300);
+});
+
+</script>
+<!-- SEO-SCRIPT-STOP -->
+<?php $this->endblock(); ?>

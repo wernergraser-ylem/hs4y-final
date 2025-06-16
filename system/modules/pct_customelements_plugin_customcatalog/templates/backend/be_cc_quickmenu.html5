@@ -1,0 +1,8 @@
+
+</a>
+<div class="ui_container block" id="cc_menu_<?php echo $this->alias; ?>">
+	<div href="#" class="ui_toggler" onclick="return false;"><i class="fa fa-plus-square-o"></i></div>
+	<div class="ui_nav_container" data-config="<?php echo $this->config; ?>">
+	<?php echo $this->menu; ?>
+	</div>
+</div>

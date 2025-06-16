@@ -1,0 +1,46 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/pct_iconpicker/languages/en/tl_settings.php" source-language="en">
+    <body>
+      <trans-unit id="tl_settings.iconStylesheets.0">
+        <source>Choose more font icon collection stylesheets</source>
+        <target>Zusätzliche Font-Icon-Sammlungen auswählen</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.iconStylesheets.1">
+        <source>Choose more font icon stylesheets</source>
+        <target>Wählen Sie weitere Font-Icon-Stylesheets aus</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.customIconClasses.0">
+        <source>Custom icon CSS classes</source>
+        <target>Eigene Icon-CSS-Klassen</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.customIconClasses.1">
+        <source>Enter your own icon classes like (.myIcons-,.myIcons2-)</source>
+        <target>Geben Sie Ihre eigenen Icon-Klassen kommagetrennt ein z.B. (.meineIcons-,.meinIcons2-)</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.0">
+        <source>Fontawesome</source>
+        <target>Fontawesome</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.1">
+        <source>Load fontaweseome from the selected source.</source>
+        <target>Fontaweseome von der ausgewählten Quelle laden</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.local">
+        <source>Local: (cto_layout/css/fontaweseome) or from CustomElements</source>
+        <target>Lokal: (cto_layout/css/fontaweseome) oder von CustomElements</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.cdn">
+        <source>CDN</source>
+        <target>CDN</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.fontaweseomeSource.off">
+        <source>Off, do not load</source>
+        <target>Aus, nicht laden</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.iconpicker_legend">
+        <source>IconPicker settings</source>
+        <target>IconPicker-Einstellungen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

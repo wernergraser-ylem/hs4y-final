@@ -1,0 +1,66 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_tabs.css|static';
+?>
+<div class="single-top">
+	<div class="single-top-content">
+		<div class="single-leftside">
+			<?php echo $this->field('image')->html(); ?>
+		</div>
+		<div class="single-rightside">
+			<div class="single-author"><?php echo $this->field('author')->html(); ?></div>
+			<h1><?php echo $this->field('name')->value(); ?></h1>
+			<div class="single-rating"><?php echo $this->field('rating')->html(); ?><span class="single-rating-count"><?php echo $this->field('rating')->value(); ?></span></div>
+			<div class="single-price"><div class="single-price-new">&euro; <?php echo $this->field('price')->html(); ?></div> <div class="single-price-old">&euro; <?php echo $this->field('price_old')->value(); ?></div></div>
+			<div class="single-metadata">
+				<div class="single-metadata-col1"><strong>{{iflng::de}}ARTIKEL NR.{{iflng::en}}ARTICLE NO.{{iflng}}</strong><div><?php echo $this->field('item_number')->html(); ?></div></div>
+				<div class="single-metadata-col2 "><strong>{{iflng::de}}AUSGABE{{iflng::en}}EDITION{{iflng}}</strong><div><?php echo $this->field('version')->html(); ?></div></div>
+				<div class="single-metadata-col3"><strong>{{iflng::de}}ISBN{{iflng::en}}ISBN{{iflng}}</strong><div><?php echo $this->field('isbn')->html(); ?></div></div>
+			</div>
+			<div class="single-short-description"><?php echo $this->field('short_description')->html(); ?></div>
+			<div class="single-stock <?php echo $this->field('stock')->value(); ?>"><?php echo $this->field('stock')->html(); ?></div>
+
+			<?php echo $this->field('notelist')->html(); ?>
+			<div class="single-print"><a href="javascript:window.print();"><i class="fa fa-print"></i> {{iflng::de}}Drucken{{iflng::en}}Print{{iflng}}</a></div>
+			<div class="single-mail"><a href="mailto:info@yourdomain.com?subject=<?php echo $this->field('name')->value(); ?>, Artikelnummer: <?php echo $this->field('item_number')->value(); ?>"><i class="fa fa-envelope"></i> {{iflng::de}}Per E-Mail anfragen{{iflng::en}}Ask by e-mail{{iflng}}</a></div>
+		</div>
+	</div>
+</div>
+
+<div class="single-bottom">
+	<div class="ce_tabs">
+		<div class="tabs classic tabs_<?php echo $this->id; ?>">
+			<ul>
+				<li><span>{{iflng::de}}Beschreibung{{iflng::en}}Description{{iflng}}</span></li>
+				<li><span>{{iflng::de}}Sonstiges{{iflng::en}}Others{{iflng}}</span></li>
+			</ul>
+		</div>
+		<div class="panes panes_<?php echo $this->id; ?>">
+			<div class="section active">
+				<div class="single-desc"><?php echo $this->field('description')->html(); ?></div>
+			</div>
+			
+			<div class="section">
+				<div class="single-desc-add"><?php echo $this->field('additional_desc')->html(); ?></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	jQuery(".tabs_<?php echo $this->id; ?> li:first").addClass('active');
+    jQuery(".tabs_<?php echo $this->id; ?> li").click(function(e){
+        if (!jQuery(this).hasClass("active")) {
+            var tabNum = jQuery(this).index();
+            var nthChild = tabNum+1;
+            jQuery(".tabs_<?php echo $this->id; ?> li.active").removeClass("active");
+            jQuery(this).addClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div.active").removeClass("active");
+            jQuery(".panes_<?php echo $this->id; ?> div:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

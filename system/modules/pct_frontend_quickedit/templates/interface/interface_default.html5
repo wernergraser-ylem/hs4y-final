@@ -1,0 +1,17 @@
+<!-- indexer::stop -->
+<div id="<?= $this->selector; ?>_interface" class="pct_edit_interface <?= $this->Config->table; ?>" data-id="<?= $this->Config->id; ?>" data-table="<?= $this->Config->table; ?>" data-selector="<?= $this->selector; ?>" data-clicktoedit="true">
+<div class="__info__ <?= $this->Config->type; ?> <?= $this->Config->table; ?>">
+<div>
+	<div><?= $this->Config->type; ?></div>
+</div>
+</div>
+
+<div class="__buttons__ <?= $this->Config->table; ?>">
+<?php foreach($this->buttons as $key => $button): ?>
+<div class="<?= $key; ?> __button__">
+<a href="<?= $button['href']; ?>" class="<?= $button['class']; ?>"  title="<?= $button['title']; ?>" <?php if($button['target']): ?>target="<?= $button['target']; ?>"<?php endif; ?><?= $button['attributes']; ?>><?= $button['icon']; ?></a>
+</div>
+<?php endforeach; ?>
+</div>
+</div>
+<!-- indexer::continue -->

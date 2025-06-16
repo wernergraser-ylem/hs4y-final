@@ -1,0 +1,34 @@
+{
+    "name": "contao-community-alliance/composer-plugin",
+    "description": "Composer plugin that provides installers for contao-module and legacy-contao-module.",
+    "type": "composer-plugin",
+    "homepage": "http://c-c-a.org/",
+    "license": "LGPL-3.0-or-later",
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "composer-plugin-api": "^2.0",
+        "symfony/finder": "^4.4 || ^5.2 || ^6.0",
+        "symfony/process": "^4.4 || ^5.2 || ^6.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0",
+        "symfony/phpunit-bridge": "^3.0"
+    },
+    "conflict": {
+        "contao/core": "*",
+        "contao/core-bundle": "<4.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "ContaoCommunityAlliance\\Composer\\Plugin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ContaoCommunityAlliance\\Composer\\Plugin\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "class": "ContaoCommunityAlliance\\Composer\\Plugin\\Plugin"
+    }
+}

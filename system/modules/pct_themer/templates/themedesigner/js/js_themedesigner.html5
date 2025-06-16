@@ -1,0 +1,1174 @@
+<script>
+/* <![CDATA[ */
+
+/**
+ * Class object
+ * ThemeDesigner
+ */
+var ThemeDesigner = 
+{
+	/**
+	 * The current time stamp
+	 * @var integer
+	 */
+	timestamp : <?= $this->timestamp; ?>,
+	
+	/**
+	 * The current theme name
+	 * @var string
+	 */
+	theme : '<?= $this->theme; ?>',
+
+	/**
+	 * The current zoom level
+	 * @var integer
+	 */
+	zoom : <?= $this->zoom ?: 100; ?>,
+
+	/**
+	 * The current device
+	 * @var string
+	 */
+	device : '<?= $this->device; ?>',
+	
+	/**
+	 * Store pending ajax requests
+	 * @var object
+	 */
+	pending : {},	
+		
+	/**
+	 * Apply a form field value and send it via ajax
+	 * @param string	Name of the field
+	 * @param mixed		Value of the field
+	 * @param boolean	Send ajax request or not
+	 */
+	applyValue : function(strName,varValue,blnAjax)
+	{
+		if(varValue === undefined) {varValue = null;}
+		if(blnAjax === undefined) {blnAjax = true;}
+				
+		// update the storage
+		ThemeDesigner.storage(strName,varValue);
+		
+		// trigger global applyValue event
+		//jQuery(document).trigger('ThemeDesigner.onApplyValue',{'name':strName,'value':varValue,'action':'applyValue'});
+		
+		jQuery(document).trigger('ThemeDesigner.onValue',{'name':strName,'value':varValue,'action':'applyValue'});
+		
+		// send ajax
+		if(blnAjax)
+		{
+			this.request('applyValue',{name:strName, value:varValue});
+			//this.request('applyValue',{name:strName, value:varValue});
+		}
+	},
+	
+	
+	/**
+	 * Send a form field value via ajax without applying the stylesheet
+	 * @param string	Name of the field
+	 * @param mixed		Value of the field
+	 * @param boolean	Send ajax request or not
+	 */
+	sendValue : function(strName,varValue,blnAjax)
+	{
+		if(varValue === undefined) {varValue = null;}
+		if(blnAjax === undefined) {blnAjax = true;}
+		
+		// update the storage
+		ThemeDesigner.storage(strName,varValue);
+		
+		// trigger global applyValue event
+		jQuery(document).trigger('ThemeDesigner.onValue',{'name':strName,'value':varValue,'action':'sendValue'});
+		
+		// send ajax
+		if(blnAjax)
+		{
+			this.request('sendValue',{name:strName, value:varValue});
+		}
+	},
+	
+	
+	/**
+	 * Apply multiple fields with their values
+	 * @param object||array
+	 *
+	 * object {FIELD_NAME:VALUE} || array [FIELD_NAME] = VALUE
+	 */
+	applyValues : function(varSet)
+	{
+		objSet = varSet;
+		if(isArray(varSet))
+		{
+			
+		}
+		
+		this.request('applyValues',objSet);
+	},
+	
+	
+	/**
+	 * Set a field value or elements value
+	 * @param string
+	 * @param mixed
+	 * @param boolean
+	 * @return mixed		Returns the validated value
+	 */
+	setValue : function(strName,varValue,blnApply)
+	{
+		if(blnApply === undefined) {blnApply = false;}
+		
+		var objElement = ThemeDesigner.findByName(strName);
+		
+		if(objElement === null)
+		{
+			return;
+		}
+		
+		// validate the value
+		varValue = ThemeDesigner.validateValueForInput(varValue);
+		
+		// set as new value
+		objElement.val( varValue );
+		
+		// trigger event
+		objElement.trigger('ThemeDesigner.onSetValue',{'name':strName,'value':varValue});
+		
+		if(blnApply === true)
+		{
+			this.applyValue(strName,varValue);
+		}
+		
+		return varValue;
+	},
+	
+	
+	/**
+	 * Toggle the value of an element
+	 * @param DOMElement
+	 */
+	toggleValue : function(objElement)
+	{
+		objElement = jQuery(objElement);
+		// toggle checkbox values
+		switch(objElement.attr('type'))
+		{
+			case 'checkbox':
+				if(objElement.val() == 1)
+				{
+					objElement.removeAttr('checked');
+					objElement.val(0);
+					objElement.prop('checked',false);
+				}
+				else
+				{
+					objElement.attr('checked');
+					objElement.val(1);
+					objElement.prop('checked',true);
+				}
+				break;
+		}
+	},
+	
+	
+	/**
+	 * Find an element by its name and return as jquery object
+	 * @param string	Name of the element
+	 * @return object
+	 */
+	findByName : function(strName)
+	{
+		var arrTests = ['[data-td_selector="'+strName+'"]','[name="'+strName+'"]','#'+strName];
+		
+		var objReturn = null;
+		jQuery.each(arrTests, function(index,value)
+		{
+			objReturn = jQuery(value);
+			
+			// break if we have a match
+			if(objReturn.length > 0)
+			{
+				return false;
+			}
+		});
+		
+		if(objReturn.length < 1)
+		{
+			return null;
+		}
+		
+		return objReturn;
+	},
+	
+	
+	/**
+	 * Add more attributes to an element
+	 * @param DOMElement
+	 */
+	addAttributes : function(objElement,objAttributes)
+	{
+		objElement = jQuery(objElement);
+		
+		jQuery.each(objAttributes, function(i,v)
+		{
+			objElement.attr(v);
+		});
+	},
+	
+	
+	/**
+	 * Unbind events from element
+	 * @param DOMElement
+	 */
+	unbind : function(objElement)
+	{
+		objElement.unbind('ThemeDesigner.onSelector');
+		objElement.unbind('ThemeDesigner.onSetValue');
+		
+		return objElement;
+	},
+	
+	
+	/**
+	 * Apply the settings by reloading the current theme designer output stylesheet
+	 */
+	apply : function()
+	{
+		// new timestamp
+		var time = jQuery.now();
+		
+		var curr_stylesheet = '<?= $this->stylesheet; ?>'+'?'+ThemeDesigner.timestamp;
+		var new_stylesheet = '<?= $this->stylesheet; ?>'+'?'+time;
+		
+		// apply stylesheet
+		jQuery('head link#layout_css').attr('href',new_stylesheet);
+		
+		// apply stylesheet in iframe
+		jQuery('#themedesigner_iframe').contents().find('link#layout_css').attr('href',new_stylesheet);
+		
+		// send info
+		console.log('New stylesheet applied by ThemeDesigner: '+new_stylesheet);
+		
+		// remember timestamp
+		ThemeDesigner.timestamp = time;
+	}
+}
+
+// TODO: !LocalStorage management
+
+/**
+ * LocalStorage management
+ * @param string	Name of the field
+ * @param mixed		Value of the field
+ * @param string	Name of the current theme
+ */
+ThemeDesigner.storage = function(strName,varValue,strTheme)
+{
+	if(strName === undefined) {strName = '';}
+	
+	if(strTheme === undefined || strTheme == '')
+	{
+		strTheme = ThemeDesigner.theme;
+	}
+	
+	var strIdent = 'ThemeDesigner_'+strTheme;
+		
+	if(strName.length < 1 && varValue === undefined)
+	{
+		var arrKeys = Object.keys(localStorage);
+		var arrReturn = {};
+		for(var i = 0; i <= arrKeys.length; i++)
+		{
+			var key = arrKeys[i];
+			if(key == undefined)
+			{
+				continue;
+			}
+			
+			if(key.indexOf(strIdent+'.') >= 0)
+			{
+				var k = key.replace(strIdent+'.','');
+				
+				// recursivly find the value
+				arrReturn[k] = ThemeDesigner.storage(k);
+			}
+		}
+		return arrReturn;
+	}
+	
+	// set value
+	if(strName !== '' && varValue !== undefined)
+	{
+		localStorage.setItem(strIdent+'.'+strName,varValue);
+	}
+	// get a value
+	else if(strName.length > 0 && varValue == undefined)
+	{
+		var varReturn = localStorage.getItem(strIdent+'.'+strName);
+		try 
+		{
+			varReturn = jQuery.parseJSON(varReturn);
+		}
+		catch(err) {}
+		
+		return varReturn;
+	}
+}
+
+
+/**
+ * Remove from storage
+ * @param string	Name of the field
+ */
+ThemeDesigner.removeFromStorage = function(strName,strTheme)
+{
+	if(strTheme === undefined || strTheme == '')
+	{
+		strTheme = ThemeDesigner.theme;
+	}
+	
+	var strIdent = 'ThemeDesigner_'+strTheme;
+	
+	<?php if(\Contao\Config::get('debugMode')):?>
+	console.log('Remove '+strName+' from storage');
+	<?php endif; ?>	
+	localStorage.removeItem(strIdent+'.'+strName);
+}
+
+
+/**
+ * Clear the localStorage
+ */
+ThemeDesigner.clearStorage = function(strTheme)
+{
+	if(strTheme === undefined || strTheme == '')
+	{
+		strTheme = ThemeDesigner.theme;
+	}
+	
+	var strIdent = 'ThemeDesigner_'+strTheme;
+	
+	var arrKeys = Object.keys(localStorage);
+	
+	var count = 0;
+	for(var i = 0; i <= arrKeys.length; i++)
+	{
+		var key = arrKeys[i];
+		if(key == undefined)
+		{
+			continue;
+		}
+		
+		if(key.indexOf(strIdent+'.') >= 0)
+		{
+			localStorage.removeItem(key);
+			count++;
+		}
+	}
+	console.log('ThemeDesigner ['+strTheme+'] storage cleared. Items removed: '+count);
+}
+
+
+/**
+ * Loading overlay
+ * @param string	'show'||'hide'
+ */
+ThemeDesigner.loader = function(strAction)
+{
+	var objLoader = jQuery('#themedesigner_loader');
+	if(objLoader.length < 1)
+	{
+		return;
+	}
+	
+	if(strAction == 'isActive')
+	{
+		return objLoader.hasClass('active');
+	}
+	
+	if(strAction == 'hide')
+	{
+		objLoader.removeClass('active');
+	}
+	else if(strAction == 'show')
+	{
+		objLoader.addClass('active');
+	}
+}
+
+
+/**
+ * Request handlers
+ * @param string	The request action identifier
+ * @param object	An optional object to pass variables through
+ * @return object	The jquery ajax request object
+ *
+ * objOptions = {}
+ * objOptions.name 		Name of the field
+ * objOptions.value		Value of the field
+ */
+ThemeDesigner.request = function(strAction,objOptions)
+{
+	if(objOptions === undefined)
+	{
+		objOptions = {};
+	}
+	
+	var strUrl = '<?= $GLOBALS['PCT_THEMEDESIGNER']['ajaxUrl']; ?>';
+	if(!strUrl)
+	{
+		strUrl = location.href;
+	}
+	
+	var objData = {};
+	objData.themedesigner = 1;
+	objData.action = strAction;
+	objData.theme = ThemeDesigner.theme;
+	
+	var blnApply = true;
+	if(objOptions.doNotApply === true)
+	{
+		blnApply = false;
+	}
+	
+	var blnLoader = false;
+	if(objOptions.loader === true)
+	{
+		blnLoader = true;
+	}
+	
+	switch(strAction)
+	{
+		// single field value call
+		case 'applyValue':
+			objData.field = objOptions.name;
+			objData.value = objOptions.value;
+			break;
+		// multiple fields and values call
+		case 'applyValues':
+			objData.fields = fields;
+			objData.values = values;
+			break;
+		// just send a value without applying the new stylesheet
+		case 'sendValue':
+			objData.field = objOptions.name;
+			objData.value = objOptions.value;
+			
+			blnApply = false;
+			blnLoader = false;
+			
+			// check if a similar request is still pending
+			if(ThemeDesigner.pending['action=sendValue&field='+objData.field+'&value='+objData.value])
+			{
+				return;
+			}
+			
+			break;
+		// show section
+		case 'showSection':
+			objData.section = objOptions.section;
+			break;
+		// toggle palette
+		case 'togglePalette':
+			objData.section = objOptions.section;
+			objData.palette = objOptions.palette;
+			objData.active = objOptions.active
+			break;	
+		// toggle switcjh
+		case 'toggleSwitch':
+			objData.name = objOptions.name;
+			objData.active = objOptions.active
+			break;
+		// toggle multiple switches
+		case 'toggleSwitches':
+			objData.switches = objOptions.switches
+			break;
+		case 'toggleVisibility':
+		case 'toggleMobile':
+			objData.state = objOptions.active;
+			break;
+		// toggle device
+		case 'toggleDevice':
+			objData.value = objOptions.value
+			break;
+		// toggle zoom
+		case 'toggleZoom':
+			objData.value = objOptions.value;
+			break;
+		// iframe url
+		case 'updateIframeUrl':
+			objData.url = objOptions.url;
+			break;
+	}
+	
+	// write request string
+	var strRequest = jQuery.param(objData);
+	
+	// check if a similar request is still pending
+	if(ThemeDesigner.pending[strRequest] === true)
+	{
+		return;
+	}
+	
+	// send request
+	var objRequest = jQuery.ajax(
+	{
+		method	: "GET",
+		url		: strUrl,
+		data	: objData,
+		// before sending
+		beforeSend : function()
+		{
+			// set request as pending
+			ThemeDesigner.pending[strRequest] = true;
+			
+			if(blnLoader)
+			{
+				// show loader
+				ThemeDesigner.loader('show');
+			}
+		},
+		// success
+		success	: function(response)
+		{
+			if(blnApply)
+			{
+				// all good. Apply
+				ThemeDesigner.apply();
+			}
+			
+			if(blnLoader)
+			{
+				// remove loader
+				ThemeDesigner.loader('hide');
+			}
+			
+			// trigger complete event and pass the whole data object as parameter
+			jQuery(document).trigger('ThemeDesigner.ajax_complete',objData);
+		},
+		// complete
+		complete: function()
+		{
+			ThemeDesigner.pending[strRequest] = false;
+		},
+		// error 
+		error	: function(response)
+		{
+			<?php if(\Contao\Config::get('debugMode')): ?>
+			console.log('AJAX ERROR: '+ response);
+			<?php endif; ?>
+		} 
+	});
+	
+	return objRequest;
+}
+
+
+/**
+ * Selector logic
+ * @param string	Name of the vield
+ * @param mixed		Value of the field
+ * @param object	Json object with effected fields and values
+ */
+ThemeDesigner.selector = function(strName,varValue,objEffected)
+{
+	if(objEffected === undefined) {objEffected = {};}
+	
+	var objElement = ThemeDesigner.findByName(strName);
+	if(objElement === null)
+	{
+		return;
+	}
+	
+	// return if value is uninteresting
+	if(objElement.val() != varValue)
+	{
+		return;
+	}
+	
+	
+	// json string is coming
+	if(typeof(objEffected) == 'string')
+	{
+		objEffected = jQuery.parseJSON(objEffected);
+	}
+	
+	jQuery.each(objEffected, function(name, value)
+	{
+		var element = ThemeDesigner.findByName(name);
+		if(element === null)
+		{
+			return true;
+		}
+
+		value = ThemeDesigner.setValue(name,value);
+		
+		// trigger onSelector event
+		element.trigger('ThemeDesigner.onSelector',{'name':name,'value':value,'selector':strName,'selector_value':varValue});
+	} );
+	
+	<?php if(\Contao\Config::get('debugMode')): ?>
+	console.log('SELECTOR: ' + strName + "."+varValue);
+	<?php endif; ?>
+}
+
+
+/**
+ * Shortcut to ThemeDesigner toggle visibilty
+ * @param string	Name of the section
+ * @param string	Name of the palette
+ * @param integer	Active status 0=false, 1=true
+ */
+ThemeDesigner.toggleVisibility = function(intStatus)
+{
+	ThemeDesigner.request('toggleVisibility',{active:intStatus,doNotApply:true});
+}
+
+
+/**
+ * Shortcut to ThemeDesigner show palette request
+ * @param string	Name of the section
+ * @param string	Name of the palette
+ * @param integer	Active status 0=false, 1=true
+ */
+ThemeDesigner.togglePalette = function(strSection,strPalette,intStatus)
+{
+	ThemeDesigner.request('togglePalette',{section:strSection,palette:strPalette,active:intStatus,doNotApply:true});
+}
+
+
+/**
+ * Shortcurt to ThemeDesigner toggle ON/OFF switch request
+ * @param string	Name of the switch
+ * @param integer	Active status 0=false, 1=true
+ * @param boolean	Show loader 0=false, 1=true
+ */
+ThemeDesigner.toggleSwitch = function(strSwitch,intStatus,blnLoader)
+{
+	if(blnLoader === undefined) {blnLoader == false;}
+	
+	// trigger onToggleSwitch event
+	jQuery('[data-init_switch="1"][data-name="'+strSwitch+'"]').trigger('ThemeDesigner.onToggleSwitch',{'name':strSwitch,'status':intStatus});
+	
+	// trigger global onToggleSwitch event
+	jQuery(document).trigger('ThemeDesigner.onToggleSwitch',{'name':strSwitch,'status':intStatus});
+	
+	ThemeDesigner.request('toggleSwitch',{name:strSwitch,active:intStatus,doNotApply:true,loader:blnLoader});
+}
+
+
+/**
+ * Shortcut to ThemeDesigner toggle multiple switches request
+ * @param object
+ * @param boolean	Show loader 0=false, 1=tru
+ */
+ThemeDesigner.toggleSwitches = function(objSwitches,blnLoader)
+{
+	if(objSwitches === undefined) {objSwitches = {};}
+	if(blnLoader === undefined) {blnLoader == false;}
+	
+	jQuery.each( objSwitches, function(strSwitch, intStatus)
+	{
+		var objSwitch = jQuery('[data-switch="'+strSwitch+'"]');
+		
+		if(objSwitch !== undefined)
+		{
+			// trigger onToggleSwitch event
+			objSwitch.trigger('ThemeDesigner.onToggleSwitch',{'name':strSwitch,'status':intStatus});
+		
+			// trigger global onToggleSwitch event
+			jQuery(document).trigger('ThemeDesigner.onToggleSwitch',{'name':strSwitch,'status':intStatus});
+		}
+	});
+	
+	ThemeDesigner.request('toggleSwitches',{switches:objSwitches,doNotApply:true,loader:blnLoader});
+}
+
+
+/**
+ * Toggle mobile view port request
+ */
+ThemeDesigner.toggleMobile = function(intStatus)
+{
+	ThemeDesigner.request('toggleMobile',{active:intStatus,doNotApply:true});
+}
+
+
+/**
+ * Toggle device request
+ */
+ThemeDesigner.toggleDevice = function(varValue)
+{
+	// hide all fields not part of the current device selected
+	var objElements = jQuery('[data-devices]:not([data-devices=""]):not([data-devices="*"])');
+	
+	jQuery.each( objElements, function(intIndex,objElement)
+	{
+		objElement = jQuery(objElement);
+		var devices = objElement.data('devices').split(',');
+		
+		if( jQuery.inArray(varValue,devices) >= 0 )
+		{
+			objElement.show();
+			// remove hidden classes
+			objElement.removeClass('hidden');
+		}
+		else
+		{
+			objElement.hide();
+		}
+	});
+	
+	// trigger global onDevice event
+	jQuery(document).trigger('ThemeDesigner.onDevice',{'name':varValue});
+
+	ThemeDesigner.request('toggleDevice',{value:varValue,doNotApply:true});
+}
+
+
+/**
+ * Toggle zoom request
+ */
+ThemeDesigner.toggleZoom = function(varValue)
+{
+	ThemeDesigner.request('toggleZoom',{value:varValue,doNotApply:true});
+}
+
+
+/**
+ * Validate or convert a value to use as value in an input
+ * @param mixed
+ * @param string
+ */
+ThemeDesigner.validateValueForInput = function(varValue,strName)
+{
+	if(strName === undefined) {strName = '';}
+	
+	var objElement = null;
+	if(strName.length > 0)
+	{
+		objElement = jQuery('[data-td_selector="'+strName+'"]');
+	}
+	
+	return varValue;
+}
+
+// TODO: !ThemeDesignerNavigation
+
+/**
+ * ThemeDesigner Navigation class object
+ */
+var ThemeDesignerNavigation = 
+{
+	/**
+	 * Toggle active sections
+	 * @param name
+	 */
+	showSection(strSection)
+	{
+		// send request
+		ThemeDesigner.request('showSection',{section:strSection,doNotApply:true});
+		
+		jQuery('.pct_themedesigner .section').removeClass('active');
+		jQuery('.pct_themedesigner .section[data-section="'+strSection+'"]').addClass('active');
+	}
+}
+
+// TODO: !ThemeDesignerIframe
+
+/**
+ * ThemeDesigner iframe class object
+ */
+var ThemeDesignerIframe = 
+{
+	resize : function()
+	{
+		var height = jQuery(window).innerHeight() - jQuery('#themedesigner_iframe_wrapper').position(window).top - 60;
+		var width = jQuery(window).innerWidth() - jQuery('#themedesigner_iframe_wrapper').position(window).left - 255;
+		jQuery('#themedesigner_iframe').css({'height':height,'width':width});
+	}
+}
+
+
+/**
+ * Clear local storage on page load
+ */
+<?php if(!\Contao\Environment::get('isAjaxRequest')):?>
+ThemeDesigner.clearStorage();
+<?php endif; ?>
+
+/**
+ * Fill the local storage with current php data
+ */
+<?php 
+$objThemeDesigner = new \PCT\ThemeDesigner;
+$arrFonts = $objThemeDesigner->getFonts();
+$arrData = $objThemeDesigner->getData(true);
+?>
+
+<?php foreach($arrData as $key => $value): ?>
+<?php 
+if(is_array($value) || is_object($value))
+{
+	$value =  "'".json_encode($value)."'";
+}
+
+// fonts
+else if( isset($arrFonts[$value]) && is_array($arrFonts[$value]) && empty($arrFonts[$value]) === false )
+{
+	$value = "'".$value."'";
+	if(isset($arrFonts[$value]['family']) && strlen($arrFonts[$value]['family']) > 0)
+	{
+		#$value = str_replace('"',"'",$arrFonts[$value]['family']);
+		$value = $arrFonts[$value]['family'];
+	}
+}
+else
+{
+	$value = "'".$value."'";
+}
+?>
+// fill storage
+ThemeDesigner.storage('<?= $key; ?>',<?= $value; ?>);
+<?php endforeach; ?>	
+
+
+/**
+ * Remove items from storage when switch has been turned off
+ */
+jQuery(document).on('ThemeDesigner.onToggleSwitch',function(event,params)
+{
+	if(params.status < 1)
+	{
+		ThemeDesigner.removeFromStorage(params.name);
+	}
+});
+
+
+/**
+ * Append the little save info star when user changed something
+ */
+var blnUserChangedSomething = false;
+jQuery(document).on('ThemeDesigner.onValue',function(event,params)
+{
+	if(blnUserChangedSomething === false)
+	{
+		blnUserChangedSomething = true;
+		var txt = jQuery('#ctrl_themedesigner_version_description').attr('placeholder');
+		if(txt !== undefined)
+		{
+			jQuery('#ctrl_themedesigner_version_description').attr('placeholder', txt.replace('*','') + '*');
+		}
+	}
+});
+
+// TODO: !Switch dependencies
+
+<?php if(is_array($GLOBALS['PCT_THEMEDESIGNER_SWITCHES']) && count($GLOBALS['PCT_THEMEDESIGNER_SWITCHES']) > 0): ?>
+jQuery(document).ready(function()
+{
+	<?php foreach($GLOBALS['PCT_THEMEDESIGNER_SWITCHES'] as $strSwitch => $arrStatus): ?>
+	
+	// register switch eventlistener
+	var objSwitch = jQuery('[data-switch="<?= $strSwitch; ?>"]');
+	if(objSwitch !== undefined)
+	{
+		objSwitch.on('ThemeDesigner.onToggleSwitch',function(event,params)
+		{
+			<?php foreach($arrStatus as $intStatus => $arrEffected): ?>
+			var objEffected = <?= json_encode($arrEffected); ?>;
+			
+			// run action by status
+			if(params.status == <?= $intStatus; ?> && objEffected !== undefined)
+			{
+				// circle through effected switches an toggle their state
+				for(var key in objEffected)
+				{
+					var value = objEffected[key];
+					
+					var objElement = jQuery('[data-switch="'+key+'"]');
+					if(!objElement || objElement === undefined)
+					{
+						continue;
+					}
+					
+					var isActive = objElement.hasClass('active');
+					
+					if(value > 0 && !isActive)
+					{
+						objElement.addClass('active');
+						objElement.parent('li.field').addClass('active');
+						
+						// switch childs
+						objElement.parent('li.field').siblings('.switch_childs').addClass('active');
+					}
+					else if(value < 1 && isActive)
+					{
+						objElement.removeClass('active');
+						objElement.parent('li.field').removeClass('active');
+						
+						// switch childs
+						objElement.parent('li.field').siblings('.switch_childs').removeClass('active');
+					}
+					// state is already correct, delete the switch from the effected ones
+					else
+					{
+						delete objEffected[key];
+					}
+					
+					// send the toggleSwitch request for the effected switches
+					//ThemeDesigner.toggleSwitch( key, value );
+				}
+				
+				// send the toggleSwitches request for the effected switches
+				ThemeDesigner.toggleSwitches( objEffected );	
+			}
+			
+			<?php endforeach; ?>
+		});
+	}
+	
+	<?php endforeach; ?>
+});
+<?php endif; ?>
+
+
+// TODO: !-- ThemeDesigner Interactions
+
+// TODO: !Minify
+
+/**
+ * Minify toggler
+ */
+jQuery(document).ready(function() 
+{
+	jQuery('#themedesigner_toggler').click(function(event) 
+	{
+		// prevent default behavior. good for real anchors
+		event.preventDefault();
+		
+		jQuery(this).toggleClass('active');
+		jQuery('body').toggleClass('themedesigner_minified');
+		
+		var isActive = 0;
+		if( jQuery(this).hasClass('active') )
+		{
+			isActive = 1;
+		}
+		
+		// send toggle visibility
+		ThemeDesigner.toggleVisibility( isActive );
+	});
+});
+
+// TODO: !Palettes
+
+/**
+ * Palette toggler
+ */
+jQuery(document).ready(function() 
+{
+	jQuery('[data-init_slider="1"] .td_toggler').click(function(event) 
+	{
+		// prevent default behavior. good for real anchors
+		event.preventDefault();
+		
+		jQuery(this).toggleClass('active');
+		var _parent = jQuery(this).parent('[data-init_slider="1"]');
+		_parent.toggleClass('active');
+		_parent.find('.td_palette').toggleClass('active');
+		
+		var isActive = 0;
+		if( jQuery(this).hasClass('active') )
+		{
+			isActive = 1;
+		}
+		
+		// send toggle palette request
+		ThemeDesigner.togglePalette( _parent.data('section'), _parent.data('palette'), isActive );
+	});
+});
+
+// TODO: !Switches
+
+/**
+ * On/Off switches
+ */
+jQuery(document).ready(function() 
+{
+	jQuery('[data-init_switch="1"]').click(function(event) 
+	{
+		// prevent default behavior. good for real anchors
+		event.preventDefault();
+		
+		jQuery(this).toggleClass('active');
+		
+		
+		var _parent = jQuery(this).parent('li.field').toggleClass('active');
+		
+		// switch childs
+		_parent.siblings('.switch_childs').toggleClass('active');
+		
+		var isActive = 0;
+		if( jQuery(this).hasClass('active') )
+		{
+			isActive = 1;
+		}
+		
+		// send toggle palette request
+		ThemeDesigner.toggleSwitch( jQuery(this).data('name'), isActive );
+	});
+});
+
+// TODO: !Mobile view
+
+/**
+ * Mobile view
+ */
+jQuery(document).ready(function() 
+{
+	jQuery('#themedesigner_mobile').click(function(event) 
+	{
+		jQuery('body').toggleClass('themedesigner_mobile');
+		jQuery('#themedesigner_iframe_wrapper').toggleClass('mobile');
+		jQuery('#themedesigner_iframe').contents().find('body').toggleClass('mobile themedesigner_mobile');
+		
+		// send request
+		var isActive = 0;
+		if(jQuery('body').hasClass('themedesigner_mobile'))
+		{
+			isActive = 1
+		}
+		
+		ThemeDesigner.toggleMobile( isActive );
+	});
+});
+
+// TODO: !Device switch
+
+/**
+ * Device switch
+ */
+jQuery(document).ready(function() 
+{
+	var prevDevice = ThemeDesigner.device;
+	
+	jQuery('#device_and_zoom .devices li').click(function(event) 
+	{
+		event.preventDefault();
+		
+		// remove prev active
+		jQuery('#device_and_zoom .devices li').removeClass('active');
+		jQuery(this).toggleClass('active');
+
+		value = jQuery(this).data('value');
+		
+		// remove old classes 
+		if( prevDevice.length > 0)
+		{
+			jQuery('body').removeClass('themedesigner_'+prevDevice);
+			jQuery('#themedesigner_iframe_wrapper').removeClass( prevDevice );
+			jQuery('#themedesigner_iframe').contents().find('body').removeClass(prevDevice + ' themedesigner_' + prevDevice);
+		}
+		
+		// apply new class
+		jQuery('body').addClass('themedesigner_'+value);
+		jQuery('#themedesigner_iframe_wrapper').addClass( value );
+		jQuery('#themedesigner_iframe').contents().find('body').addClass(value + ' themedesigner_' + value);
+		// update
+		prevDevice = value;
+
+		ThemeDesigner.toggleDevice( value );
+	});
+});
+
+
+// TODO: !Zoom switch
+
+/**
+ * Zoom switch
+ */
+jQuery(document).ready(function() 
+{
+	var prevZoomClass = 'zoom_'+ThemeDesigner.zoom;
+	
+	jQuery('#device_and_zoom .zoom li').click(function(event) 
+	{
+		event.preventDefault();
+		jQuery('#device_and_zoom .zoom li').removeClass('active');
+		jQuery(this).toggleClass('active');
+
+		value = jQuery(this).data('value');
+		
+		// remove old classes 
+		if( prevZoomClass.length > 0)
+		{
+			jQuery('body').removeClass(prevZoomClass);
+			jQuery('#themedesigner_iframe_wrapper').removeClass(prevZoomClass);
+			jQuery('#themedesigner_iframe').contents().find('body').removeClass(prevZoomClass);
+		}
+		
+		var cssClass = 'zoom_'+value;
+		// apply new class
+		jQuery('body').addClass(cssClass);
+		jQuery('#themedesigner_iframe_wrapper').addClass(cssClass);
+		jQuery('#themedesigner_iframe').contents().find('body').addClass(cssClass);
+		// update
+		prevZoomClass = cssClass;
+		
+		ThemeDesigner.toggleZoom( value );
+	});
+});
+
+// TODO: !Navi
+
+/**
+ * Navi script
+ */
+jQuery(document).ready(function() 
+{
+	var last = null;
+	jQuery('.pct_navigation span[data-clickable="1"]').click(function(event)
+	{
+		// prevent default behavior. good for real anchors
+		event.preventDefault();
+		
+		if(last == this)
+		{
+			return false;
+		}
+		
+		// remove any active
+		jQuery('.pct_navigation span, .pct_navigation li').removeClass('active');
+		
+		// set active
+		jQuery(this).parent('li').addClass('active');
+		jQuery(this).addClass('active');
+		
+		// send show section request
+		ThemeDesignerNavigation.showSection( jQuery(this).data('section') );
+		
+		// remember last one clicked
+		last = this;
+	});
+});
+
+// TODO: !RevolutionSlider Helper
+
+/**
+ * Force the themedesigner iframe to reload on switching devices when it contains a slider instance
+ */
+jQuery(document).bind('ThemeDesigner.onDevice',function(e,params) 
+{
+	if( jQuery("#themedesigner_iframe").contents().find('.rs-container').length > 0 )
+	{
+		jQuery('#themedesigner_iframe_wrapper .inner .loader').addClass('show');
+		jQuery("#themedesigner_iframe").attr('src', jQuery("#themedesigner_iframe").attr('src'));
+	}
+});
+
+/* ]]> */
+</script>
+
+

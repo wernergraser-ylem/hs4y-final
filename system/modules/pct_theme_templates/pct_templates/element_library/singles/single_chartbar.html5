@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_chartbar
+*/
+$arrImport = array (
+'tstamp' => '21.11.2023 07:21',
+'name' => 'single_chartbar',
+'category' => 'infographics',
+'thumb' => '',
+'elements' => 'chartbar',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126447,
+1 => 14776,
+2 => 128,
+3 => 1700551043,
+5 => 'chartbar',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:4:{s:15:"mb99kvjwgnmds4j";s:2:"75";s:13:"19ebuzjhwoot8";s:15:"Chartbar: Large";s:15:"mzpe2qe4ak51k6s";s:9:"bg-accent";s:15:"ucwjqnwgmze4egn";s:7:"default";}s:6:"groups";a:1:{i:0;a:4:{s:5:"ident";s:4:"27_0";s:8:"group_id";i:27;s:11:"group_alias";s:8:"chartbar";s:10:"attributes";a:4:{i:0;a:3:{s:4:"uuid";s:15:"mb99kvjwgnmds4j";s:2:"id";i:157;s:5:"alias";s:7:"procent";}i:1;a:3:{s:4:"uuid";s:13:"19ebuzjhwoot8";s:2:"id";i:158;s:5:"alias";s:5:"title";}i:2;a:3:{s:4:"uuid";s:15:"mzpe2qe4ak51k6s";s:2:"id";i:159;s:5:"alias";s:5:"color";}i:3;a:3:{s:4:"uuid";s:15:"ucwjqnwgmze4egn";s:2:"id";i:160;s:5:"alias";s:6:"schema";}}}}s:6:"tstamp";i:1566472829;s:5:"alias";s:8:"chartbar";s:5:"uuids";a:4:{i:0;s:15:"mb99kvjwgnmds4j";i:1;s:13:"19ebuzjhwoot8";i:2;s:15:"mzpe2qe4ak51k6s";i:3;s:15:"ucwjqnwgmze4egn";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:19;}',
+162 => 'sourceText',
+),
+),
+);

@@ -1,0 +1,107 @@
+<?php
+
+use Contao\Environment;
+use Contao\Input;
+
+if( Environment::get('isAjaxRequest') && Input::get('search_'.$this->name) !== null )
+{
+	// preset a filter
+	\Contao\Input::setGet($this->name,Input::get('search_'.$this->name));
+	// render list module
+	$strModule = \Contao\System::getContainer()->get('contao.insert_tag.parser')->replace('{{insert_module::'.$this->module_id.'}}', true);
+	die($strModule);
+}
+?>
+
+<?php 
+global $objPage;
+$GLOBALS['TL_CSS'][] = PCT_CUSTOMCATALOG_PATH.'/PCT/CustomElements/Filters/Text/assets/css/styles.css';
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_CUSTOMCATALOG_PATH.'/assets/js/jquery/ui/jquery-ui.min.js|static';	
+?>
+<div <?php echo $this->cssID; ?> class="widget <?php echo $this->class; ?> autocomplete_widget autocomplete_<?php echo $this->id; ?> block">
+<fieldset class="text_autocomplete_container">
+	<legend><?php echo $this->label; ?></legend>
+	<?php if($this->label): ?><label for="<?php echo $this->name; ?>"><?php echo $this->label; ?></label><?php endif; ?>	
+	<input type="text" id="text_input_<?php echo $this->name; ?>" class="text" name="<?php echo $this->name; ?>" value="<?php echo $this->value; ?>" placeholder="<?= $this->defaultValue; ?>">
+	
+	<script>
+	jQuery(document).ready(function()
+	{
+		var input = jQuery('#text_input_<?php echo $this->name; ?>');
+		var widget = jQuery('.autocomplete_<?php echo $this->id; ?>');
+		// create results box
+		jQuery('body').append('<div id="results_<?php echo $this->name; ?>" class="results_container autocomplete_results block"></div>');
+		var results = jQuery('#results_<?php echo $this->name; ?>');
+		
+		results.css(
+		{
+			'position':'absolute',
+			'top':widget.offset().top + widget.height(),
+			'left': widget.offset().left,
+			'width': '100%',
+		});
+		
+		// observe keyboard
+		input.keyup(function(e)
+		{
+			var _this = jQuery(e.target);
+			var value = _this.val();
+			
+			results.html('');
+			results.css('display','none');
+
+			if(value.length >= 3)
+			{
+				var params = {'search_<?php echo $this->name; ?>':value<?php if($this->params): ?>,<?php echo $this->params; ?><?php endif; ?>};
+				jQuery.ajax(
+				{
+					method	: "GET",
+					url		: location.href,
+					data	:params,
+					// before sending
+					beforeSend : function()
+					{
+						results.css('display','none');
+					},
+					// success
+					success	: function(data)
+					{
+						results.css('display','block');
+						// set html result
+						results.html(data);
+					},
+					// complete
+					complete: function()
+					{
+						results.css('display','block');
+					}
+				});
+			}
+	});
+	});
+	
+	// position on resize
+	jQuery(window).resize(function() 
+	{
+		var widget = jQuery('.autocomplete_<?php echo $this->id; ?>');
+		var results = jQuery('#results_<?php echo $this->name; ?>');
+		results.css(
+		{
+			'position':'absolute',
+			'top': widget.offset().top + widget.height(),
+			'left': widget.offset().left,
+			'width': '100%'
+		});
+	});
+
+	window.setTimeout(function()
+	{
+		jQuery(window).resize();
+	},800);
+	</script>
+	
+</fieldset>
+</div>
+
+	
+	

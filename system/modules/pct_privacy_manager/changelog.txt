@@ -1,0 +1,86 @@
+### 2.1.1
+Update: Replaced hardcoded headline tag with div.headline in mod_privacy_default (#84)
+Update: Updated styling für div.headline (#84)
+
+### 2.1.0
+Update: BFSG: mod_privacy_default (#82)
+Update: Added SEO_SCRIPTS comments in j_privacymanager, privacy_webfonts template to support the seo helper in EclipseX (#81)
+Update: Replaced getFrontendUrl with url_generator (#80)
+
+### 2.0.1
+Fixed: Replaced deprecated methods in ModuleOptin class (#78)
+
+### 2.0.0
+Update: Updated the link color in the privacy information box (#71)
+Update: General CSS updates (#72)
+Update: Added a reset privacy setting button (#70)
+Update: Add "hide_option" css class for "imprint" or "privacy" page selection (#73)
+Update: General Contao 5 compatibility (#69)
+Removed: Contao 4.9 compatibility (#69)
+Removed: Eclipse(9) support
+
+### 1.3.3
+Update: j_privacymanager (#64)
+Update: Clear cookies on domain level (#65)
+
+### 1.3.2
+Fixed: mod_privacy_default preselected level 4 had wrong index key (#60)
+Added: styles.min.css (#61)
+
+### 1.3.1
+Fixed: Missing template variables for label 4 and description 4 (#57)
+Update: Set level 2 for Google Fonts (#58)
+
+### 1.3.0
+Added: Category "marketing" as 4th. category and optin level (#51)
+Update: Renamed "Weiter Informationen" to "Cookie-Details" (#52)
+Update: Adding styling for cookie details section (#53)
+
+### 1.2.1
+Update: mod_privacy_default: Set redirect location when using clear_privacy_setting parameter with javascript (#49)
+
+### 1.2.0
+New: Support for Contao 4.13
+New: "Allow essential cookies only" button (#45)
+Fixed: Checkbox styling (#46)
+Update: General PHP8 updates (#47)
+
+### 1.1.4
+Fixed: Support the |urlattr inserttag flag (#42)
+Fixed: Do not change non-inserttag urls used as links (#42)
+Fixed: Swaped the field labels of the tl_module.privacy_url_1,2 fields (#42)
+
+### 1.1.3
+Fixed: PrivacyManager.optin did not fire under Contao 4.9, jQuery().on('ready') is deprecated in jquery3 (#40)
+
+### 1.1.2
+Fixed: Missing p.privacy styling added (#37)
+Update: CSS > .privacy_optout_click > cursor: pointer; (#33)
+Update: mod_privacy_medium, mod_privacy_slim (#38)
+
+### 1.1.1
+Update: Contao templates (#34)
+Update: Added Contao 3.5 templates (#34)
+
+### 1.1.0
+New: PrivacyManager.hasAccess control via Javascript (#29)
+Update: Make PrivacyManager accesible to Eclipse9 themes (#28)
+Update: tl_layout.webfonts_optin will be created by default (#28)
+
+### 1.0.4
+Fixed: Preselected template variable was not empty correctly (#25)
+
+### 1.0.3
+Fixed: Old template versions of mod_privacy_medium, _slim (#23)
+Fixed: analytics_piwik template: matomo.php (#23)
+
+### 1.0.2
+Fixed: Double check that deserialize tl_module.privacy_preselected return is an array (#21)
+Fixed: Double check that deserialize tl_content.privacy_size return is an array (#21)
+
+### 1.0.1
+Fixed: ?clear_privacy_setting GET-parameter created a reload loop (#15)
+Fixed: Wrong closing <a> when in english language (#16)
+Fixed: W3C validation mistake in mod_privacy_default template (#19)
+
+### 1.0.0

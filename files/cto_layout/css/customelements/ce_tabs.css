@@ -1,0 +1,323 @@
+/* =============================================================================
+* ce_tabs
+* ========================================================================== */
+
+.ce_tabs {
+   overflow: hidden;
+}
+
+.ce_tabs .panes .section {
+   display: none;
+}
+
+.ce_tabs .panes .section.active {
+   display: block;
+}
+
+.ce_tabs .tabs span {
+   cursor: pointer;
+   display: block;
+}
+
+.ce_tabs i {
+   margin-right: 5px;
+}
+
+.ce_tabs .image_container {
+   text-align: center;
+}
+
+.ce_tabs .tabs .image_container img {
+   width: auto;
+   display: inline-block;
+   opacity: 0.6;
+   transition: opacity 0.5s ease;
+   -webkit-transition: opacity 0.5s ease;
+}
+
+.ce_tabs .tabs li.active .image_container img,
+.ce_tabs .tabs li:hover .image_container img {
+   opacity: 1;
+}
+
+/* classic */
+
+.ce_tabs .tabs.classic {
+	margin-bottom: 25px;
+}
+
+.ce_tabs .tabs.classic ul li {
+   display: inline-block;
+   padding: 10px 15px;
+   border: 1px solid rgba(0,0,0,0.1);
+   background: rgb(247,247,247);
+   border-radius: 10px;
+   margin-bottom: 5px;
+   margin-right: 3px;
+}
+
+.ce_tabs .tabs.classic ul li.active,
+.ce_tabs .tabs.classic ul li:hover  {
+   background: var(--accentColor);
+   color: #fff;
+}
+
+.ce_tabs .panes.classic {
+	border: 1px solid rgba(0,0,0,0.1);
+   background: rgb(247,247,247);
+   padding: 45px;
+   border-radius: 20px;
+}
+
+.ce_tabs .tabs.horizontal ul li:hover span, 
+.ce_tabs .tabs.horizontal ul li.active span {
+	color: var(--accentColor);
+}
+
+
+/* horizontal */
+
+.ce_tabs .tabs.horizontal {
+	text-align: center;
+}
+
+.ce_tabs .tabs.horizontal ul {
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 35px;
+   display: inline-flex;
+   align-items: center;
+   gap: 10px;
+   background: #efefef; 
+   border-radius: 40px;
+   padding: 4px;
+   text-align: center;
+}
+
+.ce_tabs .tabs.horizontal li {
+	padding: 10px 25px;
+}
+
+.ce_tabs .tabs.horizontal li i {
+   display: flex;
+   margin-right: 5px;
+   align-items: center;
+}
+
+.ce_tabs .tabs.horizontal li span {
+   font-weight: bold;
+   display: flex;
+}
+
+.ce_tabs .tabs.horizontal ul li.active {
+   background: #fff;
+   border-radius: 40px;
+}
+
+.ce_tabs .tabs.horizontal ul li:hover {
+	opacity: 0.9;
+}
+
+/* horizontal-clean */
+
+.ce_tabs .tabs.horizontal-clean {
+   padding-bottom: 45px;
+}
+
+.ce_tabs.no-margin .tabs.horizontal-clean {
+   padding-bottom: 0;
+}
+
+.ce_tabs .tabs.horizontal-clean ul {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.ce_tabs .tabs.horizontal-clean ul li {
+   display: inline-block;
+   position: relative;
+   font-weight: bold!important;
+}
+
+.ce_tabs .tabs.horizontal-clean ul li.active span {
+	color: var(--accentColor);
+}
+
+.ce_tabs .tabs.horizontal-clean ul li.active {
+   font-weight: bold;
+}
+
+.ce_tabs .tabs.horizontal-clean ul li.active:after {
+   content:'';
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 10px 10px 0 10px;
+   border-color: var(--accentColor) transparent transparent transparent;
+   position: absolute;
+   bottom: -20px;
+   left: 50%;
+   margin-left: -10px;
+}
+
+.ce_tabs .tabs.horizontal-clean i {
+   display: block;
+   font-size: 2.333rem;
+   margin: 0;
+}
+
+.ce_tabs .tabs.horizontal-clean .image_container {
+   margin-bottom: 5px;
+}
+
+.ce_tabs .tabs.horizontal-clean ul li:hover,
+.ce_tabs .tabs.horizontal-clean ul li.active {
+   font-weight: normal;
+}
+
+.ce_tabs .tabs.horizontal-clean li span {
+   border: 0;
+   margin-left: 25px;
+   margin-right: 25px;
+}
+
+/* vertical */
+
+.ce_tabs .tabs.vertical {
+   width:30%;
+}
+
+.ce_tabs .tabs.vertical,
+.ce_tabs .panes.vertical {
+   float:left;
+}
+
+.ce_tabs .panes.vertical {
+   padding-left:3rem;
+   width:70%;
+}
+
+.ce_tabs .tabs.vertical ul li span,
+.ce_tabs .tabs.vertical ul li {
+   width:100%;
+}
+
+.ce_tabs .tabs.vertical ul li span {
+   display:block;
+   padding:12px 16px;
+}
+
+.ce_tabs .tabs.vertical ul li:hover span,
+.ce_tabs .tabs.vertical ul li.active span {
+   font-weight:bold;
+}
+
+.ce_tabs .panes.vertical {
+   border-left:1px solid rgb(229,229,229);
+}
+
+.ce_tabs .tabs.vertical ul li span {
+   border-bottom:1px solid rgb(229,229,229);
+}
+
+
+/* vertical_2 */
+
+.ce_tabs .tabs.vertical_2 {
+   width:30%;
+   float:right;
+}
+
+.ce_tabs .panes.vertical_2 {
+   float:left;
+}
+
+.ce_tabs .panes.vertical_2 {
+   padding-right:3rem;
+   width:70%;
+}
+
+.ce_tabs .tabs.vertical_2 ul li span,
+.ce_tabs .tabs.vertical ul li {
+   width:100%;
+}
+
+.ce_tabs .tabs.vertical_2 ul li span {
+   display:block;
+   padding:12px 16px;
+   border-bottom:1px solid rgb(229,229,229);
+}
+
+.ce_tabs .tabs.vertical_2 ul li.active span {
+   font-weight: bold;
+}
+
+.ce_tabs .panes.vertical_2 {
+   border-right:1px solid #e1e1e1;
+}
+
+.ce_tabs .tabs ul li:hover,
+.ce_tabs .tabs.vertical ul li a.current,
+.ce_tabs .tabs.vertical_2 ul li a.current {
+   position: relative;
+   z-index: 100;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+
+   .ce_tabs .tabs li {
+      display: block!important;
+      float: none!important;
+      width: 100%!important;
+   }
+   
+   .ce_tabs .tabs.vertical,
+   .ce_tabs .panes.vertical {
+      float: none;
+      width: 100%;
+   }
+   
+   .ce_tabs .tabs.classic ul li {
+      margin-bottom: 2px;
+   }
+   
+   .ce_tabs .tabs.horizontal {
+	   margin-bottom: 20px;
+   }
+   
+   .ce_tabs .tabs.horizontal ul {
+	   display: block;
+	   border-radius: 24px;
+	}
+   
+   .ce_tabs .panes.vertical {
+      border: 0;
+      padding: 0;
+      margin-top: 15px;
+   }
+   
+   .ce_tabs .panes.vertical_2 {
+      padding: 0;
+      width: 100%;
+      margin-top: 15px;
+      border: 0;
+   }
+   
+   .ce_tabs .tabs.vertical_2 {
+      width: 100%;
+      float: none;
+   }
+   
+   .ce_tabs .tabs.horizontal-clean ul li {
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgb(200,200,200);
+      padding-bottom: 5px;
+   }
+   
+   .ce_tabs .tabs.horizontal-clean ul li.active:after {
+      display: none;
+   }
+}

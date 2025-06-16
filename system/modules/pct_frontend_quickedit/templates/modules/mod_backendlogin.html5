@@ -1,0 +1,64 @@
+
+<div class="<?= $this->class; ?>">
+<?php if (!BE_USER_LOGGED_IN && !$this->hasAuthenticatedBackendUser()): ?>
+<a href="<?= $this->href; ?>" class="<?= $this->selector; ?>" title="Backend-Login">Backend-Login</a>
+<script>
+jQuery(document).ready(function()
+{
+	var login_success = false;
+	jQuery(".<?= $this->selector; ?>").colorbox(
+	{
+		iframe:true,
+		innerWidth:"50%", 
+		innerHeight:"70%", 
+		maxWidth:"95%",
+		maxHeight:'95%', 
+		href: "<?= $this->lb_href; ?>",
+		onComplete: function()
+		{
+			jQuery("#cboxLoadedContent iframe").on('load', function()
+			{
+				if( jQuery(this).contents().find('body').html() == 'login_success' )
+				{
+					login_success = true;
+					jQuery(".<?= $this->selector; ?>").colorbox.close();
+				}
+			});
+		},
+		onClosed: function()
+		{
+			if( login_success )
+			{
+				<?php if( $this->redirect ): ?>
+				window.location.href = '<?= $this->redirect; ?>';
+				<?php else: ?>
+				location.reload();
+				<?php endif; ?>
+			}
+		}
+	});
+});
+</script>
+<?php else: ?>
+<p class="info">
+<a href="<?= $this->href; ?>" target="_blank" class="<?= $this->selector; ?> logout" title="Backend-Logout">Backend-Logout</a>
+<script>
+jQuery(document).ready(function() 
+{
+	jQuery(".<?= $this->selector; ?>.logout").click(function(e) 
+	{
+		e.preventDefault();
+		jQuery.ajax(
+		{
+		 	url: '<?= $this->href; ?>',
+		 	success: function(event)
+			{
+				window.location.href = '<?= $this->redirect; ?>';
+			}
+		});
+	});
+});
+</script>
+</p>
+<?php endif; ?>
+</div>

@@ -1,0 +1,41 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newslist-v2.css|static';
+$hasText = $this->hasText;
+?>
+
+<div class="newslist-v2 item block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">
+	<div class="news-image-v2">
+		<div class="image_container<?php echo $this->floatClass; ?>"<?php if ($this->margin || $this->float): ?> style="<?php echo trim($this->margin . $this->float); ?>"<?php endif; ?>>
+			<?php if ($hasText): ?><a href="<?php echo $this->link; ?>" <?php echo $this->attributes; ?> title="<?php echo $this->alt; ?>" <?php if($this->target && $this->url): ?>target="_blank" <?php endif; ?>><?php endif; ?>
+			<?php if ($this->picture): ?><?php $this->insert('picture_default', $this->picture); ?><?php endif; ?>
+			<?php if ($hasText): ?></a><?php endif; ?>
+		</div>
+	</div>
+	<div class="news-content-v2 block">
+		<?php if ($this->commentCount): ?>
+			<div class="comments-v2"><?php echo $this->numberOfComments; ?></div>
+		<?php endif; ?>
+		
+		<?php if ($this->hasSubHeadline): ?>
+		<div class="subheadline-v2"><?php echo $this->subHeadline; ?></div>
+		<?php endif; ?>
+		
+		<div class="h4"><?php echo $hasText ? $this->linkHeadline : $this->newsHeadline; ?></div>
+
+		<div class="info">
+			<?php if ($this->date): ?>
+			<span class="news-date-v2" itemprop="datePublished"><?= \Contao\Date::parse("d", $this->timestamp);?>. <?= \Contao\Date::parse("M", $this->timestamp);?> <?= \Contao\Date::parse("Y", $this->timestamp);?> /</span>
+			<?php endif; ?>
+			
+			<?php if ($this->author): ?>
+			<span class="author-v2"><?php echo $this->author; ?></span>
+			<?php endif; ?>
+		</div>
+		
+		<div class="teaser-v2" itemprop="description"><?php echo $this->teaser; ?></div>
+		<?php if ($hasText): ?>
+		<p class="link"><?php echo $this->more; ?></p>
+		<?php endif; ?>
+		
+	</div>
+</div>

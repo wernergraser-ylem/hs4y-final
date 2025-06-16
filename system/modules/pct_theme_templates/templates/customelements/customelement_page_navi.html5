@@ -1,0 +1,78 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_page_navi.css|static';
+?>
+<nav class="mod_navigation page_navigation onepagenav block">
+	<ul class="vlist level_1">
+	<?php foreach($this->group('menu_item') as $i => $fields): ?>
+			<li class="mlist">
+				<a href="<?php if(\strpos($this->field('anchor#'.$i)->value(),'#') === false): ?>#<?php endif; ?><?= $this->field('anchor#'.$i)->value(); ?>" class="a-level_1 <?php if($this->field('cssclass#'.$i)->value()): ?> <?php echo $this->field('cssclass#'.$i)->value(); ?><?php endif; ?>">
+					<div class="title"><?php echo $this->field('title#'.$i)->value(); ?></div>
+					<div class="glow"></div>
+					<div class="circle"></div>
+				</a>
+			</li>
+	<?php endforeach; ?>
+	</ul>
+</nav>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	jQuery('.page_navigation a:not(.external-anchor, .not-anchor, .backlink)').click(function(e)
+	{
+		jQuery('.page_navigation a').removeClass('active');
+		jQuery(this).addClass('active');
+		
+    	var target = jQuery('#'+jQuery(this).attr("href").split('#')[1]);
+		if(target == undefined || target == null)
+        {
+            return true;    
+        }
+        else if(target.length < 1)
+        {
+	        return true;
+        }
+        
+        var anchor = jQuery(this).attr("href").split('#')[1];
+		
+		e.preventDefault();
+		
+		var posY = target.offset().top;
+        if( jQuery('#stickyheader').height() )
+        {
+	        posY -= jQuery('#stickyheader').height();
+        }
+        
+        var duration = 500;
+		jQuery("html,body").stop().animate({scrollTop: posY}, 
+		{
+			duration	: duration,
+			start		: function()
+			{
+				localStorage.setItem('onepage_animate',1);
+			},
+			complete	: function()
+			{
+				// on complete: remove the flag
+				setTimeout(function()
+				{
+					localStorage.removeItem('onepage_animate');
+				}, duration);
+				
+				// store last position
+				localStorage.setItem('onepage_position', JSON.stringify({ 'y': posY, 'anchor': anchor }) );
+			}
+		});
+    });
+    
+   if( localStorage.getItem('onepage_position') != null && localStorage.getItem('onepage_position') != undefined && window.location.hash.toString().length < 1 )
+	{
+		var obj = JSON.parse(localStorage.getItem('onepage_position'));
+		jQuery('.page_navigation a[href="#'+obj.anchor+'"]').trigger('click');
+	}
+	
+	
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

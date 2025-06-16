@@ -1,0 +1,6 @@
+
+<ul class="<?php echo $this->level; ?> <?php if($this->class):?><?php echo $this->class; ?><?php endif;?>" role="<?php echo ($this->level == 'level_1') ? 'menubar' : 'menu'; ?>">
+  <?php foreach ($this->items as $item): ?>
+     <li<?php if ($item['class']): ?> class="<?php echo $item['class']; ?><?php if($item['is_active']):?> open<?php endif;?>"<?php endif; ?> <?php echo $item['attributes']; ?>><a href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>"<?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?><?php echo $item['target']; ?> role="menuitem"<?php if(!empty($item['subitems'])): ?> aria-haspopup="true"<?php endif; ?>><?php if($item['icon']): ?><i class="icon <?php echo $item['icon']; ?>"></i><?php endif;?><?php echo $item['link']; ?></a><?php echo $item['subitems']; ?><?php if(!empty($item['subitems'])): ?><span class="open_subnav fa fa-plus-square-o <?php if($item['is_active']):?> open<?php endif;?>" <?php echo $item['attributes']; ?>>&nbsp;</span><?php endif;?></li>
+  <?php endforeach; ?>
+</ul>

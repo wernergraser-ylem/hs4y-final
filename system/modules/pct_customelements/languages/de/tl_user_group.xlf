@@ -1,0 +1,105 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/pct_customelements/languages/de/tl_user_group.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_user_group.pct_customelement_legend">
+        <source>Custom Element permissions</source>
+        <target>Custom-Element-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelements.0">
+        <source>Your Custom Elements</source>
+        <target>Ihre Custom Elements</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelements.1">
+        <source>Select the Custom Elements</source>
+        <target>Wählen Sie die Custom Elements aus</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelementsp.0">
+        <source>Custom Elements permissions</source>
+        <target>Custom Elements-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelementsp.1">
+        <source>Select the rights</source>
+        <target>Wählen Sie die Rechte aus</target>
+      </trans-unit>
+      
+      <trans-unit id="tl_user_group.protect_pct_customelement_groups.0">
+        <source>Allowed groups</source>
+        <target>Erlaubte Gruppen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.protect_pct_customelement_groups.1">
+        <source>Set the visibility for each group</source>
+        <target>Die Sichtbarkeit der Gruppen individuell festlegen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_groups.0">
+        <source>Groups</source>
+        <target>Gruppen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_groups.1">
+        <source>Select the groups</source>
+        <target>Wählen Sie die Gruppen aus</target>
+      </trans-unit>
+	  <trans-unit id="tl_user_group.pct_customelement_groupsp.0">
+        <source>Groups permissions</source>
+        <target>Gruppen-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_groupsp.1">
+        <source>Select the groups permissions</source>
+        <target>Wählen Sie die Gruppen-Rechte aus.</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_groupsp.create">
+        <source>Create</source>
+        <target>Anlegen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_groupsp.delete">
+        <source>Delete</source>
+        <target>Löschen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_groupsp.cut">
+        <source>Cut and paste</source>
+        <target>Verschieben</target>
+      </trans-unit>
+      
+      <trans-unit id="tl_user_group.protect_pct_customelement_attributes.0">
+        <source>Allowed attributes</source>
+        <target>Erlaubte Attribute</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.protect_pct_customelement_attributes.1">
+        <source>Define the allowed attribute types for this user group.</source>
+        <target>Die erlaubten Attribute für diese Benutzergruppe festlegen.</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributes.0">
+        <source>Attributes</source>
+        <target>Attribute</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributes.1">
+        <source>Select the attributes</source>
+        <target>Wählen Sie die Attribute aus</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributesp.0">
+        <source>Attribute permissions</source>
+        <target>Attribut-Rechte</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributesp.1">
+        <source>Select the attribute permissions</source>
+        <target>Wählen Sie die Attribut-Rechte aus.</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributesp.create">
+        <source>Create</source>
+        <target>Anlegen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributesp.delete">
+        <source>Delete</source>
+        <target>Löschen</target>
+      </trans-unit>
+      <trans-unit id="tl_user_group.pct_customelement_attributesp.cut">
+        <source>Cut and paste</source>
+        <target>Verschieben</target>
+      </trans-unit>
+	  <trans-unit id="tl_user_group.pct_customelement_attributesp.edit">
+        <source>Edit</source>
+        <target>Bearbeiten</target>
+      </trans-unit>
+      
+    </body>
+  </file>
+</xliff>

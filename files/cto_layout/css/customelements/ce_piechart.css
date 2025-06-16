@@ -1,0 +1,31 @@
+/* =============================================================================
+ * ce_piechart (scripts/easypiechart/)
+ * ========================================================================== */
+
+.ce_piechart {
+	position: relative;
+	text-align: center;
+}
+
+.ce_piechart span {
+	font-size: 2em;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	text-align: center;
+	display: block;
+	width: 100%;
+	margin-top: -1em;
+	line-height: 2em;
+}
+
+.ce_piechart .piechart {
+	height: 180px;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.ce_piechart .headline {
+	text-align: center;
+	margin: 0;
+}

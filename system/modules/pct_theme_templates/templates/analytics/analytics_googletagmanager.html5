@@ -1,0 +1,50 @@
+<?php
+global $objPage;
+$objRoot = \Contao\PageModel::findByPk( $objPage->rootId );
+
+$GoogleAnalyticsId = $objRoot->analytics_google ?? '';
+?>
+
+<?php if( empty($GoogleAnalyticsId) ): ?>
+<p class="analytics_templates info error">{{iflng::en}}Analytics-ID is missing in root page{{iflng}}{{iflng::de}}Die Analytics-ID fehlt in den Seiten-Einstellungen des "Startpunkt einer Webseite".{{iflng}}</p>
+<?php return ''; endif; ?>
+
+<?php
+/**
+ * DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+ */
+if ($GoogleAnalyticsId != 'GTM-XXXXXXXXXX' && !$this->hasAuthenticatedBackendUser()): ?>
+
+<script id="googletagmanager_<?= $GoogleAnalyticsId; ?>">
+// Optin privacy setting token
+var token = localStorage.getItem('user_privacy_settings');
+if( token == undefined )
+{
+	token = '';
+}
+if(token.indexOf(3) >= 0)
+{	
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','<?= $GoogleAnalyticsId; ?>');
+}
+
+// listen to privacy event
+jQuery(document).on('Privacy.changed',function(event,params)
+{
+	if(params.level.indexOf(3) >= 0)
+	{
+		//location.reload();
+		
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','<?= $GoogleAnalyticsId; ?>');
+	}
+});
+</script>
+
+<?php endif; ?>

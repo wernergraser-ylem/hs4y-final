@@ -1,0 +1,33 @@
+<?php if( $this->hasAuthenticatedBackendUser() ): ?>
+<div class="tl_error" id="license_banner">
+	<?php if( empty($this->pct_license) ): ?>
+	<span><?= $GLOBALS['TL_LANG']['EXP']['pct_license_info']; ?></span>
+	<form method="post">
+		<input type="hidden" name="FORM_SUBMIT" value="PCT_LICENSE">
+		<input type="hidden" name="REQUEST_TOKEN" value="<?= $this->request_token; ?>">
+		<label for="license"><?= $GLOBALS['TL_LANG']['EXP']['pct_license_label']; ?></label> 
+		<input type="number" maxlength="10" name="license" required>
+		<div class="submit_container pct_license_field">
+			<button class="tl_submit"><?= $GLOBALS['TL_LANG']['EXP']['pct_license_submit']; ?></button>
+		</div>
+	</form>
+	<?php else: ?>
+	<p><?= sprintf($GLOBALS['TL_LANG']['MSC']['pct_license'], $this->pct_license); ?></p>
+	<?php endif; ?>
+	<span><?= $GLOBALS['TL_LANG']['EXP']['website_locked']; ?></span>
+	<form method="post">
+		<input type="hidden" name="FORM_SUBMIT" value="UNLOCK">
+		<input type="hidden" name="REQUEST_TOKEN" value="<?= $this->request_token; ?>">
+		<button class="tl_submit"><?= $GLOBALS['TL_LANG']['EXP']['website_unlock']; ?></button>
+	</form>
+</div>
+<style>
+   #license_banner {padding: 10px 20px 20px 45px; margin-bottom: 35px;}
+   #license_banner button {padding: 5px; color: #444;}
+   #license_banner label {color: #444;}
+   #license_banner form {margin-top: 20px;}
+   #license_banner input[type="number"] {width: 120px; padding: 2px; color: #444;}
+   #license_banner .submit_container {margin-bottom: 35px;}
+   #license_banner .pct_license_field {margin-top: 10px;}
+</style>
+<?php endif; ?>

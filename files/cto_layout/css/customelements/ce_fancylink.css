@@ -1,0 +1,387 @@
+/* =============================================================================
+ * ce_fancylink
+ * ========================================================================== */
+
+.ce_fancylink {
+   -webkit-backface-visibility: hidden;
+   -webkit-transition: translate3d(0,0,0);
+}
+
+/* style1 */
+.ce_fancylink.style1 a {
+   display: inline-block;
+   position: relative;
+   padding-left: 40px;
+}
+
+.ce_fancylink.style1 .shaft {
+   position: absolute;
+   left: 0;
+   top: 50%;
+   display: block;
+   width: 25px;
+   height: 1px;
+   background: rgba(0,0,0,0.7);
+   transform: translateY(calc(-50% + 0.5px));
+   transition: all 0.5s;
+}
+
+.ce_fancylink.style1 a:hover .shaft {
+   width: 50px;
+}
+
+.ce_fancylink.style1 .shaft:before,
+.ce_fancylink.style1 .shaft:after {
+   height: 1px;
+   transform: rotate(0deg);
+   background-color: rgba(0,0,0,0.7);
+   transform-origin: top right;
+   content: '';
+   display: block;
+   position: absolute;
+   top: 0;
+   right: 0;
+   transition: all 0.5s;
+}
+
+.ce_fancylink.style1 a:hover .shaft:after {
+   width: 8px;
+   transform: rotate(-40deg);
+}
+
+.ce_fancylink.style1 a:hover .shaft:before {
+   width: 8px;
+   transform: rotate(40deg);
+}
+
+.ce_fancylink.style1 .link_text {
+   transition: all 0.5s;
+   display: block;
+}
+
+.ce_fancylink.style1 a:hover .link_text {
+   transform: translateX(20px);
+}
+
+.ce_fancylink.style1.size_small {
+   font-size: 0.9rem;
+}
+
+.ce_fancylink.style1.size_medium {
+   font-size: 1.2rem;
+}
+
+.ce_fancylink.style1.size_large {
+   font-size: 1.8rem;
+}
+
+.ce_fancylink.style1.fancylink_color_accent a {
+   color: var(--accentColor);
+}
+
+.ce_fancylink.style1.fancylink_color_second a {
+   color: var(--secondColor);
+}
+
+.ce_fancylink.style1.fancylink_color_accent .shaft,
+.ce_fancylink.style1.fancylink_color_accent .shaft:before, 
+.ce_fancylink.style1.fancylink_color_accent .shaft:after {
+   background-color: var(--accentColor);
+}
+
+.ce_fancylink.style1.fancylink_color_second .shaft,
+.ce_fancylink.style1.fancylink_color_second .shaft:before, 
+.ce_fancylink.style1.fancylink_color_second .shaft:after {
+   background-color: var(--secondColor);
+}
+
+.ce_fancylink.style1.fancylink_color_customColor1 .shaft,
+.ce_fancylink.style1.fancylink_color_customColor1 .shaft:before, 
+.ce_fancylink.style1.fancylink_color_customColor1 .shaft:after {
+   background-color: var(--customColor1);
+}
+
+.ce_fancylink.style1.fancylink_color_customColor2 .shaft,
+.ce_fancylink.style1.fancylink_color_customColor2 .shaft:before, 
+.ce_fancylink.style1.fancylink_color_customColor2 .shaft:after {
+   background-color: var(--customColor2);
+}
+
+/* style2 */
+
+.ce_fancylink.style2 a {
+   position: relative;
+   display: inline-block;
+   padding-right: 35px;
+}
+
+.ce_fancylink.style2 a:after {
+   content:'';
+   border-radius: 100%;
+   border: 1px solid rgba(0,0,0,0.28);
+   height: 26px;
+   width: 26px;
+   transform: translateY(-50%);
+   transform-origin: center;
+   position: absolute;
+   right: 0;
+   top: 50%;
+   display: block;
+   transition: all 0.33s cubic-bezier(0.10,0.90,0.5,1);
+}
+
+.ce_fancylink.style2 a:hover:after {
+   transform: scale(0.8) translateY(-50%);
+   transform-origin: center;
+   opacity: 0
+}
+  
+.ce_fancylink.style2 .arrow:after {
+   border-bottom: 1px solid rgb(0,0,0);
+   position: absolute;
+   content:'';
+   height: 1px;
+   width: 0;
+   right: 12px;
+   top: 50%;
+   margin-top: -2px;
+   transition: all 0.33s cubic-bezier(0.10,0.90,0.5,1);
+}
+
+.ce_fancylink.style2 .arrow:before {
+   position: absolute;
+   right:0;
+   width:26px;
+   font-family:'Fontawesome';
+   content:"\f105";
+   font-weight: normal;
+   font-style: normal;
+   color: rgb(0,0,0);
+   line-height: 30px;
+   font-size: 14px;
+   text-align:center;
+   height: 30px;
+   top:50%;
+   margin-top:-16px;
+   transition: all 0.33s cubic-bezier(0.10,0.90,0.5,1);
+}
+
+.ce_fancylink.style2 a:hover .arrow:after {
+   width: 26px;
+}
+
+.ce_fancylink.style2 a:hover .arrow:after,
+.ce_fancylink.style2 a:hover .arrow:before {
+  transform:scale(1,1) translateX(9px)
+}
+
+.ce_fancylink.style2.h1 a {
+   padding-right: 43px; 
+}
+
+.ce_fancylink.style2.h2 a {
+   padding-right: 40px; 
+}
+
+.ce_fancylink.style2.h3 a {
+   padding-right: 39px; 
+}
+
+.ce_fancylink.style2.size_small {
+   font-size: 0.9rem;
+}
+
+.ce_fancylink.style2.size_small a {
+   padding-right: 35px;
+}
+
+.ce_fancylink.style2.size_medium {
+   font-size: 1.2rem;
+}
+
+.ce_fancylink.style2.size_medium a {
+   padding-right: 37px;
+}
+
+.ce_fancylink.style2.size_large {
+   font-size: 1.8rem;
+}
+
+.ce_fancylink.style2.size_large a {
+   padding-right: 38px;
+}
+
+.ce_fancylink.style2.fancylink_color_accent a,
+.ce_fancylink.style2.fancylink_color_accent .arrow:before {
+   color: var(--accentColor);
+}
+
+.ce_fancylink.style2.fancylink_color_accent a:after,
+.ce_fancylink.style2.fancylink_color_accent .arrow:after {
+   border-color: var(--accentColor);
+}
+
+.ce_fancylink.style2.fancylink_color_second a,
+.ce_fancylink.style2.fancylink_color_second .arrow:before {
+   color: var(--secondColor);
+}
+
+.ce_fancylink.style2.fancylink_color_second a:after,
+.ce_fancylink.style2.fancylink_color_second .arrow:after {
+   border-color: var(--secondColor);
+}
+
+.ce_fancylink.style2.fancylink_color_customColor1 a,
+.ce_fancylink.style2.fancylink_color_customColor1 .arrow:before {
+   color: var(--customColor1);
+}
+
+.ce_fancylink.style2.fancylink_color_customColor1 a:after,
+.ce_fancylink.style2.fancylink_color_customColor1 .arrow:after {
+   border-color: var(--customColor1);
+}
+
+.ce_fancylink.style2.fancylink_color_customColor2 a,
+.ce_fancylink.style2.fancylink_color_customColor2 .arrow:before {
+   color: var(--customColor2);
+}
+
+.ce_fancylink.style2.fancylink_color_customColor2 a:after,
+.ce_fancylink.style2.fancylink_color_customColor2 .arrow:after {
+   border-color: var(--customColor2);
+}
+
+/* style3 */
+
+.ce_fancylink.style3 a {
+   position: relative;
+   display: inline-block;
+}
+
+.ce_fancylink.style3 a:after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0,0,0,0.9);
+   transition: all 0.3s;
+}
+
+.ce_fancylink.style3 a:hover:after {
+   transform: scaleX(0);
+}
+
+.ce_fancylink.style3.size_small {
+   font-size: 0.9rem;
+}
+
+.ce_fancylink.style3.size_medium {
+   font-size: 1.2rem;
+}
+
+.ce_fancylink.style3.size_large {
+   font-size: 1.8rem;
+}
+
+.ce_fancylink.style3.size_large a:after {
+   bottom: -3px;
+}
+
+.ce_fancylink.text_format_bold {
+   font-weight: bold;
+}
+
+/* colors */
+
+.ce_fancylink.fancylink_color_black a,
+.ce_fancylink.fancylink_color_black .arrow:before {
+   color: rgb(0,0,0);
+}
+
+.ce_fancylink.fancylink_color_black a:after,
+.ce_fancylink.fancylink_color_black .arrow:after {
+   border-color: rgb(0,0,0);
+}
+
+.ce_fancylink.fancylink_color_white a,
+.ce_fancylink.fancylink_color_white .arrow:before {
+   color: rgb(255,255,255);
+}
+
+.ce_fancylink.fancylink_color_white a:after,
+.ce_fancylink.fancylink_color_white .arrow:after {
+   border-color: rgb(255,255,255);
+}
+
+.ce_fancylink.style3.fancylink_color_black a:after {
+   background-color: rgb(0,0,0);
+}
+
+.ce_fancylink.style3.fancylink_color_white a:after,
+.ce_fancylink.style1.fancylink_color_white .shaft,
+.ce_fancylink.style1.fancylink_color_white .shaft:before,
+.ce_fancylink.style1.fancylink_color_white .shaft:after {
+   background-color: rgb(255,255,255);
+}
+
+.ce_fancylink.style3.fancylink_color_accent a {
+   color: var(--accentColor);
+}
+
+.ce_fancylink.style3.fancylink_color_accent a:after {
+   background-color: var(--accentColor);
+}
+
+.ce_fancylink.style3.fancylink_color_second a {
+   color: var(--secondColor);
+}
+
+.ce_fancylink.style3.fancylink_color_second a:after {
+   background-color: var(--secondColor);
+}
+
+.ce_fancylink.style3.fancylink_color_customColor1 a {
+   color: var(--customColor1);
+}
+
+.ce_fancylink.style3.fancylink_color_customColor1 a:after {
+   background-color: var(--customColor1);
+}
+
+.ce_fancylink.style3.fancylink_color_customColor2 a {
+   color: var(--customColor2);
+}
+
+.ce_fancylink.style3.fancylink_color_customColor2 a:after {
+   background-color: var(--customColor2);
+}
+
+/* align */
+
+.ce_fancylink.align_center {
+   text-align: center;
+}
+
+.ce_fancylink.align_right {
+   text-align: right;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+   .ce_fancylink.align_left_mob {
+      text-align: left;
+   }
+   
+   .ce_fancylink.align_center_mob {
+      text-align: center;
+   }
+   
+   .ce_fancylink.align_right_mob {
+      text-align: right;
+   }
+}

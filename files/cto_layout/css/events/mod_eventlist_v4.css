@@ -1,0 +1,71 @@
+
+/* =============================================================================
+* mod_eventlist_v4
+* ========================================================================== */
+
+.mod_eventlist_v4 .event {
+   background: rgba(0,0,0,0.6);
+   padding: 15px 15px 15px 130px;
+   transition: background 0.5s ease;
+   -webkit-transition: background 0.5s ease;
+   line-height: 2.5rem;
+   color: rgb(255,255,255);
+   margin-bottom: 5px;
+   position: relative;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.mod_eventlist_v4 .event:hover {
+   background: rgba(0,0,0,0.8);
+}
+
+.mod_eventlist_v4 p {
+   margin-bottom: 0;
+}
+
+.mod_eventlist_v4 a {
+   color: rgb(255,255,255);
+}
+
+.mod_eventlist_v4 i.fa-location-arrow {
+   margin-right: 4px;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 70px;
+   background-color: var(--accentColor);
+   height: 100%;
+}
+
+.mod_eventlist_v4 i.fa-location-arrow:before {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   -webkit-transform: translate(-50%,-50%);
+   font-size: 1.667rem;
+   line-height: 1.667rem;
+}
+
+.mod_eventlist_v4 i.fa-clock-o {
+   margin-right: 5px;
+}
+
+.mod_eventlist_v4 .time {
+   text-align: right;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+   .mod_eventlist_v4 .autogrid {
+      margin-bottom: 0!important;
+      line-height: 1.3rem;
+   }
+   
+   .mod_eventlist_v4 .time {
+      text-align: left;
+   }
+}

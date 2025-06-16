@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_iconbox
+*/
+$arrImport = array (
+'tstamp' => '22.11.2023 14:41',
+'name' => 'single_iconbox',
+'category' => 'boxes',
+'thumb' => '',
+'elements' => 'iconbox',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+160 => 'pct_customelement',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126566,
+1 => 14787,
+2 => 256,
+3 => 1700661597,
+5 => 'iconbox',
+6 => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+160 => 'a:7:{s:6:"values";a:15:{s:15:"e93133kxbaa7chp";s:15:"Iconbox Style 1";s:15:"5m8g42u3ko5mmca";s:0:"";s:15:"xi0bvklcb9n7liw";s:98:"<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>";s:16:"1jsr2n5qrqum4vyb";s:1:"#";s:23:"1jsr2n5qrqum4vyb_target";s:0:"";s:15:"yxh2s2bizhu2wat";s:9:"Read more";s:14:"70ed2brsaglajj";s:10:"fa-star fa";s:15:"jjf6771agyp0hml";N;s:20:"jjf6771agyp0hml_size";a:3:{i:2;s:0:"";i:0;s:0:"";i:1;s:0:"";}s:19:"jjf6771agyp0hml_alt";s:0:"";s:15:"hodnrb3eme8jmqr";a:2:{i:0;s:0:"";i:1;s:0:"";}s:14:"pvklax8nyka3o3";a:2:{i:0;s:0:"";i:1;s:0:"";}s:15:"xvsenuhjr9nl0o5";s:0:"";s:16:"8op1beo3zi1q3c13";s:7:"default";s:15:"xfyj9rqnk613hyp";s:0:"";}s:6:"groups";a:6:{i:0;a:4:{s:5:"ident";s:5:"292_0";s:8:"group_id";i:292;s:11:"group_alias";s:4:"text";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"e93133kxbaa7chp";s:2:"id";i:1672;s:5:"alias";s:8:"headline";}i:1;a:3:{s:4:"uuid";s:15:"5m8g42u3ko5mmca";s:2:"id";i:1677;s:5:"alias";s:12:"headline_typ";}i:2;a:3:{s:4:"uuid";s:15:"xi0bvklcb9n7liw";s:2:"id";i:1673;s:5:"alias";s:4:"text";}}}i:1;a:4:{s:5:"ident";s:5:"386_0";s:8:"group_id";i:386;s:11:"group_alias";s:9:"hyperlink";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:16:"1jsr2n5qrqum4vyb";s:2:"id";i:1671;s:5:"alias";s:4:"link";}i:1;a:3:{s:4:"uuid";s:15:"yxh2s2bizhu2wat";s:2:"id";i:1675;s:5:"alias";s:8:"linktext";}}}i:2;a:4:{s:5:"ident";s:5:"293_0";s:8:"group_id";i:293;s:11:"group_alias";s:9:"font_icon";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:14:"70ed2brsaglajj";s:2:"id";i:1679;s:5:"alias";s:4:"icon";}}}i:3;a:4:{s:5:"ident";s:5:"294_0";s:8:"group_id";i:294;s:11:"group_alias";s:10:"image_icon";s:10:"attributes";a:1:{i:0;a:3:{s:4:"uuid";s:15:"jjf6771agyp0hml";s:2:"id";i:1678;s:5:"alias";s:10:"image-icon";}}}i:4;a:4:{s:5:"ident";s:5:"295_0";s:8:"group_id";i:295;s:11:"group_alias";s:6:"colors";s:10:"attributes";a:3:{i:0;a:3:{s:4:"uuid";s:15:"hodnrb3eme8jmqr";s:2:"id";i:1682;s:5:"alias";s:5:"color";}i:1;a:3:{s:4:"uuid";s:14:"pvklax8nyka3o3";s:2:"id";i:1681;s:5:"alias";s:7:"bgcolor";}i:2;a:3:{s:4:"uuid";s:15:"xvsenuhjr9nl0o5";s:2:"id";i:1680;s:5:"alias";s:7:"padding";}}}i:5;a:4:{s:5:"ident";s:5:"350_0";s:8:"group_id";i:350;s:11:"group_alias";s:8:"settings";s:10:"attributes";a:2:{i:0;a:3:{s:4:"uuid";s:16:"8op1beo3zi1q3c13";s:2:"id";i:1674;s:5:"alias";s:6:"schema";}i:1;a:3:{s:4:"uuid";s:15:"xfyj9rqnk613hyp";s:2:"id";i:1676;s:5:"alias";s:6:"height";}}}}s:6:"tstamp";i:1568631567;s:5:"alias";s:7:"iconbox";s:5:"uuids";a:12:{i:0;s:15:"e93133kxbaa7chp";i:1;s:15:"5m8g42u3ko5mmca";i:2;s:15:"xi0bvklcb9n7liw";i:3;s:16:"1jsr2n5qrqum4vyb";i:4;s:15:"yxh2s2bizhu2wat";i:5;s:14:"70ed2brsaglajj";i:6;s:15:"jjf6771agyp0hml";i:7;s:15:"hodnrb3eme8jmqr";i:8;s:14:"pvklax8nyka3o3";i:9;s:15:"xvsenuhjr9nl0o5";i:10;s:16:"8op1beo3zi1q3c13";i:11;s:15:"xfyj9rqnk613hyp";}s:7:"version";s:5:"4.6.0";s:13:"customelement";i:134;}',
+162 => 'sourceText',
+),
+),
+);

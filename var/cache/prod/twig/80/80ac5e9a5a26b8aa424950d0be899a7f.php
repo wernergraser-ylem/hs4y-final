@@ -1,0 +1,102 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* @pct_theme_templates/news/news_newsteaser_v3.html5 */
+class __TwigTemplate_2c60293f5ea06d2f53f939374e6550cd extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 1
+        yield "<?php 
+\$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newsteaser_v3.css|static';
+\$hasText = \$this->hasText;
+?>
+
+<div class=\"newsteaser_v3 autogrid one_half block <?php echo \$this->class; ?>\" itemscope itemtype=\"http://schema.org/Article\">\t
+\t<div class=\"autogrid_wrapper block\">
+\t\t<div class=\"content_left autogrid one_half block\">
+\t\t\t<?php if (\$this->addImage): ?>
+\t\t\t<div class=\"image_container<?php echo \$this->floatClass; ?>\"<?php if (\$this->margin || \$this->float): ?> style=\"<?php echo trim(\$this->margin . \$this->float); ?>\"<?php endif; ?>>
+\t\t\t\t<?php if (\$hasText): ?><a href=\"<?php echo \$this->link; ?>\" <?php echo \$this->attributes; ?> title=\"<?php echo \$this->alt; ?>\" <?php if(\$this->target && \$this->url): ?>target=\"_blank\" <?php endif; ?>><?php endif; ?>
+\t\t\t\t\t<?php \$this->insert('picture_default', \$this->picture); ?>
+\t\t\t\t\t<?php if (\$hasText): ?>
+\t\t\t\t\t<span class=\"news-overlay\"><i class=\"fa fa-plus\"></i></span>
+\t\t\t\t\t</a>
+\t\t\t\t<?php endif; ?>
+\t\t\t</div>
+\t\t\t<?php endif; ?>
+\t\t</div>
+\t\t
+\t\t<div class=\"content_right autogrid one_half block\">
+\t\t\t<?php if (\$this->date): ?>
+\t\t\t<span class=\"day\" itemprop=\"datePublished\"><?= \\Contao\\Date::parse(\"d\", \$this->timestamp);?></span> <span class=\"month\">/ <?= \\Contao\\Date::parse(\"M\", \$this->timestamp);?></span> <span class=\"year\"><?= \\Contao\\Date::parse(\"Y\", \$this->timestamp);?></span>
+\t\t\t<?php endif; ?>\t
+\t\t\t<div class=\"h6\"><?php echo \$hasText ? \$this->linkHeadline : \$this->newsHeadline; ?></div>
+\t\t\t<div class=\"info\">
+\t\t\t\t<?php if (\$this->author): ?>
+\t\t\t\t<span class=\"author\"><?php echo \$this->author; ?></span>
+\t\t\t\t<?php endif; ?>
+\t\t\t\t<?php if (\$this->commentCount): ?>
+\t\t\t\t<span class=\"comments\"><?php echo \$this->commentCount; ?></span>
+\t\t\t\t<?php endif; ?>
+\t\t\t</div>
+\t\t\t<div class=\"teaser\" itemprop=\"description\"><?php echo \$this->teaser; ?></div>\t
+\t\t</div>
+\t</div>
+</div>";
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "@pct_theme_templates/news/news_newsteaser_v3.html5";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  42 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("", "@pct_theme_templates/news/news_newsteaser_v3.html5", "/var/www/vhosts/handyservice4you.at/update.handyservice4you.at/system/modules/pct_theme_templates/templates/news/news_newsteaser_v3.html5");
+    }
+}

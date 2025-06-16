@@ -1,0 +1,60 @@
+<div id="viewport_panel">
+	<ul class="buttons">
+		<li title="<?= $GLOBALS['TL_LANG']['viewport_panel']['desktop']; ?>" class="desktop button clickable"data-viewport="desktop"><i></i><span><?= $GLOBALS['TL_LANG']['viewport_panel']['desktop']; ?></span></li>
+		<li title="<?= $GLOBALS['TL_LANG']['viewport_panel']['tablet']; ?>" class="tablet button clickable" data-viewport="tablet"><i></i><span><?= $GLOBALS['TL_LANG']['viewport_panel']['tablet']; ?></span></li>
+		<li title="<?= $GLOBALS['TL_LANG']['viewport_panel']['mobile']; ?>" class="mobile button clickable" data-viewport="mobile"><i></i><span><?= $GLOBALS['TL_LANG']['viewport_panel']['mobile']; ?></span></li>
+	</ul>
+</div>
+<script>
+/**
+ * Create viewport button panel and apply viewport based classes
+ */
+jQuery(document).ready(function() 
+{
+	// localstorage
+	var strViewport = localStorage.getItem('viewport');
+	if ( strViewport == null || strViewport == undefined )
+	{
+		strViewport = 'desktop';
+		localStorage.setItem('viewport',strViewport);
+	}
+	// set body class
+	jQuery('body').addClass('viewport_'+strViewport);
+	// inject panel in contao listing
+	jQuery('#tl_listing .tl_header').after( jQuery('#viewport_panel') );
+	// set button active
+	jQuery('#viewport_panel .clickable.'+strViewport).addClass('active');
+	
+	jQuery('#viewport_panel .clickable').click(function(e)
+	{
+		var strViewport = jQuery(this).data('viewport');
+		// toggle active
+		jQuery(this).siblings('.clickable').removeClass('active');
+		jQuery(this).addClass('active');
+		
+		// send ajax
+		jQuery.ajax(
+		{
+			url: location.href,
+			method:'POST',
+			data: {'action':'toggleViewport','viewport':strViewport}
+		});
+		// remove body classes
+		jQuery('body').removeClass(['viewport_desktop','viewport_mobile','viewport_tablet']);
+		// set body class
+		jQuery('body').addClass('viewport_'+strViewport);
+		// store in localstorage
+		localStorage.setItem('viewport',strViewport);
+		// trigger event
+		jQuery(document).trigger('THEME_SETTINGS.viewport',{'viewport':strViewport});
+	});
+});
+
+//!-- Event listener: THEME_SETTINGS.viewport
+jQuery(document).on('THEME_SETTINGS.viewport',function(e,params)
+{
+	// trigger autogrid viewport panel button
+	jQuery('#autogrid_viewport_panel .clickable.'+params.viewport).click();
+});
+//--
+</script>

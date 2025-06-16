@@ -1,0 +1,39 @@
+
+
+<script>
+/* <![CDATA[ */
+
+/**
+ * Call the ThemeDesigner selector method on change and bind ThemeDesigner.onSelector event to effected elements
+ */
+jQuery(document).ready(function() 
+{
+	var objElement = ThemeDesigner.findByName('<?= $this->selector; ?>');
+	if(objElement === null)
+	{
+		return;
+	}
+	
+	objElement.change(function(event) 
+	{
+		ThemeDesigner.selector('<?= $this->selector; ?>','<?= $this->value; ?>','<?= $this->json_effected; ?>');
+	});
+	
+	// autoregister ThemeDesigner.onSelector event listener
+	<?php foreach($this->effected as $field => $value): ?>
+	
+	var element = ThemeDesigner.findByName('<?= $field; ?>');
+	if(element !== null)
+	{
+		element.on('ThemeDesigner.onSelector',function(event,params) 
+		{
+			// do something
+		});
+	}
+	<?php endforeach; ?>
+});
+
+/* ]]> */
+</script>
+
+

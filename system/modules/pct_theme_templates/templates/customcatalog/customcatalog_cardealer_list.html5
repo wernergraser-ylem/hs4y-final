@@ -1,0 +1,80 @@
+<div class="list-options">
+	<i class="fa fa-list"></i>
+	<i class="fa fa-th"></i>
+</div>
+<?php $sum = 0; ?>
+<?php if(!$this->empty): ?>
+<div class="item-wrapper">
+<?php foreach($this->entries as $entry): ?>
+	<div class="block <?= $entry->class; ?> <?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+		
+		<div class="item-inside">
+			
+			<div class="item-leftside">
+				<div class="item-state"><?php echo $entry->field('state')->html(); ?></div>
+				<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+				<div class="item-link-youtube"><a href="<?php echo $entry->field('youtube')->value(); ?>" target="_blank"><i class="fa fa-play"></i>Video</a></div>
+				<div class="item-link-detail"><a href="<?php echo $entry->links('detail')->url; ?>"><i class="fa fa-plus"></i>Details</a></div>
+			</div>
+			
+			<div class="item-rightside">
+				<?php if($entry->field('highlight')->value()): ?> <i class="item-highlight-icon fa fa-star"></i><?php endif; ?>
+				<h4><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h4>
+				<div class="item-content">
+					<div class="item-content-col1">
+					<?php echo $entry->field('short_description')->value(); ?>
+					<?php echo $entry->field('notelist')->html(); ?>
+					</div>
+					<div class="item-content-col2">
+					&euro;<?php echo $entry->field('price')->html(); ?>
+					</div>
+				</div>
+				<ul>
+					<li><i class="fa fa-dashboard"></i> <?php echo $entry->field('mileage')->value(); ?> km</li>
+					<li><i class="fa fa-plug"></i> <?php echo $entry->field('transmission')->html(); ?></li>
+					<li><i class="fa fa-male"></i> <?php echo $entry->field('doors')->value(); ?> T&uuml;ren</li>
+					<li><i class="fa fa-calendar"></i> <?php echo $entry->field('year')->value(); ?></li>
+				</ul>
+			</div>
+			
+			
+		</div>
+			
+	</div>
+	
+<?php $sum += $entry->field('price')->value(); ?>
+
+<?php endforeach; ?>
+</div>		
+<?php else: ?>
+<p class="info empty">Kein Auto gefunden</p>
+<?php endif;?>
+
+<div class="notelist-sum bg-accent">
+	<div class="headline">Gesamtsumme: </div>
+	<span>&euro; <?php echo $sum; ?></span>
+</div>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function(){
+	
+	var view_isGrid = localStorage.getItem('view_isGrid');
+	
+	if (view_isGrid == 1) {
+		jQuery('.mod_customcataloglist.cc_cardealer').addClass('grid-view');
+	}
+	
+	jQuery(".list-options .fa-th").click(function(){
+    	jQuery(".mod_customcataloglist.cc_cardealer").addClass("grid-view");
+		localStorage.setItem('view_isGrid', 1);
+		
+	});
+	
+	jQuery(".list-options .fa-list").click(function(){
+    	jQuery(".mod_customcataloglist.cc_cardealer").removeClass("grid-view");
+    	localStorage.removeItem('view_isGrid');
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

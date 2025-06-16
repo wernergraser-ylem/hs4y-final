@@ -1,0 +1,3 @@
+<div class="mod_customcatalog_search_results mod_customcatalog_search_results_<?= $this->id; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?= $this->CustomCatalog->render(); ?>
+</div>

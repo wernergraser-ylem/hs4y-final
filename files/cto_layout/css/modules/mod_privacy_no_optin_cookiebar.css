@@ -1,0 +1,69 @@
+/* =============================================================================
+ * cookiebar (no-optin)
+ * ========================================================================== */
+
+.cookiebar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	color: rgb(255,255,255);
+	z-index: 100000000000;
+	padding: 15px 130px 15px 15px;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+	background: var(--accentColor);
+	display: none;
+}
+
+.cookiebar.open {
+	display: block;
+}
+
+.cookiebar-close {
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	background: rgba(0,0,0,0.3);
+	padding: 5px 10px;
+	border-radius: 3px;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.cookiebar-close:hover {
+	background: rgba(0,0,0,0.5);
+}
+
+.cookiebar p {
+	margin-bottom: 0;
+}
+
+.cookiebar a {
+	color: rgb(255,255,255);
+	margin-right: 5px;
+	text-decoration: underline;
+}
+
+body.fixed-header.cookiebar_open #top_link {
+	opacity: 1;
+	bottom: 70px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.cookiebar {
+		padding: 10px;
+	}
+	
+	.cookiebar .cookiebar-close {
+		position: static;
+		transform: translateY(0%);
+		-webkit-transform: translateY(0%);
+		margin-top: 10px;
+	}
+}

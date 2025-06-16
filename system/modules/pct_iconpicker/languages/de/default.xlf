@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/pct_iconpicker/languages/en/default.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="MSC.fontIconPicker">
+        <source>Choose font icon</source>
+        <target>Font-Icon auswählen</target>
+      </trans-unit>
+      <trans-unit id="MSC.fontIconPicker_empty">
+        <source>No font icon classes found</source>
+        <target>Keine Font-Icon-Klassen gefunden</target>
+      </trans-unit>
+     </body>
+  </file>
+</xliff>

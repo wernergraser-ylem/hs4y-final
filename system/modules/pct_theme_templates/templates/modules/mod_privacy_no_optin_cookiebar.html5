@@ -1,0 +1,71 @@
+<?php
+global $objPage;
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/modules/mod_privacy_no_optin_cookiebar.css|static';
+?>
+
+<!-- indexer::stop -->
+<div class="cookiebar">
+	<div><?= $this->privacy_text; ?> <?= $this->link_1; ?> <?= $this->link_2; ?> </div>
+	<div class="cookiebar-close">{{iflng::en}}Got it!{{iflng}}{{iflng::de}}Schliessen{{iflng}}</div>
+</div>
+<!-- indexer::continue -->
+
+<!-- SEO-SCRIPT-START -->
+<script>
+jQuery(document).ready(function()
+{
+	// add hide_optin body class when on imprint or privacy page
+	<?php if( isset($this->hide_optin) ): ?>
+	jQuery('body').addClass('hide_optin');
+	<?php endif; ?>
+	
+	// remove token
+	if(window.location.search.indexOf('clear_privacy_settings') >= 0)
+	{
+		PrivacyManager.optout(document.location.origin+document.location.pathname);
+	}
+	
+	var privacy = localStorage.getItem('<?= $this->session_name; ?>');
+	var expires = Number( localStorage.getItem('<?= $this->session_name; ?>_expires') );
+	// check lease time
+	var now = new Date().setDate(new Date().getDate());
+	if( now >= expires )
+	{
+		expires = 0;
+	}
+
+	if(privacy == undefined || privacy == '' || expires <= 0 )
+	{
+		jQuery('body').addClass('cookiebar_open');
+		jQuery('.cookiebar').addClass('open');
+		setTimeout(function()
+		{
+			jQuery('body').css('padding-bottom', jQuery('.cookiebar').outerHeight() + 'px');
+		}, 800);
+	}
+
+	jQuery('.cookiebar-close').click(function()
+	{
+		jQuery('.cookiebar').removeClass('open');
+		jQuery('body').removeClass('cookiebar_open');
+		jQuery('body').css('padding-bottom', '0px');
+		// set local storage
+		localStorage.setItem('<?= $this->session_name; ?>','1');
+		// set lease time
+		var expires = new Date().setDate(new Date().getDate() + <?= (int)$this->privacy_cookie_expires; ?>);
+		localStorage.setItem('<?= $this->session_name; ?>_expires',expires);
+	});
+
+	
+});
+
+jQuery(window).resize(function()
+{
+	if( jQuery('.cookiebar').hasClass('open') )
+	{
+		jQuery('body').css('padding-bottom', jQuery('.cookiebar').outerHeight() + 'px');
+	}
+});
+
+</script>
+<!-- SEO-SCRIPT-STOP -->

@@ -1,0 +1,113 @@
+html * {
+	transition-duration: 0s!important;
+	-webkit-transition-duration: 0s!important;
+	animation: none!important;
+	-webkit-animation: none!important;
+}
+
+.ce_image_collage_2pics figure,
+.ce_image_collage_3pics figure {
+	opacity: 1!important;;
+	transition: none!important;
+	transform: scale(1)!important;
+}
+
+.ce_image_text_box_v2:hover .image_container img {
+	transform: none;
+}
+
+.animate,
+.animated,
+.animated img {
+  -webkit-animation-duration: 0s!important;
+          animation-duration: 0s!important;
+}
+
+
+.ce_scribble_animation svg {
+	display: none;
+}
+
+.ce_split_words span.word {
+	transform: none;
+}
+
+.ce_fancylink.style3 a:hover:after,
+.ce_textlink[data-style="style1"] a:hover::after,
+.ce_textlink[data-style="style2"] a:hover::after,
+.ce_fancybox.style1:hover:after {
+	transform: none!important;
+	animation: none!important;
+}
+
+.ce_fancybox.style1:after {
+	width: 0;
+}
+
+.ce_piechart canvas {
+	display: none;
+}
+
+.swiper-container,
+.swiper-container *,
+.ce_hoverimage *,
+.ce_iconbox *,
+.ce_image_text_box_v2 *,
+.ce_hyperlink *,
+.ce_featurelist * {
+	transition: none!important;
+}
+
+.ce_scroll_reveal_words span.word {
+	opacity: 1!important;
+}
+
+.ce_revolutionslider * {
+	transform: none!important;
+	opacity: 1!important;
+}
+
+.ce_revolutionslider .tparrows {
+	display: none!important;
+}
+
+.ce_video_w_teaser .video_teaser {
+	width: 100%!important;
+}
+
+.autogrid_row>.column.sticky.center .attributes {
+	top: 50vh;
+	transform: translateY(-50%);
+}
+
+.ce_image.shadow1 {
+	overflow: visible;
+}
+
+.ce_video_w_teaser .video_teaser video {
+	display: none;
+}
+
+.ce_video_w_teaser[data-color="light"] {
+	background: #000;
+}
+
+.ce_rotating_words .word:first-of-type {
+	transform: translateX(0)!important;
+	opacity: 1!important;
+	display: block;
+}
+
+.ce_rotating_words .word {
+	display: none;
+	position: static;
+}
+
+.ce_rotating_words .rotating-words,
+.ce_rotating_words .word .mask {
+	width: auto!important;
+}
+
+.ce_text_inline_images .inline_image {
+	display: none!important;
+}

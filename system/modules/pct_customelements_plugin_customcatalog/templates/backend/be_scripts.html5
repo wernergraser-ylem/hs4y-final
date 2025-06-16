@@ -1,0 +1,57 @@
+
+<?php
+/**
+ * Backend panel helper scripts.
+ */	
+$objSession = \Contao\System::getContainer()->get('request_stack')->getSession();
+$strSession = $GLOBALS['PCT_CUSTOMCATALOG']['backendFilterSession'];
+$arrSession = $objSession->get($strSession);
+
+$objCC = \PCT\CustomElements\Plugins\CustomCatalog\Core\CustomCatalogFactory::fetchCurrent();
+if( $objCC === null )
+{
+	return '';
+}
+$strTable = ($objCC->mode == 'new' ? $objCC->tableName : $objCC->existingTable);
+?>
+
+<?php if( isset($arrSession[$strSession][$strTable]) && is_array($arrSession[$strSession][$strTable])): ?>
+<script>
+jQuery(document).ready(function() 
+{
+
+	<?php foreach($arrSession[$strSession][$strTable] as $strField => $varValue): ?>
+	var elem = jQuery('.tl_filter #<?= $strField; ?>.tl_chosen');
+	var chosen = jQuery('.tl_filter #<?= $strField; ?>_chzn');
+	if( elem.length > 0 )
+	{
+		// remove the contao standard chosen
+		chosen.remove();
+		elem.find('option[value=<?= $varValue; ?>]').attr('selected',true);
+		var chosen =  new Chosen(elem[0]);
+	}
+	<?php endforeach; ?>
+});
+</script>
+<?php endif; ?>
+
+<?php if(isset($arrSession[$GLOBALS['PCT_CUSTOMCATALOG']['backendFilterSession'].'_search'][$strTable]) && isset($arrSession[$GLOBALS['PCT_CUSTOMCATALOG']['backendFilterSession'].'_search'][$strTable]['value']) ): ?>
+<script>
+/**
+ * Manipulate the backend search field for nonstandard fieldtypes
+ */
+window.addEvent('domready', function() 
+{
+	var elem = $$('.tl_search > input[name=tl_value]');
+	var value = '<?php echo $arrSession[$GLOBALS['PCT_CUSTOMCATALOG']['backendFilterSession'].'_search'][$strTable]['value'] ?? ''; ?>';
+	var field = '<?php echo $arrSession[$GLOBALS['PCT_CUSTOMCATALOG']['backendFilterSession'].'_search'][$strTable]['field'] ?? ''; ?>'
+	var act_option = $$('.tl_search option[value="'+field+'"]');
+	act_option.set('selected',1);
+	$$('.tl_search > .tl_select > span').set('text',act_option.get('text'));
+	elem.set('value',value);
+	elem.addClass('active');
+	$$('#main .tl_search .styled_select').addClass('active');
+	$$('select[name=tl_field]').addClass('active');
+});	
+</script>
+<?php endif; ?>

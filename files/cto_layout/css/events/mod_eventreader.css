@@ -1,0 +1,63 @@
+/* =============================================================================
+ * mod_eventreader
+ * ========================================================================== */
+
+.mod_eventreader .info:before {
+	font-family: "FontAwesome";
+	content: "\f073";
+	text-indent: 0;
+	display: inline-block;
+	position: relative;
+	left: 0;
+	margin-right: 5px;
+	width: 20px;
+}
+
+.mod_eventreader .location:before {
+	font-family: "FontAwesome";
+	content: "\f124";
+	text-indent: 0;
+	display: inline-block;
+	position: relative;
+	left: 0;
+	margin-right: 5px;
+	width: 20px;
+}
+
+.mod_eventreader .title {
+	float: left;
+	line-height: 1;
+}
+
+.mod_eventreader .info {
+	float: left;
+	margin-left: 45px;
+	padding-left: 45px;
+	border-left: 1px solid rgb(220,220,220);
+	color: rgb(160,160,160);
+	font-size: 0.9rem;
+	text-transform: uppercase;
+}
+
+.mod_eventreader .info p {
+	margin-bottom: 0;
+}
+
+.mod_eventreader .clear {
+	margin-bottom: 35px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+    .mod_eventreader .title,
+    .mod_eventreader .info {
+        float: none;
+        margin-left: 0;
+    }
+    
+    .mod_eventreader .info {
+        padding-left: 15px;
+    }
+}

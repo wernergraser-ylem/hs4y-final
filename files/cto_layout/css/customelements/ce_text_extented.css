@@ -1,0 +1,307 @@
+/* =============================================================================
+ * ce_text_extented
+ * ========================================================================== */
+
+.ce_text_extented.align-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ce_text_extented.align-left-justify {
+	text-align: justify;
+}
+
+.ce_text_extented.align-center-justify {
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ce_text_extented.align-right-justify {
+	text-align: justify;
+	margin-left: auto;
+}
+
+.ce_text_extented.align-right {
+	margin-left: auto;
+}
+
+.ce_text_extented p:last-child {
+	margin-bottom: 0;
+}
+
+.ce_text_extented.max_width_90 {
+	max-width: 90%;
+}
+
+.ce_text_extented.max_width_80 {
+	max-width: 80%;
+}
+
+.ce_text_extented.max_width_70 {
+	max-width: 70%;
+}
+
+.ce_text_extented.max_width_60 {
+	max-width: 60%;
+}
+
+.ce_text_extented.max_width_50 {
+	max-width: 50%;
+}
+
+.ce_text_extented.max_width_40 {
+	max-width: 40%;
+}
+
+.ce_text_extented.max_width_30 {
+	max-width: 30%;
+}
+
+.ce_text_extented.max_width_20 {
+	max-width: 20%;
+}
+
+.ce_text_extented.max_width_10 {
+	max-width: 10%;
+}
+
+.ce_text_extented.font_serif {
+	font-family: Georgia, Times, serif;
+}
+
+.ce_text_extented.font_customfont1 {
+	 font-family: var(--customFont1);
+}
+
+.ce_text_extented.font_customfont2 {
+	 font-family: var(--customFont2);
+}
+
+.ce_text_extented.font-style-letter-sp2 p {
+	letter-spacing: 2px;
+}
+
+.ce_text_extented.font-style-letter-sp5 p {
+	letter-spacing: 5px;
+}
+
+.ce_text_extented.font-style-dropcap p:first-child:first-letter {
+	float: left;
+	font-size: 4rem;
+	line-height: 4rem;
+	padding-right: 10px;
+	padding-left: 5px;
+}
+
+.ce_text_extented.font-style-quote p {
+	border-left: 1px solid rgb(232, 232, 232);
+	padding-left: 20px;
+	position: relative;
+}
+
+.ce_text_extented.font-style-quote p:first-child:before {
+	content: "\f10e";
+	font-family: "FontAwesome";
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	opacity: 0.3;
+	font-size: 3rem;
+	line-height: 3rem;
+}
+
+.ce_text_extented.lh-1 p {
+	line-height: 1;
+}
+
+.ce_text_extented.lh-1-1 p {
+	line-height: 1.1;
+}
+
+.ce_text_extented.lh-1-2 p {
+	line-height: 1.2;
+}
+
+.ce_text_extented.lh-1-3 p {
+	line-height: 1.3;
+}
+
+.ce_text_extented.lh-1-4 p {
+	line-height: 1.4;
+}
+
+.ce_text_extented.lh-1-5 p {
+	line-height: 1.5;
+}
+
+.ce_text_extented.lh-1-6 p {
+	line-height: 1.6;
+}
+
+.ce_text_extented.lh-1-7 p {
+	line-height: 1.7;
+}
+
+.ce_text_extented.lh-1-8 p {
+	line-height: 1.8;
+}
+
+.ce_text_extented.lh-1-9 p {
+	line-height: 1.9;
+}
+
+.ce_text_extented.lh-2 p {
+	line-height: 2;
+}
+
+.ce_text_extented a {
+	text-decoration: underline;
+}
+
+.ce_text_extented.font-weight-100 p {
+	font-weight: 100;
+}
+
+.ce_text_extented.font-weight-200 p {
+	font-weight: 200;
+}
+
+.ce_text_extented.font-weight-300 p {
+	font-weight: 300;
+}
+
+.ce_text_extented.font-weight-400 p {
+	font-weight: 400;
+}
+
+.ce_text_extented.font-weight-500 p {
+	font-weight: 500;
+}
+
+.ce_text_extented.font-weight-600 p {
+	font-weight: 600;
+}
+
+.ce_text_extented.font-weight-700 p {
+	font-weight: 700;
+}
+
+.ce_text_extented.font-weight-800 p {
+	font-weight: 800;
+}
+
+.ce_text_extented.font-weight-900 p {
+	font-weight: 900;
+}
+
+/* ce_text_extended in revolutions slider */
+
+.ce_text_extented.tp-caption p {
+	white-space: normal;
+}
+
+.ce_text_extented.tp-caption.lh-1 p {
+	line-height: 1!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-1 p {
+	line-height: 1.1!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-2 p {
+	line-height: 1.2!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-3 p {
+	line-height: 1.3!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-4 p {
+	line-height: 1.4!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-5 p {
+	line-height: 1.5!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-6 p {
+	line-height: 1.6!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-7 p {
+	line-height: 1.7!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-8 p {
+	line-height: 1.8!important;
+}
+
+.ce_text_extented.tp-caption.lh-1-9 p {
+	line-height: 1.9!important;
+}
+
+.ce_text_extented.tp-caption.lh-2 p {
+	line-height: 2!important;
+}
+
+.ce_text_extented.tp-caption.font-size-xxxxxl {
+	font-size: 55px;
+}
+
+.ce_text_extented.tp-caption.font-size-xxxxxl {
+	font-size: 50px;
+}
+
+.ce_text_extented.tp-caption.font-size-xxxxl {
+	font-size: 45px;
+}
+
+.ce_text_extented.tp-caption.font-size-xxl {
+	font-size: 40px;
+}
+
+.ce_text_extented.tp-caption.font-size-xl {
+	font-size: 35px;
+}
+
+.ce_text_extented.tp-caption.font-size-l {
+	font-size: 30px;
+}
+
+.ce_text_extented.tp-caption.font-size-m {
+	font-size: 28px;
+}
+
+.ce_text_extented.tp-caption.font-size-s {
+	font-size: 26px;
+}
+
+.ce_text_extented.tp-caption.font-size-xs {
+	font-size: 24px;
+}
+
+.ce_text_extented.tp-caption.font-size-xs {
+	font-size: 22px;
+}
+
+.ce_text_extented.tp-caption.font-size-xxs {
+	font-size: 20px;
+}
+
+.ce_text_extented.tp-caption.font-size-xxxs {
+	font-size: 18px;
+}
+
+.ce_text_extented.tp-caption.font-size-xxxxs {
+	font-size: 16px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_text_extented.align-left-m {
+		margin-left: 0;
+	}
+}

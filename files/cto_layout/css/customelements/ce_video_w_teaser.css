@@ -1,0 +1,194 @@
+/* =============================================================================
+ * ce_video_w_teaser
+ * ========================================================================== */
+
+.ce_video_w_teaser {
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.ce_video_w_teaser .video_teaser {
+    width: 50%; 
+    margin: 0 auto;
+    transition: width 0.01s ease; 
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.ce_video_w_teaser[data-animation="off"] .video_teaser {
+	width: 100%;
+}
+
+.ce_video_w_teaser .video_teaser video,
+.ce_video_w_teaser .teaser_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    object-fit: cover; 
+}
+
+.ce_video_w_teaser .teaser_image img {
+	max-width: none;
+	width: auto;
+}
+
+.ce_video_w_teaser .video_content {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white; /* Textfarbe, kann angepasst werden */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ce_video_w_teaser .video_content .title {
+    margin: 5px 0;
+}
+
+.ce_video_w_teaser .video_content .headline {
+	margin: 0;
+}
+
+/* style2 */
+.ce_video_w_teaser[data-style="style2"] .video_content {
+	bottom: auto;
+	top: 50%;
+}
+
+/* light/dark theme */
+.ce_video_w_teaser[data-color="light"] .headline,
+.ce_video_w_teaser[data-color="light"] .subheadline,
+.ce_video_w_teaser[data-color="light"] .duration  {
+	color: #fff;
+}
+
+.ce_video_w_teaser[data-color="light"] .play-button-static {
+	border:  2px solid #fff;
+	color: #fff;
+}
+
+.ce_video_w_teaser[data-color="dark"] .headline,
+.ce_video_w_teaser[data-color="dark"] .subheadline,
+.ce_video_w_teaser[data-color="dark"] .duration {
+	color: #000;
+}
+
+.ce_video_w_teaser[data-color="dark"] .play-button-static {
+	border:  2px solid #000;
+	color: #000;
+}
+
+/* play button static */
+
+.ce_video_w_teaser .play-button-static {
+	display: none;
+}
+
+.ce_video_w_teaser[data-play-button="play_button_static"] .play-button-static {
+	display: block;
+}
+
+.ce_video_w_teaser .play-button-static {
+	font-size: 22px;
+	line-height: 66px;
+	text-align: center;
+	border-radius: 100%;
+	width: 70px;
+	height: 70px;
+	margin-bottom: 30px;
+	transition: all 1.2s ease;
+}
+
+.ce_video_w_teaser[data-color="light"][data-play-button="play_button_static"] .play-button-static {
+	border-color: #fff;
+}
+
+.ce_video_w_teaser[data-color="light"][data-play-button="play_button_static"]:hover .play-button-static {
+	background: rgba(255,255,255,0.2);
+}
+
+.ce_video_w_teaser[data-color="dark"][data-play-button="play_button_static"] .play-button-static {
+	border-color: #000;
+	color: #000;
+}
+
+.ce_video_w_teaser[data-color="dark"][data-play-button="play_button_static"]:hover .play-button-static {
+	background: rgba(0,0,0,0.2);
+}
+
+.ce_video_w_teaser[data-play-button="play_button_static"]:hover .play-button-static {
+	transform: scale(1.1);
+}
+
+/* play button fyling */
+.ce_video_w_teaser .circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.1s ease;
+}
+
+.ce_video_w_teaser .circle .circle_inside {
+ 	font-size: 18px;
+	line-height: 96px;
+	text-align: center;
+	border-radius: 100%;
+	width: 100px;
+	height: 100px;
+	pointer-events: none; /* Makes sure the circle doesn't block any mouse events */
+    transition: opacity 0.8s ease, transform 1.3s ease;
+    transform: translateX(-50px) translateY(-50px) scale(0.1);
+    z-index: 100000000;
+    background: var(--accentColor);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.1);
+    opacity: 0;
+}
+
+.ce_video_w_teaser .circle .circle_inside i {
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.ce_video_w_teaser.mouseover .circle .circle_inside {
+	transform: translateX(-50px) translateY(-50px) scale(1);
+	opacity: 1;
+} 
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	
+	.ce_video_w_teaser .circle {
+		display: none!important;
+	}
+	
+	.ce_video_w_teaser .play-button-static {
+		display: block!important;
+	}
+	
+	.ce_video_w_teaser[data-style="style1"] .video_content {
+		transform: translate(-50%, 0);
+		bottom: 20px;
+	}
+		
+}

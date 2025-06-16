@@ -1,0 +1,63 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: set_table
+*/
+$arrImport = array (
+'tstamp' => '13.11.2023 08:34',
+'name' => 'single_table',
+'category' => 'tables_lists',
+'thumb' => '',
+'elements' => 'table',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+21 => 'tableitems',
+23 => 'thead',
+24 => 'tfoot',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+62 => 'com_template',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+102 => 'revolutionslider_data_speed_OUT',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 124690,
+1 => 14511,
+2 => 128,
+3 => 1699864078,
+5 => 'table',
+6 => 'a:2:{s:4:"unit";s:2:"h2";s:5:"value";s:0:"";}',
+21 => 'a:6:{i:0;a:5:{i:0;s:8:"COLUMN 1";i:1;s:8:"COLUMN 3";i:2;s:8:"COLUMN 4";i:3;s:8:"COLUMN 5";i:4;s:8:"COLUMN 6";}i:1;a:5:{i:0;s:7:"Item #1";i:1;s:3:"Tax";i:2;s:7:"€0.20";i:3;s:9:"Subtotal:";i:4;s:7:"€1.00";}i:2;a:5:{i:0;s:7:"Item #2";i:1;s:3:"Tax";i:2;s:7:"€0.40";i:3;s:9:"Discount:";i:4;s:7:"€2.00";}i:3;a:5:{i:0;s:7:"Item #3";i:1;s:3:"Tax";i:2;s:7:"€0.50";i:3;s:9:"Shipping:";i:4;s:7:"€3.00";}i:4;a:5:{i:0;s:7:"Item #4";i:1;s:3:"Tax";i:2;s:7:"€0.80";i:3;s:4:"Tax:";i:4;s:7:"€4.00";}i:5;a:5:{i:0;s:9:"All items";i:1;s:3:"Tax";i:2;s:7:"€1.00";i:3;s:11:"Your Total:";i:4;s:8:"€10.00";}}',
+23 => '1',
+24 => '1',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+62 => 'com_default',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_9',
+85 => '0.5',
+102 => '0.5',
+162 => 'sourceText',
+),
+),
+);

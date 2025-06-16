@@ -1,0 +1,124 @@
+/* =============================================================================
+ * ce_calltoaction
+ * ========================================================================== */
+
+.ce_calltoaction:not(.ce_calltoaction_v2) {
+	background: rgb(152,152,152);
+	padding: 25px 25px 15px 40px;;
+	color: rgb(255,255,255);
+	position: relative;
+	margin-bottom: 15px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.ce_calltoaction:after {
+	content: '';
+	width: 10px;
+	background: rgba(255,255,255,0.3);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.ce_calltoaction:not(.ce_calltoaction_v2) h1,
+.ce_calltoaction:not(.ce_calltoaction_v2) h2,
+.ce_calltoaction:not(.ce_calltoaction_v2) h3,
+.ce_calltoaction:not(.ce_calltoaction_v2) h4,
+.ce_calltoaction:not(.ce_calltoaction_v2) h5,
+.ce_calltoaction:not(.ce_calltoaction_v2) h6,
+.ce_calltoaction:not(.ce_calltoaction_v2) .h1,
+.ce_calltoaction:not(.ce_calltoaction_v2) .h2,
+.ce_calltoaction:not(.ce_calltoaction_v2) .h3,
+.ce_calltoaction:not(.ce_calltoaction_v2) .h4,
+.ce_calltoaction:not(.ce_calltoaction_v2) .h5,
+.ce_calltoaction:not(.ce_calltoaction_v2) .h6 {
+	color: rgb(255,255,255);
+}
+
+.ce_calltoaction p {
+	margin-bottom: 10px;
+}
+
+.ce_calltoaction .ce_url a {
+	font-weight: bold;
+	text-decoration: underline;
+	color: rgb(255,255,255)!important;
+}
+
+.ce_calltoaction .ce_url a:before {
+	content: "\f101";
+	font-family:FontAwesome;
+	font-weight: normal;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+/* =============================================================================
+ * ce_calltoaction v2
+ * ========================================================================== */
+
+
+.ce_calltoaction_v2 .ce_calltoaction_inside {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	position: relative;
+}
+
+.ce_calltoaction_v2 {
+	margin-bottom: 0;
+	padding: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.ce_calltoaction_v2 p {
+	font-size: 1.3em;
+}
+
+.ce_calltoaction_v2 .headline {
+	margin: 0;
+}
+
+.ce_calltoaction_v2 .ce_hyperlink {
+	position: absolute;
+	right: 40px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.ce_calltoaction_v2 .ce_hyperlink a {
+	text-decoration: none;
+}
+
+.ce_calltoaction_v2 .ce_calltoaction_content {
+	padding-right: 25%;
+}
+
+.ce_calltoaction_v2:after {
+	display: none;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_calltoaction_v2 .ce_calltoaction_content {
+		padding-right: 0;
+	}
+	
+	.ce_calltoaction_v2 .ce_hyperlink {
+		position: static;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		margin-top: 15px;
+	}
+	
+	.ce_calltoaction_v2 .ce_hyperlink a {
+		width: 100%;
+	}
+}

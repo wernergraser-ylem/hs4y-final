@@ -1,0 +1,69 @@
+<?php
+/**
+* Hello, I'm a the content element set template file: single_headline_w_text-4
+*/
+$arrImport = array (
+'tstamp' => '27.11.2023 09:07',
+'name' => 'single_headline_w_text-4',
+'category' => 'text',
+'thumb' => '',
+'elements' => 'text',
+);
+$arrImport["sql"] = array (
+0 =>
+array (
+'table' => 'tl_content',
+'fields' =>
+array (
+0 => 'id',
+1 => 'pid',
+2 => 'sorting',
+3 => 'tstamp',
+5 => 'type',
+6 => 'headline',
+7 => 'text',
+17 => 'floating',
+28 => 'sortOrder',
+42 => 'perRow',
+55 => 'cssID',
+56 => 'com_order',
+63 => 'ptable',
+71 => 'sliderSpeed',
+81 => 'autogrid_css',
+85 => 'revolutionslider_data_speed',
+87 => 'revolutionslider_data_animation_start',
+88 => 'revolutionslider_data_animation_end',
+95 => 'revolutionslider_videoType',
+100 => 'revolutionslider_text_fontsize',
+102 => 'revolutionslider_data_speed_OUT',
+141 => 'privacy_level',
+162 => 'markdownSource',
+),
+'values' =>
+array (
+0 => 126655,
+1 => 14791,
+2 => 1664,
+3 => 1701075861,
+5 => 'text',
+6 => 'a:2:{s:4:"unit";s:2:"h4";s:5:"value";s:21:"Headline H4 with Text";}',
+7 => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ac augue ultrices auctor. Suspendisse potenti. Fusce auctor volutpat purus, vel tempus ligula luctus a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis vehicula purus eu justo convallis, a fermentum nunc placerat.</p>',
+17 => 'above',
+28 => 'ascending',
+42 => 4,
+55 => 'a:2:{i:0;s:0:"";i:1;s:0:"";}',
+56 => 'ascending',
+63 => 'tl_article',
+71 => 300,
+81 => 'col_12',
+85 => '0.5',
+87 => 'fade',
+88 => 'fadeout',
+95 => 'local',
+100 => '14',
+102 => '0.5',
+141 => 1,
+162 => 'sourceText',
+),
+),
+);

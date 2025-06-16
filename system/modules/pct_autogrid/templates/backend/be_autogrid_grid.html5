@@ -1,0 +1,24 @@
+<?php // load presets css
+$GLOBALS['TL_CSS'][] = $GLOBALS['PCT_AUTOGRID']['presets_css'].'|static';
+
+// custom grid definition
+$style = '';
+if( isset($this->AutoGrid->start) && $this->AutoGrid->hasCustomGrid )
+{
+	$style = '<style id="custom_grid_'.$this->id.'">#custom_grid_'.$this->id.'.grid_'.$this->AutoGrid->preset.'.'.$this->AutoGrid->Grid->desktop.' {grid-template-columns: '.$this->autogrid_css.';}';
+	$style .= 'body.viewport_tablet {#custom_grid_'.$this->id.'.grid_'.$this->AutoGrid->preset.'.'.$this->AutoGrid->Grid->tablet.' {grid-template-columns: '.$this->autogrid_tablet.';} }';
+	$style .= 'body.viewport_mobile {#custom_grid_'.$this->id.'.grid_'.$this->AutoGrid->preset.'.'.$this->AutoGrid->Grid->mobile.' {grid-template-columns: '.$this->autogrid_mobile.';} }</style>';
+}
+?>
+
+<?php if(isset($this->AutoGrid->start) && $this->AutoGrid->start): ?>
+<div class="grid_preview">
+<div class="placeholder" data-id="<?= $this->id; ?>"></div>
+<div <?php if($this->AutoGrid->hasCustomGrid): ?>id="<?= 'custom_grid_'.$this->id; ?>"<?php endif;?> class="autogrid_grid grid_<?= $this->AutoGrid->preset; ?> <?= $this->AutoGrid->classes; ?><?php if($this->autogrid_gutter):?> <?= $this->autogrid_gutter; ?><?php endif; ?><?php if($this->autogrid_sameheight):?> same_height<?php endif; ?>" data-id="<?= $this->id; ?>">	
+<?php if( $this->AutoGrid->hasCustomGrid && !empty($style) ): ?><?= $style; ?><?php endif; ?>
+<?php endif; ?>
+<?php if(isset($this->AutoGrid->stop) && $this->AutoGrid->stop): ?>
+</div>
+<div class="placeholder" data-id="<?= $this->id; ?>"></div>
+</div>
+<?php endif;?>

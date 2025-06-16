@@ -1,0 +1,21 @@
+<div id="hotspot_<?= $this->id; ?>" class="hotspot <?php echo $GLOBALS['ce_imagemap_hotspot_size']; ?>" style="top: <?php echo $this->field('vposition')->value(); ?>%; left: <?php echo $this->field('hposition')->value(); ?>%;">
+	<div class="circle"></div>
+	<div>
+		<div class="hotspot_content <?php echo $this->field('content_position')->value(); ?>">
+			<?php echo $this->field('hotspot_content')->value(); ?>
+		</div>
+	</div>
+	
+	<!-- SEO-SCRIPT-START -->
+	<script>
+	jQuery(document).ready(function() 
+	{
+		jQuery('#hotspot_<?= $this->id; ?>').click(function()
+		{
+			jQuery(this).toggleClass('active');
+		});
+	});
+	</script>
+	<!-- SEO-SCRIPT-STOP -->
+
+</div>

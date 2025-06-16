@@ -1,0 +1,22 @@
+
+<?php if($this->context == 'listElement'): ?>
+<script>
+/**
+ * Pass theme-settings related information to list elements rows
+ */
+jQuery(document).ready(function() 
+{
+	var objElement = jQuery('#li_<?= $this->id; ?>');
+	if(objElement.length < 1)
+	{
+		return;
+	}
+
+	// add visibility css
+	<?php if( isset($this->visibility_css) && !empty($this->visibility_css) ): ?>
+	objElement.addClass('<?= $this->visibility_css; ?> has_visibility');
+	<?php endif; ?>
+});
+
+</script>
+<?php endif; ?>

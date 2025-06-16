@@ -1,0 +1,56 @@
+<?php
+$lightbox = $this->field('link')->option('lightbox');
+if( $this->field('link')->option('lightbox') )
+{
+	if( strpos($lightbox, 'data-lightbox') !== false )
+	{
+		$lightbox = str_replace('data-', '',$lightbox);	
+	}	
+	$lightbox = ' data-lightbox="'.$lightbox.'"';
+}
+$own_color = '';
+if( $this->field('own_color')->value() )
+{
+	// compile color
+	$color = $this->field('own_color')->attribute()->compileColor( $this->field('own_color')->value() );
+	$own_color = $color->rgba;
+}
+
+// Ursprünglicher Wert aus der Eingabe
+$original_value = $this->field('style')->value();
+
+// Mapping-Array, das die alten Werte auf die neuen Werte abbildet
+$mapping = [
+    'default' => 'btn-accent',
+    'outline' => 'btn-accent-outline',
+    'link-sec-color' => 'btn-second',
+    'link-sec-color-outline' => 'btn-second-outline',
+    'link-white' => 'btn-white',
+    'link-white outline' => 'btn-white-outline',
+    'link-black' => 'btn-black',
+    'link-black-outline' => 'btn-black-outline',
+    'link-own-color-darktxt' => 'btn-own-color-dark',
+    'link-own-color-lighttxt' => 'btn-own-color-light'
+];
+
+// Überprüfen, ob der ursprüngliche Wert im Mapping-Array existiert und entsprechend ändern
+$style = isset($mapping[$original_value]) ? $mapping[$original_value] : $original_value;
+
+// Ursprünglicher Wert aus der Eingabe
+$original_value_size = $this->field('size')->value();
+
+// Mapping-Array, das die alten Werte auf die neuen Werte abbildet
+$mapping_size = [
+    'small' => 'btn-size-small',
+    'large' => 'btn-size-medium',
+    'wide' => 'btn-size-large',
+];
+
+// Überprüfen, ob der ursprüngliche Wert im Mapping-Array existiert und entsprechend ändern
+$size = isset($mapping_size[$original_value_size]) ? $mapping_size[$original_value_size] : $original_value_size;
+
+?>
+
+<div class="ce_hyperlink <?php echo $this->class; ?> block <?php echo $style ?> h-<?php echo $this->field('align')->value(); ?> <?php echo $this->field('border-radius')->value(); ?> <?php echo $size ?><?php if($this->field('icon-animated')->value()): ?> icon-animated<?php endif; ?><?php if($this->field('expand')->value()): ?> btn-size-full<?php endif; ?><?php if($this->field('icon')->value()): ?> has-icon<?php endif; ?> <?php echo $this->field('hover_animation')->value(); ?> <?= $this->field('icon_position')->value() ?: 'icon-pos-before'; ?>"<?php echo $this->cssID; ?>>
+	<a href="<?php echo $this->field('link')->value(); ?>" class="hyperlink_txt"<?php if($this->field('link')->option('titleText')): ?> title="<?php echo $this->field('link')->option('titleText'); ?>"<?php endif; ?><?php if($this->field('link')->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link')->option('lightbox')): ?><?php echo $lightbox; ?><?php endif; ?><?php if($this->field('own_color')->value()): ?> style="background:<?= $own_color; ?>;border-color:<?= $own_color; ?>;"<?php endif; ?>><?php if($this->field('icon')->value()): ?><i class="<?php echo $this->field('icon')->value(); ?>"></i><?php endif; ?><?php if($this->field('link')->option('linkText')): ?><span><?php echo $this->field('link')->option('linkText'); ?><?php else: ?>{{page::title}}<?php endif; ?></span></a>
+</div>

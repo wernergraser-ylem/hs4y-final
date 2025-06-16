@@ -1,0 +1,152 @@
+<?php // load scripts and css
+global $objPage;
+$GLOBALS['SEO_SCRIPTS_FILE'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/js/jquery.themepunch.tools.min.js';
+$GLOBALS['SEO_SCRIPTS_FILE'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/js/jquery.themepunch.revolution.min.js';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/css/settings.css|static';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/css/layers.css|static';
+$GLOBALS['TL_CSS'][] = $GLOBALS['REVOLUTIONSLIDER']['scriptPath'].'/css/navigation.css|static';
+$GLOBALS['TL_CSS'][] = REVOLUTIONSLIDER_PATH.'/assets/css/styles.css|static';
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_fullscreen_gallery.css|static';
+$GLOBALS['TL_JQUERY'][] = $this->javascript; // js_revoslider_xxx template
+$arrMediaQueries = array();
+
+$container = \Contao\System::getContainer();
+$projectDir = $container->getParameter('kernel.project_dir');
+$staticUrl = $container->get('contao.assets.files_context')->getStaticUrl();						
+?>
+
+<div class="ce_revolutionslider <?php echo $this->class; ?> <?php echo $this->field('version')->value(); ?> block" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>		
+	<div class="rs-container fullscreen block">
+		<div  class="banner fullscreen tp-banner fullscreen-container my_revolutionslider_<?php echo $this->id; ?> block" data-version="5.4.8">
+			<ul>
+				<?php foreach($this->group('images') as $i => $fields): ?>
+					<?php 
+					$objFile = \Contao\FilesModel::findByPk( $this->field('image#'.$i)->value() );
+					if( $objFile === null )
+					{
+						continue;
+					}
+					
+					$size = \Contao\StringUtil::deserialize( $this->field('image#'.$i)->option('size') );
+						
+					if( is_array($size) )
+					{
+						$objPicture = $container->get('contao.image.preview_factory')->createPreviewPicture($projectDir . '/' . $objFile->path, $size);
+						$sources = $objPicture->getSources($projectDir, $staticUrl);
+						if( $objPicture !== null && !empty($sources) )
+						{
+							foreach($sources ?: array() as $data)
+							{
+								if( !isset($data['media']) || strlen($data['media']) < 1 )
+								{
+									continue;
+								}
+								$arrMediaQueries[] = '@media '.$data['media'].' { .ce_colorbox_'.$this->id.' .ce_colorbox_inside { background-image:url('.$data['src'].') !important; } }';
+							}
+						}
+					}
+					?>
+					<li class="slide <?= 'fullscreen_gallery_mq_image_'.$this->id.'_'.$i; ?>" data-transition="<?php echo $this->field('data_transition')->value(); ?>" data-slotamount="4" data-thumb="<?php echo $objFile->path; ?>" data-masterspeed="<?php echo $this->field('data_speed')->value(); ?>">
+						<img src="<?php echo $this->field('image#'.$i)->generate(); ?>" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+						<div  class="ce_revolutionslider_text caption tp-caption block bold<?php if($this->field('invertcolor#'.$i)->value()): ?> invertcolor<?php endif; ?>" style="font-size:<?php echo $this->field('fontsize_headline')->value(); ?>px" data-easing="easeInBack" data-x="40" data-y="<?php echo $this->field('headline_pos')->value(); ?>" data-start="1" data-speed="<?php echo $this->field('data_speed')->value(); ?>" data-endeasing="easeInSine" data-frames='[{"delay":300,"speed":700,"frame":"0","to":"o:1;","ease":"easeInBack"}]'>
+							<?php echo $this->field('headline#'.$i)->value(); ?>
+           				</div>
+           				<div  class="ce_revolutionslider_text caption tp-caption block<?php if($this->field('invertcolor#'.$i)->value()): ?> invertcolor<?php endif; ?>" style="font-size:<?php echo $this->field('fontsize_text')->value(); ?>px" data-easing="easeInBack" data-x="40" data-y="<?php echo $this->field('text_line_1_pos')->value(); ?>" data-start="1" data-speed="<?php echo $this->field('data_speed')->value(); ?>" data-endeasing="easeInSine" data-frames='[{"delay":300,"speed":700,"frame":"0","to":"o:1;","ease":"easeInBack"}]'>
+		   					<?php echo $this->field('text_line_1#'.$i)->value(); ?>
+           				</div>
+           				 <div  class="ce_revolutionslider_text caption tp-caption block<?php if($this->field('invertcolor#'.$i)->value()): ?> invertcolor<?php endif; ?>" style="font-size:<?php echo $this->field('fontsize_text')->value(); ?>px" data-easing="easeInBack" data-x="40" data-y="<?php echo $this->field('text_line_2_pos')->value(); ?>" data-start="1" data-speed="<?php echo $this->field('data_speed')->value(); ?>" data-endeasing="easeInSine" data-frames='[{"delay":300,"speed":700,"frame":"0","to":"o:1;","ease":"easeInBack"}]'>
+		   				 	<?php echo $this->field('text_line_2#'.$i)->value(); ?>
+		   				 </div>
+				<?php endforeach; ?>
+     		</ul>
+	 	</div>
+	</div>
+</div>
+
+<?php
+if( count($arrMediaQueries) > 0 )
+{
+	$GLOBALS['TL_HEAD'][] = '<style> '.implode("\n",$arrMediaQueries).'</style>';
+}
+?>
+
+<!-- SEO-SCRIPT-START -->
+<script>
+/**
+ * Revolution Slider Template file
+ * For more settings see: http://www.orbis-ingenieria.com/code/documentation/documentation.html#!/documenter_cover
+ */
+jQuery(document).ready(function() 
+{	
+	// add class tp-resizeme to nested elements
+	jQuery('.my_revolutionslider_<?php echo $this->id; ?>').find('.tp-caption,.caption').find('*').addClass('tp-resizeme');
+	
+	// init slider  
+	var api = jQuery('.my_revolutionslider_<?php echo $this->id; ?>').show().revolution({
+		// general settings
+		jsFileLocation:'<?= $GLOBALS['REVOLUTIONSLIDER']['scriptPath']; ?>/js/',
+		delay:	<?php echo $this->field('delay')->value(); ?>,
+		gridwidth: 1240,
+		gridheight:	800,
+		startWithSlide:	0,
+		sliderType: 'standard',
+		sliderLayout: "fullscreen",
+		fullScreenOffset:0,
+		fullWidth: "on",
+		fullScreen: "off",
+		fullScreenOffsetContainer: '#<?php echo $this->field('fullScreenOffsetContainer')->value(); ?>',
+			
+		// thumbnails
+		thumbWidth:			<?php echo $this->field('thumb_width')->value(); ?>,
+		thumbHeight:		<?php echo $this->field('thumb_height')->value(); ?>,
+		thumbAmount:		<?php echo $this->field('thumbs')->value(); ?>,
+		hideThumbs:0,		// hide thumbs when there is no mouse contact
+		navOffsetHorizontal: -300,
+		navigation: {
+			bullets: {
+				enable: true,
+				style: "hebe",
+				h_align:"center",
+				v_align:"bottom",
+				v_offset: 20,
+				h_offset: 0,
+				wrapper_color: 'transparent',
+				hide_onmobile: true,
+				hide_under: 767,
+				space: 5,
+			},
+            keyboardNavigation: "on",
+            keyboard_direction: "horizontal",
+            mouseScrollNavigation: "off",
+            onHoverStop: "off",
+            touch: {
+                touchenabled: "on",
+                swipe_threshold: 75,
+                swipe_min_touches: 1,
+                swipe_direction: "horizontal",
+                drag_block_vertical: false
+            },
+            arrows: {
+                style: "hesperiden",
+                enable: true,
+                hide_onmobile: false,
+                hide_onleave: false,
+                tmp: '',
+                left: {
+                    h_align: "left",
+                    v_align: "center",
+                    h_offset: 10,
+                    v_offset: 0
+                },
+                right: {
+                    h_align: "right",
+                    v_align: "center",
+                    h_offset: 10,
+                    v_offset: 0
+                }
+            }
+		}
+	});
+});
+</script>
+<!-- SEO-SCRIPT-STOP -->

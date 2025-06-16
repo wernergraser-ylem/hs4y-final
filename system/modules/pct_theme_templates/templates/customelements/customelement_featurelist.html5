@@ -1,0 +1,29 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/customelements/ce_featurelist.css|static';
+?>
+<div class="<?php echo $this->class; ?> block <?php echo $this->field('style')->value(); ?> <?php echo $this->field('columns')->value(); ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="ce_featurelist_inside">
+		<ul>
+		<?php foreach($this->group('item') as $i => $fields): ?>
+			<li class="item item_<?php echo $i; ?>">
+				<?php if($this->field('link#'.$i)->value()): ?>
+				<a href="<?php echo $this->field('link#'.$i)->value(); ?>" title="<?php echo $this->field('link#'.$i)->option('titleText'); ?>"<?php if($this->field('link#'.$i)->option('target')): ?> target="_blank"<?php endif; ?><?php if($this->field('link#'.$i)->option('lightbox')): ?><?php echo $this->field('link#'.$i)->option('lightbox'); ?><?php endif; ?>>
+				<?php endif; ?>
+				
+				<?php if($this->field('font_icon#'.$i)->value()): ?><i class="icon <?php echo $this->field('font_icon#'.$i)->value(); ?>"></i><?php endif; ?>
+				
+				<?php if($this->field('image_icon#'.$i)->value()): ?><div class="icon"><?php echo $this->field('image_icon#'.$i)->html(); ?></div><?php endif; ?>
+				
+				<span><?php echo $this->field('item#'.$i)->value(); ?></span>
+				
+				<?php if($this->field('link#'.$i)->value()): ?>
+				</a>
+				<?php endif; ?>
+				
+			</li>
+		
+		<?php endforeach; ?>
+		</ul>
+	</div>
+</div>
+

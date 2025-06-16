@@ -1,0 +1,44 @@
+
+<?php 
+$blnSwitchChildsOpen = false;
+$arrSwitchChilds = array();
+?>
+
+<ul class="section section_<?= $this->section; ?><?php if($this->isActive):?> active<?php endif;?>" data-section="<?= $this->section; ?>">
+	
+	<?php foreach($this->palettes as $palette => $data): ?>
+	<?php 
+	$cssId = 'id="'.strtolower($this->section).'_'.$palette.'"';	
+	?>
+	<div <?php if($cssId):?><?= $cssId; ?><?php endif; ?> <?php if($data['isAccordion']): ?>data-init_slider="1"<?php endif; ?> data-palette="<?= $palette; ?>" data-section="<?= $this->section; ?>" class="palette_wrapper <?php if($data['isActive']):?> active<?php endif; ?><?php if(!$data['isDevice']):?> hidden<?php endif; ?>"<?php if(!empty($data['devices'])): ?> data-devices="<?= $data['devices']; ?>"<?php endif; ?>>
+	<div class="td_toggler<?php if($data['isActive']):?> active<?php endif; ?><?php if(empty($data['fields'])):?> empty label<?php endif; ?>"><?= $data['toggler_label']; ?></div>
+		
+		<?php if( empty($data['fields']) === false ): ?>
+		<ul class="td_palette <?php if($data['class']):?>td_palette_<?= $data['class']; ?><?php endif; ?> <?php if($data['isActive']):?>active<?php endif; ?>">
+			<?php foreach($data['fields'] as $fieldname => $field): ?>
+			
+			<?php // child switch container
+			if($field['isFirstChildSwitch']): ?>
+			<ul class="switch_childs<?php if($field['parentSwitch']['isActive']): ?> active<?php endif; ?>">
+			<li class="overlay"></li>
+			<?php endif; ?>
+			
+			<li class="field <?= $fieldname; ?><?php if($field['isActive']): ?> active<?php endif; ?><?php if($field['isChildSwitch']): ?> switch_sibling<?php endif;?><?php if(!$field['isDevice']): ?> hidden<?php endif; ?>"<?php if(!empty($field['devices'])): ?> data-devices="<?= $field['devices']; ?>"<?php endif; ?>>
+				<?php if($field['switch']): ?>
+				<div data-init_switch="1" data-name="<?= $field['switch']; ?>" data-switch="<?= $field['switch']; ?>" class="switch<?php if($field['isActive']): ?> active<?php endif; ?>"><span><?= $field['name']; ?></span></div>
+				<?php endif; ?>
+				<?php if($field['html']): ?><?= $field['html']; ?><?php endif; ?>
+				<div class="overlay"></div>
+			</li>
+			
+			<?php if($field['isLastChildSwitch']): ?>
+			</ul>
+			<?php endif; ?>
+						
+			<?php endforeach; ?>
+		</ul>
+		<?php endif; ?>
+	</div>
+	<?php endforeach; ?>	
+</ul>
+<div class="clear"></div>

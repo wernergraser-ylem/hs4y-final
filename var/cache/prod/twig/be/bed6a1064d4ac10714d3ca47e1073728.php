@@ -1,0 +1,146 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* @pct_customelements/backend/be_maintenance_resolvevault.html5 */
+class __TwigTemplate_facc7f22d5c2faffff7638155aefbb26 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 1
+        yield "
+<div id=\"tl_maintenance_index\" class=\"maintenance_<?php echo \$this->isActive ? 'active' : 'inactive'; ?>\">
+
+<h2 class=\"sub_headline_index\"><?php echo \$this->indexHeadline; ?></h2>
+
+<?php if (\$this->indexMessage): ?>
+  <div class=\"tl_message\">
+\t<p class=\"tl_error\"><?php echo \$this->indexMessage; ?></p>
+  </div>
+<?php endif; ?>
+
+<?php if (\$this->completed): ?>
+<div id=\"tl_rebuild_index\">
+\t<p id=\"index_complete\"><?php echo \$this->complete; ?></p>
+\t<p style=\"margin-bottom:0\"><?php echo \$this->content; ?></p>
+  </div>
+<?php endif; ?>
+
+
+<?php if (\$this->isRunning): ?>
+  <div id=\"tl_rebuild_index\">
+\t<p id=\"index_loading\"><?php echo \$this->loading; ?></p>
+\t<p id=\"index_complete\" style=\"display:none\"><?php echo \$this->complete; ?></p>
+\t<p style=\"margin-bottom:0\"><?php echo \$this->content; ?></p>
+  </div>
+
+  <script type=\"text/javascript\">
+  /* <![CDATA[ */
+  window.addEvent('domready', function() 
+  {
+\t  var urls = \$\$('.vault_data');
+\t  var last = urls.length-1; 
+  
+\t  function runStep(i)
+\t  {
+\t\t  var el = urls[i];
+\t\t  
+\t\t  new Request(
+\t\t  {
+\t\t\t  'url': location.href,
+\t\t\t  'data': 'vault_id='+el.getAttribute('data-vault_id'),
+\t\t\t  onComplete: function() 
+\t\t\t  {
+\t\t\t\t  el.addClass('tl_green');
+\t\t\t\t  if(i < last)
+\t\t\t\t  {
+\t\t\t\t\t  return runStep(i+1);
+\t\t\t\t  }
+\t\t\t\t  else
+\t\t\t\t  {
+\t\t\t\t\t  \$('index_loading').setStyle('display', 'none');
+\t\t\t\t\t  \$('index_complete').setStyle('display', 'block');
+\t\t\t\t  }
+\t\t\t  },
+\t\t\t  onFailure: function()
+\t\t\t  {
+\t\t\t\t  el.addClass('tl_red');
+\t\t\t  },
+\t\t\t  onException: function()
+\t\t\t  {
+\t\t\t\t  el.addClass('tl_red');
+\t\t\t  }
+\t\t  }).get();
+\t  }
+\t  runStep(0);
+  });
+  /* ]]> */\t
+  </script>
+  <?php endif; ?>
+  
+  <form action=\"<?php echo \$this->action; ?>\" class=\"tl_form\" method=\"get\">
+\t<div class=\"tl_submit_container\">
+\t  <input type=\"hidden\" name=\"do\" value=\"maintenance\">
+\t  <input type=\"submit\" id=\"index\" class=\"tl_submit\" value=\"<?php echo \$this->indexContinue; ?>\">
+\t</div>
+  </form>
+  
+</div>
+
+
+";
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "@pct_customelements/backend/be_maintenance_resolvevault.html5";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  42 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("", "@pct_customelements/backend/be_maintenance_resolvevault.html5", "/var/www/vhosts/handyservice4you.at/update.handyservice4you.at/system/modules/pct_customelements/templates/backend/be_maintenance_resolvevault.html5");
+    }
+}

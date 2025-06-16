@@ -1,0 +1,49 @@
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/cto_layout/css/news/news_newsteaser_v8.css|static';
+$hasText = $this->hasText;
+?>
+
+<div class="newsteaser_v8 block <?php echo $this->class; ?>" itemscope itemtype="http://schema.org/Article">	
+	
+	<div class="newsteaser_v8_content">
+		<div class="h6"><?php echo $hasText ? $this->linkHeadline : $this->newsHeadline; ?></div>
+		
+		<div class="item-info">
+			<?php if ($this->date): ?>
+				<span class="date" itemprop="datePublished"><?= \Contao\Date::parse("d. M, Y", $this->timestamp);?></span>
+			<?php endif; ?>	
+			
+			<?php if ($this->author): ?>
+				<span class="author font_serif_2"><?php echo $this->author; ?></span>
+			<?php endif; ?>
+			
+			<?php if ($this->commentCount): ?>
+				<span class="comments"><?php echo $this->commentCount; ?></span>
+			<?php endif; ?>
+		</div>
+	</div>
+	
+	<div class="item-overlay">
+		<div class="item-overlay-inside">
+			<?php if ($this->addImage): ?>
+				<div class="image_container">
+					<?php $this->insert('picture_default', $this->picture); ?>
+				</div>
+			<?php endif; ?>
+			
+			<div class="item-overlay-right">
+				<?php if ($this->hasTeaser): ?>
+				<div class="item-teaser" itemprop="description">
+					<?php echo \Contao\StringUtil::substrHtml($this->teaser, 100) ?>
+				</div>
+				<?php endif; ?>
+				
+				<?php if ($hasText): ?>
+					<div class="item-link color-accent"><?php echo $this->more ?></div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>

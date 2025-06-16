@@ -1,0 +1,52 @@
+<?php if(!$this->empty): ?>
+<div class="item-wrapper autogrid_wrapper block">
+<?php foreach($this->entries as $entry): ?>
+	<div class="block autogrid one_third <?= $entry->class; ?> <?php if($entry->field('highlight')->value()): ?> item-highlight<?php endif; ?>" <?php echo $this->cssID; ?>>
+		
+		<div class="item-inside block">
+			
+			<div class="item-price-wrap">
+				<div class="item-price-label">ab <span class="item-price color-accent"><?php echo $entry->field('price')->value(); ?> &euro;</span></div>
+				<div class="item-price-add">pro Person/Nacht</div>
+			</div>
+			
+			<a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('image')->html(); ?></a>
+			<?php if($entry->field('highlight')->value()): ?> <i class="item-highlight-icon fa fa-star bg-accent"></i><?php endif; ?>
+
+
+			<div class="item-content">
+				<div class="item-top-wrap">
+					<div class="item-headline">
+						<h5><a href="<?php echo $entry->links('detail')->url; ?>"><?php echo $entry->field('name')->value(); ?></a></h5>
+					</div>
+					
+					<div class="item-persons">
+						Gr&ouml;sse: <?php echo $entry->field('size')->value(); ?>m², f&uuml;r <?php echo $entry->field('persons')->value(); ?>
+					</div>
+					
+					<div class="item-features">
+						<ul>
+							<?php if ($entry->field('list_wifi')->value()): ?><li><i class="fa fa-wifi bg-accent"></i></li><?php endif;?>
+							<?php if ($entry->field('list_accessibility')->value()): ?><li><i class="fa fa-wheelchair bg-accent"></i></li><?php endif;?>
+							<?php if ($entry->field('list_restaurant')->value()): ?><li><i class="fa fa-cutlery bg-accent"></i></li><?php endif;?>
+							<?php if ($entry->field('list_cabel_tv')->value()): ?><li><i class="fa fa-desktop bg-accent"></i></li><?php endif;?>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="item-description">
+					<?php echo $entry->field('short_description')->value(); ?>
+					<?php echo $entry->field('rating')->html(); ?>
+				</div>
+				
+			</div>
+			
+		</div>
+			
+	</div>
+
+<?php endforeach; ?>
+</div>		
+<?php else: ?>
+<p class="info empty">Keine Package gefunden</p>
+<?php endif;?>

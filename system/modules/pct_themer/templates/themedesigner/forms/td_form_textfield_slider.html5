@@ -1,0 +1,159 @@
+<div class="field_wrapper">
+<?php // include jquery ui
+#$GLOBALS['TL_CSS'][] = '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css';
+$GLOBALS['TL_CSS'][] = PCT_THEMER_PATH.'/assets/js/jquery/ui/jquery-ui.css';
+$GLOBALS['TL_JAVASCRIPT'][] = PCT_THEMER_PATH.'/assets/js/jquery/ui/jquery-ui.min.js'; 
+
+
+// field definition
+$arrField = \PCT\ThemeDesigner::findByName( $this->selector );
+
+// settings and values
+$min = $arrField['eval']['min'] ?? 0;
+$max = $arrField['eval']['max'] ?? 10;
+$steps = $arrField['eval']['steps'] ?? 1;
+$value = $arrField['default'] ?? 0;
+$isRange = $arrField['range'] ?? false;
+
+// apply current value
+if(strlen($this->value) > 0)
+{
+	$value = $this->value;
+}
+
+?>
+<?php if($this->description):?>
+<div class="description">
+	<i class="fa fa-info"></i>
+	<div class="description-content">
+		<?= $this->description; ?>
+	</div>
+</div>
+<?php endif; ?>
+<div class="slider-input-wrapper">
+	<?php if($this->label): ?><label for="<?= $this->name; ?>"><?= $this->label; ?></label><?php endif; ?>
+	<input data-td_selector="<?= $this->selector; ?>" name="<?= $this->name; ?>" type="hidden" id="slider-input_<?= $this->name; ?>" value="<?= $value; ?>">
+	<input type="number" <?php if($min): ?>min="<?= $min; ?>"<?php endif; ?> <?php if($max): ?>max="<?= $max; ?>"<?php endif; ?> step="<?= $steps; ?>" id="slider-text_<?= $this->name; ?>">
+</div>
+<div id="slider-range_<?= $this->selector; ?>"></div>
+<script>
+/* <![CDATA[ */
+jQuery(document).ready(function()
+{
+	var elem = jQuery('#slider-range_<?= $this->selector; ?>');
+	var text = jQuery('#slider-text_<?= $this->selector; ?>');
+	var input = jQuery('#slider-input_<?= $this->selector; ?>');
+	var updateDelay = 0;
+	
+	var slider = elem.slider(
+	{
+		step: <?= $steps; ?>,
+	    max: <?= $max; ?>,
+		min: <?= $min; ?>,
+		// range slider
+		<?php if($isRange):?>
+		range: true,
+		values: [<?= $min; ?>, <?= $max; ?>],
+		<?php else: ?>
+		range: 'min',
+		value: <?= $value; ?>,
+		<?php endif; ?>
+		// update values on slide
+	    slide: function(event,ui)
+		{
+			// single value
+			if(ui.value)
+			{
+		   		text.val(ui.value);
+		   		input.val(ui.value);
+			}
+	
+			// range values
+			if(ui.values)
+			{
+		   		text.val(ui.values[0] + " - " + ui.values[1]);
+		   		input.val(ui.values[0] + "," + ui.values[1]);
+		   	}
+		},
+		change:function(event,ui)
+		{
+			// send value to ThemeDesigner 
+		 	ThemeDesigner.sendValue('<?= $this->selector; ?>',ui.value);
+		}
+
+	});
+	
+	var intTimeout = 0
+	
+	// update slider on text input
+	text.keyup(function(event) 
+	{
+		if(intTimeout > 0)
+		{
+			clearTimeout(intTimeout);
+		}
+		
+		var value = event.target.value;
+		setTimeout(function() 
+		{
+			elem.slider("value",value);
+		}, updateDelay);
+	});
+	
+	// update slider on numeric stepper
+	text.change(function(event)
+	{
+		if(intTimeout > 0)
+		{
+			clearTimeout(intTimeout);
+		}
+		
+		var value = event.target.value;
+		intTimeout = setTimeout(function() 
+		{
+			elem.slider("value",value);
+		}, updateDelay);
+	});
+	
+	<?php if($isRange):?>
+	text.val(elem.slider("values",0) + " - " + elem.slider("values",1));
+	input.val(elem.slider("values",0) + "," + elem.slider("values",1));
+	<?php else: ?>
+	text.val(elem.slider("value"));
+	input.val(elem.slider("value"));
+	<?php endif; ?>
+	
+	// catch onToggleSwitch event of the parent switch
+	jQuery('[data-init_switch="1"][data-name="<?= $this->switch; ?>"]').on('ThemeDesigner.onToggleSwitch',function(event,params)
+	{
+		var value = jQuery('#slider-input_<?= $this->selector; ?>').val();
+		if(params.status < 1)
+		{
+			value = '';
+		}
+		
+		// send new value
+		ThemeDesigner.sendValue('<?= $this->selector; ?>',value);
+	});
+	
+	
+	/**
+	 * Eventlistener: ThemeDesigner.onSelector
+	 * triggered when the ThemeDesigner triggers a selector
+	 * @param object	The jquery event object
+	 * @param object	The parameter object
+	 * 
+	 * objParams:
+	 * {name,value}
+	 */
+	input.on('ThemeDesigner.onSelector',function(event,objParams)
+	{
+		var value = objParams.value;
+		
+		text.val(value);
+		text.trigger('change');		
+	});
+});
+/* ]]> */
+</script>
+<br class="clear"></div>

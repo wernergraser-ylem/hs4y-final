@@ -1,0 +1,455 @@
+### 5.0.3
+Update: Default demo: Mobile menu preset (#617)
+
+### 5.0.2
+Update: Uploaded files are now stored in files folder again, like before (#613, #612)
+Update: The fonts.css file is now generated in /files/cto_layout/themedesigner/fonts_css, not in assets folder (#614)
+
+### 5.0.1
+Fixed: Absolute paths in CSS-file (#609)
+Fixed: Skip Contaos error pages because they do not generate a regular route (#611)
+
+### 5.0.0
+New: Target folder for created CSS-files is now /assets/cto_layout/themedesigner (#602)
+New: Font related CSS will be created in themedesigner-save-logc fonts.css (/assets/cto_layout/css/) (#600)
+Fixed: Demo-Installer: Import/Export did not support CustomElements correctly (#)
+Update: Theme related fonts are now loaded locally (#549)
+Update: CSS: Image paths are now absolute (#606, #607)
+Update: Updates related to EclipseX6 release
+Update: Updates related to EclipseX6 demos (#598,#580,#583,#561)
+Update: Demo-installer: Added post import scripts (#591)
+Update: Demo-installer: Import: Added "skip" logic (#590)
+Update: Theme-Designer related to EclipseX6
+Update: Removed permission control in tl_pct_themedesigner (#574)
+Update: Theme-Designer: General interface rebuild (#572)
+Update: Replaced getFrontendUrl with url_generator (#573)
+Update: General code updates (#560)
+
+### 4.0.6
+Fixed: "Column 'type' in where clause is ambiguous" (#552)
+Update: PHP Warnings (#553)
+
+### 4.0.5
+Fixed: Minor CSS updates related to dark-mode (#544)
+Fixed: Loading external google fonts opens an unwanted session instance (#545)
+
+### 4.0.4
+Update: Added Contao dark mode support (#541)
+Fixed: Updated deprecated logging methods (#542)
+
+### 4.0.3
+Fixed: Routing error in forward,redirect pages when target page is deprecated (#539)
+
+### 4.0.2
+Fixed: Demo-Import: Wrong interpretation auf "0"-value field values (#536)
+Fixed: array_insert in themedesigner_config.php (#537)
+
+### 4.0.1
+Fixed: Demo-Import: Wrong interpretation auf "0"-value field values (#534)
+
+### 4.0.0
+New: Setting: Meta Drop down > Rounded Corners / Headlines / Colors (#500)
+New: Headline style h1-h6 styling (#498)
+New: Added preview link to online demo in Demo-Installer (#493)
+New: Theme-Designer can now set inactive in root pages (#385)
+New: Demo: "AutoGrid-Testing" with different AutoGrid presets (#521)
+Updated: Added Demo-name on import for important fields (news-archives, module-names, event-archives) (#511,#492)
+Update: Renamned "Twitter" to "X" (#505)
+Update: Scroll to last imported demo (#513)
+Update: Renamed backend module to "Demo-Installer" (#520)
+Update: Overall layout updates for the Demo-Installer and Demos in general (#512,#525,#526,#522,#502,#497)
+Update: Theme-Designer facelift (#503)
+Update: Load font Poppins local (#510)
+Update: Support CSS :root variables of EclipseX 5.0 (#509)
+Update: Backend message that TD is active in frontend (#508)
+Update: General Contao 5 compatibility (#494)
+Removed: Contao 4.9 compatibility (#494)
+
+### 3.8.3
+Fixed: Header Classiv V2 Stickyheader must flaot left (#483)
+Fixed: Hyphens off should be applied to all elements (#489)
+Update: Support hightlight classes in mobile menu (#488)
+Update: PHP Warnings (#482)
+
+### 3.8.2
+Fixed: ThemeDesigner styles were missing on error pages (#480)
+Added: jquery-ui script (#479)
+Update: Load jquery-ui from module folder (#479)
+Update: PHP Warnings (#478)
+
+### 3.8.1
+Fixed: ThemeDesigner: Menus > Main menu > Active style 4 issue (#475)
+Update: PHP Warnings (#476)
+
+### 3.8.0
+New: Demo > Revolution Slider Presets (#473)
+
+### 3.7.10
+Fixed: Endless redirect when loading from an active save point that contains no values changes (#471)
+Update: General PHP8 updates (#469)
+Update: CSS update to support SEO headline classes (#470)
+
+### 3.7.9
+Fixed: Load active version when session is empty (#467)
+Added: Mobile-menu on tablet and tablet logo (#466)
+
+### 3.7.8
+Fixed: Removed Debugger call (#464)
+
+### 3.7.7
+Fixed: Switching the active version in backend did not work (#461)
+Update: General code improvements (#462)
+
+### 3.7.6
+Fixed: Defining custom fonts via Contao config files did not work correctly (#458)
+Update: General PHP8 updates (#459)
+
+### 3.7.5
+Fixed: Redirecting in iframe lead to routing error when maintenance mode was turned on (#455)
+Fixed: Demo-Export feature did not work correctly (#454)
+Update: Optimize the maintenance mode bypass feature under Contao 4.13 (#455)
+Update: Set google fonts optin level from 1 to 2 (#456)
+
+### 3.7.4
+Update: Bypass Contaos maintenance mode in ThemeDesigner iframe (#451)
+
+### 3.7.3
+Fixed: Contaos error page types lead to routing error when the Theme Designer tried to load a page in its iframe under Contao 4.13 (#445)
+Fixed: Webfonts were not being added to iframe page due to optin settings (#447)
+Update: Code optimization for PHP8 (#449)
+
+### 3.7.2
+Fixed: Contaos maintenance mode did not work correctly when the ThemeDesigner was active under Contao 4.13 (#442)
+
+### 3.7.1
+Fixed: Various settings have not been recognized correctly due to changes made for PHP8 (#440)
+
+### 3.7.0
+New: Support for Contao 4.13
+New: Support EclipseX V4
+Fixed: New styles did not apply correctly in iframe due to browser and page caching (#436)
+Update: Set SSL in root page depending on current protcol (#433)
+Update: New demo template path (#429)
+Update: General Contao 4 update like replacing deprecated methods (#437,#417)
+Update: General PHP8 updates (#432)
+Update: Place Page-Presets demo on first place (#434)
+Change: Changed templates files from .html5 to .php (#431)
+
+### 3.6.4
+Fixed: Rebuild generatePage callbacks to parseTemplate callbacks due to BC break in Contao 4.9.24 (#407)
+
+### 3.6.3
+Fixed: Code improvements for php 8 (#404)
+
+### 3.6.2
+Fixed: CSS customelement_tabs_start is now a span element (#400)
+Fixed: "Live"-mode link in backend did not work correctly (#402)
+Update: Minor CSS and code updates
+
+### 3.6.1
+Update: Support custom values for the root page from import array(#393)
+Update: Smaller images for new EX3 demos (#392)
+
+### 3.6.0
+New: Added new EclipseX 3.0  demos (#379)
+Added: RevolutionSlider 5: RS-Hyperlinks color selects (#373)
+Fixed: Demo import: An issue with textfield containing image paths (#370) 
+Update: Replace id-based links in hyperlink fields with hash #-character (#374)
+Update: PHP8 compatibility update
+Removed: ThemeDesigner: Footer columns setting (#371)
+
+### 3.5.2
+Fixed: Check if global LAYOUT_CSS_IS_ACTIVE is defined in ::prepareJavascriptCSS
+Fixed: ThemeDesigner: Header Modern V1: Menu position (#377)
+Fixed: ThemeDesigner: Header beside: A visual issue with the megamenu (#375) 
+Update: Do not call getActiveModules statically (#369)
+Updated: Changed ->pct_layout_css to cached file path and added ->pct_layout_css_uncached variable for fe_page (#376)
+Update: Remove leading whitespace in generated stylesheets (#378)
+
+### 3.5.1
+Fixed: tinymce.css did overwrite accent color setting (#367)
+
+### 3.5.0
+Fixed: Mobile header backgroud styling (#364)
+Update: Support for new PrivacyManager (#362)
+Update: Support for new EclipseX 2.0 optin system (#362)
+Update: New Eclipse X2 logo
+
+### 3.4.1
+Update: New mmenu opener > background settings (#360)
+
+### 3.4.0
+New: Mobile menu settings (#354)
+Added: Allow empty palettes to be labels (#351)
+Fixed: Wrong .trail class in menus due to manipulated frontend url in active page (#358)
+Fixed: Check if global LAYOUT_CSS_IS_ACTIVE is defined
+Update: "Selector"-feature is now fully operational (#352)
+Update: Support "accordion style 2" correctly (#355)
+Update: Support new "horizontal-timeline" (#356)
+
+### 3.3.3
+Update: Use Database class to determine a valid database connection to be compatibile to .env settings (#347)
+Update: Support scroll-padding settings (#349)
+
+### 3.3.2
+Fixed: Invalid value in objPage->pct_layout_css variable (#340)
+
+### 3.3.1
+Fixed: Missing "demo"-selection in language-fallback pages (#332)
+Fixed: Preview should not be bypassed when in LIVE-mode under Contao 4.9 (#336)
+
+### 3.3.0
+Added: Use desktop menu on tablets option (#330)
+Update: Removed the css values in the config array for each demo
+Update: Minor code updates
+
+### 3.2.3
+Fixed: Define footer col with css flex (#327)
+
+### 3.2.2
+Fixed: Wrong page layout selection in one page demos (#324)
+
+### 3.2.1
+Update: Bypass Contao forced preview mode under Contao 4.9 (#320)
+
+### 3.2.0
+Fixed: Use jquery .on method to bind "load" event (#315)
+Fixed: Dropzone.autoDiscover must be defined in global scope (#317)
+Fixed: Session->getData, setData does not exist anymore (#318)
+Update: Refractor classes to Contao namespace (#302)
+Update: Contao 4.9 LTS compatibility
+Update: Minor label updates
+
+### 3.1.2
+Fixed: Wrong CSS class for article overlay (#312)
+
+### 3.1.1
+Fixed: themedesigner: "header beside" does not disable other header variants (#310)
+
+### 3.1.0
+New: Stickyheader section (#308)
+Fixed: Tablemenu button was hidden by theme designer style (#307)
+
+### 3.0.3
+Update: tl_page: Theme settings palette is now white label (#303)
+
+### 3.0.2
+Update: Default Demo > Header v1 active by default (#296)
+Update: New internal info icon since EclipseX does not load fontaweseome anymore (#298)
+Update: "hide breadcrumb" setting (#300)
+Update: Minor description updates (#299)
+
+### 3.0.1
+Fixed: Missing CSS-file reference in page template. Introduced file logic: ID_TSTAMP.css (#293)
+
+### 3.0.0
+New: Devices and zoom togglers (#277)
+New: EclipseX architecture
+Added: EclipseX demos
+Update: Force iframe to reload on device toggling when page contains a RevolutionSlider (#290)
+
+### 2.15.1
+Fixed: If first page in root is not a regular page a php error occurred (#275)
+Fixed: Minor PHP7 changes
+Update: layout.css for intro page
+Update: Hook: Grand access to field definitions via $GLOBALS['PCT_THEMEDESIGNER_FIELDS'] array
+
+### 2.15.0
+Added: Demo "musteragentur" support
+
+### 2.14.3
+Fixed: Inject the google fonts link in head via jquery to avoid wrong parsing of the placeholder stylesheet link (#272)
+Removed: Deprected /templates/eclipse folder
+
+### 2.14.2
+Fixed: Restoring a version of a root page might cause a cain deletion of records that originally were part of the demo import data (#270)
+
+### 2.14.1
+Fixed: Wrong incoming PHP data when a demo layouts brings custom font information (#265)
+Update: Remove deprecated text/javascript tags from html5 templates (#266)
+Update: W3C: Use hash "#" sign as href placeholder in webfonts_optin link (#268)
+
+### 2.14.0
+Added: Preview thumbnails for header variants (#261)
+Added: CSS-Ids in palettes (#260)
+
+### 2.13.3
+Update: Added CSS-Ids in palette wrappers (#260)
+
+### 2.13.2
+Fixed: Custom fonts did not load automatically (#258)
+
+### 2.13.1
+Fixed: PHP error "Illegal offset type in" in ThemeDesigner class
+
+### 2.13.0
+Added: Demo "book library" support
+
+### 2.12.4
+Update/Fixed: Replace insertags like {{request_token}} in widget templates because Contao 4.4.22 ran into timeouts for some reasons () 
+Update: PHP 7.2 compatibility
+
+### 2.12.3
+Update: Removed box-shadow of iframe due to a Chrome rendering bug in latest Chrome versions
+Update: DSGVO: Fonts: Bypass optin when TD is not in live mode (development mode) to simplify the workflow of the development (#252)
+
+### 2.12.2
+Change: Webfonts via optin solution is now default
+Added: ThemeDesigner.getFonts() global javascript method
+Update: Listen to new "Eclipse.user_privacy" javascript event for applying webfonts
+Removed: Any PHP cookie listener for webfonts
+
+### 2.12.1
+Fixed: Removed debugger call in InsertTags class
+
+### 2.12.0
+Added: Contao cache save webfonts optin solution via javascript (#245)
+Added: Optin Inserttag {{user_privacy_settings}}. Returns the current privacy setting cookie value in php (#246)
+Fixed: Optin-test uses cookies instead of a session value now because the session has different time scopes than cookies and might cause wrong optin behaviors (#244)
+
+### 2.11.0
+Update: Connect fonts loading to Eclipse opt-in session and restrict any web fonts by default (#242)
+
+### 2.10.1
+Fixed: Demo layouts did not load their dynamic styles when no active version existed (#238)
+Fixed: Default fonts have not been applied when user did not select at least one font manually (#239)
+
+### 2.10.0
+Added: tl_settings.pct_themedesigner_nofonts to restrict the auto. loading of fonts (#236)
+
+### 2.9.4
+Fixed: Do not include javascript css logic when themedesigner is hidden (#233)
+Fixed: ThemeDesigner could not load when jQuery was set to "local" due to a loading chain error in the slimscroll script.
+
+### 2.9.3
+Fixed: In some cases the toggle mobile and toggle visibility feature had a session lack (#231)
+
+### 2.9.2
+Fixed: Online repository master lost track of correct dev branch
+
+### 2.9.1
+Fixed: Missing bracket in CSS for "Header Variant Left v1" (#227)
+Update: PHP 7.2 compatibility (#223)
+
+### 2.9.0
+Added: Eclipse v9 demos
+Fixed: Do not restrict links with hashes in general, but element must be a onepage backlink element (class="backlink") (#218)
+
+### 2.8.8
+Update: Put constants in quotations for php 7.2
+
+### 2.8.7
+Update: Removed the tl_page.pct_theme_import field from palettes (#213)
+
+### 2.8.6
+Fixed: Exclusion changes made in 2.8.5 were too strict. Check restriction to root page only
+
+### 2.8.5
+Update: Support child pages in exclusions (#210)
+Update: Check if $GLOBALS['PCT_THEMEDESIGNER']['excludes'] has been created before the config.php to allow modifications in contao config files (#210)
+
+### 2.8.4
+Fixed: Restrict themedesigner reset listeners (#208)
+Fixed: Value conversions when activating a version in the back end might end in a php error
+
+### 2.8.3
+Fixed: Fixes an issue related to the setting: menuActiveStyle4
+
+### 2.8.2
+Fixed: Rename image demo_corporate_plus.jpg to demo_corporateplus.jpg
+
+### 2.8.1
+Fixed: A very rare PHP error that might occur when saving uploaded images (#204)
+
+### 2.8.0
+Added: Eclipse v8 demos
+Update: New menu structure
+Update: Minor changes in Contao 4 backend styling
+
+### 2.7.1
+Update: Check in config.php if $GLOBALS['TL_CONFIG']['dbDatabase'] has been set before running Database queries in Hooks
+
+### 2.7.0
+Added: ThemeDesigner\Backend::injectIsActiveMessageInBackendPage to display the backend hints
+Removed: be_main template from extension folder
+Update: Check for $GLOBALS['TL_CONFIG']['licenseAccepted'] to make sure contao has a valid localconfig.php
+
+### 2.6.1
+Fixed: Initialize only when localconfig.php really exists
+Added: Missing thumbs for demos
+
+### 2.6.0
+Added: Eclipse 7.1 demos
+
+### 2.5.0
+Fixed: Wrong jquery syntax in js_themedesigner_iframe_helper.html5
+Update: Contao 4.4 ready (#190)
+Added: Eclipse 7.0 demos
+
+### 2.4.1
+Fixed: Wrong spelling in demo thumbnail steelwork
+
+### 2.4.0
+Added: Eclipse 6.1 demos
+
+### 2.3.0
+Added: Eclipse v6 demos
+Update: Remove related CSS file when deleting a version in the backend (#185)
+
+### 2.2.2
+Fixed: Loading active version when not on root page and layout is not default. Effected loading fonts
+Update: Check if POST or GET variables exist using isset in assets/... themedesigner.php
+Update: Print version number next to module name in systemsettings (#183)
+
+### 2.2.1
+Fixed: Fonts not added when session is empty or data is empty (#181)
+Fixed: Endless iframe loop when Contao is set to use page id instead of page alias "disableAlias" (#180)
+
+### 2.2.0
+New: DemoInstaller (#167)
+
+### 2.1.3
+Fixed: PHP 7.1 does not store session correctly (#172)
+Fixed: Prevent infinit reload loop when loading an empty version (#170)
+Fixed: Contao install tool not accessible when contao has not been installed before (#175)
+Update: Auto-load last version only when ThemeDesigner is in edit mode (#171)
+
+### 2.1.2
+Update: If session is empty, load current active version (#165)
+
+### 2.1.1
+Fixed: Do not recreate existing $GLOBALS in the config.php (#163)
+Update: Set page title in fe_page_themedesigner template to "ThemeDesigner"
+Update: New loader graphic (#154)
+
+### 2.1.0
+Fixed: Toggle active versions in backend in relation to the theme (#159)
+Added: Append the version name to the CSS layout file name (#158)
+
+### 2.0.2
+Fixed: Switch dependencies break switch session when calling the toggleSwitches ajax request (#156)
+Fixed: A php strpos error when saving and value to check is an array
+
+### 2.0.1
+Fixed: Missing meta-viewport in fe_page_themedesigner.html5
+Fixed: header8 - header20 not selectable
+Update: Minor changes on the presets and stylesheet.html5 template
+
+### 2.0
+Update: ThemeDesigner Pro integration
+
+### 1.4
+Fixed: Check if $GLOBALS['PCT_THEMER']['THEMES'] is an array in dca/tl_page
+
+### 1.3
+Fixed: Check if file exists in file system before adding it as new resource (#13)
+
+### 1.2
+Fixed: The "find only published" setting must check if parent page is published (#11)
+Fixed: Export files from CE wizards correctly (#7)
+
+### 1.1
+Update: Handle binary data in CE widgets and referenced to tl_files (#7)
+Update: Relink multiple page selection fields (#8)
+
+### 1.0.0
