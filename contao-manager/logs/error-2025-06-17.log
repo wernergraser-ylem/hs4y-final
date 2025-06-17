@@ -1,0 +1,6 @@
+[17-Jun-2025 08:26:44 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "," or ";" in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/api/HttpKernel/ApiProblemResponse.php on line 29
+[17-Jun-2025 08:26:44 UTC] PHP Fatal error:  Uncaught Error: Class "_ContaoManager\Symfony\Component\ErrorHandler\ThrowableUtils" not found in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/vendor/symfony/error-handler/ErrorHandler.php:420
+Stack trace:
+#0 [internal function]: _ContaoManager\Symfony\Component\ErrorHandler\ErrorHandler->handleException()
+#1 {main}
+  thrown in phar:///var/www/vhosts/handyservice4you.at/update.handyservice4you.at/public/contao-manager.phar.php/vendor/symfony/error-handler/ErrorHandler.php on line 420

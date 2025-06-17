@@ -1,0 +1,3 @@
+contao:
+  localconfig:
+    sessionTimeout: 1800  # in Sekunden = 30 Minuten
