@@ -1,7 +1,15 @@
 {
+<<<<<<< HEAD
     "latest_version": "1.10.3",
     "latest_requires": {
         "php": "^8.1"
     },
     "last_update": "2025-06-17T11:35:12+00:00"
+=======
+    "latest_version": "1.10.2",
+    "latest_requires": {
+        "php": "^8.1"
+    },
+    "last_update": "2025-06-03T07:00:13+00:00"
+>>>>>>> fab5f8632f62cf19db5019680750cd93389b3130
 }

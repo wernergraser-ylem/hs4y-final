@@ -1,0 +1,122 @@
+#main .version {text-align: right; float: right; margin-left: 5px;}
+.header_import {float: left; margin-left:12px; padding:2px 0 3px 18px; background: url('../img/import.svg') no-repeat left center;}
+.header_plugins {float: left; margin-left:12px; padding:2px 0 3px 18px; background: url('../img/plugins.svg') no-repeat left center;}
+.moor-box {z-index: 9999;}
+body.contao4-4 .header_import {background-image: url('../img/import.svg');}
+body.contao4-4 .header_plugins {background-image: url('../img/plugins.svg');}
+label.tl_checkbox_label > span.field {display: inline-block !important; color: #999; padding-left: 3px;}
+label.tl_checkbox_label > span.title {display: inline-block !important; font-style: italic;}
+
+.tl_content_right {margin: 0;}
+
+.tl_customelement_group p.empty {font-style: italic;}
+.tl_customelement_group .italic {font-style: italic;}
+/* .tl_customelement_group.unpublished {opacity: 0.5;} */
+
+/** legend indicators and group building **/
+.tl_content.is_single_legend {border-left: 3px solid #77AC45;}
+.tl_content.is_group_legend {border-bottom: 0;}
+.tl_content.part_of_a_group {border-left: 3px solid #77AC45; padding-bottom: 3px; padding-top: 3px; border-radius: 7px;}
+.tl_content.is_single_legend .group_title {color: #77AC45; font-style: italic;}
+.tl_content.is_single_legend.is_group_legend .group_title {color: #77AC45; font-style: italic;}
+.tl_customelement_group .group_title {border-bottom: 1px solid var(--table-header); margin-bottom: 5px; padding-bottom: 10px;}
+.tl_customelement_group .child_list {padding-left: 5px; padding-top: 5px;}
+/* .tl_customelement_group .child_list .field.unpublished span {color: #888;} */
+.tl_customelement_group .child_list .field {display: table;}
+.tl_customelement_group .child_list .field .col {display: table-cell;vertical-align:top;}
+.tl_customelement_group .child_list .field .col.right {padding-left: 5px;}
+.tl_customelement_group .child_list .field .buttons a {vertical-align: middle;}
+/** slide **/
+.tl_customelement_group .slide_toggler, .customelement_widget .slide_toggler {padding-left: 0;}
+.tl_customelement_group .slide_toggler.hasChilds, .customelement_widget .slide_toggler.hasChilds {cursor:pointer; padding-left: 20px; background: url(../img/folPlus.svg) no-repeat -4px center;}
+.tl_customelement_group .slide_toggler.hasChilds.active, .customelement_widget .slide_toggler.hasChilds.active {background: url(../img/folMinus.svg) no-repeat -4px center;}
+.tl_customelement_group .slide {display: none;}
+.tl_customelement_group .slide.active {display: block;}
+
+body.contao4-4 .tl_customelement_group .slide_toggler.hasChilds, body.contao4-4 .customelement_widget .slide_toggler.hasChilds {background-image: url(../img/folPlus.svg);}
+body.contao4-4 .tl_customelement_group .slide_toggler.hasChilds.active, body.contao4-4 .customelement_widget .slide_toggler.hasChilds.active {background-image: url(../img/folMinus.svg);}
+
+.tl_listing_container sup {padding-left: 5px;}
+
+/** customelement widget **/
+.customelement_widget {background-color: #F4F4F4; position: relative; display: block; padding: 5px; border-radius: 7px; z-index: 1; border-bottom: 1px solid #efefef;}
+.customelement_widget h3 {padding-top: 2px;}
+
+
+/* .customelement_widget .w50 {float: none; height: auto; min-height: 65px;} */
+.customelement_widget p.empty {margin-bottom: 0;}
+.customelement_widget .clear {clear: both;}
+.customelement_widget .group {display: block; width: 100%; background-color: white;  padding-bottom: 2px; margin-bottom: 2px; border-radius: 3px; border-bottom: 1px solid #efefef;}
+.customelement_widget .group.last {margin-bottom: 0;}
+.customelement_widget .group.hidden {display: none; visibility: 0; overflow: hidden;}
+.customelement_widget .group .head {display:block; line-height: 32px; min-height: 20px; padding: 0 15px;}
+.customelement_widget .group .head .left {float: left; max-width: 50%;}
+.customelement_widget .group .head .right {float: right; max-width: 50%;}
+.customelement_widget .group .head .title {color: #77AC45;}
+.customelement_widget .group .head .buttons {text-align: right;}
+.customelement_widget .group .head .buttons .button {margin-right: 2px;}
+.customelement_widget .group .head .buttons a, .customelement_widget .group .head .buttons span {display: inline;}
+.customelement_widget .group .head .buttons a img, .customelement_widget .group .head .buttons span img {vertical-align: text-top;}
+.customelement_widget .field_wrapper {padding: 15px; border-top: 1px solid #efefef;}
+.customelement_widget .field_wrapper p.tl_help {margin-top: 3px;}
+.customelement_widget .field_group {clear: both; display: block; border-top: 1px solid #F4F4F4; padding-top: 5px;}
+.customelement_widget .field_group.first {border-top: 0; padding-top: 0;}
+
+.customelement_widget .field {display:block; position: relative;}
+.customelement_widget .field:not(.w50) {clear: both;}
+.customelement_widget .field.first fieldset.tl_checkbox_container, .customelement_widget .field.first fieldset.tl_radio_container {margin-top: 2px;}
+
+/* .customelement_widget .field.w50 {display: table-cell; width: 100%; padding-left: 5px; padding-right: 5px;} */
+/* .customelement_widget .field.w50.clr {display: block; width: 50%;} */
+.customelement_widget .field.image, .customelement_widget .field.file, .customelement_widget .field.gallery {margin-bottom: 10px;}
+.customelement_widget .is_sortable {padding-top: 40px !important;}
+.customelement_widget .slide {display: none;}
+.customelement_widget .slide.active {display: block;}
+/* contao 4 */
+.customelement_widget.contao-ht35 {padding: 0; padding-top: 4px; border-radius: 0;}
+.customelement_widget.contao-ht35 .field_wrapper {padding-left: 0; padding-right: 0;}
+.customelement_widget.contao-ht35 .widget:not(.w50){clear:both;}
+
+/** backend explanation field **/
+.field.backend_explanation {padding: 12px 0 5px 0;font-family:"Architects Daughter",cursive;font-size:15px;color:#838990;}
+.customelement_widget .field .backend_explanation {padding: 5px 0;font-family:"Architects Daughter",cursive;font-size:15px;color:#838990;}
+/** clear clipboard field **/
+.customelement_widget .clipboard {padding: 2px 0; margin-bottom: 5px; text-align: right; display: block;}
+
+/** import interface **/
+#page_import .body {padding: 0 10px 10px;}
+#page_import .tl_checkbox_container .label_container.hasImage {display: table;}
+#page_import .tl_checkbox_container .label_container.hasImage > span {display: table-cell; vertical-align: middle;}
+
+/** backend wildcard **/
+.customelement_wildcard .title {display: none;}
+.customelement_wildcard .title.include_module {display: block; margin-bottom: 2px; text-transform: uppercase;}
+.customelement_wildcard .type {display: none;}
+.customelement_wildcard ul {display: table; padding-inline-start: 0;}
+.customelement_wildcard ul li {display: table;}
+.customelement_wildcard ul li .cell {display: table-cell; vertical-align: top; padding: 2px 5px 2px 0; min-width: 50px;}
+
+/** datepicker **/
+.datepicker_dashboard,.datepicker_bootstrap {z-index: 999;}
+
+/** fontawesome **/
+.icon.fa {margin-right: 5px; font-size: 1.15em;}
+
+/** maintenance (taken from contaos theme) **/
+.maintenance_table th {background: none repeat scroll 0 0 #f6f6f6;border-top: 1px solid #e9e9e9;padding: 2px 3px 3px;}
+.maintenance_table th, #tl_maintenance_cache td {border-bottom: 1px solid #e9e9e9;}
+.maintenance_table th {padding: 3px 6px;}
+.maintenance_table td {padding: 6px 6px 7px;}
+.maintenance_table tr:nth-child(2n) td {background: none repeat scroll 0 0 #fcfcfc;}
+.maintenance_table td span {color: #999;}
+.maintenance_table td:first-child {width: 16px;}
+.maintenance_table .nw {white-space: nowrap;}
+.maintenance_table .tl_checkbox_container label {display: inline;font-weight: bold;margin: 0;padding-left: 0;}
+
+/** dark mode **/
+html[data-color-scheme=dark] .maintenance_table th {background: #333;}
+html[data-color-scheme=dark] .maintenance_table th, 
+html[data-color-scheme=dark] #tl_maintenance_cache td {border-color: #444;}
+html[data-color-scheme=dark] .maintenance_table tr:nth-child(2n) td {background: none;}
+html[data-color-scheme=dark] .customelement_widget, html[data-color-scheme=dark] .customelement_widget .group { background-color: var(--content-bg); border-color: var(--content-border); }
+html[data-color-scheme=dark] .customelement_widget .field_wrapper {border-color: var(--content-border);}

@@ -1,0 +1,118 @@
+/* =============================================================================
+ * ce_authorbox
+ * ========================================================================== */
+
+.ce_authorbox {
+	overflow: hidden;
+}
+
+.ce_authorbox_inside {
+	background: rgb(245,245,245);
+	padding: 25px;
+}
+
+.ce_authorbox_inside .image_container {
+	float: left;
+	width: 90px;
+	margin: 0 20px 10px 0;
+}
+
+.ce_authorbox_inside .name {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.ce_authorbox .subtitle {
+	font-style: italic;
+	font-size: 1.2rem;
+	margin-bottom: 5px;
+	font-family: 'Playfair Display', serif;
+}
+
+.ce_authorbox.style2 .ce_authorbox_inside {
+	background: none;
+	padding: 0;
+}
+
+.ce_authorbox.style2 .image_container {
+	float: left;
+	width: 30%;
+}
+
+.ce_authorbox.style2 .ce_authorbox_content {
+	width: 80%;
+	float: left;
+	background: rgb(248,248,248);
+	padding: 50px 5% 50px 17%;
+	margin-left: -10%;
+	margin-top: 50px;
+	font-size: 1.3rem;
+	line-height: 1.9rem;
+}
+
+.ce_authorbox.style2 .name {
+	display: inline-block;
+	font-size: 2.4rem;
+	margin-bottom: 20px;
+}
+
+.ce_authorbox.style2 .ce_authorbox_inside .image_container {
+	margin: 0;
+}
+
+.ce_authorbox.style2 .subtitle {
+	display: inline-block;
+	font-size: 1.6rem;
+	font-style: italic;
+	margin-left: 25px;
+	font-family: 'Playfair Display', serif;
+}
+
+.ce_authorbox.style2 .link {
+	margin-top: 25px;
+}
+
+.ce_authorbox.style2 .link a {
+	border-bottom: 1px solid rgb(52,52,52);
+}
+
+.ce_authorbox.style2 .link a:before {
+	margin-right: 4px;
+	font-family: "FontAwesome";
+	content: "\f204";
+}
+
+.ce_authorbox.style2 .link:hover a:before {
+	content: "\f205";
+}
+
+.ce_authorbox.style2 .ce_url.attribute {
+	display: inline-block;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_authorbox.style2 .ce_authorbox_content,
+	.ce_authorbox.style2 .image_container {
+		width: 100%;
+		float: none;
+	}
+	
+	.ce_authorbox.style2 .ce_authorbox_content {
+		margin: 0;
+		padding: 5%;
+		font-size: 1rem;
+	}
+	
+	.ce_authorbox.style2 .subtitle {
+		font-size: 1.1rem;
+		display: block;
+		margin-left: 0;
+	}
+	
+	.ce_authorbox.style2 .name {
+		margin-bottom: 10px;
+	}
+}

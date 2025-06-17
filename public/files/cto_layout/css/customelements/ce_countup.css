@@ -1,0 +1,36 @@
+/* =============================================================================
+ * ce_countup
+ * ========================================================================== */
+
+.ce_countup {
+	text-align: center;
+}
+
+.ce_countup.style2 {
+	text-align: left;
+}
+
+.ce_countup .headline {
+	font-size: 2.333rem;
+	margin-bottom: 15px;
+}
+
+.ce_countup i {
+	font-size: 2.333rem;
+	line-height: 66px;
+	color: var(--accentColor);
+}
+
+.ce_countup .image_container {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.ce_countup .image_container img {
+	width: auto;
+	display: inline-block;
+}
+
+.ce_countup .headline {
+	font-size: 3.667rem;
+}

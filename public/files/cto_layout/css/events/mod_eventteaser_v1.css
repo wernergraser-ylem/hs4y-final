@@ -1,0 +1,64 @@
+/* =============================================================================
+ * mod_eventteaser_v1
+ * ========================================================================== */
+
+.mod_eventteaser_v1 .event {
+	background-size: cover;
+	background-attachment: fixed;
+	background-position-x: center!important;
+	background-position-y: top;
+	position: relative;
+	text-align: center;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	background-color: rgb(80,80,80);
+}
+
+.mod_eventteaser_v1 .event,
+.mod_eventteaser_v1 .event  a {
+	color: rgb(255,255,255);
+}
+
+body.ios .mod_eventteaser_v1 .event,
+body.android .mod_eventteaser_v1 .event  {
+	background-attachment: scroll;
+	background-position: center center!important;
+}
+
+.mod_eventteaser_v1 .event .day {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.mod_eventteaser_v1 .event .date {
+	font-weight: bold;
+}
+
+.mod_eventteaser_v1 .event .teaser {
+	font-weight: bold;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mod_eventteaser_v1 .event .location {
+	font-weight: bold;
+}
+
+.mod_eventteaser_v1 .event .ce_hyperlink a {
+	min-width: 190px;
+	text-transform: uppercase;
+}
+
+.mod_eventteaser_v1 .event-overlay {
+	background: rgba(0,0,0,0.4);
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.mod_eventteaser_v1 .event-content {
+	position: relative;
+}

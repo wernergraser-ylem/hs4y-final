@@ -1,0 +1,291 @@
+/* =============================================================================
+ * ce_text_imagebox
+ * ========================================================================== */
+
+ .ce_text_imagebox.block {
+	overflow: visible;
+ }
+ 
+.ce_text_imagebox,
+.ce_text_imagebox_image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	overflow: visible;
+}
+
+.ce_text_imagebox .inside {
+	position: absolute;
+	z-index: 20;
+	margin: 0 auto;
+	padding: 5%;
+	width: 100%;
+	text-align: left;
+}
+
+.ce_text_imagebox .headline {
+	margin-bottom: 5px;
+}
+
+.ce_text_imagebox.vcenter .inside {
+	position: relative;
+  	top: 50%;
+	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.ce_text_imagebox .ce_text_imagebox_link {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.ce_text_imagebox p {
+	margin-bottom: 0;
+}
+
+.ce_text_imagebox a {
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+}
+
+.ce_text_imagebox:hover a:hover {
+	box-shadow: 0 70px 70px rgba(0,0,0,.2);
+	transform: translate(0,-10px);
+	-webkit-transform: translate(0,-10px);
+	z-index: 10;
+}
+
+ /* ce_text_imagebox in swiper slider */
+.swiper-wrapper .ce_text_imagebox:hover a:hover {
+	box-shadow:none;
+	transform: none;
+	-webkit-transform: none;
+}
+
+.ce_text_imagebox.align-rt .inside {
+	right: 0;
+	top: 0;
+	text-align: right;
+}
+
+.ce_text_imagebox.align-rt .inside .content {
+	margin-left: auto;
+}
+
+.ce_text_imagebox.align-lb .inside {
+	left: 0;
+	bottom: 0;
+}
+
+.ce_text_imagebox.align-rb .inside {
+	right: 0;
+	bottom: 0;
+	text-align: right;
+}
+
+.ce_text_imagebox.align-rb .inside .content {
+	margin-left: auto;
+}
+
+.ce_text_imagebox.width-90 .content {
+	width: 90%;
+}
+
+.ce_text_imagebox.width-80 .content {
+	width: 80%;
+}
+
+.ce_text_imagebox.width-70 .content {
+	width: 70%;
+}
+
+.ce_text_imagebox.width-60 .content {
+	width: 60%;
+}
+
+.ce_text_imagebox.width-50 .content {
+	width: 50%;
+}
+
+.ce_text_imagebox.width-40 .content {
+	width: 40%;
+}
+
+.ce_text_imagebox.width-30 .content {
+	width: 30%;
+}
+
+.ce_text_imagebox.width-20 .content {
+	width: 20%;
+}
+
+.ce_text_imagebox.width-10 .content {
+	width: 10%;
+}
+
+#slider .ce_text_imagebox {
+	margin: 0;
+}
+
+#slider .ce_text_imagebox .inside h1,
+#slider .ce_text_imagebox .inside h2,
+#slider .ce_text_imagebox .inside h3,
+#slider .ce_text_imagebox .inside h4,
+#slider .ce_text_imagebox .inside h5,
+#slider .ce_text_imagebox .inside h6,
+#slider .ce_text_imagebox .inside .h1,
+#slider .ce_text_imagebox .inside .h2,
+#slider .ce_text_imagebox .inside .h3,
+#slider .ce_text_imagebox .inside .h4,
+#slider .ce_text_imagebox .inside .h5,
+#slider .ce_text_imagebox .inside .h6 {
+	margin-bottom: 5px;
+}
+
+#slider .ce_text_imagebox .inside .btn {
+	margin-top: 35px;
+}
+
+#slider .ce_text_imagebox:hover a {
+	opacity: 1;
+}
+
+.ce_text_imagebox.oversize .inside {
+	position: static;
+	-webkit-transform: translateY(0%);
+  	-ms-transform: translateY(0%);
+  	transform: translateY(0%);
+}
+
+.ce_text_imagebox.oversize .ce_text_imagebox_image {
+	height: auto!important;
+}
+
+.ce_text_imagebox.hcenter .inside {
+	text-align: center;
+}
+
+.ce_text_imagebox.hcenter .inside .content {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ce_text_imagebox .inside .content.only-headline .ce_headline .headline {
+	margin-bottom: 0;
+}
+
+.ce_text_imagebox.hright .inside {
+	text-align: right;
+}
+
+.ce_text_imagebox.hright .inside .content {
+	margin-left: auto;
+}
+
+/* edge bug workaroud */
+
+.edge .ce_text_imagebox.same-height .ce_text_imagebox_image {
+	width: 100%;
+}
+
+/* =============================================================================
+ * ce_text_imagebox: imagebox_version2
+ * ========================================================================== */
+
+.ce_text_imagebox.imagebox_version2 .inside {
+	background-color: var(--accentColor);
+	opacity: 0.95;
+	width: 100%;
+	padding: 25px;
+}
+
+.ce_text_imagebox.imagebox_version2.vcenter .inside {
+	top: 50%;
+}
+
+/* =============================================================================
+ * ce_text_imagebox: imagebox_version3
+ * ========================================================================== */
+
+.ce_text_imagebox.imagebox_version3 .inside {
+	background-color: var(--accentColor);
+	opacity: 0.8;
+	width: 100%;
+	padding: 15px;
+	top: 10px;
+}
+
+.ce_text_imagebox.imagebox_version3.align-lb .inside,
+.ce_text_imagebox.imagebox_version3.align-rb .inside {
+	top: auto;
+	bottom: 10px;
+}
+
+.ce_text_imagebox.imagebox_version3.vcenter .inside {
+	top: 50%;
+}
+
+/* =============================================================================
+ * ce_text_imagebox: imagebox_version4
+ * ========================================================================== */
+
+.ce_text_imagebox.imagebox_version4 .inside {
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	padding: 15px;
+	top: 10px;
+}
+
+.ce_text_imagebox.imagebox_version4.align-lb .inside,
+.ce_text_imagebox.imagebox_version4.align-rb .inside {
+	top: auto;
+	bottom: 10px;
+}
+
+.ce_text_imagebox.imagebox_version4.vcenter .inside {
+	top: 50%;
+}
+
+.ce_text_imagebox.imagebox_version4:hover a {
+	opacity: 1;
+}
+
+/* =============================================================================
+ * ce_text_imagebox: parallax option
+ * ========================================================================== */
+
+.ce_text_imagebox.parallax .ce_text_imagebox_image {
+	background-attachment: fixed;
+	background-position-x: 50%!important;
+	background-position-y: center;
+}
+
+.ce_text_imagebox.parallax {
+	position: relative;
+}
+
+body.ios .ce_text_imagebox.parallax .ce_text_imagebox_image,
+body.android .ce_text_imagebox.parallax .ce_text_imagebox_image {
+	background-attachment: scroll;
+	background-position: center center!important;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_text_imagebox .inside {
+		padding: 20px;
+	}
+	
+	.ce_text_imagebox .content {
+		width: 100%!important;
+	}
+}

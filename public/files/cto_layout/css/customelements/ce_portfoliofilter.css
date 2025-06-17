@@ -1,0 +1,183 @@
+/* =============================================================================
+ * ce_portfoliofilter
+ * ========================================================================== */
+
+/* style 1*/
+
+.ce_portfoliofilter,
+.ce_portfoliofilter.style1 {
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	position: relative;
+	overflow: visible;
+}
+
+.ce_portfoliofilter.style1 a,
+.ce_portfoliofilter.default a {
+	display: inline-block;
+	padding: 8px 15px;
+	margin-bottom: 5px;
+	border: 1px solid rgb(229,229,229);
+	cursor: pointer;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_portfoliofilter.style1 .ce_portfoliofilter_content i,
+.ce_portfoliofilter.default .ce_portfoliofilter_content i {
+	margin-right: 5px;
+}
+
+.ce_portfoliofilter.style1 a.selected,
+.ce_portfoliofilter.style1 a:hover,
+.ce_portfoliofilter.default a.selected,
+.ce_portfoliofilter.default a:hover {
+	background: var(--accentColor);
+	color: #fff;
+}
+
+/* style 2 */
+
+.ce_portfoliofilter.style2 .ce_portfoliofilter_content,
+.ce_portfoliofilter.only-icon .ce_portfoliofilter_content {
+   margin: 0 auto;
+   display: inline-flex;
+   align-items: center;
+   gap: 10px;
+   background: #efefef; 
+   border-radius: 40px;
+   padding: 4px;
+   text-align: center;
+}
+
+.ce_portfoliofilter.style2 .ce_portfoliofilter_content a,
+.ce_portfoliofilter.only-icon .ce_portfoliofilter_content a {
+	display: block;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.ce_portfoliofilter.style2 .ce_portfoliofilter_content a i,
+.ce_portfoliofilter.only-icon .ce_portfoliofilter_content a i {
+	margin-right: 5px;
+}
+
+.ce_portfoliofilter.style2 .ce_portfoliofilter_content a.selected,
+.ce_portfoliofilter.only-icon .ce_portfoliofilter_content a.selected {
+	background: #fff;
+	border-radius: 40px;
+}
+
+/* style 3 */
+
+.ce_portfoliofilter.style3,
+.ce_portfoliofilter.port-filter-style3 {
+	border-bottom: 1px solid rgba(226,226,226,0.3);
+}
+
+.ce_portfoliofilter.style3 a,
+.ce_portfoliofilter.port-filter-style3 a {
+	padding: 20px;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+	cursor: pointer;
+}
+
+.ce_portfoliofilter.style3 .ce_portfoliofilter_content i,
+.ce_portfoliofilter.port-filter-style3 .ce_portfoliofilter_content i {
+	margin-right: 4px;
+}
+
+.ce_portfoliofilter.style3 a.selected,
+.ce_portfoliofilter.port-filter-style3 a.selected {
+	border-bottom: 2px solid var(--accentColor);
+}
+
+/* mobile-filter-trigger */
+.ce_portfoliofilter .mobile-filter-trigger {
+	text-align: right;
+	margin-bottom: 10px;
+	display: none;
+	cursor: pointer;
+	line-height: 40px;
+}
+
+.ce_portfoliofilter .mobile-filter-trigger:before {
+	font-family: "FontAwesome";
+	background: rgba(0,0,0,0.8);
+	color: rgb(255,255,255);
+	padding: 12px;
+	line-height: 40px;
+	width: 40px;
+	font-size: 15px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	#wrapper .ce_portfoliofilter {
+		border: 0;
+		text-align: left;
+		margin-bottom: 10px;
+	}
+	
+	#wrapper .fullwidth .ce_portfoliofilter {
+		padding: 0 20px;
+	}
+
+	.ce_portfoliofilter.align-right {
+		text-align: left!important;
+	}
+
+	.ce_portfoliofilter .mobile-filter-trigger {
+		display: inline-block;
+	}
+
+	.ce_portfoliofilter .ce_portfoliofilter_content {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		transition: All 0.3s ease;
+		-webkit-transition: All 0.3s ease;
+	}
+
+	.ce_portfoliofilter.mobile-filter-show .ce_portfoliofilter_content {
+		opacity: 1;
+		max-height: 1000px;
+		visibility: visible;
+		padding-top: 45px;
+		padding-bottom: 45px;
+	}
+
+	#wrapper .ce_portfoliofilter .ce_portfoliofilter_content a {
+		display: block;
+		border: 1px solid rgb(220,220,220);
+		margin: 0 0 3px 0;
+		padding: 10px;
+	}
+
+	.ce_portfoliofilter .ce_portfoliofilter_content a.selected {
+		border: 0;
+		background: rgba(0,0,0,0.9);
+		color: rgb(255,255,255);
+	}
+	
+	.ce_portfoliofilter.style2 .ce_portfoliofilter_content,
+	.ce_portfoliofilter.only-icon .ce_portfoliofilter_content {
+		display: block;
+		border-radius: 20px 20px 20px 0;
+	}
+	
+	.ce_portfoliofilter.style2 .ce_portfoliofilter_content a,
+	.ce_portfoliofilter.only-icon .ce_portfoliofilter_content a {
+		border: 0!important;
+	}
+	
+	.ce_portfoliofilter.style2 .ce_portfoliofilter_content a.selected,
+	.ce_portfoliofilter.only-icon .ce_portfoliofilter_content a.selected {
+		color: #333;
+		border-radius: 0;
+	}
+}

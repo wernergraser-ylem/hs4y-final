@@ -1,0 +1,117 @@
+/* =============================================================================
+ * submenu_v2
+ * ========================================================================== */
+
+.submenu_v2 ul {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.submenu_v2 li {
+	float: left;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.submenu_v2 li.custommenu_cols2 {
+	width: calc(100% / 2);
+}
+
+.submenu_v2 li.custommenu_cols3 {
+	width: calc(100% / 3);
+}
+
+.submenu_v2 li.custommenu_cols4 {
+	width: calc(100% / 4);
+}
+
+.submenu_v2 li.custommenu_cols5 {
+	width: calc(100% / 5);
+}
+
+.submenu_v2 li.custommenu_cols6 {
+	width: calc(100% / 6);
+}
+
+.submenu_v2 li.custommenu_cols7 {
+	width: calc(100% / 7);
+}
+
+.submenu_v2 li.custommenu_cols8 {
+	width: calc(100% / 8);
+}
+
+.submenu_v2 li:before,
+.submenu_v2 li a:before {
+   display: none;
+}
+
+.submenu_v2 li a {
+	display: block;
+	border-right: 1px solid rgb(229, 229, 229);
+	transition: All 0.2s ease;
+	-webkit-transition: All 0.2s ease;
+	font-weight: bold;
+	font-size: 1.1rem;
+	padding: 15px 0;
+	position: relative;
+}
+
+.submenu_v2 li a.first {
+	border-left: 1px solid rgb(229, 229, 229);
+}
+
+.submenu_v2 li a i {
+	display: block;
+	font-size: 3.333rem;
+	margin-bottom: 5px;
+}
+
+.submenu_v2 li a.active:before {
+	bottom: -20px;
+	left: 50%;
+	margin-left: -10px;
+	background: rgb(247, 247, 247);
+	-webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    z-index: 100;
+    content: '';
+}
+
+.submenu_v2 li a:hover,
+.submenu_v2 li a.active {
+	color: var(--accentColor);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.submenu_v2 li {
+		width: 100%!important;
+		padding: 0;
+	}
+	
+	.submenu_v2 li a,
+	.submenu_v2 li a.first {
+		border-top: 1px solid rgb(200,200,200);
+		border-left: 0;
+		border-right: 0;
+	}
+	
+	.submenu_v2 li a.first {
+		border: 0;
+	}
+	
+	.submenu_v2 li a i {
+		font-size: 1.667rem;
+	}
+	
+	.submenu_v2 li a.active:before {
+		display: none;
+	}
+}

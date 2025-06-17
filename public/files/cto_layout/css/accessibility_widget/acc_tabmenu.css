@@ -1,0 +1,35 @@
+/* =============================================================================
+ * accessibility_tabmenu
+ * ========================================================================== */
+
+#accessibility_tabmenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100000;
+	height: 0;
+	line-height: 0;
+}
+
+#accessibility_tabmenu a {
+	display: block;
+	color: #fff;
+	background: #000;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 1.1rem;
+	font-weight: bold;
+	width: 100%;
+	line-height: 0;
+	height: 0;
+}
+
+#accessibility_tabmenu a:focus {
+	opacity: 1;
+	line-height: 1.5;
+	height: auto;
+	padding: 10px 20px;
+}

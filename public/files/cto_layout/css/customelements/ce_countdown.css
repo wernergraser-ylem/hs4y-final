@@ -1,0 +1,47 @@
+/* =============================================================================
+ * ce_countdown
+ * ========================================================================== */
+
+.ce_countdown .align-center li {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.ce_countdown .align-right li {
+	margin-right: 0px;
+	margin-left: 20px;
+}
+
+.ce_countdown .value {
+	display: block;
+}
+
+.ce_countdown .unit {
+	font-size: 0.4em;
+}
+
+.ce_countdown .countdown {
+	line-height: 1;
+}
+
+.ce_countdown li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_countdown .countdown-section,
+	.ce_countdown .align-left .countdown-section,
+	.ce_countdown .align-center .countdown-section,
+	.ce_countdown .align-right .countdown-section {
+		margin-left: 7px;
+		margin-right: 7px;
+	}
+	
+	.ce_countdown .countdown.align-right {
+		text-align: left!important;
+	}
+}

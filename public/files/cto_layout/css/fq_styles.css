@@ -1,0 +1,49 @@
+/* =============================================================================
+ * frontend quickedit customs
+ * ========================================================================== */
+ 
+/* layout */
+#top .pct_edit_interface .__info__ {display: none;}
+#top .pct_edit_interface .__buttons__ {right: 0;}
+#header .mod_langswitcher .pct_edit_interface .__buttons__ {right: 1px; top: 1px;}
+#header .mod_langswitcher {outline-offset: -1px;}
+#bottom .pct_edit_container {overflow: hidden;}
+
+/* modules */
+.mod_newslist .__buttons__.tl_content {display: none;}
+.mod_newslist .__buttons__.tl_module {left: 0; right: auto;}
+.mod_article.fullwidth .mod_newslist .__buttons__.tl_module {top: 25px;}
+.mod_article.fullwidth .ce_bgimage .mod_newslist .__buttons__.tl_module {top: 0;}
+.mod_newslist .newslist-v2 .__buttons__ {right: 15px;}
+.mod_newslist .newslist-v3 .__buttons__ {right: 10px;}
+.mod_newslist .autogrid:not(.no_gutter) .__buttons__ {right: 15px;}
+.mod_newslist .autogrid.one_third.no_gutter:nth-child(3n) .__buttons__ {right: 15px;}
+.mod_newslist.timeline_left_right .newslist-timeline-both-oner .pct_edit_interface {right: 15px;}
+.mod_newsreader .pct_edit_interface.tl_news {display: none!important;}
+
+/* customcatalog */
+.mod_customcataloglist.cc_cardealer_teaser .entry:nth-child(3n) .__buttons__,
+.mod_customcataloglist.cc_cardealer_teaser .entry:nth-child(3n) .__buttons__,
+.mod_customcataloglist.cc_cardealer.grid-view .entry:nth-child(3n) .__buttons__,
+.mod_customcataloglist.cc_directory.teaser .entry:nth-child(3n) .__buttons__ {right: 10px;}
+.mod_customcataloglist.cc_catalog_teaser .entry:nth-child(3n) .__buttons__ {right: 10px!important;}
+.mod_customcataloglist.cc_immorealty .entry:nth-child(2n) .__buttons__,
+.mod_customcataloglist.cc_catalog .entry:nth-child(3n) .__buttons__ {right: 8px;}
+.mod_customcataloglist.cc_directory:not(.teaser) .entry:nth-child(2n) .__buttons__ {right: 8px;}
+.mod_customcataloglist.cc_hotelapart_rooms .entry:nth-child(3n) .__buttons__ {right: 15px;}
+.mod_customcataloglist.cc_hotelapart_packages .entry:nth-child(2n) .__buttons__ {right: 15px;}
+.mod_customcataloglist .__buttons__.tl_module.customcataloglist {top: 25px;}
+.mod_customcataloglist .__buttons__.tl_content.module {display: none;}
+.mod_customcataloglist.cc_booklibrary .entry:nth-child(5n) .__buttons__ {right: 15px;}
+.mod_customcatalogteaser.cc_booklibrary .entry:nth-child(5n) .__buttons__ {right: 23px;}
+
+/* ces */
+.ce_grid_gallery_start > .pct_edit_interface {left: 24px; right: auto;}
+.mod_article.fullwidth .ce_grid_gallery_start > .pct_edit_interface {top: 25px;}
+.ce_divider_extended .pct_edit_interface .__button__,
+.ce_divider_image .pct_edit_interface .__button__ {display: none;}
+.ce_wrap .wrap-link {display: none!important;}
+.ce_wrap.pct_edit_active:hover {border-top-right-radius: 0!important;}
+.ce_fancybox .pct_edit_interface .__button__ a {text-indent: 0!important;}
+.ce_fancylink .pct_edit_interface .__button__ a:after {display: none;}
+.pct_edit_active:hover .google_map.info {display: block;}

@@ -1,0 +1,124 @@
+/* =============================================================================
+ * ce_price_column
+ * ========================================================================== */
+.ce_price_column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.2s ease;
+    position: relative;
+    
+}
+
+.ce_price_column:hover {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	border-color: var(--accentColor);
+}
+
+.ce_price_column i {
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+.ce_price_column .label {
+	display: flex;
+	width: 35%;
+	align-items: center;
+    margin-bottom: 0;
+    flex-grow: 1;
+    padding-right: 30px;
+}
+
+.ce_price_column .text {
+    flex-grow: 3;
+    padding-right: 30px;
+    width: 35%;
+}
+
+.ce_price_column[data-font-size="small"] .text {
+	font-size: var(--paragraph-small-font-size);
+}
+
+.ce_price_column[data-font-size="medium"] .text {
+	font-size: var(--paragraph-medium-font-size);
+}
+
+.ce_price_column[data-font-size="large"] .text {
+	font-size: var(--paragraph-large-font-size);
+}
+
+.ce_price_column .text p:last-of-type {
+	margin-bottom: 0;
+}
+
+.ce_price_column .price {
+    margin-bottom: 0;
+    width: 15%;
+    flex-grow: 1;
+}
+
+.ce_price_column .link {
+	width: 15%;
+	text-align: right;
+}
+
+.ce_price_column .hyperlink_txt {
+    background-color: #f0f0f0;
+    border: 0;
+    border-radius: 20px;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.ce_price_column .hyperlink_txt:hover {
+    background-color: var(--accentColor);
+    color: #fff;
+}
+
+/* styles */
+.ce_price_column[data-style="style1_light"] {
+	border-color: rgba(255,255,255,0.5);
+	color: rgba(255,255,255,0.5);
+}
+
+.ce_price_column[data-style="style1_light"] .label,
+.ce_price_column[data-style="style1_light"] p,
+.ce_price_column[data-style="style1_light"] .price {
+	color: rgba(255,255,255,0.9);
+}
+
+@media only screen and (max-width: 768px) {
+	.ce_price_column {
+		display: block;
+	}
+	
+	.ce_price_column .label {
+		margin-bottom: 0.8rem;
+		width: 100%;
+		padding-right: 200px;
+	}
+	
+	.ce_price_column .text {
+		margin-bottom: 5px;
+		width: 100%;
+	}
+	
+	.ce_price_column .price {
+		margin-bottom: 5px;
+		width: 100%;
+	}
+	
+	.ce_price_column .link {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: unset;
+	}
+}

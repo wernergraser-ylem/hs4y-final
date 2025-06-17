@@ -1,0 +1,144 @@
+/* =============================================================================
+ * ce_featurelist
+ * ========================================================================== */
+
+/* defaults */
+
+.ce_featurelist li {
+	display: block;
+	width: 50%;
+	float: left;
+	padding: 10px;
+	border-bottom: 1px solid rgba(150,150,150,0.5);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+ .ce_featurelist a {
+	display: block;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_featurelist a:hover {
+	background: rgb(248,248,248);
+}
+
+.ce_featurelist.list-col3 li {
+	width: calc(100% / 3);
+}
+
+.ce_featurelist.list-col4 li {
+	width: calc(100% / 4);
+}
+
+.ce_featurelist.list-col5 li {
+	width: calc(100% / 5);
+}
+
+.ce_featurelist.list-col6 li {
+	width: calc(100% / 6);
+}
+
+.ce_featurelist li .icon {
+	display: table-cell;
+	vertical-align: middle;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 40px;
+	text-align: center;
+}
+
+.ce_featurelist .image_container {
+	text-align: center;
+}
+
+.ce_featurelist .image_container img {
+	width: 45px;
+	display: inline-block;
+}
+
+.ce_featurelist li span {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1.3;
+	padding-left: 10px;
+}
+
+/* style1 */
+
+.ce_featurelist.style1 li i {
+	color: var(--accentColor);
+}
+
+/* style2 */
+
+.ce_featurelist.style2 li a,
+.ce_featurelist.style2 li span,
+.ce_featurelist.style2 li .icon {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_featurelist.style2 li a:hover span,
+.ce_featurelist.style2 li a:hover .icon {
+	color: rgb(255,255,255);
+}
+
+.ce_featurelist.style2 span {
+	color: var(--accentColor);
+}
+
+.ce_featurelist.style2 .icon {
+	color: var(--accentColor);
+}
+
+.ce_featurelist.style2 li a:hover {
+	background-color: var(--accentColor);
+}
+
+/* style3 */
+
+.ce_featurelist.style3 li span {
+	color: rgb(160,160,160);
+}
+
+/* style4 */
+
+.ce_featurelist.style4 li {
+	border-color: rgba(255,255,255,0.2);
+}
+
+.ce_featurelist.style4 li a:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.ce_featurelist.style4 li a,
+.ce_featurelist.style4 li span,
+.ce_featurelist.style4 li .icon {
+	color: rgb(240,240,240);
+}
+
+/* style5 */
+
+.ce_featurelist.style5 li {
+	border-bottom-style: dotted;
+}
+
+.ce_featurelist.style5 li .icon {
+	color: rgb(200,200,200);
+}
+
+.ce_featurelist.style5 li span {
+	color: var(--accentColor);
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_featurelist li {
+		width: 100%!important;
+	}
+}

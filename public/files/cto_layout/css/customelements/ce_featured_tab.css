@@ -1,0 +1,132 @@
+
+/* =============================================================================
+* ce_featured_tab
+* ========================================================================== */
+
+.ce_featured_tab {
+   position: relative;
+}
+
+.ce_featured_tab.tab-style2 {
+   padding-top: 100px;
+   padding-bottom: 50px;
+}
+
+.ce_featured_tab .panes .section {
+   display: none;
+}
+
+.ce_featured_tab .panes .section.active {
+   display: block;
+}
+
+.ce_featured_tab .tabs {
+   width: 30%;
+   float: left;
+}
+
+.ce_featured_tab .tabs a {
+   cursor: pointer;
+   display: block;
+}
+
+.ce_featured_tab .panes {
+   position: relative;
+   padding: 0;
+   border: none;
+   z-index: 2;
+   float: left;
+   width: 70%;
+}
+
+.ce_featured_tab .tabs li {
+   float: left;
+   position: relative;
+   padding: 25px 28px;
+   display: block;
+}
+
+.ce_featured_tab li {
+   overflow: hidden;
+   display: block;
+}
+
+.ce_featured_tab li .ce_headline .headline {
+   margin-bottom: 5px;
+   color: var(--accentColor);
+}
+
+.ce_featured_tab li.active {
+   background-color: var(--accentColor);
+   border-radius: 10px 0 0 10px;
+}
+
+.ce_featured_tab li p {
+   margin-bottom: 0;
+}
+
+.ce_featured_tab li.active p {
+   color: rgb(255,255,255);
+}
+
+.ce_featured_tab li.active .ce_headline .headline,
+.ce_featured_tab li.active .ce_headline {
+   color: rgb(255,255,255);
+}
+
+.ce_featured_tab.tab-style2 .panes {
+   top: 50px;
+   right: 0;
+   position: absolute;
+   width: auto;
+}
+
+@media only screen and (max-width: 1199px) {
+   .ce_featured_tab .tabs {
+       width: 100%;
+       float: none;
+       margin-bottom: 35px;
+   }
+
+   .ce_featured_tab .panes,
+   .ce_featured_tab.tab-style2 .panes {
+       top: 0;
+       float: none;
+       width: 100%;
+       position: static;
+   }
+
+   .ce_featured_tab ul {
+       overflow: hidden;
+   }
+
+   .ce_featured_tab li {
+       float: left;
+       width: 33%;
+   }
+
+   .ce_featured_tab.tab_fourth li {
+       width: 25%;
+   }
+
+   .ce_featured_tab.tab_two li {
+       width: 50%;
+   }
+
+   .ce_featured_tab li.active {
+       border-radius: 0;
+   }
+
+   .ce_featured_tab {
+      padding: 0;
+   }
+   
+   .ce_featured_tab.tab-style2 {
+      padding: 0;
+   }
+   
+   .ce_featured_tab li {
+      display: block;
+      width: 100%!important;
+   }
+}

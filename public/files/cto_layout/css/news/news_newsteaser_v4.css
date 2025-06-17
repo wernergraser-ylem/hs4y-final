@@ -1,0 +1,123 @@
+/* =============================================================================
+* news_newsteaser_v4
+* ========================================================================== */
+
+.newsteaser-v4 .info .comments {
+   border: 0;
+}
+
+.newsteaser-v4 .h6,
+.newsteaser-v4 h6 {
+   margin-bottom: 10px;
+}
+
+.newsteaser-v4 .content {
+   padding: 7%;
+   padding-top: 45px;
+   background: rgb(255,255,255);
+   border: 1px solid rgb(220,221,221);
+   text-align: center;
+   border-radius: 0 0 5px 5px;
+}
+
+.newsteaser-v4 .subheadline {
+   text-transform: uppercase;
+   font-size: 1.1em;
+   color: rgb(152,152,152);
+   letter-spacing: 2px;
+   margin-bottom: 10px;
+}
+
+.newsteaser-v4 .h6,
+.newsteaser-v4 h6 {
+   font-weight: bold;
+}
+
+.newsteaser-v4 .image_container {
+   margin-bottom: 0;
+   border-radius: 5px 5px 0 0;
+}
+
+.newsteaser-v4 .image_container img {
+   border-radius: 5px 5px 0 0;
+}
+
+.newsteaser-v4 .news-overlay {
+   position: absolute;
+   left: 50%;
+   bottom: -20px;
+   margin-left: -20px;
+   height: 40px;
+   width: 40px;
+   background: rgb(175,185,191);
+   -webkit-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   text-align: center;
+   display: none;
+}
+
+.newsteaser-v4 .news-overlay i {
+   color: #fff;
+   -webkit-transform: rotate(+45deg);
+   transform: rotate(+45deg);
+   text-align: center;
+   font-size: 26px;
+   line-height: 40px;
+}
+
+.newsteaser-v4 .info {
+   font-size: 0.9em;
+   color: rgb(175,185,191);
+}
+
+.newsteaser-v4.news-cat-1 .subheadline {
+   color: rgb(103,162,167);
+}
+
+.newsteaser-v4.news-cat-1 .news-overlay {
+   background: rgb(103,162,167);
+   display: block;
+}
+
+.newsteaser-v4.news-cat-1 i:before {
+   content: "\f06c";
+}
+
+.newsteaser-v4.news-cat-2 .subheadline {
+   color: rgb(159,77,86);
+}
+
+.newsteaser-v4.news-cat-2 .news-overlay {
+   background: rgb(159,77,86);
+   display: block;
+}
+
+.newsteaser-v4.news-cat-2 i:before {
+   content: "\f1cd";
+}
+
+.newsteaser-v4.news-cat-3 .subheadline {
+   color: rgb(98,189,224);
+}
+
+.newsteaser-v4.news-cat-3 .news-overlay {
+   background: rgb(98,189,224);
+   display: block;
+}
+
+.newsteaser-v4.news-cat-3 i:before {
+   content: "\f200";
+}
+
+.newsteaser-v4.news-cat-4 .subheadline {
+   color: rgb(235,173,0);
+}
+
+.newsteaser-v4.news-cat-4 .news-overlay {
+   background: rgb(235,173,0);
+   display: block;
+}
+
+.newsteaser-v4.news-cat-4 i:before {
+   content: "\f1d8";
+}

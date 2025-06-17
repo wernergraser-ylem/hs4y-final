@@ -1,0 +1,103 @@
+/* =============================================================================
+ * mod_newsreader
+ * ========================================================================== */
+
+.newsreader .date {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.newsreader .info {
+	font-size: 0.8em;
+	margin-bottom: 35px;
+	background: #f8f8f8;
+	padding: 30px;
+}
+
+.newsreader .date:before {
+	font-family:FontAwesome;
+	content:"\f073";
+	margin-right: 5px;
+}
+
+.newsreader .author {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.newsreader .author:before {
+	font-family:FontAwesome;
+	content:"\f007";
+	margin-right: 5px;
+}
+
+.newsreader .comments {
+	display: inline-block;
+}
+
+.newsreader .comments:before {
+	font-family:FontAwesome;
+	content:"\f0e6";
+	margin-right: 5px;
+}
+
+.newsreader .back {
+	padding-top: 10px;
+	margin-top: 40px;
+	border-top: 1px solid #ddd;
+	overflow: hidden;
+	margin-left: 0;
+	width: 100%;
+	float: none;
+	position: relative;
+	clear: both;
+}
+
+.newsreader .back a {
+	font-size: 0.6667rem;
+	text-transform: uppercase;
+}
+
+.newsreader .ce_comments {
+	max-width: 500px;
+	margin-top: 55px;
+}
+
+.newsreader .ce_comments .widget {
+	margin-bottom: 15px;
+}
+
+.newsreader .ce_comments input.text,
+.newsreader .ce_comments textarea,
+.newsreader .ce_comments input.captcha,
+.newsreader .ce_comments .checkbox_container {
+	background: rgb(245,245,245);
+	border: 0;
+}
+
+.newsreader .ce_comments input.submit,
+.newsreader .ce_comments button.submit {
+	width: auto;
+}
+
+.newsreader .ce_comments .checkbox_container {
+	font-size: 0.9rem;
+}
+
+.newsreader .ce_comments label {
+	margin-top: 3px;
+}
+
+/* mod_newsreader in lightbox onepage layouts */
+#colorbox .mod_newsreader .image_container img {
+	width: 100%;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.newsreader .info {
+		padding: 5px 15px;
+	}
+}

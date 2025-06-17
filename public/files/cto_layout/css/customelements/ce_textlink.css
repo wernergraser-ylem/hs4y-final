@@ -1,0 +1,159 @@
+/* =============================================================================
+ * ce_textlink
+ * ========================================================================== */
+
+.ce_textlink[data-align="left"] {
+	text-align: left;
+}
+
+.ce_textlink[data-align="center"] {
+	text-align: center;
+}
+
+.ce_textlink[data-align="right"] {
+	text-align: right;
+}
+
+.ce_textlink[data-style="style1"] {
+  position: relative;
+  text-decoration: none;
+  color: var(--accentColor);
+  line-height: 1.1;
+}
+
+.ce_textlink[data-style="style1"] a {
+  display: inline-block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ce_textlink[data-style="style1"] a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accentColor);
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+.ce_textlink[data-style="style1"] a:hover::after {
+  animation: shrinkRightGrowLeft 0.9s cubic-bezier(.25, 1, .33, 1) forwards;
+}
+
+@keyframes shrinkRightGrowLeft {
+  0% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  50% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+  51% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  100% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+.ce_textlink[data-style="style2"] {
+  position: relative;
+  text-decoration: none;
+  color: var(--accentColor);
+  line-height: 1.1;
+}
+
+.ce_textlink[data-style="style2"] a {
+  display: inline-block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ce_textlink[data-style="style2"] a::after {
+  content: '\e628';
+  font-family: themify;
+  transition: transform .45s cubic-bezier(.25,1,.33,1);
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.ce_textlink[data-style="style2"] a:hover::after {
+	transform: translateX(0.4em);
+}
+
+.ce_textlink[data-style="style2"] a span {
+	margin-right: 0.4em;
+}
+
+/* data-color */
+.ce_textlink[data-color="accent-color"] {
+  color: var(--accentColor);
+}
+
+.ce_textlink[data-style="style1"][data-color="accent-color"] a::after {
+  background-color: var(--accentColor);
+}
+
+.ce_textlink[data-color="second-color"] {
+  color: var(--secondColor);
+}
+
+.ce_textlink[data-style="style1"][data-color="second-color"] a::after {
+  background-color: var(--secondColor);
+}
+
+.ce_textlink[data-color="white"] {
+  color: #ffffff;
+}
+
+.ce_textlink[data-style="style1"][data-color="white"] a::after {
+  background-color: #ffffff;
+}
+
+.ce_textlink[data-color="black"] {
+  color: #000000;
+}
+
+.ce_textlink[data-style="style1"][data-color="black"] a::after {
+  background-color: #000000;
+}
+
+.ce_textlink[data-color="light-gray"] {
+  color: #b4b4b4;
+}
+
+.ce_textlink[data-style="style1"][data-color="light-gray"] a::after {
+  background-color: #b4b4b4;
+}
+
+.ce_textlink[data-color="dark-gray"] {
+  color: #7f7f7f;
+}
+
+.ce_textlink[data-style="style1"][data-color="dark-gray"] a::after {
+  background-color: #7f7f7f;
+}
+
+.ce_textlink[data-color="custom1"] {
+  color: var(--customColor1);
+}
+
+.ce_textlink[data-style="style1"][data-color="custom1"] a::after {
+	background-color: var(--customColor1);
+}
+
+.ce_textlink[data-color="custom2"] {
+  color: var(--customColor2);
+}
+
+.ce_textlink[data-style="style1"][data-color="custom2"] a::after {
+	background-color: var(--customColor2);
+}

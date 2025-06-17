@@ -1,0 +1,97 @@
+/* =============================================================================
+ * ce_vertical_spacer
+ * ========================================================================== */
+
+.ce_vertical_spacer.sp-xxl {
+	height: 21vmin;
+}
+
+.ce_vertical_spacer.sp-xl {
+	height: 18vmin;
+}
+
+.ce_vertical_spacer.sp-l {
+	height: 15vmin;
+}
+
+.ce_vertical_spacer.sp-m {
+	height: 12vmin;
+}
+
+.ce_vertical_spacer.sp-s {
+	height: 9vmin;
+}
+
+.ce_vertical_spacer.sp-xs {
+	height: 6vmin;
+}
+
+.ce_vertical_spacer.sp-xxs {
+	height: 3vmin;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+
+	.ce_vertical_spacer.sp-xxl {
+		height: 130px;
+	}
+	
+	.ce_vertical_spacer.sp-xl {
+		height: 110px;
+	}
+	
+	.ce_vertical_spacer.sp-l {
+		height: 90px;
+	}
+	
+	.ce_vertical_spacer.sp-m {
+		height: 70px;
+	}
+	
+	.ce_vertical_spacer.sp-s {
+		height: 50px;
+	}
+	
+	.ce_vertical_spacer.sp-xs {
+		height: 30px;
+	}
+	
+	.ce_vertical_spacer.sp-xxs {
+		height: 10px;
+	}
+	
+	.ce_vertical_spacer.sp-xxl-mob {
+		height: 70px;
+	}
+	
+	.ce_vertical_spacer.sp-xl-mob {
+		height: 60px;
+	}
+	
+	.ce_vertical_spacer.sp-l-mob {
+		height: 50px;
+	}
+	
+	.ce_vertical_spacer.sp-m-mob {
+		height: 4px;
+	}
+	
+	.ce_vertical_spacer.sp-s-mob {
+		height: 30px;
+	}
+	
+	.ce_vertical_spacer.sp-xs-mob {
+		height: 20px;
+	}
+	
+	.ce_vertical_spacer.sp-xxs-mob {
+		height: 10px;
+	}
+	
+	.ce_vertical_spacer.sp-0-mob {
+		display: none;
+	}
+}

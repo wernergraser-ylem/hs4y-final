@@ -1,0 +1,208 @@
+/* =============================================================================
+ * ce_iconbox_v2
+ * ========================================================================== */
+
+.ce_iconbox_v2.default .image_container img {
+	width: auto;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.ce_iconbox_v2.default i {
+	margin-bottom: 15px;
+	font-size: 3.667rem;
+	line-height: 3.667rem;
+	width: 2.667rem!important;
+}
+
+.ce_iconbox_v2.default .link:before {
+	content: "\f105";
+	font-family:FontAwesome;
+	font-weight: normal;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.ce_iconbox_v2 ul {
+	padding-left: 4px;
+}
+
+.ce_iconbox_v2 ul li {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+
+/* =============================================================================
+ * ce_iconbox_v2 | style2
+ * ========================================================================== */
+
+.ce_iconbox_v2.style2 {
+	border: 1px solid rgb(225,225,225);
+	transition: background 0.3s ease;
+	-webkit-transition: background 0.3s ease;
+}
+
+/* same-height */
+.autogrid_row.same_height .ce_iconbox_v2.style2 {
+	height: 100%;
+}
+
+.autogrid_row > .column > .ce_iconbox_v2.style2 {
+   border-right: 0;
+}
+
+.autogrid_row > .column:last-child > .ce_iconbox_v2.style2 {
+	border-right: 1px solid rgb(225,225,225);
+}
+
+.ce_iconbox_v2.style2 .ce_iconbox_outside {
+	padding: 15% 10%;
+
+}
+
+.ce_iconbox_v2.style2 .image_container img {
+	width: auto;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.ce_iconbox_v2.style2 .image_container,
+.ce_iconbox_v2.style2 i {
+	padding-top: 5px;
+	position: relative;
+	top: 0;
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+}
+
+.ce_iconbox_v2.style2:hover .image_container,
+.ce_iconbox_v2.style2:hover i {
+	top: -5px;
+}
+
+.ce_iconbox_v2.style2 i {
+	margin-bottom: 15px;
+	font-size: 3rem;
+	line-height: 3rem;
+	width: 40px!important;
+}
+
+.ce_iconbox_v2.style2 .link {
+	font-weight: bold;
+	font-size: 0.9rem;
+	display: inline-flex;
+	align-items: center;
+}
+
+.ce_iconbox_v2.style2 .link:before {
+	content: "\f054";
+	font-family:FontAwesome;
+	font-weight: bold;
+	display: inline-block;
+	margin-right: 5px;
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+}
+
+.ce_iconbox_v2.style2:hover .link:after {
+	margin-left: 15px;
+}
+
+.ce_iconbox_v2.style2 .headline {
+	margin-bottom: 0;
+}
+
+.ce_iconbox_v2.style2 .headline:after {
+	content: '';
+	width: 50px;
+	height: 1px;
+	background: rgb(90,90,90);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+/* =============================================================================
+ * ce_iconbox_v2 | style3
+ * ========================================================================== */
+
+.ce_iconbox_v2.style3 .ce_iconbox_outside {
+	padding: 35px;
+	background: rgba(255,255,255,0.9);
+	border-radius: 3px;
+	border: 1px solid rgb(220,220,220);
+	height: 100%;
+}
+
+/* same-height */
+.autogrid_row.same_height .ce_iconbox_v2.style3 {
+	height: 100%;
+}
+
+.ce_iconbox_v2.style3.no_gutter .ce_iconbox_outside {
+	border-radius: 0;
+	border-right: 0;
+}
+
+.ce_iconbox_v2.style3.no_gutter.autogrid-first .ce_iconbox_outside {
+	border-radius: 3px 0 0 3px;
+	border-right: 0;
+}
+
+.ce_iconbox_v2.style3.no_gutter.autogrid-last .ce_iconbox_outside {
+	border-radius: 0 3px 3px 0;
+	border-right: 1px solid rgb(220,220,220);
+}
+
+.ce_iconbox_v2.style3 .content {
+	color: rgb(120,120,120);
+}
+
+.ce_iconbox_v2.style3 .image_container {
+	margin-bottom: 20px;
+}
+
+.ce_iconbox_v2.style3 i {
+	font-size: 5rem;
+	margin-bottom: 20px;
+}
+
+.ce_iconbox_v2.style3 .image_container img {
+	width: auto;
+}
+
+.ce_iconbox_v2.style3 a.link {
+	display: inline-flex;
+	align-items: center;
+}
+
+.ce_iconbox_v2.style3 a.link:before {
+	font-family: "FontAwesome";
+	content: "\f054";
+	display: inline-block;
+	margin-right: 10px;
+	transition: All 0.1s ease;
+	-webkit-transition: All 0.1s ease;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_iconbox_v2.style2 .ce_iconbox_outside {
+		min-height: 0!important;
+	}
+	
+	.ce_iconbox_v2.style2.autogrid-last {
+		border-bottom: 0;
+	}
+
+	.ce_iconbox_v2.style3 .ce_iconbox_outside {
+		border-radius: 3px!important;
+		border: 1px solid rgb(220,220,220)!important;
+	}
+	
+	.ce_iconbox_v2.style3 {
+		margin-bottom: 20px;
+	}
+}

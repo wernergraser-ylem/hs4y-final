@@ -1,9 +1,23 @@
 {
     "version": 2,
     "webauthn": {
+<<<<<<< HEAD
         "5927902bff23249841023bc2ded324d7fea56c69422f83be852677ded8e6e51c": {
             "options": "{\"challenge\":\"WSeQK_8jJJhBAjvC3tMk1_6lbGlCL4O-hSZ33tjm5Rw\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
             "expires": 1750160393
+=======
+        "a34cc6e6153be72b54e9ac4f246acc462219c87b39765b28794571a96467019f": {
+            "options": "{\"challenge\":\"o0zG5hU75ytU6axPJGrMRiIZyHs5dlsoeUVxqWRnAZ8\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1748934160
+        },
+        "7b8c8b40586b51747663ebfc01c1a0984b7dbb95ed8057575dce5fd79c834c8e": {
+            "options": "{\"challenge\":\"e4yLQFhrUXR2Y-v8AcGgmEt9u5XtgFdXXc5f15yDTI4\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1748934184
+        },
+        "7e6b9e800a6d952ab569baaa56ec7b08270f9bd6cec1896f2fb229ac632d81d2": {
+            "options": "{\"challenge\":\"fmuegAptlSq1abqqVux7CCcPm9bOwYlvL7IprGMtgdI\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1748934287
+>>>>>>> fab5f8632f62cf19db5019680750cd93389b3130
         }
     },
     "users": {

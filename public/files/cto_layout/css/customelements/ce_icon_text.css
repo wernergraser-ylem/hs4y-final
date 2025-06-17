@@ -1,0 +1,103 @@
+/* =============================================================================
+ * ce_icon_text
+ * ========================================================================== */
+
+.ce_icon_text {
+	display: flex;
+	align-items: center;
+}
+
+.ce_icon_text .text,
+.ce_icon_text .text p {
+	margin: 0;
+}
+
+.ce_icon_text .text a {
+	text-decoration: underline;
+}
+
+.ce_icon_text a {
+  color: inherit;
+}
+
+.ce_icon_text > a {
+	display: flex;
+	align-items: center;
+}
+
+.ce_icon_text i {
+	width: 15px;
+}
+
+.ce_icon_text .icon {
+	line-height: 1;
+}
+
+.ce_icon_text[data-align="center"] {
+	justify-content: center;
+}
+
+.ce_icon_text[data-align="right"] {
+	justify-content: right;
+}
+
+.ce_icon_text[data-color="accent-color"] .text,
+.ce_icon_text[data-color="accent-color"] .text a,
+.ce_icon_text[data-color="accent-color"]  i {
+	color: var(--accentColor);
+}
+
+.ce_icon_text[data-color="second-color"] .text,
+.ce_icon_text[data-color="second-color"] .text a,
+.ce_icon_text[data-color="second-color"]  i {
+	color: var(--socondColor);
+}
+
+.ce_icon_text[data-color="white"] .text,
+.ce_icon_text[data-color="white"] .text a,
+.ce_icon_text[data-color="white"]  i {
+	color: #ffffff;
+}
+
+.ce_icon_text[data-color="black"] .text,
+.ce_icon_text[data-color="black"] .text a,
+.ce_icon_text[data-color="black"]  i {
+	color: #000000;
+}
+
+.ce_icon_text[data-color="light-gray"] .text,
+.ce_icon_text[data-color="light-gray"] .text a,
+.ce_icon_text[data-color="light-gray"]  i {
+	color: #b4b4b4;
+}
+
+.ce_icon_text[data-color="dark-gray"] .text,
+.ce_icon_text[data-color="dark-gray"] .text a,
+.ce_icon_text[data-color="dark-gray"]  i {
+	color: #7f7f7f;
+}
+
+.ce_icon_text[data-color="custom1"] .text,
+.ce_icon_text[data-color="custom1"] .text a,
+.ce_icon_text[data-color="custom1"]  i {
+	color: var(--customColor1);
+}
+
+.ce_icon_text[data-color="custom2"] .text,
+.ce_icon_text[data-color="custom2"] .text a,
+.ce_icon_text[data-color="custom2"]  i {
+	color: var(--customColor2);
+}
+
+.ce_icon_text[data-icon-pos="before"] .icon {
+	margin-right: 1em;
+}
+
+.ce_icon_text[data-icon-pos="after"] .icon {
+	order: 2;
+	margin-left: 1em;
+}
+
+.ce_icon_text[data-icon-pos="after"] .text {
+	order: 1;
+}

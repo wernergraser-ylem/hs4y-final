@@ -1,0 +1,73 @@
+/* =============================================================================
+* ce_pricelist_image
+* ========================================================================== */
+
+.ce_pricelist_image h4 {
+   font-size: 1.4rem;
+   float: left;
+   margin: 0;
+}
+
+.ce_pricelist_image h4:after {
+   content: '';
+   display: inline;
+   float: right;
+   border-bottom: 1px dashed rgb(210,210,210);
+   width: 100%;
+   position: absolute;
+   margin-left: 5px;
+   bottom: 10px;
+}
+
+.ce_pricelist_image .item-content {
+   position: relative;
+   overflow: hidden;
+   clear: both;
+}
+
+.ce_pricelist_image .image_container {
+   width: 60px;
+   position: absolute;
+   left: 0;
+   top: 0px;
+}
+
+.ce_pricelist_image .price {
+   position: absolute;
+   right: 0;
+   background: rgb(255,255,255);
+   padding-left: 10px;
+   font-size: 1.3rem;
+   font-weight: bold;
+}
+
+.ce_pricelist_image .item-inside {
+   padding: 10px 15px 20px 70px;
+   position: relative;
+}
+
+.ce_pricelist_image .subline {
+   font-size: 0.9rem;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+   .ce_pricelist_image h4:after {
+      display: none;
+   }
+   
+   .ce_pricelist_image .price {
+      position: static;
+      padding: 0;
+   }
+   
+   .ce_pricelist_image h4 {
+      float: none;
+   }
+
+   .ce_pricelist_image .item-inside {
+      padding-top: 0;
+   }
+}

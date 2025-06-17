@@ -1,0 +1,160 @@
+/* =============================================================================
+ * ce_scrolling_text
+ * ========================================================================== */
+
+.ce_scrolling_text {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.ce_scrolling_text .text {
+	animation: scrolling-text-animation linear infinite 15s;
+	animation-duration: 20s;
+	transform: translateX(0%) translateZ(0);
+	display: flex;
+	flex-direction: row;
+}
+
+.ce_scrolling_text[data-style="style1"] .text {
+	-webkit-text-stroke-color: #333;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	-webkit-text-stroke-width: 1px;
+	text-stroke-width: 1px;
+}
+
+.ce_scrolling_text[data-style="custom1"] .text {
+	font-family: var(--customFont1);
+	font-weight: var(--customFont1Weight);
+	font-size: var(--customFont1FontSize);
+	line-height: var(--customFont1LineHeight);
+	-webkit-text-stroke-color: var(--customFont1-stroke-color);
+	text-stroke-color: var(--customFont1-stroke-color);
+	-webkit-text-fill-color: var(--customFont1-text-color);
+	text-fill-color: var(--customFont1-text-color);
+	-webkit-text-stroke-width: var(--customFont1-stroke-width);
+	text-stroke-width: var(--customFont1-stroke-width);
+	letter-spacing: var(--customFont1-letter-spacing);
+	color: var(--customFont1-text-color);
+}
+
+.ce_scrolling_text[data-style="custom2"] .text {
+	font-family: var(--customFont2);
+	font-weight: var(--customFont2Weight);
+	font-size: var(--customFont2FontSize);
+	line-height: var(--customFont2LineHeight);
+	-webkit-text-stroke-color: var(--customFont2-stroke-color);
+	text-stroke-color: var(--customFont2-stroke-color);
+	-webkit-text-fill-color: var(--customFont2-text-color);
+	text-fill-color: var(--customFont2-text-color);
+	-webkit-text-stroke-width: var(--customFont2-stroke-width);
+	text-stroke-width: var(--customFont2-stroke-width);
+	letter-spacing: var(--customFont2-letter-spacing);
+	color: var(--customFont2-text-color);
+}
+
+.ce_scrolling_text a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* colors */
+.ce_scrolling_text[data-color="accent-color"],
+.ce_scrolling_text[data-color="accent-color"] .text {
+	color: var(--accentColor);
+	-webkit-text-stroke-color: var(--accentColor);
+	text-stroke-color: var(--accentColor);
+}
+
+.ce_scrolling_text[data-color="second-color"],
+.ce_scrolling_text[data-color="second-color"] .text {
+	color: var(--socondColor);
+	-webkit-text-stroke-color: var(--secondColor);
+	text-stroke-color: var(--secondColor);
+}
+
+.ce_scrolling_text[data-color="white"],
+.ce_scrolling_text[data-color="white"] .text {
+	color: #ffffff;
+	-webkit-text-stroke-color: #ffffff;
+	text-stroke-color: #ffffff;
+}
+
+.ce_scrolling_text[data-color="black"],
+.ce_scrolling_text[data-color="black"] .text {
+	color: #000000;
+	-webkit-text-stroke-color: #000000;
+	text-stroke-color: #000000;
+}
+
+.ce_scrolling_text[data-color="light-gray"],
+.ce_scrolling_text[data-color="light-gray"] .text {
+	color: #b4b4b4;
+	-webkit-text-stroke-color: #b4b4b4;
+	text-stroke-color: #b4b4b4;
+}
+
+.ce_scrolling_text[data-color="dark-gray"],
+.ce_scrolling_text[data-color="dark-gray"] .text {
+	color: #7f7f7f;
+	-webkit-text-stroke-color: #7f7f7f;
+	text-stroke-color: #7f7f7f;
+}
+
+.ce_scrolling_text[data-color="custom1"],
+.ce_scrolling_text[data-color="custom1"] .text {
+	color: var(--customColor1);
+	-webkit-text-stroke-color: var(--customColor1);
+	text-stroke-color: var(--customColor1);
+}
+
+.ce_scrolling_text[data-color="custom2"],
+.ce_scrolling_text[data-color="custom2"] .text {
+	color: var(--customColor2);
+	-webkit-text-stroke-color: var(--customColor2);
+	text-stroke-color: var(--customColor2);
+}
+
+/* animation */
+
+@keyframes scrolling-text-animation {
+    from {
+        transform: translateX(-20%) translateZ(0)
+    }
+
+    to {
+        transform: translateX(-120%) translateZ(0)
+    }
+}
+
+@keyframes scrolling-text-animation-reverse {
+    from {
+        transform: translateX(20%) translateZ(0)
+    }
+
+    to {
+        transform: translateX(120%) translateZ(0)
+    }
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+
+@media only screen and (max-width: 767px) {
+	
+	.ce_scrolling_text[data-style="custom1"] .text {
+		font-size: var(--customFont1FontSizeMob);
+		line-height: var(--customFont1LineHeightMob);
+	}
+	
+	.ce_scrolling_text[data-style="custom2"] .text {
+		font-size: var(--customFont2FontSizeMob);
+		line-height: var(--customFont2LineHeightMob);
+	}
+	
+}

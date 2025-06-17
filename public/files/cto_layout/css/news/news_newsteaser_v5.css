@@ -1,0 +1,27 @@
+/* =============================================================================
+* news_newsteaser_v5
+* ========================================================================== */
+
+.newsteaser_v5 {
+   border: 1px solid rgb(255,255,255);
+}
+
+.newsteaser_v5 .newsteaser_v5_inside {
+   background: rgb(242,242,242);
+   min-height: 240px;
+   padding: 25px;
+   position: relative;
+   overflow: hidden;
+   transition: background 0.3s ease;
+   -webkit-transition: background 0.3s ease;
+}
+
+.newsteaser_v5 .newsteaser_v5_inside:hover {
+   background: rgb(248,248,248);
+}
+
+.newsteaser_v5 i.fa {
+   position: absolute;
+   bottom: 25px;
+   left: 25px;
+}

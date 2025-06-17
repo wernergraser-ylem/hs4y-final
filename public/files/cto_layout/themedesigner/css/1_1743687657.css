@@ -1,0 +1,248 @@
+:root {
+--accentColor: #0f4f25;
+}
+:root {
+--secondColor: #84bf04;
+}
+:root {
+--bgColorLightGray: #f8f8f8;
+}
+:root {
+--txtColorGray: #747474;
+}
+body.viewport_tablet #top .topbar_teaser,
+body.viewport_tablet #top .mod_top_phone {
+display: none;
+}
+body.viewport_tablet #top .top_metanavi,
+body.viewport_tablet #top .topbar_metanavi {
+display: none;
+}
+body.viewport_tablet #top .mod_search {
+display: none;
+}
+body.viewport_mobile #top .topbar_teaser,
+body.viewport_mobile #top .mod_top_phone {
+display: none;
+}
+body.viewport_mobile #top .top_metanavi,
+body.viewport_mobile #top .topbar_metanavi {
+display: none;
+}
+body.viewport_mobile #top .mod_login_top {
+display: none;
+}
+body.viewport_mobile #top .mod_search {
+display: none;
+}
+body.viewport_mobile #top .mod_langswitcher {
+display: none;
+}
+html, body  {
+font-family: Montserrat;
+font-weight: 400;
+}
+* {
+hyphens: none;
+-webkit-hyphens: none;
+-ms-hyphens: none;
+}
+:root {
+--body-fontSize: 17px;
+}
+@media only screen and (max-width: 767px) {
+html, body  {
+font-size: 15px;
+}
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
+.ce_revolutionslider_text.bold, .font_headline {
+font-family: Montserrat;
+font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .font_headline {
+hyphens: none;
+-webkit-hyphens: none;
+-ms-hyphens: none;
+}
+@media only screen and (max-width: 767px) {
+h1, .h1, .h1 p {
+line-height: 32px;
+}
+}
+:root {
+--contentBoxedWidth: calc(100% - 18%);
+--articlePaddingLeftRight: 9%;
+}
+#breadcrumb,
+.mod_breadcrumb {
+display: none;
+}
+:root {
+--footer-headline-color: #fff;
+}
+#footer {
+font-size: 15px;
+}
+#footer,
+#footer a {
+color: #fff;
+}
+#footer li:after {
+border-color: #fff;
+}
+#footer {
+background-color: #0f4f25;
+}
+#bottom {
+margin-top: 1px;
+margin-bottom: 1px;
+}
+#bottom {
+font-size: 16px;
+}
+#bottom .inside,
+#bottom .inside a {
+color: #efefef;
+}
+#bottom .inside a:hover {
+color: #909090;
+}
+#bottom {
+background-color: #0f4f25;
+}
+.header .mod_search {
+display: none!important;
+}
+.header .mod_langswitcher {
+margin-left: 40px;
+}
+.header .mod_socials {
+margin-left: 40px;
+}
+.header .mod_langswitcher {
+display: none;
+}
+@media only screen and (min-width: 768px) {
+.header.cloned,
+.header.cloned .mainmenu ul li a,
+.header.cloned .mod_langswitcher {
+font-size: 16px;
+}
+}
+.logo a {
+background-image: url(../uploads/logo-green.svg);
+}
+@media only screen and (min-width: 768px) {
+.header.original .logo {
+width: 90px;
+}
+:root {
+--logoWidth: 148px;
+}
+}
+@media only screen and (min-width: 768px) {
+.header.original .logo {
+height: 148px;
+}
+.header.original {
+line-height: 148px;
+}
+.smartmenu .smartmenu-trigger {
+height: 148px;
+}
+:root {
+--logoHeight: 148px;
+}
+}
+@media only screen and (min-width: 768px) {
+.stickyheader .header .logo {
+width: 70px;
+}
+}
+@media only screen and (min-width: 768px) {
+.stickyheader .header .logo {
+height: 50px;
+}
+.stickyheader .header.cloned {
+line-height: 50px;
+}
+.header.cloned .smartmenu .smartmenu-trigger {
+height: 50px;
+}
+html {
+scroll-padding: 50px 0 0 0;
+}
+}
+@media only screen and (max-width: 767px) {
+.header .logo {
+width: 70px;
+}
+}
+@media only screen and (max-width: 767px) {
+.header .logo {
+height: 50px;
+}
+.header {
+line-height: 50px;
+}
+}
+:root {
+--menu-highlight-bg-color: #4d6bd8;
+}
+:root {
+--menu-highlight-border-color: #4d6bd8;
+}
+:root {
+--menu-highlight-border-radius: 100px;
+}
+:root {
+--menu-highlight-margin-left: 30px;
+}
+:root {
+--paragraph-small-font-size: 16px;
+}
+:root {
+--paragraph-small-line-height: 26px;
+}
+:root {
+--customFont1: Manrope;
+--customFont1Weight: 700;
+}
+:root {
+--customFont1FontSize: 125px;
+}
+:root {
+--customFont1FontSizeMob: 45px;
+}
+:root {
+--customFont1LineHeight: 165px;
+}
+:root {
+--customFont1LineHeightMob: 55px;
+}
+:root {
+--customFont2: Manrope;
+--customFont2Weight: 700;
+}
+:root {
+--customFont2FontSize: 90px;
+}
+:root {
+--customFont2FontSizeMob: 45px;
+}
+:root {
+--customFont2LineHeight: 100px;
+}
+:root {
+--customFont2LineHeightMob: 55px;
+}
+:root {
+--menu-highlight-padding-lr-mobile: 20px;
+}
+:root {
+--menu-highlight-padding-tb-mobile: 10px;
+}
+:root {
+--menu-highlight-margin-top-mobile: 20px;
+}

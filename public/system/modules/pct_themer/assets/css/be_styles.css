@@ -1,0 +1,74 @@
+
+.header_toggle_mode {float: left; padding:2px 0 3px 2px;}
+
+#pct_demoinstaller {width: 100%; position: relative;}
+#pct_demoinstaller .counter {display: none;}
+#pct_demoinstaller .tl_panel.categories {text-align: left; padding: 10px; display: flex; align-items: center;}
+#pct_demoinstaller .tl_panel.categories h3 {margin: 0 0 4px 0; padding: 0;}
+#pct_demoinstaller .tl_panel.categories .search-field input {width: auto !important;}
+#pct_demoinstaller .tl_panel.categories .float_box {margin-left: 15px;}
+#pct_demoinstaller #tl_buttons {padding: 10px 20px; border-bottom: 1px solid silver;}
+#pct_demoinstaller .content_wrapper { padding: 20px; }
+#pct_demoinstaller .content_wrapper .inside.grid_wrapper {margin-left: -1%; margin-right: -1%; display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px;}
+#pct_demoinstaller .image_container {line-height: 0;}
+#pct_demoinstaller .image_container img {box-sizing: border-box; -webkit-box-sizing: border-box; width: auto; max-width: 100%; height: auto; border: 1px solid #d0d0d0; background-color: #f3f3f3; background-position: 5px 5px; background-repeat: no-repeat; padding-top: 15px; border-radius: 3px 3px 0 0;}
+#pct_demoinstaller .image_container img {background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iRWJlbmVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNC4yMDZweCIgaGVpZ2h0PSI2LjA2MnB4IiB2aWV3Qm94PSIwIDAgMjQuMjA2IDYuMDYyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNC4yMDYgNi4wNjIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxjaXJjbGUgZmlsbD0iI0Q5Njc1RiIgY3g9IjMuMDMxIiBjeT0iMy4wMzEiIHI9IjMuMDMxIi8+PGNpcmNsZSBmaWxsPSIjRjJCRDUwIiBjeD0iMTIuMTA0IiBjeT0iMy4wMzEiIHI9IjMuMDMiLz48Y2lyY2xlIGZpbGw9IiM2Q0FENTMiIGN4PSIyMS4xNzUiIGN5PSIzLjAzMSIgcj0iMy4wMzEiLz48L3N2Zz4=);}
+#pct_demoinstaller .item.block {flex: 0 0 50%; position: relative; box-sizing: border-box; -webkit-box-sizing: border-box;}
+#pct_demoinstaller .item .inside { padding-left: 1%; padding-right: 1%;}
+#pct_demoinstaller .label {color: #3c3d3c; margin-bottom: 15px; font-weight: bold;}
+#pct_demoinstaller .content {margin-top: 20px; border: 0;}
+#pct_demoinstaller .submit_container {margin-top: 15px; display: flex; align-items: center;}
+#pct_demoinstaller .submit_container .preview {margin-left: auto; background-repeat: no-repeat; background-position: left center; padding-left: 17px; font-size: 12px;}
+#pct_demoinstaller .submit_container .preview {background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI4LjIuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxNSAxNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTUgMTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMywyQzIuNCwyLDIsMi40LDIsM3Y5YzAsMC42LDAuNCwxLDEsMWg5YzAuNiwwLDEtMC40LDEtMVY4LjVDMTMsOC4yLDEyLjgsOCwxMi41LDhTMTIsOC4yLDEyLDguNVYxMkgzVjNoMy41CglDNi44LDMsNywyLjgsNywyLjVTNi44LDIsNi41LDJIM3ogTTEyLjksMi4xYzAsMCwwLjEsMC4xLDAuMSwwLjJjMCwwLjEsMCwwLjEsMCwwLjJ2MHYwdjNDMTMsNS44LDEyLjgsNiwxMi41LDZTMTIsNS44LDEyLDUuNVYzLjcKCUw2LjksOC45QzYuNyw5LDYuMyw5LDYuMSw4LjlDNiw4LjcsNiw4LjMsNi4xLDguMUwxMS4zLDNIOS41QzkuMiwzLDksMi44LDksMi41UzkuMiwyLDkuNSwyaDNoMGMwLjEsMCwwLjEsMCwwLjIsMAoJQzEyLjgsMi4xLDEyLjgsMi4xLDEyLjksMi4xeiIvPgo8L3N2Zz4K");}
+#pct_demoinstaller .submit_container .preview:hover {opacity: 0.8;}
+#pct_demoinstaller .submit_container .preview:hover a {color: #444;}
+#pct_demoinstaller a.di_submit, #pct_demoinstaller input.di_submit {line-height: 1; cursor: pointer; box-sizing: border-box; -webkit-box-sizing: border-box; text-align: center; background-color: #fff; border: 1px solid #ccc; padding: 10px 15px 10px 30px; text-shadow: none; display: inline-block; border-radius: 6px;}
+#pct_demoinstaller .di_submit:hover {background-color: rgba(0,0,0,0.06);}
+
+#pct_demoinstaller #contao_theme_select {border-bottom: 1px solid silver; padding: 10px 20px;}
+#pct_demoinstaller #contao_theme_select h3 {margin: 0; margin-bottom: 5px;}
+#pct_demoinstaller #contao_theme_select select, #pct_demoinstaller #contao_theme_select .tl_select {min-width: 120px;}
+
+#pct_demoinstaller .submit.install input {
+	background-repeat: no-repeat;
+	background-position: 9px center;
+	background-size: 16px;
+	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI4LjIuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA3MDAgNzA1LjEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDcwMCA3MDUuMTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyMy40MzMxO30KCS5zdDF7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozNTtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTUuMTE4MTt9Cjwvc3R5bGU+CjxnIGlkPSJnMjE2NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDQ0LjUwMjQ1LDU5MS45NDUyNSkiPgoJPHBhdGggaWQ9InJlY3QxMTQ3IiBjbGFzcz0ic3QwIiBkPSJNMjM4LTEwNC40TDIzOCw4N2MwLDQuOC0zLjIsOC42LTcuMSw4LjZoLTY1MC43Yy00LDAtNy4xLTMuOC03LjEtOC42di0xOTEuNCIvPgoJPGcgaWQ9ImcxNjYzIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwtMSwtNDQwLjI2OTUyLC04MzcuNzc4MzMpIj4KCQk8cGF0aCBpZD0icGF0aDExNDkiIGNsYXNzPSJzdDEiIGQ9Ik0zNDUuOC0yNjMuM3YtNTcwLjEiLz4KCQk8cGF0aCBpZD0icGF0aDExNTEiIGNsYXNzPSJzdDEiIGQ9Ik0zNDUuOC04MzMuNEwxODEuNC02NjUuNSIvPgoJCTxwYXRoIGlkPSJwYXRoMTE1MyIgY2xhc3M9InN0MSIgZD0iTTM0NS44LTgzMy40bDE2NC4zLDE2Ny45Ii8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==")
+}
+
+#pct_demoinstaller .submit.show a {
+	background: #f47c00;
+	color: #fff;
+	border-color: #f47c00;
+	padding: 10px 15px 10px 15px;
+}
+
+#pct_demoinstaller .submit.show a:hover {opacity: 0.9;}
+
+html[data-color-scheme=dark] #pct_demoinstaller .label {color: #ddd;}
+html[data-color-scheme=dark] #pct_demoinstaller .submit_container .preview:hover a {color: #ddd;}
+html[data-color-scheme=dark] #pct_demoinstaller .image_container img {border: 0;}
+html[data-color-scheme=dark]  #pct_demoinstaller #tl_buttons {border-color: #333;}
+html[data-color-scheme=dark] #pct_demoinstaller .submit.install input {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iRWJlbmVfMSIgZGF0YS1uYW1lPSJFYmVuZSAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDcwMCA3MDUuMSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgICBzdHJva2U6ICNmZmY7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAzNXB4OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iZzIxNjUiPgogICAgPHBhdGggaWQ9InJlY3QxMTQ3IiBjbGFzcz0iY2xzLTEiIGQ9Ik02ODIuNSw0ODcuNXYxOTEuNGMwLDQuOC0zLjIsOC42LTcuMSw4LjZIMjQuN2MtNCwwLTcuMS0zLjgtNy4xLTguNnYtMTkxLjQiLz4KICAgIDxnIGlkPSJnMTY2MyI+CiAgICAgIDxwYXRoIGlkPSJwYXRoMTE0OSIgY2xhc3M9ImNscy0xIiBkPSJNMzUwLDE3LjV2NTcwLjEiLz4KICAgICAgPHBhdGggaWQ9InBhdGgxMTUxIiBjbGFzcz0iY2xzLTEiIGQ9Ik0zNTAsNTg3LjZsLTE2NC40LTE2Ny45Ii8+CiAgICAgIDxwYXRoIGlkPSJwYXRoMTE1MyIgY2xhc3M9ImNscy0xIiBkPSJNMzUwLDU4Ny42bDE2NC4zLTE2Ny45Ii8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=");
+  background-color: #333;
+}
+@media only screen and (min-width: 1100px) and (max-width: 1599px) {
+	#pct_demoinstaller .content_wrapper .inside.grid_wrapper {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	#pct_demoinstaller .content_wrapper .inside.grid_wrapper {
+		grid-template-columns: 1fr 1fr 1fr 1fr; 
+	}
+}
+
+
+
+@media only screen and (max-width: 767px) {
+	#pct_demoinstaller .content_wrapper .inside.grid_wrapper {
+		grid-template-columns: 1fr; 
+	}
+}

@@ -1,0 +1,92 @@
+/* =============================================================================
+ * ce_flipbox
+ * ========================================================================== */
+
+.ce_flipbox.block {
+	position: relative;
+	overflow: visible;
+}
+
+.ce_flipbox .ce_flipbox_inside {
+	height: inherit;
+	position: relative;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+}
+
+.ce_flipbox .ce_flipbox_frontside,
+.ce_flipbox .ce_flipbox_backside {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.ce_flipbox .ce_flipbox_frontside {
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index: 900;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+
+.ce_flipbox .ce_flipbox_backside {
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.ce_flipbox:hover .ce_flipbox_frontside {
+	z-index: 900;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+
+.ce_flipbox:hover .ce_flipbox_backside {
+	z-index: 1000;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+}
+
+.ce_flipbox .ce_flipbox_frontside_inside,
+.ce_flipbox .ce_flipbox_backside_inside {
+	padding: 30px;
+}
+
+.ce_flipbox .ce_flipbox_backside_inside > .ce_url.attribute a {
+	display: inline-block;
+	padding: 5px 15px;
+	color: rgb(255,255,255);
+	background: rgba(0,0,0,0.4);
+}
+
+.ce_flipbox .ce_flipbox_backside.color-white .ce_flipbox_backside_inside > .ce_url.attribute a {
+	color: rgb(50,50,50)!important;
+	background: rgb(255,255,255);
+}
+
+/* style 2 */
+
+.ce_flipbox.style2 .ce_flipbox_frontside,
+.ce_flipbox.style2 .ce_flipbox_backside {
+	text-align: center;
+	justify-content: center;
+}

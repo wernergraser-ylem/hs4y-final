@@ -1,0 +1,73 @@
+/* =============================================================================
+ * ce_colorbox
+ * ========================================================================== */
+
+.ce_colorbox .ce_colorbox_inside {
+	padding: 30px;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+
+.ce_colorbox h1,
+.ce_colorbox h2,
+.ce_colorbox h3,
+.ce_colorbox h4,
+.ce_colorbox h5,
+.ce_colorbox h6,
+.ce_colorbox .h1,
+.ce_colorbox .h2,
+.ce_colorbox .h3,
+.ce_colorbox .h4,
+.ce_colorbox .h5,
+.ce_colorbox .h6 {
+	margin-bottom: 0;
+}
+
+.ce_colorbox.invert,
+.ce_colorbox.invert h1,
+.ce_colorbox.invert h2,
+.ce_colorbox.invert h3,
+.ce_colorbox.invert h4,
+.ce_colorbox.invert h5,
+.ce_colorbox.invert h6,
+.ce_colorbox.invert .h1,
+.ce_colorbox.invert .h2,
+.ce_colorbox.invert .h3,
+.ce_colorbox.invert .h4,
+.ce_colorbox.invert .h5,
+.ce_colorbox.invert .h6,
+.ce_colorbox.invert p,
+.ce_colorbox.invert a  {
+	color: rgb(255,255,255);
+}
+
+.ce_colorbox .mainheadline {
+	margin-bottom: 20px;
+}
+
+.ce_colorbox .ce_url a {
+	display: inline-block;
+}
+
+.ce_colorbox .ce_url a:after {
+	content: '';
+	height: 1px;
+	width: 100%;
+	margin-top: 5px;
+	background: rgb(85, 85, 85);
+	display: block;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.ce_colorbox .ce_url a:hover:after {
+	width: 0;
+}
+
+.ce_colorbox.invert .ce_url a:after {
+	background: rgb(255,255,255);
+}
+
+.ce_colorbox p:last-of-type {
+	margin-bottom: 30px;
+}

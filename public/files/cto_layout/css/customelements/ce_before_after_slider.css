@@ -1,0 +1,17 @@
+/* =============================================================================
+* ce_before_after_slider
+* ========================================================================== */
+
+.ce_before_after_slider .twentytwenty-container img {
+   width: 100%;
+}
+
+.ce_before_after_slider img,
+.ce_before_after_slider img{
+   display: none;
+}
+
+.ce_before_after_slider img.twentytwenty-before,
+.ce_before_after_slider img.twentytwenty-after{
+   display: block;
+}

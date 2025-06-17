@@ -1,0 +1,55 @@
+/* =============================================================================
+ * ce_frame
+ * ========================================================================== */
+
+.ce_frame_start.style1 .ce_frame_start_inside {
+	padding: 5% 8%;
+	border: 3px solid rgb(227,227,227);
+}
+
+.ce_frame_start.style2 .ce_frame_start_inside {
+	padding: 5% 8%;
+	border: 3px solid rgb(227,227,227);
+	background: rgba(255,255,255,0.7);
+}
+
+.ce_frame_start.style3 .ce_frame_start_inside {
+	padding: 5% 8%;
+	border: 1px solid var(--accentColor);
+}
+
+.ce_frame_start.style4 .ce_frame_start_inside {
+	padding: 5% 8%;
+	border: 1px solid rgb(85, 85, 85);
+}
+
+.ce_frame_start.style5 .ce_frame_start_inside {
+	padding: 5% 8%;
+	border: 4px double rgb(85, 85, 85);
+}
+
+.ce_frame_start.style6 .ce_frame_start_inside {
+	padding: 5% 8%;
+	border: 3px solid rgb(255,255,255);
+}
+
+.ce_frame_start.style7 .ce_frame_start_inside {
+	box-shadow: 0 70px 70px rgba(0,0,0,.2);
+	background: rgb(255,255,255);
+	padding: 5% 8%;
+}
+
+.ce_frame_start.style8 .ce_frame_start_inside {
+	box-shadow: 0 2px 5px rgba(0,0,0,.1);
+	background: rgb(255,255,255);
+	padding: 5% 8%;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+	.ce_frame_start .ce_frame_start_inside {
+		padding: 5%!important;
+	}
+}

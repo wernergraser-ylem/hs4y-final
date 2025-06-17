@@ -1,0 +1,6124 @@
+ /* =============================================================================
+ * Template: mod_customcatalogfilter_mobile_trigger.html5
+ * ========================================================================== */
+ 
+ .mod_customcatalogfilter .mobile_trigger {
+	display: none;
+	text-align: right;
+}
+
+.mod_customcatalogfilter .mobile_trigger i {
+	background: rgb(80,80,80);
+	color: rgb(255,255,255);
+	line-height: 40px;
+	width: 40px;
+	text-align: center;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+	 .mod_customcatalogfilter .mobile_trigger {
+		 display: block;
+	 }
+}
+
+/* =============================================================================
+ * Template | customcatalog_XXX_ajaxsearch_results.html5
+ * ========================================================================== */
+
+.suggestions_container {
+	display: none;
+}
+
+.autocomplete_results {
+	max-width: 420px;
+	display: none;
+	background: #fff;
+	z-index: 100;
+}
+
+.autocomplete_results .module_container {
+	border: 0;
+}
+
+.mod_customcatalog_search_results .item-left {
+	display: inline-block;
+	width: 35px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-right: 25px;
+}
+ 
+.mod_customcatalog_search_results .item-right {
+	display: inline-block;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.mod_customcatalog_search_results .item-inside {
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.mod_customcatalog_search_results .item-inside:first-child {
+	border-top: 0;
+}
+ 
+.mod_customcatalog_search_results .item-inside a {
+	display: flex;
+	padding: 8px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.mod_customcatalog_search_results .item-inside a:hover {
+	background: rgba(0,0,0,0.03);
+}
+ 
+.mod_customcatalog_search_results .item-wrapper {
+	padding: 20px;
+}
+
+.mod_customcatalog_search_results .suggestions_container {
+	display: none!important;
+}
+
+/* =============================================================================
+ * ajax-search | form
+ * ========================================================================== */
+
+.no_submits .submit_container,
+.no_submits legend,
+.no_submits label {
+	display: none;
+}
+
+.no_submits fieldset {
+	border: 0; 
+	padding: 0;
+	margin: 0;
+}
+
+.no_submits .filterform {
+	margin: 0 auto;
+	max-width: 420px;
+}
+
+.no_submits input {
+	border-radius: 5px;
+	border: 1px solid rgba(255,255,255,1);
+	padding: 20px;
+}
+
+
+/**
+ * DEMO: cc_immorealty
+ */
+
+/* =============================================================================
+ * cc_immorealty reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_immorealty {
+	background: rgb(255,255,255);
+	padding: 30px;
+}
+.mod_customcatalogreader.cc_immorealty .name {
+	float: left;
+}
+
+.mod_customcatalogreader.cc_immorealty .place {
+	float: right;
+	line-height: 3.3;
+}
+
+.mod_customcatalogreader.cc_immorealty .place .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_immorealty .place i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_immorealty .propety-headline {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_immorealty .propety-header img {
+	width: 100%;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-meta {
+	overflow: hidden;
+	border-top: 1px solid rgb(245,245,245);
+	border-bottom: 1px solid rgb(245,245,245);
+	margin: 25px 0;
+	padding: 20px 0;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-meta li {
+	float: left;
+	width: 33.333%;
+	line-height: 2.3;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-meta li i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-meta li .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-furnishing {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-furnishing li {
+	width: 33.33%;
+	float: left;
+	line-height: 3;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-furnishing li i {
+	margin-right: 10px;
+	color: var(--accentColor);
+}
+
+.mod_customcatalogreader.cc_immorealty h3 {
+	margin-top: 35px;
+}
+
+.mod_customcatalogreader.cc_immorealty .property-gallery {
+	margin-top: 35px;
+}
+
+.mod_customcatalogreader.cc_immorealty .price {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: rgb(255,255,255);
+	background: var(--accentColor);
+	padding: 15px;
+	font-size: 1.4em;
+}
+
+.mod_customcatalogreader.cc_immorealty .propety-header .image {
+	position: relative;
+}
+
+.mod_customcatalogreader.cc_immorealty .customelements_notelist {
+	float: none;
+	margin-bottom: 25px;
+}
+
+/* =============================================================================
+ * cc_immorealty list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_immorealty .entries {
+	margin-left: -1%;
+	margin-right: -1%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mod_customcataloglist.cc_immorealty .entry {
+	flex: 0 0 50%;
+	padding-left: 1%;
+	padding-right: 1%;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_inside {
+	border: 1px solid rgb(243,243,243);
+	background: rgb(255,255,255);
+	position: relative;
+	overflow: hidden;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_top {
+	padding: 15px;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_top .place {
+	font-size: 1.2em;
+	color: rgb(150,150,150);
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_top h4 {
+	margin: 0;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .property-meta {
+	overflow: hidden;
+	padding: 15px;
+	color: rgb(153,153,153);
+}
+
+.mod_customcataloglist.cc_immorealty .entry .property-meta li {
+	float: left;
+	width: 50%;
+	line-height: 2;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .property-meta li i {
+	margin-right: 5px;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .property-meta li .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_bottom {
+	overflow: hidden;
+	border-top: 1px solid rgb(246,246,246);
+	padding: 15px;
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_bottom .price {
+	float: right;
+	font-size: 1.4em;
+	color: rgb(153,153,153);
+}
+
+.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_bottom .price span {
+	font-size: 0.6em;
+}
+
+.mod_customcataloglist.cc_immorealty .entry.top_object .cc_immorealty_top {
+	background: var(--accentColor);
+}
+
+.mod_customcataloglist.cc_immorealty .entry.top_object .cc_immorealty_top h4 a,
+.mod_customcataloglist.cc_immorealty .entry.top_object .cc_immorealty_top .place {
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist.cc_immorealty .entry .top_object_icon {
+	background: rgba(255,255,255,0.3);
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.mod_customcataloglist p.empty {
+	margin-left: 1%;
+}
+
+.mod_customcataloglist.cc_immorealty .pagination {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+/* =============================================================================
+ * cc_immorealty list top_objects
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_immorealty.top_objects .entry {
+	flex: 0 0 33.333%;
+}
+
+/* =============================================================================
+ * cc_immorealty slider
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_immorealty_slider_wrap {
+	display: block;
+}
+
+.mod_customcataloglist.cc_immorealty_slider_wrap .swiper-container {
+	--swiper-theme-color: #fff;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .swiper-container {
+	height: 550px;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .entry {
+	flex: 0 0 100%;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .content-left {
+	position: absolute;
+	z-index: 10;
+	bottom: 50px;
+	left: 0;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .content-outside {
+	max-width: 1240px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .content-inside {
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .category {
+	color: rgb(255,255,255);
+	font-size: 1.3em;
+	padding: 5px 10px;
+	background: var(--accentColor);
+	display: inline-block;
+	opacity: 0.95;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .price {
+	font-size: 2em;
+	padding: 5px 10px;
+	background: rgba(255,255,255,0.9);
+}
+
+.mod_customcataloglist .cc_immorealty_slider .price span {
+	font-size: 0.5em;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .place {
+	font-size: 2em;
+	position: absolute;
+	right: 0;
+	bottom: 50px;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .place a {
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist .cc_immorealty_slider .place i {
+	margin-left: 15px;
+}
+
+/* =============================================================================
+ * cc_immorealty customelements_notelist
+ * ========================================================================== */
+ 
+.cc_immorealty .customelements_notelist {
+	float: left;
+}
+
+.cc_immorealty .customelements_notelist .notelistamount,
+.cc_immorealty .customelements_notelist .update {
+	display: none;
+}
+.cc_immorealty .customelements_notelist input {
+	background-color: var(--accentColor);
+	color: #fff;
+	border-radius: 3px;
+	padding: 10px 10px;
+	cursor: pointer;
+	text-align: center;
+	margin: 0;
+	display: inline-block;
+	width: auto;
+	border: 0;
+}
+
+.cc_immorealty .customelements_notelist .info {
+	background: #a5cd00;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	padding: 0 10px;
+	position: absolute;
+	right: 15px;
+}
+
+.cc_immorealty .formnotelist {
+	display: none;
+}
+
+.formnotelist {
+	display: none;
+}
+
+/* =============================================================================
+ * cc_immorealty filter: content_page
+ * ========================================================================== */
+ 
+.mod_customcatalogfilter.immorealty_filter fieldset {
+	margin: 0;
+}
+
+.mod_customcatalogfilter.immorealty_filter .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.immorealty_filter .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.immorealty_filter .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.immorealty_filter .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.immorealty_filter .submit_container {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.immorealty_filter .filter_range label {
+	display: none;
+}
+
+.mod_customcatalogfilter.immorealty_filter .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.immorealty_filter .filter_range .ui-slider-range {
+	background: var(--accentColor);
+}
+
+.mod_customcatalogfilter.immorealty_filter .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.immorealty_filter .submit_container input.clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.mod_customcatalogfilter.immorealty_filter .submit_container .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.immorealty_filter .text_autocomplete_container label {
+	display: none;
+}
+
+.mod_customcatalogfilter.immorealty_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.immorealty_filter .filter_text legend label {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_immorealty filter: home
+ * ========================================================================== */
+ 
+.mod_customcatalogfilter.immorealty_filter_home {
+	background: rgb(240,240,240);
+	padding: 30px;
+}
+
+.mod_customcatalogfilter.immorealty_filter_home legend {
+	display: none;
+}
+
+.mod_customcatalogfilter.immorealty_filter_home fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.mod_customcatalogfilter.immorealty_filter_home div.widget {
+	width: 25%;
+	padding: 10px;
+	float: left;
+	margin: 0;
+}
+
+.mod_customcatalogfilter.immorealty_filter_home div.widget.submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.immorealty_filter_home .clear_filters,
+.mod_customcatalogfilter.immorealty_filter_home .clear_all_filters {
+	display: none;
+}
+
+/* =============================================================================
+ * phone
+ * ========================================================================== */
+ 
+@media only screen and (max-width: 767px) {
+	
+	.mod_customcataloglist.cc_immorealty {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.mod_customcataloglist.cc_immorealty.top_objects .entry {
+		flex: 0 0 100%!important;
+	}
+	
+	.mod_customcataloglist .cc_immorealty_slider .place {
+		left: 0;
+		bottom: 40px;
+		font-size: 1.2em;
+	}
+	
+	.mod_customcataloglist .cc_immorealty_slider .content-left {
+		bottom: 80px;
+	}
+	
+	.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_bottom .price {
+		float: none;
+	}
+	
+	.cc_immorealty .customelements_notelist input {
+		width: 100%;
+		margin-top: 10px;
+	}
+	
+	.cc_immorealty .customelements_notelist {
+		float: none;
+	}
+	
+	.mod_customcataloglist .cc_immorealty_slider .content-inside {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	
+	.mod_customcatalogreader.cc_immorealty .place,
+	.mod_customcatalogreader.cc_immorealty .name {
+		float: none;
+		margin: 0;
+	}
+	
+	.mod_customcatalogreader.cc_immorealty .name {
+		line-height: 1;
+	}
+	
+	.mod_customcatalogreader.cc_immorealty .price {
+		font-size: 1em;
+		padding: 5px;
+		position: static;
+	}
+	
+	.mod_customcatalogreader.cc_immorealty .property-meta li,
+	.mod_customcatalogreader.cc_immorealty .property-furnishing li {
+		width: 100%;
+		line-height: 1.8;
+	}
+	
+	.mod_customcataloglist.cc_immorealty .entry {
+		flex: 0 0 100%;
+	}
+	
+	.mod_customcataloglist.cc_immorealty .entry .property-meta li {
+		font-size: 0.9em;
+	}
+	
+	.mod_customcataloglist.cc_immorealty .entry .cc_immorealty_top .place {
+		font-size: 0.8em;
+	}
+	
+	.mod_customcatalogfilter.immorealty_filter_home div.widget {
+		width: 100%;
+	}
+	
+	.mod_customcataloglist.cc_immorealty .pagination {
+		margin-bottom: 35px;
+	}
+}
+
+/**
+ * DEMO: cc_cardealer
+ */
+
+/* =============================================================================
+ * cc_cardealer list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_cardealer .entry {
+	margin-bottom: 35px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-inside {
+	overflow: hidden;
+	border: 1px solid rgb(238,238,238);
+	background: rgb(245,245,245);
+	position: relative;
+}
+
+.mod_customcataloglist.cc_cardealer .item-leftside {
+	float: left;
+	width: 35%;
+	position: relative;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside {
+	float: left;
+	width: 65%;
+	background: rgb(255,255,255);
+}
+
+.mod_customcataloglist.cc_cardealer .item-link-youtube,
+.mod_customcataloglist.cc_cardealer .item-link-detail {
+	width: 48%;
+	display: inline-block;
+	padding: 10px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-link-youtube i,
+.mod_customcataloglist.cc_cardealer .item-link-detail i {
+	margin-right: 5px;
+	font-size: 0.8em;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside h4 {
+	background: rgb(250,250,250);
+	padding: 10px 20px;
+	margin-bottom: 0;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside .item-content {
+	overflow: hidden;
+	padding: 20px;
+	border-bottom: 1px solid rgb(245,245,245);
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside .item-content-col1 {
+	float: left;
+	width: 70%;
+	min-height: 85px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside .item-content-col2 {
+	float: left;
+	width: 30%;
+	font-size: 2em;
+	line-height: 1em;
+	text-align: right;
+	color: var(--accentColor);
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside ul {
+	overflow: hidden;
+	padding: 10px 20px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside li {
+	width: 50%;
+	float: left;
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-state {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 10;
+	background-color: var(--secondColor);
+	color: rgb(255,255,255);
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 0 7px;
+	border-radius: 2px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside li .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_cardealer .item-rightside li i {
+	width: 25px;
+}
+
+.mod_customcataloglist.cc_cardealer .item-leftside .image_container img {
+	height: 238px;
+	width: auto;
+	max-width: none;
+}
+
+.mod_customcataloglist.cc_cardealer .notelistamount,
+.mod_customcataloglist.cc_cardealer .notelist .submit_container input.update {
+	display: none;
+}
+
+.mod_customcataloglist.cc_cardealer .notelist .submit_container input.submit {
+	width: auto;
+	padding: 3px 10px;
+	min-width: 80px;
+}
+
+.mod_customcataloglist.cc_cardealer .ce_number {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_cardealer list/grid
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_cardealer.grid-view .item-wrapper {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .entry {
+	flex: 0 0 33.333%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .item-leftside,
+.mod_customcataloglist.cc_cardealer.grid-view .item-rightside {
+	float: none;
+	width: 100%;
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .item-leftside .image_container img {
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .item-link-youtube, .mod_customcataloglist.cc_cardealer .item-link-detail {
+	padding-left: 20px;
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .item-rightside .item-content-col1,
+.mod_customcataloglist.cc_cardealer.grid-view .item-rightside .item-content-col2 {
+	width: 100%;
+	float: none;
+	text-align: left;
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .notelist {
+	margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 970px) {
+	.mod_customcataloglist.cc_cardealer.grid-view .entry {
+		width: 50%;
+	}
+}
+
+/* =============================================================================
+ * cc_cardealer teaser
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_cardealer_teaser .item-content-col1,
+.mod_customcataloglist.cc_cardealer_teaser .notelist,
+.mod_customcataloglist.cc_cardealer_teaser .item-link-detail,
+.mod_customcataloglist.cc_cardealer_teaser .item-link-youtube {
+	display: none;
+}
+
+.mod_customcataloglist.cc_cardealer_teaser .item-rightside h4 {
+	margin: 0;
+	font-size: 1.2em;
+}
+
+.mod_customcataloglist.cc_cardealer_teaser .item-rightside .item-content-col2 {
+	font-size: 1.3em;
+	text-align: right!important;
+}
+
+.mod_customcataloglist.cc_cardealer_teaser .item-rightside .item-content {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* =============================================================================
+ * item highlight w/star
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_cardealer .item-highlight-icon {
+	background-color: var(--accentColor);
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+/* =============================================================================
+ * cc_cardealer view-switcher
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_cardealer.notelist-view .list-options {
+	display: none;
+}
+
+.mod_customcataloglist.cc_cardealer.cc_cardealer_teaser .list-options {
+	display: none;
+}
+
+.mod_customcataloglist.cc_cardealer .list-options {
+	margin-bottom: 14px;
+	display: inline-block;
+	border: 1px solid rgb(220,220,220);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.mod_customcataloglist.cc_cardealer .list-options i {
+	line-height: 35px;
+	width: 50px;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+}
+
+.mod_customcataloglist.cc_cardealer .list-options i.fa-th {
+	border-left: 1px solid rgb(220,220,220);
+}
+
+.mod_customcataloglist.cc_cardealer .list-options i.fa-list {
+	background: rgb(250,250,250);
+}
+
+.mod_customcataloglist.cc_cardealer .list-options i.fa-list {
+	background: rgb(240,240,240);
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .list-options i.fa-list {
+	background: rgb(250,250,250);
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .list-options i.fa-th {
+	background: rgb(240,240,240);
+}
+
+.mod_customcataloglist.cc_cardealer.grid-view .item-rightside h4 {
+	margin-bottom: 0;
+	font-size: 1em;
+}
+
+/* =============================================================================
+ * cc_cardealer reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_cardealer .single-leftside {
+	width: 58%;
+	float: left;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-rightside {
+	width: 42%;
+	float: left;
+	padding-left: 30px;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-top-content {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-price {
+	color: var(--accentColor);
+}
+
+.mod_customcatalogreader.cc_cardealer .single-price strong {
+	background-color: var(--accentColor);
+	color: rgb(255,255,255);
+	font-size: 2.5em;
+	font-weight: bold;
+	display: inline-block;
+	padding: 0 15px;
+	border-radius: 2px;
+	margin-right: 20px;
+	line-height: 3rem;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-price span {
+	transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-metadata {
+	border-top: 1px solid rgb(221,221,221);
+	border-bottom: 1px solid rgb(221,221,221);
+	margin: 20px 0;
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-metadata strong {
+	display: block;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-metadata-col1,
+.mod_customcatalogreader.cc_cardealer .single-metadata-col2,
+.mod_customcatalogreader.cc_cardealer .single-metadata-col3 {
+	width: 33.333%;
+	float: left;
+	font-size: 1.2em;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-metadata-col2 {
+	border-left: 1px solid rgb(221,221,221);
+	border-right: 1px solid rgb(221,221,221);
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-metadata-col3 {
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_cardealer table.table-striped {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_cardealer table.table-striped td {
+	padding: 5px;
+}
+
+.mod_customcatalogreader.cc_cardealer table.table-striped tr {
+	background: rgba(0,0,0,0.03);
+}
+
+.mod_customcatalogreader.cc_cardealer table.table-striped tr:nth-child(odd) {
+	background: none;
+}
+
+.mod_customcatalogreader.cc_cardealer .notelistamount {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_cardealer .notelist input.submit {
+	width: auto;
+}
+
+.mod_customcatalogreader.cc_cardealer .notelist input.update {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_cardealer .ce_tabs {
+	margin: 35px 0;
+}
+
+.mod_customcatalogreader.cc_cardealer .ce_tabs ul li {
+	background: #fff;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-features ul {
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-features li {
+	background: #fff;
+	padding: 10px;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-print {
+	margin: 12px 0 5px 0;
+}
+
+.mod_customcatalogreader.cc_cardealer .single-print a,
+.mod_customcatalogreader.cc_cardealer .single-mail a {
+	color: rgb(140,140,140);
+}
+
+.mod_customcatalogreader.cc_cardealer .single-print a:hover,
+.mod_customcatalogreader.cc_cardealer .single-mail a:hover {
+	color: rgb(50,50,50);
+}
+
+.mod_customcatalogreader.cc_cardealer .single-print i,
+.mod_customcatalogreader.cc_cardealer .single-mail i {
+	margin-right: 5px;
+}
+
+.notelist .submit_container input.submit:hover {
+	opacity: 0.9;
+}
+
+.notelist .submit_container input.submit,
+.notelist .submit_container input.submit:hover,
+.notelist .submit_container button.submit,
+.notelist .submit_container button.submit:hover {
+	background-color: var(--secondColor);
+}
+
+.mod_customcatalogreader.cc_cardealer .ce_number {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_cardealer notelist
+ * ========================================================================== */
+
+.mod_customcataloglist .notelist-sum {
+	display: none;
+}
+
+.mod_customcataloglist.notelist-view .notelist-sum {
+	display: block;
+	padding: 50px;
+	font-size: 2em;
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist .notelist-sum .headline {
+	display: inline-block;
+	color: rgb(50,50,50);
+}
+
+
+/* =============================================================================
+ * cc_cardealer filter
+ * ========================================================================== */
+ 
+.mod_customcatalogfilter.cardealer_filter fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0 0 20px 0;
+}
+
+.mod_customcatalogfilter.cardealer_filter div.widget {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cardealer_filter legend {
+	display: none;
+}
+
+.mod_customcatalogfilter.cardealer_filter .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.cardealer_filter .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.cardealer_filter .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cardealer_filter .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+
+.mod_customcatalogfilter.cardealer_filter .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.cardealer_filter .filter_range .ui-slider-range {
+	background-color: var(--accentColor);
+}
+
+.mod_customcatalogfilter.cardealer_filter .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.cardealer_filter .submit_container input.clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.mod_customcatalogfilter.cardealer_filter .submit_container .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.cardealer_filter .text_autocomplete_container label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cardealer_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cardealer_filter .filter_text legend label {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_cardealer slider
+ * ========================================================================== */
+
+.mod_customcataloglist .cc_cardealer_slider .swiper-container {
+	height: 550px;
+	--swiper-theme-color: #fff;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .slider-content-wrapper {
+	position: absolute;
+	z-index: 10;
+	bottom: 50px;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .name {
+	font-size: 2em;
+	float: left;
+	padding: 45px 35px 35px 35px;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .price {
+	float: right;
+	padding: 35px;
+	border-left: 1px solid rgba(255,255,255,0.4);
+}
+
+.mod_customcataloglist .cc_cardealer_slider .price strong {
+	font-size: 1.5em;
+	color: var(--accentColor);
+}
+
+.mod_customcataloglist .cc_cardealer_slider .price span {
+	display: block;
+	font-size: 1em;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .state {
+	position: absolute;
+	top: -20px;
+	left: 35px;
+	display: block;
+	padding: 5px 10px;
+	color: rgb(255,255,255);
+	background-color: var(--accentColor);
+}
+
+.mod_customcataloglist .cc_cardealer_slider .content-outside {
+	max-width: 1240px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .content-inside {
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .state {
+	color: rgb(255,255,255);
+	font-size: 1.3em;
+	padding: 5px 10px;
+	background: rgba(0,0,0,0.3);
+	display: inline-block;
+}
+
+.mod_customcataloglist .cc_cardealer_slider .ce_number {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * phone
+ * ========================================================================== */
+ 
+@media only screen and (max-width: 767px) {
+	
+	.mod_customcataloglist.cc_cardealer .item-leftside,
+	.mod_customcataloglist.cc_cardealer .item-rightside {
+		float: none;
+		width: 100%;
+	}
+	
+	.mod_customcataloglist.cc_cardealer .item-leftside .image_container img {
+		height: auto;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.mod_customcataloglist.cc_cardealer .item-rightside .item-content-col1,
+	.mod_customcataloglist.cc_cardealer .item-rightside .item-content-col2 {
+		float: none;
+		width: 100%;	
+		text-align: left;
+	}
+	
+	.mod_customcataloglist.cc_cardealer .item-rightside .item-content-col2 {
+		font-size: 1.5em;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-leftside,
+	.mod_customcatalogreader.cc_cardealer .single-rightside {
+		float: none;
+		width: 100%;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-rightside {
+		margin-top: 20px;
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .ce_tabs {
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-features li {
+		width: 100%;
+		float: none;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-metadata-col1, 
+	.mod_customcatalogreader.cc_cardealer .single-metadata-col2, 
+	.mod_customcatalogreader.cc_cardealer .single-metadata-col3 {
+		font-size: 1em;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-price strong {
+		font-size: 1.5em;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-price span {
+		margin-top: 20px;
+	}
+	
+	.mod_customcataloglist.cc_cardealer.cc_cardealer_col2 .notelist {
+		margin-bottom: 20px;
+	}
+	
+	.mod_customcataloglist.cc_cardealer.cc_cardealer_col2 {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+	}
+
+	.mod_customcataloglist.cc_cardealer.cc_cardealer_col2 .entry {
+	width: 100%; 
+	float: none;
+	padding-left: 0;
+	padding-right: 0;
+	}
+
+	.mod_customcataloglist.cc_cardealer.cc_cardealer_col2 .item-leftside .image_container img {
+		height: auto;
+	}
+	
+	.mod_customcataloglist.cc_cardealer .notelist {
+		margin-bottom: 15px;
+	}
+	
+	.mod_customcataloglist.cc_cardealer.grid-view .entry {
+		width: 100%;
+	}
+	
+	.mod_customcataloglist .cc_cardealer_slider .name {
+		font-size: 1.5em;
+		padding: 25px 5px 0 15px;
+		float: none;
+	}
+	
+	.mod_customcataloglist .cc_cardealer_slider .swiper-container {
+		height: 350px;
+	}
+	
+	.mod_customcataloglist .cc_cardealer_slider .price {
+		padding: 0px 15px 15px 15px;
+		float: none;
+	}
+	
+	.mod_customcataloglist .cc_cardealer_slider .state {
+		left: 15px;
+		font-size: 0.9em;
+	}
+	
+	.mod_customcataloglist .cc_cardealer_slider .slider-content-wrapper {
+		width: 100%;
+	}
+	
+	.mod_customcataloglist.cc_cardealer .list-options {
+		display: none;
+	}
+	
+	.mod_customcatalogfilter.cardealer_filter .checkbox_container label {
+		top: -4px;
+	}
+	
+	.mod_customcatalogreader.cc_cardealer .single-features ul {
+	grid-template-columns: 1fr;
+}
+	
+}
+
+/**
+ * DEMO: cc_catalog
+ */
+
+/* =============================================================================
+ * cc_catalog list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_catalog .item-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mod_customcataloglist.cc_catalog .entry {
+	margin-bottom: 65px;
+	flex: 0 0 33.33%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.mod_customcataloglist.cc_catalog .item-inside {
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+
+.mod_customcataloglist.cc_catalog h6 {
+	padding: 10px 20px 0 10px;
+	margin-bottom: 0;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.mod_customcataloglist.cc_catalog .brand {
+	color: rgb(180,180,180);
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_catalog .price {
+	font-size: 1.15rem;
+}
+
+.mod_customcataloglist.cc_catalog .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_catalog .more-buttom a {
+	display: inline-block;
+	padding: 10px 20px;
+	border-top: 1px solid rgb(233,233,233);
+	border-bottom: 1px solid rgb(233,233,233);
+	font-size: 0.9rem;
+	margin-top: 20px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	letter-spacing: 1px;
+}
+
+.mod_customcataloglist.cc_catalog .entry:hover .more-buttom a {
+	border-color: rgb(0,0,0);
+}
+
+.mod_customcataloglist.cc_catalog .item-state {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 10;
+	background: rgb(92,184,92);
+	color: rgb(255,255,255);
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 0 7px;
+	border-radius: 2px;
+}
+
+.mod_customcataloglist.cc_catalog .notelistamount,
+.mod_customcataloglist.cc_catalog .notelist .submit_container input.update {
+	display: none;
+}
+
+.mod_customcataloglist.cc_catalog .notelist .submit_container input.submit {
+	width: auto;
+	padding: 3px 10px;
+	min-width: 80px;
+}
+
+.mod_customcataloglist.cc_catalog .ce_number {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_catalog .item-wrapper {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+}
+
+.mod_customcataloglist.cc_catalog .item-leftside,
+.mod_customcataloglist.cc_catalog .item-rightside {
+	float: none;
+	width: 100%;
+}
+
+.mod_customcataloglist.cc_catalog .item-leftside .image_container img {
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+}
+
+.mod_customcataloglist.cc_catalog .item-link-youtube, .mod_customcataloglist.cc_catalog .item-link-detail {
+	padding-left: 20px;
+}
+
+.mod_customcataloglist.cc_catalog .item-rightside .item-content-col1,
+.mod_customcataloglist.cc_catalog .item-rightside .item-content-col2 {
+	width: 100%;
+	float: none;
+	text-align: left;
+}
+
+.mod_customcataloglist.cc_catalog .notelist {
+	margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 970px) {
+	.mod_customcataloglist.cc_catalog .entry {
+		flex: 0 0 50%;
+	}
+}
+
+/* =============================================================================
+ * cc_catalog teaser
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_catalog_teaser .item-content-col1,
+.mod_customcataloglist.cc_catalog_teaser .notelist,
+.mod_customcataloglist.cc_catalog_teaser .item-link-detail,
+.mod_customcataloglist.cc_catalog_teaser .item-link-youtube {
+	display: none;
+}
+
+.mod_customcataloglist.cc_catalog_teaser .item-rightside h4 {
+	margin: 0;
+	font-size: 1.2em;
+}
+
+.mod_customcataloglist.cc_catalog_teaser .item-rightside .item-content-col2 {
+	font-size: 1.3em;
+	text-align: right!important;
+}
+
+.mod_customcataloglist.cc_catalog_teaser .item-rightside .item-content {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* =============================================================================
+ * item highlight w/star
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_catalog .item-highlight-icon {
+	background: rgba(0,0,0,0.1);
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 10;
+}
+
+/* =============================================================================
+ * cc_catalog reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_catalog .single-leftside {
+	width: 58%;
+	float: left;
+}
+
+.mod_customcatalogreader.cc_catalog .single-rightside {
+	width: 42%;
+	float: left;
+	padding-left: 30px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-top-content {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_catalog .single-price-new {
+	font-size: 2rem;
+	font-weight: bold;
+	display: inline-block;	
+	margin-right: 20px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-price-old {
+	display: inline-block;
+	text-decoration: line-through;
+	font-size: 1.5rem;
+	transform: translateY(-2px);
+	-webkit-transform: translateY(-2px);
+}
+
+
+.mod_customcatalogreader.cc_catalog h1 {
+	font-size: 1.6rem;
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-subheadline {
+	color: rgb(180,180,180);
+}
+
+.mod_customcatalogreader.cc_catalog .single-short-description {
+	margin: 20px 0;
+}
+
+.mod_customcatalogreader.cc_catalog .single-stock {
+	background: rgb(85,198,94);
+	color: rgb(255,255,255);
+	font-weight: bold;
+	padding: 3px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-stock.stockout {
+	background: rgb(201,21,25);
+}
+
+.mod_customcatalogreader.cc_catalog .single-metadata {
+	border-top: 1px solid rgb(221,221,221);
+	border-bottom: 1px solid rgb(221,221,221);
+	margin: 20px 0 25px 0;
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_catalog .single-metadata strong {
+	display: block;
+}
+
+.mod_customcatalogreader.cc_catalog .single-metadata-col1,
+.mod_customcatalogreader.cc_catalog .single-metadata-col2,
+.mod_customcatalogreader.cc_catalog .single-metadata-col3 {
+	width: 33.333%;
+	float: left;
+	font-size: 1.2em;
+}
+
+.mod_customcatalogreader.cc_catalog .single-metadata-col2 {
+	border-left: 1px solid rgb(221,221,221);
+	border-right: 1px solid rgb(221,221,221);
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-metadata-col3 {
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_catalog table.table-striped {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_catalog table.table-striped td {
+	padding: 5px;
+}
+
+.mod_customcatalogreader.cc_catalog table.table-striped tr {
+	background: rgba(0,0,0,0.03);
+}
+
+.mod_customcatalogreader.cc_catalog table.table-striped tr:nth-child(odd) {
+	background: none;
+}
+
+.mod_customcatalogreader.cc_catalog .notelistamount {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_catalog .notelist input.submit {
+	width: auto;
+}
+
+.mod_customcatalogreader.cc_catalog .notelist input.update {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_catalog .ce_tabs {
+	margin: 65px 0 35px 0;
+}
+
+.mod_customcatalogreader.cc_catalog .ce_tabs .panes {
+	background: rgb(255,255,255);
+	padding: 30px;
+	border: 1px solid rgb(230,230,230);
+}
+
+.mod_customcatalogreader.cc_catalog .single-features ul {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_catalog .single-features li {
+	width: 33.333%;
+	float: left;
+	margin-bottom: 13px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-print {
+	margin: 12px 0 5px 0;
+}
+
+.mod_customcatalogreader.cc_catalog .single-print a,
+.mod_customcatalogreader.cc_catalog .single-mail a {
+	color: rgb(140,140,140);
+}
+
+.mod_customcatalogreader.cc_catalog .single-print a:hover,
+.mod_customcatalogreader.cc_catalog .single-mail a:hover {
+	color: rgb(50,50,50);
+}
+
+.mod_customcatalogreader.cc_catalog .single-print i,
+.mod_customcatalogreader.cc_catalog .single-mail i {
+	margin-right: 5px;
+}
+
+.notelist .submit_container input.submit:hover {
+	opacity: 0.9;
+}
+
+.mod_customcatalogreader.cc_catalog .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_catalog .single-rating {
+	margin: 11px 0;
+}
+
+.mod_customcatalogreader.cc_catalog .single-rating button,
+.mod_customcatalogreader.cc_catalog .single-rating .counter {
+	display: none!important;
+}
+
+.mod_customcatalogreader.cc_catalog .single-rating .rateit_container {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-rating .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-color {
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_catalog .single-color li {
+	border: 1px solid rgb(200,200,200);
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	text-indent: -9999px;
+	background: rgb(0,0,0);
+}
+
+.mod_customcatalogreader.cc_catalog .single-metadata div {
+	font-size: 0.9rem;
+}
+
+/* tag color */
+
+.mod_customcatalogreader.cc_catalog .single-color li.value_blau {
+	background: rgb(93,156,236);
+}
+
+.mod_customcatalogreader.cc_catalog .single-color li.value_weiss {
+	background: rgb(255,255,255);
+}
+
+.mod_customcatalogreader.cc_catalog .single-color li.value_schwarz {
+	background: rgb(0,0,0);
+}
+
+.mod_customcatalogreader.cc_catalog .single-color li.value_gelb {
+	background: rgb(243,156,17);
+}
+
+/* =============================================================================
+ * cc_catalog notelist
+ * ========================================================================== */
+
+.mod_customcataloglist .notelist-sum {
+	display: none;
+}
+
+.mod_customcataloglist.notelist-view .notelist-sum {
+	display: block;
+	padding: 50px;
+	font-size: 2em;
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist .notelist-sum .headline {
+	display: inline-block;
+	color: rgb(50,50,50);
+}
+
+
+/* =============================================================================
+ * cc_catalog filter
+ * ========================================================================== */
+ 
+.mod_customcatalogfilter.catalog_filter fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0 0 20px 0;
+	border-top: 1px solid rgb(200,200,200);
+}
+
+.mod_customcatalogfilter.catalog_filter legend {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.catalog_filter div.widget {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.catalog_filter div.widget.submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_pagetree {
+	display: none;
+}
+
+.mod_customcatalogfilter.catalog_filter .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.catalog_filter .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.catalog_filter .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.ios .mod_customcatalogfilter.catalog_filter .checkbox_container label {
+	top: 3px;
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_range label {
+	display: none;
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_range .ui-slider-range {
+	background: rgb(50,50,50);
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.catalog_filter .submit_container input.clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.mod_customcatalogfilter.catalog_filter .submit_container .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.catalog_filter .text_autocomplete_container label {
+	display: none;
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.catalog_filter .filter_text legend label {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_catalog slider
+ * ========================================================================== */
+
+.mod_customcataloglist .cc_catalog_slider .swiper-container {
+	height: 700px;
+}
+
+.mod_customcataloglist .cc_catalog_slider .entry {
+	flex: 0 0 100%;
+}
+
+.mod_customcataloglist .cc_catalog_slider .image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mod_customcataloglist .cc_catalog_slider .slider-content-wrapper {
+	position: absolute;
+	z-index: 10;
+	bottom: 50px;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+}
+
+.mod_customcataloglist .cc_catalog_slider .name {
+	font-size: 2em;
+	float: left;
+	padding: 10px 20px;
+	line-height: 2.5rem;
+}
+
+.mod_customcataloglist .cc_catalog_slider .price {
+	float: right;
+	padding: 15px 20px;
+	border-left: 1px solid rgba(255,255,255,0.4);
+	font-size: 1.5em;
+}
+
+.mod_customcataloglist .cc_catalog_slider .content-outside {
+	max-width: 1240px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_catalog_slider .content-inside {
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_immorealty_slider .swiper-container {
+	height: 350px;
+}
+
+.mod_customcataloglist .cc_catalog_slider .ce_number {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_catalog_megamenu_slider
+ * ========================================================================== */
+
+.mod_customcatalog_megamenu_slider {
+   text-align: center;
+}
+
+.mod_customcatalog_megamenu_slider .price div,
+.mod_customcatalog_megamenu_slider .price_old div {
+   display: inline-block;
+}
+
+.mod_customcatalog_megamenu_slider .price {
+   line-height: 1.2;
+}
+
+.mod_customcatalog_megamenu_slider .price_old,
+.mod_customcatalog_megamenu_slider .price_old div {
+   color: rgba(0,0,0,0.5);
+   text-decoration: line-through;
+}
+
+.mod_customcatalog_megamenu_slider .name {
+   font-size: 1.1rem
+}
+
+.mod_customcatalog_megamenu_slider .image {
+   margin-bottom: 10px;
+}
+
+.mod_customcatalog_megamenu_slider .swiper-wrapper {
+   padding-bottom: 50px;
+}
+
+.mod_customcatalog_megamenu_slider .swiper-container-horizontal .swiper-pagination {
+   bottom: 0;
+}
+
+/* =============================================================================
+ * phone
+ * ========================================================================= */
+ 
+@media only screen and (max-width: 767px) {
+	
+	.mod_customcatalogreader.cc_catalog .single-leftside,
+	.mod_customcatalogreader.cc_catalog .single-rightside {
+		float: none;
+		width: 100%;
+	}
+	
+	.mod_customcatalogreader.cc_catalog .single-rightside {
+		margin-top: 20px;
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_catalog .ce_tabs {
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_catalog .single-features li {
+		width: 100%;
+		float: none;
+	}
+	
+	.mod_customcatalogreader.cc_catalog .single-metadata-col1, 
+	.mod_customcatalogreader.cc_catalog .single-metadata-col2, 
+	.mod_customcatalogreader.cc_catalog .single-metadata-col3 {
+		font-size: 1em;
+	}
+	
+	.mod_customcatalogreader.cc_catalog .single-price strong {
+		font-size: 1.5em;
+	}
+	
+	.mod_customcatalogreader.cc_catalog .single-price span {
+		margin-top: 20px;
+	}
+	
+	.mod_customcataloglist.cc_catalog.cc_catalog_col2 .notelist {
+		margin-bottom: 20px;
+	}
+	
+	.mod_customcataloglist.cc_catalog.cc_catalog_col2 {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+	}
+
+	.mod_customcataloglist.cc_catalog.cc_catalog_col2 .entry {
+	width: 100%; 
+	float: none;
+	padding-left: 0;
+	padding-right: 0;
+	}
+
+	.mod_customcataloglist.cc_catalog.cc_catalog_col2 .item-leftside .image_container img {
+		height: auto;
+	}
+	
+	.mod_customcataloglist.cc_catalog .notelist {
+		margin-bottom: 15px;
+	}
+	
+	.mod_customcataloglist.cc_catalog.grid-view .entry {
+		flex: 0 0 100%;
+	}
+	
+	.mod_customcataloglist .cc_catalog_slider .name {
+		font-size: 1.5em;
+		padding: 25px 5px 0 15px;
+		float: none;
+	}
+	
+	.mod_customcataloglist .cc_catalog_slider .swiper-container {
+		height: 350px;
+	}
+	
+	.mod_customcataloglist .cc_catalog_slider .price {
+		padding: 0px 15px 15px 15px;
+		float: none;
+	}
+	
+	.mod_customcataloglist .cc_catalog_slider .state {
+		left: 15px;
+		font-size: 0.9em;
+	}
+	
+	.mod_customcataloglist.cc_catalog .list-options {
+		display: none;
+	}
+	
+	.mod_customcatalogfilter.cardealer_filter .checkbox_container label {
+		top: -8px;
+	}
+	
+	.mod_customcataloglist .cc_catalog_slider .name {
+		padding: 15px 15px 0 15px;
+	}
+	
+	.mod_customcataloglist .cc_catalog_slider .price {
+		border-color: transparent;
+	}
+	
+}
+
+/**
+ * DEMO: cc_accommodations
+ */
+
+/* =============================================================================
+ * cc_accommodations list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_accommodations .entry {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+	box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.03);
+}
+
+.mod_customcataloglist.cc_accommodations .item-col2 .item-headline {
+	float: left;
+	max-width: 260px;
+}
+
+.mod_customcataloglist.cc_accommodations .item-col2 .item-features {
+	float: right;
+}
+
+@media only screen and (max-width: 1100px) {
+	.mod_customcataloglist.cc_accommodations .item-col2 .item-features {
+		float: left; 
+		margin: 10px 0;
+	}
+	
+}
+
+.mod_customcataloglist.cc_accommodations .item-col2 .item-top-wrap {
+	overflow: hidden;
+}
+
+.mod_customcataloglist.cc_accommodations .item-col2,
+.mod_customcataloglist.cc_accommodations .item-col3 {
+	padding: 30px;
+}
+
+.mod_customcataloglist.cc_accommodations h5 {
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_accommodations .date i {
+	margin-right: 5px;
+}
+
+.mod_customcataloglist.cc_accommodations .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_accommodations .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_accommodations .item-description {
+	margin-top: 20px;
+	font-size: 0.95rem;
+	color: rgb(190,190,190);
+}
+
+.mod_customcataloglist.cc_accommodations .item-features li {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_accommodations .item-features i {
+	border-radius: 100%;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 35px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist.cc_accommodations .item-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.mod_customcataloglist.cc_accommodations .item-price-label,
+.mod_customcataloglist.cc_accommodations .item-price-add {
+	text-align: center;
+}
+
+.mod_customcataloglist.cc_accommodations .rateit_container .counter,
+.mod_customcataloglist.cc_accommodations .rateit_container button {
+	display: none!important;
+}
+
+/* =============================================================================
+ * cc_accommodations teaser
+ * ========================================================================== */
+
+.mod_customcatalogteaser.cc_accommodations .entry {
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-inside {
+	position: relative;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-highlight-icon {
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	left: -30px;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-headline {
+	margin: 10px 0;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-headline h5 {
+	margin-bottom: 0;
+	max-width: 120px;
+}
+
+.mod_customcatalogteaser.cc_accommodations .destination {
+	color: rgb(120,120,120);
+	text-transform: uppercase;
+	font-size: 0.9rem;
+}
+
+.mod_customcatalogteaser.cc_accommodations .destination i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-price {
+	text-align: right;
+}
+
+.mod_customcatalogteaser.cc_accommodations .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-features {
+	margin-top: 20px;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-features li {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-features i {
+	border-radius: 100%;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 35px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0,0,0,0.5);
+	padding: 15px 20px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	opacity: 0.9;	
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-content,
+.mod_customcatalogteaser.cc_accommodations .item-content a {
+	color: rgb(255,255,255);
+}
+
+.mod_customcatalogteaser.cc_accommodations .destination {
+	color: rgb(255,255,255);
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-leftside {
+	float: left;
+	width: 70%
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-rightside {
+	float: right;
+	text-align: right;
+	width: 30%
+}
+
+.mod_customcatalogteaser.cc_accommodations h5 {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-price {
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+.mod_customcatalogteaser.cc_accommodations .entry:hover .item-content {
+	background: var(--accentColor);
+}
+
+.mod_customcatalogteaser.cc_accommodations .item-highlight-icon {
+	left: -30px!important;
+}
+
+/* =============================================================================
+ * item highlight w/star
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_accommodations .item-highlight-icon {
+	background: rgba(0,0,0,0.7);
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	left: -15px;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+/* =============================================================================
+ * cc_accommodations reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_accommodations .single-leftside {
+	width: 58%;
+	float: left;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-rightside {
+	width: 42%;
+	float: left;
+	padding-left: 30px;
+}
+
+.mod_customcatalogreader.cc_accommodations h1 {
+	margin-bottom: 10px;
+	font-size: 1.6rem;
+}
+
+.mod_customcatalogreader.cc_accommodations .ce_tags,
+.mod_customcatalogreader.cc_accommodations .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_accommodations i {
+	width: 20px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-top-content {
+	overflow: hidden;
+	background: rgb(255,255,255);
+	padding: 20px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-price strong {
+	color: rgb(255,255,255);
+	font-size: 1.5em;
+	font-weight: bold;
+	display: inline-block;
+	padding: 0 15px;
+	border-radius: 4px;
+	margin-top: 30px;
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-price span {
+	transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.mod_customcatalogreader.cc_accommodations table.table-striped {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_accommodations table.table-striped td {
+	padding: 5px;
+}
+
+.mod_customcatalogreader.cc_accommodations table.table-striped tr {
+	background: rgba(0,0,0,0.03);
+}
+
+.mod_customcatalogreader.cc_accommodations table.table-striped tr:nth-child(odd) {
+	background: none;
+}
+
+.mod_customcatalogreader.cc_accommodations .ce_tabs {
+	margin: 35px 0;
+}
+
+.mod_customcatalogreader.cc_accommodations .ce_tabs .panes {
+	background: rgb(255,255,255);
+	padding: 30px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-features ul {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-features li {
+	width: 33.333%;
+	float: left;
+	margin-bottom: 4px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-print {
+	margin: 12px 0 5px 0;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-print a,
+.mod_customcatalogreader.cc_accommodations .single-mail a {
+	color: rgb(140,140,140);
+}
+
+.mod_customcatalogreader.cc_accommodations .single-print a:hover,
+.mod_customcatalogreader.cc_accommodations .single-mail a:hover {
+	color: rgb(50,50,50);
+}
+
+.mod_customcatalogreader.cc_accommodations .single-print i,
+.mod_customcatalogreader.cc_accommodations .single-mail i {
+	margin-right: 5px;
+}
+
+.notelist .submit_container input.submit:hover {
+	opacity: 0.9;
+}
+
+.mod_customcatalogreader.cc_accommodations .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_accommodations .leftside-inside {
+	padding: 20px;
+	background: rgb(255,255,255);
+}
+
+.mod_customcatalogreader.cc_accommodations .single-logo {
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-destination {
+	text-transform: uppercase;
+}
+
+.mod_customcatalogreader.cc_accommodations h5 {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-price-left-wrap {
+	overflow: hidden;
+	border-top: 1px solid rgb(220,220,220);
+	border-bottom: 1px solid rgb(220,220,220);
+	margin: 10px 0;
+	padding: 10px 0;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-price-left-label {
+	float: left;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-price-left {
+	float: right;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-short-description {
+	font-size: 0.9rem;
+	margin-top: 20px;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-features li {
+	width: 33.333%;
+	float: left;
+	margin-bottom: 1px;
+	background: rgba(0,0,0,0.02);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+}
+
+.mod_customcatalogreader.cc_accommodations .single-features li i {
+	background: rgb(90,90,90);
+	color: #fff;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	margin-right: 10px;
+} 
+
+.mod_customcatalogreader.cc_accommodations .ce_form {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+	padding: 25px;
+}
+
+.mod_customcatalogreader.cc_accommodations .rateit_container .counter,
+.mod_customcatalogreader.cc_accommodations .rateit_container button {
+	display: none!important;
+}
+
+/* =============================================================================
+ * cc_accommodations filter
+ * ========================================================================== */
+ 
+ .mod_customcatalogfilter.accommodations_filter {
+	 padding: 10px;
+	 background: rgb(255,255,255);
+ }
+ 
+.mod_customcatalogfilter.accommodations_filter fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0 0 20px 0;
+}
+
+.mod_customcatalogfilter.accommodations_filter div.widget {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.accommodations_filter legend {
+	display: none;
+}
+
+.mod_customcatalogfilter.accommodations_filter .timestamp_container legend {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.accommodations_filter .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.accommodations_filter .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.accommodations_filter .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.accommodations_filter .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.accommodations_filter .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.accommodations_filter .filter_range .ui-slider-range {
+	background: rgb(50,50,50);
+}
+
+.mod_customcatalogfilter.accommodations_filter .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.accommodations_filter .submit_container .clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	height: 30px;
+}
+
+.mod_customcatalogfilter.accommodations_filter .submit_container .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.accommodations_filter .text_autocomplete_container label {
+	display: none;
+}
+
+.mod_customcatalogfilter.accommodations_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.accommodations_filter .filter_text legend label {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.accommodations_filter .timestamp_container input {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iRWJlbmVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnIGlkPSJHdWlkZXNfX3gyNl9fRm9ybXMiPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjNzU3NTc1IiBkPSJNMTEuMTYsMjEuMTA3YzAsMCwwLjU2MSwwLjU1OSwxLjI4OCwwLjU1OWMwLjU2OSwwLDAuODk0LTAuMjc4LDAuODk0LTAuNjIxYzAtMC40OS0wLjQ5LTAuNjkyLTEuMTY2LTAuNjkyaC0wLjQzOGwtMC4zMjQtMC43NDRsMC44MjQtMC45ODljMC4yOTgtMC4zNTksMC41NDMtMC41ODksMC41NDMtMC41ODl2LTAuMDE3YzAsMC0wLjIwMiwwLjA0My0wLjU5NiwwLjA0M2gtMS40OTh2LTEuMzEzaDMuOTUxdjAuOTU2bC0xLjI3LDEuNDYzYzAuOTMsMC4yMDIsMS41MTUsMC45MzgsMS41MTUsMS44MTNjMCwxLjA2OC0wLjc1MywyLjEzNy0yLjMyMiwyLjEzN2MtMS40MDEsMC0yLjEzNy0wLjgyNC0yLjEzNy0wLjgyNEwxMS4xNiwyMS4xMDd6Ii8+PHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTE1Ljc5NCwyMS42OTNoMS4zMzJ2LTIuNjFjMC0wLjIzNywwLjAwOS0wLjQ4MSwwLjAwOS0wLjQ4MWgtMC4wMTdjMCwwLTAuMDc5LDAuMTc0LTAuMjQ2LDAuMzMybC0wLjM3NywwLjM0M2wtMC44ODQtMC45NDdsMS42OS0xLjU4NmgxLjMyM3Y0Ljk1aDEuMzR2MS4zMTNoLTQuMTcxVjIxLjY5M0wxNS43OTQsMjEuNjkzeiIvPjwvZz48cGF0aCBmaWxsPSIjNzU3NTc1IiBkPSJNMjQuNDc0LDkuMzMyaC0yLjMyMVY3LjcwN2MwLTEuNTM3LTEuMjQ5LTIuNzg2LTIuNzg2LTIuNzg2Yy0xLjUzNiwwLTIuNzg1LDEuMjQ5LTIuNzg1LDIuNzg2djEuNjI1aC0yLjgzM1Y3LjcwN2MwLTEuNTM3LTEuMjUtMi43ODYtMi43ODYtMi43ODZjLTEuNTM3LDAtMi43ODYsMS4yNDktMi43ODYsMi43ODZ2MS42MjVINS44NTVjLTAuNDYyLDAtMC44MzYsMC4zNzUtMC44MzYsMC44MzZ2MTUuNzM5YzAsMC40NjMsMC4zNzQsMC44MzcsMC44MzYsMC44MzdoMTguNjE5YzAuNDYxLDAsMC44MzYtMC4zNzQsMC44MzYtMC44MzdWMTAuMTY4QzI1LjMxLDkuNzA3LDI0LjkzNSw5LjMzMiwyNC40NzQsOS4zMzJ6IE0xOC4yNTIsNy43MDdjMC0wLjYxNSwwLjQ5OS0xLjExNSwxLjExNC0xLjExNXMxLjExNCwwLjUsMS4xMTQsMS4xMTV2My43ODVjMCwwLjYxNS0wLjQ5OSwxLjExNC0xLjExNCwxLjExNHMtMS4xMTQtMC40OTktMS4xMTQtMS4xMTRWNy43MDd6IE05Ljg0OCw3LjcwN2MwLTAuNjE1LDAuNDk5LTEuMTE1LDEuMTE1LTEuMTE1YzAuNjE1LDAsMS4xMTQsMC41LDEuMTE0LDEuMTE1djMuNzg1YzAsMC42MTUtMC40OTksMS4xMTQtMS4xMTQsMS4xMTRjLTAuNjE2LDAtMS4xMTUtMC40OTktMS4xMTUtMS4xMTRWNy43MDd6IE0yMy42MzksMjUuMDcySDYuNjlWMTUuMDQzaDE2Ljk0OFYyNS4wNzJ6Ii8+PC9nPjwvZz48L3N2Zz4=);
+	background-size: 32px;
+	background-position: right center;
+	padding-right: 40px;
+}
+
+/* =============================================================================
+ * cc_accommodations slider
+ * ========================================================================== */
+
+.mod_customcataloglist .cc_accommodations_slider .swiper-container {
+	height: 700px;
+	--swiper-theme-color: #fff;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .slider-content-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .name {
+	font-size: 5rem;
+	font-weight: bold;
+	line-height: 1;
+	margin: 20px 0;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .price {
+	font-size: 2rem;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .price strong {
+	font-size: 2.5rem;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .date {
+	font-size: 1.3rem;
+	display: inline-block;
+	line-height: 3rem;
+	padding: 0 20px;
+	position: relative;
+	overflow: hidden
+}
+
+.mod_customcataloglist .cc_accommodations_slider .date:after {
+	content: '';
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: -33px;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 10;
+	background: rgba(0,0,0,0.2);
+}
+
+.mod_customcataloglist .cc_accommodations_slider .content-outside {
+	max-width: 1240px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .content-inside {
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	height: 100%;
+}
+
+.mod_customcataloglist .cc_accommodations_slider .ce_number {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * phone
+ * ========================================================================== */
+ 
+@media only screen and (max-width: 767px) {
+	
+	.mod_customcatalogreader.cc_accommodations .single-leftside,
+	.mod_customcatalogreader.cc_accommodations .single-rightside {
+		float: none;
+		width: 100%;
+	}
+	
+	.mod_customcatalogreader.cc_accommodations .ce_form .autogrid {
+		margin-bottom: 0!important;
+	}
+	
+	.mod_customcatalogreader.cc_accommodations .single-features li {
+		width: 100%;
+		float: none;
+	}
+	
+	.mod_customcatalogreader.cc_accommodations .single-features .ce_tags {
+		display: block;
+	}
+	
+	.mod_customcatalogreader.cc_accommodations .single-rightside {
+		margin-top: 20px;
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_accommodations .ce_tabs {
+		padding: 0;
+	}
+	
+	.mod_customcataloglist.cc_accommodations .item-col3 {
+		min-height: 0;
+		border: 0;
+	}
+			
+	.mod_customcataloglist .cc_accommodations_slider .name {
+		font-size: 2em;
+	}
+	
+	.mod_customcataloglist .cc_accommodations_slider .swiper-container {
+		height: 350px;
+	}
+	
+	.mod_customcataloglist .cc_accommodations_slider .date {
+		font-size: 1rem;
+	}
+	
+	.mod_customcataloglist .cc_accommodations_slider .price {
+		font-size: 1.2rem;
+	}
+	
+	.mod_customcataloglist .cc_accommodations_slider .slider-content-wrapper {
+		width: 100%;
+	}
+	
+	.mod_customcataloglist.cc_accommodations .list-options {
+		display: none;
+	}
+	
+	.mod_customcataloglist.cc_accommodations .item-price-label, 
+	.mod_customcataloglist.cc_accommodations .item-price-add,
+	.mod_customcataloglist.cc_accommodations .item-price {
+		text-align: right;
+	}
+	
+	.mod_customcatalogfilter.accommodations_filter .checkbox_container label {
+		top: -8px;
+	}
+	
+	.mod_customcataloglist.cc_accommodations .item-col2 .item-features {
+		float: none;
+		margin-top: 15px;
+	}
+	
+	.mod_customcataloglist.cc_accommodations .item-col1.autogrid,
+	.mod_customcataloglist.cc_accommodations .item-col2.autogrid,
+	.mod_customcataloglist.cc_accommodations .item-col3.autogrid {
+		margin: 0;
+	}
+	
+	.mod_customcataloglist.cc_accommodations .item-col2 .item-headline {
+		max-width: 100%;
+		float: none;
+	}
+	
+}
+
+/**
+ * DEMO: cc_directory
+ */
+
+/* =============================================================================
+ * cc_directory - filter
+ * ========================================================================== */
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation .slider_range_input {
+	background: transparent;
+	border: 0;
+	height: 3rem;
+	padding: 0;
+	font-size: 3rem;
+	line-height: 3rem;
+}
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation .ui-slider-range {
+	background: rgb(225, 225, 225)!important;
+	border-color: rgb(225, 225, 225);
+}
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation .ui-widget-content {
+	border-color: rgb(225, 225, 225);
+}
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation .ui-state-default {
+	background: rgb(62, 62, 62);
+	border-color: rgb(62, 62, 62);
+	border-radius: 100%;
+}
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation .range_container {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.cc_directory .filter_geolocation input {
+	margin-bottom: 15px;
+}
+
+.mod_customcatalogfilter.cc_directory .select_container {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_directory .select_container select {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.mod_customcatalogfilter.cc_directory .range_wrapper {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	padding: 15px;
+}
+
+.mod_customcatalogfilter.cc_directory .range_wrapper i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogfilter.cc_directory .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.cc_directory .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.cc_directory .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_directory .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.cc_directory .submit_container {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_directory .filter_pagetree.hide {
+	display: none;
+}
+
+.ios .mod_customcatalogfilter.cc_directory .checkbox_container label {
+	top: 3px;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter {
+	background: rgb(255,255,255);
+	padding: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	border-radius: 8px;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter fieldset {
+	border: 0;
+	padding: 0;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter fieldset legend {
+	background: transparent;
+	font-weight: bold;
+	font-size: 0.9rem;
+	color: inherit;
+	padding-left: 0;
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter fieldset.checkbox_container {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter fieldset.checkbox_container legend {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter .filter_text legend label {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter .submit_container .clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_directory.product_filter input {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+/* =============================================================================
+ * cc_directory - filter | filter_sorting
+ * ========================================================================== */
+
+.mod_customcatalogfilter.cc_directory.filter_sorting {
+	float: right;
+	margin-right: 30px;
+}
+
+@media only screen and (max-width: 1070px) {	
+	.mod_customcatalogfilter.filter_sorting .filter_sorting_alphabetic legend {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 860px) {	
+	.mod_catalog_counter {
+		display: none;
+	}
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting fieldset {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting select {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting .submit_container {
+	display: none!important;
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting .widget {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting .widget fieldset {
+	padding: 0;
+	border: 0;
+	margin-left: 25px;
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting .widget legend {
+	float: left;
+	margin-right: 10px;
+	background: none;
+	color: inherit;
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting .formbody {
+	text-align: right;
+}
+
+.mod_customcatalogfilter.cc_directory.filter_sorting .widget select {
+	width: auto;
+	height: 37px;
+}
+
+/* =============================================================================
+ * cc_directory - list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_directory {
+	clear: both;	
+}
+
+.mod_customcataloglist.cc_directory.hide {
+	display: none;
+}
+
+.mod_customcataloglist.cc_directory .item-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mod_customcataloglist.cc_directory .entry {
+	margin-bottom: 20px;
+	flex: 0 0 50%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.mod_customcataloglist.cc_directory .item-inside {
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	border-radius: 8px;
+	min-height: 400px;
+}
+
+.mod_customcataloglist.cc_directory .content {
+	padding: 20px;
+}
+
+.mod_customcataloglist.cc_directory h6 {
+	margin: 10px 0;
+}
+
+.mod_customcataloglist.cc_directory .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_directory .ce_number {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_directory .item-wrapper {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+}
+
+.mod_customcataloglist.cc_directory .highlight {
+	background: #d75542;
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 100;
+}
+
+.mod_customcataloglist.cc_directory .short_description {
+	font-size: 0.9rem;
+	line-height: 1.6;
+	color: rgba(0,0,0,0.4);
+}
+
+.mod_customcataloglist.cc_directory .image {
+	min-height: 130px;
+	background: #393939;
+}
+
+.mod_customcataloglist.cc_directory .content_bottom {
+	overflow: hidden;
+	margin-top: 25px;
+	border-top: 1px dashed rgba(0, 0, 0, 0.075);
+	padding-top: 10px;
+	font-size: 0.9rem;
+	color: rgba(0,0,0,0.5);
+}
+
+.mod_customcataloglist.cc_directory .geolocation i {
+	margin-right: 5px;
+}
+
+.mod_customcataloglist.cc_directory .geolocation {
+	float: left;
+}
+
+.mod_customcataloglist.cc_directory .price {
+	float: right;
+}
+
+/* =============================================================================
+ * cc_directory - list | listview
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_directory.listview .entry {
+	width: 100%;
+	float: none;
+	margin-bottom: 1%;
+}
+
+.mod_customcataloglist.cc_directory.listview .entry .item-inside {
+	min-height: 0;
+	overflow: hidden;
+	display: flex;
+	padding: 20px;
+}
+
+.mod_customcataloglist.cc_directory.listview .entry .image {
+	min-height: 0;
+	width: 120px;
+	display: flex;
+	align-items: center;
+	background: none;
+}
+
+.mod_customcataloglist.cc_directory.listview .entry .content {
+	width: calc(100% - 120px);
+	display: flex;
+	padding: 0;
+	margin-left: 40px;
+}
+
+.mod_customcataloglist.cc_directory.listview .entry .content .content-inside {
+	display: block;
+	width: 100%;
+}
+
+/* =============================================================================
+ * cc_directory - list | google maps markers
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_directory.googlemaps_markers .gmap {
+	height: 600px;
+}
+
+/* =============================================================================
+ * cc_directory - view_switcher
+ * ========================================================================== */
+ 
+.mod_view_switcher {
+	margin-bottom: 20px;
+	float: right;
+}
+
+.mod_view_switcher li {
+	display: inline-block;
+	margin-left: 2px;
+}
+
+.mod_view_switcher li a i {
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	padding: 10px;
+	line-height: 1;
+	background: rgb(255,255,255);
+	border-radius: 3px;
+	color: rgba(0,0,0,0.5);
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+}
+
+.mod_view_switcher li.active,
+.mod_view_switcher li:hover {
+	color: rgba(0,0,0,0.8);
+}
+
+/* =============================================================================
+ * cc_directory - view_switcher
+ * ========================================================================== */
+
+.mod_catalog_counter {
+	float: left;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+/* =============================================================================
+ * cc_directory - list | teaser
+ * ========================================================================== */
+ 
+ .mod_customcataloglist.cc_directory.teaser .entry {
+	 flex: 0 0 33.33%;
+ }
+
+/* =============================================================================
+ * cc_directory - reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_directory .single-box-one,
+.mod_customcatalogreader.cc_directory .single-box-two,
+.mod_customcatalogreader.cc_directory .single-box-three {
+	background: #fff;
+	border: 1px solid #ececec;
+	border-radius: 8px;
+	padding: 25px;
+	margin-bottom: 45px;
+}
+
+.mod_customcatalogreader.cc_directory .single-box-one {
+	margin-top: 45px;
+}
+
+.mod_customcatalogreader.cc_directory .single-short-description {
+	color: rgba(0,0,0,0.3);
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogreader.cc_directory h1 {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogreader.cc_directory .single-place {
+	margin-top: 25px;
+}
+
+.mod_customcatalogreader.cc_directory i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_directory .single-maps-directions {
+	margin-top: 20px;
+	border-bottom: 1px solid #ececec;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_directory .single-print a,
+.mod_customcatalogreader.cc_directory .single-mail a {
+	color: #919191;
+}
+
+.mod_customcatalogreader.cc_directory .single-print {
+	border-top: 1px solid #ececec;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+.mod_customcatalogreader.cc_directory .price {
+	margin-bottom: 15px;
+}
+
+.mod_customcatalogreader.cc_directory .price .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_directory .single-description {
+	margin-top: 35px;
+}
+
+.mod_customcatalogreader.cc_directory .ce_hyperlink a {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogreader.cc_directory .single-item-number {
+	color: #fff;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px 8px;
+	line-height: 1;
+	font-size: 0.9rem;
+}
+
+.mod_customcatalogreader.cc_directory .ce_textarea ul {
+	padding-left: 25px;
+}
+
+.mod_customcatalogreader.cc_directory .ce_textarea ul li {
+	list-style-type: circle;
+	list-style-position: outside;
+	margin-bottom: 5px;
+	line-height: 1.5;
+}
+
+.mod_customcatalogreader.cc_directory .ce_geolocation {
+	width: 100%!important;
+}
+
+/* =============================================================================
+ * mod_categories - html module
+ * ========================================================================== */
+
+.mod_categories {
+	overflow: hidden;
+	text-align: center;
+}
+
+.mod_categories li {
+	display: inline-block;
+}
+
+.mod_categories li a {
+	display: inline-block;
+	background: rgba(255,255,255,0.2);
+	border-radius: 3px;
+	padding: 10px;
+	color: #fff;
+	width: 100px;
+	text-align: center;
+	font-size: 0.9rem;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;	
+}
+
+.mod_categories li a:hover {
+	background: rgba(255,255,255,0.5);
+}
+
+.mod_categories li img {
+	display: inline-block;
+	width: 40px;
+}
+
+.mod_categories li span {
+	display: block;
+}
+
+
+/* =============================================================================
+ * phone
+ * ========================================================================== */
+
+@media only screen and (max-width: 767px) {
+	.mod_customcataloglist.cc_directory .entry {
+		flex: 0 0 100%;
+	}
+	
+	.mod_categories li a img {
+		display: none;
+	}
+	
+	.mod_categories li a {
+		width: 100%;
+		display: block;
+	}
+	
+	.mod_categories li {
+		display: block;
+		margin-bottom: 2px;
+	}
+	
+	.mod_customcataloglist.cc_directory.teaser .entry {
+		flex: 0 0 100%;
+	}
+	
+	.mod_view_switcher {
+		display: none;
+	}
+	
+	.ios .mod_customcatalogfilter.cc_directory .checkbox_container label {
+		top: -8px;
+	}
+	
+	.mod_customcatalogfilter.mobile_trigger_filter .filterform {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		transition: All 0.3s ease;
+		-webkit-transition: All 0.3s ease;
+	}
+	
+	.mod_customcatalogfilter .filterform.show_filter {
+		visibility: visible;
+		opacity: 1;
+		max-height: 1000px;
+	}
+	
+	.autocomplete_results {
+		width: calc(100% - 40px)!important;
+	}
+	
+	.mod_catalog_counter {
+		display: none;
+	}
+	
+	.mod_customcatalogfilter.cc_directory.filter_sorting {
+		display: none;
+	}
+	
+	.mod_customcatalogfilter.cc_directory.product_filter {
+		margin-bottom: 20px;
+	}
+
+}
+
+/**
+ * DEMO: cc_hotelapart
+ */
+
+/* =============================================================================
+ * cc_hotelapart_packages list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_hotelapart_packages .entry {
+	min-height: 590px;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-inside {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+	box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.03);
+	position: relative;
+	border-radius: 6px;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-content {
+	padding: 25px;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-price-wrap {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10;
+	background: rgb(255,255,255);
+	padding: 10px;
+	border-radius: 6px 6px 6px 0;
+	line-height: 1.5rem;
+	text-align: right;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages h5 {
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .date i {
+	margin-right: 5px;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-features {
+	margin-top: 15px;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-description {
+	margin-top: 20px;
+	font-size: 0.95rem;
+	color: rgb(190,190,190);
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-features li {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-features i {
+	border-radius: 100%;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 35px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist.cc_hotelapart_packages .item-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* =============================================================================
+ * cc_hotelapart_packages teaser
+ * ========================================================================== */
+
+.mod_customcatalogteaser.cc_hotelapart .item-inside {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+	box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.03);
+	position: relative;
+	border-radius: 6px;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-content {
+	padding: 25px;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-price-wrap {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10;
+	background: rgb(255,255,255);
+	padding: 10px;
+	border-radius: 6px 6px 6px 0;
+	line-height: 1.5rem;
+	text-align: right;
+}
+
+.mod_customcatalogteaser.cc_hotelapart h5 {
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .date i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-features {
+	margin-top: 15px;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-description {
+	margin-top: 20px;
+	font-size: 0.95rem;
+	color: rgb(190,190,190);
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-features li {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-features i {
+	border-radius: 100%;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 35px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+.mod_customcatalogteaser.cc_hotelapart .item-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* =============================================================================
+ * cc_hotelapart_packages reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_hotelapart_packages h1 {
+	margin-bottom: 10px;
+	font-size: 1.6rem;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-top-content {
+	overflow: hidden;
+	background: rgb(255,255,255);
+	padding: 20px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .rightside .single-image {
+	position: relative;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .rightside .single-price {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	z-index: 10;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-price strong {
+	color: rgb(255,255,255);
+	font-size: 1.5em;
+	font-weight: bold;
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: 4px 0 0 4px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-price span {
+	transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_tabs {
+	margin: 35px 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_tabs .panes {
+	background: rgb(255,255,255);
+	padding: 30px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .leftside-inside {
+	padding: 20px;
+	background: rgb(255,255,255);
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-price-left-wrap {
+	overflow: hidden;
+	border-top: 1px solid rgb(220,220,220);
+	border-bottom: 1px solid rgb(220,220,220);
+	margin: 10px 0 0 0;
+	padding: 10px 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-price-left-label {
+	float: left;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-price-left {
+	float: right;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-price-info {
+	font-size: 0.8rem;
+	color: rgba(0,0,0,0.5);
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-short-description {
+	font-size: 0.9rem;
+	margin-top: 20px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_form {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .single-top .image {
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_number.number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .leftside .ce_hyperlink {
+	margin-top: 35px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .leftside .ce_hyperlink a {
+	width: 100%;
+	font-size: 0.93rem;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages i.fa {
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .rightside .single-desc {
+	margin-top: 30px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .rightside .ce_textarea ul {
+	padding-left: 20px;
+	margin-bottom: 15px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .rightside .ce_textarea li {
+	list-style: disc;
+	list-style-position: outside;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_tabs .ce_list li {
+	margin-bottom: 20px;
+	font-size: 1rem;
+	position: relative;
+	font-family: inherit;
+	list-style: none;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_tabs .ce_list ul {
+	padding: 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_tabs .ce_list li:before {
+	font-family: FontAwesome;
+	content: "\f00c";
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_packages .ce_tabs .ce_list li:after {
+	content: ""; 
+	width: 70px; 
+	height: 1px; 
+	background: rgba(0,0,0,.08); 
+	position: absolute; 
+	left: -26px; 
+	bottom: -11px;
+}
+
+/* =============================================================================
+ * cc_hotelapart filter
+ * ========================================================================== */
+ 
+ .mod_customcatalogfilter.hotelapart_filter {
+	 padding: 10px;
+	 background: rgb(255,255,255);
+ }
+ 
+.mod_customcatalogfilter.hotelapart_filter fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0 0 20px 0;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .filter_pagetree {
+	display: none;
+}
+
+.mod_customcatalogfilter.hotelapart_filter div.widget {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.hotelapart_filter legend {
+	display: none;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .timestamp_container legend {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .submit_container {
+	margin-bottom: 10px;
+}
+.mod_customcatalogfilter.hotelapart_filter .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .filter_range .ui-slider-range {
+	background: rgb(50,50,50);
+}
+
+.mod_customcatalogfilter.hotelapart_filter .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .submit_container input.clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .submit_container .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .text_autocomplete_container label {
+	display: none;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .filter_text legend label {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.hotelapart_filter .timestamp_container input {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iRWJlbmVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnIGlkPSJHdWlkZXNfX3gyNl9fRm9ybXMiPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjNzU3NTc1IiBkPSJNMTEuMTYsMjEuMTA3YzAsMCwwLjU2MSwwLjU1OSwxLjI4OCwwLjU1OWMwLjU2OSwwLDAuODk0LTAuMjc4LDAuODk0LTAuNjIxYzAtMC40OS0wLjQ5LTAuNjkyLTEuMTY2LTAuNjkyaC0wLjQzOGwtMC4zMjQtMC43NDRsMC44MjQtMC45ODljMC4yOTgtMC4zNTksMC41NDMtMC41ODksMC41NDMtMC41ODl2LTAuMDE3YzAsMC0wLjIwMiwwLjA0My0wLjU5NiwwLjA0M2gtMS40OTh2LTEuMzEzaDMuOTUxdjAuOTU2bC0xLjI3LDEuNDYzYzAuOTMsMC4yMDIsMS41MTUsMC45MzgsMS41MTUsMS44MTNjMCwxLjA2OC0wLjc1MywyLjEzNy0yLjMyMiwyLjEzN2MtMS40MDEsMC0yLjEzNy0wLjgyNC0yLjEzNy0wLjgyNEwxMS4xNiwyMS4xMDd6Ii8+PHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTE1Ljc5NCwyMS42OTNoMS4zMzJ2LTIuNjFjMC0wLjIzNywwLjAwOS0wLjQ4MSwwLjAwOS0wLjQ4MWgtMC4wMTdjMCwwLTAuMDc5LDAuMTc0LTAuMjQ2LDAuMzMybC0wLjM3NywwLjM0M2wtMC44ODQtMC45NDdsMS42OS0xLjU4NmgxLjMyM3Y0Ljk1aDEuMzR2MS4zMTNoLTQuMTcxVjIxLjY5M0wxNS43OTQsMjEuNjkzeiIvPjwvZz48cGF0aCBmaWxsPSIjNzU3NTc1IiBkPSJNMjQuNDc0LDkuMzMyaC0yLjMyMVY3LjcwN2MwLTEuNTM3LTEuMjQ5LTIuNzg2LTIuNzg2LTIuNzg2Yy0xLjUzNiwwLTIuNzg1LDEuMjQ5LTIuNzg1LDIuNzg2djEuNjI1aC0yLjgzM1Y3LjcwN2MwLTEuNTM3LTEuMjUtMi43ODYtMi43ODYtMi43ODZjLTEuNTM3LDAtMi43ODYsMS4yNDktMi43ODYsMi43ODZ2MS42MjVINS44NTVjLTAuNDYyLDAtMC44MzYsMC4zNzUtMC44MzYsMC44MzZ2MTUuNzM5YzAsMC40NjMsMC4zNzQsMC44MzcsMC44MzYsMC44MzdoMTguNjE5YzAuNDYxLDAsMC44MzYtMC4zNzQsMC44MzYtMC44MzdWMTAuMTY4QzI1LjMxLDkuNzA3LDI0LjkzNSw5LjMzMiwyNC40NzQsOS4zMzJ6IE0xOC4yNTIsNy43MDdjMC0wLjYxNSwwLjQ5OS0xLjExNSwxLjExNC0xLjExNXMxLjExNCwwLjUsMS4xMTQsMS4xMTV2My43ODVjMCwwLjYxNS0wLjQ5OSwxLjExNC0xLjExNCwxLjExNHMtMS4xMTQtMC40OTktMS4xMTQtMS4xMTRWNy43MDd6IE05Ljg0OCw3LjcwN2MwLTAuNjE1LDAuNDk5LTEuMTE1LDEuMTE1LTEuMTE1YzAuNjE1LDAsMS4xMTQsMC41LDEuMTE0LDEuMTE1djMuNzg1YzAsMC42MTUtMC40OTksMS4xMTQtMS4xMTQsMS4xMTRjLTAuNjE2LDAtMS4xMTUtMC40OTktMS4xMTUtMS4xMTRWNy43MDd6IE0yMy42MzksMjUuMDcySDYuNjlWMTUuMDQzaDE2Ljk0OFYyNS4wNzJ6Ii8+PC9nPjwvZz48L3N2Zz4=);
+	background-size: 32px;
+	background-position: right center;
+	padding-right: 40px;
+}
+
+/* =============================================================================
+ * cc_hotelapart_rooms list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-inside {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+	box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.03);
+	position: relative;
+	border-radius: 6px;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-content {
+	padding: 25px;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-price-wrap {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10;
+	background: rgb(255,255,255);
+	padding: 5px 10px;
+	border-radius: 6px 6px 6px 0;
+	line-height: 1.5rem;
+	text-align: right;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms h5 {
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .date i {
+	margin-right: 5px;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-features {
+	margin-top: 15px;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .ce_tags {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-description {
+	margin-top: 20px;
+	font-size: 0.95rem;
+	color: rgb(190,190,190);
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-features li {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-features i {
+	border-radius: 100%;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 35px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-price-add {
+	color: rgba(0,0,0,0.5);
+	font-size: 0.8rem;
+}
+
+.mod_customcataloglist.cc_hotelapart_rooms .item-persons {
+	font-size: 0.9rem;
+	color: rgba(0,0,0,0.5);
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin: 5px 0;
+}
+
+/* =============================================================================
+ * cc_hotelapart_rooms reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_hotelapart_rooms h1 {
+	margin-bottom: 10px;
+	margin-top: 15px;
+	font-size: 1.6rem;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-top-content {
+	overflow: hidden;
+	background: rgb(255,255,255);
+	padding: 20px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .rightside .single-image {
+	position: relative;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .rightside .single-price {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	z-index: 10;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price strong {
+	color: rgb(255,255,255);
+	font-size: 0.9em;
+	font-weight: bold;
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: 4px 0 0 4px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price strong .ce_text {
+	display: inline-block;
+	font-size: 1.5rem;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price span {
+	transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs {
+	margin: 35px 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs > .tabs.classic > ul > li {
+	background: #fff;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs > .tabs.classic > ul > li:hover,
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs > .tabs.classic > ul > li.active {
+	background: var(--accentColor);
+} 
+
+.mod_customcatalogreader.cc_hotelapart_rooms .leftside-inside {
+	padding: 20px;
+	background: rgb(255,255,255);
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price-left-wrap {
+	overflow: hidden;
+	border-top: 1px solid rgb(220,220,220);
+	border-bottom: 1px solid rgb(220,220,220);
+	margin: 10px 0 0 0;
+	padding: 10px 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price-left-label {
+	float: left;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price-left {
+	float: right;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price-left .ce_text {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-price-info {
+	font-size: 0.8rem;
+	color: rgba(0,0,0,0.5);
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-short-description {
+	font-size: 0.9rem;
+	margin-top: 20px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_form {
+	margin-bottom: 35px;
+	background: rgb(255,255,255);
+	padding: 35px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-top .image {
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_number.number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_timestamp {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .leftside .ce_hyperlink {
+	margin-top: 35px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .leftside .ce_hyperlink a {
+	width: 100%;
+	padding: 15px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms i.fa {
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .rightside .single-desc {
+	margin-top: 15px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .rightside .single-desc p:last-of-type {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .rightside .ce_textarea ul {
+	padding-left: 20px;
+	margin-bottom: 15px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .rightside .ce_textarea li {
+	list-style: disc;
+	list-style-position: outside;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs li:hover {
+	background: rgba(0,0,0,0.025);
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs .ce_list li {
+	margin-bottom: 20px;
+	font-size: 1rem;
+	position: relative;
+	font-family: inherit;
+	list-style: none;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs .ce_list ul {
+	padding: 0;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs .ce_list li:before {
+	font-family: FontAwesome;
+	content: "\f00c";
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .ce_tabs .ce_list li:after {
+	content: ""; 
+	width: 70px; 
+	height: 1px; 
+	background: rgba(0,0,0,.08); 
+	position: absolute; 
+	left: -26px; 
+	bottom: -11px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-services {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-services li {
+	width: 33.33%;
+	float: left;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing td {
+	font-size: 2rem;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing td span {
+	font-size: 1.2rem;
+	color: rgba(0,0,0,0.5);
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing td,
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing th {
+	width: 33.33%;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing table {
+	margin-bottom: 35px;
+}
+
+.mod_customcatalogreader.cc_hotelapart_rooms .single-pricing table p {
+	margin: 0;
+}
+
+/* =============================================================================
+ * cc_hotelapart_rooms pricing
+ * ========================================================================== */
+
+.mod_customcatalog_pricing .entry {
+	padding: 30px;
+	margin-bottom: 30px;
+	background: rgba(0,0,0,0.02);
+}
+
+.mod_customcatalog_pricing .seasons {
+	padding: 0 30px;
+}
+
+.mod_customcatalog_pricing .entry:nth-child(2n) {
+	background: rgba(0,0,0,0.04);
+}
+
+.mod_customcatalog_pricing h5 {
+	margin-bottom: 5px;
+}
+
+.mod_customcatalog_pricing .item-info {
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.mod_customcatalog_pricing .item-features {
+	margin-top: 15px;
+}
+
+.mod_customcatalog_pricing .item-description {
+	margin-top: 20px;
+	font-size: 0.95rem;
+	color: rgb(190,190,190);
+}
+
+.mod_customcatalog_pricing .item-features li {
+	display: inline-block;
+}
+
+.mod_customcatalog_pricing .item-features i {
+	border-radius: 100%;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 35px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+.mod_customcatalog_pricing .item-persons {
+	font-size: 0.9rem;
+	color: rgba(0,0,0,0.5);
+	margin: 5px 0;
+}
+
+.mod_customcatalog_pricing .item-buttons {
+	margin-top: 27px;
+	display: flex;
+	gap: 3px;
+}
+
+.mod_customcatalog_pricing .item-buttons a {
+	min-width: 130px;
+	font-size: 0.9rem;
+	padding: 4px 10px;
+}
+
+.mod_customcatalog_pricing .pricing {
+	margin-top: 13%;
+	font-size: 2.5rem;
+}
+
+.mod_customcatalog_pricing .pricing span {
+	font-size: 1.2rem;
+	color: rgba(0,0,0,0.6);
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.mod_customcatalog_pricing .item-bookinginfo {
+	margin-top: 30px;
+	font-size: 0.8rem;
+	color: rgba(0,0,0,0.5);
+	line-height: 1.5;
+}
+
+.mod_customcatalog_pricing .pricing .only_mobile {
+	font-size: 1rem;
+}
+
+.mod_customcatalog_pricing .ce_hyperlink a {
+	margin-bottom: 1px;
+}
+
+/* =============================================================================
+ * cc_hotelapart phone
+ * ========================================================================== */
+ 
+@media only screen and (max-width: 767px) {
+	
+	.mod_customcatalog_pricing .autogrid:not(.ce_autogridwrapper):not(.no_gutter) {
+		margin-bottom: 0;
+	}
+	
+	.mod_customcatalog_pricing .item-info {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.mod_customcatalog_pricing h5 {
+		margin-top: 10px;
+	}
+	
+	.mod_customcatalog_pricing .item-info {
+		border: 0;
+	}
+	
+	.mod_customcatalog_pricing .pricing {
+		text-align: center;
+	}
+	
+	.mod_customcatalogteaser.cc_hotelapart .item-inside,
+	.mod_customcataloglist.cc_hotelapart_rooms .item-inside,
+	.mod_customcataloglist.cc_hotelapart_packages .item-inside {
+		margin-bottom: 0;
+	}
+	
+	.mod_customcatalogreader.cc_hotelapart_rooms .single-services li {
+		float: none;
+		width: 100%;
+	}
+	
+	.mod_customcatalogfilter.hotelapart_filter {
+		background: none;
+		padding: 0;
+	}
+}
+
+/**
+ * DEMO: cc_product_catalog
+ */
+
+/* =============================================================================
+ * cc_product_catalog list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_product_catalog .entry {
+	flex: 0 0 33.33%;
+	border-right: 1px solid rgb(241, 241, 241);
+	border-bottom: 1px solid rgb(241, 241, 241);
+	min-height: 440px;
+}
+
+.mod_customcataloglist.cc_product_catalog .entry:nth-child(3n+0) {
+	border-right: 0;
+}
+
+.mod_customcataloglist.cc_product_catalog .swiper-wrapper .entry {
+	border-bottom: 0;
+	border-right: 1px solid rgb(241, 241, 241);
+}
+
+.mod_customcataloglist.cc_product_catalog .item-inside {
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	padding-bottom: 30px;
+	transition: All 0.2s ease;
+	-webkit-transition: All 0.2s ease;
+	border-top: 10px solid transparent;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-inside:hover {
+	border-top: 10px solid var(--accentColor);
+}
+
+.mod_customcataloglist.cc_product_catalog {
+	--swiper-theme-color: #333;
+}
+
+.mod_customcataloglist.cc_product_catalog h6 {
+	padding: 10px 20px 0 10px;
+	margin-bottom: 0;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.mod_customcataloglist.cc_product_catalog .brand {
+	color: rgb(180,180,180);
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_product_catalog .price {
+	font-size: 1.15rem;
+}
+
+.mod_customcataloglist.cc_product_catalog .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-state {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 10;
+	background: rgb(92,184,92);
+	color: rgb(255,255,255);
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 0 7px;
+	border-radius: 2px;
+}
+
+.mod_customcataloglist.cc_product_catalog .ce_number {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+.mod_customcataloglist:not(.mod_customcatalogteaser).cc_product_catalog .item-wrapper {
+	border: 1px solid rgb(240,240,240);
+	border-radius: 8px;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-leftside,
+.mod_customcataloglist.cc_product_catalog .item-rightside {
+	float: none;
+	width: 100%;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-leftside .image_container img {
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-link-youtube, .mod_customcataloglist.cc_product_catalog .item-link-detail {
+	padding-left: 20px;
+}
+
+.mod_customcataloglist.cc_product_catalog .item-rightside .item-content-col1,
+.mod_customcataloglist.cc_product_catalog .item-rightside .item-content-col2 {
+	width: 100%;
+	float: none;
+	text-align: left;
+}
+
+.mod_customcataloglist.cc_product_catalog .notelist {
+	margin-bottom: 15px;
+}
+
+.mod_customcataloglist.cc_product_catalog .rateit_container button,
+.mod_customcataloglist.cc_product_catalog .rateit_container .counter {
+	display: none!important;
+}
+
+.mod_customcataloglist.cc_product_catalog .rateit_container {
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.mod_customcataloglist.cc_product_catalog .rateit_container .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcataloglist.cc_product_catalog .rateit_container .thankyou {
+	display: none!important;
+}
+
+.mod_customcataloglist.cc_product_catalog .pagination {
+	padding: 20px 20px 10px 20px;
+}
+
+.mod_customcataloglist.cc_product_catalog .swiper-button-disabled {
+	display: none;
+}
+
+@media only screen and (max-width: 970px) {
+	.mod_customcataloglist.cc_product_catalog .entry {
+		flex: 0 0 50%;
+	}
+	.mod_customcataloglist.cc_product_catalog .entry:nth-child(3n+0) {
+		border-right: 1px solid rgb(241, 241, 241);
+	}
+	.mod_customcataloglist.cc_product_catalog .entry:nth-child(2n+0) {
+		border-right: 0;
+	}
+}
+
+/* =============================================================================
+ * item highlight w/star
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_product_catalog .item-highlight-icon {
+	background: rgba(0,0,0,0.1);
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 10;
+}
+
+/* =============================================================================
+ * cc_product_catalog teaser
+ * ========================================================================== */
+
+.mod_customcatalogteaser.cc_product_catalog .entry {
+	flex: 0 0 25%;
+	text-align: center;
+	position: relative;
+	margin-bottom: 35px;
+	min-height: 420px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	border: 1px solid transparent;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .entry:hover {
+	border: 1px solid rgb(190,190,190);
+}
+
+.mod_customcatalogteaser.cc_product_catalog .rateit_container button,
+.mod_customcatalogteaser.cc_product_catalog .rateit_container .counter {
+	display: none!important;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .rateit_container {
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .rateit_container .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .rateit_container .thankyou {
+	display: none!important;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .item-highlight-icon {
+	background: var(--accentColor);
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 10;
+}
+
+.mod_customcatalogteaser.cc_product_catalog h6 {
+	padding: 10px 20px 0 10px;
+	margin-bottom: 0;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .price {
+	font-size: 1.15rem;
+}
+
+.mod_customcatalogteaser.cc_product_catalog .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_product_catalog reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_product_catalog .single-leftside {
+	width: 58%;
+	float: left;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-rightside {
+	width: 42%;
+	float: left;
+	padding-left: 30px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-top-content {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-price-new {
+	font-size: 2rem;
+	font-weight: bold;
+	display: inline-block;	
+	margin-right: 20px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-price-old {
+	display: inline-block;
+	text-decoration: line-through;
+	font-size: 1.5rem;
+	transform: translateY(-2px);
+	-webkit-transform: translateY(-2px);
+}
+
+
+.mod_customcatalogreader.cc_product_catalog h1 {
+	font-size: 1.6rem;
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-subheadline {
+	color: rgb(180,180,180);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-short-description {
+	margin: 20px 0;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-stock {
+	background: rgb(85,198,94);
+	color: rgb(255,255,255);
+	font-weight: bold;
+	padding: 3px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-stock.stockout {
+	background: rgb(201,21,25);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-datasheet {
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-metadata {
+	border-top: 1px solid rgb(221,221,221);
+	border-bottom: 1px solid rgb(221,221,221);
+	margin: 20px 0 25px 0;
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-metadata strong {
+	display: block;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-metadata-col1,
+.mod_customcatalogreader.cc_product_catalog .single-metadata-col2,
+.mod_customcatalogreader.cc_product_catalog .single-metadata-col3 {
+	width: 33.333%;
+	float: left;
+	font-size: 1.2em;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-metadata-col2 {
+	border-left: 1px solid rgb(221,221,221);
+	border-right: 1px solid rgb(221,221,221);
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-metadata-col3 {
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_product_catalog table.table-striped {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_product_catalog table.table-striped td {
+	padding: 5px;
+}
+
+.mod_customcatalogreader.cc_product_catalog table.table-striped tr {
+	background: rgba(0,0,0,0.03);
+}
+
+.mod_customcatalogreader.cc_product_catalog table.table-striped tr:nth-child(odd) {
+	background: none;
+}
+
+.mod_customcatalogreader.cc_product_catalog .notelistamount {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_product_catalog .notelist input.submit {
+	width: auto;
+}
+
+.mod_customcatalogreader.cc_product_catalog .notelist input.update {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_product_catalog .ce_tabs {
+	margin: 65px 0 35px 0;
+}
+
+.mod_customcatalogreader.cc_product_catalog .ce_tabs .panes {
+	background: rgb(255,255,255);
+	padding: 30px;
+	border: 1px solid rgb(230,230,230);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-features ul {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-features li {
+	width: 33.333%;
+	float: left;
+	margin-bottom: 13px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-print {
+	margin: 12px 0 5px 0;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-print a,
+.mod_customcatalogreader.cc_product_catalog .single-mail a {
+	color: rgb(140,140,140);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-print a:hover,
+.mod_customcatalogreader.cc_product_catalog .single-mail a:hover {
+	color: rgb(50,50,50);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-print i,
+.mod_customcatalogreader.cc_product_catalog .single-mail i {
+	margin-right: 5px;
+}
+
+.notelist .submit_container input.submit:hover {
+	opacity: 0.9;
+}
+
+.mod_customcatalogreader.cc_product_catalog .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-rating {
+	margin: 11px 0;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-rating button,
+.mod_customcatalogreader.cc_product_catalog .single-rating .counter {
+	display: none!important;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-rating .rateit_container {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-rating .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-color {
+	margin-bottom: 25px;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-color li {
+	border: 1px solid rgb(200,200,200);
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	text-indent: -9999px;
+	background: rgb(0,0,0);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-metadata div {
+	font-size: 0.9rem;
+}
+
+.mod_customcatalogreader.cc_product_catalog .elevatezoom_gallery_wrapper {
+	border: 5px solid rgb(240,240,240);
+}
+
+.mod_customcatalogreader.cc_product_catalog .elevatezoom_gallery_wrapper ul {
+	border-top: 1px solid rgb(240,240,240);
+}
+
+.mod_customcatalogreader.cc_product_catalog .elevatezoom_gallery_wrapper li.entry {
+	border-left: 1px solid rgb(240,240,240);
+	margin-bottom: 0;
+	padding-bottom: 1%;
+}
+
+.mod_customcatalogreader.cc_product_catalog .elevatezoom_gallery_wrapper li.entry:first-child {
+	border-left: 0;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-technical-data table {
+	font-size: 0.9rem;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-technical-data table tr td {
+	padding: 5px;
+	background: rgb(244,244,244);
+	border: 0;
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-technical-data table tr.odd td {
+	background-color: rgb(255,255,255);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-mail {
+	margin-top: 10px;
+}
+
+/* tag color */
+
+.mod_customcatalogreader.cc_product_catalog .single-color li.value_blau {
+	background: rgb(93,156,236);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-color li.value_rot {
+	background: rgb(204, 41, 56);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-color li.value_schwarz {
+	background: rgb(0,0,0);
+}
+
+.mod_customcatalogreader.cc_product_catalog .single-color li.value_gelb {
+	background: rgb(243,156,17);
+}
+
+/* =============================================================================
+ * cc_product_catalog filter
+ * ========================================================================== */
+ 
+.mod_customcatalogfilter.cc_product_catalog fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0 0 20px 0;
+	border-top: 1px solid rgb(241, 241, 241);
+}
+
+.mod_customcatalogfilter.cc_product_catalog legend {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog div.widget {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .submit_container {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_range label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_range .ui-slider-range {
+	background: rgb(50,50,50);
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .submit_container .clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .submit_container .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .text_autocomplete_container label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_text legend label {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation .slider_range_input {
+	background: transparent;
+	border: 0;
+	height: 3rem;
+	padding: 0;
+	font-size: 3rem;
+	line-height: 3rem;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation .ui-slider-range {
+	background: rgb(225, 225, 225)!important;
+	border-color: rgb(225, 225, 225);
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation .ui-widget-content {
+	border-color: rgb(225, 225, 225);
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation .ui-state-default {
+	background: rgb(62, 62, 62);
+	border-color: rgb(62, 62, 62);
+	border-radius: 100%;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation .range_container {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation input {
+	margin-bottom: 15px;
+}
+
+.mod_customcatalogfilter.cc_product_catalog .filter_geolocation i {
+	margin-right: 5px;
+}
+
+/* =============================================================================
+ * cc_product_catalog_reseller
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_product_catalog_reseller .gmap {
+	height: 650px;
+}
+
+/* =============================================================================
+ * phone
+ * ========================================================================== */
+ 
+@media only screen and (max-width: 767px) {
+	
+	.mod_customcatalogreader.cc_product_catalog .single-leftside,
+	.mod_customcatalogreader.cc_product_catalog .single-rightside {
+		float: none;
+		width: 100%;
+	}
+	
+	.mod_customcatalogreader.cc_product_catalog .single-rightside {
+		margin-top: 20px;
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_product_catalog .ce_tabs {
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_product_catalog .single-features li {
+		width: 100%;
+		float: none;
+	}
+	
+	.mod_customcatalogreader.cc_product_catalog .single-metadata-col1, 
+	.mod_customcatalogreader.cc_product_catalog .single-metadata-col2, 
+	.mod_customcatalogreader.cc_product_catalog .single-metadata-col3 {
+		font-size: 1em;
+	}
+	
+	.mod_customcatalogreader.cc_product_catalog .single-price strong {
+		font-size: 1.5em;
+	}
+	
+	.mod_customcatalogreader.cc_product_catalog .single-price span {
+		margin-top: 20px;
+	}
+	
+	.mod_customcataloglist.cc_product_catalog.cc_product_catalog_col2 .notelist {
+		margin-bottom: 20px;
+	}
+	
+	.mod_customcataloglist.cc_product_catalog.cc_product_catalog_col2 {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+	}
+
+	.mod_customcataloglist.cc_product_catalog.cc_product_catalog_col2 .entry {
+	width: 100%; 
+	float: none;
+	padding-left: 0;
+	padding-right: 0;
+	}
+
+	.mod_customcataloglist.cc_product_catalog.cc_product_catalog_col2 .item-leftside .image_container img {
+		height: auto;
+	}
+				
+	.mod_customcataloglist.cc_product_catalog .list-options {
+		display: none;
+	}
+	
+	.mod_customcataloglist.cc_product_catalog .entry,
+	.mod_customcatalogteaser.cc_product_catalog .entry{
+		flex: 0 0 100%;
+	}
+		
+}
+
+/* =============================================================================
+ * cc_booklibrary - list
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_booklibrary {
+	clear: both;	
+}
+
+.mod_customcataloglist.cc_booklibrary.hide {
+	display: none;
+}
+
+.mod_customcataloglist.cc_booklibrary .item-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mod_customcataloglist.cc_booklibrary .entry {
+	margin-bottom: 35px;
+	flex: 0 0 20%;
+	padding-left: 2%;
+	padding-right: 2%;
+	min-height: 400px;
+}
+
+.mod_customcataloglist.cc_booklibrary .item-inside {
+	position: relative;
+	background: #fff;
+}
+
+.mod_customcataloglist.cc_booklibrary .category {
+	font-size: 0.9rem;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 5px;
+}
+
+.mod_customcataloglist.cc_booklibrary .headline {
+	margin: 10px 0;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.mod_customcataloglist.cc_booklibrary .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_booklibrary .ce_number {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_booklibrary .price .attribute.text {
+	display: inline-block;
+}
+
+.mod_customcataloglist.cc_booklibrary .price {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.mod_customcataloglist.cc_booklibrary .item-wrapper {
+	margin-left: -2%;
+	margin-right: -2%;
+	overflow: hidden;
+}
+
+.mod_customcataloglist.cc_booklibrary .highlight {
+	background: #d75542;
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 100;
+}
+
+.mod_customcataloglist.cc_booklibrary .image {
+	min-height: 130px;
+	background: #393939;
+}
+
+.mod_customcataloglist.cc_booklibrary .rateit_container button,
+.mod_customcataloglist.cc_booklibrary .rateit_container .counter {
+	display: none!important;
+}
+
+.mod_customcataloglist.cc_booklibrary .rateit_container .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcataloglist.cc_booklibrary .rateit_container .thankyou {
+	display: none!important;
+}
+
+.mod_customcataloglist.cc_booklibrary h4 {
+	border-bottom: 1px solid rgb(221,221,221);
+	margin-bottom: 35px;
+	padding-bottom: 10px;
+}
+
+.mod_customcataloglist.cc_booklibrary .product-banner {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	z-index: 10;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+}
+
+.mod_customcataloglist.cc_booklibrary .product-banner .banner-one,
+.mod_customcataloglist.cc_booklibrary .product-banner .banner-two {
+	color: rgb(255,255,255);
+	font-size: 0.85rem;
+	padding: 0 5px;
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+.mod_customcataloglist.cc_booklibrary .swiper-wrapper .entry {
+	margin-bottom: 0;
+}
+
+/* =============================================================================
+ * cc_booklibrary - teaser
+ * ========================================================================== */
+
+.mod_customcatalogteaser.cc_booklibrary {
+	clear: both;	
+}
+
+.mod_customcatalogteaser.cc_booklibrary.hide {
+	display: none;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .entry {
+	margin-bottom: 35px;
+	width: 20%;
+	padding-left: 2%;
+	padding-right: 2%;
+	float: left;
+	min-height: 450px;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .item-inside {
+	position: relative;
+	background: #fff;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .category {
+	font-size: 0.9rem;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .headline {
+	margin: 10px 0;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .price .attribute.text {
+	display: inline-block;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .price {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .item-wrapper {
+	margin-left: -2%;
+	margin-right: -2%;
+	overflow: hidden;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .highlight {
+	background: #d75542;
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 100;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .image {
+	min-height: 130px;
+	background: #393939;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .rateit_container button,
+.mod_customcatalogteaser.cc_booklibrary .rateit_container .counter {
+	display: none!important;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .rateit_container .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .rateit_container .thankyou {
+	display: none!important;
+}
+
+.mod_customcatalogteaser.cc_booklibrary h4 {
+	border-bottom: 1px solid rgb(221,221,221);
+	margin-bottom: 35px;
+	padding-bottom: 10px;
+}
+
+.mod_customcatalogteaser.cc_booklibrary .product-banner {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	z-index: 10;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+}
+
+.mod_customcatalogteaser.cc_booklibrary .product-banner .banner-one,
+.mod_customcatalogteaser.cc_booklibrary .product-banner .banner-two {
+	color: rgb(255,255,255);
+	font-size: 0.85rem;
+	padding: 0 5px;
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+/* =============================================================================
+ * cc_booklibrary - teaserslider
+ * ========================================================================== */
+
+.mod_customcatalogteaserslider.cc_booklibrary {
+	clear: both;	
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary.hide {
+	display: none;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .entry {
+	margin-bottom: 35px;
+	width: 20%;
+	padding-left: 3%;
+	padding-right: 3%;
+	float: left;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .item-inside {
+	position: relative;
+	background: #fff;
+	text-align: center;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .author {
+	font-size: 0.9rem;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 5px;
+	margin-top: 17px;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .headline {
+	margin: 10px 0;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .price span {
+	font-size: 1rem;
+	text-decoration: line-through;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .price .attribute.text {
+	display: inline-block;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .price {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .item-wrapper {
+	margin-left: -1%;
+	margin-right: -1%;
+	overflow: hidden;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .highlight {
+	background: #d75542;
+	color: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 26px;
+	margin-right: -30px;
+	line-height: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: top;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 100;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .image {
+	min-height: 130px;
+	background: #393939;
+	box-shadow: 0 8px 12px 1px rgba(0,0,0,0.07);
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .ce_image {
+	overflow: visible;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .item-inside {
+	position: relative;
+	top: 7px;
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;	
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .item-inside:hover {
+	top: 0;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .product-banner {
+	position: absolute;
+	right: -10px;
+	top: 5px;
+	z-index: 10;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1)
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .product-banner .banner-one,
+.mod_customcatalogteaserslider.cc_booklibrary .product-banner .banner-two {
+	color: rgb(255,255,255);
+	font-size: 0.85rem;
+	padding: 0 5px;
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .rateit_container button,
+.mod_customcatalogteaserslider.cc_booklibrary .rateit_container .counter {
+	display: none!important;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .rateit_container .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary .rateit_container .thankyou {
+	display: none!important;
+}
+
+.mod_customcatalogteaserslider.cc_booklibrary h4 {
+	border-bottom: 1px solid rgb(221,221,221);
+	margin-bottom: 35px;
+	padding-bottom: 10px;
+}
+
+/* =============================================================================
+ * cc_booklibrary - items in slider
+ * ========================================================================== */
+
+.mod_customcataloglist.cc_booklibrary .swiper-wrapper .entry {
+	min-height: 0;
+}
+
+/* =============================================================================
+ * cc_booklibrary - filter | filter_sorting
+ * ========================================================================== */
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting {
+	float: right;
+}
+
+@media only screen and (max-width: 1070px) {	
+	.mod_customcatalogfilter.filter_sorting .filter_sorting_alphabetic legend {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 860px) {	
+	.mod_catalog_counter {
+		display: none;
+	}
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting fieldset {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting select {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting .submit_container {
+	display: none!important;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting .widget {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting .widget fieldset {
+	padding: 0;
+	border: 0;
+	margin-left: 25px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting .widget legend {
+	float: left;
+	margin-right: 10px;
+	background: none;
+	color: inherit;
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting .formbody {
+	text-align: right;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.filter_sorting .widget select {
+	width: auto;
+	height: 37px;
+}
+
+/* =============================================================================
+ * cc_booklibrary - filter
+ * ========================================================================== */
+
+.mod_customcatalogfilter.cc_booklibrary .select_container {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .select_container select {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.mod_customcatalogfilter.cc_booklibrary .range_wrapper {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	padding: 15px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .range_wrapper i {
+	margin-right: 5px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .checkbox_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .checkbox_container input {
+	width: 16px;
+	height: 16px;
+	order: 1;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .checkbox_container label {
+	order: 2;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .submit_container button {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .submit_container {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .filter_pagetree.hide {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter {
+	background: rgb(255,255,255);
+	padding: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter fieldset {
+	border: 0;
+	padding: 0;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter fieldset legend {
+	background: transparent;
+	font-weight: bold;
+	font-size: 0.9rem;
+	color: inherit;
+	padding-left: 0;
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter fieldset.checkbox_container {
+	margin-bottom: 0;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter fieldset.checkbox_container legend {
+	margin-bottom: 10px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter .filter_text label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter .filter_text legend label {
+	display: inline-block;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter .clear_all_filters {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter .clear_filters {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_booklibrary.product_filter input {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.mod_customcatalogfilter.cc_booklibrary .filter_range label {
+	display: none;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .filter_range input {
+	background: transparent;
+	border: 0;
+	height: 32px;
+	padding: 0;
+	font-size: inherit;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .filter_range .ui-slider-range {
+	background: rgb(50,50,50);
+}
+
+.mod_customcatalogfilter.cc_booklibrary .filter_range .ui-slider {
+	clear: both;
+	margin: 0 10px;
+}
+
+.mod_customcatalogfilter.cc_booklibrary .filter_languageSwitch {
+	display: none;
+}
+
+/* =============================================================================
+ * cc_booklibrary - mod_langswitcher_booklibrary
+ * ========================================================================== */
+
+.mod_langswitcher_booklibrary {
+	margin-bottom: 15px;
+	text-align: right;
+	padding: 10px 0;
+	border-bottom: 1px dotted rgb(200,200,200);
+}
+
+.mod_langswitcher_booklibrary li {
+	display: inline-block;
+}
+
+.mod_langswitcher_booklibrary li span {
+	display: none;
+}
+
+.mod_langswitcher_booklibrary li a {
+	display: block;
+	padding: 1px;
+	border: 1px solid rgba(0,0,0,0.2);
+	line-height: 11px;
+}
+
+/* =============================================================================
+ * cc_booklibrary reader
+ * ========================================================================== */
+
+.mod_customcatalogreader.cc_booklibrary .single-leftside {
+	width: 25%;
+	float: left;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-rightside {
+	width: 75%;
+	float: left;
+	padding-left: 100px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-top-content {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-price-new {
+	font-size: 2rem;
+	font-weight: bold;
+	display: inline-block;	
+	margin-right: 20px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-price-new .ce_text {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-price-old {
+	display: inline-block;
+	text-decoration: line-through;
+	font-size: 1.5rem;
+	transform: translateY(-2px);
+	-webkit-transform: translateY(-2px);
+}
+
+.mod_customcatalogreader.cc_booklibrary h1 {
+	font-size: 1.6rem;
+	margin-bottom: 5px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-subheadline {
+	color: rgb(180,180,180);
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-short-description {
+	margin: 20px 0;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-stock {
+	background: rgb(85,198,94);
+	color: rgb(255,255,255);
+	font-weight: bold;
+	padding: 3px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-stock.stockout {
+	background: rgb(201,21,25);
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-metadata {
+	border-top: 1px solid rgb(221,221,221);
+	border-bottom: 1px solid rgb(221,221,221);
+	margin: 20px 0 25px 0;
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-metadata strong {
+	display: block;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-metadata-col1,
+.mod_customcatalogreader.cc_booklibrary .single-metadata-col2,
+.mod_customcatalogreader.cc_booklibrary .single-metadata-col3 {
+	width: 33.333%;
+	float: left;
+	font-size: 1.2em;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-metadata-col2 {
+	border-left: 1px solid rgb(221,221,221);
+	border-right: 1px solid rgb(221,221,221);
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-metadata-col3 {
+	padding-left: 10px;
+}
+
+.mod_customcatalogreader.cc_booklibrary table.table-striped {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.mod_customcatalogreader.cc_booklibrary table.table-striped td {
+	padding: 5px;
+}
+
+.mod_customcatalogreader.cc_booklibrary table.table-striped tr {
+	background: rgba(0,0,0,0.03);
+}
+
+.mod_customcatalogreader.cc_booklibrary table.table-striped tr:nth-child(odd) {
+	background: none;
+}
+
+.mod_customcatalogreader.cc_booklibrary .notelistamount {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_booklibrary .notelist input.submit {
+	width: auto;
+}
+
+.mod_customcatalogreader.cc_booklibrary .notelist input.update {
+	display: none;
+}
+
+.mod_customcatalogreader.cc_booklibrary .ce_tabs {
+	margin: 65px 0 35px 0;
+}
+
+.mod_customcatalogreader.cc_booklibrary .ce_tabs .panes {
+	background: rgb(255,255,255);
+	padding: 30px;
+	border: 1px solid rgb(230,230,230);
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-features ul {
+	overflow: hidden;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-features li {
+	width: 33.333%;
+	float: left;
+	margin-bottom: 13px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-print {
+	margin: 12px 0 5px 0;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-print a,
+.mod_customcatalogreader.cc_booklibrary .single-mail a {
+	color: rgb(140,140,140);
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-print a:hover,
+.mod_customcatalogreader.cc_booklibrary .single-mail a:hover {
+	color: rgb(50,50,50);
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-print i,
+.mod_customcatalogreader.cc_booklibrary .single-mail i {
+	margin-right: 5px;
+}
+
+.notelist .submit_container input.submit:hover {
+	opacity: 0.9;
+}
+
+.mod_customcatalogreader.cc_booklibrary .ce_number {
+	display: inline-block;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-rating {
+	margin: 11px 0;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-rating .ajax_success {
+	display: none!important;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-rating button,
+.mod_customcatalogreader.cc_booklibrary .single-rating .counter {
+	display: none!important;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-rating .rateit_container {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-rating .single-rating-count {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-color li {
+	border: 1px solid rgb(200,200,200);
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	text-indent: -9999px;
+	background: rgb(0,0,0);
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-author {
+	text-decoration: underline;
+}
+
+.mod_customcatalogreader.cc_booklibrary .single-metadata div {
+	font-size: 0.9rem;
+}
+
+/* =============================================================================
+ * cc_booklibrary - mod_customcatalog_list_sidebar
+ * ========================================================================== */
+
+.mod_customcatalog_list_sidebar .entry {
+	margin-bottom: 25px;
+	border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+	padding-bottom: 22px;
+}
+
+.mod_customcatalog_list_sidebar .item-inside {
+	overflow: hidden;
+}
+ 
+.mod_customcatalog_list_sidebar .item-inside > .image,
+.mod_customcatalog_list_sidebar .item-inside .content {
+	float: left;
+}
+ 
+.mod_customcatalog_list_sidebar .item-inside > .image {
+	width: 30%;
+}
+
+.mod_customcatalog_list_sidebar .content {
+	width: 70%;
+	padding-left: 25px;
+}
+
+.mod_customcatalog_list_sidebar .headline {
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+.mod_customcatalog_list_sidebar .author {
+	color: rgb(170,170,170);
+	margin: 5px 0;
+}
+
+.mod_customcatalog_list_sidebar .ce_text.attribute.text {
+	display: inline-block;
+}
+
+/* =============================================================================
+ * cc_booklibrary - list megamenu
+ * ========================================================================== */
+
+.mod_customcatalog_megamenu.cc_booklibrary .item-inside {
+	overflow: hidden;
+	position: relative;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .item-inside > .image {
+	float: left;
+	width: 60%;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .content {
+	float: left;
+	width: 40%;
+	line-height: 1.3!important;
+	white-space: normal;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .content .content-inside {
+	margin-top: 15%;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .author {
+	font-size: 0.9rem;
+	margin-bottom: 7px;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .price {
+	font-size: 2rem;
+	font-weight: bold;
+	display: inline-block;	
+	margin-right: 20px;
+	margin-top: 7px;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .price .ce_text {
+	display: inline-block;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .price_old {
+	color: rgba(0,0,0,0.4);
+	text-decoration: line-through;
+	font-weight: bold;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .item-wrapper .entry .image a:hover {
+	background: none!important;
+}
+
+.mod_customcatalog_megamenu.cc_booklibrary .headline {
+	font-weight: bold;
+	font-size: 1.3rem;
+	margin-bottom: 7px;
+}
+
+/* =============================================================================
+ * phone
+ * ========================================================================== */
+ 
+@media only screen and (max-width: 767px) {
+	.mod_customcatalogreader.cc_booklibrary .single-leftside,
+	.mod_customcatalogreader.cc_booklibrary .single-rightside {
+		width: 100%;
+		float: none;
+		padding: 0;
+	}
+	
+	.mod_customcatalogreader.cc_booklibrary .single-leftside {
+		margin-bottom: 35px;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .entry,
+	.mod_customcatalogteaser.cc_booklibrary .entry {
+		flex: 0 0 100%;
+		padding: 0 0 30px 0;
+		float: none;
+		border-bottom: 1px solid rgb(200,200,200);
+		min-height: 0;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .item-wrapper,
+	.mod_customcatalogteaser.cc_booklibrary .item-wrapper {
+		margin: 0;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .item-inside > .image,
+	.mod_customcatalogteaser.cc_booklibrary .item-inside > .image {
+		float: left;
+		width: 25%;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .content,
+	.mod_customcatalogteaser.cc_booklibrary .content {
+		float: left;
+		width: 75%;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .content-inside,
+	.mod_customcatalogteaser.cc_booklibrary .content-inside {
+		padding-left: 20px;
+		text-align: left;
+	}
+	
+	.mod_customcatalogteaserslider.cc_booklibrary .author {
+		border: 0;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .item-inside,
+	.mod_customcatalogteaser.cc_booklibrary .item-inside {
+		min-height: 0;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .headline,
+	.mod_customcatalogteaser.cc_booklibrary .headline {
+		font-size: 1.1rem;
+		margin: 0;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .category {
+		border: 0;
+		margin-bottom: 0;
+	}
+	
+	.filter_sorting.cc_booklibrary {
+		display: none;
+	}
+		
+	.mod_customcataloglist.cc_booklibrary {
+		margin-top: 25px;
+	}
+	
+	.mod_customcatalogfilter.cc_booklibrary.product_filter {
+		border: 0;
+		padding: 0;
+	}
+	
+	.mod_customcatalogfilter.cc_booklibrary.product_filter .widget {
+		padding-bottom: 0;
+		margin-bottom: 10px;
+		border-bottom: 1px solid rgb(220,220,220);
+	}
+	
+	.mod_langswitcher_booklibrary {
+		border-top: 1px dotted rgb(200,200,200);
+	}
+	
+	.mod_langswitcher_booklibrary img {
+		width: 30px;
+		height: 25px;
+	}
+	
+	.mod_langswitcher_booklibrary li a {
+		padding: 3px;
+	}
+	
+	.mod_customcatalogteaser.cc_booklibrary .item-wrapper {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.mod_customcatalog_list_sidebar {
+		display: none;
+	}
+	
+	.mod_customcataloglist.cc_booklibrary .product-banner,
+	.mod_customcatalogteaser.cc_booklibrary .product-banner {
+		right: auto;
+		left: 10px;
+	}
+}
+

@@ -1,0 +1,96 @@
+/* =============================================================================
+ * ce_chartbar
+ * ========================================================================== */
+
+.ce_chartbar {
+	margin-bottom: 15px;
+}
+
+.ce_chartbar .ce_chart_inside {
+	position: relative;
+}
+
+.ce_chartbar .chart_bg {
+	background: #f2f2f2;
+	height: 35px;
+	box-shadow: inset 0 1px 3px rgb(204,204,204);
+	border-radius: 4px;
+}
+
+.ce_chartbar .title {
+	margin-bottom: 3px;
+}
+
+.ce_chartbar .chart_data {
+	background: var(--accentColor);
+	height: 100%;
+	text-align: right;
+	line-height: 35px;
+	padding-right: 10px;
+	color: #fff;
+	width: 0;
+	border-radius: 4px;
+	-webkit-transition: Width 3s ease;
+	transition: Width 3s ease;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.ce_chartbar .chart_data.bg-warning {
+	background: rgb(240,138,36);
+}
+
+.ce_chartbar .chart_data.bg-info {
+	background: rgb(160,211,232);
+}
+
+.ce_chartbar .chart_data.bg-success {
+	background: rgb(157,213,93);
+}
+
+.ce_chartbar .chart_data.bg-alert {
+	background: rgb(247,80,90);
+}
+
+.ce_chartbar .chart_data.bg-customColor1 {
+	background: var(--customColor1);
+}
+
+.ce_chartbar .chart_data.bg-customColor2 {
+	background: var(--customColor2);
+}
+
+.ce_chartbar.slim .chart_bg {
+	height: 20px;
+}
+
+.ce_chartbar.slim .chart_data span {
+	line-height: 1.5;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #555;
+}
+
+.color-white .ce_chartbar.slim .chart_data span {
+	color: rgb(255,255,255);
+}
+
+.ce_chartbar.slim-x .chart_bg {
+	height: 4px;
+}
+
+.ce_chartbar.slim-x .chart_data {
+	border-radius: 0;
+}
+
+.ce_chartbar.slim-x .chart_data span {
+	line-height: 1.5;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #555;
+}
+
+.color-white .ce_chartbar.slim-x .chart_data span {
+	color: rgb(255,255,255);
+}

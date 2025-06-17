@@ -1,0 +1,206 @@
+
+/* =============================================================================
+* mod_portfoliolist_v8
+* ========================================================================== */
+
+.mod_portfoliolist_v8.portfolio-col2 .item {
+   width: calc(100% / 2);
+}
+
+.mod_portfoliolist_v8.portfolio-col3 .item {
+   width: calc(100% / 3);
+}
+
+.mod_portfoliolist_v8.portfolio-col4 .item {
+   width: calc(100% / 4);
+}
+
+.mod_portfoliolist_v8.isotope {
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.mod_portfoliolist_v8.margins {
+   margin-left: -10px;
+   margin-right: -10px;
+}
+
+.mod_portfoliolist_v8.margins .item {
+   border: 10px solid transparent;
+}
+
+.mod_portfoliolist_v8 .item {
+   padding-right: 1px;
+   padding-bottom: 1px;
+   background: rgb(0,0,0);
+}
+
+.mod_portfoliolist_v8 .item .title {
+   margin-bottom: 10px;
+}
+
+.mod_portfoliolist_v8 .item a {
+   color: #fff;
+   height: 100%;
+   display: block;
+   line-height: 1.4rem;
+   z-index: 10;
+   position: relative;
+}
+
+.mod_portfoliolist_v8 .item figure {
+   background: rgb(0,0,0);
+   overflow: hidden;
+}
+
+.mod_portfoliolist_v8 .item .image_container {
+   margin-bottom: 0;
+}
+
+.mod_portfoliolist_v8 .item figure img {
+   max-width: none;
+   width: 100%;
+   opacity: 1;
+   transition: All 0.1s ease;
+   -webkit-transition: All 0.1s ease;
+}
+
+.mod_portfoliolist_v8 .item:hover img {
+   opacity: 0.3;
+   transform: scale3d(1.1,1.1,1);
+   -webkit-transform: scale3d(1.1,1.1,1);
+   transition: All 0.1s ease;
+   -webkit-transition: All 0.1s ease;
+}
+
+.mod_portfoliolist_v8 .item .content {
+   text-align: left;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   color: rgb(255,255,255);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+   opacity: 0;
+   transition: All 0.1s ease;
+   -webkit-transition: All 0.1s ease;
+   z-index: 100;
+}
+
+.mod_portfoliolist_v8 .item a.linkbar-link {
+   background: rgba(255,255,255,1);
+   width: 46px;
+   height: 46px;
+   text-align: center;
+   font-size: 1.2rem;
+   line-height: 46px;
+   position: absolute;
+   top: 30%;
+   left: 0;
+   transition: All 0.3s ease;
+   -webkit-transition: All 0.3s ease;
+}
+
+.mod_portfoliolist_v8 .item a.linkbar-link i {
+	color: #333!important;
+}
+
+.mod_portfoliolist_v8 .item:hover a.more {
+   top: 0;
+}
+
+.mod_portfoliolist_v8 .item:hover a.zoom {
+   top: 47px;
+}
+
+.mod_portfoliolist_v8.hide-zoom .item figure a.zoom {
+   display: none;
+}
+
+.mod_portfoliolist_v8.hide-linkbar .item figure a.linkbar-link {
+   display: none;
+}
+
+.mod_portfoliolist_v8 .item a.linkbar-link:hover {
+   opacity: 0.9;
+}
+
+.mod_portfoliolist_v8 .info {
+   position: absolute;
+   line-height: 1.3;
+   z-index: 10;
+   left: -100%;
+   bottom: 10%;
+   transition: All 0.1s ease;
+   -webkit-transition: All 0.1s ease;
+}
+
+.mod_portfoliolist_v8 .item:hover .info {
+   left: 46px;
+   transition: All 0.1s ease;
+   -webkit-transition: All 0.1s ease;
+}
+
+.mod_portfoliolist_v8 .subline {
+   text-overflow: ellipsis;
+   font-size: 0.9rem;
+   background: #000;
+   color: #fff;
+   line-height: 1.3;
+   padding: 6px 10px;
+   border-radius: 20px;
+   text-align: center;
+}
+
+.mod_portfoliolist_v8 .item figure h1,
+.mod_portfoliolist_v8 .item figure h2,
+.mod_portfoliolist_v8 .item figure h3,
+.mod_portfoliolist_v8 .item figure h4,
+.mod_portfoliolist_v8 .item figure h5,
+.mod_portfoliolist_v8 .item figure h6 {
+   position: relative;
+   overflow: hidden;
+   color: #fff;
+   margin-bottom: 0;
+   text-overflow: ellipsis;
+}
+
+.mod_portfoliolist_v8 .item figure p {
+   padding: 1em 0;
+   transition: opacity 0.2s, transform 0.2s;
+   -webkit-ransition: opacity 0.2s, transform 0.2s;
+   transform: translate3d(100%,0,0);
+   -webkit-transform: translate3d(100%,0,0);
+}
+.mod_portfoliolist_v8 .item:hover figure p {
+   transform: translate3d(0,0,0);
+   -webkit-transform: translate3d(0,0,0);
+}
+
+.mod_portfoliolist_v8 .item:hover .content {
+   opacity: 1;
+}
+
+.mod_portfoliolist_v8 .swiper-slide {
+   width: 33.33%;
+}
+
+.mod_portfoliolist_v8 .swiper-button-next,
+.mod_portfoliolist_v8 .swiper-button-prev {
+   margin-top: -35px;
+}
+
+/* =============================================================================
+* smart phones  (s / small screens)
+* ========================================================================== */
+@media only screen and (max-width: 767px) {
+   .mod_portfoliolist_v8 .item {
+      padding-right: 0;
+   }
+
+   .mod_portfoliolist_v8 .item {
+      width: 100%!important;
+   }
+}
