@@ -1,9 +1,9 @@
 {
     "version": 2,
     "webauthn": {
-        "a644d781dfee2e4a686297721b61fedbf383bb36b4e857e6bd0d5fbeacb1df2d": {
-            "options": "{\"challenge\":\"pkTXgd_uLkpoYpdyG2H-2_ODuza06FfmvQ1fvqyx3y0\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
-            "expires": 1750150997
+        "5927902bff23249841023bc2ded324d7fea56c69422f83be852677ded8e6e51c": {
+            "options": "{\"challenge\":\"WSeQK_8jJJhBAjvC3tMk1_6lbGlCL4O-hSZ33tjm5Rw\",\"rpId\":\"update.handyservice4you.at\",\"userVerification\":\"required\"}",
+            "expires": 1750160393
         }
     },
     "users": {
